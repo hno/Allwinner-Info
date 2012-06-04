@@ -74,7 +74,9 @@ Disassembly of section .data:
  100:	e12fff1e 	bx	lr
  104:	e12fff1e 	bx	lr
  108:	e12fff1e 	bx	lr
- 10c:	01c20000 	biceq	r0, r2, r0
+
+ 10c:	01c20000
+
  110:	e1903001 	orrs	r3, r0, r1
  114:	4a000021 	bmi	0x1a0
  118:	e3b02000 	movs	r2, #0
@@ -86,6 +88,7 @@ Disassembly of section .data:
  130:	3a000001 	bcc	0x13c
  134:	e3a0c000 	mov	ip, #0
  138:	ea000020 	b	0x1c0
+
  13c:	e07133a0 	rsbs	r3, r1, r0, lsr #7
  140:	20400381 	subcs	r0, r0, r1, lsl #7
  144:	e0b22002 	adcs	r2, r2, r2
@@ -111,6 +114,7 @@ Disassembly of section .data:
  194:	31a01000 	movcc	r1, r0
  198:	e0a20002 	adc	r0, r2, r2
  19c:	e12fff1e 	bx	lr
+
  1a0:	e2112102 	ands	r2, r1, #-2147483648	; 0x80000000
  1a4:	42611000 	rsbmi	r1, r1, #0
  1a8:	e032c040 	eors	ip, r2, r0, asr #32
