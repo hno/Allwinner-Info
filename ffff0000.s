@@ -5,23 +5,26 @@ t:     file format binary
 Disassembly of section .data:
 
 ffff0000 <.data>:
-ffff0000:	ea000008 	b	0xffff0028
-ffff0004:	ea000006 	b	0xffff0024
-ffff0008:	ea000005 	b	0xffff0024
-ffff000c:	ea000004 	b	0xffff0024
-ffff0010:	ea000003 	b	0xffff0024
-ffff0014:	ea000002 	b	0xffff0024
-ffff0018:	ea000003 	b	0xffff002c
-ffff001c:	ea000000 	b	0xffff0024
-ffff0020:	ea000005 	b	0xffff003c
-ffff0024:	eafffffe 	b	0xffff0024
+ffff0000:	ea000008 	b	reset		; reset
+ffff0004:	ea000006 	b	0xffff0024	; _undefined_instruction
+ffff0008:	ea000005 	b	0xffff0024	; _software_interrupt
+ffff000c:	ea000004 	b	0xffff0024	; _prefetch_abort
+ffff0010:	ea000003 	b	0xffff0024	; _data_abort
+ffff0014:	ea000002 	b	0xffff0024	; _not_used
+ffff0018:	ea000003 	b	0xffff002c	; _irq
+ffff001c:	ea000000 	b	0xffff0024	; _fiq
+ffff0020:	ea000005 	b	0xffff003c	; FEL?
+ffff0024:	eafffffe 	b	0xffff0024	; ???
 
-ffff0028:	e59ff110 	ldr	pc, [pc, #272]	; 0xffff0140
+reset:
+ffff0028:	e59ff110 	ldr	pc, [pc, #272]	; 0xffff0140 = #0xffff4000
+
 
 ffff002c:	e24ee004 	sub	lr, lr, #4
 ffff0030:	e92d5fff 	push	{r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, sl, fp, ip, lr}
 ffff0034:	eb00073c 	bl	0xffff1d2c
 ffff0038:	e8fd9fff 	ldm	sp!, {r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, sl, fp, ip, pc}^
+
 
 ffff003c:	e3a020d2 	mov	r2, #210	; 0xd2
 ffff0040:	e121f002 	msr	CPSR_c, r2
@@ -639,12 +642,28 @@ ffff0958:	e10f0000 	mrs	r0, CPSR
 ffff095c:	e3c00080 	bic	r0, r0, #128	; 0x80
 ffff0960:	e121f000 	msr	CPSR_c, r0
 ffff0964:	e12fff1e 	bx	lr
+
+
+/*
+void set_epind(id) {
+	usb0->epind = id;
+}
+*/
+set_epind:
 ffff0968:	e59f1de8 	ldr	r1, [pc, #3560]	; 0xffff1758 = USB0_BASE
-ffff096c:	e5c10042 	strb	r0, [r1, #66]	; 0x42
+ffff096c:	e5c10042 	strb	r0, [r1, #66]	; 0x42	     = USB0_EPIND
 ffff0970:	e12fff1e 	bx	lr
+
+/*
+int get_epind(id) {
+	return usb0->epind;
+}
+*/
+get_epind:
 ffff0974:	e59f0ddc 	ldr	r0, [pc, #3548]	; 0xffff1758 = USB0_BASE
 ffff0978:	e5d00042 	ldrb	r0, [r0, #66]	; 0x42
 ffff097c:	e12fff1e 	bx	lr
+
 ffff0980:	e3a01012 	mov	r1, #18
 ffff0984:	e5c01000 	strb	r1, [r0]
 ffff0988:	e3a01001 	mov	r1, #1
@@ -958,7 +977,7 @@ ffff0e28:	e92d4070 	push	{r4, r5, r6, lr}
 ffff0e2c:	e1a04000 	mov	r4, r0
 ffff0e30:	e3a05000 	mov	r5, #0
 ffff0e34:	e5d40004 	ldrb	r0, [r4, #4]
-ffff0e38:	ebfffeca 	bl	0xffff0968
+ffff0e38:	ebfffeca 	bl	set_epind
 ffff0e3c:	e5d40005 	ldrb	r0, [r4, #5]
 ffff0e40:	e3100080 	tst	r0, #128	; 0x80
 ffff0e44:	0a00000d 	beq	0xffff0e80
@@ -1484,7 +1503,7 @@ ffff1634:	e3a05000 	mov	r5, #0
 ffff1638:	e3a06000 	mov	r6, #0
 ffff163c:	e1a08004 	mov	r8, r4
 ffff1640:	e3a00000 	mov	r0, #0
-ffff1644:	ebfffcc7 	bl	0xffff0968
+ffff1644:	ebfffcc7 	bl	set_epind
 ffff1648:	e59f0108 	ldr	r0, [pc, #264]	; 0xffff1758 = USB0_BASE
 ffff164c:	e1d068b8 	ldrh	r6, [r0, #136]	; 0x88
 ffff1650:	e3560008 	cmp	r6, #8
@@ -1668,7 +1687,7 @@ ffff1908:	e3a07000 	mov	r7, #0
 ffff190c:	e5946024 	ldr	r6, [r4, #36]	; 0x24
 ffff1910:	e596700c 	ldr	r7, [r6, #12]
 ffff1914:	e5d60004 	ldrb	r0, [r6, #4]
-ffff1918:	ebfffc12 	bl	0xffff0968
+ffff1918:	ebfffc12 	bl	set_epind
 ffff191c:	e51f01cc 	ldr	r0, [pc, #-460]	; 0xffff1758 = USB0_BASE
 ffff1920:	e1d058b2 	ldrh	r5, [r0, #130]	; 0x82
 ffff1924:	e3150004 	tst	r5, #4
@@ -1828,16 +1847,16 @@ ffff1b88:	e3a000c0 	mov	r0, #192	; 0xc0
 ffff1b8c:	e51f143c 	ldr	r1, [pc, #-1084]	; 0xffff1758 = USB0_BASE
 ffff1b90:	e1c108b2 	strh	r0, [r1, #130]	; 0x82
 ffff1b94:	e3a08000 	mov	r8, #0
-ffff1b98:	ebfffb75 	bl	0xffff0974
+ffff1b98:	ebfffb75 	bl	get_epind
 ffff1b9c:	e1a08000 	mov	r8, r0
 ffff1ba0:	e3a00000 	mov	r0, #0
-ffff1ba4:	ebfffb6f 	bl	0xffff0968
+ffff1ba4:	ebfffb6f 	bl	set_epind
 ffff1ba8:	e5940024 	ldr	r0, [r4, #36]	; 0x24
 ffff1bac:	e5d0003c 	ldrb	r0, [r0, #60]	; 0x3c
 ffff1bb0:	e51f1460 	ldr	r1, [pc, #-1120]	; 0xffff1758 = USB0_BASE
 ffff1bb4:	e5c10098 	strb	r0, [r1, #152]	; 0x98
 ffff1bb8:	e1a00008 	mov	r0, r8
-ffff1bbc:	ebfffb69 	bl	0xffff0968
+ffff1bbc:	ebfffb69 	bl	set_epind
 ffff1bc0:	ea000001 	b	0xffff1bcc
 ffff1bc4:	e320f000 	nop	{0}
 ffff1bc8:	e320f000 	nop	{0}
@@ -1879,7 +1898,7 @@ ffff1c50:	eafffff3 	b	0xffff1c24
 ffff1c54:	e3580000 	cmp	r8, #0
 ffff1c58:	0a000013 	beq	0xffff1cac
 ffff1c5c:	e5d70004 	ldrb	r0, [r7, #4]
-ffff1c60:	ebfffb40 	bl	0xffff0968
+ffff1c60:	ebfffb40 	bl	set_epind
 ffff1c64:	e51f0514 	ldr	r0, [pc, #-1300]	; 0xffff1758 = USB0_BASE
 ffff1c68:	e1d098b2 	ldrh	r9, [r0, #130]	; 0x82
 ffff1c6c:	e3190020 	tst	r9, #32
@@ -1937,7 +1956,7 @@ ffff1d34:	e3a05000 	mov	r5, #0
 ffff1d38:	e3a06000 	mov	r6, #0
 ffff1d3c:	e3a07000 	mov	r7, #0
 ffff1d40:	e3a08000 	mov	r8, #0
-ffff1d44:	ebfffb0a 	bl	0xffff0974
+ffff1d44:	ebfffb0a 	bl	get_epind
 ffff1d48:	e1a04000 	mov	r4, r0
 ffff1d4c:	e51f05e8 	ldr	r0, [pc, #-1512]	; 0xffff176c = 0x7d00
 ffff1d50:	e5900000 	ldr	r0, [r0]
@@ -1993,15 +2012,15 @@ ffff1e14:	e51f06b0 	ldr	r0, [pc, #-1712]	; 0xffff176c = 0x7d00
 ffff1e18:	e5900000 	ldr	r0, [r0]
 ffff1e1c:	ebfffc25 	bl	0xffff0eb8
 ffff1e20:	e3a09000 	mov	r9, #0
-ffff1e24:	ebfffad2 	bl	0xffff0974
+ffff1e24:	ebfffad2 	bl	get_epind
 ffff1e28:	e1a09000 	mov	r9, r0
 ffff1e2c:	e3a00000 	mov	r0, #0
-ffff1e30:	ebfffacc 	bl	0xffff0968
+ffff1e30:	ebfffacc 	bl	set_epind
 ffff1e34:	e3a00000 	mov	r0, #0
 ffff1e38:	e51f16e8 	ldr	r1, [pc, #-1768]	; 0xffff1758 = USB0_BASE
 ffff1e3c:	e5c10098 	strb	r0, [r1, #152]	; 0x98
 ffff1e40:	e1a00009 	mov	r0, r9
-ffff1e44:	ebfffac7 	bl	0xffff0968
+ffff1e44:	ebfffac7 	bl	set_epind
 ffff1e48:	e8bd87f0 	pop	{r4, r5, r6, r7, r8, r9, sl, pc}
 ffff1e4c:	e3160002 	tst	r6, #2
 ffff1e50:	0a000003 	beq	0xffff1e64
@@ -2270,11 +2289,11 @@ ffff2258:	e3046e20 	movw	r6, #20000	; 0x4e20
 ffff225c:	e5940024 	ldr	r0, [r4, #36]	; 0x24
 ffff2260:	e2805020 	add	r5, r0, #32
 ffff2264:	e5d50004 	ldrb	r0, [r5, #4]
-ffff2268:	ebfff9be 	bl	0xffff0968
+ffff2268:	ebfff9be 	bl	set_epind
 ffff226c:	ea00000a 	b	0xffff229c
 ffff2270:	e51f0b20 	ldr	r0, [pc, #-2848]	; 0xffff1758 = USB0_BASE
 ffff2274:	e1d008b2 	ldrh	r0, [r0, #130]	; 0x82	= USB0_CSR0
-ffff2278:	e3100001 	tst	r0, #1
+ffff2278:	e3100001 	tst	r0, #1			; RX_PKT_READY
 ffff227c:	1a000001 	bne	0xffff2288
 ffff2280:	e3a00001 	mov	r0, #1
 ffff2284:	e8bd8070 	pop	{r4, r5, r6, pc}
