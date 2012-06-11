@@ -120,6 +120,7 @@ f00e8:
 
 ; 1a0:	4d415244 	"DRAM"
 
+
  1a4:	e190c001 	orrs	ip, r0, r1
  1a8:	4a000021 	bmi	0x234
  1ac:	e071c0a0 	rsbs	ip, r1, r0, lsr #1
@@ -131,6 +132,7 @@ f00e8:
  1c4:	3a000001 	bcc	0x1d0
  1c8:	e3a03000 	mov	r3, #0
  1cc:	ea000020 	b	0x254
+
  1d0:	e071c3a0 	rsbs	ip, r1, r0, lsr #7
  1d4:	20400381 	subcs	r0, r0, r1, lsl #7
  1d8:	e0a22002 	adc	r2, r2, r2
@@ -223,8 +225,10 @@ f00e8:
  334:	e3a00018 	mov	r0, #24
  338:	ef123456 	svc	0x00123456
  33c:	e1a0f00e 	mov	pc, lr
+
  340:	00000054 	andeq	r0, r0, r4, asr r0
  344:	00020026 	andeq	r0, r2, r6, lsr #32
+
  348:	e92d4070 	push	{r4, r5, r6, lr}
  34c:	e1a05001 	mov	r5, r1
  350:	e1a01000 	mov	r1, r0
@@ -297,37 +301,17 @@ f00e8:
  45c:	eb000020 	bl	0x4e4
  460:	e3a00001 	mov	r0, #1
  464:	e8bd8070 	pop	{r4, r5, r6, pc}
- 468:	00000000 	andeq	r0, r0, r0
- 46c:	6e6b6e55 	mcrvs	14, 3, r6, cr11, cr5, {2}
- 470:	206e776f 	rsbcs	r7, lr, pc, ror #14
- 474:	6e676973 	mcrvs	9, 3, r6, cr7, cr3, {3}
- 478:	00006c61 	andeq	r6, r0, r1, ror #24
- 47c:	00000154 	andeq	r0, r0, r4, asr r1
- 480:	61766e49 	cmnvs	r6, r9, asr #28
- 484:	2064696c 	rsbcs	r6, r4, ip, ror #18
- 488:	7265704f 	rsbvc	r7, r5, #79	; 0x4f
- 48c:	6f697461 	svcvs	0x00697461
- 490:	0000006e 	andeq	r0, r0, lr, rrx
- 494:	69766944 	ldmdbvs	r6!, {r2, r6, r8, fp, sp, lr}^
- 498:	42206564 	eormi	r6, r0, #100, 10	; 0x19000000
- 49c:	655a2079 	ldrbvs	r2, [sl, #-121]	; 0xffffff87
- 4a0:	00006f72 	andeq	r6, r0, r2, ror pc
- 4a4:	7265764f 	rsbvc	r7, r5, #82837504	; 0x4f00000
- 4a8:	776f6c66 	strbvc	r6, [pc, -r6, ror #24]!
- 4ac:	00000000 	andeq	r0, r0, r0
- 4b0:	65646e55 	strbvs	r6, [r4, #-3669]!	; 0xfffff1ab
- 4b4:	6f6c6672 	svcvs	0x006c6672
- 4b8:	00000077 	andeq	r0, r0, r7, ror r0
- 4bc:	78656e49 	stmdavc	r5!, {r0, r3, r6, r9, sl, fp, sp, lr}^
- 4c0:	20746361 	rsbscs	r6, r4, r1, ror #6
- 4c4:	75736552 	ldrbvc	r6, [r3, #-1362]!	; 0xfffffaae
- 4c8:	0000746c 	andeq	r7, r0, ip, ror #8
- 4cc:	6548203a 	strbvs	r2, [r8, #-58]	; 0xffffffc6
- 4d0:	6d207061 	stcvs	0, cr7, [r0, #-388]!	; 0xfffffe7c
- 4d4:	726f6d65 	rsbvc	r6, pc, #6464	; 0x1940
- 4d8:	6f632079 	svcvs	0x00632079
- 4dc:	70757272 	rsbsvc	r7, r5, r2, ror r2
- 4e0:	00646574 	rsbeq	r6, r4, r4, ror r5
+
+00000460  01 00 a0 e3 70 80 bd e8  00 00 00 00 55 6e 6b 6e  |....p.......Unkn|
+00000470  6f 77 6e 20 73 69 67 6e  61 6c 00 00 54 01 00 00  |own signal..T...|
+00000480  49 6e 76 61 6c 69 64 20  4f 70 65 72 61 74 69 6f  |Invalid Operatio|
+00000490  6e 00 00 00 44 69 76 69  64 65 20 42 79 20 5a 65  |n...Divide By Ze|
+000004a0  72 6f 00 00 4f 76 65 72  66 6c 6f 77 00 00 00 00  |ro..Overflow....|
+000004b0  55 6e 64 65 72 66 6c 6f  77 00 00 00 49 6e 65 78  |Underflow...Inex|
+000004c0  61 63 74 20 52 65 73 75  6c 74 00 00 3a 20 48 65  |act Result..: He|
+000004d0  61 70 20 6d 65 6d 6f 72  79 20 63 6f 72 72 75 70  |ap memory corrup|
+000004e0  74 65 64 00 08 40 2d e9  0d 10 a0 e1 00 00 8d e5  |ted..@-.........|
+
  4e4:	e92d4008 	push	{r3, lr}
  4e8:	e1a0100d 	mov	r1, sp
  4ec:	e58d0000 	str	r0, [sp]
@@ -341,81 +325,25 @@ f00e8:
  50c:	3affff2f 	bcc	0x1d0
  510:	e3a03000 	mov	r3, #0
  514:	eaffff4e 	b	0x254
- 518:	6f6e6241 	svcvs	0x006e6241
- 51c:	6c616d72 	stclvs	13, cr6, [r1], #-456	; 0xfffffe38
- 520:	72657420 	rsbvc	r7, r5, #32, 8	; 0x20000000
- 524:	616e696d 	cmnvs	lr, sp, ror #18
- 528:	6e6f6974 	mcrvs	9, 3, r6, cr15, cr4, {3}
- 52c:	41000000 	tstmi	r0, r0
- 530:	68746972 	ldmdavs	r4!, {r1, r4, r5, r6, r8, fp, sp, lr}^
- 534:	6974656d 	ldmdbvs	r4!, {r0, r2, r3, r5, r6, r8, sl, sp, lr}^
- 538:	78652063 	stmdavc	r5!, {r0, r1, r5, r6, sp}^
- 53c:	74706563 	ldrbtvc	r6, [r0], #-1379	; 0xfffffa9d
- 540:	3a6e6f69 	bcc	0x1b9c2ec
- 544:	6c490020 	mcrrvs	0, 2, r0, r9, cr0
- 548:	6167656c 	cmnvs	r7, ip, ror #10
- 54c:	6e69206c 	cdpvs	0, 6, cr2, cr9, cr12, {3}
- 550:	75727473 	ldrbvc	r7, [r2, #-1139]!	; 0xfffffb8d
- 554:	6f697463 	svcvs	0x00697463
- 558:	0000006e 	andeq	r0, r0, lr, rrx
- 55c:	746e4900 	strbtvc	r4, [lr], #-2304	; 0xfffff700
- 560:	75727265 	ldrbvc	r7, [r2, #-613]!	; 0xfffffd9b
- 564:	72207470 	eorvc	r7, r0, #112, 8	; 0x70000000
- 568:	69656365 	stmdbvs	r5!, {r0, r2, r5, r6, r8, r9, sp, lr}^
- 56c:	00646576 	rsbeq	r6, r4, r6, ror r5
- 570:	00000000 	andeq	r0, r0, r0
- 574:	656c6c49 	strbvs	r6, [ip, #-3145]!	; 0xfffff3b7
- 578:	206c6167 	rsbcs	r6, ip, r7, ror #2
- 57c:	72646461 	rsbvc	r6, r4, #1627389952	; 0x61000000
- 580:	00737365 	rsbseq	r7, r3, r5, ror #6
- 584:	00000000 	andeq	r0, r0, r0
- 588:	54000000 	strpl	r0, [r0], #-0
- 58c:	696d7265 	stmdbvs	sp!, {r0, r2, r5, r6, r9, ip, sp, lr}^
- 590:	6974616e 	ldmdbvs	r4!, {r1, r2, r3, r5, r6, r8, sp, lr}^
- 594:	72206e6f 	eorvc	r6, r0, #1776	; 0x6f0
- 598:	65757165 	ldrbvs	r7, [r5, #-357]!	; 0xfffffe9b
- 59c:	00007473 	andeq	r7, r0, r3, ror r4
- 5a0:	74530000 	ldrbvc	r0, [r3], #-0
- 5a4:	206b6361 	rsbcs	r6, fp, r1, ror #6
- 5a8:	7265766f 	rsbvc	r7, r5, #116391936	; 0x6f00000
- 5ac:	776f6c66 	strbvc	r6, [pc, -r6, ror #24]!
-	...
- 5b8:	64655200 	strbtvs	r5, [r5], #-512	; 0xfffffe00
- 5bc:	63657269 	cmnvs	r5, #-1879048186	; 0x90000006
- 5c0:	63203a74 	teqvs	r0, #116, 20	; 0x74000
- 5c4:	74276e61 	strtvc	r6, [r7], #-3681	; 0xfffff19f
- 5c8:	65706f20 	ldrbvs	r6, [r0, #-3872]!	; 0xfffff0e0
- 5cc:	00203a6e 	eoreq	r3, r0, lr, ror #20
- 5d0:	2074754f 	rsbscs	r7, r4, pc, asr #10
- 5d4:	6820666f 	stmdavs	r0!, {r0, r1, r2, r3, r5, r6, r9, sl, sp, lr}
- 5d8:	20706165 	rsbscs	r6, r0, r5, ror #2
- 5dc:	6f6d656d 	svcvs	0x006d656d
- 5e0:	00007972 	andeq	r7, r0, r2, ror r9
- 5e4:	55000000 	strpl	r0, [r0, #-0]
- 5e8:	2d726573 	ldclcs	5, cr6, [r2, #-460]!	; 0xfffffe34
- 5ec:	69666564 	stmdbvs	r6!, {r2, r5, r6, r8, sl, sp, lr}^
- 5f0:	2064656e 	rsbcs	r6, r4, lr, ror #10
- 5f4:	6e676973 	mcrvs	9, 3, r6, cr7, cr3, {3}
- 5f8:	31206c61 	teqcc	r0, r1, ror #24
- 5fc:	73550000 	cmpvc	r5, #0
- 600:	642d7265 	strtvs	r7, [sp], #-613	; 0xfffffd9b
- 604:	6e696665 	cdpvs	6, 6, cr6, cr9, cr5, {3}
- 608:	73206465 	teqvc	r0, #1694498816	; 0x65000000
- 60c:	616e6769 	cmnvs	lr, r9, ror #14
- 610:	0032206c 	eorseq	r2, r2, ip, rrx
- 614:	72755000 	rsbsvc	r5, r5, #0
- 618:	69762065 	ldmdbvs	r6!, {r0, r2, r5, r6, sp}^
- 61c:	61757472 	cmnvs	r5, r2, ror r4
- 620:	6e66206c 	cdpvs	0, 6, cr2, cr6, cr12, {3}
- 624:	6c616320 	stclvs	3, cr6, [r1], #-128	; 0xffffff80
- 628:	0064656c 	rsbeq	r6, r4, ip, ror #10
- 62c:	202b2b43 	eorcs	r2, fp, r3, asr #22
- 630:	7262696c 	rsbvc	r6, r2, #108, 18	; 0x1b0000
- 634:	20797261 	rsbscs	r7, r9, r1, ror #4
- 638:	65637865 	strbvs	r7, [r3, #-2149]!	; 0xfffff79b
- 63c:	6f697470 	svcvs	0x00697470
- 640:	4f00006e 	svcmi	0x0000006e
- 644:	6f207475 	svcvs	0x00207475
- 648:	65682066 	strbvs	r2, [r8, #-102]!	; 0xffffff9a
- 64c:	00007061 	andeq	r7, r0, r1, rrx
-	...
+
+00000510  00 30 a0 e3 4e ff ff ea  41 62 6e 6f 72 6d 61 6c  |.0..N...Abnormal|
+00000520  20 74 65 72 6d 69 6e 61  74 69 6f 6e 00 00 00 41  | termination...A|
+00000530  72 69 74 68 6d 65 74 69  63 20 65 78 63 65 70 74  |rithmetic except|
+00000540  69 6f 6e 3a 20 00 49 6c  6c 65 67 61 6c 20 69 6e  |ion: .Illegal in|
+00000550  73 74 72 75 63 74 69 6f  6e 00 00 00 00 49 6e 74  |struction....Int|
+00000560  65 72 72 75 70 74 20 72  65 63 65 69 76 65 64 00  |errupt received.|
+00000570  00 00 00 00 49 6c 6c 65  67 61 6c 20 61 64 64 72  |....Illegal addr|
+00000580  65 73 73 00 00 00 00 00  00 00 00 54 65 72 6d 69  |ess........Termi|
+00000590  6e 61 74 69 6f 6e 20 72  65 71 75 65 73 74 00 00  |nation request..|
+000005a0  00 00 53 74 61 63 6b 20  6f 76 65 72 66 6c 6f 77  |..Stack overflow|
+000005b0  00 00 00 00 00 00 00 00  00 52 65 64 69 72 65 63  |.........Redirec|
+000005c0  74 3a 20 63 61 6e 27 74  20 6f 70 65 6e 3a 20 00  |t: can't open: .|
+000005d0  4f 75 74 20 6f 66 20 68  65 61 70 20 6d 65 6d 6f  |Out of heap memo|
+000005e0  72 79 00 00 00 00 00 55  73 65 72 2d 64 65 66 69  |ry.....User-defi|
+000005f0  6e 65 64 20 73 69 67 6e  61 6c 20 31 00 00 55 73  |ned signal 1..Us|
+00000600  65 72 2d 64 65 66 69 6e  65 64 20 73 69 67 6e 61  |er-defined signa|
+00000610  6c 20 32 00 00 50 75 72  65 20 76 69 72 74 75 61  |l 2..Pure virtua|
+00000620  6c 20 66 6e 20 63 61 6c  6c 65 64 00 43 2b 2b 20  |l fn called.C++ |
+00000630  6c 69 62 72 61 72 79 20  65 78 63 65 70 74 69 6f  |library exceptio|
+00000640  6e 00 00 4f 75 74 20 6f  66 20 68 65 61 70 00 00  |n..Out of heap..|
+00000650  00 00 00 00 00 00 00 00  00 00 00 00              |............|
