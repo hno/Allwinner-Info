@@ -10,16 +10,16 @@ Input request
 	u32  length2					length of request (same as length1)
 	u8   pad[10]					pad to 64 bytes
 
-Response:
-1. Requested data (on read request > 0)
-2. Status message
+Bulk transfer of length data
+
+Status response
 	0x0000:  4157 5553 0000 0000 0000 0000 00         AWUS.........
 
 
 The higher level uses requests on the form
 
 	u32  request type
-	u32  address?
+	u32  address
 	u32  length
 	u32  pad
 
