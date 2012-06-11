@@ -1,0 +1,31 @@
+The protocol uses bulk transfers with one input and one output endpoint
+
+Input request
+	char signature[8] = "AWUC" 00000000		Request signature
+	u32  length1					length of request
+	u32  unknown1 = 0xc0000000
+	u16  request type
+			0x12	write
+			0x11	read
+	u32  length2					length of request (same as length1)
+	u8   pad[10]					pad to 64 bytes
+
+Response:
+1. Requested data (on read request > 0)
+2. Status message
+	0x0000:  4157 5553 0000 0000 0000 0000 00         AWUS.........
+
+
+Sequence:
+
+Write(0x10)
+	0x0000:  0100 0000 0000 0000 0000 0000 0000 0000  ................
+
+Read(0x20)
+        0x0000:  4157 5553 4246 4558 0023 1600 0100 0000  AWUSBFEX.#......
+        0x0010:  0100 4408 007e 0000 0000 0000 0000 0000  ..D..~..........
+
+Read(0x08)
+        0x0000:  ffff 0000 0000 0000                      ........
+
+
