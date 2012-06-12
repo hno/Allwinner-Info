@@ -3,7 +3,7 @@ The low level protocol uses USB bulk transfers with one input and one output end
 Input request
 	char signature[8] = "AWUC" 00000000		Request signature
 	u32  length1					length of request
-	u32  unknown1 = 0xc0000000
+	u32  unknown1 = 0x0c000000
 	u16  request type
 			0x12	write
 			0x11	read
