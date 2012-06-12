@@ -5,6 +5,7 @@
 #include <endian.h>
 #include <string.h>
 #include <stdio.h>
+#include <ctype.h>
 
 struct  aw_usb_request {
 	char signature[8];
@@ -90,7 +91,7 @@ struct aw_fel_request {
 
 static const int AW_FEL_VERSION = 0x001;
 static const int AW_FEL_1_WRITE = 0x101;
-static const int AW_FEL_1_CALL  = 0x102;
+static const int AW_FEL_1_EXEC  = 0x102;
 static const int AW_FEL_1_READ  = 0x103;
 
 void aw_send_fel_request(libusb_device_handle *usb, int type, uint32_t addr, uint32_t length)
@@ -129,7 +130,63 @@ void aw_fel_get_version(libusb_device_handle *usb)
 	aw_usb_read(usb, &buf, sizeof(buf));
 	aw_read_fel_status(usb);
 
-	printf("%.8s %04x %04x %08x ver=%04x %04x %04x %04x %04x %04x %04x %04x\n", buf.signature, tobuf.unknown1, buf.unknown2, buf.unknown3, buf.protocol, buf.unknown4, buf.unknown5, buf.unknown6, buf.unknown7, buf.unknown8, buf.unknown9, buf.unknown10);
+	printf("%.8s %04x %04x %08x ver=%04x %04x %04x %04x %04x %04x %04x %04x\n", buf.signature, buf.unknown1, buf.unknown2, buf.unknown3, buf.protocol, buf.unknown4, buf.unknown5, buf.unknown6, buf.unknown7, buf.unknown8, buf.unknown9, buf.unknown10);
+}
+
+void aw_fel_read(libusb_device_handle *usb, uint32_t offset, void *buf, size_t len)
+{
+	aw_send_fel_request(usb, AW_FEL_1_READ, offset, len);
+	aw_usb_read(usb, buf, len);
+	aw_read_fel_status(usb);
+}
+
+void aw_fel_write(libusb_device_handle *usb, uint32_t offset, void *buf, size_t len)
+{
+	aw_send_fel_request(usb, AW_FEL_1_WRITE, offset, len);
+	aw_usb_write(usb, buf, len);
+	aw_read_fel_status(usb);
+}
+
+void aw_fel_execute(libusb_device_handle *usb, uint32_t offset)
+{
+	aw_send_fel_request(usb, AW_FEL_1_EXEC, offset, 0);
+	aw_read_fel_status(usb);
+}
+
+void aw_fel_hexdump(libusb_device_handle *usb, uint32_t offset, size_t size)
+{
+	unsigned char buf[size];
+	size_t j;
+	aw_fel_read(usb, offset, buf, size);
+	for (j = 0; j < size; j+=16) {
+		size_t i;
+		printf("%08lx: ",(long int)offset + j);
+		for (i = 0; i < 16; i++) {
+			if ((j+i) < size) {
+				printf("%02x ", buf[j+i]);
+			} else {
+				printf("__ ");
+			}
+		}
+		printf(" ");
+		for (i = 0; i < 16; i++) {
+			if (j+i >= size) {
+				printf(".");
+			} else if (isprint(buf[j+i])) {
+				printf("%c", buf[j+i]);
+			} else {
+				printf(".");
+			}
+		}
+		printf("\n");
+	}
+}
+
+void aw_fel_clear(libusb_device_handle *usb, uint32_t offset, size_t size)
+{
+	unsigned char buf[size];
+	memset(buf, 0, size);
+	aw_fel_write(usb, offset, buf, size);
 }
 
 int main(int argc, char **argv)
@@ -148,6 +205,10 @@ int main(int argc, char **argv)
 	assert(rc == 0);
 
 	aw_fel_get_version(handle);
+
+	aw_fel_hexdump(handle, 0xffff0000, 0x8000);
+
+	aw_fel_hexdump(handle, 0x00000000, 0xffff);
 
 	return 0;
 }
