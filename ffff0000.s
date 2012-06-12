@@ -5,27 +5,31 @@ t:     file format binary
 Disassembly of section .data:
 
 ffff0000 <.data>:
-ffff0000:	ea000008 	b	reset		; reset
-ffff0004:	ea000006 	b	0xffff0024	; _undefined_instruction
-ffff0008:	ea000005 	b	0xffff0024	; _software_interrupt
-ffff000c:	ea000004 	b	0xffff0024	; _prefetch_abort
-ffff0010:	ea000003 	b	0xffff0024	; _data_abort
-ffff0014:	ea000002 	b	0xffff0024	; _not_used
-ffff0018:	ea000003 	b	0xffff002c	; _irq
-ffff001c:	ea000000 	b	0xffff0024	; _fiq
-ffff0020:	ea000005 	b	0xffff003c	; FEL?
-ffff0024:	eafffffe 	b	0xffff0024	; ???
+ffff0000:	ea000008 	b	reset_vector	; reset
+ffff0004:	ea000006 	b	unimplemented	; _undefined_instruction
+ffff0008:	ea000005 	b	unimplemented	; _software_interrupt
+ffff000c:	ea000004 	b	unimplemented	; _prefetch_abort
+ffff0010:	ea000003 	b	unimplemented	; _data_abort
+ffff0014:	ea000002 	b	unimplemented	; _not_used
+ffff0018:	ea000003 	b	irq_vector	; _irq
+ffff001c:	ea000000 	b	unimplemented	; _fiq
+ffff0020:	ea000005 	b	fel_vector	; FEL
 
-reset:
+unimplemented:
+ffff0024:	eafffffe 	b	unimplemented
+
+reset_vector:
 ffff0028:	e59ff110 	ldr	pc, [pc, #272]	; 0xffff0140 = #0xffff4000
 
 
+irq_vector:
 ffff002c:	e24ee004 	sub	lr, lr, #4
 ffff0030:	e92d5fff 	push	{r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, sl, fp, ip, lr}
-ffff0034:	eb00073c 	bl	0xffff1d2c
+ffff0034:	eb00073c 	bl	interrupt_handler	; 0xffff1d2c
 ffff0038:	e8fd9fff 	ldm	sp!, {r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, sl, fp, ip, pc}^
 
 
+fel_vector:
 ffff003c:	e3a020d2 	mov	r2, #210	; 0xd2
 ffff0040:	e121f002 	msr	CPSR_c, r2
 ffff0044:	e3a0da02 	mov	sp, #8192	; 0x2000
@@ -109,6 +113,7 @@ ffff0168:	e2422001 	sub	r2, r2, #1
 ffff016c:	1afffffa 	bne	0xffff015c
 ffff0170:	e8bd8070 	pop	{r4, r5, r6, pc}
 
+memset:
 ffff0174:	e92d4030 	push	{r4, r5, lr}
 ffff0178:	e1a03000 	mov	r3, r0
 ffff017c:	ea000000 	b	0xffff0184
@@ -155,7 +160,7 @@ ffff0204:	e1a04000 	mov	r4, r0
 ffff0208:	e3a02022 	mov	r2, #34	; 0x22
 ffff020c:	e3a01000 	mov	r1, #0
 ffff0210:	e1a00004 	mov	r0, r4
-ffff0214:	ebffffd6 	bl	0xffff0174
+ffff0214:	ebffffd6 	bl	MEMSET
 ffff0218:	e3a00000 	mov	r0, #0
 ffff021c:	e5c40020 	strb	r0, [r4, #32]
 ffff0220:	e5c40021 	strb	r0, [r4, #33]	; 0x21
@@ -181,7 +186,7 @@ ffff0264:	ebffffde 	bl	0xffff01e4
 ffff0268:	e3a02020 	mov	r2, #32
 ffff026c:	e3a01000 	mov	r1, #0
 ffff0270:	e1a0000d 	mov	r0, sp
-ffff0274:	ebffffbe 	bl	0xffff0174
+ffff0274:	ebffffbe 	bl	memset
 ffff0278:	e1a00004 	mov	r0, r4
 ffff027c:	eb0001af 	bl	0xffff0940
 ffff0280:	e3a02020 	mov	r2, #32
@@ -325,7 +330,7 @@ ffff048c:	e1a05001 	mov	r5, r1
 ffff0490:	e3a0200c 	mov	r2, #12
 ffff0494:	e3a01000 	mov	r1, #0
 ffff0498:	e59f022c 	ldr	r0, [pc, #556]	; 0xffff06cc
-ffff049c:	ebffff34 	bl	0xffff0174
+ffff049c:	ebffff34 	bl	memset
 ffff04a0:	e59f0224 	ldr	r0, [pc, #548]	; 0xffff06cc
 ffff04a4:	e5804000 	str	r4, [r0]
 ffff04a8:	e5805004 	str	r5, [r0, #4]
@@ -342,7 +347,7 @@ ffff04cc:	e3a05000 	mov	r5, #0
 ffff04d0:	e3a02020 	mov	r2, #32
 ffff04d4:	e3a01000 	mov	r1, #0
 ffff04d8:	e28d0004 	add	r0, sp, #4
-ffff04dc:	ebffff24 	bl	0xffff0174
+ffff04dc:	ebffff24 	bl	memset
 ffff04e0:	e3a02008 	mov	r2, #8
 ffff04e4:	e28f1f79 	add	r1, pc, #484	; 0x1e4
 ffff04e8:	e28d0004 	add	r0, sp, #4
@@ -374,7 +379,7 @@ ffff0548:	e3a05000 	mov	r5, #0
 ffff054c:	e3a02010 	mov	r2, #16
 ffff0550:	e3a01000 	mov	r1, #0
 ffff0554:	e1a0000d 	mov	r0, sp
-ffff0558:	ebffff05 	bl	0xffff0174
+ffff0558:	ebffff05 	bl	memset
 ffff055c:	e3a00001 	mov	r0, #1
 ffff0560:	e1cd00b0 	strh	r0, [sp]
 ffff0564:	e3a00000 	mov	r0, #0
@@ -394,7 +399,7 @@ ffff0594:	e3a05000 	mov	r5, #0
 ffff0598:	e3a02010 	mov	r2, #16
 ffff059c:	e3a01000 	mov	r1, #0
 ffff05a0:	e1a0000d 	mov	r0, sp
-ffff05a4:	ebfffef2 	bl	0xffff0174
+ffff05a4:	ebfffef2 	bl	memset
 ffff05a8:	e3a00f7d 	mov	r0, #500	; 0x1f4
 ffff05ac:	e1cd00b2 	strh	r0, [sp, #2]
 ffff05b0:	e3a00002 	mov	r0, #2
@@ -488,7 +493,7 @@ ffff06f0:	e3a07000 	mov	r7, #0
 ffff06f4:	e3a02008 	mov	r2, #8
 ffff06f8:	e3a01000 	mov	r1, #0
 ffff06fc:	e1a0000d 	mov	r0, sp
-ffff0700:	ebfffe9b 	bl	0xffff0174
+ffff0700:	ebfffe9b 	bl	memset
 ffff0704:	e30f0fff 	movw	r0, #65535	; 0xffff
 ffff0708:	e1cd00b0 	strh	r0, [sp]
 ffff070c:	e1cd50b2 	strh	r5, [sp, #2]
@@ -510,7 +515,7 @@ ffff0744:	e3a07000 	mov	r7, #0
 ffff0748:	e1a02006 	mov	r2, r6
 ffff074c:	e3a01000 	mov	r1, #0
 ffff0750:	e1a00005 	mov	r0, r5
-ffff0754:	ebfffe86 	bl	0xffff0174
+ffff0754:	ebfffe86 	bl	memset
 ffff0758:	e1a01006 	mov	r1, r6
 ffff075c:	e1a00005 	mov	r0, r5
 ffff0760:	ebffff47 	bl	0xffff0484
@@ -1953,6 +1958,7 @@ ffff1d20:	0a000000 	beq	0xffff1d28
 ffff1d24:	eaffffeb 	b	0xffff1cd8
 ffff1d28:	eaffffbd 	b	0xffff1c24
 
+interrupt_handler:
 ffff1d2c:	e92d47f0 	push	{r4, r5, r6, r7, r8, r9, sl, lr}
 ffff1d30:	e3a04000 	mov	r4, #0
 ffff1d34:	e3a05000 	mov	r5, #0
@@ -2136,7 +2142,7 @@ ffff1ff4:	e92d4010 	push	{r4, lr}
 ffff1ff8:	e3a02c01 	mov	r2, #256	; 0x100
 ffff1ffc:	e3a010cc 	mov	r1, #204	; 0xcc
 ffff2000:	e3a00c7e 	mov	r0, #32256	; 0x7e00
-ffff2004:	ebfff85a 	bl	0xffff0174
+ffff2004:	ebfff85a 	bl	memset
 ffff2008:	e8bd8010 	pop	{r4, pc}
 
 ffff200c:	e92d4010 	push	{r4, lr}
