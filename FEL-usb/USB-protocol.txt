@@ -99,3 +99,26 @@ READ(00000008)
         0x00000000: ffff 0000 0000 0000 ____ ____ ____ ____ ........
 
 
+
+Memory map
+
+      -0x1fff Stack
+
+0x2000-0x5cff Free for program use
+
+0x5d00-       ??? Traces of USB requests seen there
+
+      -0x6fff Stack
+
+0x7000-0x7cff Free for program use
+
+0x7d00-0x7d0f ??? Used by both FEL an Livesuite
+
+0x7d10-0x7dff Free for program use
+
+0x7e00-0x7eff ??? USed by both FEL and Livesuite
+
+0x7f00-0x7fff Stack used by BROM on reset. Free in FEL?
+
+0x8000-0xbfff Free for program use
+

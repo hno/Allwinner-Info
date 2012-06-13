@@ -208,7 +208,7 @@ int main(int argc, char **argv)
 
 	aw_fel_hexdump(handle, 0xffff0000, 0x8000);
 
-	aw_fel_hexdump(handle, 0x00000000, 0xffff);
+	aw_fel_hexdump(handle, 0x00000000, 0x10000);
 
 	return 0;
 }
