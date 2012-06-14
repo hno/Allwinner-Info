@@ -48,6 +48,9 @@ cmd == 1 {
 	case "00000103":
 		print "READ(addr=0x"addr", len=0x"len")";
 		break;
+	default:
+		print "UNKNOWN COMMAND " $0;
+		break;
 	}
 	mode="data";
 	next;

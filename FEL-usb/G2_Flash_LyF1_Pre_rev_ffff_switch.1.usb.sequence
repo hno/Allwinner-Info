@@ -60,7 +60,7 @@ WRITE(addr=0x00023000, len=0x00010000)
 Clear unknown memory region
 
 WRITE(addr=0x40200000, len=0x00010000)
-FES
+FES part one
 
 WRITE(addr=0x00023000, len=0x00010000)
 Clear unknown memory region
@@ -71,6 +71,7 @@ WRITE(addr=0x00033000, len=0x00003250)
 Clear unknown memory region
 
 WRITE(addr=0x40210000, len=0x00003250)
+FES part two
 
 WRITE(addr=0x00033000, len=0x00003250)
 Clear unknown memory region
