@@ -245,7 +245,7 @@ int main(int argc, char **argv)
 			"	exe[cute] address		Call function address\n"
 			"	write address file		Store file contents into memory\n"
 			"	ver[sion]			Show BROM version\n"
-			"	clean address length value	Clean memory requing with data\n"
+			"	clear address length		Clear memory\n"
 			, argv[0]
 		);
 	}
