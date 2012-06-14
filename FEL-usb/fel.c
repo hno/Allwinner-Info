@@ -6,6 +6,8 @@
 #include <string.h>
 #include <stdio.h>
 #include <ctype.h>
+#include <stdlib.h>
+#include <stdio.h>
 
 struct  aw_usb_request {
 	char signature[8];
@@ -140,7 +142,7 @@ void aw_fel_read(libusb_device_handle *usb, uint32_t offset, void *buf, size_t l
 	aw_read_fel_status(usb);
 }
 
-void aw_fel_write(libusb_device_handle *usb, uint32_t offset, void *buf, size_t len)
+void aw_fel_write(libusb_device_handle *usb, void *buf, uint32_t offset, size_t len)
 {
 	aw_send_fel_request(usb, AW_FEL_1_WRITE, offset, len);
 	aw_usb_write(usb, buf, len);
@@ -153,11 +155,10 @@ void aw_fel_execute(libusb_device_handle *usb, uint32_t offset)
 	aw_read_fel_status(usb);
 }
 
-void aw_fel_hexdump(libusb_device_handle *usb, uint32_t offset, size_t size)
+void hexdump(void *data, uint32_t offset, size_t size)
 {
-	unsigned char buf[size];
 	size_t j;
-	aw_fel_read(usb, offset, buf, size);
+	unsigned char *buf = data;
 	for (j = 0; j < size; j+=16) {
 		size_t i;
 		printf("%08lx: ",(long int)offset + j);
@@ -181,12 +182,53 @@ void aw_fel_hexdump(libusb_device_handle *usb, uint32_t offset, size_t size)
 		printf("\n");
 	}
 }
+void *load_file(const char *name, size_t *size)
+{
+	size_t bufsize = 8192;
+	size_t offset = 0;
+	char *buf = malloc(bufsize);
+	FILE *in;
+	if (strcmp(name, "-") == 0)
+		in = stdin;
+	else
+		in = fopen(name, "rb");
+	assert(in);
+	
+	while(1) {
+		ssize_t n = fread(buf+offset, 1, bufsize - offset, in);
+		assert(n>=0);
+		offset += n;
+		if (bufsize >= offset) {
+			break;
+		}
+		bufsize <<= 1;
+		buf = realloc(buf, bufsize);
+	}
+	if (size) 
+		*size = offset;
+	if (in != stdin)
+		fclose(in);
+	return buf;
+}
 
+void aw_fel_hexdump(libusb_device_handle *usb, uint32_t offset, size_t size)
+{
+	unsigned char buf[size];
+	aw_fel_read(usb, offset, buf, size);
+	hexdump(buf, offset, size);
+}
+
+void aw_fel_dump(libusb_device_handle *usb, uint32_t offset, size_t size)
+{
+	unsigned char buf[size];
+	aw_fel_read(usb, offset, buf, size);
+	fwrite(buf, size, 1, stdout);
+}
 void aw_fel_clear(libusb_device_handle *usb, uint32_t offset, size_t size)
 {
 	unsigned char buf[size];
 	memset(buf, 0, size);
-	aw_fel_write(usb, offset, buf, size);
+	aw_fel_write(usb, buf, offset, size);
 }
 
 int main(int argc, char **argv)
@@ -196,6 +238,18 @@ int main(int argc, char **argv)
 	rc = libusb_init(NULL);
 	assert(rc == 0);
 
+	if (argc <= 1) {
+		printf("Usage: %s command arguments... [command...]\n"
+			"	hex[dump] address length	Dumps memory region in hex\n"
+			"	dump address length		Binary memory dump\n"
+			"	exe[cute] address		Call function address\n"
+			"	write address file		Store file contents into memory\n"
+			"	ver[sion]			Show BROM version\n"
+			"	clean address length value	Clean memory requing with data\n"
+			, argv[0]
+		);
+	}
+
 	handle = libusb_open_device_with_vid_pid(NULL, 0x1f3a, 0xefe8);
 	if (!handle) {
 		perror("A10 USB FEL device not found!");
@@ -204,11 +258,37 @@ int main(int argc, char **argv)
 	rc = libusb_claim_interface(handle, 0);
 	assert(rc == 0);
 
-	aw_fel_get_version(handle);
-
-	aw_fel_hexdump(handle, 0xffff0000, 0x8000);
-
-	aw_fel_hexdump(handle, 0x00000000, 0x10000);
+	while (argc > 1 ) {
+		int skip = 1;
+		if (strncmp(argv[1], "hex", 3) == 0 && argc > 3) {
+			aw_fel_hexdump(handle, strtoul(argv[2], NULL, 0), strtoul(argv[3], NULL, 0));
+			skip = 3;
+		} else if (strncmp(argv[1], "dump", 4) == 0 && argc > 3) {
+			aw_fel_dump(handle, strtoul(argv[2], NULL, 0), strtoul(argv[3], NULL, 0));
+			skip = 3;
+		} else if ((strncmp(argv[1], "exe", 3) == 0 && argc > 2)
+			) {
+			aw_fel_execute(handle, strtoul(argv[2], NULL, 0));
+			skip=3;
+		} else if (strncmp(argv[1], "ver", 3) == 0 && argc > 1) {
+			aw_fel_get_version(handle);
+			skip=1;
+		} else if (strcmp(argv[1], "write") == 0 && argc > 3) {
+			size_t size;
+			void *buf = load_file(argv[3], &size);
+			aw_fel_write(handle, buf, strtoul(argv[2], NULL, 0), size);
+			free(buf);
+			skip=3;
+		} else if (strcmp(argv[1], "clear") == 0 && argc > 2) {
+			aw_fel_clear(handle, strtoul(argv[2], NULL, 0), strtoul(argv[3], NULL, 0));
+			skip=3;
+		} else {
+			fprintf(stderr,"Invalid command %s\n", argv[1]);
+			exit(1);
+		}
+		argc-=skip;
+		argv+=skip;
+	}
 
 	return 0;
 }
