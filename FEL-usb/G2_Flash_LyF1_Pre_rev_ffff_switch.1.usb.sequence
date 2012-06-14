@@ -41,8 +41,10 @@ Call FES_1-2
 READ(addr=0x00007210, len=0x00000010)
 read back result.("DRAM")
 
+
 READ(addr=0x00007010, len=0x000000b4)
 Unknown
+
 
 WRITE(addr=0x40100000, len=0x00002000)
 Random data
@@ -53,15 +55,36 @@ Random data read back.
 WRITE(addr=0x00007210, len=0x00000010)
 Clear result area
 
+
 WRITE(addr=0x00023000, len=0x00010000)
-Clear unknown memory region 0x23000-0x32fff  
+Clear unknown memory region
 
 WRITE(addr=0x40200000, len=0x00010000)
+FES
+
 WRITE(addr=0x00023000, len=0x00010000)
+Clear unknown memory region
+
+
+
 WRITE(addr=0x00033000, len=0x00003250)
+Clear unknown memory region
+
 WRITE(addr=0x40210000, len=0x00003250)
+
 WRITE(addr=0x00033000, len=0x00003250)
+Clear unknown memory region
+
+
 WRITE(addr=0x00023000, len=0x000005d0)
+Clear unknown memory region
+
+Clear unknown memory region
 WRITE(addr=0x00007220, len=0x000005d0)
+FES-2
+
 WRITE(addr=0x00023000, len=0x000005d0)
+Clear unknown memory region
+
 CALL(addr=0x00007220)
+Call FES-2
