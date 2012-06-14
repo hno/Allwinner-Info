@@ -112,11 +112,11 @@ Memory map
 
 0x7000-0x7cff Free for program use
 
-0x7d00-0x7d0f ??? Used by both FEL an Livesuite
+0x7d00-0x7d0f ???
 
 0x7d10-0x7dff Free for program use
 
-0x7e00-0x7eff ??? USed by both FEL and Livesuite
+0x7e00-0x7eff ??? Used by both FEL and Livesuite. Filled with CC and livesuite clears first word.
 
 0x7f00-0x7fff Stack used by BROM on reset. Free in FEL?
 
