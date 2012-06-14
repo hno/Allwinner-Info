@@ -99,6 +99,7 @@ static const int AW_FEL_1_READ  = 0x103;
 void aw_send_fel_request(libusb_device_handle *usb, int type, uint32_t addr, uint32_t length)
 {
 	struct aw_fel_request req;
+	memset(&req, 0, sizeof(req));
 	req.request = htole32(type);
 	req.address = htole32(addr);
 	req.length = htole32(length);
