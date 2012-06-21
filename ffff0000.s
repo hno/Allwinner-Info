@@ -345,6 +345,7 @@ ffff04b8:	e2810000 	add	r0, r1, #0
 ffff04bc:	e8bd8070 	pop	{r4, r5, r6, pc}
 
 
+handle_VERSION:
 ffff04c0:	e92d4030 	push	{r4, r5, lr}
 ffff04c4:	e24dd024 	sub	sp, sp, #36	; 0x24
 ffff04c8:	e1a04000 	mov	r4, r0
@@ -509,10 +510,12 @@ ffff0728:	e1a00004 	mov	r0, r4
 ffff072c:	ebffff38 	bl	0xffff0414
 ffff0730:	e8bd81fc 	pop	{r2, r3, r4, r5, r6, r7, r8, pc}
 
+
 ffff0734:	e92d41f0 	push	{r4, r5, r6, r7, r8, lr}
 ffff0738:	e1a04000 	mov	r4, r0
 ffff073c:	e1a05001 	mov	r5, r1
 ffff0740:	e1a06002 	mov	r6, r2
+
 ffff0744:	e3a07000 	mov	r7, #0
 ffff0748:	e1a02006 	mov	r2, r6
 ffff074c:	e3a01000 	mov	r1, #0
@@ -566,7 +569,7 @@ ffff07f8:	ea000018 	b	0xffff0860	0x????
 # 0x0001
 ffff07fc:	e320f000 	nop	{0}
 ffff0800:	e1a00004 	mov	r0, r4
-ffff0804:	ebffff2d 	bl	0xffff04c0
+ffff0804:	ebffff2d 	bl	handle_VERSION
 ffff0808:	e3a0a000 	mov	sl, #0
 ffff080c:	ea00002d 	b	0xffff08c8
 
@@ -631,6 +634,7 @@ ffff08b8:	e8bd87ff 	pop	{r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, sl, pc}
 ffff08bc:	e320f000 	nop	{0}
 ffff08c0:	e3a0a001 	mov	sl, #1
 ffff08c4:	e320f000 	nop	{0}
+
 ffff08c8:	e320f000 	nop	{0}
 ffff08cc:	e1a0200a 	mov	r2, sl
 ffff08d0:	e1a01009 	mov	r1, r9
@@ -1114,6 +1118,36 @@ ffff0fbc:	ebfffe64 	bl	0xffff0954
 ffff0fc0:	ebfffc86 	bl	fNOP2
 ffff0fc4:	e8bd8010 	pop	{r4, pc}
 
+int usb_get_ep_fifo(struct endpoint *ep, int *epid, u32 **epfifo )
+{
+	int id = ep->id & 0x7f; // .b ep+5
+	if (id <= 4) {
+		switch(id) {
+		case 0:
+		case 1:
+			*epid = 0;
+			*epfifo = USBC_REG_EPFIFO0(USBC0_BASE);
+			break;
+		case 2:
+			*epid = 1;
+			*epfifo = USBC_REG_EPFIFO1(USBC0_BASE);
+			break;
+		case 3:
+			*epid = 2;
+			*epfifo = USBC_REG_EPFIFO2(USBC0_BASE);
+			break;
+		case 4:
+			*epid = 3;
+			*epfifo = USBC_REG_EPFIFO3(USBC0_BASE);
+			break;
+		case 5: // ??? Can not be reached??
+			*epid = 4;
+			*epfifo = USBC_REG_EPFIFO4(USBC0_BASE);
+			break;
+		}
+	}
+	return 0;	// Always 0? No error indication?
+}
 ffff0fc8:	e1a03000 	mov	r3, r0
 ffff0fcc:	e5d30005 	ldrb	r0, [r3, #5]
 ffff0fd0:	e200007f 	and	r0, r0, #127	; 0x7f
@@ -1125,12 +1159,12 @@ ffff0fe4:	e5d30005 	ldrb	r0, [r3, #5]
 ffff0fe8:	e200007f 	and	r0, r0, #127	; 0x7f
 ffff0fec:	e3500005 	cmp	r0, #5
 ffff0ff0:	308ff100 	addcc	pc, pc, r0, lsl #2
-ffff0ff4:	ea000004 	b	0xffff100c
-ffff0ff8:	ea000005 	b	0xffff1014
-ffff0ffc:	ea000009 	b	0xffff1028
-ffff1000:	ea00000e 	b	0xffff1040
-ffff1004:	ea000013 	b	0xffff1058
-ffff1008:	ea000018 	b	0xffff1070
+ffff0ff4:	ea000004 	b	0xffff100c	// 0
+ffff0ff8:	ea000005 	b	0xffff1014 	// 1
+ffff0ffc:	ea000009 	b	0xffff1028	// 2
+ffff1000:	ea00000e 	b	0xffff1040	// 3
+ffff1004:	ea000013 	b	0xffff1058	// 4
+ffff1008:	ea000018 	b	0xffff1070	// 5??? (id <= 4 above)
 ffff100c:	e320f000 	nop	{0}
 ffff1010:	e320f000 	nop	{0}
 ffff1014:	e3a00000 	mov	r0, #0
@@ -1164,6 +1198,7 @@ ffff1084:	e320f000 	nop	{0}
 ffff1088:	e320f000 	nop	{0}
 ffff108c:	e3a00000 	mov	r0, #0
 ffff1090:	eaffffd2 	b	0xffff0fe0
+
 
 ffff1094:	e12fff1e 	bx	lr
 
@@ -4974,13 +5009,13 @@ ffff6214:	e8920005 	ldm	r2, {r0, r2}
 ffff6218:	e88d0005 	stm	sp, {r0, r2}
 ffff621c:	e79d0101 	ldr	r0, [sp, r1, lsl #2]
 ffff6220:	e8bd800c 	pop	{r2, r3, pc}
-ffff6224:	01c20000 	biceq	r0, r2, r0
-ffff6228:	0004831f 	andeq	r8, r4, pc, lsl r3
-ffff622c:	01c05000 	biceq	r5, r0, r0
-ffff6230:	01c02000 	biceq	r2, r0, r0
-ffff6234:	9c380415 	cfldrsls	mvf0, [r8], #-84	; 0xffffffac
-ffff6238:	9c150438 	cfldrsls	mvf0, [r5], {56}	; 0x38
-ffff623c:	ffff6608 			; <UNDEFINED> instruction: 0xffff6608
+ffff6224:	01c20000
+ffff6228:	0004831f
+ffff622c:	01c05000
+ffff6230:	01c02000
+ffff6234:	9c380415
+ffff6238:	9c150438
+ffff623c:	ffff6608
 ffff6240:	e92d40f0 	push	{r4, r5, r6, r7, lr}
 ffff6244:	e1a02000 	mov	r2, r0
 ffff6248:	e1a03002 	mov	r3, r2
