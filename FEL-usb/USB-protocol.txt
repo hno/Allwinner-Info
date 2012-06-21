@@ -36,6 +36,15 @@ Request types:
 	0x00000102	CALL
 	0x00000103	READ
 
+Unknown request types:
+
+	0x00000002
+	0x00000003
+	0x00000004
+	0x00000005-0x0000000F
+	0x00000010
+	0x00000100
+	
 Sequences:
 
 * INFO *
