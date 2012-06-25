@@ -2928,12 +2928,12 @@ ffff4094:	e3a03020 	mov	r3, #32
 ffff4098:	e1822003 	orr	r2, r2, r3
 ffff409c:	e5812068 	str	r2, [r1, #104]	; 0x68	# 0x01c20104
 ffff40a0:	e3a0d902 	mov	sp, #32768	; 0x8000
-ffff40a4:	eb000002 	bl	f_40b4
+ffff40a4:	eb000002 	bl	boot
 ffff40a8:	eafffffe 	b	0xffff40a8
 
-f_40b4:
+boot:
 ffff40b4:	e92d4010 	push	{r4, lr}
-ffff40b8:	eb0008b1 	bl	f_6384
+ffff40b8:	eb0008b1 	bl	check_uboot
 ffff40bc:	e1a04000 	mov	r4, r0
 ffff40c0:	e3540000 	cmp	r4, #0
 ffff40c4:	0a000000 	beq	0xffff40cc
@@ -5232,7 +5232,7 @@ ffff635c:	e8bd8070 	pop	{r4, r5, r6, pc}
 ffff6360:	e3a00001 	mov	r0, #1
 ffff6364:	eafffffc 	b	0xffff635c
 
-f_636c:
+udelay:
 ffff636c:	e1a01000 	mov	r1, r0
 ffff6370:	ea000000 	b	0xffff6378
 ffff6374:	e2411001 	sub	r1, r1, #1
@@ -5240,16 +5240,16 @@ ffff6378:	e3510000 	cmp	r1, #0
 ffff637c:	cafffffc 	bgt	0xffff6374
 ffff6380:	e12fff1e 	bx	lr
 
-f_6384:
+check_uboot:
 ffff6384:	e92d4070 	push	{r4, r5, r6, lr}
 ffff6388:	e3a05000 	mov	r5, #0
 ffff638c:	e3a0603c 	mov	r6, #60	; 0x3c
 ffff6390:	e3a04004 	mov	r4, #4
 ffff6394:	ea000006 	b	0xffff63b4
 ffff6398:	e1a00006 	mov	r0, r6
-ffff639c:	ebfffff2 	bl	f_636c
+ffff639c:	ebfffff2 	bl	udelay
 ffff63a0:	e3a00507 	mov	r0, #29360128	; 0x1c00000
-ffff63a4:	e5900024 	ldr	r0, [r0, #36]	; 0x24
+ffff63a4:	e5900024 	ldr	r0, [r0, #36]	; 0x24 = 0x1c00024		FEL button?
 ffff63a8:	e7e00450 	ubfx	r0, r0, #8, #1
 ffff63ac:	e0855000 	add	r5, r5, r0
 ffff63b0:	e2444001 	sub	r4, r4, #1
@@ -5261,6 +5261,7 @@ ffff63c4:	e3e00000 	mvn	r0, #0
 ffff63c8:	e8bd8070 	pop	{r4, r5, r6, pc}
 ffff63cc:	e3a00000 	mov	r0, #0
 ffff63d0:	eafffffc 	b	0xffff63c8
+
 ffff63d4:	e12fff1e 	bx	lr
 
 f_63d8:
