@@ -2936,34 +2936,41 @@ ffff40b4:	e92d4010 	push	{r4, lr}
 ffff40b8:	eb0008b1 	bl	check_uboot
 ffff40bc:	e1a04000 	mov	r4, r0
 ffff40c0:	e3540000 	cmp	r4, #0
-ffff40c4:	0a000000 	beq	0xffff40cc
-ffff40c8:	ea000016 	b	0xffff4128
+ffff40c4:	0a000000 	beq	.check_boot_MMC0
+ffff40c8:	ea000016 	b	.boot_fel
+.check_boot_MMC0:
 ffff40cc:	e3a00000 	mov	r0, #0
-ffff40d0:	eb0003fa 	bl	f_50c0
+ffff40d0:	eb0003fa 	bl	load_from_mmc
 ffff40d4:	e1a04000 	mov	r4, r0
 ffff40d8:	e3540000 	cmp	r4, #0
-ffff40dc:	1a000000 	bne	0xffff40e4
-ffff40e0:	ea000013 	b	0xffff4134
-ffff40e4:	eb0004c9 	bl	f_5410
+ffff40dc:	1a000000 	bne	.check_boot_B
+ffff40e0:	ea000013 	b	.boot
+.check_boot_B:
+ffff40e4:	eb0004c9 	bl	f_5410			; NAND?
 ffff40e8:	e1a04000 	mov	r4, r0
 ffff40ec:	e3540000 	cmp	r4, #0
-ffff40f0:	1a000000 	bne	0xffff40f8
-ffff40f4:	ea00000e 	b	0xffff4134
+ffff40f0:	1a000000 	bne	.check_boot_MMC2
+ffff40f4:	ea00000e 	b	.boot
+.check_boot_MMC2:
 ffff40f8:	e3a00002 	mov	r0, #2
-ffff40fc:	eb0003ef 	bl	f_50c0
+ffff40fc:	eb0003ef 	bl	load_from_mmc
 ffff4100:	e1a04000 	mov	r4, r0
 ffff4104:	e3540000 	cmp	r4, #0
-ffff4108:	1a000000 	bne	0xffff4110
-ffff410c:	ea000008 	b	0xffff4134
-ffff4110:	eb0006e6 	bl	f_5cb0
+ffff4108:	1a000000 	bne	.check_boot_D
+ffff410c:	ea000008 	b	.boot
+.check_boot_D:
+ffff4110:	eb0006e6 	bl	f_5cb0			; SPI?
 ffff4114:	e1a04000 	mov	r4, r0
 ffff4118:	e3540000 	cmp	r4, #0
-ffff411c:	1a000000 	bne	0xffff4124
-ffff4120:	ea000003 	b	0xffff4134
+ffff411c:	1a000000 	bne	.none_found
+ffff4120:	ea000003 	b	.boot
 ffff4124:	e320f000 	nop	{0}
+.boot_fel:
 ffff4128:	e59f0010 	ldr	r0, =0xffff0020
 ffff412c:	eb0008ca 	bl	call_r0
+.none_found
 ffff4130:	e320f000 	nop	{0}
+.boot
 ffff4134:	e3a00000 	mov	r0, #0
 ffff4138:	eb0008c7 	bl	call_r0
 ffff413c:	e8bd8010 	pop	{r4, pc}
@@ -3987,7 +3994,7 @@ ffff5094:	e5870038 	str	r0, [r7, #56]	; 0x38
 ffff5098:	e59d0080 	ldr	r0, [sp, #128]	; 0x80
 ffff509c:	eaffffc2 	b	0xffff4fac
 
-f_50c0:
+load_from_mmc:
 ffff50c0:	e92d41f0 	push	{r4, r5, r6, r7, r8, lr}
 ffff50c4:	e24dd038 	sub	sp, sp, #56	; 0x38
 ffff50c8:	e1a05000 	mov	r5, r0
