@@ -6,10 +6,12 @@ ffff0010:	ea000003 	b	unimplemented	; _data_abort
 ffff0014:	ea000002 	b	unimplemented	; _not_used
 ffff0018:	ea000003 	b	irq		; _irq
 ffff001c:	ea000000 	b	unimplemented	; _fiq
-ffff0020:	ea000005 	b	fel		; FEL
+ffff0020:	ea000005 	b	fel_setup	; FEL
 
 unimplemented:
 ffff0024:	eafffffe 	b	unimplemented
+
+#define BROM 0xffff4000
 
 reset:
 ffff0028:	e59ff110 	ldr	pc, =BROM
@@ -20,7 +22,7 @@ ffff0030:	e92d5fff 	push	{r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, sl, fp, ip, lr
 ffff0034:	eb00073c 	bl	interrupt_handler
 ffff0038:	e8fd9fff 	ldm	sp!, {r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, sl, fp, ip, pc}^
 
-fel:
+fel_setup:
 ffff003c:	e3a020d2 	mov	r2, #210	; 0xd2
 ffff0040:	e121f002 	msr	CPSR_c, r2
 ffff0044:	e3a0da02 	ldr	sp, =0x2000
@@ -86,7 +88,7 @@ ffff012c:	ee030f10 	mcr	15, 0, r0, cr3, cr0, {0}
 ffff0130:	ee110f10 	mrc	15, 0, r0, cr1, cr0, {0}
 ffff0134:	e3800001 	orr	r0, r0, #1
 ffff0138:	ee010f10 	mcr	15, 0, r0, cr1, cr0, {0}
-ffff013c:	eb0007b2 	bl	f_200c
+ffff013c:	eb0007b2 	bl	fel
 
 memcpy:
 ffff014c:	e92d4070 	push	{r4, r5, r6, lr}
@@ -2266,7 +2268,7 @@ ffff2000:	e3a00c7e 	ldr	r0, =0x7e00
 ffff2004:	ebfff85a 	bl	memset
 ffff2008:	e8bd8010 	pop	{r4, pc}
 
-f_200c:
+fel:
 ffff200c:	e92d4010 	push	{r4, lr}
 ffff2010:	e24ddd47 	sub	sp, sp, #4544	; 0x11c0
 ffff2014:	ebfffff6 	bl	f_1ff4
