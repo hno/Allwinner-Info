@@ -56,6 +56,17 @@ Read(0x20)
         0x0000:  4157 5553 4246 4558 0023 1600 0100 0000  AWUSBFEX.#......
         0x0010:  0100 4408 007e 0000 0000 0000 0000 0000  ..D..~..........
 
+	struct VERSION {
+		char signature[8] = "AWUSBFEX";
+		u32 unknown_08 = 0x00162300;
+		u32 unknown_0A = 1;
+		u16 version = 1;
+		u8  unknown_12 = 0x44;
+		u8  unknown_13 = 0x08;
+		u32 scratchpad = 0x00007e00;
+		u32 pad[2] = 0;
+	}
+
 Read(0x08)
         0x0000:  ffff 0000 0000 0000                      ........
 
