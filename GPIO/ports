@@ -1,0 +1,1575 @@
+
+PA0 000: Input
+PA0 001: Output
+PA0 010: ERXD3
+PA0 011: SPI1_CS0
+PA0 100: UART2_RTS
+PA0 101: Reserved
+PA0 110: Reserved
+PA0 111: Reserved
+
+PA1 000: Input
+PA1 001: Output
+PA1 010: ERXD2
+PA1 011: SPI1_CLK
+PA1 100: UART2_CTS
+PA1 101: Reserved
+PA1 110: Reserved
+PA1 111: Reserved
+
+PA2 000: Input
+PA2 001: Output
+PA2 010: ERXD1
+PA2 011: SPI1_MOSI
+PA2 100: UART2_TX
+PA2 101: Reserved
+PA2 110: Reserved
+PA2 111: Reserved
+
+PA3 000: Input
+PA3 001: Output
+PA3 010: ERXD0
+PA3 011: SPI1_MISO
+PA3 100: UART2_RX
+PA3 101: Reserved
+PA3 110: Reserved
+PA3 111: Reserved
+
+PA4 000: Input
+PA4 001: Output
+PA4 010: ETXD3
+PA4 011: SPI1_CS1
+PA4 100: Reserved
+PA4 101: Reserved
+PA4 110: Reserved
+PA4 111: Reserved
+
+PA5 000: Input
+PA5 001: Output
+PA5 010: ETXD2
+PA5 011: SPI3_CS0
+PA5 100: Reserved
+PA5 101: Reserved
+PA5 110: Reserved
+PA5 111: Reserved
+
+PA6 000: Input
+PA6 001: Output
+PA6 010: ETXD1
+PA6 011: SPI3_CLK
+PA6 100: Reserved
+PA6 101: Reserved
+PA6 110: Reserved
+PA6 111: Reserved
+
+PA7 000: Input
+PA7 001: Output
+PA7 010: ETXD0
+PA7 011: SPI3_MOSI
+PA7 100: Reserved
+PA7 101: Reserved
+PA7 110: Reserved
+PA7 111: Reserved
+
+PA8 000: Input
+PA8 001: Output
+PA8 010: ERXCK
+PA8 011: SPI3_MISO
+PA8 100: Reserved
+PA8 101: Reserved
+PA8 110: Reserved
+PA8 111: Reserved
+
+PA9 000: Input
+PA9 001: Output
+PA9 010: ERXERR
+PA9 011: SPI3_CS1
+PA9 100: Reserved
+PA9 101: Reserved
+PA9 110: Reserved
+PA9 111: Reserved
+
+PA10 000: Input
+PA10 001: Output
+PA10 010: ERXDV
+PA10 011: Reserved
+PA10 100: UART1_TX
+PA10 101: Reserved
+PA10 110: Reserved
+PA10 111: Reserved
+
+PA11 000: Input
+PA11 001: Output
+PA11 010: EMDC
+PA11 011: Reserved
+PA11 100: UART1_RX
+PA11 101: Reserved
+PA11 110: Reserved
+PA11 111: Reserved
+
+PA12 000: Input
+PA12 001: Output
+PA12 010: EMDIO
+PA12 011: UART6_TX
+PA12 100: UART1_RTS
+PA12 101: Reserved
+PA12 110: Reserved
+PA12 111: Reserved
+
+PA13 000: Input
+PA13 001: Output
+PA13 010: ETXEN
+PA13 011: UART6_RX
+PA13 100: UART1_CTS
+PA13 101: Reserved
+PA13 110: Reserved
+PA13 111: Reserved
+
+PA14 000: Input
+PA14 001: Output
+PA14 010: ETXCK
+PA14 011: UART7_TX
+PA14 100: UART1_DTR
+PA14 101: Reserved
+PA14 110: Reserved
+PA14 111: Reserved
+
+PA15 000: Input
+PA15 001: Output
+PA15 010: ECRS
+PA15 011: UART7_RX
+PA15 100: UART1_DSR
+PA15 101: Reserved
+PA15 110: Reserved
+PA15 111: Reserved
+
+PA16 000: Input
+PA16 001: Output
+PA16 010: ECOL
+PA16 011: CAN_TX
+PA16 100: UART1_DCD
+PA16 101: Reserved
+PA16 110: Reserved
+PA16 111: Reserved
+
+PA17 000: Input
+PA17 001: Output
+PA17 010: ETXERR
+PA17 011: CAN_RX
+PA17 100: UART1_RING
+PA17 101: Reserved
+PA17 110: Reserved
+PA17 111: Reserved
+
+PB0 000: Input
+PB0 001: Output
+PB0 010: TWI0_SCK
+PB0 011: Reserved
+PB0 100: Reserved
+PB0 101: Reserved
+PB0 110: Reserved
+PB0 111: Reserved
+
+PB1 000: Input
+PB1 001: Output
+PB1 010: TWI0_SDA
+PB1 011: Reserved
+PB1 100: Reserved
+PB1 101: Reserved
+PB1 110: Reserved
+PB1 111: Reserved
+
+PB2 000: Input
+PB2 001: Output
+PB2 010: PWM0
+PB2 011: Reserved
+PB2 100: Reserved
+PB2 101: Reserved
+PB2 110: Reserved
+PB2 111: Reserved
+
+PB3 000: Input
+PB3 001: Output
+PB3 010: IR0_TX
+PB3 011: Reserved
+PB3 100: NC
+PB3 101: Reserved
+PB3 110: STANBYWFI
+PB3 111: Reserved
+
+PB4 000: Input
+PB4 001: Output
+PB4 010: IR0_RX
+PB4 011: Reserved
+PB4 100: Reserved
+PB4 101: Reserved
+PB4 110: Reserved
+PB4 111: Reserved
+
+PB5 000: Input
+PB5 001: Output
+PB5 010: I2S_MCLK
+PB5 011: AC97_MCLK
+PB5 100: Reserved
+PB5 101: Reserved
+PB5 110: Reserved
+PB5 111: Reserved
+
+PB6 000: Input
+PB6 001: Output
+PB6 010: I2S_BCLK
+PB6 011: AC97_BCLK
+PB6 100: Reserved
+PB6 101: Reserved
+PB6 110: Reserved
+PB6 111: Reserved
+
+PB7 000: Input
+PB7 001: Output
+PB7 010: I2S_LRCK
+PB7 011: AC97_SYNC
+PB7 100: Reserved
+PB7 101: Reserved
+PB7 110: Reserved
+PB7 111: Reserved
+
+PB8 000: Input
+PB8 001: Output
+PB8 010: I2S_DO0
+PB8 011: Reserved
+PB8 100: Reserved
+PB8 101: Reserved
+PB8 110: Reserved
+PB8 111: Reserved
+
+PB9 000: Input
+PB9 001: Output
+PB9 010: I2S_DO1
+PB9 011: AC97_DO
+PB9 100: Reserved
+PB9 101: Reserved
+PB9 110: Reserved
+PB9 111: Reserved
+
+PB10 000: Input
+PB10 001: Output
+PB10 010: I2S_DO2
+PB10 011: Reserved
+PB10 100: Reserved
+PB10 101: Reserved
+PB10 110: Reserved
+PB10 111: Reserved
+
+PB11 000: Input
+PB11 001: Output
+PB11 010: I2S_DO3
+PB11 011: Reserved
+PB11 100: Reserved
+PB11 101: Reserved
+PB11 110: Reserved
+PB11 111: Reserved
+
+PB12 000: Input
+PB12 001: Output
+PB12 010: I2S_DI
+PB12 011: AC97_DI
+PB12 100: Reserved
+PB12 101: Reserved
+PB12 110: Reserved
+PB12 111: Reserved
+
+PB13 000: Input
+PB13 001: Output
+PB13 010: SPI2_CS1
+PB13 011: Reserved
+PB13 100: Reserved
+PB13 101: Reserved
+PB13 110: Reserved
+PB13 111: Reserved
+
+PB14 000: Input
+PB14 001: Output
+PB14 010: SPI2_CS0
+PB14 011: JTAG_MS0
+PB14 100: Reserved
+PB14 101: Reserved
+PB14 110: Reserved
+PB14 111: Reserved
+
+PB15 000: Input
+PB15 001: Output
+PB15 010: SPI2_CLK
+PB15 011: JTAG_CK0
+PB15 100: Reserved
+PB15 101: Reserved
+PB15 110: Reserved
+PB15 111: Reserved
+
+PB16 000: Input
+PB16 001: Output
+PB16 010: SPI2_MOSI
+PB16 011: JTAG_DO0
+PB16 100: Reserved
+PB16 101: Reserved
+PB16 110: Reserved
+PB16 111: Reserved
+
+PB17 000: Input
+PB17 001: Output
+PB17 010: SPI2_MISO
+PB17 011: JTAG_DI0
+PB17 100: Reserved
+PB17 101: Reserved
+PB17 110: Reserved
+PB17 111: Reserved
+
+PB18 000: Input
+PB18 001: Output
+PB18 010: TWI1_SCK
+PB18 011: Reserved
+PB18 100: Reserved
+PB18 101: Reserved
+PB18 110: Reserved
+PB18 111: Reserved
+
+PB19 000: Input
+PB19 001: Output
+PB19 010: TWI1_SDA
+PB19 011: Reserved
+PB19 100: Reserved
+PB19 101: Reserved
+PB19 110: Reserved
+PB19 111: Reserved
+
+PB20 000: Input
+PB20 001: Output
+PB20 010: TWI2_SCK
+PB20 011: Reserved
+PB20 100: Reserved
+PB20 101: Reserved
+PB20 110: Reserved
+PB20 111: Reserved
+
+PB21 000: Input
+PB21 001: Output
+PB21 010: TWI2_SDA
+PB21 011: Reserved
+PB21 100: Reserved
+PB21 101: Reserved
+PB21 110: Reserved
+PB21 111: Reserved
+
+PB22 000: Input
+PB22 001: Output
+PB22 010: UART0_TX
+PB22 011: IR1_TX
+PB22 100: Reserved
+PB22 101: Reserved
+PB22 110: Reserved
+PB22 111: Reserved
+
+PB23 000: Input
+PB23 001: Output
+PB23 010: UART0_RX
+PB23 011: IR1_RX
+PB23 100: Reserved
+PB23 101: Reserved
+PB23 110: Reserved
+PB23 111: Reserved
+
+PC0 000: Input
+PC0 001: Output
+PC0 010: NWE
+PC0 011: SPI0_MOSI
+PC0 100: Reserved
+PC0 101: Reserved
+PC0 110: Reserved
+PC0 111: Reserved
+
+PC1 000: Input
+PC1 001: Output
+PC1 010: NALE
+PC1 011: SPI0_MISO
+PC1 100: Reserved
+PC1 101: Reserved
+PC1 110: Reserved
+PC1 111: Reserved
+
+PC2 000: Input
+PC2 001: Output
+PC2 010: NCLE
+PC2 011: SPI0_CLK
+PC2 100: Reserved
+PC2 101: Reserved
+PC2 110: Reserved
+PC2 111: Reserved
+
+PC3 000: Input
+PC3 001: Output
+PC3 010: NCE1
+PC3 011: Reserved
+PC3 100: Reserved
+PC3 101: Reserved
+PC3 110: Reserved
+PC3 111: Reserved
+
+PC4 000: Input
+PC4 001: Output
+PC4 010: NCE0
+PC4 011: Reserved
+PC4 100: Reserved
+PC4 101: Reserved
+PC4 110: Reserved
+PC4 111: Reserved
+
+PC5 000: Input
+PC5 001: Output
+PC5 010: NRE#
+PC5 011: Reserved
+PC5 100: Reserved
+PC5 101: Reserved
+PC5 110: Reserved
+PC5 111: Reserved
+
+PC6 000: Input
+PC6 001: Output
+PC6 010: NRB0
+PC6 011: SDC2_CMD
+PC6 100: Reserved
+PC6 101: Reserved
+PC6 110: Reserved
+PC6 111: Reserved
+
+PC7 000: Input
+PC7 001: Output
+PC7 010: NRB1
+PC7 011: SDC2_CLK
+PC7 100: Reserved
+PC7 101: Reserved
+PC7 110: Reserved
+PC7 111: Reserved
+
+PC8 000: Input
+PC8 001: Output
+PC8 010: NDQ0
+PC8 011: SDC2_D0
+PC8 100: Reserved
+PC8 101: Reserved
+PC8 110: Reserved
+PC8 111: Reserved
+
+PC9 000: Input
+PC9 001: Output
+PC9 010: NDQ1
+PC9 011: SDC2_D1
+PC9 100: Reserved
+PC9 101: Reserved
+PC9 110: Reserved
+PC9 111: Reserved
+
+PC10 000: Input
+PC10 001: Output
+PC10 010: NDQ2
+PC10 011: SDC2_D2
+PC10 100: Reserved
+PC10 101: Reserved
+PC10 110: Reserved
+PC10 111: Reserved
+
+PC11 000: Input
+PC11 001: Output
+PC11 010: NDQ3
+PC11 011: SDC2_D3
+PC11 100: Reserved
+PC11 101: Reserved
+PC11 110: Reserved
+PC11 111: Reserved
+
+PC12 000: Input
+PC12 001: Output
+PC12 010: NDQ4
+PC12 011: Reserved
+PC12 100: Reserved
+PC12 101: Reserved
+PC12 110: Reserved
+PC12 111: Reserved
+
+PC13 000: Input
+PC13 001: Output
+PC13 010: NDQ5
+PC13 011: Reserved
+PC13 100: Reserved
+PC13 101: Reserved
+PC13 110: Reserved
+PC13 111: Reserved
+
+PC14 000: Input
+PC14 001: Output
+PC14 010: NDQ6
+PC14 011: Reserved
+PC14 100: Reserved
+PC14 101: Reserved
+PC14 110: Reserved
+PC14 111: Reserved
+
+PC15 000: Input
+PC15 001: Output
+PC15 010: NDQ7
+PC15 011: Reserved
+PC15 100: Reserved
+PC15 101: Reserved
+PC15 110: Reserved
+PC15 111: Reserved
+
+PC16 000: Input
+PC16 001: Output
+PC16 010: NWP
+PC16 011: Reserved
+PC16 100: Reserved
+PC16 101: Reserved
+PC16 110: Reserved
+PC16 111: Reserved
+
+PC17 000: Input
+PC17 001: Output
+PC17 010: NCE2
+PC17 011: Reserved
+PC17 100: Reserved
+PC17 101: Reserved
+PC17 110: Reserved
+PC17 111: Reserved
+
+PC18 000: Input
+PC18 001: Output
+PC18 010: NCE3
+PC18 011: Reserved
+PC18 100: Reserved
+PC18 101: Reserved
+PC18 110: Reserved
+PC18 111: Reserved
+
+PC19 000: Input
+PC19 001: Output
+PC19 010: NCE4
+PC19 011: SPI2_CS0
+PC19 100: Reserved
+PC19 101: Reserved
+PC19 110: Reserved
+PC19 111: Reserved
+
+PC20 000: Input
+PC20 001: Output
+PC20 010: NCE5
+PC20 011: SPI2_CLK
+PC20 100: Reserved
+PC20 101: Reserved
+PC20 110: Reserved
+PC20 111: Reserved
+
+PC21 000: Input
+PC21 001: Output
+PC21 010: NCE6
+PC21 011: SPI2_MOSI
+PC21 100: Reserved
+PC21 101: Reserved
+PC21 110: Reserved
+PC21 111: Reserved
+
+PC22 000: Input
+PC22 001: Output
+PC22 010: NCE7
+PC22 011: SPI2_MISO
+PC22 100: Reserved
+PC22 101: Reserved
+PC22 110: Reserved
+PC22 111: Reserved
+
+PC23 000: Input
+PC23 001: Output
+PC23 010: Reserved
+PC23 011: SPI0_CS0
+PC23 100: Reserved
+PC23 101: Reserved
+PC23 110: Reserved
+PC23 111: Reserved
+
+PC24 000: Input
+PC24 001: Output
+PC24 010: NDQS
+PC24 011: Reserved
+PC24 100: Reserved
+PC24 101: Reserved
+PC24 110: Reserved
+PC24 111: Reserved
+
+PD0 000: Input
+PD0 001: Output
+PD0 010: LCD0_D0
+PD0 011: LVDS0_VP0
+PD0 100: Reserved
+PD0 101: Reserved
+PD0 110: Reserved
+PD0 111: Reserved
+
+PD1 000: Input
+PD1 001: Output
+PD1 010: LCD0_D1
+PD1 011: LVDS0_VN0
+PD1 100: Reserved
+PD1 101: Reserved
+PD1 110: Reserved
+PD1 111: Reserved
+
+PD2 000: Input
+PD2 001: Output
+PD2 010: LCD0_D2
+PD2 011: LVDS0_VP1
+PD2 100: Reserved
+PD2 101: Reserved
+PD2 110: Reserved
+PD2 111: Reserved
+
+PD3 000: Input
+PD3 001: Output
+PD3 010: LCD0_D3
+PD3 011: LVDS0_VN1
+PD3 100: Reserved
+PD3 101: Reserved
+PD3 110: Reserved
+PD3 111: Reserved
+
+PD4 000: Input
+PD4 001: Output
+PD4 010: LCD0_D4
+PD4 011: LVDS0_VP2
+PD4 100: Reserved
+PD4 101: Reserved
+PD4 110: Reserved
+PD4 111: Reserved
+
+PD5 000: Input
+PD5 001: Output
+PD5 010: LCD0_D5
+PD5 011: LVDS0_VN2
+PD5 100: Reserved
+PD5 101: Reserved
+PD5 110: Reserved
+PD5 111: Reserved
+
+PD6 000: Input
+PD6 001: Output
+PD6 010: LCD0_D6
+PD6 011: LVDS0_VPC
+PD6 100: Reserved
+PD6 101: Reserved
+PD6 110: Reserved
+PD6 111: Reserved
+
+PD7 000: Input
+PD7 001: Output
+PD7 010: LCD0_D7
+PD7 011: LVDS0_VNC
+PD7 100: Reserved
+PD7 101: Reserved
+PD7 110: Reserved
+PD7 111: Reserved
+
+PD8 000: Input
+PD8 001: Output
+PD8 010: LCD0_D8
+PD8 011: LVDS0_VP3
+PD8 100: Reserved
+PD8 101: Reserved
+PD8 110: Reserved
+PD8 111: Reserved
+
+PD9 000: Input
+PD9 001: Output
+PD9 010: LCD0_D9
+PD9 011: LVDS0_VM3
+PD9 100: Reserved
+PD9 101: Reserved
+PD9 110: Reserved
+PD9 111: Reserved
+
+PD10 000: Input
+PD10 001: Output
+PD10 010: LCD0_D10
+PD10 011: LVDS1_VP0
+PD10 100: Reserved
+PD10 101: Reserved
+PD10 110: Reserved
+PD10 111: Reserved
+
+PD11 000: Input
+PD11 001: Output
+PD11 010: LCD0_D11
+PD11 011: LVDS1_VN0
+PD11 100: Reserved
+PD11 101: Reserved
+PD11 110: Reserved
+PD11 111: Reserved
+
+PD12 000: Input
+PD12 001: Output
+PD12 010: LCD0_D12
+PD12 011: LVDS1_VP1
+PD12 100: Reserved
+PD12 101: Reserved
+PD12 110: Reserved
+PD12 111: Reserved
+
+PD13 000: Input
+PD13 001: Output
+PD13 010: LCD0_D13
+PD13 011: LVDS1_VN1
+PD13 100: Reserved
+PD13 101: Reserved
+PD13 110: Reserved
+PD13 111: Reserved
+
+PD14 000: Input
+PD14 001: Output
+PD14 010: LCD0_D14
+PD14 011: LVDS1_VP2
+PD14 100: Reserved
+PD14 101: Reserved
+PD14 110: Reserved
+PD14 111: Reserved
+
+PD15 000: Input
+PD15 001: Output
+PD15 010: LCD0_D15
+PD15 011: LVDS1_VN2
+PD15 100: Reserved
+PD15 101: Reserved
+PD15 110: Reserved
+PD15 111: Reserved
+
+PD16 000: Input
+PD16 001: Output
+PD16 010: LCD0_D16
+PD16 011: LVDS1_VPC
+PD16 100: Reserved
+PD16 101: Reserved
+PD16 110: Reserved
+PD16 111: Reserved
+
+PD17 000: Input
+PD17 001: Output
+PD17 010: LCD0_D17
+PD17 011: LVDS1_VNC
+PD17 100: Reserved
+PD17 101: Reserved
+PD17 110: Reserved
+PD17 111: Reserved
+
+PD18 000: Input
+PD18 001: Output
+PD18 010: LCD0_D18
+PD18 011: LVDS1_VP3
+PD18 100: Reserved
+PD18 101: Reserved
+PD18 110: Reserved
+PD18 111: Reserved
+
+PD19 000: Input
+PD19 001: Output
+PD19 010: LCD0_D19
+PD19 011: LVDS1_VN3
+PD19 100: Reserved
+PD19 101: Reserved
+PD19 110: Reserved
+PD19 111: Reserved
+
+PD20 000: Input
+PD20 001: Output
+PD20 010: LCD0_D20
+PD20 011: CSI1_MCLK
+PD20 100: Reserved
+PD20 101: Reserved
+PD20 110: Reserved
+PD20 111: Reserved
+
+PD21 000: Input
+PD21 001: Output
+PD21 010: LCD0_D21
+PD21 011: SMC_VPPEN
+PD21 100: Reserved
+PD21 101: Reserved
+PD21 110: Reserved
+PD21 111: Reserved
+
+PD22 000: Input
+PD22 001: Output
+PD22 010: LCD0_D22
+PD22 011: SMC_VPPPP
+PD22 100: Reserved
+PD22 101: Reserved
+PD22 110: Reserved
+PD22 111: Reserved
+
+PD23 000: Input
+PD23 001: Output
+PD23 010: LCD0_D23
+PD23 011: SMC_DET
+PD23 100: Reserved
+PD23 101: Reserved
+PD23 110: Reserved
+PD23 111: Reserved
+
+PD24 000: Input
+PD24 001: Output
+PD24 010: LCD0_CLK
+PD24 011: SMC_VCCEN
+PD24 100: Reserved
+PD24 101: Reserved
+PD24 110: Reserved
+PD24 111: Reserved
+
+PD25 000: Input
+PD25 001: Output
+PD25 010: LCD0_ DE
+PD25 011: SMC_RST
+PD25 100: Reserved
+PD25 101: Reserved
+PD25 110: Reserved
+PD25 111: Reserved
+
+PD26 000: Input
+PD26 001: Output
+PD26 010: LCD0_ HSYNC
+PD26 011: SMC_SCK
+PD26 100: Reserved
+PD26 101: Reserved
+PD26 110: Reserved
+PD26 111: Reserved
+
+PD27 000: Input
+PD27 001: Output
+PD27 010: LCD0_ VSYNC
+PD27 011: SMC_SDA
+PD27 100: Reserved
+PD27 101: Reserved
+PD27 110: Reserved
+PD27 111: Reserved
+
+PE0 000: Input
+PE0 001: Output
+PE0 010: TS0_CLK
+PE0 011: CSI0_PCK
+PE0 100: Reserved
+PE0 101: Reserved
+PE0 110: Reserved
+PE0 111: Reserved
+
+PE1 000: Input
+PE1 001: Output
+PE1 010: TS0_ERR
+PE1 011: CSI0_CK
+PE1 100: Reserved
+PE1 101: Reserved
+PE1 110: Reserved
+PE1 111: Reserved
+
+PE2 000: Input
+PE2 001: Output
+PE2 010: TS0_SYNC
+PE2 011: CSI0_HSYNC
+PE2 100: Reserved
+PE2 101: Reserved
+PE2 110: Reserved
+PE2 111: Reserved
+
+PE3 000: Input
+PE3 001: Output
+PE3 010: TS0_DVLD
+PE3 011: CSI0_VSYNC
+PE3 100: Reserved
+PE3 101: Reserved
+PE3 110: Reserved
+PE3 111: Reserved
+
+PE4 000: Input
+PE4 001: Output
+PE4 010: TS0_D0
+PE4 011: CSI0_D0
+PE4 100: Reserved
+PE4 101: Reserved
+PE4 110: Reserved
+PE4 111: Reserved
+
+PE5 000: Input
+PE5 001: Output
+PE5 010: TS0_D1
+PE5 011: CSI0_D1
+PE5 100: SMC_VPPEN
+PE5 101: Reserved
+PE5 110: Reserved
+PE5 111: Reserved
+
+PE6 000: Input
+PE6 001: Output
+PE6 010: TS0_D2
+PE6 011: CSI0_D2
+PE6 100: Reserved
+PE6 101: Reserved
+PE6 110: Reserved
+PE6 111: Reserved
+
+PE7 000: Input
+PE7 001: Output
+PE7 010: TS0_D3
+PE7 011: CSI0_D3
+PE7 100: Reserved
+PE7 101: Reserved
+PE7 110: Reserved
+PE7 111: Reserved
+
+PE8 000: Input
+PE8 001: Output
+PE8 010: TS0_D4
+PE8 011: CSI0_D4
+PE8 100: Reserved
+PE8 101: Reserved
+PE8 110: Reserved
+PE8 111: Reserved
+
+PE9 000: Input
+PE9 001: Output
+PE9 010: TS0_D5
+PE9 011: CSI0_D5
+PE9 100: Reserved
+PE9 101: Reserved
+PE9 110: Reserved
+PE9 111: Reserved
+
+PE10 000: Input
+PE10 001: Output
+PE10 010: TS0_D6
+PE10 011: CSI0_D7
+PE10 100: Reserved
+PE10 101: Reserved
+PE10 110: Reserved
+PE10 111: Reserved
+
+PE11 000: Input
+PE11 001: Output
+PE11 010: TS0_D7
+PE11 011: CSI0_D6
+PE11 100: Reserved
+PE11 101: Reserved
+PE11 110: Reserved
+PE11 111: Reserved
+
+PF0 000: Input
+PF0 001: Output
+PF0 010: SDC0_D1
+PF0 011: Reserved
+PF0 100: JTAG_MS1
+PF0 101: Reserved
+PF0 110: Reserved
+PF0 111: Reserved
+
+PF1 000: Input
+PF1 001: Output
+PF1 010: SDC0_D0
+PF1 011: Reserved
+PF1 100: JTAG_DI1
+PF1 101: Reserved
+PF1 110: Reserved
+PF1 111: Reserved
+
+PF2 000: Input
+PF2 001: Output
+PF2 010: SDC0_CLK
+PF2 011: Reserved
+PF2 100: UART0_TX
+PF2 101: Reserved
+PF2 110: Reserved
+PF2 111: Reserved
+
+PF3 000: Input
+PF3 001: Output
+PF3 010: SDC0_CMD
+PF3 011: Reserved
+PF3 100: JTAG_DO1
+PF3 101: Reserved
+PF3 110: Reserved
+PF3 111: Reserved
+
+PF4 000: Input
+PF4 001: Output
+PF4 010: SDC0_D3
+PF4 011: Reserved
+PF4 100: UART0_RX
+PF4 101: Reserved
+PF4 110: Reserved
+PF4 111: Reserved
+
+PF5 000: Input
+PF5 001: Output
+PF5 010: SDC0_D2
+PF5 011: Reserved
+PF5 100: JTAG_CK1
+PF5 101: Reserved
+PF5 110: Reserved
+PF5 111: Reserved
+
+PG0 000: Input
+PG0 001: Output
+PG0 010: TS1_CLK
+PG0 011: CSI1_PCK
+PG0 100: SDC1_CMD
+PG0 101: Reserved
+PG0 110: Reserved
+PG0 111: Reserved
+
+PG1 000: Input
+PG1 001: Output
+PG1 010: TS1_ERR
+PG1 011: CSI1_CK
+PG1 100: SDC1_CLK
+PG1 101: Reserved
+PG1 110: Reserved
+PG1 111: Reserved
+
+PG2 000: Input
+PG2 001: Output
+PG2 010: TS1_SYNC
+PG2 011: CSI1_HSYNC
+PG2 100: SDC1_D0
+PG2 101: Reserved
+PG2 110: Reserved
+PG2 111: Reserved
+
+PG3 000: Input
+PG3 001: Output
+PG3 010: TS1_DVLD
+PG3 011: CSI1_VSYNC
+PG3 100: SDC1_D1
+PG3 101: Reserved
+PG3 110: Reserved
+PG3 111: Reserved
+
+PG4 000: Input
+PG4 001: Output
+PG4 010: TS1_D0
+PG4 011: CSI1_D0
+PG4 100: SDC1_D2
+PG4 101: CSI0_D8
+PG4 110: Reserved
+PG4 111: Reserved
+
+PG5 000: Input
+PG5 001: Output
+PG5 010: TS1_D1
+PG5 011: CSI1_D1
+PG5 100: SDC1_D3
+PG5 101: CSI0_D9
+PG5 110: Reserved
+PG5 111: Reserved
+
+PG6 000: Input
+PG6 001: Output
+PG6 010: TS1_D2
+PG6 011: CSI1_D2
+PG6 100: UART3_TX
+PG6 101: CSI0_D10
+PG6 110: Reserved
+PG6 111: Reserved
+
+PG7 000: Input
+PG7 001: Output
+PG7 010: TS1_D3
+PG7 011: CSI1_D3
+PG7 100: UART3_RX
+PG7 101: CSI0_D11
+PG7 110: Reserved
+PG7 111: Reserved
+
+PG8 000: Input
+PG8 001: Output
+PG8 010: TS1_D4
+PG8 011: CSI1_D4
+PG8 100: UART3_RTS
+PG8 101: CSI0_D12
+PG8 110: Reserved
+PG8 111: Reserved
+
+PG9 000: Input
+PG9 001: Output
+PG9 010: TS1_D5
+PG9 011: CSI1_D5
+PG9 100: UART3_CTS
+PG9 101: CSI0_D13
+PG9 110: Reserved
+PG9 111: Reserved
+
+PG10 000: Input
+PG10 001: Output
+PG10 010: TS1_D6
+PG10 011: CSI1_D6
+PG10 100: UART4_TX
+PG10 101: CSI0_D14
+PG10 110: Reserved
+PG10 111: Reserved
+
+PG11 000: Input
+PG11 001: Output
+PG11 010: TS1_D7
+PG11 011: CSI1_D7
+PG11 100: UART4_RX
+PG11 101: CSI0_D15
+PG11 110: Reserved
+PG11 111: Reserved
+
+PH0 000: Input
+PH0 001: Output
+PH0 010: LCD1_D0
+PH0 011: ATAA0
+PH0 100: UART3_TX
+PH0 101: Reserved
+PH0 110: EINT0
+PH0 111: CSI1_D0
+
+PH1 000: Input
+PH1 001: Output
+PH1 010: LCD1_D1
+PH1 011: ATAA1
+PH1 100: UART3_RX
+PH1 101: Reserved
+PH1 110: EINT1
+PH1 111: CSI1_D1
+
+PH2 000: Input
+PH2 001: Output
+PH2 010: LCD1_D2
+PH2 011: ATAA2
+PH2 100: UART3_RTS
+PH2 101: Reserved
+PH2 110: EINT2
+PH2 111: CSI1_D2
+
+PH3 000: Input
+PH3 001: Output
+PH3 010: LCD1_D3
+PH3 011: ATAIRQ
+PH3 100: UART3_CTS
+PH3 101: Reserved
+PH3 110: EINT3
+PH3 111: CSI1_D3
+
+PH4 000: Input
+PH4 001: Output
+PH4 010: LCD1_D4
+PH4 011: ATAD0
+PH4 100: UART4_TX
+PH4 101: Reserved
+PH4 110: EINT4
+PH4 111: CSI1_D4
+
+PH5 000: Input
+PH5 001: Output
+PH5 010: LCD1_D5
+PH5 011: ATAD1
+PH5 100: UART4_RX
+PH5 101: Reserved
+PH5 110: EINT5
+PH5 111: CSI1_D5
+
+PH6 000: Input
+PH6 001: Output
+PH6 010: LCD1_D6
+PH6 011: ATAD2
+PH6 100: UART5_TX
+PH6 101: MS_BS
+PH6 110: EINT6
+PH6 111: CSI1_D6
+
+PH7 000: Input
+PH7 001: Output
+PH7 010: LCD1_D7
+PH7 011: ATAD3
+PH7 100: UART5_RX
+PH7 101: MS_CLK
+PH7 110: EINT7
+PH7 111: CSI1_D7
+
+PH8 000: Input
+PH8 001: Output
+PH8 010: LCD1_D8
+PH8 011: ATAD5
+PH8 100: KP_IN0
+PH8 101: MS_D1
+PH8 110: EINT8
+PH8 111: CSI1_D9
+
+PH9 000: Input
+PH9 001: Output
+PH9 010: LCD1_D9
+PH9 011: ATAD4
+PH9 100: KP_IN1
+PH9 101: MS_D0
+PH9 110: EINT9
+PH9 111: CSI1_D8
+
+PH10 000: Input
+PH10 001: Output
+PH10 010: LCD1_D10
+PH10 011: ATAD6
+PH10 100: KP_IN2
+PH10 101: MS_D2
+PH10 110: EINT10
+PH10 111: CSI1_D10
+
+PH11 000: Input
+PH11 001: Output
+PH11 010: LCD1_D11
+PH11 011: ATAD7
+PH11 100: KP_IN3
+PH11 101: MS_D3
+PH11 110: EINT11
+PH11 111: CSI1_D11
+
+PH12 000: Input
+PH12 001: Output
+PH12 010: LCD1_D12
+PH12 011: ATAD8
+PH12 100: PS2_SCK1
+PH12 101: Reserved
+PH12 110: EINT12
+PH12 111: CSI1_D12
+
+PH13 000: Input
+PH13 001: Output
+PH13 010: LCD1_D13
+PH13 011: ATAD9
+PH13 100: PS2_SDA1
+PH13 101: SMC_RST
+PH13 110: EINT13
+PH13 111: CSI1_D13
+
+PH14 000: Input
+PH14 001: Output
+PH14 010: LCD1_D14
+PH14 011: ATAD10
+PH14 100: KP_IN4
+PH14 101: SMC_VPPEN
+PH14 110: EINT14
+PH14 111: CSI1_D14
+
+PH15 000: Input
+PH15 001: Output
+PH15 010: LCD1_D15
+PH15 011: ATAD11
+PH15 100: KP_IN5
+PH15 101: SMC_VPPPP
+PH15 110: EINT15
+PH15 111: CSI1_D15
+
+PH16 000: Input
+PH16 001: Output
+PH16 010: LCD1_D16
+PH16 011: ATAD12
+PH16 100: KP_IN6
+PH16 101: Reserved
+PH16 110: EINT16
+PH16 111: CSI1_D16
+
+PH17 000: Input
+PH17 001: Output
+PH17 010: LCD1_D17
+PH17 011: ATAD13
+PH17 100: KP_IN7
+PH17 101: SMC_VCCEN
+PH17 110: EINT17
+PH17 111: CSI1_D17
+
+PH18 000: Input
+PH18 001: Output
+PH18 010: LCD1_D18
+PH18 011: ATAD14
+PH18 100: KP_OUT0
+PH18 101: SMC_SCK
+PH18 110: EINT18
+PH18 111: CSI1_D18
+
+PH19 000: Input
+PH19 001: Output
+PH19 010: LCD1_D19
+PH19 011: ATAD15
+PH19 100: KP_OUT1
+PH19 101: SMC_SDA
+PH19 110: EINT19
+PH19 111: CSI1_D19
+
+PH20 000: Input
+PH20 001: Output
+PH20 010: LCD1_D20
+PH20 011: ATAOE
+PH20 100: CAN_TX
+PH20 101: Reserved
+PH20 110: EINT20
+PH20 111: CSI1_D20
+
+PH21 000: Input
+PH21 001: Output
+PH21 010: LCD1_D21
+PH21 011: ATADREQ
+PH21 100: CAN_RX
+PH21 101: Reserved
+PH21 110: EINT21
+PH21 111: CSI1_D21
+
+PH22 000: Input
+PH22 001: Output
+PH22 010: LCD1_D22
+PH22 011: ATADACK
+PH22 100: KP_OUT2
+PH22 101: SDC1_CMD
+PH22 110: Reserved
+PH22 111: CSI1_D22
+
+PH23 000: Input
+PH23 001: Output
+PH23 010: LCD1_D23
+PH23 011: ATACS0
+PH23 100: KP_OUT3
+PH23 101: SDC1_CLK
+PH23 110: Reserved
+PH23 111: CSI1_D23
+
+PH24 000: Input
+PH24 001: Output
+PH24 010: LCD1_CLK
+PH24 011: ATAIORDY
+PH24 100: KP_OUT4
+PH24 101: SDC1_D1
+PH24 110: Reserved
+PH24 111: CSI1_FIELD
+
+PH25 000: Input
+PH25 001: Output
+PH25 010: LCD1_DE
+PH25 011: ATACS1
+PH25 100: KP_OUT5
+PH25 101: SDC1_D0
+PH25 110: Reserved
+PH25 111: CSI1_PCLK
+
+PH26 000: Input
+PH26 001: Output
+PH26 010: LCD1_HSYNC
+PH26 011: ATAIOR
+PH26 100: KP_OUT6
+PH26 101: SDC1_D2
+PH26 110: Reserved
+PH26 111: CSI1_HSYNC
+
+PH27 000: Input
+PH27 001: Output
+PH27 010: LCD1_ VSYNC
+PH27 011: ATAIOW
+PH27 100: KP_OUT7
+PH27 101: SDC1_D3
+PH27 110: Reserved
+PH27 111: CSI1_VSYNC
+
+PI0 000: Input
+PI0 001: Output
+PI0 010: Reserved
+PI0 011: Reserved
+PI0 100: Reserved
+PI0 101: Reserved
+PI0 110: Reserved
+PI0 111: Reserved
+
+PI1 000: Input
+PI1 001: Output
+PI1 010: Reserved
+PI1 011: Reserved
+PI1 100: Reserved
+PI1 101: Reserved
+PI1 110: Reserved
+PI1 111: Reserved
+
+PI2 000: Input
+PI2 001: Output
+PI2 010: Reserved
+PI2 011: Reserved
+PI2 100: Reserved
+PI2 101: Reserved
+PI2 110: Reserved
+PI2 111: Reserved
+
+PI3 000: Input
+PI3 001: Output
+PI3 010: PWM1
+PI3 011: Reserved
+PI3 100: Reserved
+PI3 101: Reserved
+PI3 110: Reserved
+PI3 111: Reserved
+
+PI4 000: Input
+PI4 001: Output
+PI4 010: SDC3_CMD
+PI4 011: Reserved
+PI4 100: Reserved
+PI4 101: Reserved
+PI4 110: Reserved
+PI4 111: Reserved
+
+PI5 000: Input
+PI5 001: Output
+PI5 010: SDC3_CLK
+PI5 011: Reserved
+PI5 100: Reserved
+PI5 101: Reserved
+PI5 110: Reserved
+PI5 111: Reserved
+
+PI6 000: Input
+PI6 001: Output
+PI6 010: SDC3_D0
+PI6 011: Reserved
+PI6 100: Reserved
+PI6 101: Reserved
+PI6 110: Reserved
+PI6 111: Reserved
+
+PI7 000: Input
+PI7 001: Output
+PI7 010: SDC3_D1
+PI7 011: Reserved
+PI7 100: Reserved
+PI7 101: Reserved
+PI7 110: Reserved
+PI7 111: Reserved
+
+PI8 000: Input
+PI8 001: Output
+PI8 010: SDC3_D2
+PI8 011: Reserved
+PI8 100: Reserved
+PI8 101: Reserved
+PI8 110: Reserved
+PI8 111: Reserved
+
+PI9 000: Input
+PI9 001: Output
+PI9 010: SDC3_D3
+PI9 011: Reserved
+PI9 100: Reserved
+PI9 101: Reserved
+PI9 110: Reserved
+PI9 111: Reserved
+
+PI10 000: Input
+PI10 001: Output
+PI10 010: SPI0_CS0
+PI10 011: UART5_TX
+PI10 100: Reserved
+PI10 101: Reserved
+PI10 110: EINT22
+PI10 111: Reserved
+
+PI11 000: Input
+PI11 001: Output
+PI11 010: SPI0_CLK
+PI11 011: UART5_RX
+PI11 100: Reserved
+PI11 101: Reserved
+PI11 110: EINT23
+PI11 111: Reserved
+
+PI12 000: Input
+PI12 001: Output
+PI12 010: SPI0_MOSI
+PI12 011: UART6_TX
+PI12 100: Reserved
+PI12 101: Reserved
+PI12 110: EINT24
+PI12 111: Reserved
+
+PI13 000: Input
+PI13 001: Output
+PI13 010: SPI0_MISO
+PI13 011: UART6_RX
+PI13 100: Reserved
+PI13 101: Reserved
+PI13 110: EINT25
+PI13 111: Reserved
+
+PI14 000: Input
+PI14 001: Output
+PI14 010: SPI0_CS1
+PI14 011: PS2_SCK1
+PI14 100: TCLKIN0
+PI14 101: Reserved
+PI14 110: EINT26
+PI14 111: Reserved
+
+PI15 000: Input
+PI15 001: Output
+PI15 010: SPI1_CS1
+PI15 011: PS2_SDA1
+PI15 100: TCLKIN1
+PI15 101: Reserved
+PI15 110: EINT27
+PI15 111: Reserved
+
+PI16 000: Input
+PI16 001: Output
+PI16 010: SPI1_CS0
+PI16 011: UART2_RTS
+PI16 100: Reserved
+PI16 101: Reserved
+PI16 110: EINT28
+PI16 111: Reserved
+
+PI17 000: Input
+PI17 001: Output
+PI17 010: SPI1_CLK
+PI17 011: UART2_CTS
+PI17 100: Reserved
+PI17 101: Reserved
+PI17 110: EINT29
+PI17 111: Reserved
+
+PI18 000: Input
+PI18 001: Output
+PI18 010: SPI1_MOSI
+PI18 011: UART2_TX
+PI18 100: Reserved
+PI18 101: Reserved
+PI18 110: EINT30
+PI18 111: Reserved
+
+PI19 000: Input
+PI19 001: Output
+PI19 010: SPI1_MISO
+PI19 011: UART2_RX
+PI19 100: Reserved
+PI19 101: Reserved
+PI19 110: EINT31
+PI19 111: Reserved
+
+PI20 000: Input
+PI20 001: Output
+PI20 010: PS2_SCK0
+PI20 011: UART7_TX
+PI20 100: HSCL
+PI20 101: Reserved
+PI20 110: Reserved
+PI20 111: Reserved
+
+PI21 000: Input
+PI21 001: Output
+PI21 010: PS2_SDA0
+PI21 011: UART7_RX
+PI21 100: HSDA
+PI21 101: Reserved
+PI21 110: Reserved
+PI21 111: Reserved
