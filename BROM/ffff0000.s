@@ -2286,7 +2286,7 @@ ffff1fe8:	e580103c 	str	r1, [r0, #60]	; 0x3c
 ffff1fec:	e320f000 	nop	{0}
 ffff1ff0:	eaffff94 	b	0xffff1e48
 
-f_1ff4:
+fill_scratchpad:
 ffff1ff4:	e92d4010 	push	{r4, lr}
 ffff1ff8:	e3a02c01 	mov	r2, #0x100
 ffff1ffc:	e3a010cc 	mov	r1, #0xcc
@@ -2297,7 +2297,7 @@ ffff2008:	e8bd8010 	pop	{r4, pc}
 fel:
 ffff200c:	e92d4010 	push	{r4, lr}
 ffff2010:	e24ddd47 	sub	sp, sp, #4544	; 0x11c0
-ffff2014:	ebfffff6 	bl	f_1ff4
+ffff2014:	ebfffff6 	bl	fill_scratchpad
 ffff2018:	e28d0a01 	add	r0, sp, #4096	; 0x1000
 ffff201c:	e2800f5f 	add	r0, r0, #380	; 0x17c
 ffff2020:	e51f18bc 	ldr	r1, =0x7d00
