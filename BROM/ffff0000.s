@@ -329,17 +329,24 @@ ffff0478:	e1a00004 	mov	r0, r4
 ffff047c:	ebffffe4 	bl	f_0414
 ffff0480:	e8bd8070 	pop	{r4, r5, r6, pc}
 
-# u32 f_0484(u32 a, u32 b)
-f_0484:
+/*
+prepare_response(void *data, u32 len)
+{
+	memset(0x7d04, 0, 12);
+	u32 0x7d04 = data;
+	u32 0x7d08 = len;
+	u8 0x7d0a = 2;
+	return 0x7d04;
+}
+*/
+prepare_response:
 ffff0484:	e92d4070 	push	{r4, r5, r6, lr}
 ffff0488:	e1a04000 	mov	r4, r0
 ffff048c:	e1a05001 	mov	r5, r1
-				memset(0x7d04, 0, 0x12);
 ffff0490:	e3a0200c 	mov	r2, #12
 ffff0494:	e3a01000 	mov	r1, #0
 ffff0498:	e59f022c 	ldr	r0, =0x00007d04
 ffff049c:	ebffff34 	bl	memset
-
 ffff04a0:	e59f0224 	ldr	r0, =0x00007d04
 ffff04a4:	e5804000 	str	r4, [r0]	[=0x00007d04]
 ffff04a8:	e5805004 	str	r5, [r0, #4]	[=0x00007d08]
@@ -375,7 +382,7 @@ ffff0514:	e3a00c7e 	ldr	r0, =0x7e00
 ffff0518:	e58d0018 	str	r0, [sp, #24]
 ffff051c:	e3a01020 	mov	r1, #32
 ffff0520:	e28d0004 	add	r0, sp, #4
-ffff0524:	ebffffd6 	bl	f_0484
+ffff0524:	ebffffd6 	bl	prepare_response
 ffff0528:	e1a05000 	mov	r5, r0
 ffff052c:	e1a01005 	mov	r1, r5
 ffff0530:	e1a00004 	mov	r0, r4
@@ -397,7 +404,7 @@ ffff0564:	e3a00000 	mov	r0, #0
 ffff0568:	e1cd00b2 	strh	r0, [sp, #2]
 ffff056c:	e3a01010 	mov	r1, #16
 ffff0570:	e1a0000d 	mov	r0, sp
-ffff0574:	ebffffc2 	bl	f_0484
+ffff0574:	ebffffc2 	bl	prepare_response
 ffff0578:	e1a05000 	mov	r5, r0
 ffff057c:	e1a01005 	mov	r1, r5
 ffff0580:	e1a00004 	mov	r0, r4
@@ -418,7 +425,7 @@ ffff05b0:	e3a00002 	mov	r0, #2
 ffff05b4:	e1cd00b0 	strh	r0, [sp]
 ffff05b8:	e3a01010 	mov	r1, #16
 ffff05bc:	e1a0000d 	mov	r0, sp
-ffff05c0:	ebffffaf 	bl	f_0484
+ffff05c0:	ebffffaf 	bl	prepare_response
 ffff05c4:	e1a05000 	mov	r5, r0
 ffff05c8:	e1a01005 	mov	r1, r5
 ffff05cc:	e1a00004 	mov	r0, r4
@@ -444,7 +451,7 @@ ffff0610:	e3a00001 	mov	r0, #1
 ffff0614:	eafffff7 	b	0xffff05f8
 ffff0618:	e5951008 	ldr	r1, [r5, #8]
 ffff061c:	e5950004 	ldr	r0, [r5, #4]
-ffff0620:	ebffff97 	bl	f_0484
+ffff0620:	ebffff97 	bl	prepare_response
 ffff0624:	e1a07000 	mov	r7, r0
 ffff0628:	e1a01007 	mov	r1, r7
 ffff062c:	e1a00006 	mov	r0, r6
@@ -471,7 +478,7 @@ ffff0674:	e3a00001 	mov	r0, #1
 ffff0678:	eafffff7 	b	0xffff065c
 ffff067c:	e5951008 	ldr	r1, [r5, #8]
 ffff0680:	e5950004 	ldr	r0, [r5, #4]
-ffff0684:	ebffff7e 	bl	f_0484
+ffff0684:	ebffff7e 	bl	prepare_response
 ffff0688:	e1a07000 	mov	r7, r0
 ffff068c:	e1a01007 	mov	r1, r7
 ffff0690:	e1a00006 	mov	r0, r6
@@ -513,7 +520,7 @@ ffff070c:	e1cd50b2 	strh	r5, [sp, #2]
 ffff0710:	e5cd6004 	strb	r6, [sp, #4]
 ffff0714:	e3a01008 	mov	r1, #8
 ffff0718:	e1a0000d 	mov	r0, sp
-ffff071c:	ebffff58 	bl	f_0484
+ffff071c:	ebffff58 	bl	prepare_response
 ffff0720:	e1a07000 	mov	r7, r0
 ffff0724:	e1a01007 	mov	r1, r7
 ffff0728:	e1a00004 	mov	r0, r4
@@ -532,7 +539,7 @@ ffff0750:	e1a00005 	mov	r0, r5
 ffff0754:	ebfffe86 	bl	memset
 ffff0758:	e1a01006 	mov	r1, r6
 ffff075c:	e1a00005 	mov	r0, r5
-ffff0760:	ebffff47 	bl	f_0484
+ffff0760:	ebffff47 	bl	prepare_response
 ffff0764:	e1a07000 	mov	r7, r0
 ffff0768:	e1a01007 	mov	r1, r7
 ffff076c:	e1a00004 	mov	r0, r4
@@ -652,16 +659,16 @@ ffff08d4:	e1a00004 	mov	r0, r4
 ffff08d8:	ebffff80 	bl	f_06e0
 ffff08dc:	eafffff5 	b	0xffff08b8
 
-f_08e0:
+fel_main_loop:
 ffff08e0:	e92d4070 	push	{r4, r5, r6, lr}
 ffff08e4:	e1a05000 	mov	r5, r0
 ffff08e8:	e3a04000 	mov	r4, #0
-ffff08ec:	ea000003 	b	0xffff0900
-ffff08f0:	ebfffe39 	bl	f_NOP1
+ffff08ec:	ea000003 	b	.first
+ffff08f0:.loop	ebfffe39 	bl	f_NOP1
 ffff08f4:	e1a00005 	mov	r0, r5
 ffff08f8:	ebffff9e 	bl	f_0778
 ffff08fc:	e2844001 	add	r4, r4, #1
-ffff0900:	eafffffa 	b	0xffff08f0
+ffff0900:.first	eafffffa 	b	.loop
 
 f0904:
 ffff0904:	e3a01000 	mov	r1, #0
@@ -719,6 +726,25 @@ get_epind:
 ffff0974:	e59f0ddc 	ldr	r0, =USB0_BASE
 ffff0978:	e5d00042 	ldrb	r0, [r0, #66]	; 0x42
 ffff097c:	e12fff1e 	bx	lr
+
+/*
+[r0] = struct something {
+	u8	x00 = 18;
+	u8	x01 = 1;
+	u16	x02 = 0x110;
+	u8	x04 = 0;
+	u8	x05 = 0;
+	u8	x06 = 0;
+	u8	x07 = 0x40;
+	u16	x08 = 0x1f3a;
+	u16	x0a = 0xefe8;
+	u16	x0c = 0x02b3;
+	u8	x0e = 0;
+	u8	x0f = 0;
+	u8	x10 = 0;
+	u8	x11 = 1;
+}
+*/
 
 f_0980:
 ffff0980:	e3a01012 	mov	r1, #18
@@ -2410,7 +2436,7 @@ ffff2230:	e2800f5f 	add	r0, r0, #380	; 0x17c
 ffff2234:	ebfffb55 	bl	f_0f90
 ffff2238:	e28d0a01 	add	r0, sp, #4096	; 0x1000
 ffff223c:	e2800f5f 	add	r0, r0, #380	; 0x17c
-ffff2240:	ebfff9a6 	bl	f_08e0
+ffff2240:	ebfff9a6 	bl	fel_main_loop
 ffff2244:	e28ddd47 	add	sp, sp, #4544	; 0x11c0
 ffff2248:	e8bd8010 	pop	{r4, pc}
 
