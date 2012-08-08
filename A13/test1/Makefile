@@ -31,13 +31,14 @@ LIB_PATH = $(NO_OS_DIR)/libs/
 LIBGCCDIR = $(dir $(shell $(CC) -print-libgcc-file-name))
 
 #CFLAGS 	= -O -ffunction-sections -fdata-sections -Wall $(INCLUDEDIR) -I"c:/program files/codesourcery/sourcery g++ lite/arm-none-eabi/include" -I"C:\Program Files\CodeSourcery\Sourcery G++ Lite\lib\gcc\arm-none-eabi\4.4.1\include"
-CFLAGS 	= -O -ffunction-sections -fdata-sections -Wall $(INCLUDEDIR)
+#CFLAGS 	= -O -ffunction-sections -fdata-sections -Wall $(INCLUDEDIR)
+CFLAGS 	= -Os -ffreestanding -Wall $(INCLUDEDIR)
 
 
  
 
 #LDFLAGS = -static -nostdlib -T $(BOOT_LAYOUT_OUT) -L$(LIBGCCDIR) -lgcc
-LDFLAGS = -O -T$(MEMORY_LAYOUT) -L$(LIB_PATH) $(NO_OS_LIBS) --gc-sections
+LDFLAGS = -O -T$(MEMORY_LAYOUT) -L$(LIB_PATH) $(NO_OS_LIBS) -nostartfiles #--gc-sections
 
 
 # Generic code
@@ -97,7 +98,7 @@ $(BLINK_LED_BIN): $(BLINK_LED_ELF)
 
 #$(BLINK_LED_ELF): $(BLINK_LED_OBJS) $(BOOT_LAYOUT_OUT)
 $(BLINK_LED_ELF): $(BLINK_LED_OBJS)
-	$(LD) -o $@ $(BLINK_LED_OBJS) $(LDFLAGS) 
+	$(LD) -o $@ $(BLINK_LED_OBJS) $(CFLAGS) $(LDFLAGS) 
 	nm -n $@ > $@.map
 
 #$(BOOT_LAYOUT_OUT): $(BOOT_LAYOUT_IN)
