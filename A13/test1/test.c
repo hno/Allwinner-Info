@@ -1,0 +1,249 @@
+/*
+A13 init, Laurent 08/2012
+
+Build instructions:
+
+make
+fel write 0 output/test.bin
+fel exe 0
+
+uart is configured for 115200,8,N,1
+
+*/
+
+#include "io.h"
+#include "gpio.h"
+#include "sys_proto.h"
+#include "timer.h"
+#include "clock.h"
+#include "early_print.h"
+#include "dram.h"
+#include "nand_ndfc.h"
+#include "nand_reg.h"
+#include "nfc_i.h"
+
+int watchdog_init(void)
+{
+	struct sunxi_wdog *wdog =
+		&((struct sunxi_timer_reg *)SUNXI_TIMER_BASE)->wdog;
+	/* disable watchdog */
+	writel(0, &(wdog->mode));
+
+	return 0;
+}
+
+
+
+int clock_init(void)
+{
+	struct sunxi_ccm_reg *ccm =
+		(struct sunxi_ccm_reg *)SUNXI_CCM_BASE;
+
+
+/* pll1
+ *       \          2:1           2:1           2:1
+ *         cpu-clk ----> axi-clk ----> ahb-clk ----> apb0-clk
+ *       /
+ * osc24m
+ */
+
+
+
+
+	/* set clock source to OSC24M */
+	sr32(SUNXI_CCM_CPU_AHB_APB0_CFG, 16, 2, CPU_CLK_SRC_OSC24M);		/* CPU_CLK_SRC_SEL [17:16] */
+
+	/* set the pll1 factors, pll1 out = 24MHz*n*k/m/p */	
+
+	sr32(SUNXI_CCM_PLL1_CFG, 8, 5, PLL1_FACTOR_N);		/* PLL1_FACTOR_N [12:8] */
+	sr32(SUNXI_CCM_PLL1_CFG, 4, 2, PLL1_FACTOR_K);		/* PLL1_FACTOR_K [5:4] */
+	sr32(SUNXI_CCM_PLL1_CFG, 0, 2, PLL1_FACTOR_M);		/* PLL1_FACTOR_M [1:0] */
+	sr32(SUNXI_CCM_PLL1_CFG, 16, 2, PLL1_FACTOR_P);		/* PLL1_FACTOR_P [17:16] */
+
+	/* wait for clock to be stable*/	
+	sdelay(0x4000);
+
+	/* set clock divider, cpu:axi:ahb:apb0 = 8:4:2:1 */
+	sr32(SUNXI_CCM_CPU_AHB_APB0_CFG, 0, 2, AXI_DIV);	/* AXI_CLK_DIV_RATIO [1:0] */
+	sr32(SUNXI_CCM_CPU_AHB_APB0_CFG, 4, 2, AHB_DIV);	/* AHB_CLK_DIV_RATIO [5:4] */
+	sr32(SUNXI_CCM_CPU_AHB_APB0_CFG, 9, 2, APB0_DIV);	/* APB0_CLK_DIV_RATIO [9:8] */
+
+	/* enable pll1 */
+	sr32(&ccm->pll1_cfg, 31, 1, PLL1_ENABLE);		/* PLL1_ENABLE [31] */
+	sdelay(0x1000);
+
+	/* change cpu clock source to pll1 */
+	sr32(SUNXI_CCM_CPU_AHB_APB0_CFG, 16, 2, CPU_CLK_SRC_PLL1);/* CPU_CLK_SRC_SEL [17:16] */
+	/* 
+	 * if the clock source is changed,
+	 * at most wait for 8 present running clock cycles
+	 */
+	sdelay(10);
+
+
+
+
+
+	/* config apb1 clock */
+	sr32(SUNXI_CCM_APB1_CLK_DIV, 24, 2, APB1_CLK_SRC_OSC24M);
+	sr32(SUNXI_CCM_APB1_CLK_DIV, 16, 2, APB1_FACTOR_N);
+	sr32(SUNXI_CCM_APB1_CLK_DIV, 0, 5, APB1_FACTOR_M);
+
+	/* open the clock for uart0 */
+     //bit16, gating APB clock for UART0, 0-mask, 1-pass
+	sr32(SUNXI_CCM_APB1_GATING, 16, 1, CLK_GATE_OPEN);
+
+	/* config nand clock */
+	sr32(SUNXI_CCM_NAND_SCLK_CFG, 24, 2, NAND_CLK_SRC_OSC24);
+	sr32(SUNXI_CCM_NAND_SCLK_CFG, 16, 2, NAND_CLK_DIV_N);
+	sr32(SUNXI_CCM_NAND_SCLK_CFG, 0, 4, NAND_CLK_DIV_M);
+	sr32(SUNXI_CCM_NAND_SCLK_CFG, 31, 1, CLK_GATE_OPEN);
+
+	/* open clock for nand */
+	sr32(SUNXI_CCM_AHB_GATING0, 13, 1, CLK_GATE_OPEN);
+
+	/* open the clock for uart1 */
+     //bit17, gating APB clock for UART1, 0-mask, 1-pass
+	sr32(SUNXI_CCM_APB1_GATING, 17, 1, CLK_GATE_OPEN);
+
+	return 0;
+}
+
+void gpio_init()
+{
+	u32 i;
+	static struct sunxi_gpio *gpio_c =
+		&((struct sunxi_gpio_reg *)SUNXI_PIO_BASE)->gpio_bank[SUNXI_GPIO_C];
+
+	/* set nand controller pin */
+	for(i=0; i < 4; i++) {
+		writel(0x22222222, &gpio_c->cfg[i]);
+	}
+	writel(0x55555555, &gpio_c->drv[0]);
+	writel(0x15555, &gpio_c->drv[1]);
+
+// #define UART_PINS_TO_SD
+#ifdef UART_PINS_TO_SD
+	/* disable GPB22,23 as uart0 tx,rx */
+	sunxi_gpio_set_cfgpin(SUNXI_GPB(22), SUNXI_GPIO_INPUT);
+	sunxi_gpio_set_cfgpin(SUNXI_GPB(23), SUNXI_GPIO_INPUT);
+
+	/* set GPF2,4 as uart0 tx,rx */
+	sunxi_gpio_set_cfgpin(SUNXI_GPF(2), SUNXI_GPF2_UART0_TX);
+	sunxi_gpio_set_cfgpin(SUNXI_GPF(4), SUNXI_GPF4_UART0_RX);
+#endif
+     
+     // uart1 pins
+     sunxi_gpio_set_cfgpin(SUNXI_GPG(3), 4);
+     sunxi_gpio_set_cfgpin(SUNXI_GPG(4), 4);
+
+}
+
+/* do some early init */
+void s_init(void)
+{
+     //	watchdog_init();
+     //	sunxi_key_init();
+	clock_init();
+	gpio_init();
+}
+
+
+struct dram_para_t para;
+
+
+int main(void)
+{
+     volatile uint32_t *pRAM = ((uint32_t *)0x40000000);
+     int i,j,k;
+
+     s_init();
+     uart1_init();
+
+     uart1_puts("\r\n\r\nTest has started !\r\n");
+
+
+
+     // used bootinfo with A10's boot0 to get those info
+
+     /* DRAM base : 0x40000000 */
+     /* DRAM clk  : 360 */
+     /* DRAM type : 3 */
+     /* DRAM rank : 1 */
+     /* DRAM den  : 2048 */
+     /* DRAM iow  : 16 */
+     /* DRAM busw : 32 */
+     /* DRAM cas  : 6 */
+     /* DRAM zq   : 123 */
+     /* DRAM odt  : 0x0 */
+     /* DRAM size : 512 */
+     /* DRAM tpr0 : 0x30926692 */
+     /* DRAM tpr1 : 0x1090 */
+     /* DRAM tpr2 : 0x1a0c8 */
+     /* DRAM tpr3 : 0x0 */
+     /* DRAM tpr4 : 0x0 */
+     /* DRAM tpr5 : 0x0 */
+     /* DRAM emr1 : 0x0 */
+     /* DRAM emr2 : 0x0 */
+     /* DRAM emr3 : 0x0 */
+     
+     para.dram_clk = 360;
+     para.dram_type = 3;
+     para.dram_rank_num = 1;
+     para.dram_chip_density = 2048;
+     para.dram_io_width = 8;
+     para.dram_bus_width = 16;
+     para.dram_cas = 6;
+     para.dram_zq = 123;
+     para.dram_odt_en = 0;
+     para.dram_size = 512;
+     para.dram_tpr0 = 0x30926692;
+     para.dram_tpr1 = 0x1090;
+     para.dram_tpr2 = 0x1a0c8;
+     para.dram_tpr3 = 0;
+     para.dram_tpr4 = 0;
+     para.dram_tpr5 = 0;
+     para.dram_emr1 = 0;
+     para.dram_emr2 = 0;
+     para.dram_emr3 = 0;
+     DRAMC_init(&para);
+
+
+	sdelay(0x100000);
+     uart1_puts("DRAM INITED!\r\n");
+     
+     /*
+       // print clock registers
+     for (i = 0; i < 0x48; i ++)
+          {
+               volatile uint32_t *pReg = (uint32_t *)SUNXI_CCM_BASE;
+               printf("%02X : %08X\r\n",i*4,pReg[i]);
+          }
+     */
+
+     // fill & verify DDR3 
+     k = 0;
+     printf("writing 512MB... (1 dot per MB)\r\n\r\n");
+     for (j = 0; j < 512; j++)
+          {
+               for (i = 0; i < 1024*1024/4; i++)
+                    pRAM[k++] = k;
+               uart1_puts(".");
+          }
+
+     printf("\r\n\r\nverifying...\r\n\r\n");
+     for (j = 0; j < 512; j++)
+          {
+               for (i = 0; i < 1024*1024/4; i++)
+                    if (i != pRAM[i])
+                         {
+                              printf("Error @ SDRAM offset 0x%08X\r\n",i);
+                              return -1;
+                         }
+               uart1_puts(".");
+          }
+
+     printf("DONE.\r\n");
+
+     return 0;
+}
