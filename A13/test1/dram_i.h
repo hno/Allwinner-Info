@@ -52,7 +52,7 @@ struct dram_para_t
     unsigned int    dram_emr3;
 };
 
-#define DRAMC_IO_BASE       SW_VA_DRAM_IO_BASE
+#define DRAMC_IO_BASE       SW_PA_DRAM_IO_BASE
 #define DRAMC_MEM_SIZE      0x400
 
 #define SDR_CCR				(DRAMC_IO_BASE + 0x00)
@@ -104,7 +104,7 @@ struct dram_para_t
 
 
 //CCM register for dram
-#define DRAM_CCM_BASE       SW_VA_CCM_IO_BASE
+#define DRAM_CCM_BASE       SW_PA_CCM_IO_BASE
 #define DRAM_CCM_MEMSIZE    0x400
 
 #define DRAM_CCM_SDRAM_PLL_REG    (DRAM_CCM_BASE + 0x20)
@@ -114,7 +114,7 @@ struct dram_para_t
 #define DRAM_CCM_MUS_CLK_REG      (DRAM_CCM_BASE + 0x15c)
 
 //TIMER register for system
-#define DRAM_TIMER_BASE     SW_VA_TIMERC_IO_BASE
+#define DRAM_TIMER_BASE     SW_PA_TIMERC_IO_BASE
 #define TIMER_CPU_CFG_REG   (DRAM_TIMER_BASE + 0x13c)
 
 
