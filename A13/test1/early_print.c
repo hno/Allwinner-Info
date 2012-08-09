@@ -26,8 +26,21 @@
 
 #include "common.h"
 #include "early_print.h"
+#include "gpio.h"
+#include "clock.h"
 
-int uart0_init(void) {
+static int uart0_initialized = 0;
+
+static int init_uart_clock(void)
+{
+	/* config apb1 clock */
+	sr32(SUNXI_CCM_APB1_CLK_DIV, 24, 2, APB1_CLK_SRC_OSC24M);
+	sr32(SUNXI_CCM_APB1_CLK_DIV, 16, 2, APB1_FACTOR_N);
+	sr32(SUNXI_CCM_APB1_CLK_DIV, 0, 5, APB1_FACTOR_M);
+}
+
+//#define UART0_INPUT_SD 1
+void uart0_init(void) {
 
 	/* select dll dlh */
 	writel(0x80, UART0_LCR);
@@ -37,7 +50,29 @@ int uart0_init(void) {
 	/* set line control */
 	writel(LC_8_N_1, UART0_LCR);
 
-	return 0;
+	init_uart_clock();
+
+	/* open the clock for uart0 */
+     //bit16, gating APB clock for UART0, 0-mask, 1-pass
+	sr32(SUNXI_CCM_APB1_GATING, 16, 1, CLK_GATE_OPEN);
+
+	/* set GPF2,4 as uart0 tx,rx */
+	sunxi_gpio_set_cfgpin(SUNXI_GPF(2), SUNXI_GPF2_UART0_TX);
+#ifndef UART0_INPUT_SD
+	sunxi_gpio_set_cfgpin(SUNXI_GPF(4), SUNXI_GPF4_UART0_RX);
+#else
+	sunxi_gpio_set_cfgpin(SUNXI_GPF(4), 0);
+#endif
+     
+	/* config uart pin */
+	sunxi_gpio_set_cfgpin(SUNXI_GPB(22), SUNXI_GPB22_UART0_TX);
+#ifdef UART0_INPUT_SD
+	sunxi_gpio_set_cfgpin(SUNXI_GPB(23), SUNXI_GPB23_UART0_RX);
+#else
+	sunxi_gpio_set_cfgpin(SUNXI_GPB(23), 0);
+#endif
+
+	uart0_initialized = 1;
 }
 
 #define TX_READY (readl(UART0_LSR) & (1 << 6))
@@ -56,10 +91,9 @@ void uart0_puts(const char *s) {
 }
 
 
+static int uart1_initialized = 0;
 
-
-
-int uart1_init(void) {
+void uart1_init(void) {
 
 	/* select dll dlh */
 	writel(0x80, UART1_LCR);
@@ -69,7 +103,17 @@ int uart1_init(void) {
 	/* set line control */
 	writel(LC_8_N_1, UART1_LCR);
 
-	return 0;
+	init_uart_clock();
+
+	/* open the clock for uart1 */
+     //bit17, gating APB clock for UART1, 0-mask, 1-pass
+	sr32(SUNXI_CCM_APB1_GATING, 17, 1, CLK_GATE_OPEN);
+
+     // uart1 pins
+     sunxi_gpio_set_cfgpin(SUNXI_GPG(3), 4);
+     sunxi_gpio_set_cfgpin(SUNXI_GPG(4), 4);
+
+	uart1_initialized = 1;
 }
 
 #define TX_READY1 (readl(UART1_LSR) & (1 << 6))
@@ -85,4 +129,23 @@ void uart1_puts(const char *s) {
 
 	while(*s)
 		uart1_putc(*s++);
+}
+
+void uart_init(void) {
+	uart0_init();
+	uart1_init();
+	return 0;
+}
+
+void uart_putc(char c) {
+	if (uart0_initialized)
+		uart0_putc(c);
+	if (uart1_initialized)
+		uart1_putc(c);
+}
+
+void uart_puts(const char *s) {
+
+	while(*s)
+		uart_putc(*s++);
 }

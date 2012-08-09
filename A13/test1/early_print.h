@@ -67,13 +67,17 @@
 #define LC_8_N_1          (NO_PARITY << 3 | ONE_STOP_BIT << 2 | DAT_LEN_8_BITS)
 
 #ifndef __ASSEMBLY__
-int uart0_init(void);
+void uart0_init(void);
 void uart0_putc(char c);
 void uart0_puts(const char *s);
 
-int uart1_init(void);
+void uart1_init(void);
 void uart1_putc(char c);
 void uart1_puts(const char *s);
+
+void uart_init(void);
+void uart_putc(char c);
+void uart_puts(const char *s);
 #endif /* __ASSEMBLY__ */
 
 #endif /* _SUNXI_EARLY_PRINT_H */
