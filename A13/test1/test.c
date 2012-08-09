@@ -164,7 +164,7 @@ int main(void)
 
 
 	sdelay(0x100000);
-     uart1_puts("DRAM INITED!\r\n");
+     uart_puts("DRAM INITED!\r\n");
      
      /*
        // print clock registers
@@ -182,7 +182,7 @@ int main(void)
           {
                for (i = 0; i < 1024*1024/4; i++)
                     pRAM[k++] = k;
-               uart1_puts(".");
+               uart_puts(".");
           }
 
      printf("\r\n\r\nverifying...\r\n\r\n");
@@ -194,7 +194,7 @@ int main(void)
                               printf("Error @ SDRAM offset 0x%08X\r\n",i);
                               return -1;
                          }
-               uart1_puts(".");
+               uart_puts(".");
           }
 
      printf("DONE.\r\n");
