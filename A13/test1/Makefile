@@ -21,6 +21,7 @@ CPP = $(CROSS_COMPILE)cpp
 STRIP = $(CROSS_COMPILE)strip
 OBJCOPY = $(CROSS_COMPILE)objcopy
 OBJDUMP = $(CROSS_COMPILE)objdump
+NM	= $(CROSS_COMPILE)nm
 
 
 
@@ -92,14 +93,14 @@ clean:
 #	$(call strip_cmdlines_file)
 
 $(BLINK_LED_BIN): $(BLINK_LED_ELF)
-	arm-none-eabi-objcopy -O binary $< $@
+	$(OBJCOPY) -O binary $< $@
 #$(OBJCOPY) -R -S -O binary -R .note -R .note.gnu.build-id -R .comment $< $@
 #elf2bin -a -i ./output/test.elf -o firmware.bin
 
 #$(BLINK_LED_ELF): $(BLINK_LED_OBJS) $(BOOT_LAYOUT_OUT)
 $(BLINK_LED_ELF): $(BLINK_LED_OBJS)
-	$(LD) -o $@ $(BLINK_LED_OBJS) $(CFLAGS) $(LDFLAGS) 
-	nm -n $@ > $@.map
+	$(LD) -o $@ $(BLINK_LED_OBJS) $(LDFLAGS) 
+	$(NM) -n $@ > $@.map
 
 #$(BOOT_LAYOUT_OUT): $(BOOT_LAYOUT_IN)
 #	$(CPP) -P -DBASE_ADDR=$(BASE_ADDR) -o $@ $<
