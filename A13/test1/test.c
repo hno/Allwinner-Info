@@ -11,6 +11,8 @@ uart is configured for 115200,8,N,1
 
 */
 
+#define SUN5I
+
 #include "io.h"
 #include "gpio.h"
 #include "sys_proto.h"
@@ -18,9 +20,6 @@ uart is configured for 115200,8,N,1
 #include "clock.h"
 #include "early_print.h"
 #include "dram.h"
-#include "nand_ndfc.h"
-#include "nand_reg.h"
-#include "nfc_i.h"
 
 int watchdog_init(void)
 {
