@@ -32,7 +32,6 @@ int watchdog_init(void)
 }
 
 
-
 int clock_init(void)
 {
 	struct sunxi_ccm_reg *ccm =
@@ -79,31 +78,11 @@ int clock_init(void)
 	 */
 	sdelay(10);
 
-
-
-
-
 	/* config apb1 clock */
 	sr32(SUNXI_CCM_APB1_CLK_DIV, 24, 2, APB1_CLK_SRC_OSC24M);
 	sr32(SUNXI_CCM_APB1_CLK_DIV, 16, 2, APB1_FACTOR_N);
 	sr32(SUNXI_CCM_APB1_CLK_DIV, 0, 5, APB1_FACTOR_M);
 
-	/* open the clock for uart0 */
-     //bit16, gating APB clock for UART0, 0-mask, 1-pass
-	sr32(SUNXI_CCM_APB1_GATING, 16, 1, CLK_GATE_OPEN);
-
-	/* config nand clock */
-	sr32(SUNXI_CCM_NAND_SCLK_CFG, 24, 2, NAND_CLK_SRC_OSC24);
-	sr32(SUNXI_CCM_NAND_SCLK_CFG, 16, 2, NAND_CLK_DIV_N);
-	sr32(SUNXI_CCM_NAND_SCLK_CFG, 0, 4, NAND_CLK_DIV_M);
-	sr32(SUNXI_CCM_NAND_SCLK_CFG, 31, 1, CLK_GATE_OPEN);
-
-	/* open clock for nand */
-	sr32(SUNXI_CCM_AHB_GATING0, 13, 1, CLK_GATE_OPEN);
-
-	/* open the clock for uart1 */
-     //bit17, gating APB clock for UART1, 0-mask, 1-pass
-	sr32(SUNXI_CCM_APB1_GATING, 17, 1, CLK_GATE_OPEN);
 
 	return 0;
 }
@@ -113,28 +92,6 @@ void gpio_init()
 	u32 i;
 	static struct sunxi_gpio *gpio_c =
 		&((struct sunxi_gpio_reg *)SUNXI_PIO_BASE)->gpio_bank[SUNXI_GPIO_C];
-
-	/* set nand controller pin */
-	for(i=0; i < 4; i++) {
-		writel(0x22222222, &gpio_c->cfg[i]);
-	}
-	writel(0x55555555, &gpio_c->drv[0]);
-	writel(0x15555, &gpio_c->drv[1]);
-
-// #define UART_PINS_TO_SD
-#ifdef UART_PINS_TO_SD
-	/* disable GPB22,23 as uart0 tx,rx */
-	sunxi_gpio_set_cfgpin(SUNXI_GPB(22), SUNXI_GPIO_INPUT);
-	sunxi_gpio_set_cfgpin(SUNXI_GPB(23), SUNXI_GPIO_INPUT);
-
-	/* set GPF2,4 as uart0 tx,rx */
-	sunxi_gpio_set_cfgpin(SUNXI_GPF(2), SUNXI_GPF2_UART0_TX);
-	sunxi_gpio_set_cfgpin(SUNXI_GPF(4), SUNXI_GPF4_UART0_RX);
-#endif
-     
-     // uart1 pins
-     sunxi_gpio_set_cfgpin(SUNXI_GPG(3), 4);
-     sunxi_gpio_set_cfgpin(SUNXI_GPG(4), 4);
 
 }
 
@@ -157,11 +114,9 @@ int main(void)
      int i,j,k;
 
      s_init();
-     uart1_init();
+     uart_init();
 
-     uart1_puts("\r\n\r\nTest has started !\r\n");
-
-
+     uart_puts("\r\n\r\nTest has started !\r\n");
 
      // used bootinfo with A10's boot0 to get those info
 

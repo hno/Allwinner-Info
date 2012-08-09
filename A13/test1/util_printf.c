@@ -10,7 +10,7 @@
 /* Debug uart have been init by boot rom. */
 void put_char(char ch)
 {
-     uart1_putc(ch);
+     uart_putc(ch);
 }
 
 
