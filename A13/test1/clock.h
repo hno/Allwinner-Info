@@ -21,9 +21,7 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston,
  * MA 02111-1307 USA
  */
-
-
-
+ 
 #ifndef _SUNXI_CLOCK_H
 #define _SUNXI_CLOCK_H
 
@@ -116,7 +114,7 @@ struct sunxi_ccm_reg {
 	u32 gps_clk_cfg;          /* 0xd0 */
 	u32 spi3_clk_cfg;         /* 0xd4 */
 	u8  res5[0x28];
-	u32 dram_clk_cfg;         /* 0x10DDR_CLK_OUT_DISABLE'0 */
+	u32 dram_clk_cfg;         /* 0x100 */
 	u32 be0_clk_cfg;          /* 0x104 */
 	u32 be1_clk_cfg;          /* 0x108 */
 	u32 fe0_clk_cfg;          /* 0x10c */
@@ -139,14 +137,17 @@ struct sunxi_ccm_reg {
 	u32 hdmi_clk_cfg;         /* 0x150 */
 	u32 mali_clk_cfg;         /* 0x154 */
 };
-
 /* pll1 factors */
 #define PLL1_FACTOR_N			21
 #define PLL1_FACTOR_K			1
 #define PLL1_FACTOR_M			0
 #define PLL1_FACTOR_P			0
-#define PLL1_ENABLE			1
+#define PLL1_ENABLE				1
 
+/* apb1 bit field */
+#define APB1_CLK_SRC_OSC24M		0
+#define APB1_FACTOR_M			0
+#define APB1_FACTOR_N			0
 
 /* pll5(for ddr) bit field */
 #define DDR_CLK_HZ				(360 * 1024 * 1024)
@@ -160,25 +161,15 @@ struct sunxi_ccm_reg {
 #define DDR_CLK_OUT_ENABLE		1
 #define DDR_CLK_OUT_DISABLE		0
 
-
-/* apb1 bit field */
-#define APB1_CLK_SRC_OSC24M		0
-#define APB1_FACTOR_M			0
-#define APB1_FACTOR_N			0
-
 /* clock divide */
 #define CPU_CLK_SRC_OSC24M		1
 #define CPU_CLK_SRC_PLL1		2
 #define AXI_DIV					1
 #define AHB_DIV					1
 #define APB0_DIV				1
-
-#define SUN5I
 #ifdef SUN5I
 #define AHB_CLK_SRC_AXI			0
 #endif
-
-
 
 #define CLK_GATE_OPEN			0x1
 #define CLK_GATE_CLOSE			0x0
@@ -191,7 +182,6 @@ struct sunxi_ccm_reg {
 /* gps clock */
 #define GPS_SCLK_GATING_OFF		0
 #define GPS_RESET				0
-
 
 /* ahb clock gate bit offset */
 #define AHB_GATE_OFFSET_GPS			26
@@ -220,6 +210,8 @@ struct sunxi_ccm_reg {
 #define AHB_GATE_OFFSET_USB_EHCI0	1
 #define AHB_GATE_OFFSET_USB			0
 
-
+#ifndef __ASSEMBLY__
+int clock_init(void);
+#endif
 
 #endif /* _SUNXI_CLOCK_H */
