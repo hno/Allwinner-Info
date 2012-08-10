@@ -111,7 +111,7 @@ struct dram_para_t para;
 int main(void)
 {
      volatile uint32_t *pRAM = ((uint32_t *)0x40000000);
-     int i,j,k;
+     int i,j,k,l;
 
      s_init();
      uart_init();
@@ -180,14 +180,18 @@ int main(void)
 #ifdef VERIFY_RAM
 
      k = 0;
+	 l = 0;
      printf("writing 512MB... (1 dot per MB)\r\n\r\n");
      for (j = 0; j < 512; j++)
           {
                for (i = 0; i < 1024*1024/4; i++)
                     pRAM[k++] = k;
                uart_puts(".");
+               if(l++ % 80 == 0)
+                   uart_puts("\r\n");
           }
 
+	 l=0;
      printf("\r\n\r\nverifying...\r\n\r\n");
      for (j = 0; j < 512; j++)
           {
@@ -198,7 +202,10 @@ int main(void)
                               return -1;
                          }
                uart_puts(".");
+               if(k++ % 80 == 0)
+                   uart_puts("\r\n");
           }
+    printf("\r\n");
 #endif
      printf("DONE.\r\n");
 
