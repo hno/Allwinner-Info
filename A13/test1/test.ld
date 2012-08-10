@@ -7,7 +7,7 @@ ENTRY(entry)
 
 SECTIONS
 {
-	. = 0x00000000;
+	. = 0x00002000;
 	. = ALIGN(32);
 	.start : { KEEP(*(.start)) }
     .text : { KEEP(*(.text)) }
