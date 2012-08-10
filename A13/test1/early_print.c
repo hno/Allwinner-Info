@@ -42,6 +42,12 @@ static int init_uart_clock(void)
 //#define UART0_INPUT_SD 1
 void uart0_init(void) {
 
+	init_uart_clock();
+
+	/* open the clock for uart0 */
+     //bit16, gating APB clock for UART0, 0-mask, 1-pass
+	sr32(SUNXI_CCM_APB1_GATING, 16, 1, CLK_GATE_OPEN);
+
 	/* select dll dlh */
 	writel(0x80, UART0_LCR);
 	/* set baudrate */
@@ -50,11 +56,6 @@ void uart0_init(void) {
 	/* set line control */
 	writel(LC_8_N_1, UART0_LCR);
 
-	init_uart_clock();
-
-	/* open the clock for uart0 */
-     //bit16, gating APB clock for UART0, 0-mask, 1-pass
-	sr32(SUNXI_CCM_APB1_GATING, 16, 1, CLK_GATE_OPEN);
 
 	/* set GPF2,4 as uart0 tx,rx */
 	sunxi_gpio_set_cfgpin(SUNXI_GPF(2), SUNXI_GPF2_UART0_TX);
@@ -95,6 +96,12 @@ static int uart1_initialized = 0;
 
 void uart1_init(void) {
 
+	init_uart_clock();
+
+	/* open the clock for uart1 */
+     //bit17, gating APB clock for UART1, 0-mask, 1-pass
+	sr32(SUNXI_CCM_APB1_GATING, 17, 1, CLK_GATE_OPEN);
+
 	/* select dll dlh */
 	writel(0x80, UART1_LCR);
 	/* set baudrate */
@@ -103,11 +110,6 @@ void uart1_init(void) {
 	/* set line control */
 	writel(LC_8_N_1, UART1_LCR);
 
-	init_uart_clock();
-
-	/* open the clock for uart1 */
-     //bit17, gating APB clock for UART1, 0-mask, 1-pass
-	sr32(SUNXI_CCM_APB1_GATING, 17, 1, CLK_GATE_OPEN);
 
      // uart1 pins
      sunxi_gpio_set_cfgpin(SUNXI_GPG(3), 4);
