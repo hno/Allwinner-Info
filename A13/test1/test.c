@@ -4,8 +4,8 @@ A13 init, Laurent 08/2012
 Build instructions:
 
 make
-fel write 0 output/test.bin
-fel exe 0
+fel write 0x2000 output/test.bin
+fel exe 0x2000
 
 uart is configured for 115200,8,N,1
 
