@@ -176,6 +176,9 @@ int main(void)
      */
 
      // fill & verify DDR3 
+// #define VERIFY_RAM 1
+#ifdef VERIFY_RAM
+
      k = 0;
      printf("writing 512MB... (1 dot per MB)\r\n\r\n");
      for (j = 0; j < 512; j++)
@@ -196,7 +199,7 @@ int main(void)
                          }
                uart_puts(".");
           }
-
+#endif
      printf("DONE.\r\n");
 
      return 0;
