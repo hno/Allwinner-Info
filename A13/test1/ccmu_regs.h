@@ -605,6 +605,7 @@ typedef struct __CCMU_REG_LIST
     volatile __ccmu_lvds_clk_reg014c_t      LvdsClk;    //0x014C, LVDS module clock control
     volatile __ccmu_hdmi_clk_reg0150_t      HdmiClk;    //0x0150, HDMI module clock control
     volatile __ccmu_mali400_clk_reg0154_t   MaliClk;    //0x0154, MALI400 module clock control
+    volatile __u32                          reserved0158;  //0x0158, reserved
     volatile __ccmu_mbus_clk_reg015c_t      MbusClk;    //0x015c, MBUS clock control
     volatile __ccmu_iep_clk_reg0160_t       IepClk;     //0x0160, IEP clock control
 

@@ -189,19 +189,25 @@ void mctl_setup_dram_clock(__u32 clk)
     reg_val &= ~(0x3<<4);
     reg_val |= 0x1<<4;                  //k factor
     reg_val &= ~(0x1f<<8);
-    reg_val |= (360/24) << 8; // fixed to 360 mhz for now (standby_uldiv((__u64)clk, 24)&0x1f)<<8;      //n factor
+    reg_val |= ((clk/24)&0x1f)<<8;      //n factor
     reg_val &= ~(0x3<<16);
     reg_val |= 0x1<<16;                 //p factor
     reg_val &= ~(0x1<<29);                                         //PLL on
     reg_val |= (__u32)0x1<<31;          //PLL En
     mctl_write_w(DRAM_CCM_SDRAM_PLL_REG, reg_val);
+
+    reg_val = mctl_read_w(DRAM_CCM_SDRAM_PLL_TUN_REG);
+    reg_val &= ~(0xFFFF);
+    reg_val |= 0x26; // RESERVED???!!
+    mctl_write_w(DRAM_CCM_SDRAM_PLL_TUN_REG, reg_val);
+
     sdelay(0x100000);
     reg_val = mctl_read_w(DRAM_CCM_SDRAM_PLL_REG);
 	reg_val |= 0x1<<29;
     mctl_write_w(DRAM_CCM_SDRAM_PLL_REG, reg_val);
 
-	//setup MBUS clock
-    reg_val &= (0x1<<31)|(0x2<<24)|(0x1); 	
+    //setup MBUS clock
+    reg_val = (0x1<<31)|(0x2<<24)|(0x1); 	
     mctl_write_w(DRAM_CCM_MUS_CLK_REG, reg_val);
         
     //open DRAMC AHB & DLL register clock

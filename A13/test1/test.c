@@ -57,14 +57,14 @@ int clock_init(void)
 	sr32(SUNXI_CCM_PLL1_CFG, 4, 2, PLL1_FACTOR_K);		/* PLL1_FACTOR_K [5:4] */
 	sr32(SUNXI_CCM_PLL1_CFG, 0, 2, PLL1_FACTOR_M);		/* PLL1_FACTOR_M [1:0] */
 	sr32(SUNXI_CCM_PLL1_CFG, 16, 2, PLL1_FACTOR_P);		/* PLL1_FACTOR_P [17:16] */
-
+	
 	/* wait for clock to be stable*/	
 	sdelay(0x4000);
 
 	/* set clock divider, cpu:axi:ahb:apb0 = 8:4:2:1 */
 	sr32(SUNXI_CCM_CPU_AHB_APB0_CFG, 0, 2, AXI_DIV);	/* AXI_CLK_DIV_RATIO [1:0] */
 	sr32(SUNXI_CCM_CPU_AHB_APB0_CFG, 4, 2, AHB_DIV);	/* AHB_CLK_DIV_RATIO [5:4] */
-	sr32(SUNXI_CCM_CPU_AHB_APB0_CFG, 9, 2, APB0_DIV);	/* APB0_CLK_DIV_RATIO [9:8] */
+	sr32(SUNXI_CCM_CPU_AHB_APB0_CFG, 8, 2, APB0_DIV);	/* APB0_CLK_DIV_RATIO [9:8] */
 
 	/* enable pll1 */
 	sr32(&ccm->pll1_cfg, 31, 1, PLL1_ENABLE);		/* PLL1_ENABLE [31] */
@@ -82,7 +82,6 @@ int clock_init(void)
 	sr32(SUNXI_CCM_APB1_CLK_DIV, 24, 2, APB1_CLK_SRC_OSC24M);
 	sr32(SUNXI_CCM_APB1_CLK_DIV, 16, 2, APB1_FACTOR_N);
 	sr32(SUNXI_CCM_APB1_CLK_DIV, 0, 5, APB1_FACTOR_M);
-
 
 	return 0;
 }
@@ -118,47 +117,26 @@ int main(void)
 
      uart_puts("\r\n\r\nTest has started !\r\n");
 
-     // used bootinfo with A10's boot0 to get those info
-
-     /* DRAM base : 0x40000000 */
-     /* DRAM clk  : 360 */
-     /* DRAM type : 3 */
-     /* DRAM rank : 1 */
-     /* DRAM den  : 2048 */
-     /* DRAM iow  : 16 */
-     /* DRAM busw : 32 */
-     /* DRAM cas  : 6 */
-     /* DRAM zq   : 123 */
-     /* DRAM odt  : 0x0 */
-     /* DRAM size : 512 */
-     /* DRAM tpr0 : 0x30926692 */
-     /* DRAM tpr1 : 0x1090 */
-     /* DRAM tpr2 : 0x1a0c8 */
-     /* DRAM tpr3 : 0x0 */
-     /* DRAM tpr4 : 0x0 */
-     /* DRAM tpr5 : 0x0 */
-     /* DRAM emr1 : 0x0 */
-     /* DRAM emr2 : 0x0 */
-     /* DRAM emr3 : 0x0 */
+     // used bootinfo with OlinuxINO A13 boot0 from nand to get those info
      
-     para.dram_clk = 360;
+     para.dram_clk = 408;
      para.dram_type = 3;
      para.dram_rank_num = 1;
-     para.dram_chip_density = 2048;
-     para.dram_io_width = 8;
+     para.dram_chip_density = 4096;
+     para.dram_io_width = 16;
      para.dram_bus_width = 16;
-     para.dram_cas = 6;
+     para.dram_cas = 9;
      para.dram_zq = 123;
      para.dram_odt_en = 0;
      para.dram_size = 512;
-     para.dram_tpr0 = 0x30926692;
-     para.dram_tpr1 = 0x1090;
-     para.dram_tpr2 = 0x1a0c8;
+     para.dram_tpr0 = 0x42d899b7;
+     para.dram_tpr1 = 0xa090;
+     para.dram_tpr2 = 0x22a00;
      para.dram_tpr3 = 0;
      para.dram_tpr4 = 0;
      para.dram_tpr5 = 0;
      para.dram_emr1 = 0;
-     para.dram_emr2 = 0;
+     para.dram_emr2 = 0x10;
      para.dram_emr3 = 0;
      DRAMC_init(&para);
 
