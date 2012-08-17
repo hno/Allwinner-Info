@@ -33,13 +33,13 @@ LIBGCCDIR = $(dir $(shell $(CC) -print-libgcc-file-name))
 
 #CFLAGS 	= -O -ffunction-sections -fdata-sections -Wall $(INCLUDEDIR) -I"c:/program files/codesourcery/sourcery g++ lite/arm-none-eabi/include" -I"C:\Program Files\CodeSourcery\Sourcery G++ Lite\lib\gcc\arm-none-eabi\4.4.1\include"
 #CFLAGS 	= -O -ffunction-sections -fdata-sections -Wall $(INCLUDEDIR)
-CFLAGS 	= -Os -ffreestanding -Wall $(INCLUDEDIR)
+CFLAGS 	= -g -Os -ffreestanding -Wall $(INCLUDEDIR) $(DEFINES)
 
 
  
 
 #LDFLAGS = -static -nostdlib -T $(BOOT_LAYOUT_OUT) -L$(LIBGCCDIR) -lgcc
-LDFLAGS = -O -T$(MEMORY_LAYOUT) -L$(LIB_PATH) $(NO_OS_LIBS) -nostartfiles #--gc-sections
+LDFLAGS = -O -T$(MEMORY_LAYOUT) -L$(LIB_PATH) $(NO_OS_LIBS) -nostartfiles $(CFLAGS) #--gc-sections
 
 
 # Generic code
