@@ -204,88 +204,25 @@ Disassembly of section .data:
      4ac:	e3a00001 	mov	r0, #1
      4b0:	eaffffd3 	b	0x404
 
-     4b4:	63637553
-     4b8:	20646565
-     4bc:	6f206e69
-     4c0:	696e6570
-     4c4:	6e20676e
-     4c8:	20646e61
-     4cc:	73616c66
-     4d0:	000a2e68
+     4b4:	"Succeed in opening nand flash.\n",0
+
      4d4:	00005aec
      4d8:	42400000
-     4dc:	63637553
-     4e0:	20646565
-     4e4:	72206e69
-     4e8:	69646165
-     4ec:	4220676e
-     4f0:	31746f6f
-     4f4:	6c696620
-     4f8:	65682065
-     4fc:	0a2e6461
-     500:	00000000
-     504:	4e4f4765
-     508:	3154422e
-     50c:	00000000
-     510:	4f525245
-     514:	62202152
-     518:	6b636f6c
-     51c:	20752520
-     520:	73656f64
-     524:	2074276e
-     528:	726f7473
-     52c:	65682065
-     530:	6f206461
-     534:	6f422066
-     538:	2031746f
-     53c:	79706f63
-     540:	00000a2e
-     544:	20656854
-     548:	657a6973
-     54c:	20666f20
-     550:	746f6f42
-     554:	73692031
-     558:	2e782520
-     55c:	0000000a
+
+     4dc:	"Succeed in reading Boot1 file head.\n",0
+     504:	"eGON.BT1",0
+     510:	"ERROR! block %u doesn't store head of Boot1 copy.\n",0
+     544:	"@The size of Boot1 is %x.\n",0
+
      560:	00005ae8
-     564:	63656843
-     568:	7369206b
-     56c:	726f6320
-     570:	74636572
-     574:	00000a2e
+
+     564:	"Check is correct.\n",0
+
      578:	00005af8
-     57c:	20656854
-     580:	656c6966
-     584:	6f747320
-     588:	20646572
-     58c:	73206e69
-     590:	74726174
-     594:	6f6c6220
-     598:	25206b63
-     59c:	73692075
-     5a0:	72657020
-     5a4:	74636566
-     5a8:	00000a2e
-     5ac:	276e6143
-     5b0:	69662074
-     5b4:	6120646e
-     5b8:	6f6f6720
-     5bc:	6f422064
-     5c0:	2031746f
-     5c4:	79706f63
-     5c8:	206e6920
-     5cc:	646e616e
-     5d0:	00000a2e
-     5d4:	64616552
-     5d8:	6f742079
-     5dc:	69757120
-     5e0:	6c222074
-     5e4:	5f64616f
-     5e8:	746f6f42
-     5ec:	72665f31
-     5f0:	6e5f6d6f
-     5f4:	22646e61
-     5f8:	00000a2e
+
+     57c:	"The file stored in start block %u is perfect.\n",0
+     5ac:	"Can't find a good Boot1 copy in nand.\n",0
+     5d4:	"Ready to quit \"load_Boot1_from_nand\".\n",0
 
      5fc:	e92d4ff8 	push	{r3, r4, r5, r6, r7, r8, r9, sl, fp, lr}
      600:	e1a04000 	mov	r4, r0
@@ -331,6 +268,7 @@ Disassembly of section .data:
      6a0:	9affffe0 	bls	0x628
      6a4:	e3a00001 	mov	r0, #1
      6a8:	eaffffe7 	b	0x64c
+
      6ac:	e92d5fff 	push	{r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, sl, fp, ip, lr}
      6b0:	e1a04000 	mov	r4, r0
      6b4:	e1a05001 	mov	r5, r1
@@ -398,42 +336,11 @@ Disassembly of section .data:
      7ac:	eb000201 	bl	0xfb8
      7b0:	e3a00004 	mov	r0, #4
      7b4:	eaffffe3 	b	0x748
-     7b8:	20656854 	rsbcs	r6, r5, r4, asr r8
-     7bc:	656c6966 	strbvs	r6, [ip, #-2406]!	; 0x966
-     7c0:	6f747320 	svcvs	0x00747320
-     7c4:	20646572 	rsbcs	r6, r4, r2, ror r5
-     7c8:	25206e69 	strcs	r6, [r0, #-3689]!	; 0xe69
-     7cc:	666f2058 			; <UNDEFINED> instruction: 0x666f2058
-     7d0:	6f6c6220 	svcvs	0x006c6220
-     7d4:	25206b63 	strcs	r6, [r0, #-2915]!	; 0xb63
-     7d8:	73692075 	cmnvc	r9, #117	; 0x75
-     7dc:	72657020 	rsbvc	r7, r5, #32
-     7e0:	74636566 	strbtvc	r6, [r3], #-1382	; 0x566
-     7e4:	00000a2e 	andeq	r0, r0, lr, lsr #20
-     7e8:	72727563 	rsbsvc	r7, r2, #415236096	; 0x18c00000
-     7ec:	20746e65 	rsbscs	r6, r4, r5, ror #28
-     7f0:	636f6c62 	cmnvs	pc, #25088	; 0x6200
-     7f4:	7369206b 	cmnvc	r9, #107	; 0x6b
-     7f8:	20642520 	rsbcs	r2, r4, r0, lsr #10
-     7fc:	20646e61 	rsbcs	r6, r4, r1, ror #28
-     800:	7473616c 	ldrbtvc	r6, [r3], #-364	; 0x16c
-     804:	6f6c6220 	svcvs	0x006c6220
-     808:	69206b63 	stmdbvs	r0!, {r0, r1, r5, r6, r8, r9, fp, sp, lr}
-     80c:	64252073 	strtvs	r2, [r5], #-115	; 0x73
-     810:	00000a2e 	andeq	r0, r0, lr, lsr #20
-     814:	6b63616c 	blvs	0x18d8dcc
-     818:	6f6c6220 	svcvs	0x006c6220
-     81c:	20736b63 	rsbscs	r6, r3, r3, ror #22
-     820:	68746977 	ldmdavs	r4!, {r0, r1, r2, r4, r5, r6, r8, fp, sp, lr}^
-     824:	61747320 	cmnvs	r4, r0, lsr #6
-     828:	62207472 	eorvs	r7, r0, #1912602624	; 0x72000000
-     82c:	6b636f6c 	blvs	0x18dc5e4
-     830:	20642520 	rsbcs	r2, r4, r0, lsr #10
-     834:	20646e61 	rsbcs	r6, r4, r1, ror #28
-     838:	20667562 	rsbcs	r7, r6, r2, ror #10
-     83c:	657a6973 	ldrbvs	r6, [sl, #-2419]!	; 0x973
-     840:	2e782520 	cdpcs	5, 7, cr2, cr8, cr0, {1}
-     844:	0000000a 	andeq	r0, r0, sl
+
+     7b8:	"The file stored in %X of block %u is perfect.\n",0
+     7e8:	"current block is %d and last block is %d.\n",0
+     814:	"lack blocks with start block %d and buf size %x.\n",0
+
      848:	e92d4010 	push	{r4, lr}
      84c:	e24dd018 	sub	sp, sp, #24
      850:	eb000579 	bl	0x1e3c
@@ -568,12 +475,8 @@ Disassembly of section .data:
      a54:	e3e00000 	mvn	r0, #0
      a58:	eaffff80 	b	0x860
 
-     a5c:	20746567
-     a60:	73616c66
-     a64:	6e692068
-     a68:	66206f66
-     a6c:	656c6961
-     a70:	000a2e64
+     a5c:	"get flash info failed.\n",0
+
      a74:	00005afc
      a78:	00005ae8
      a7c:	00005aec
@@ -835,69 +738,37 @@ Disassembly of section .data:
      e78:	e59f301c 	ldr	r3, =CCM_IO_BASE
      e7c:	e5832060 	str	r2, [r3, #96]	; 0x60
      e80:	e12fff1e 	bx	lr
+
      e84:	00000029
-     e88:	746f6f62
-     e8c:	65762030
-     e90:	6f697372
-     e94:	203a206e
-     e98:	000a7325
+
+     e88:	"boot0 version : %s\n",0
+
      e9c:	01c20000	; CCM_IO_BASE
      ea0:	000000dc
      ea4:	00005b38
      ea8:	00000000
      eac:	016e3600
      eb0:	000000a0
-     eb4:	4c4c4548
-     eb8:	4220214f
-     ebc:	30544f4f
-     ec0:	20736920
-     ec4:	72617473
-     ec8:	676e6974
-     ecc:	00000a21
-     ed0:	6d617264
-     ed4:	7a697320
-     ed8:	253d2065
-     edc:	00000a64
-     ee0:	74696e69
-     ee4:	696c6169
-     ee8:	676e697a
-     eec:	52445320
-     ef0:	46204d41
-     ef4:	2e6c6961
-     ef8:	0000000a
+
+     eb4:	"HELLO! BOOT0 is starting!\n",0
+     ed0:	"dram size =%d\n",0
+     ee0:	"initializing SDRAM Fail.\n",0
+
      efc:	ffff0020
-     f00:	64616552
-     f04:	6f742079
-     f08:	73696420
-     f0c:	656c6261
-     f10:	61636920
-     f14:	2e656863
-     f18:	0000000a
+
+     f00:	"Ready to disable icache.\n",0
+
      f1c:	00000038
-     f20:	63637553
-     f24:	20646565
-     f28:	6c206e69
-     f2c:	6964616f
-     f30:	4220676e
-     f34:	31746f6f
-     f38:	754a0a2e
-     f3c:	7420706d
-     f40:	6f42206f
-     f44:	2e31746f
-     f48:	0000000a
+
+     f20:	"Succeed in loading Boot1.\nJump to Boot1.\n",0
+
      f4c:	42400000
-     f50:	6c696146
-     f54:	206e6920
-     f58:	64616f6c
-     f5c:	20676e69
-     f60:	746f6f42
-     f64:	4a0a2e31
-     f68:	20706d75
-     f6c:	46206f74
-     f70:	0a2e6c65
-     f74:	00000000
+
+     f50:	"Fail in loading Boot1.\nJump to Fel\n",0
+
      f78:	00010010
      f7c:	a1005000
+
      f80:	e92d4010 	push	{r4, lr}
      f84:	e1a04000 	mov	r4, r0
      f88:	ea000006 	b	0xfa8
@@ -1162,16 +1033,10 @@ Disassembly of section .data:
     1394:	e3a05000 	mov	r5, #0
     1398:	e7c15004 	strb	r5, [r1, r4]
     139c:	e8bd807c 	pop	{r2, r3, r4, r5, r6, pc}
-    13a0:	33323130 	teqcc	r2, #12
-    13a4:	37363534 			; <UNDEFINED> instruction: 0x37363534
-    13a8:	42413938 	submi	r3, r1, #917504	; 0xe0000
-    13ac:	46454443 	strbmi	r4, [r5], -r3, asr #8
-    13b0:	00000000 	andeq	r0, r0, r0
-    13b4:	33323130 	teqcc	r2, #12
-    13b8:	37363534 			; <UNDEFINED> instruction: 0x37363534
-    13bc:	62613938 	rsbvs	r3, r1, #917504	; 0xe0000
-    13c0:	66656463 	strbtvs	r6, [r5], -r3, ror #8
-    13c4:	00000000 	andeq	r0, r0, r0
+
+    13a0:	"0123456789ABCDEF",0
+    13b4:	"0123456789abcdef",0
+
     13c8:	e92d47f0 	push	{r4, r5, r6, r7, r8, r9, sl, lr}
     13cc:	e1a04000 	mov	r4, r0
     13d0:	e1a05001 	mov	r5, r1
@@ -1881,39 +1746,29 @@ Disassembly of section .data:
     1eb0:	e1a00004 	mov	r0, r4
     1eb4:	eb0004a6 	bl	0x3154
     1eb8:	e8bd8010 	pop	{r4, pc}
-    1ebc:	2030424e 	eorscs	r4, r0, lr, asr #4
-    1ec0:	616e203a 	cmnvs	lr, sl, lsr r0
-    1ec4:	7020646e 	eorvc	r6, r0, lr, ror #8
-    1ec8:	69207968 	stmdbvs	r0!, {r3, r5, r6, r8, fp, ip, sp, lr}
-    1ecc:	2074696e 	rsbscs	r6, r4, lr, ror #18
-    1ed0:	6c696166 	stfvse	f6, [r9], #-408	; 0xfffffe68
-    1ed4:	0000000a 	andeq	r0, r0, sl
-    1ed8:	2030424e 	eorscs	r4, r0, lr, asr #4
-    1edc:	616e203a 	cmnvs	lr, sl, lsr r0
-    1ee0:	7320646e 	teqvc	r0, #1845493760	; 0x6e000000
-    1ee4:	206e6163 	rsbcs	r6, lr, r3, ror #2
-    1ee8:	6c696166 	stfvse	f6, [r9], #-408	; 0xfffffe68
-    1eec:	0000000a 	andeq	r0, r0, sl
-    1ef0:	2030424e 	eorscs	r4, r0, lr, asr #4
-    1ef4:	616e203a 	cmnvs	lr, sl, lsr r0
-    1ef8:	7020646e 	eorvc	r6, r0, lr, ror #8
-    1efc:	69207968 	stmdbvs	r0!, {r3, r5, r6, r8, fp, ip, sp, lr}
-    1f00:	2074696e 	rsbscs	r6, r4, lr, ror #18
-    1f04:	000a6b6f 	andeq	r6, sl, pc, ror #22
+
+    1ebc:	"NB0 : nand phy init fail\n",0
+    1ed8:	"NB0 : nand scan fail\n",0
+    1ef0:	"NB0 : nand phy init ok\n",0
+
     1f08:	e3a00000 	mov	r0, #0
     1f0c:	e12fff1e 	bx	lr
+
     1f10:	e3a00000 	mov	r0, #0
     1f14:	e12fff1e 	bx	lr
+
     1f18:	e1a01000 	mov	r1, r0
     1f1c:	e59f0320 	ldr	r0, [pc, #800]	; 0x2244
     1f20:	e5900000 	ldr	r0, [r0]
     1f24:	e12fff1e 	bx	lr
+
     1f28:	e1a01000 	mov	r1, r0
     1f2c:	e3a00000 	mov	r0, #0
     1f30:	e59f230c 	ldr	r2, [pc, #780]	; 0x2244
     1f34:	e5922000 	ldr	r2, [r2]
     1f38:	e5820000 	str	r0, [r2]
     1f3c:	e12fff1e 	bx	lr
+
     1f40:	e92d4030 	push	{r4, r5, lr}
     1f44:	e1a04000 	mov	r4, r0
     1f48:	e1a02001 	mov	r2, r1
@@ -1944,6 +1799,7 @@ Disassembly of section .data:
     1fac:	e5850018 	str	r0, [r5, #24]
     1fb0:	e3a00000 	mov	r0, #0
     1fb4:	e8bd8030 	pop	{r4, r5, pc}
+
     1fb8:	e92d41f0 	push	{r4, r5, r6, r7, r8, lr}
     1fbc:	e1a07000 	mov	r7, r0
     1fc0:	e1a04001 	mov	r4, r1
@@ -1979,6 +1835,7 @@ Disassembly of section .data:
     2038:	e5810000 	str	r0, [r1]
     203c:	e3a00000 	mov	r0, #0
     2040:	e8bd81f0 	pop	{r4, r5, r6, r7, r8, pc}
+
     2044:	e1a01000 	mov	r1, r0
     2048:	e59f01f4 	ldr	r0, [pc, #500]	; 0x2244
     204c:	e5900000 	ldr	r0, [r0]
@@ -1989,6 +1846,7 @@ Disassembly of section .data:
     2060:	e5820000 	str	r0, [r2]
     2064:	e3a00000 	mov	r0, #0
     2068:	e12fff1e 	bx	lr
+
     206c:	e1a01000 	mov	r1, r0
     2070:	e59f01cc 	ldr	r0, [pc, #460]	; 0x2244
     2074:	e5900000 	ldr	r0, [r0]
@@ -1999,27 +1857,32 @@ Disassembly of section .data:
     2088:	e5820000 	str	r0, [r2]
     208c:	e3a00000 	mov	r0, #0
     2090:	e12fff1e 	bx	lr
+
     2094:	e1a01000 	mov	r1, r0
     2098:	e59f01a4 	ldr	r0, [pc, #420]	; 0x2244
     209c:	e5900000 	ldr	r0, [r0]
     20a0:	e5900000 	ldr	r0, [r0]
     20a4:	e2000101 	and	r0, r0, #1073741824	; 0x40000000
     20a8:	e12fff1e 	bx	lr
+
     20ac:	e1a01000 	mov	r1, r0
     20b0:	e3a00000 	mov	r0, #0
     20b4:	e12fff1e 	bx	lr
+
     20b8:	e59f018c 	ldr	r0, =CCM_IO_BASE
     20bc:	e5900060 	ldr	r0, [r0, #96]	; 0x60
     20c0:	e3800a02 	orr	r0, r0, #8192	; 0x2000
     20c4:	e59f1180 	ldr	r1, =CCM_IO_BASE
     20c8:	e5810060 	str	r0, [r1, #96]	; 0x60
     20cc:	e12fff1e 	bx	lr
+
     20d0:	e59f0174 	ldr	r0, =CCM_IO_BASE
     20d4:	e5900060 	ldr	r0, [r0, #96]	; 0x60
     20d8:	e3c00a02 	bic	r0, r0, #8192	; 0x2000
     20dc:	e59f1168 	ldr	r1, =CCM_IO_BASE
     20e0:	e5810060 	str	r0, [r1, #96]	; 0x60
     20e4:	e12fff1e 	bx	lr
+
     20e8:	e92d47f0 	push	{r4, r5, r6, r7, r8, r9, sl, lr}
     20ec:	e59f0158 	ldr	r0, =CCM_IO_BASE
     20f0:	e5904020 	ldr	r4, [r0, #32]
@@ -2061,6 +1924,7 @@ Disassembly of section .data:
     2180:	9a000001 	bls	0x218c
     2184:	e3a0700f 	mov	r7, #15
     2188:	ea000000 	b	0x2190
+
     218c:	e2477001 	sub	r7, r7, #1
     2190:	e59f00b4 	ldr	r0, =CCM_IO_BASE
     2194:	e5906080 	ldr	r6, [r0, #128]	; 0x80
@@ -2087,6 +1951,7 @@ Disassembly of section .data:
     21e8:	e1a05000 	mov	r5, r0
     21ec:	e1a00005 	mov	r0, r5
     21f0:	e8bd81f0 	pop	{r4, r5, r6, r7, r8, pc}
+
     21f4:	e92d4010 	push	{r4, lr}
     21f8:	e1a04000 	mov	r4, r0
     21fc:	e3a02001 	mov	r2, #1
@@ -2094,15 +1959,23 @@ Disassembly of section .data:
     2204:	e59f0044 	ldr	r0, [pc, #68]	; 0x2250
     2208:	ebfffda6 	bl	0x18a8
     220c:	e8bd8010 	pop	{r4, pc}
+
     2210:	e12fff1e 	bx	lr
+
     2214:	e12fff1e 	bx	lr
+
     2218:	e1a01000 	mov	r1, r0
     221c:	e3a00207 	mov	r0, #1879048192	; 0x70000000
     2220:	e12fff1e 	bx	lr
+
     2224:	e12fff1e 	bx	lr
+
     2228:	e12fff1e 	bx	lr
+
     222c:	e12fff1e 	bx	lr
+
     2230:	e12fff1e 	bx	lr
+
     2234:	e92d4010 	push	{r4, lr}
     2238:	e1a04000 	mov	r4, r0
     223c:	e3a00000 	mov	r0, #0
@@ -2467,18 +2340,9 @@ Disassembly of section .data:
 
     27d0:	00005b38
     27d4:	00005618
-    27d8:	6e6f7277
-    27dc:	62522067
-    27e0:	6e6f6320
-    27e4:	7463656e
-    27e8:	646f4d20
-    27ec:	2c202065
-    27f0:	6f436252
-    27f4:	63656e6e
-    27f8:	646f4d74
-    27fc:	203d2065
-    2800:	0a206425
-    2804:	00000000
+
+    27d8:	"wrong Rb connect Mode  ,RbConnectMode = %d\n",0
+
     2808:	00005518
 
     280c:	e5d40000 	ldrb	r0, [r4]
@@ -2658,20 +2522,12 @@ Disassembly of section .data:
     2ac4:	eaffff3e 	b	0x27c4
 
     2ac8:	00005b84
-    2acc:	6165525b
-    2ad0:	69735f64
-    2ad4:	656c676e
-    2ad8:	6761705f
-    2adc:	4e205d65
-    2ae0:	525f4346
-    2ae4:	52646165
-    2ae8:	79727465
-    2aec:	69616620
-    2af0:	000a206c
+
+    2acc:	"[Read_single_page] NFC_ReadRetry fail\n",0
+
     2af4:	00005660
-    2af8:	20636365
-    2afc:	6f727265
-    2b00:	000a2172
+
+    2af8:	"ecc error!\n",0
 
     2b04:	e92d401c 	push	{r2, r3, r4, lr}
     2b08:	e3a00000 	mov	r0, #0
@@ -3145,29 +3001,12 @@ Disassembly of section .data:
     3294:	e8bd8ff8 	pop	{r3, r4, r5, r6, r7, r8, r9, sl, fp, pc}
 
     3298:	00005b70
-    329c:	646e614e
-    32a0:	696e5520
-    32a4:	20657571
-    32a8:	6f204449
-    32ac:	68632066
-    32b0:	25207069
-    32b4:	73692075
-    32b8:	0a203a20
-    32bc:	00000000
-    32c0:	202c7825
-    32c4:	202c7825
-    32c8:	202c7825
-    32cc:	000a7825
+
+    329c:	"Nand Unique ID of chip %u is : \n",0
+    32c0:	"%x, %x, %x, %x\n",0
     32d0:	0000000a
-    32d4:	5f594850
-    32d8:	636e7953
-    32dc:	6e614268
-    32e0:	203a206b
-    32e4:	6f796562
-    32e8:	6320646e
-    32ec:	20706968
-    32f0:	6e756f63
-    32f4:	00000a74
+    32d4:	"PHY_SynchBank : beyond chip count\n",0
+
     32f8:	000057d4
     32fc:	0000582c
     3300:	00005888
@@ -3361,74 +3200,16 @@ Disassembly of section .data:
     35ec:	ea000047 	b	0x3710
 
     35f0:	00005b38
-    35f4:	4143535b
-    35f8:	52455f4e
-    35fc:	52205d52
-    3600:	74657365
-    3604:	6f6f6220
-    3608:	616e2074
-    360c:	6620646e
-    3610:	6873616c
-    3614:	69686320
-    3618:	61662070
-    361c:	64656c69
-    3620:	00000a21
-    3624:	4143535b
-    3628:	52455f4e
-    362c:	52205d52
-    3630:	20646165
-    3634:	70696863
-    3638:	20444920
-    363c:	6d6f7266
-    3640:	6f6f6220
-    3644:	68632074
-    3648:	66207069
-    364c:	656c6961
-    3650:	000a2164
-    3654:	4143535b
-    3658:	42445f4e
-    365c:	4e205d47
-    3660:	20646e61
-    3664:	73616c66
-    3668:	68632068
-    366c:	69207069
-    3670:	73692064
-    3674:	2578303a
-    3678:	78302078
-    367c:	30207825
-    3680:	20782578
-    3684:	78257830
-    3688:	25783020
-    368c:	78302078
-    3690:	000a7825
-    3694:	4143535b
-    3698:	42445f4e
-    369c:	67205d47
-    36a0:	6e207465
-    36a4:	20646e61
-    36a8:	6f666e69
-    36ac:	6f726620
-    36b0:	6f62206d
-    36b4:	2030746f
-    36b8:	6c696166
-    36bc:	0a2e6465
-    36c0:	00000000
+
+    35f4:	"[SCAN_ERR] Reset boot nand flash chip failed!\n",0
+    3624:	"[SCAN_ERR] Read chip ID from boot chip failed!\n",0
+    3654:	"[SCAN_DBG] Nand flash chip id is:0x%x 0x%x 0x%x 0x%x 0x%x 0x%x\n",0
+    3694:	"[SCAN_DBG] get nand info from boot0 failed\n",0
+
     36c4:	000058e4
-    36c8:	4143535b
-    36cc:	52455f4e
-    36d0:	63205d52
-    36d4:	6b636568
-    36d8:	6e616e20
-    36dc:	64692064
-    36e0:	69616620
-    36e4:	2164656c
-    36e8:	0000000a
-    36ec:	2043464e
-    36f0:	64616552
-    36f4:	74655220
-    36f8:	49207972
-    36fc:	2e74696e
-    3700:	00000a20
+
+    36c8:	"[SCAN_ERR] check nand id failed!\n",0
+    36ec:	"NFC Read Retry Init.\n",0
 
     3704:	e1a00005 	mov	r0, r5
     3708:	ebfffd17 	bl	0x2b6c
@@ -3445,19 +3226,13 @@ Disassembly of section .data:
     3734:	ebfffabe 	bl	0x2234
     3738:	e3a00000 	mov	r0, #0
     373c:	eaffff88 	b	0x3564
-    3740:	00000a0a 	andeq	r0, r0, sl, lsl #20
-    3744:	4143535b 	cmpmi	r3, fp, asr r3
-    3748:	42445f4e 	submi	r5, r4, #312	; 0x138
-    374c:	20205d47 	eorcs	r5, r0, r7, asr #26
-    3750:	65522020 	ldrbvs	r2, [r2, #-32]
-    3754:	52206461 	eorpl	r6, r0, #1627389952	; 0x61000000
-    3758:	79727465 	ldmdbvc	r2!, {r0, r2, r5, r6, sl, ip, sp, lr}^
-    375c:	70795420 	rsbsvc	r5, r9, r0, lsr #8
-    3760:	20203a65 	eorcs	r3, r0, r5, ror #20
-    3764:	20202020 	eorcs	r2, r0, r0, lsr #32
-    3768:	78257830 	stmdavc	r5!, {r4, r5, fp, ip, sp, lr}
-    376c:	0000000a 	andeq	r0, r0, sl
-    3770:	00005934 	andeq	r5, r0, r4, lsr r9
+
+    3740:	00000a0a
+
+    3744:	"[SCAN_DBG]    Read Retry Type:      0x%x\n",0
+
+    3770:	00005934
+
     3774:	e59f0ed8 	ldr	r0, [pc, #3800]	; 0x4654
     3778:	e5901004 	ldr	r1, [r0, #4]
     377c:	e5910000 	ldr	r0, [r1]
@@ -3466,6 +3241,7 @@ Disassembly of section .data:
     3788:	83800601 	orrhi	r0, r0, #1048576	; 0x100000
     378c:	85810000 	strhi	r0, [r1]
     3790:	e12fff1e 	bx	lr
+
     3794:	e59f0eb8 	ldr	r0, [pc, #3768]	; 0x4654
     3798:	e5901004 	ldr	r1, [r0, #4]
     379c:	e5910000 	ldr	r0, [r1]
@@ -3474,6 +3250,7 @@ Disassembly of section .data:
     37a8:	83c00601 	bichi	r0, r0, #1048576	; 0x100000
     37ac:	85810000 	strhi	r0, [r1]
     37b0:	e12fff1e 	bx	lr
+
     37b4:	e59f1e98 	ldr	r1, [pc, #3736]	; 0x4654
     37b8:	e30f0fff 	movw	r0, #65535	; 0xffff
     37bc:	e5911004 	ldr	r1, [r1, #4]
@@ -3487,6 +3264,7 @@ Disassembly of section .data:
     37dc:	c12fff1e 	bxgt	lr
     37e0:	e3e0000d 	mvn	r0, #13
     37e4:	e12fff1e 	bx	lr
+
     37e8:	e59f1e64 	ldr	r1, [pc, #3684]	; 0x4654
     37ec:	e30f0fff 	movw	r0, #65535	; 0xffff
     37f0:	e5911004 	ldr	r1, [r1, #4]
@@ -3503,6 +3281,7 @@ Disassembly of section .data:
     381c:	c12fff1e 	bxgt	lr
     3820:	e3e0000d 	mvn	r0, #13
     3824:	e12fff1e 	bx	lr
+
     3828:	e92d40f0 	push	{r4, r5, r6, r7, lr}
     382c:	e3500000 	cmp	r0, #0
     3830:	e24dd02c 	sub	sp, sp, #44	; 0x2c
@@ -4967,8 +4746,8 @@ mctl_configure_hostport
     4ea0:	3afffff8 	bcc	0x4e88
     4ea4:	e28dd080 	add	sp, sp, #128	; 0x80
     4ea8:	e8bd8010 	pop	{r4, pc}
-    4eac:	e92d4070 	push	{r4, r5, r6, lr}
 
+    4eac:	e92d4070 	push	{r4, r5, r6, lr}
     4eb0:	e1a04000 	mov	r4, r0
     4eb4:	e59f046c 	ldr	r0, =CCM_IO_BASE
     4eb8:	e5905020 	ldr	r5, [r0, #32]
@@ -5381,6 +5160,7 @@ mctl_configure_hostport
     5508:	e3a00000 	mov	r0, #0
     550c:	ee080f17 	mcr	15, 0, r0, cr8, cr7, {0}
     5510:	e1a0f00e 	mov	pc, lr
+
     5514:	55555555
     5518:	0bd02b75
     551c:	62d15ca3
@@ -5446,223 +5226,18 @@ mctl_configure_hostport
     560c:	493946ce
     5610:	37bb6b17
     5614:	76db3e91
-    5618:	6e6f7277
-    561c:	68632067
-    5620:	6e207069
-    5624:	65626d75
-    5628:	722c2072
-    562c:	6f6d5f62
-    5630:	3d206564
-    5634:	2c642520
-    5638:	6e616220
-    563c:	203d206b
-    5640:	202c6425
-    5644:	70696863
-    5648:	25203d20
-    564c:	63202c64
-    5650:	20706968
-    5654:	6f666e69
-    5658:	25203d20
-    565c:	00000a78
-    5660:	6165525b
-    5664:	69735f64
-    5668:	656c676e
-    566c:	6761705f
-    5670:	4e205d65
-    5674:	525f4346
-    5678:	52646165
-    567c:	79727465
-    5680:	20642520
-    5684:	6c637963
-    5688:	202c7365
-    568c:	70696863
-    5690:	25203d20
-    5694:	62202c64
-    5698:	6b636f6c
-    569c:	25203d20
-    56a0:	70202c64
-    56a4:	20656761
-    56a8:	6425203d
-    56ac:	6552202c
-    56b0:	43797274
-    56b4:	746e756f
-    56b8:	25203d20
-    56bc:	0a202064
-    56c0:	00000000
-    56c4:	5f594850
-    56c8:	44746547
-    56cc:	75616665
-    56d0:	6150746c
-    56d4:	3a6d6172
-    56d8:	69686320
-    56dc:	78302070
-    56e0:	202c7825
-    56e4:	64616552
-    56e8:	74655220
-    56ec:	44207972
-    56f0:	75616665
-    56f4:	5620746c
-    56f8:	65756c61
-    56fc:	20736920
-    5700:	78257830
-    5704:	7830202c
-    5708:	202c7825
-    570c:	78257830
-    5710:	7830202c
-    5714:	0a207825
-    5718:	00000000
-    571c:	5f594850
-    5720:	44746553
-    5724:	75616665
-    5728:	6150746c
-    572c:	3a6d6172
-    5730:	69686320
-    5734:	78302070
-    5738:	202c7825
-    573c:	64616552
-    5740:	74655220
-    5744:	44207972
-    5748:	75616665
-    574c:	5620746c
-    5750:	65756c61
-    5754:	20736920
-    5758:	78257830
-    575c:	7830202c
-    5760:	202c7825
-    5764:	78257830
-    5768:	7830202c
-    576c:	0a207825
-    5770:	00000000
-    5774:	5f594850
-    5778:	44746553
-    577c:	75616665
-    5780:	6150746c
-    5784:	3a6d6172
-    5788:	69686320
-    578c:	78302070
-    5790:	202c7825
-    5794:	64616552
-    5798:	66654420
-    579c:	746c7561
-    57a0:	6c615620
-    57a4:	41206575
-    57a8:	72657466
-    57ac:	74655320
-    57b0:	6c617620
-    57b4:	69206575
-    57b8:	78302073
-    57bc:	202c7825
-    57c0:	78257830
-    57c4:	7830202c
-    57c8:	202c7825
-    57cc:	78257830
-    57d0:	00000a20
-    57d4:	5f594850
-    57d8:	636e7953
-    57dc:	6e614268
-    57e0:	203a206b
-    57e4:	64616572
-    57e8:	61747320
-    57ec:	20737574
-    57f0:	61766e69
-    57f4:	2064696c
-    57f8:	6968632c
-    57fc:	203d2070
-    5800:	202c7825
-    5804:	6b6e6162
-    5808:	25203d20
-    580c:	63202c78
-    5810:	7620646d
-    5814:	65756c61
-    5818:	25203d20
-    581c:	73202c78
-    5820:	75746174
-    5824:	203d2073
-    5828:	000a7825
-    582c:	5f594850
-    5830:	636e7953
-    5834:	6e614268
-    5838:	203a206b
-    583c:	74696177
-    5840:	6e616e20
-    5844:	65722064
-    5848:	20796461
-    584c:	656d6974
-    5850:	2c74756f
-    5854:	70696863
-    5858:	25203d20
-    585c:	62202c78
-    5860:	206b6e61
-    5864:	7825203d
-    5868:	6d63202c
-    586c:	61762064
-    5870:	2065756c
-    5874:	7825203d
-    5878:	7473202c
-    587c:	73757461
-    5880:	25203d20
-    5884:	00000a78
-    5888:	5f594850
-    588c:	636e7953
-    5890:	6e614268
-    5894:	203a206b
-    5898:	7473616c
-    589c:	452f5720
-    58a0:	65706f20
-    58a4:	69746172
-    58a8:	66206e6f
-    58ac:	2c6c6961
-    58b0:	70696863
-    58b4:	25203d20
-    58b8:	62202c78
-    58bc:	206b6e61
-    58c0:	7825203d
-    58c4:	6d63202c
-    58c8:	61762064
-    58cc:	2065756c
-    58d0:	7825203d
-    58d4:	7473202c
-    58d8:	73757461
-    58dc:	25203d20
-    58e0:	00000a78
-    58e4:	4143535b
-    58e8:	42445f4e
-    58ec:	67205d47
-    58f0:	6e207465
-    58f4:	20646e61
-    58f8:	66206469
-    58fc:	206d6f72
-    5900:	746f6f62
-    5904:	73692030
-    5908:	25783020
-    590c:	78302078
-    5910:	30207825
-    5914:	20782578
-    5918:	78257830
-    591c:	25783020
-    5920:	78302078
-    5924:	30207825
-    5928:	20782578
-    592c:	78257830
-    5930:	00000a2e
-    5934:	4143535b
-    5938:	42445f4e
-    593c:	3d205d47
-    5940:	3d3d3d3d
-    5944:	3d3d3d3d
-    5948:	3d3d3d3d
-    594c:	3d3d3d3d
-    5950:	3d3d3d3d
-    5954:	3d3d3d3d
-    5958:	3d3d3d3d
-    595c:	3d3d3d3d
-    5960:	3d3d3d3d
-    5964:	3d3d3d3d
-    5968:	3d3d3d3d
-    596c:	3d3d3d3d
-    5970:	3d3d3d3d
-    5974:	0a0a3d3d
-    5978:	00000000
+
+    5618:	"wrong chip number ,rb_mode = %d, bank = %d, chip = %d, chip info = %x\n",0
+    5660:	"[Read_single_page] NFC_ReadRetry %d cycles, chip = %d, block = %d, page = %d, RetryCount = %d\n",0
+    56c4:	"PHY_GetDefaultParam: chip 0x%x, Read Retry Default Value is 0x%x, 0x%x, 0x%x, 0x%x\n",0
+    571c:	"PHY_SetDefaultParam: chip 0x%x, Read Retry Default Value is 0x%x, 0x%x, 0x%x, 0x%x\n";0
+    5774:	"PHY_SetDefaultParam: chip 0x%x, Read Default Value After Set value is 0x%x, 0x%x, 0x%x, 0x%x\n",0
+    57d4:	"PHY_SynchBank : read status invalid ,chip = %x, bank = %x, cmd value = %x, status = %x\n",0
+    582c:	"PHY_SynchBank : wait nand ready timeout,chip = %x, bank = %x, cmd value = %x, status = %x\n";0
+    5888:	"PHY_SynchBank : last W/E operation fail,chip = %x, bank = %x, cmd value = %x, status = %x\n",0
+    58e4:	"[SCAN_DBG] get nand id from boot0 is 0x%x 0x%x 0x%x 0x%x 0x%x 0x%x 0x%x 0x%x.\n",0
+    5934:	"[SCAN_DBG] =======================================================\n\n",0
+
     597c:	0000005c
     5980:	000000c5
     5984:	00060000
