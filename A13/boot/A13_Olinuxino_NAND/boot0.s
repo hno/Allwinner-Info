@@ -4647,12 +4647,14 @@ _start
     4bf0:	42600000 	rsbmi	r0, r0, #0
     4bf4:	22611000 	rsbcs	r1, r1, #0
     4bf8:	e12fff1e 	bx	lr
+
     4bfc:	e1b0cfcc 	asrs	ip, ip, #31
     4c00:	42600000 	rsbmi	r0, r0, #0
     4c04:	e92d4001 	push	{r0, lr}
     4c08:	e3b00000 	movs	r0, #0
     4c0c:	e1a00000 	nop			; (mov r0, r0)
     4c10:	e8bd8002 	pop	{r1, pc}
+
     4c14:	e3b02000 	movs	r2, #0
     4c18:	e0713220 	rsbs	r3, r1, r0, lsr #4
     4c1c:	3affffb4 	bcc	0x4af4
@@ -4838,6 +4840,7 @@ mctl_configure_hostport
     4ea4:	e28dd080 	add	sp, sp, #128	; 0x80
     4ea8:	e8bd8010 	pop	{r4, pc}
 
+mctl_setup_dram_clock
     4eac:	e92d4070 	push	{r4, r5, r6, lr}
     4eb0:	e1a04000 	mov	r4, r0
     4eb4:	e59f046c 	ldr	r0, =CCM_IO_BASE
@@ -4878,63 +4881,109 @@ mctl_configure_hostport
     4f40:	ebffff3a 	bl	sdelay
     4f44:	e8bd8070 	pop	{r4, r5, r6, pc}
 
-DRAMC_get_dram_size
-    4f48:	e59f33d0 	ldr	r3, =DRAMC_IO_BASE
-    4f4c:	e5931004 	ldr	r1, [r3, #SDR_DCR]
-    4f50:	e7e221d1 	ubfx	r2, r1, #3, #3
-    4f54:	e3520000 	cmp	r2, #0
-    4f58:	1a000001 	bne	0x4f64
-    4f5c:	e3a00020 	mov	r0, #32
-    4f60:	ea000010 	b	0x4fa8
-    4f64:	e3520001 	cmp	r2, #1
-    4f68:	1a000001 	bne	0x4f74
-    4f6c:	e3a00040 	mov	r0, #64	; 0x40
-    4f70:	ea00000c 	b	0x4fa8
-    4f74:	e3520002 	cmp	r2, #2
-    4f78:	1a000001 	bne	0x4f84
-    4f7c:	e3a00080 	mov	r0, #128	; 0x80
-    4f80:	ea000008 	b	0x4fa8
-    4f84:	e3520003 	cmp	r2, #3
-    4f88:	1a000001 	bne	0x4f94
-    4f8c:	e3a00c01 	mov	r0, #256	; 0x100
-    4f90:	ea000004 	b	0x4fa8
-    4f94:	e3520004 	cmp	r2, #4
-    4f98:	1a000001 	bne	0x4fa4
-    4f9c:	e3a00c02 	mov	r0, #512	; 0x200
-    4fa0:	ea000000 	b	0x4fa8
-    4fa4:	e3a00b01 	mov	r0, #1024	; 0x400
-    4fa8:	e7e130d1 	ubfx	r3, r1, #1, #2
-    4fac:	e3530001 	cmp	r3, #1
-    4fb0:	1a000000 	bne	0x4fb8
-    4fb4:	e1a00080 	lsl	r0, r0, #1
-    4fb8:	e7e23351 	ubfx	r3, r1, #6, #3
-    4fbc:	e3530003 	cmp	r3, #3
-    4fc0:	1a000000 	bne	0x4fc8
-    4fc4:	e1a00080 	lsl	r0, r0, #1
-    4fc8:	e7e13551 	ubfx	r3, r1, #10, #2
-    4fcc:	e3530001 	cmp	r3, #1
-    4fd0:	1a000000 	bne	0x4fd8
-    4fd4:	e1a00080 	lsl	r0, r0, #1
-    4fd8:	e12fff1e 	bx	lr
+/*
+**********************************************************************************************************************
+*                                               GET DRAM SIZE
+*
+* Description: Get DRAM Size in MB unit;
+*
+* Arguments  : None
+*
+* Returns    : 32/64/128
+*
+* Notes      :
+*
+**********************************************************************************************************************
+*/
+unsigned DRAMC_get_dram_size(void)
+{
+    __u32 reg_val;
+    __u32 dram_size;
+    __u32 chip_den;
 
-DRAMC_scan_readpipe
-    4fdc:	e59f033c 	ldr	r0, =DRAMC_IO_BASE
-    4fe0:	e5901000 	ldr	r1, [r0, #SDR_CCR]
-    4fe4:	e3811101 	orr	r1, r1, #0x40000000
-    4fe8:	e5801000 	str	r1, [r0, #SDR_CCR]
-    4fec:	e320f000 	nop	{0}
-    4ff0:	e59f0328 	ldr	r0, =DRAMC_IO_BASE
-    4ff4:	e5900000 	ldr	r0, [r0, #SDR_CCR]
-    4ff8:	e3100101 	tst	r0, #0x40000000
-    4ffc:	1afffffb 	bne	0x4ff0
-    5000:	e59f0318 	ldr	r0, =DRAMC_IO_BASE
-    5004:	e590100c 	ldr	r1, [r0, #SDR_CSR]
-    5008:	e3110601 	tst	r1, #0x100000
-    500c:	0a000001 	beq	0x5018
-    5010:	e3e00000 	mvn	r0, #0
-    5014:	e12fff1e 	bx	lr
-    5018:	e3a00000 	mov	r0, #0
-    501c:	eafffffc 	b	0x5014
+    reg_val = mctl_read_w(SDR_DCR);
+    chip_den = (reg_val>>3)&0x7;
+    if(chip_den == 0)
+        dram_size = 32;
+    else if(chip_den == 1)
+        dram_size = 64;
+    else if(chip_den == 2)
+        dram_size = 128;
+    else if(chip_den == 3)
+        dram_size = 256;
+    else if(chip_den == 4)
+        dram_size = 512;
+    else
+        dram_size = 1024;
+
+    if( ((reg_val>>1)&0x3) == 0x1)
+        dram_size<<=1;
+    if( ((reg_val>>6)&0x7) == 0x3)
+        dram_size<<=1;
+    if( ((reg_val>>10)&0x3) == 0x1)
+        dram_size<<=1;
+
+    return dram_size;
+}
+
+/*
+*********************************************************************************************************
+*                                   CHECK DDR READPIPE
+*
+* Description: check ddr readpipe;
+*
+* Arguments  : none
+*
+* Returns    : result, -1:fail, 0:success;
+*
+* Note       :
+*********************************************************************************************************
+*/
+int DRAMC_scan_readpipe(void)
+{
+    __u32 reg_val;
+
+    //data training trigger
+    reg_val = mctl_read_w(SDR_CCR);
+    reg_val |= 0x1<<30;
+    mctl_write_w(SDR_CCR, reg_val);
+
+    //check whether data training process is end
+    while(mctl_read_w(SDR_CCR) & (0x1<<30)) {};
+
+    //check data training result
+    reg_val = mctl_read_w(SDR_CSR);
+    if(reg_val & (0x1<<20))
+    {
+        return -1;
+    }
+
+    return (0);
+}
+
+/*
+*********************************************************************************************************
+* Description: Set autorefresh cycle
+*
+* Arguments  : clock value in MHz unit
+*
+* Returns    : none
+*
+* Note       : differs significantly from arch-sun5i/pm/standby/dram_ini.c
+*********************************************************************************************************
+*/
+void DRAMC_set_autorefresh_cycle(__u32 clk)
+{
+	__u32 reg_val;
+	__u32 tmp_val;
+
+	reg_val = 131;
+	tmp_val = (7987*clk)>>10;
+	tmp_val = tmp_val*9 - 200;
+	reg_val |= tmp_val<<8;
+	reg_val |= 0x8<<24;
+	mctl_write_w(SDR_DRR, reg_val);
+}
 
     5020:	e3a01083 	mov	r1, #131	; 0x83
     5024:	e3013f33 	movw	r3, #7987	; 0x1f33
@@ -4948,16 +4997,32 @@ DRAMC_scan_readpipe
     5044:	e5831010 	str	r1, [r3, #SDR_DRR]
     5048:	e12fff1e 	bx	lr
 
-    504c:	e59f22cc 	ldr	r2, =DRAMC_IO_BASE
-    5050:	e5921230 	ldr	r1, [r2, #SDR_CR]
-    5054:	e3500000 	cmp	r0, #0
-    5058:	0a000001 	beq	0x5064
-    505c:	e3811801 	orr	r1, r1, #0x10000
-    5060:	ea000000 	b	0x5068
-    5064:	e3c11801 	bic	r1, r1, #0x10000
-    5068:	e59f22b0 	ldr	r2, =DRAMC_IO_BASE
-    506c:	e5821230 	str	r1, [r2, SDR_CR]
-    5070:	e12fff1e 	bx	lr
+/*
+*********************************************************************************************************
+*                                   DRAM CLOCK CONTROL
+*
+* Description: dram get clock
+*
+* Arguments  : on   dram clock output (0: disable, 1: enable)
+*
+* Returns    : none
+*
+* Note       :
+*********************************************************************************************************
+*/
+void DRAMC_clock_output_en(__u32 on)
+{
+    __u32 reg_val;
+
+    reg_val = mctl_read_w(SDR_CR);
+
+    if(on)
+        reg_val |= 0x1<<16;
+    else
+        reg_val &= ~(0x1<<16);
+
+    mctl_write_w(SDR_CR, reg_val);
+}
 
 DRAMC_init:
     5074:	e92d4070 	push	{r4, r5, r6, lr}
@@ -4967,16 +5032,16 @@ DRAMC_init:
     5084:	e3e00000 	mvn	r0, #0
     5088:	e8bd8070 	pop	{r4, r5, r6, pc}
     508c:	e5940004 	ldr	r0, [r4, #4]
-    5090:	ebffff85 	bl	0x4eac
+    5090:	ebffff85 	bl	mctl_setup_dram_clock
     5094:	e3a00000 	mov	r0, #0
     5098:	e59f1280 	ldr	r1, =DRAMC_IO_BASE
     509c:	e581023c 	str	r0, [r1, #SDR_0x23c]
-    50a0:	ebfffee8 	bl	0x4c48
-    50a4:	ebfffef3 	bl	0x4c78
+    50a0:	ebfffee8 	bl	mctl_ddr3_reset
+    50a4:	ebfffef3 	bl	mctl_set_drive
     50a8:	e3a00000 	mov	r0, #0
-    50ac:	ebffffe6 	bl	0x504c
-    50b0:	ebfffef9 	bl	0x4c9c
-    50b4:	ebffff04 	bl	0x4ccc
+    50ac:	ebffffe6 	bl	DRAMC_clock_output_en
+    50b0:	ebfffef9 	bl	mctl_itm_disable
+    50b4:	ebffff04 	bl	mctl_enable_ddl0
     50b8:	e3a06000 	mov	r6, #0
     50bc:	e5940008 	ldr	r0, [r4, #8]
     50c0:	e3500003 	cmp	r0, #3
@@ -5037,7 +5102,7 @@ DRAMC_init:
     519c:	e59f017c 	ldr	r0, =DRAMC_IO_BASE
     51a0:	e58060a8 	str	r6, [r0, #SDR_ZQCR0]	; 0xa8
     51a4:	e3a00001 	mov	r0, #1
-    51a8:	ebffffa7 	bl	0x504c
+    51a8:	ebffffa7 	bl	DRAMC_clock_output_en
     51ac:	e3a00010 	mov	r0, #16
     51b0:	ebfffe9e 	bl	sdelay
     51b4:	e320f000 	nop	{0}
@@ -5047,7 +5112,7 @@ DRAMC_init:
     51c4:	1afffffb 	bne	0x51b8
     51c8:	ebfffed8 	bl	mctl_enable_dllx
     51cc:	e5940004 	ldr	r0, [r4, #4]
-    51d0:	ebffff92 	bl	0x5020
+    51d0:	ebffff92 	bl	DRAMC_set_autorefresh_cycle
     51d4:	e594002c 	ldr	r0, [r4, #44]	; 0x2c
     51d8:	e59f1140 	ldr	r1, =DRAMC_IO_BASE
     51dc:	e5810014 	str	r0, [r1, #SDR_TPR0]
@@ -5093,16 +5158,17 @@ DRAMC_init:
     527c:	e5900000 	ldr	r0, [r0]
     5280:	e3100102 	tst	r0, #0x80000000
     5284:	1afffffb 	bne	0x5278
-    5288:	ebfffe89 	bl	0x4cb4
-    528c:	ebffff52 	bl	0x4fdc
+    5288:	ebfffe89 	bl	mctl_itm_enable
+    528c:	ebffff52 	bl	DRAMC_scan_readpipe
     5290:	e1a05000 	mov	r5, r0
     5294:	e3550000 	cmp	r5, #0
     5298:	aa000001 	bge	0x52a4
     529c:	e3a00000 	mov	r0, #0
     52a0:	eaffff78 	b	0x5088
-    52a4:	ebfffeef 	bl	0x4e68
-    52a8:	ebffff26 	bl	0x4f48
+    52a4:	ebfffeef 	bl	mctl_configure_hostport
+    52a8:	ebffff26 	bl	DRAMC_get_dram_size
     52ac:	eaffff75 	b	0x5088
+
     52b0:	e3a00000 	mov	r0, #0
     52b4:	e12fff1e 	bx	lr
 
