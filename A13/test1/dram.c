@@ -90,15 +90,13 @@ void mctl_itm_enable(void)
 
 void mctl_enable_dll0(void)
 {
-    __u32 i = 0;
-
-    mctl_write_w(SDR_DLLCR0, mctl_read_w(SDR_DLLCR0) & ~0x40000000 | 0x80000000);
+    mctl_write_w(SDR_DLLCR0, (mctl_read_w(SDR_DLLCR0) & ~0x40000000) | 0x80000000);
 	sdelay(0x100);
 
     mctl_write_w(SDR_DLLCR0, mctl_read_w(SDR_DLLCR0) & ~0xC0000000);
 	sdelay(0x1000);
 
-    mctl_write_w(SDR_DLLCR0, mctl_read_w(SDR_DLLCR0) & ~0x80000000 | 0x40000000);
+    mctl_write_w(SDR_DLLCR0, (mctl_read_w(SDR_DLLCR0) & ~0x80000000) | 0x40000000);
     sdelay(0x1000);
 }
 
@@ -108,7 +106,7 @@ void mctl_enable_dllx(void)
 
     for(i=1; i<5; i++)
     {
-        mctl_write_w(SDR_DLLCR0+(i<<2), mctl_read_w(SDR_DLLCR0+(i<<2)) & ~0x40000000 | 0x80000000);
+        mctl_write_w(SDR_DLLCR0+(i<<2), (mctl_read_w(SDR_DLLCR0+(i<<2)) & ~0x40000000) | 0x80000000);
     }
 
 	sdelay(0x100);
@@ -122,7 +120,7 @@ void mctl_enable_dllx(void)
 
     for(i=1; i<5; i++)
     {
-        mctl_write_w(SDR_DLLCR0+(i<<2), mctl_read_w(SDR_DLLCR0+(i<<2)) & ~0x80000000 | 0x40000000);
+        mctl_write_w(SDR_DLLCR0+(i<<2), (mctl_read_w(SDR_DLLCR0+(i<<2)) & ~0x80000000) | 0x40000000);
     }
     sdelay(0x1000);
 }
@@ -224,6 +222,7 @@ void mctl_setup_dram_clock(__u32 clk)
 
 int DRAMC_init(struct dram_para_t *para)
 {
+    volatile struct sunxi_dram_reg *dramc = (void *)DRAMC_IO_BASE;
     __u32 reg_val;
     __s32 ret_val;
 
@@ -235,7 +234,7 @@ int DRAMC_init(struct dram_para_t *para)
     }
 
     //setup DRAM relative clock
-    mctl_setup_dram_clock(360); //para->dram_clk);
+    mctl_setup_dram_clock(para->dram_clk);
 
     //reset external DRAM
     mctl_ddr3_reset();
