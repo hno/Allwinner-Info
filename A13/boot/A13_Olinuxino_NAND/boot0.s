@@ -4433,6 +4433,7 @@ Disassembly of section .data:
     4a08:	24c0c001 	strbcs	ip, [r0], #1
     4a0c:	44c02001 	strbmi	r2, [r0], #1
     4a10:	e12fff1e 	bx	lr
+
     4a14:	e92d41f0 	push	{r4, r5, r6, r7, r8, lr}
     4a18:	e2522020 	subs	r2, r2, #32
     4a1c:	3a00000d 	bcc	0x4a58
@@ -4456,6 +4457,7 @@ Disassembly of section .data:
     4a64:	48b10018 	ldmmi	r1!, {r3, r4}
     4a68:	48a00018 	stmiami	r0!, {r3, r4}
     4a6c:	e8bd41f0 	pop	{r4, r5, r6, r7, r8, lr}
+
     4a70:	e1b0cf02 	lsls	ip, r2, #30
     4a74:	24913004 	ldrcs	r3, [r1], #4
     4a78:	24803004 	strcs	r3, [r0], #4
@@ -4786,8 +4788,10 @@ mctl_configure_hostport
     4f3c:	e3a00a01 	mov	r0, #4096	; 0x1000
     4f40:	ebffff3a 	bl	sdelay
     4f44:	e8bd8070 	pop	{r4, r5, r6, pc}
+
+DRAMC_get_dram_size
     4f48:	e59f33d0 	ldr	r3, =DRAMC_IO_BASE
-    4f4c:	e5931004 	ldr	r1, [r3, #4]
+    4f4c:	e5931004 	ldr	r1, [r3, #SDR_DCR]
     4f50:	e7e221d1 	ubfx	r2, r1, #3, #3
     4f54:	e3520000 	cmp	r2, #0
     4f58:	1a000001 	bne	0x4f64
@@ -4823,17 +4827,19 @@ mctl_configure_hostport
     4fd0:	1a000000 	bne	0x4fd8
     4fd4:	e1a00080 	lsl	r0, r0, #1
     4fd8:	e12fff1e 	bx	lr
+
+DRAMC_scan_readpipe
     4fdc:	e59f033c 	ldr	r0, =DRAMC_IO_BASE
-    4fe0:	e5901000 	ldr	r1, [r0]
+    4fe0:	e5901000 	ldr	r1, [r0, #SDR_CCR]
     4fe4:	e3811101 	orr	r1, r1, #0x40000000
-    4fe8:	e5801000 	str	r1, [r0]
+    4fe8:	e5801000 	str	r1, [r0, #SDR_CCR]
     4fec:	e320f000 	nop	{0}
     4ff0:	e59f0328 	ldr	r0, =DRAMC_IO_BASE
-    4ff4:	e5900000 	ldr	r0, [r0]
+    4ff4:	e5900000 	ldr	r0, [r0, #SDR_CCR]
     4ff8:	e3100101 	tst	r0, #0x40000000
     4ffc:	1afffffb 	bne	0x4ff0
     5000:	e59f0318 	ldr	r0, =DRAMC_IO_BASE
-    5004:	e590100c 	ldr	r1, [r0, #12]
+    5004:	e590100c 	ldr	r1, [r0, #SDR_CSR]
     5008:	e3110601 	tst	r1, #0x100000
     500c:	0a000001 	beq	0x5018
     5010:	e3e00000 	mvn	r0, #0
@@ -4850,7 +4856,7 @@ mctl_configure_hostport
     5038:	e1811402 	orr	r1, r1, r2, lsl #8
     503c:	e3811302 	orr	r1, r1, #0x8000000
     5040:	e59f32d8 	ldr	r3, =DRAMC_IO_BASE
-    5044:	e5831010 	str	r1, [r3, #16]
+    5044:	e5831010 	str	r1, [r3, #SDR_DRR]
     5048:	e12fff1e 	bx	lr
     504c:	e59f22cc 	ldr	r2, =DRAMC_IO_BASE
     5050:	e5921230 	ldr	r1, [r2, #SDR_CR]
@@ -4862,6 +4868,8 @@ mctl_configure_hostport
     5068:	e59f22b0 	ldr	r2, =DRAMC_IO_BASE
     506c:	e5821230 	str	r1, [r2, SDR_CR]
     5070:	e12fff1e 	bx	lr
+
+DRAMC_init:
     5074:	e92d4070 	push	{r4, r5, r6, lr}
     5078:	e1a04000 	mov	r4, r0
     507c:	e3540000 	cmp	r4, #0
@@ -4872,7 +4880,7 @@ mctl_configure_hostport
     5090:	ebffff85 	bl	0x4eac
     5094:	e3a00000 	mov	r0, #0
     5098:	e59f1280 	ldr	r1, =DRAMC_IO_BASE
-    509c:	e581023c 	str	r0, [r1, #572]	; 0x23c
+    509c:	e581023c 	str	r0, [r1, #SDR_0x23c]
     50a0:	ebfffee8 	bl	0x4c48
     50a4:	ebfffef3 	bl	0x4c78
     50a8:	e3a00000 	mov	r0, #0
@@ -4927,40 +4935,40 @@ mctl_configure_hostport
     516c:	e3866a01 	orr	r6, r6, #4096	; 0x1000
     5170:	e3866a02 	orr	r6, r6, #8192	; 0x2000
     5174:	e59f01a4 	ldr	r0, =DRAMC_IO_BASE
-    5178:	e5806004 	str	r6, [r0, #4]
+    5178:	e5806004 	str	r6, [r0, #SDR_DCR]
     517c:	e5940020 	ldr	r0, [r4, #32]
     5180:	e7f36450 	ubfx	r6, r0, #8, #20
     5184:	e5940020 	ldr	r0, [r4, #32]
     5188:	e20000ff 	and	r0, r0, #255	; 0xff
     518c:	e1866a00 	orr	r6, r6, r0, lsl #20
     5190:	e5940020 	ldr	r0, [r4, #32]
-    5194:	e200020f 	and	r0, r0, #-268435456	; 0xf0000000
+    5194:	e200020f 	and	r0, r0, #0xf0000000
     5198:	e1866000 	orr	r6, r6, r0
     519c:	e59f017c 	ldr	r0, =DRAMC_IO_BASE
-    51a0:	e58060a8 	str	r6, [r0, #168]	; 0xa8
+    51a0:	e58060a8 	str	r6, [r0, #SDR_ZQCR0]	; 0xa8
     51a4:	e3a00001 	mov	r0, #1
     51a8:	ebffffa7 	bl	0x504c
     51ac:	e3a00010 	mov	r0, #16
     51b0:	ebfffe9e 	bl	sdelay
     51b4:	e320f000 	nop	{0}
     51b8:	e59f0160 	ldr	r0, =DRAMC_IO_BASE
-    51bc:	e5900000 	ldr	r0, [r0]
-    51c0:	e3100102 	tst	r0, #-2147483648	; 0x80000000
+    51bc:	e5900000 	ldr	r0, [r0, #SDR_CCR]
+    51c0:	e3100102 	tst	r0, #0x80000000
     51c4:	1afffffb 	bne	0x51b8
-    51c8:	ebfffed8 	bl	0x4d30
+    51c8:	ebfffed8 	bl	mctl_enable_dllx
     51cc:	e5940004 	ldr	r0, [r4, #4]
     51d0:	ebffff92 	bl	0x5020
     51d4:	e594002c 	ldr	r0, [r4, #44]	; 0x2c
     51d8:	e59f1140 	ldr	r1, =DRAMC_IO_BASE
-    51dc:	e5810014 	str	r0, [r1, #20]
+    51dc:	e5810014 	str	r0, [r1, #SDR_TPR0]
     51e0:	e5940030 	ldr	r0, [r4, #48]	; 0x30
-    51e4:	e5810018 	str	r0, [r1, #24]
+    51e4:	e5810018 	str	r0, [r1, #SDR_TPR1]
     51e8:	e5940034 	ldr	r0, [r4, #52]	; 0x34
-    51ec:	e581001c 	str	r0, [r1, #28]
+    51ec:	e581001c 	str	r0, [r1, #SDR_TPR2]
     51f0:	e5940008 	ldr	r0, [r4, #8]
     51f4:	e3500003 	cmp	r0, #3
     51f8:	1a000005 	bne	0x5214
-    51fc:	e3a06a01 	mov	r6, #4096	; 0x1000
+    51fc:	e3a06a01 	mov	r6, #0x1000
     5200:	e594001c 	ldr	r0, [r4, #28]
     5204:	e2400004 	sub	r0, r0, #4
     5208:	e1866200 	orr	r6, r6, r0, lsl #4
