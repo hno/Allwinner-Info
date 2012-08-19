@@ -1630,7 +1630,7 @@ _start
     1ca4:	e3a02050 	mov	r2, #80	; 0x50
     1ca8:	e59f106c 	ldr	r1, [0x1d1c]
     1cac:	e1a00004 	mov	r0, r4
-    1cb0:	eb000b57 	bl	0x4a14
+    1cb0:	eb000b57 	bl	memcpy
     1cb4:	e8bd8010 	pop	{r4, pc}
 
     1cb8:	e92d4070 	push	{r4, r5, r6, lr}
@@ -1639,7 +1639,7 @@ _start
     1cc4:	e3a02050 	mov	r2, #80	; 0x50
     1cc8:	e1a01005 	mov	r1, r5
     1ccc:	e2840038 	add	r0, r4, #56	; 0x38
-    1cd0:	eb000b4f 	bl	0x4a14
+    1cd0:	eb000b4f 	bl	memcpy
     1cd4:	e8bd8070 	pop	{r4, r5, r6, pc}
 
     1cd8:	e92d4070 	push	{r4, r5, r6, lr}
@@ -1656,7 +1656,7 @@ _start
     1d00:	e3a020ac 	mov	r2, #172	; 0xac
     1d04:	e59f1018 	ldr	r1, [0x1d24]
     1d08:	e1a00004 	mov	r0, r4
-    1d0c:	eb000b40 	bl	0x4a14
+    1d0c:	eb000b40 	bl	memcpy
     1d10:	e3a00000 	mov	r0, #0
     1d14:	e8bd8010 	pop	{r4, pc}
 
@@ -4202,11 +4202,11 @@ _start
     4544:	e24dd0e4 	sub	sp, sp, #228	; 0xe4
     4548:	e3a02030 	mov	r2, #48	; 0x30
     454c:	e28d00b4 	add	r0, sp, #180	; 0xb4
-    4550:	eb00012f 	bl	0x4a14
+    4550:	eb00012f 	bl	memcpy
     4554:	e59f1124 	ldr	r1, [0x4680]
     4558:	e3a02030 	mov	r2, #48	; 0x30
     455c:	e28d0084 	add	r0, sp, #132	; 0x84
-    4560:	eb00012b 	bl	0x4a14
+    4560:	eb00012b 	bl	memcpy
     4564:	e59f0118 	ldr	r0, [0x4684]
     4568:	e28d4078 	add	r4, sp, #120	; 0x78
     456c:	e890000e 	ldm	r0, {r1, r2, r3}
@@ -4214,7 +4214,7 @@ _start
     4574:	e280100c 	add	r1, r0, #12
     4578:	e3a02078 	mov	r2, #120	; 0x78
     457c:	e1a0000d 	mov	r0, sp
-    4580:	eb000123 	bl	0x4a14
+    4580:	eb000123 	bl	memcpy
     4584:	e59fc0c8 	ldr	ip, [0x4654]
     4588:	e1a00825 	lsr	r0, r5, #16
     458c:	e20510ff 	and	r1, r5, #255	; 0xff
@@ -4501,7 +4501,7 @@ _start
     49b8:	e2422004 	sub	r2, r2, #4
     49bc:	34c03001 	strbcc	r3, [r0], #1
     49c0:	e2113003 	ands	r3, r1, #3
-    49c4:	0a000012 	beq	0x4a14
+    49c4:	0a000012 	beq	memcpy
     49c8:	e2522008 	subs	r2, r2, #8
     49cc:	3a000004 	bcc	0x49e4
     49d0:	e4913004 	ldr	r3, [r1], #4
@@ -4522,6 +4522,7 @@ _start
     4a0c:	44c02001 	strbmi	r2, [r0], #1
     4a10:	e12fff1e 	bx	lr
 
+memcpy
     4a14:	e92d41f0 	push	{r4, r5, r6, r7, r8, lr}
     4a18:	e2522020 	subs	r2, r2, #32
     4a1c:	3a00000d 	bcc	0x4a58
@@ -4671,77 +4672,84 @@ sdelay:
     4c40:	3afffffc 	bcc	0x4c38
     4c44:	e12fff1e 	bx	lr
 
-mctl_ddr3_reset(void):
-    4c48:	e52de004 	push	{lr}		; (str lr, [sp, #-4]!)
-    4c4c:	e59f06cc 	ldr	r0, =DRAMC_IO_BASE
-    4c50:	e5903230 	ldr	r3, [r0, #SDR_CR]
-    4c54:	e3c33a01 	bic	r3, r3, #(0x1<<12)
-    4c58:	e5803230 	str	r3, [r0, #SDR_CR]
-    4c5c:	e3a00c01 	mov	r0, #0x100
-    4c60:	ebfffff2 	bl	sdelay
-    4c64:	e59f06b4 	ldr	r0, =DRAMC_IO_BASE
-    4c68:	e5903230 	ldr	r3, [r0, #SDR_CR]
-    4c6c:	e3833a01 	orr	r3, r3, #(0x1<<12)
-    4c70:	e5803230 	str	r3, [r0, #SDR_CR]
-    4c74:	e49df004 	pop	{pc}		; (ldr pc, [sp], #4)
+void mctl_ddr3_reset(void)
+{
+	__u32 reg_val;
 
-mctl_set_drive(void):
-    4c78:	e59f16a0 	ldr	r1, =DRAMC_IO_BASE
-    4c7c:	e5910230 	ldr	r0, [r1, #SDR_CR]
-    4c80:	e3800a06 	orr	r0, r0, #(6<<12)
-    4c84:	e3001ffc 	movw	r1, #0xffc
-    4c88:	e1800001 	orr	r0, r0, r1
-    4c8c:	e3c00003 	bic	r0, r0, #3
-    4c90:	e59f1688 	ldr	r1, =DRAMC_IO_BASE
-    4c94:	e5810230 	str	r0, [r1, #SDR_CR]
-    4c98:	e12fff1e 	bx	lr
+	reg_val = mctl_read_w(SDR_CR);
+	reg_val &= ~(0x1<<12);
+	mctl_write_w(SDR_CR, reg_val);
+	sdelay(0x100);
+	reg_val = mctl_read_w(SDR_CR);
+	reg_val |= (0x1<<12);
+	mctl_write_w(SDR_CR, reg_val);
+}
 
-mctl_itm_disable
-    4c9c:	e3a00000 	mov	r0, #0
-    4ca0:	e59f1678 	ldr	r1, =DRAMC_IO_BASE
-    4ca4:	e5910000 	ldr	r0, [r1, #SDR_CCR]	
-    4ca8:	e3800201 	orr	r0, r0, #(1<<28)
-    4cac:	e5810000 	str	r0, [r1, #SDR_CCR]
-    4cb0:	e12fff1e 	bx	lr
+void mctl_set_drive(void)
+{
+    __u32 reg_val;
 
-mctl_itm_enable
-    4cb4:	e3a00000 	mov	r0, #0
-    4cb8:	e59f1660 	ldr	r1, =DRAMC_IO_BASE
-    4cbc:	e5910000 	ldr	r0, [r1, #SDR_CCR]
-    4cc0:	e3c00201 	bic	r0, r0, #(1<<28)
-    4cc4:	e5810000 	str	r0, [r1, #SDR_CCR]
-    4cc8:	e12fff1e 	bx	lr
+    reg_val = mctl_read_w(SDR_CR);
+    reg_val |= (0x6<<12);
+		reg_val |= 0xFFC;
+    reg_val &= ~0x3;
+    mctl_write_w(SDR_CR, reg_val);
+}
 
-mctl_enable_ddl0
-    4ccc:	e52de004 	push	{lr}		; (str lr, [sp, #-4]!)
-    4cd0:	e59f0648 	ldr	r0, =DRAMC_IO_BASE
-    4cd4:	e5900204 	ldr	r0, [r0, #SDR_DLLCR0]	; 0x204
-    4cd8:	e3c00101 	bic	r0, r0, #0x40000000
-    4cdc:	e3800102 	orr	r0, r0, #0x80000000
-    4ce0:	e59f1638 	ldr	r1, =DRAMC_IO_BASE
-    4ce4:	e5810204 	str	r0, [r1, #SDR_DLLCR0]	; 0x204
-    4ce8:	e3a00c01 	mov	r0, #256	; 0x100
-    4cec:	ebffffcf 	bl	sdelay
-    4cf0:	e59f0628 	ldr	r0, =DRAMC_IO_BASE
-    4cf4:	e5900204 	ldr	r0, [r0, #SDR_DLLCR0]	; 0x204
-    4cf8:	e3c00103 	bic	r0, r0, #0xc0000000
-    4cfc:	e59f161c 	ldr	r1, =DRAMC_IO_BASE
-    4d00:	e5810204 	str	r0, [r1, #SDR_DLLCR0]	; 0x204
-    4d04:	e3a00a01 	mov	r0, #0x1000
-    4d08:	ebffffc8 	bl	sdelay
-    4d0c:	e59f060c 	ldr	r0, =DRAMC_IO_BASE
-    4d10:	e5900204 	ldr	r0, [r0, #SDR_DLLCR0]	; 0x204
-    4d14:	e3c00102 	bic	r0, r0, #0x80000000
-    4d18:	e3800101 	orr	r0, r0, #0x40000000
-    4d1c:	e59f15fc 	ldr	r1, =DRAMC_IO_BASE
-    4d20:	e5810204 	str	r0, [r1, #SDR_DLLCR0]	; 0x204
-    4d24:	e3a00a01 	mov	r0, #0x1000
-    4d28:	ebffffc0 	bl	sdelay
-    4d2c:	e49df004 	pop	{pc}		; (ldr pc, [sp], #4)
+void mctl_itm_disable(void)
+{
+    __u32 reg_val = 0x0;
 
-mctl_enable_dllx
+    reg_val = mctl_read_w(SDR_CCR);
+    reg_val |= 0x1<<28;
+    mctl_write_w(SDR_CCR, reg_val);
+}
+
+void mctl_itm_enable(void)
+{
+    __u32 reg_val = 0x0;
+
+    reg_val = mctl_read_w(SDR_CCR);
+    reg_val &= ~(0x1<<28);
+    mctl_write_w(SDR_CCR, reg_val);
+}
+
+void mctl_enable_dll0(void)
+{
+    mctl_write_w(SDR_DLLCR0, (mctl_read_w(SDR_DLLCR0) & ~0x40000000) | 0x80000000);
+	sdelay(0x100);
+
+    mctl_write_w(SDR_DLLCR0, mctl_read_w(SDR_DLLCR0) & ~0xC0000000);
+	sdelay(0x1000);
+
+    mctl_write_w(SDR_DLLCR0, (mctl_read_w(SDR_DLLCR0) & ~0x80000000) | 0x40000000);
+    sdelay(0x1000);
+}
+
+/*
+ * Note: This differs from pm/standby in that it checks the bus width
+ */
+void mctl_enable_dllx(void)
+{
+    __u32 i = 0;
+    __u32 n;
+    __u32 bus_width;
+/*
     4d30:	e92d4030 	push	{r4, r5, lr}
     4d34:	e3a03000 	mov	r3, #0
+*/
+
+    bus_width = mctl_read_w(SDR_DCR);
+    bus_width >>= 6;
+    bus_width &= 7;
+
+    if (bus_width == 3) {
+	n = 5;
+    } else {
+	n = 3;
+	i = 1;
+    }
+/*
     4d38:	e59f05e0 	ldr	r0, =DRAMC_IO_BASE
     4d3c:	e5904004 	ldr	r4, [r0, #SRD_DCR]
     4d40:	e1a04324 	lsr	r4, r4, #6
@@ -4751,6 +4759,13 @@ mctl_enable_dllx
     4d50:	e3a05005 	mov	r5, #5
     4d54:	ea000000 	b	0x4d5c
     4d58:	e3a05003 	mov	r5, #3
+*/
+
+    for(i=1; i<n; i++)
+    {
+        mctl_write_w(SDR_DLLCR0+(i<<2), (mctl_read_w(SDR_DLLCR0+(i<<2)) & ~0x40000000) | 0x80000000);
+    }
+/*
     4d5c:	e3a03001 	mov	r3, #1
     4d60:	ea000008 	b	0x4d88
     4d64:	e59f05b4 	ldr	r0, =DRAMC_IO_BASE
@@ -4764,8 +4779,21 @@ mctl_enable_dllx
     4d84:	e2833001 	add	r3, r3, #1
     4d88:	e1530005 	cmp	r3, r5
     4d8c:	3afffff4 	bcc	0x4d64
+*/
+
+
+	sdelay(0x100);
+
+/*
     4d90:	e3a00c01 	mov	r0, #0x100
     4d94:	ebffffa5 	bl	sdelay
+*/
+
+    for(i=1; i<n; i++)
+    {
+        mctl_write_w(SDR_DLLCR0+(i<<2), mctl_read_w(SDR_DLLCR0+(i<<2)) & ~0xC0000000);
+    }
+/*
     4d98:	e3a03001 	mov	r3, #1
     4d9c:	ea000007 	b	0x4dc0
     4da0:	e59f0578 	ldr	r0, =DRAMC_IO_BASE
@@ -4778,8 +4806,21 @@ mctl_enable_dllx
     4dbc:	e2833001 	add	r3, r3, #1
     4dc0:	e1530005 	cmp	r3, r5
     4dc4:	3afffff5 	bcc	0x4da0
+*/
+
+
+	sdelay(0x1000);
+/*
     4dc8:	e3a00a01 	mov	r0, #0x1000
     4dcc:	ebffff97 	bl	sdelay
+*/
+
+
+    for(i=1; i<5; i++)
+    {
+        mctl_write_w(SDR_DLLCR0+(i<<2), (mctl_read_w(SDR_DLLCR0+(i<<2)) & ~0x80000000) | 0x40000000);
+    }
+/*
     4dd0:	e3a03001 	mov	r3, #1
     4dd4:	ea000008 	b	0x4dfc
     4dd8:	e59f0540 	ldr	r0, =DRAMC_IO_BASE
@@ -4793,52 +4834,57 @@ mctl_enable_dllx
     4df8:	e2833001 	add	r3, r3, #1
     4dfc:	e1530005 	cmp	r3, r5
     4e00:	3afffff4 	bcc	0x4dd8
+*/
+    sdelay(0x1000);
+/*
     4e04:	e3a00a01 	mov	r0, #0x1000
     4e08:	ebffff88 	bl	sdelay
+*/
+
+/*
     4e0c:	e8bd8030 	pop	{r4, r5, pc}
+*/
+}
 
-mctl_disable_dll
-    4e10:	e59f1508 	ldr	r1, =DRAMC_IO_BASE
-    4e14:	e5910204 	ldr	r0, [r1, #SDR_DLLCR0]	; 0x204
-    4e18:	e3c00101 	bic	r0, r0, #0x40000000
-    4e1c:	e3800102 	orr	r0, r0, #0x80000000
-    4e20:	e5810204 	str	r0, [r1, #SDR_DLLCR0]	; 0x204
-    4e24:	e5910208 	ldr	r0, [r1, #SDR_DDLCR1]	; 0x208
-    4e28:	e3c00101 	bic	r0, r0, #0x40000000
-    4e2c:	e3800102 	orr	r0, r0, #0x80000000
-    4e30:	e5810208 	str	r0, [r1, #SDR_DLLCR1]	; 0x208
-    4e34:	e591020c 	ldr	r0, [r1, #SDR_DLLCR2]	; 0x20c
-    4e38:	e3c00101 	bic	r0, r0, #0x40000000
-    4e3c:	e3800102 	orr	r0, r0, #0x80000000
-    4e40:	e581020c 	str	r0, [r1, #SDR_DLLCR2]	; 0x20c
-    4e44:	e5910210 	ldr	r0, [r1, #SDR_DLLCR3]	; 0x210
-    4e48:	e3c00101 	bic	r0, r0, #0x40000000
-    4e4c:	e3800102 	orr	r0, r0, #0x80000000
-    4e50:	e5810210 	str	r0, [r1, #SDR_DLLCR3]	; 0x210
-    4e54:	e5910214 	ldr	r0, [r1, #SDR_DLLCR4]	; 0x214
-    4e58:	e3c00101 	bic	r0, r0, #0x40000000
-    4e5c:	e3800102 	orr	r0, r0, #0x80000000
-    4e60:	e5810214 	str	r0, [r1, #SDR_DLLCR4]	; 0x214
-    4e64:	e12fff1e 	bx	lr
+void mctl_disable_dll(void)
+{
+	__u32 reg_val;
 
-mctl_configure_hostport
-    4e68:	e92d4010 	push	{r4, lr}
-    4e6c:	e24dd080 	sub	sp, sp, #128	; 0x80
-    4e70:	e3a02080 	mov	r2, #128	; 0x80
-    4e74:	e59f14a8 	ldr	r1, =hpcr_value
-    4e78:	e1a0000d 	mov	r0, sp
-    4e7c:	ebfffee4 	bl	0x4a14
-    4e80:	e3a04000 	mov	r4, #0
-    4e84:	ea000004 	b	0x4e9c
-    4e88:	e79d0104 	ldr	r0, [sp, r4, lsl #2]
-    4e8c:	e59f148c 	ldr	r1, =DRAMC_IO_BASE
-    4e90:	e0811104 	add	r1, r1, r4, lsl #2
-    4e94:	e5810250 	str	r0, [r1, #SDR_HPCR]	; 0x250
-    4e98:	e2844001 	add	r4, r4, #1
-    4e9c:	e3540020 	cmp	r4, #32
-    4ea0:	3afffff8 	bcc	0x4e88
-    4ea4:	e28dd080 	add	sp, sp, #128	; 0x80
-    4ea8:	e8bd8010 	pop	{r4, pc}
+	reg_val = mctl_read_w(SDR_DLLCR0);
+	reg_val &= ~(0x1<<30);
+	reg_val |= 0x1U<<31;
+	mctl_write_w(SDR_DLLCR0, reg_val);
+
+	reg_val = mctl_read_w(SDR_DLLCR1);
+	reg_val &= ~(0x1<<30);
+	reg_val |= 0x1U<<31;
+	mctl_write_w(SDR_DLLCR1, reg_val);
+
+	reg_val = mctl_read_w(SDR_DLLCR2);
+	reg_val &= ~(0x1<<30);
+	reg_val |= 0x1U<<31;
+	mctl_write_w(SDR_DLLCR2, reg_val);
+
+	reg_val = mctl_read_w(SDR_DLLCR3);
+	reg_val &= ~(0x1<<30);
+	reg_val |= 0x1U<<31;
+	mctl_write_w(SDR_DLLCR3, reg_val);
+
+	reg_val = mctl_read_w(SDR_DLLCR4);
+	reg_val &= ~(0x1<<30);
+	reg_val |= 0x1U<<31;
+	mctl_write_w(SDR_DLLCR4, reg_val);
+}
+
+void mctl_configure_hostport(void)
+{
+    __u32 i;
+
+    for(i=0; i<32; i++)
+    {
+        mctl_write_w(SDR_HPCR + (i<<2), hpcr_value[i]);
+    }
+}
 
 mctl_setup_dram_clock
     4eac:	e92d4070 	push	{r4, r5, r6, lr}
@@ -4985,6 +5031,8 @@ void DRAMC_set_autorefresh_cycle(__u32 clk)
 	mctl_write_w(SDR_DRR, reg_val);
 }
 
+/*
+DRAMC_set_autorefresh_cycle
     5020:	e3a01083 	mov	r1, #131	; 0x83
     5024:	e3013f33 	movw	r3, #7987	; 0x1f33
     5028:	e0030390 	mul	r3, r0, r3
@@ -4996,6 +5044,7 @@ void DRAMC_set_autorefresh_cycle(__u32 clk)
     5040:	e59f32d8 	ldr	r3, =DRAMC_IO_BASE
     5044:	e5831010 	str	r1, [r3, #SDR_DRR]
     5048:	e12fff1e 	bx	lr
+*/
 
 /*
 *********************************************************************************************************
