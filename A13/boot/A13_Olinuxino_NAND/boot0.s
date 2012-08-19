@@ -5,7 +5,7 @@ boot0.bin:     file format binary
 Disassembly of section .data:
 
 00000000 <.data>:
-       0:	ea0000b0 	b	0x2c8
+       0:	ea0000b0 	b	_start
        4:	Magic     : eGON.BT0
       10:	Length    : 24576
       14:	HSize     : 48
@@ -79,6 +79,7 @@ Disassembly of section .data:
      2a8:	 DATA e0  : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
      2b8:	 DATA f0  : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 
+_start
      2c8:	e10f0000 	mrs	r0, CPSR
      2cc:	e3c0001f 	bic	r0, r0, #31
      2d0:	e3800013 	orr	r0, r0, #19
@@ -497,12 +498,12 @@ Disassembly of section .data:
      ab4:	e1a04000 	mov	r4, r0
      ab8:	e1a05001 	mov	r5, r1
      abc:	e1a06002 	mov	r6, r2
-     ac0:	e51f0044 	ldr	r0, [pc, #-68]	; 0xa84
+     ac0:	e51f0044 	ldr	r0, =0xa84
      ac4:	e5900000 	ldr	r0, [r0]
      ac8:	e1a074a0 	lsr	r7, r0, #9
      acc:	e3a00000 	mov	r0, #0
      ad0:	e5cd005c 	strb	r0, [sp, #92]	; 0x5c
-     ad4:	e51f0064 	ldr	r0, [pc, #-100]	; 0xa78
+     ad4:	e51f0064 	ldr	r0, =0xa78
      ad8:	e5900000 	ldr	r0, [r0]
      adc:	e1a014a0 	lsr	r1, r0, #9
      ae0:	e28d2008 	add	r2, sp, #8
@@ -512,7 +513,7 @@ Disassembly of section .data:
      af0:	e59d0008 	ldr	r0, [sp, #8]
      af4:	e6ff0070 	uxth	r0, r0
      af8:	e1cd05be 	strh	r0, [sp, #94]	; 0x5e
-     afc:	e51f0080 	ldr	r0, [pc, #-128]	; 0xa84
+     afc:	e51f0080 	ldr	r0, =0xa84
      b00:	e5900000 	ldr	r0, [r0]
      b04:	e1a014a0 	lsr	r1, r0, #9
      b08:	e28d2010 	add	r2, sp, #16
@@ -532,7 +533,7 @@ Disassembly of section .data:
      b40:	e58d0014 	str	r0, [sp, #20]
      b44:	e3a08000 	mov	r8, #0
      b48:	ea00000e 	b	0xb88
-     b4c:	e51f00d0 	ldr	r0, [pc, #-208]	; 0xa84
+     b4c:	e51f00d0 	ldr	r0, =0xa84
      b50:	e5900000 	ldr	r0, [r0]
      b54:	e0205890 	mla	r0, r0, r8, r5
      b58:	e58d0064 	str	r0, [sp, #100]	; 0x64
@@ -566,7 +567,7 @@ Disassembly of section .data:
      bc8:	e3e00000 	mvn	r0, #0
      bcc:	eaffffd3 	b	0xb20
      bd0:	e3a0a000 	mov	sl, #0
-     bd4:	e51f0158 	ldr	r0, [pc, #-344]	; 0xa84
+     bd4:	e51f0158 	ldr	r0, =0xa84
      bd8:	e5900000 	ldr	r0, [r0]
      bdc:	e59d1018 	ldr	r1, [sp, #24]
      be0:	e0205190 	mla	r0, r0, r1, r5
@@ -601,7 +602,7 @@ Disassembly of section .data:
      c54:	e5cd0044 	strb	r0, [sp, #68]	; 0x44
      c58:	e6ff0074 	uxth	r0, r4
      c5c:	e1cd04b6 	strh	r0, [sp, #70]	; 0x46
-     c60:	e51f01f4 	ldr	r0, [pc, #-500]	; 0xa74
+     c60:	e51f01f4 	ldr	r0, =0xa74
      c64:	e5900000 	ldr	r0, [r0]
      c68:	e6ff0070 	uxth	r0, r0
      c6c:	e1cd04b8 	strh	r0, [sp, #72]	; 0x48
@@ -629,7 +630,7 @@ Disassembly of section .data:
      cc4:	e8bd8010 	pop	{r4, pc}
      cc8:	e59f01cc 	ldr	r0, =CCM_IO_BASE
      ccc:	e5900144 	ldr	r0, [r0, #324]	; 0x144
-     cd0:	e3800102 	orr	r0, r0, #-2147483648	; 0x80000000
+     cd0:	e3800102 	orr	r0, r0, #0x80000000
      cd4:	e59f11c0 	ldr	r1, =CCM_IO_BASE
      cd8:	e5810144 	str	r0, [r1, #324]	; 0x144
      cdc:	e3a00001 	mov	r0, #1
@@ -717,6 +718,7 @@ Disassembly of section .data:
      e24:	e59f00d0 	ldr	r0, =0xefc
      e28:	eb0011af 	bl	0x54ec
      e2c:	e8bd8070 	pop	{r4, r5, r6, pc}
+
      e30:	e59f2140 	ldr	r2, =0xf78
      e34:	e59f3060 	ldr	r3, =CCM_IO_BASE
      e38:	e5832054 	str	r2, [r3, #84]	; 0x54
@@ -2531,7 +2533,7 @@ Disassembly of section .data:
 
     2b04:	e92d401c 	push	{r2, r3, r4, lr}
     2b08:	e3a00000 	mov	r0, #0
-    2b0c:	e51f204c 	ldr	r2, [pc, #-76]	; 0x2ac8
+    2b0c:	e51f204c 	ldr	r2, =0x2ac8
     2b10:	e1a01000 	mov	r1, r0
     2b14:	e7821100 	str	r1, [r2, r0, lsl #2]
     2b18:	e2800001 	add	r0, r0, #1
@@ -2556,7 +2558,7 @@ Disassembly of section .data:
     2b64:	e1a00004 	mov	r0, r4
     2b68:	e8bd801c 	pop	{r2, r3, r4, pc}
     2b6c:	e92d4030 	push	{r4, r5, lr}
-    2b70:	e51f43a8 	ldr	r4, [pc, #-936]	; 0x27d0
+    2b70:	e51f43a8 	ldr	r4, =0x27d0
     2b74:	e24dd01c 	sub	sp, sp, #28
     2b78:	e1d411b0 	ldrh	r1, [r4, #16]
     2b7c:	e2011c01 	and	r1, r1, #256	; 0x100
@@ -2588,7 +2590,7 @@ Disassembly of section .data:
     2be4:	e3a00000 	mov	r0, #0
     2be8:	e8bd8030 	pop	{r4, r5, pc}
     2bec:	e92d4030 	push	{r4, r5, lr}
-    2bf0:	e51f4428 	ldr	r4, [pc, #-1064]	; 0x27d0
+    2bf0:	e51f4428 	ldr	r4, =0x27d0
     2bf4:	e24dd02c 	sub	sp, sp, #44	; 0x2c
     2bf8:	e1d411b0 	ldrh	r1, [r4, #16]
     2bfc:	e2011c01 	and	r1, r1, #256	; 0x100
@@ -2632,7 +2634,7 @@ Disassembly of section .data:
     2c94:	e8bd8030 	pop	{r4, r5, pc}
     2c98:	e92d407c 	push	{r2, r3, r4, r5, r6, lr}
     2c9c:	e1a06000 	mov	r6, r0
-    2ca0:	e51f44d8 	ldr	r4, [pc, #-1240]	; 0x27d0
+    2ca0:	e51f44d8 	ldr	r4, =0x27d0
     2ca4:	e5d40012 	ldrb	r0, [r4, #18]
     2ca8:	ebfffd22 	bl	0x2138
     2cac:	e3700001 	cmn	r0, #1
@@ -2935,7 +2937,7 @@ Disassembly of section .data:
     318c:	ebfffc28 	bl	0x2234
     3190:	e3e00014 	mvn	r0, #20
     3194:	e8bd8ff8 	pop	{r3, r4, r5, r6, r7, r8, r9, sl, fp, pc}
-    3198:	e51f89d0 	ldr	r8, [pc, #-2512]	; 0x27d0
+    3198:	e51f89d0 	ldr	r8, =0x27d0
     319c:	e3540001 	cmp	r4, #1
     31a0:	1a000009 	bne	0x31cc
     31a4:	e1d801b0 	ldrh	r0, [r8, #16]
@@ -4291,15 +4293,15 @@ Disassembly of section .data:
     47d8:	e8bd8ff0 	pop	{r4, r5, r6, r7, r8, r9, sl, fp, pc}
     47dc:	e92d4070 	push	{r4, r5, r6, lr}
     47e0:	e1a05001 	mov	r5, r1
-    47e4:	e51f6198 	ldr	r6, [pc, #-408]	; 0x4654
+    47e4:	e51f6198 	ldr	r6, =0x4654
     47e8:	e5d61000 	ldrb	r1, [r6]
     47ec:	e3510010 	cmp	r1, #16
     47f0:	23a00000 	movcs	r0, #0
     47f4:	28bd8070 	popcs	{r4, r5, r6, pc}
-    47f8:	e51f118c 	ldr	r1, [pc, #-396]	; 0x4674
+    47f8:	e51f118c 	ldr	r1, =0x4674
     47fc:	e5d62002 	ldrb	r2, [r6, #2]
     4800:	e0814100 	add	r4, r1, r0, lsl #2
-    4804:	e51f1194 	ldr	r1, [pc, #-404]	; 0x4678
+    4804:	e51f1194 	ldr	r1, =0x4678
     4808:	e1a00004 	mov	r0, r4
     480c:	ebfffe50 	bl	0x4154
     4810:	e3a01000 	mov	r1, #0
@@ -4312,13 +4314,13 @@ Disassembly of section .data:
     482c:	e8bd8070 	pop	{r4, r5, r6, pc}
     4830:	e92d0030 	push	{r4, r5}
     4834:	e1a02000 	mov	r2, r0
-    4838:	e51f41ec 	ldr	r4, [pc, #-492]	; 0x4654
+    4838:	e51f41ec 	ldr	r4, =0x4654
     483c:	e1a00001 	mov	r0, r1
     4840:	e5d41000 	ldrb	r1, [r4]
     4844:	e3510010 	cmp	r1, #16
     4848:	2a00000c 	bcs	0x4880
     484c:	e3a01000 	mov	r1, #0
-    4850:	e51f31e4 	ldr	r3, [pc, #-484]	; 0x4674
+    4850:	e51f31e4 	ldr	r3, =0x4674
     4854:	e0833102 	add	r3, r3, r2, lsl #2
     4858:	e5d42002 	ldrb	r2, [r4, #2]
     485c:	e1510002 	cmp	r1, r2
@@ -4327,14 +4329,14 @@ Disassembly of section .data:
     4868:	32811001 	addcc	r1, r1, #1
     486c:	3afffff9 	bcc	0x4858
     4870:	e5d42002 	ldrb	r2, [r4, #2]
-    4874:	e51f1204 	ldr	r1, [pc, #-516]	; 0x4678
+    4874:	e51f1204 	ldr	r1, =0x4678
     4878:	e1a00003 	mov	r0, r3
     487c:	ea00000f 	b	0x48c0
     4880:	e2411020 	sub	r1, r1, #32
     4884:	e3510010 	cmp	r1, #16
     4888:	23a00000 	movcs	r0, #0
     488c:	2a00000d 	bcs	0x48c8
-    4890:	e51f5228 	ldr	r5, [pc, #-552]	; 0x4670
+    4890:	e51f5228 	ldr	r5, =0x4670
     4894:	e3a01000 	mov	r1, #0
     4898:	e5d42002 	ldrb	r2, [r4, #2]
     489c:	e1510002 	cmp	r1, r2
@@ -4345,7 +4347,7 @@ Disassembly of section .data:
     48b0:	31a01003 	movcc	r1, r3
     48b4:	3afffff7 	bcc	0x4898
     48b8:	e5d42002 	ldrb	r2, [r4, #2]
-    48bc:	e51f124c 	ldr	r1, [pc, #-588]	; 0x4678
+    48bc:	e51f124c 	ldr	r1, =0x4678
     48c0:	e8bd0030 	pop	{r4, r5}
     48c4:	eafffe47 	b	0x41e8
     48c8:	e8bd0030 	pop	{r4, r5}
@@ -5275,7 +5277,8 @@ DRAMC_init:
     59e4:	007c0004
     59e8:	00740078
     59ec:	00000008
-	...
+    59f0:	00000000
+    59f4:	00000000
     59f8:	000a0005
     59fc:	00000000
     5a00:	00000028
@@ -5336,7 +5339,25 @@ hpcr_value:
     5ad8:	00000301
     5adc:	00000301
     5ae0:	00000301
-	...
+    5ae4:	00000000
+    5ae8:	00000000
+    5aec:	00000000
+    5af0:	00000000
+    5af4:	00000000
+    5af8:	00000000
+    5afc:	00000000
+    5b00:	00000000
     5b04:	01c02300
-	...
+    5b08:	00000000
+    5b0c:	00000000
+    5b10:	00000000
+    5b14:	00000000
+    5b18:	00000000
+    5b1c:	00000000
+    5b20:	00000000
+    5b24:	00000000
+    5b28:	00000000
+    5b2c:	00000000
+    5b30:	00000000
+    5b34:	00000000
     5b38: END (FF padded)
