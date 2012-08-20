@@ -93,7 +93,7 @@ _start
      2f0:	ee010f10 	mcr	15, 0, r0, cr1, cr0, {0}
      2f4:	eb0002cd 	bl	0xe30
      2f8:	e3a0d902 	mov	sp, #0x8000
-     2fc:	eb000293 	bl	0xd50
+     2fc:	eb000293 	bl	main
      300:	eafffffe 	b	0x300
 
      304:	e92d40fe 	push	{r1, r2, r3, r4, r5, r6, r7, lr}
@@ -112,7 +112,7 @@ _start
      338:	e2411009 	sub	r1, r1, #9
      33c:	e1a00114 	lsl	r0, r4, r1
      340:	e3a02001 	mov	r2, #1
-     344:	e59f118c 	ldr	r1, [0x4d8]
+     344:	e59f118c 	ldr	r1, =0x42400000
      348:	eb0001d7 	bl	0xaac
      34c:	e3500001 	cmp	r0, #1
      350:	1a000000 	bne	0x358
@@ -120,7 +120,7 @@ _start
      358:	e28f0f5f 	adr	r0, 0x4dc
      35c:	eb000315 	bl	0xfb8
      360:	e28f1f67 	adr	r1, 0x504
-     364:	e59f016c 	ldr	r0, [0x4d8]
+     364:	e59f016c 	ldr	r0, =0x42400000
      368:	eb000472 	bl	0x1538
      36c:	e3500000 	cmp	r0, #0
      370:	0a000003 	beq	0x384
@@ -128,7 +128,7 @@ _start
      378:	e28f0e19 	adr	r0, 0x510
      37c:	eb00030d 	bl	0xfb8
      380:	ea00003f 	b	0x484
-     384:	e59f614c 	ldr	r6, [0x4d8]
+     384:	e59f614c 	ldr	r6, =0x42400000
      388:	e5965010 	ldr	r5, [r6, #16]
      38c:	e1a00005 	mov	r0, r5
      390:	e7df049f 	bfc	r0, #9, #23
@@ -147,7 +147,7 @@ _start
      3c4:	e58d3000 	str	r3, [sp]
      3c8:	e1a02005 	mov	r2, r5
      3cc:	e5903000 	ldr	r3, [r0]
-     3d0:	e59f1100 	ldr	r1, [0x4d8]
+     3d0:	e59f1100 	ldr	r1, =0x42400000
      3d4:	e1a00004 	mov	r0, r4
      3d8:	eb000087 	bl	0x5fc
      3dc:	e1a07000 	mov	r7, r0
@@ -166,7 +166,7 @@ _start
      410:	e5902000 	ldr	r2, [r0]
      414:	e1cd20f0 	strd	r2, [sp]
      418:	e1a03005 	mov	r3, r5
-     41c:	e59f20b4 	ldr	r2, [0x4d8]
+     41c:	e59f20b4 	ldr	r2, =0x42400000
      420:	e59f0150 	ldr	r0, [0x578]
      424:	e5901000 	ldr	r1, [r0]
      428:	e1a00004 	mov	r0, r4
@@ -181,7 +181,7 @@ _start
      44c:	1a000000 	bne	0x454
      450:	ea00000b 	b	0x484
      454:	e1a01005 	mov	r1, r5
-     458:	e59f0078 	ldr	r0, [0x4d8]
+     458:	e59f0078 	ldr	r0, =0x42400000
      45c:	eb000448 	bl	0x1584
      460:	e3500000 	cmp	r0, #0
      464:	1a000005 	bne	0x480
@@ -208,7 +208,7 @@ _start
      4b4:	"Succeed in opening nand flash.\n",0
 
      4d4:	00005aec
-     4d8:	42400000
+     
 
      4dc:	"Succeed in reading Boot1 file head.\n",0
      504:	"eGON.BT1",0
@@ -630,10 +630,10 @@ _start
      cc4:	e8bd8010 	pop	{r4, pc}
 
      cc8:	e59f01cc 	ldr	r0, =CCM_IO_BASE
-     ccc:	e5900144 	ldr	r0, [r0, #324]	; 0x144
+     ccc:	e5900144 	ldr	r0, [r0, #CCM_avs_clk_cfg]	; 0x144
      cd0:	e3800102 	orr	r0, r0, #0x80000000
      cd4:	e59f11c0 	ldr	r1, =CCM_IO_BASE
-     cd8:	e5810144 	str	r0, [r1, #324]	; 0x144
+     cd8:	e5810144 	str	r0, [r1, #CCM_avs_clk_cfg]	; 0x144
      cdc:	e3a00001 	mov	r0, #1
      ce0:	e5810c80 	str	r0, [r1, #3200]	; 0xc80
      ce4:	e3020ee0 	movw	r0, #12000	; 0x2ee0
@@ -665,6 +665,7 @@ _start
      d48:	1afffffa 	bne	0xd38
      d4c:	e8bd8030 	pop	{r4, r5, pc}
 
+main:
      d50:	e92d4070 	push	{r4, r5, r6, lr}
      d54:	ebffffe7 	bl	0xcf8
      d58:	ebffffda 	bl	0xcc8
@@ -700,8 +701,8 @@ _start
      dd0:	e28f0f42 	adr	r0, 0xee0
      dd4:	eb000077 	bl	0xfb8
      dd8:	eb0003fb 	bl	0x1dcc
-     ddc:	e59f0118 	ldr	r0, [0xefc]
-     de0:	eb0011c1 	bl	0x54ec
+     ddc:	e59f0118 	ldr	r0, =FEL_ENTRY_POINT
+     de0:	eb0011c1 	bl	call_r0
      de4:	ebfffd46 	bl	0x304
      de8:	e1a05000 	mov	r5, r0
      dec:	e28f0f43 	adr	r0, 0xf00
@@ -709,23 +710,23 @@ _start
      df4:	eb0003f4 	bl	0x1dcc
      df8:	e3550000 	cmp	r5, #0
      dfc:	1a000006 	bne	0xe1c
-     e00:	e59f0114 	ldr	r0, [0xf1c]
+     e00:	e59f0114 	ldr	r0, =0x00000038
      e04:	eb0003b3 	bl	0x1cd8
      e08:	e28f0e11 	adr	r0, 0xf20
      e0c:	eb000069 	bl	0xfb8
-     e10:	e59f0134 	ldr	r0, [0xf4c]
-     e14:	eb0011b4 	bl	0x54ec
+     e10:	e59f0134 	ldr	r0, =0x42400000
+     e14:	eb0011b4 	bl	call_r0
      e18:	ea000003 	b	0xe2c
      e1c:	e28f0f4b 	adr	r0, 0xf50
      e20:	eb000064 	bl	0xfb8
-     e24:	e59f00d0 	ldr	r0, [0xefc]
-     e28:	eb0011af 	bl	0x54ec
+     e24:	e59f00d0 	ldr	r0, =FEL_ENTRY_POINT
+     e28:	eb0011af 	bl	call_r0
      e2c:	e8bd8070 	pop	{r4, r5, r6, pc}
 
-     e30:	e59f2140 	ldr	r2, [0xf78]
+     e30:	e59f2140 	ldr	r2, =0x00010010			; AXIClkDiv=1, AHBClkDiv=2, AHBClkSel=AXI, APB0ClkDiv=2?, AC328ClkSrc=HOSC 
      e34:	e59f3060 	ldr	r3, =CCM_IO_BASE
-     e38:	e5832054 	str	r2, [r3, #84]	; 0x54
-     e3c:	e59f0138 	ldr	r0, [0xf7c]
+     e38:	e5832054 	str	r2, [r3, #CCM_SysClkDiv]	; 0x54
+     e3c:	e59f0138 	ldr	r0, =0xa1005000
      e40:	e1c321c0 	bic	r2, r3, r0, asr #3
      e44:	e5820000 	str	r0, [r2]
      e48:	e3a01000 	mov	r1, #0
@@ -734,21 +735,20 @@ _start
      e54:	e35100c8 	cmp	r1, #200	; 0xc8
      e58:	3afffffc 	bcc	0xe50
      e5c:	e59f2038 	ldr	r2, =CCM_IO_BASE
-     e60:	e5920054 	ldr	r0, [r2, #84]	; 0x54
+     e60:	e5920054 	ldr	r0, [r2, #CCM_SysClkDiv]	; 0x54
      e64:	e3c00803 	bic	r0, r0, #0x30000
-     e68:	e3800802 	orr	r0, r0, #0x20000
-     e6c:	e5820054 	str	r0, [r2, #84]	; 0x54
-     e70:	e5922060 	ldr	r2, [r2, #96]	; 0x60
-     e74:	e3822040 	orr	r2, r2, #0x40
+     e68:	e3800802 	orr	r0, r0, #0x20000		; AC328ClkSrc=PLL
+     e6c:	e5820054 	str	r0, [r2, #CCM_SysClkDiv]	; 0x54
+     e70:	e5922060 	ldr	r2, [r2, #CCM_AhbGate0]	; 0x60
+     e74:	e3822040 	orr	r2, r2, #0x40			; AhbGate0.DmaGate=1
      e78:	e59f301c 	ldr	r3, =CCM_IO_BASE
-     e7c:	e5832060 	str	r2, [r3, #96]	; 0x60
+     e7c:	e5832060 	str	r2, [r3, #CCM_AhbGate0]	; 0x60
      e80:	e12fff1e 	bx	lr
 
      e84:	00000029
 
      e88:	"boot0 version : %s\n",0
 
-     e9c:	01c20000	; CCM_IO_BASE
      ea0:	000000dc
      ea4:	00005b38
      ea8:	00000000
@@ -759,19 +759,12 @@ _start
      ed0:	"dram size =%d\n",0
      ee0:	"initializing SDRAM Fail.\n",0
 
-     efc:	ffff0020
-
      f00:	"Ready to disable icache.\n",0
-
-     f1c:	00000038
 
      f20:	"Succeed in loading Boot1.\nJump to Boot1.\n",0
 
-     f4c:	42400000
-
      f50:	"Fail in loading Boot1.\nJump to Fel\n",0
 
-     f78:	00010010
      f7c:	a1005000
 
      f80:	e92d4010 	push	{r4, lr}
@@ -1057,30 +1050,30 @@ _start
     13e8:	e3500007 	cmp	r0, #7
     13ec:	9a000000 	bls	0x13f4
     13f0:	e8bd87f0 	pop	{r4, r5, r6, r7, r8, r9, sl, pc}
-    13f4:	e59f0114 	ldr	r0, [0x1510]
-    13f8:	e590006c 	ldr	r0, [r0, #108]	; 0x6c
+    13f4:	e59f0114 	ldr	r0, =CCM_IO_BASE
+    13f8:	e590006c 	ldr	r0, [r0, #CCM_apb1_gate]	; 0x6c
     13fc:	e59f1108 	ldr	r1, [0x150c]
     1400:	e5911000 	ldr	r1, [r1]
     1404:	e2811010 	add	r1, r1, #16
     1408:	e3a02001 	mov	r2, #1
     140c:	e1c00112 	bic	r0, r0, r2, lsl r1
-    1410:	e59f10f8 	ldr	r1, [0x1510]
-    1414:	e581006c 	str	r0, [r1, #108]	; 0x6c
+    1410:	e59f10f8 	ldr	r1, =CCM_IO_BASE
+    1414:	e581006c 	str	r0, [r1, #CCM_apb1_gate]	; 0x6c
     1418:	e3a09000 	mov	r9, #0
     141c:	ea000000 	b	0x1424
 
     1420:	e2899001 	add	r9, r9, #1
     1424:	e3590064 	cmp	r9, #100	; 0x64
     1428:	3afffffc 	bcc	0x1420
-    142c:	e59f00dc 	ldr	r0, [0x1510]
-    1430:	e590006c 	ldr	r0, [r0, #108]	; 0x6c
+    142c:	e59f00dc 	ldr	r0, =CCM_IO_BASE
+    1430:	e590006c 	ldr	r0, [r0, #CCM_apb1_gate]	; 0x6c
     1434:	e59f10d0 	ldr	r1, [0x150c]
     1438:	e5911000 	ldr	r1, [r1]
     143c:	e2811010 	add	r1, r1, #16
     1440:	e3a02001 	mov	r2, #1
     1444:	e1800112 	orr	r0, r0, r2, lsl r1
-    1448:	e59f10c0 	ldr	r1, [0x1510]
-    144c:	e581006c 	str	r0, [r1, #108]	; 0x6c
+    1448:	e59f10c0 	ldr	r1, =CCM_IO_BASE
+    144c:	e581006c 	str	r0, [r1, #CCM_apb1_gate]	; 0x6c
     1450:	e3a01002 	mov	r1, #2
     1454:	e1a00005 	mov	r0, r5
     1458:	eb000112 	bl	0x18a8
@@ -1131,9 +1124,9 @@ _start
     1508:	e12fff1e 	bx	lr
 
     150c:	00005b00
-    1510:	01c20000	; CCM_IO_BASE
+
     1514:	001c2000
-    1518:	01c28000
+    1518:	01c28000	; UART0_IO_BASE
 
     151c:	e92d4010 	push	{r4, lr}
     1520:	e1a04000 	mov	r4, r0
@@ -1617,18 +1610,18 @@ _start
 
     1c80:	7fffff00
     1c84:	000000c8
-    1c88:	01c20800
+    1c88:	01c20800	; PORTC_IO_BASE
 
     1c8c:	e3a00001 	mov	r0, #1
     1c90:	e12fff1e 	bx	lr
 
-    1c94:	e59f007c 	ldr	r0, [0x1d18]
+    1c94:	e59f007c 	ldr	r0, =40100000
     1c98:	e12fff1e 	bx	lr
 
     1c9c:	e92d4010 	push	{r4, lr}
     1ca0:	e1a04000 	mov	r4, r0
     1ca4:	e3a02050 	mov	r2, #80	; 0x50
-    1ca8:	e59f106c 	ldr	r1, [0x1d1c]
+    1ca8:	e59f106c 	ldr	r1, =0x00000038
     1cac:	e1a00004 	mov	r0, r4
     1cb0:	eb000b57 	bl	memcpy
     1cb4:	e8bd8010 	pop	{r4, pc}
@@ -1644,7 +1637,7 @@ _start
 
     1cd8:	e92d4070 	push	{r4, r5, r6, lr}
     1cdc:	e1a05000 	mov	r5, r0
-    1ce0:	e59f4038 	ldr	r4, [0x1d20]
+    1ce0:	e59f4038 	ldr	r4, =0x42400000
     1ce4:	e3a02050 	mov	r2, #80	; 0x50
     1ce8:	e1a01005 	mov	r1, r5
     1cec:	e284004c 	add	r0, r4, #76	; 0x4c
@@ -1660,9 +1653,6 @@ _start
     1d10:	e3a00000 	mov	r0, #0
     1d14:	e8bd8010 	pop	{r4, pc}
 
-    1d18:	40100000
-    1d1c:	00000038
-    1d20:	42400000
     1d24:	000001c8
 
     1d28:	e92d41f0 	push	{r4, r5, r6, r7, r8, lr}
@@ -1895,22 +1885,22 @@ _start
     20b4:	e12fff1e 	bx	lr
 
     20b8:	e59f018c 	ldr	r0, =CCM_IO_BASE
-    20bc:	e5900060 	ldr	r0, [r0, #96]	; 0x60
+    20bc:	e5900060 	ldr	r0, [r0, #CCM_ahb_gate0]	; 0x60
     20c0:	e3800a02 	orr	r0, r0, #0x2000
     20c4:	e59f1180 	ldr	r1, =CCM_IO_BASE
-    20c8:	e5810060 	str	r0, [r1, #96]	; 0x60
+    20c8:	e5810060 	str	r0, [r1, #CCM_ahb_gate0]	; 0x60
     20cc:	e12fff1e 	bx	lr
 
     20d0:	e59f0174 	ldr	r0, =CCM_IO_BASE
-    20d4:	e5900060 	ldr	r0, [r0, #96]	; 0x60
+    20d4:	e5900060 	ldr	r0, [r0, #CCM_ahb_gate0]	; 0x60
     20d8:	e3c00a02 	bic	r0, r0, #0x2000
     20dc:	e59f1168 	ldr	r1, =CCM_IO_BASE
-    20e0:	e5810060 	str	r0, [r1, #96]	; 0x60
+    20e0:	e5810060 	str	r0, [r1, #CCM_ahb_gate0]	; 0x60
     20e4:	e12fff1e 	bx	lr
 
     20e8:	e92d47f0 	push	{r4, r5, r6, r7, r8, r9, sl, lr}
     20ec:	e59f0158 	ldr	r0, =CCM_IO_BASE
-    20f0:	e5904020 	ldr	r4, [r0, #32]
+    20f0:	e5904020 	ldr	r4, [r0, #CCM_pll5_cfg]
     20f4:	e7e15854 	ubfx	r5, r4, #16, #2
     20f8:	e7e46454 	ubfx	r6, r4, #8, #5
     20fc:	e7e10254 	ubfx	r0, r4, #4, #2
@@ -1953,7 +1943,7 @@ _start
 
     218c:	e2477001 	sub	r7, r7, #1
     2190:	e59f00b4 	ldr	r0, =CCM_IO_BASE
-    2194:	e5906080 	ldr	r6, [r0, #128]	; 0x80
+    2194:	e5906080 	ldr	r6, [r0, #CCM_nand_sclk_cfg]	; 0x80
     2198:	e3866102 	orr	r6, r6, #0x80000000
     219c:	e3c66403 	bic	r6, r6, #0x3000000
     21a0:	e3866402 	orr	r6, r6, #0x2000000
@@ -1962,14 +1952,14 @@ _start
     21ac:	e207000f 	and	r0, r7, #0x0f
     21b0:	e1866000 	orr	r6, r6, r0
     21b4:	e59f0090 	ldr	r0, =CCM_IO_BASE
-    21b8:	e5806080 	str	r6, [r0, #128]	; 0x80
+    21b8:	e5806080 	str	r6, [r0, #CCM_nand_sclk_cfg]	; 0x80
     21bc:	e8bd81f0 	pop	{r4, r5, r6, r7, r8, pc}
 
     21c0:	e92d41f0 	push	{r4, r5, r6, r7, r8, lr}
     21c4:	ebffffc7 	bl	0x20e8
     21c8:	e1a07000 	mov	r7, r0
     21cc:	e59f0078 	ldr	r0, =CCM_IO_BASE
-    21d0:	e5904080 	ldr	r4, [r0, #128]	; 0x80
+    21d0:	e5904080 	ldr	r4, [r0, #CCM_nand_sclk_cfg]	; 0x80
     21d4:	e204000f 	and	r0, r4, #0x0f
     21d8:	e2806001 	add	r6, r0, #1
     21dc:	e1a01086 	lsl	r1, r6, #1
@@ -2009,8 +1999,8 @@ _start
     2240:	e8bd8010 	pop	{r4, pc}
 
     2244:	00005b04
-    2248:	01c03000
-    224c:	01c20000	; CCM_IO_BASE
+    2248:	01c03000	; NANDFLASHC_IO_BASE
+
     2250:	7fffff00
 
     2254:	e92d40f0 	push	{r4, r5, r6, r7, lr}
@@ -4273,7 +4263,7 @@ _start
     465c:	02800293
     4660:	02810293
     4664:	ffff0000
-    4668:	01c03000
+    4668:	01c03000	; NANDFLASHC_IO_BASE
     466c:	0000597c
     4670:	00005bc4
     4674:	00005ba4
@@ -4890,7 +4880,7 @@ mctl_setup_dram_clock
     4eac:	e92d4070 	push	{r4, r5, r6, lr}
     4eb0:	e1a04000 	mov	r4, r0
     4eb4:	e59f046c 	ldr	r0, =CCM_IO_BASE
-    4eb8:	e5905020 	ldr	r5, [r0, #32]
+    4eb8:	e5905020 	ldr	r5, [r0, #CCM_pll5_cfg]
     4ebc:	e3c55003 	bic	r5, r5, #3
     4ec0:	e3855001 	orr	r5, r5, #1
     4ec4:	e3c55030 	bic	r5, r5, #0x30
@@ -4906,23 +4896,23 @@ mctl_setup_dram_clock
     4eec:	e3c55202 	bic	r5, r5, #0x20000000
     4ef0:	e3855102 	orr	r5, r5, #0x80000000
     4ef4:	e59f042c 	ldr	r0, =CCM_IO_BASE
-    4ef8:	e5805020 	str	r5, [r0, #32]
+    4ef8:	e5805020 	str	r5, [r0, #CCM_pll5_cfg]
     4efc:	e3a00601 	mov	r0, #0x100000
     4f00:	ebffff4a 	bl	sdelay
     4f04:	e59f041c 	ldr	r0, =CCM_IO_BASE
-    4f08:	e5905020 	ldr	r5, [r0, #32]
+    4f08:	e5905020 	ldr	r5, [r0, #CCM_pll5_cfg]
     4f0c:	e3855202 	orr	r5, r5, #0x20000000
-    4f10:	e5805020 	str	r5, [r0, #32]
+    4f10:	e5805020 	str	r5, [r0, #CCM_pll5_cfg]
     4f14:	e59f5410 	ldr	r5, [0x532c]
-    4f18:	e580515c 	str	r5, [r0, #348]	; 0x15c
-    4f1c:	e5905060 	ldr	r5, [r0, #96]	; 0x60
+    4f18:	e580515c 	str	r5, [r0, #CCM_mbus_clk_cfg]	; 0x15c
+    4f1c:	e5905060 	ldr	r5, [r0, #CCM_ahb_gate0]	; 0x60
     4f20:	e3c55903 	bic	r5, r5, #0xc000
-    4f24:	e5805060 	str	r5, [r0, #96]	; 0x60
+    4f24:	e5805060 	str	r5, [r0, #CCM_ahb_gate0]	; 0x60
     4f28:	e3a00a01 	mov	r0, #0x1000
     4f2c:	ebffff3f 	bl	sdelay
     4f30:	e3855903 	orr	r5, r5, #0xc000
     4f34:	e59f03ec 	ldr	r0, =CCM_IO_BASE
-    4f38:	e5805060 	str	r5, [r0, #96]	; 0x60
+    4f38:	e5805060 	str	r5, [r0, #CCM_ahb_gate0]	; 0x60
     4f3c:	e3a00a01 	mov	r0, #0x1000
     4f40:	ebffff3a 	bl	sdelay
     4f44:	e8bd8070 	pop	{r4, r5, r6, pc}
@@ -5248,9 +5238,6 @@ DRAMC_init:
     5318:	e28dd050 	add	sp, sp, #80	; 0x50
     531c:	e8bd8070 	pop	{r4, r5, r6, pc}
 
-    5320:	01c01000	; DRAMC_IO_BASE
-
-    5328:	01c20000	; CCM_IO_BASE
     532c:	82000001
     5330:	000f4240
 
@@ -5374,6 +5361,7 @@ DRAMC_init:
     54e4:	f57ff04f 	dsb	sy
     54e8:	e1a0f00e 	mov	pc, lr
 
+call_r0:
     54ec:	e1a0f000 	mov	pc, r0
 
     54f0:	ee020f10 	mcr	15, 0, r0, cr2, cr0, {0}
@@ -5564,7 +5552,7 @@ hpcr_value:
     5af8:	00000000
     5afc:	00000000
     5b00:	00000000
-    5b04:	01c02300
+    5b04:	01c02300	; DMAC_IO_BASE + 0x300 = DMAC_DYN_CHANNEL_BASE
     5b08:	00000000
     5b0c:	00000000
     5b10:	00000000
