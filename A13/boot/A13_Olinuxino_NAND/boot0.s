@@ -995,12 +995,12 @@ f_128c_:
     12b8:	ea000009 	b	0x12e4
     12bc:	e3a0100a 	mov	r1, #10
     12c0:	e1a00004 	mov	r0, r4
-    12c4:	eb000e52 	bl	f_4c14_
+    12c4:	eb000e52 	bl	standby_uldiv
     12c8:	e2810030 	add	r0, r1, #48	; 0x30
     12cc:	e7cd0006 	strb	r0, [sp, r6]
     12d0:	e3a0100a 	mov	r1, #10
     12d4:	e1a00004 	mov	r0, r4
-    12d8:	eb000e4d 	bl	f_4c14_
+    12d8:	eb000e4d 	bl	standby_uldiv
     12dc:	e1a04000 	mov	r4, r0
     12e0:	e2866001 	add	r6, r6, #1
     12e4:	e3540000 	cmp	r4, #0
@@ -1097,7 +1097,7 @@ f_13c8_:
     1458:	eb000112 	bl	f_18a8_
     145c:	e59f10b0 	ldr	r1, [0x1514]
     1460:	e2860ae1 	add	r0, r6, #0xe1000
-    1464:	eb000dea 	bl	f_4c14_
+    1464:	eb000dea 	bl	standby_uldiv
     1468:	e1a08000 	mov	r8, r0
     146c:	e3a00080 	mov	r0, #128	; 0x80
     1470:	e59f1094 	ldr	r1, [0x150c]
@@ -1956,10 +1956,10 @@ f_20e8_:
     2110:	e1a01181 	lsl	r1, r1, #3
     2114:	e1600781 	smulbb	r0, r1, r7
     2118:	e1a01005 	mov	r1, r5
-    211c:	eb000abc 	bl	f_4c14_
+    211c:	eb000abc 	bl	standby_uldiv
     2120:	e1a0a000 	mov	sl, r0
     2124:	e1a01008 	mov	r1, r8
-    2128:	eb000ab9 	bl	f_4c14_
+    2128:	eb000ab9 	bl	standby_uldiv
     212c:	e1a09000 	mov	r9, r0
     2130:	e1a00009 	mov	r0, r9
     2134:	e8bd87f0 	pop	{r4, r5, r6, r7, r8, r9, sl, pc}
@@ -1972,11 +1972,11 @@ f_2138_:
     2148:	e1a08000 	mov	r8, r0
     214c:	e1a01005 	mov	r1, r5
     2150:	e1a00008 	mov	r0, r8
-    2154:	eb000aae 	bl	f_4c14_
+    2154:	eb000aae 	bl	standby_uldiv
     2158:	e1a07000 	mov	r7, r0
     215c:	e1a01005 	mov	r1, r5
     2160:	e1a00008 	mov	r0, r8
-    2164:	eb000aaa 	bl	f_4c14_
+    2164:	eb000aaa 	bl	standby_uldiv
     2168:	e3510000 	cmp	r1, #0
     216c:	0a000000 	beq	0x2174
     2170:	e2877001 	add	r7, r7, #1
@@ -2011,7 +2011,7 @@ f_21c0_:
     21d8:	e2806001 	add	r6, r0, #1
     21dc:	e1a01086 	lsl	r1, r6, #1
     21e0:	e1a00007 	mov	r0, r7
-    21e4:	eb000a8a 	bl	f_4c14_
+    21e4:	eb000a8a 	bl	standby_uldiv
     21e8:	e1a05000 	mov	r5, r0
     21ec:	e1a00005 	mov	r0, r5
     21f0:	e8bd81f0 	pop	{r4, r5, r6, r7, r8, pc}
@@ -3049,7 +3049,7 @@ f_315c_:
     31ac:	0a000006 	beq	0x31cc
     31b0:	e5d81007 	ldrb	r1, [r8, #7]
     31b4:	e1a0000b 	mov	r0, fp
-    31b8:	eb000695 	bl	f_4c14_
+    31b8:	eb000695 	bl	standby_uldiv
     31bc:	e3510000 	cmp	r1, #0
     31c0:	15d86034 	ldrbne	r6, [r8, #52]	; 0x34
     31c4:	05d86033 	ldrbeq	r6, [r8, #51]	; 0x33
@@ -3064,7 +3064,7 @@ f_315c_:
     31e8:	eb000358 	bl	f_3f50_
     31ec:	e5d81007 	ldrb	r1, [r8, #7]
     31f0:	e1a0000b 	mov	r0, fp
-    31f4:	eb000686 	bl	f_4c14_
+    31f4:	eb000686 	bl	standby_uldiv
     31f8:	e1a00006 	mov	r0, r6
     31fc:	ebfffcbd 	bl	f_24f8_
     3200:	e2504000 	subs	r4, r0, #0
@@ -4761,7 +4761,7 @@ f_4a98_:
     4c0c:	e1a00000 	nop			; (mov r0, r0)
     4c10:	e8bd8002 	pop	{r1, pc}
 
-f_4c14_:
+standby_uldiv:
     4c14:	e3b02000 	movs	r2, #0
     4c18:	e0713220 	rsbs	r3, r1, r0, lsr #4
     4c1c:	3affffb4 	bcc	0x4af4
@@ -4992,46 +4992,142 @@ void mctl_configure_hostport(void)
     }
 }
 
-mctl_setup_dram_clock
+void mctl_setup_dram_clock(__u32 clk)
+{
+    __u32 reg_val;
+
+/*
     4eac:	e92d4070 	push	{r4, r5, r6, lr}
     4eb0:	e1a04000 	mov	r4, r0
+*/
+
+    //setup DRAM PLL
+    reg_val = mctl_read_w(DRAM_CCM_SDRAM_PLL_REG);
+/*
     4eb4:	e59f046c 	ldr	r0, =CCM_IO_BASE
     4eb8:	e5905020 	ldr	r5, [r0, #CCM_pll5_cfg]
+*/
+    reg_val &= ~0x3;
+/*
     4ebc:	e3c55003 	bic	r5, r5, #3
+*/
+    reg_val |= 0x1;                     //m factor
+/*
     4ec0:	e3855001 	orr	r5, r5, #1
+*/
+    reg_val &= ~(0x3<<4);
+/*
     4ec4:	e3c55030 	bic	r5, r5, #0x30
+*/
+    reg_val |= 0x1<<4;                  //k factor
+/*
     4ec8:	e3855010 	orr	r5, r5, #0x10
+*/
+    reg_val &= ~(0x1f<<8);
+/*
     4ecc:	e3c55c1f 	bic	r5, r5, #0x1f00
+*/
+    reg_val |= ((clk/24)&0x1f)<<8;      //n factor
+/*
     4ed0:	e3a01018 	mov	r1, #24
     4ed4:	e1a00004 	mov	r0, r4
-    4ed8:	ebffff4d 	bl	f_4c14_
+    4ed8:	ebffff4d 	bl	standby_uldiv
     4edc:	e200001f 	and	r0, r0, #31
     4ee0:	e1855400 	orr	r5, r5, r0, lsl #8
+*/
+
+    reg_val &= ~(0x3<<16);
+/*
     4ee4:	e3c55803 	bic	r5, r5, #0x30000
+*/
+    reg_val |= 0x1<<16;                 //p factor
+/*
     4ee8:	e3855801 	orr	r5, r5, #0x10000
+*/
+    reg_val &= ~(0x1<<29);                                         //PLL on
+/*
     4eec:	e3c55202 	bic	r5, r5, #0x20000000
+ */
+    reg_val |= (__u32)0x1<<31;          //PLL En
+/*
     4ef0:	e3855102 	orr	r5, r5, #0x80000000
+*/
+    mctl_write_w(DRAM_CCM_SDRAM_PLL_REG, reg_val);
+/*
     4ef4:	e59f042c 	ldr	r0, =CCM_IO_BASE
     4ef8:	e5805020 	str	r5, [r0, #CCM_pll5_cfg]
+*/
+
+/*
+    reg_val = mctl_read_w(DRAM_CCM_SDRAM_PLL_TUN_REG);
+    reg_val &= ~(0xFFFF);
+    reg_val |= 0x26; // RESERVED???!!
+    mctl_write_w(DRAM_CCM_SDRAM_PLL_TUN_REG, reg_val);
+*/
+
+    sdelay(0x100000);
+/*
     4efc:	e3a00601 	mov	r0, #0x100000
     4f00:	ebffff4a 	bl	sdelay
+*/
+
+    reg_val = mctl_read_w(DRAM_CCM_SDRAM_PLL_REG);
+	reg_val |= 0x1<<29;
+    mctl_write_w(DRAM_CCM_SDRAM_PLL_REG, reg_val);
+/*
     4f04:	e59f041c 	ldr	r0, =CCM_IO_BASE
     4f08:	e5905020 	ldr	r5, [r0, #CCM_pll5_cfg]
     4f0c:	e3855202 	orr	r5, r5, #0x20000000
     4f10:	e5805020 	str	r5, [r0, #CCM_pll5_cfg]
-    4f14:	e59f5410 	ldr	r5, [0x532c]
+*/
+
+    //setup MBUS clock
+    reg_val = (0x1<<31)|(0x2<<24)|(0x1); 	
+    mctl_write_w(DRAM_CCM_MUS_CLK_REG, reg_val);
+/*
+    4f14:	e59f5410 	ldr	r5, =0x82000001
     4f18:	e580515c 	str	r5, [r0, #CCM_mbus_clk_cfg]	; 0x15c
+*/
+        
+    //open DRAMC AHB & DLL register clock
+    //close it first
+    reg_val = mctl_read_w(DRAM_CCM_AHB_GATE_REG);
+/*
     4f1c:	e5905060 	ldr	r5, [r0, #CCM_ahb_gate0]	; 0x60
+*/
+    reg_val &= ~(0x3<<14);
+/*
     4f20:	e3c55903 	bic	r5, r5, #0xc000
+*/
+    mctl_write_w(DRAM_CCM_AHB_GATE_REG, reg_val);
+/*
     4f24:	e5805060 	str	r5, [r0, #CCM_ahb_gate0]	; 0x60
+*/
+	sdelay(0x1000);
+/*
     4f28:	e3a00a01 	mov	r0, #0x1000
     4f2c:	ebffff3f 	bl	sdelay
+*/
+    //then open it
+    reg_val |= 0x3<<14;
+/*
     4f30:	e3855903 	orr	r5, r5, #0xc000
+*/
+    mctl_write_w(DRAM_CCM_AHB_GATE_REG, reg_val);
+/*
     4f34:	e59f03ec 	ldr	r0, =CCM_IO_BASE
     4f38:	e5805060 	str	r5, [r0, #CCM_ahb_gate0]	; 0x60
+*/
+	sdelay(0x1000);
+/*
     4f3c:	e3a00a01 	mov	r0, #0x1000
     4f40:	ebffff3a 	bl	sdelay
+*/
+/*
     4f44:	e8bd8070 	pop	{r4, r5, r6, pc}
+*/
+}
+
 
 /*
 **********************************************************************************************************************
@@ -5339,7 +5435,7 @@ f_52b8_:
     52d4:	9a000003 	bls	0x52e8
     52d8:	e59d0004 	ldr	r0, [sp, #4]
     52dc:	e59f104c 	ldr	r1, [0x5330]
-    52e0:	ebfffe4b 	bl	f_4c14_
+    52e0:	ebfffe4b 	bl	standby_uldiv
     52e4:	e58d0004 	str	r0, [sp, #4]
     52e8:	e3a05000 	mov	r5, #0
     52ec:	e3a04000 	mov	r4, #0
@@ -5356,7 +5452,6 @@ f_52b8_:
     5318:	e28dd050 	add	sp, sp, #80	; 0x50
     531c:	e8bd8070 	pop	{r4, r5, r6, pc}
 
-    532c:	82000001
     5330:	000f4240
 
     5334:	e3a00000 	mov	r0, #0
