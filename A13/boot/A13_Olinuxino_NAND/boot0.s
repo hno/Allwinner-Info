@@ -632,7 +632,7 @@ f_c3c_:
      cb0:	eafffff6 	b	0xc90
 f_cb4_:
      cb4:	e92d4010 	push	{r4, lr}
-     cb8:	e59f11c4 	ldr	r1, [0xe84]
+     cb8:	e59f11c4 	ldr	r1, =0x00000029
      cbc:	e28f0f71 	adr	r0, 0xe88
      cc0:	eb0000bc 	bl	f_fb8_
      cc4:	e8bd8010 	pop	{r4, pc}
@@ -644,11 +644,11 @@ f_cc8_:
      cd4:	e59f11c0 	ldr	r1, =CCM_IO_BASE
      cd8:	e5810144 	str	r0, [r1, #CCM_avs_clk_cfg]	; 0x144
      cdc:	e3a00001 	mov	r0, #1
-     ce0:	e5810c80 	str	r0, [r1, #3200]	; 0xc80
+     ce0:	e5810c80 	str	r0, [r1, #3200]	; 0xc80	AvsCtl
      ce4:	e3020ee0 	movw	r0, #12000	; 0x2ee0
-     ce8:	e5810c8c 	str	r0, [r1, #3212]	; 0xc8c
+     ce8:	e5810c8c 	str	r0, [r1, #3212]	; 0xc8c	AvsDiv
      cec:	e3a00000 	mov	r0, #0
-     cf0:	e5810c84 	str	r0, [r1, #3204]	; 0xc84
+     cf0:	e5810c84 	str	r0, [r1, #3204]	; 0xc84	Avs0Cnt
      cf4:	e12fff1e 	bx	lr
 
 f_cf8_:
@@ -755,8 +755,6 @@ f_e30_:
      e78:	e59f301c 	ldr	r3, =CCM_IO_BASE
      e7c:	e5832060 	str	r2, [r3, #CCM_AhbGate0]	; 0x60
      e80:	e12fff1e 	bx	lr
-
-     e84:	00000029
 
      e88:	"boot0 version : %s\n",0
 
@@ -5275,19 +5273,53 @@ void DRAMC_clock_output_en(__u32 on)
     mctl_write_w(SDR_CR, reg_val);
 }
 
-DRAMC_init:
-f_5074_:
+
+__s32 DRAMC_init(__dram_para_t *para)
+{
+    __u32 i;
+    __u32 reg_val;
+    __s32 ret_val;
+
+/*
     5074:	e92d4070 	push	{r4, r5, r6, lr}
     5078:	e1a04000 	mov	r4, r0
+*/
+    //check input dram parameter structure
+    if(!para)
+    {
+        //dram parameter is invalid
+        return -1;
+    }
+/*
     507c:	e3540000 	cmp	r4, #0
     5080:	1a000001 	bne	0x508c
     5084:	e3e00000 	mvn	r0, #0
     5088:	e8bd8070 	pop	{r4, r5, r6, pc}
+*/
+
+    //setup DRAM relative clock
+    mctl_setup_dram_clock(para->dram_clk);
+/*
     508c:	e5940004 	ldr	r0, [r4, #4]
     5090:	ebffff85 	bl	mctl_setup_dram_clock
+*/
+
+// This is new unknown code!
     5094:	e3a00000 	mov	r0, #0
     5098:	e59f1280 	ldr	r1, =DRAMC_IO_BASE
     509c:	e581023c 	str	r0, [r1, #SDR_0x23c]
+
+    //reset external DRAM
+    mctl_ddr3_reset();
+    mctl_set_drive();
+
+    //dram clock off
+    DRAMC_clock_output_en(0);
+
+
+    mctl_itm_disable();
+    mctl_enable_dll0();
+
     50a0:	ebfffee8 	bl	mctl_ddr3_reset
     50a4:	ebfffef3 	bl	mctl_set_drive
     50a8:	e3a00000 	mov	r0, #0
@@ -5295,47 +5327,170 @@ f_5074_:
     50b0:	ebfffef9 	bl	mctl_itm_disable
     50b4:	ebffff04 	bl	mctl_enable_ddl0
     50b8:	e3a06000 	mov	r6, #0
+    //configure external DRAM
+    reg_val = 0;
+    if(para->dram_type == 3)
+        reg_val |= 0x1;
+/*
     50bc:	e5940008 	ldr	r0, [r4, #8]
     50c0:	e3500003 	cmp	r0, #3
     50c4:	1a000000 	bne	0x50cc
     50c8:	e3866001 	orr	r6, r6, #1
+*/
+    reg_val |= (para->dram_io_width>>3) <<1;
+/*
     50cc:	e5940014 	ldr	r0, [r4, #20]
     50d0:	e1a001a0 	lsr	r0, r0, #3
     50d4:	e1866080 	orr	r6, r6, r0, lsl #1
+*/
+
+    if(para->dram_chip_density == 256)
+        reg_val |= 0x0<<3;
+/*
     50d8:	e5940010 	ldr	r0, [r4, #16]
     50dc:	e3500c01 	cmp	r0, #0x100
     50e0:	1a000000 	bne	0x50e8
     50e4:	ea000019 	b	0x5150
+*/
+    else if(para->dram_chip_density == 512)
+        reg_val |= 0x1<<3;
+/*
     50e8:	e5940010 	ldr	r0, [r4, #16]
     50ec:	e3500c02 	cmp	r0, #0x200
     50f0:	1a000001 	bne	0x50fc
     50f4:	e3866008 	orr	r6, r6, #8
     50f8:	ea000014 	b	0x5150
+*/
+    else if(para->dram_chip_density == 1024)
+        reg_val |= 0x2<<3;
+/*
     50fc:	e5940010 	ldr	r0, [r4, #16]
     5100:	e3500b01 	cmp	r0, #0x400
     5104:	1a000001 	bne	0x5110
     5108:	e3866010 	orr	r6, r6, #0x10
     510c:	ea00000f 	b	0x5150
+*/
+    else if(para->dram_chip_density == 2048)
+        reg_val |= 0x3<<3;
+/*
     5110:	e5940010 	ldr	r0, [r4, #16]
     5114:	e3500b02 	cmp	r0, #2048	; 0x800
     5118:	1a000001 	bne	0x5124
     511c:	e3866018 	orr	r6, r6, #0x18
     5120:	ea00000a 	b	0x5150
+*/
+    else if(para->dram_chip_density == 4096)
+        reg_val |= 0x4<<3;
+/*
     5124:	e5940010 	ldr	r0, [r4, #16]
     5128:	e3500a01 	cmp	r0, #0x1000
     512c:	1a000001 	bne	0x5138
     5130:	e3866020 	orr	r6, r6, #0x20
     5134:	ea000005 	b	0x5150
+*/
+    else if(para->dram_chip_density == 8192)
+        reg_val |= 0x5<<3;
+/*
     5138:	e5940010 	ldr	r0, [r4, #16]
     513c:	e3500a02 	cmp	r0, #0x2000
     5140:	1a000001 	bne	0x514c
     5144:	e3866028 	orr	r6, r6, #0x28
     5148:	ea000000 	b	0x5150
     514c:	e320f000 	nop	{0}
+*/
+    else
+        reg_val |= 0x0<<3;
+*/
+
+
+    reg_val |= ((para->dram_bus_width>>3) - 1)<<6;
+/*
     5150:	e3a01001 	mov	r1, #1
     5154:	e5940018 	ldr	r0, [r4, #24]
     5158:	e06101a0 	rsb	r0, r1, r0, lsr #3
     515c:	e1866300 	orr	r6, r6, r0, lsl #6
+*/
+    reg_val |= (para->dram_rank_num -1)<<10;
+    reg_val |= 0x1<<12;
+    reg_val |= ((0x1)&0x3)<<13;
+    mctl_write_w(SDR_DCR, reg_val);
+
+    //dram clock on
+    DRAMC_clock_output_en(1);
+	standby_delay(0x10);
+    while(mctl_read_w(SDR_CCR) & (0x1U<<31)) {};
+
+    mctl_enable_dllx();
+
+	//set odt impendance divide ratio
+	reg_val=((para->dram_zq)>>8)&0xfffff;
+	reg_val |= ((para->dram_zq)&0xff)<<20;
+	reg_val |= (para->dram_zq)&0xf0000000;
+    mctl_write_w(SDR_ZQCR0, reg_val);
+
+    //set I/O configure register
+    reg_val = 0x00cc0000;
+    reg_val |= (para->dram_odt_en)&0x3;
+    reg_val |= ((para->dram_odt_en)&0x3)<<30;
+    mctl_write_w(SDR_IOCR, reg_val);
+
+    //set refresh period
+    DRAMC_set_autorefresh_cycle(para->dram_clk);
+
+    //set timing parameters
+    mctl_write_w(SDR_TPR0, para->dram_tpr0);
+    mctl_write_w(SDR_TPR1, para->dram_tpr1);
+    mctl_write_w(SDR_TPR2, para->dram_tpr2);
+
+    //set mode register
+    if(para->dram_type==3)                  //ddr3
+    {
+        reg_val = 0x0;
+        reg_val |= (para->dram_cas - 4)<<4;
+        reg_val |= 0x5<<9;
+    }
+    else if(para->dram_type==2)             //ddr2
+    {
+        reg_val = 0x2;
+        reg_val |= para->dram_cas<<4;
+        reg_val |= 0x5<<9;
+    }
+    mctl_write_w(SDR_MR, reg_val);
+
+    reg_val = 0x0;
+    mctl_write_w(SDR_EMR, para->dram_emr1);
+    reg_val = 0x0;
+		mctl_write_w(SDR_EMR2, para->dram_emr2);
+    reg_val = 0x0;
+		mctl_write_w(SDR_EMR3, para->dram_emr3);
+
+	//set DQS window mode
+	reg_val = mctl_read_w(SDR_CCR);
+	reg_val |= 0x1U<<14;
+	reg_val &= ~(0x1U<<17);
+	mctl_write_w(SDR_CCR, reg_val);
+
+    //initial external DRAM
+    reg_val = mctl_read_w(SDR_CCR);
+    reg_val |= 0x1U<<31;
+    mctl_write_w(SDR_CCR, reg_val);
+
+    while(mctl_read_w(SDR_CCR) & (0x1U<<31)) {};
+
+    //scan read pipe value
+    mctl_itm_enable();
+    ret_val = DRAMC_scan_readpipe();
+
+    if(ret_val < 0)
+    {
+        return 0;
+    }
+    //configure all host port
+    mctl_configure_hostport();
+
+    return DRAMC_get_dram_size();
+}
+
     5160:	e594000c 	ldr	r0, [r4, #12]
     5164:	e2400001 	sub	r0, r0, #1
     5168:	e1866500 	orr	r6, r6, r0, lsl #10
@@ -5434,14 +5589,14 @@ f_52b8_:
     52d0:	e3500e7d 	cmp	r0, #2000	; 0x7d0
     52d4:	9a000003 	bls	0x52e8
     52d8:	e59d0004 	ldr	r0, [sp, #4]
-    52dc:	e59f104c 	ldr	r1, [0x5330]
+    52dc:	e59f104c 	ldr	r1, =0x000f4240
     52e0:	ebfffe4b 	bl	standby_uldiv
     52e4:	e58d0004 	str	r0, [sp, #4]
     52e8:	e3a05000 	mov	r5, #0
     52ec:	e3a04000 	mov	r4, #0
     52f0:	ea000003 	b	0x5304
     52f4:	e1a0000d 	mov	r0, sp
-    52f8:	ebffff5d 	bl	f_5074_
+    52f8:	ebffff5d 	bl	DRAMC_init
     52fc:	e1a05000 	mov	r5, r0
     5300:	e2844001 	add	r4, r4, #1
     5304:	e3550000 	cmp	r5, #0
