@@ -82,16 +82,16 @@ Disassembly of section .data:
 _start
      2c8:	e10f0000 	mrs	r0, CPSR
      2cc:	e3c0001f 	bic	r0, r0, #0x1f
-     2d0:	e3800013 	orr	r0, r0, #0x13
-     2d4:	e38000c0 	orr	r0, r0, #0xc0
-     2d8:	e3c00c02 	bic	r0, r0, #0x200
+     2d0:	e3800013 	orr	r0, r0, #0x13		; M=0x13(Supervisor)
+     2d4:	e38000c0 	orr	r0, r0, #0xc0		; I=1, F=1, IRQ masked
+     2d8:	e3c00c02 	bic	r0, r0, #0x200		; E=0(Little Endian)
      2dc:	e121f000 	msr	CPSR_c, r0
-     2e0:	ee110f10 	mrc	15, 0, r0, cr1, cr0, {0}
-     2e4:	e3c00005 	bic	r0, r0, #0x05
-     2e8:	e3c00b06 	bic	r0, r0, #0x1800
-     2ec:	e3c00002 	bic	r0, r0, #0x02
+     2e0:	ee110f10 	mrc	15, 0, r0, cr1, cr0, {0}; Control Register
+     2e4:	e3c00005 	bic	r0, r0, #0x05		; M=0(no MMU), C=0(no Data Cache)
+     2e8:	e3c00b06 	bic	r0, r0, #0x1800		; Z=0(noProgram Flow Prediction), I=0(Instruction Cache Disabled)
+     2ec:	e3c00002 	bic	r0, r0, #0x02		; A=0(no Strict Alignment Checing)
      2f0:	ee010f10 	mcr	15, 0, r0, cr1, cr0, {0}
-     2f4:	eb0002cd 	bl	f_e30_
+     2f4:	eb0002cd 	bl	configureCpuBootClock
      2f8:	e3a0d902 	mov	sp, #0x8000
      2fc:	eb000293 	bl	main
      300:	eafffffe 	b	0x300
@@ -700,7 +700,7 @@ main:
      da4:	eb000400 	bl	f_1dac_
      da8:	e59f10f8 	ldr	r1, [0xea8]
      dac:	e5d1002f 	ldrb	r0, [r1, #47]	; 0x2f
-     db0:	eb001140 	bl	f_52b8_
+     db0:	eb001140 	bl	configureDRAMC(r0=?)
      db4:	e1a04000 	mov	r4, r0
      db8:	e3540000 	cmp	r4, #0
      dbc:	0a000003 	beq	0xdd0
@@ -733,7 +733,7 @@ main:
      e28:	eb0011af 	bl	call_r0
      e2c:	e8bd8070 	pop	{r4, r5, r6, pc}
 
-f_e30_:
+configureCpuBootClock:
      e30:	e59f2140 	ldr	r2, =0x00010010			; AXIClkDiv=1, AHBClkDiv=2, AHBClkSel=AXI, APB0ClkDiv=2?, AC328ClkSrc=HOSC 
      e34:	e59f3060 	ldr	r3, =CCM_IO_BASE
      e38:	e5832054 	str	r2, [r3, #CCM_SysClkDiv]	; 0x54
@@ -1643,6 +1643,7 @@ f_1c94_:
     1c94:	e59f007c 	ldr	r0, =40100000
     1c98:	e12fff1e 	bx	lr
 
+getDramSettings(struct dram_para *dst)
 f_1c9c_:
     1c9c:	e92d4010 	push	{r4, lr}
     1ca0:	e1a04000 	mov	r4, r0
@@ -1652,6 +1653,7 @@ f_1c9c_:
     1cb0:	eb000b57 	bl	memcpy
     1cb4:	e8bd8010 	pop	{r4, pc}
 
+updateDramSettings(struct dram_para *dst)
     1cb8:	e92d4070 	push	{r4, r5, r6, lr}
     1cbc:	e1a05000 	mov	r5, r0
     1cc0:	e3a04000 	mov	r4, #0
@@ -5679,18 +5681,33 @@ __s32 DRAMC_init(__dram_para_t *para)
 
 
 f_52b8_:
+configureDRAMC(r0 = ?)
     52b8:	e92d4070 	push	{r4, r5, r6, lr}
     52bc:	e24dd050 	sub	sp, sp, #80	; 0x50
     52c0:	e1a06000 	mov	r6, r0
     52c4:	e1a0000d 	mov	r0, sp
-    52c8:	ebfff273 	bl	f_1c9c_
-    52cc:	e59d0004 	ldr	r0, [sp, #4]
+    52c8:	ebfff273 	bl	getDramSettings(struct dram_para *dst = stack, 0x50 in size)
+
+    if (dram_para.clk >= 2000) {
+        dram_para.clk /= 1000000;
+    }
+
+/*
+    52cc:	e59d0004 	ldr	r0, [sp, #DRAM_CLOCK]
     52d0:	e3500e7d 	cmp	r0, #2000	; 0x7d0
     52d4:	9a000003 	bls	0x52e8
-    52d8:	e59d0004 	ldr	r0, [sp, #4]
-    52dc:	e59f104c 	ldr	r1, =0x000f4240
+    52d8:	e59d0004 	ldr	r0, [sp, #DRAM_CLOCK]
+    52dc:	e59f104c 	ldr	r1, =1000000
     52e0:	ebfffe4b 	bl	standby_uldiv
-    52e4:	e58d0004 	str	r0, [sp, #4]
+    52e4:	e58d0004 	str	r0, [sp, #DRAM_CLOCK]
+p*/
+	int dram_size;
+	for (int i = 0; i < 4; i++) {
+		dram_size = DRAMC_init(dram_para);
+		if (dram_size)
+			break;
+	}
+/*
     52e8:	e3a05000 	mov	r5, #0
     52ec:	e3a04000 	mov	r4, #0
     52f0:	ea000003 	b	0x5304
@@ -5702,9 +5719,15 @@ f_52b8_:
     5308:	1a000001 	bne	0x5314
     530c:	e3540004 	cmp	r4, #4
     5310:	3afffff7 	bcc	0x52f4
+*/
+
+	return dram_size;
+/*
     5314:	e1a00005 	mov	r0, r5
     5318:	e28dd050 	add	sp, sp, #80	; 0x50
     531c:	e8bd8070 	pop	{r4, r5, r6, pc}
+*/
+}
 
     5330:	000f4240
 
