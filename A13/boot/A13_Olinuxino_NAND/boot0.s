@@ -734,12 +734,12 @@ main:
      e2c:	e8bd8070 	pop	{r4, r5, r6, pc}
 
 configureCpuBootClock:
-     e30:	e59f2140 	ldr	r2, =0x00010010			; AXIClkDiv=1, AHBClkDiv=2, AHBClkSel=AXI, APB0ClkDiv=2?, AC328ClkSrc=HOSC 
+     e30:	e59f2140 	ldr	r2, =0x00010010			; AXIClkDiv=0(1), AHBClkDiv=1(2), AHBClkSel=0(AXI), APB0ClkDiv=0(2?, or is that 1), AC328ClkSrc=1(HOSC) 
      e34:	e59f3060 	ldr	r3, =CCM_IO_BASE
      e38:	e5832054 	str	r2, [r3, #CCM_SysClkDiv]	; 0x54
-     e3c:	e59f0138 	ldr	r0, =0xa1005000
-     e40:	e1c321c0 	bic	r2, r3, r0, asr #3
-     e44:	e5820000 	str	r0, [r2]
+     e3c:	e59f0138 	ldr	r0, =0xa1005000			; PLL1_CFG = FactorM=0.SigmaEn=0,SigmaIn=0,FactorK=0,FactorN=8,LockTime=2,PLLDivP=0,PLLBias=8,VCOBias=4,VCORstIn=0,PLLEn=1
+     e40:	e1c321c0 	bic	r2, r3, r0, asr #3		; Odd form of r2 = r3
+     e44:	e5820000 	str	r0, [r2, #CCM_Pll1Cfg]		; 
      e48:	e3a01000 	mov	r1, #0
      e4c:	ea000000 	b	0xe54
      e50:	e2811001 	add	r1, r1, #1
@@ -748,7 +748,7 @@ configureCpuBootClock:
      e5c:	e59f2038 	ldr	r2, =CCM_IO_BASE
      e60:	e5920054 	ldr	r0, [r2, #CCM_SysClkDiv]	; 0x54
      e64:	e3c00803 	bic	r0, r0, #0x30000
-     e68:	e3800802 	orr	r0, r0, #0x20000		; AC328ClkSrc=PLL
+     e68:	e3800802 	orr	r0, r0, #0x20000		; AC328ClkSrc=2(PLL)
      e6c:	e5820054 	str	r0, [r2, #CCM_SysClkDiv]	; 0x54
      e70:	e5922060 	ldr	r2, [r2, #CCM_AhbGate0]	; 0x60
      e74:	e3822040 	orr	r2, r2, #0x40			; AhbGate0.DmaGate=1
