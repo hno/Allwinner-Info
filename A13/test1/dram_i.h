@@ -92,6 +92,7 @@ struct dram_para_t
 #define SDR_DQSTR1			(DRAMC_IO_BASE + 0x22c)
 #define SDR_CR				(DRAMC_IO_BASE + 0x230)
 #define SDR_CFSR			(DRAMC_IO_BASE + 0x234)
+#define SDR_0x23c			(DRAMC_IO_BASE + 0x23c)
 #define SDR_APR  			(DRAMC_IO_BASE + 0x240)
 #define SDR_LTR	  			(DRAMC_IO_BASE + 0x244)
 #define SDR_HPCR			(DRAMC_IO_BASE + 0x250)
