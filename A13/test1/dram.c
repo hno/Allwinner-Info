@@ -25,27 +25,9 @@
  * MA 02111-1307 USA
  */
 
-
-
-
-
 #include "dram.h"
 #include "sys_proto.h"
 
-/*
-*********************************************************************************************************
-*                                   DRAM INIT
-*
-* Description: dram init function
-*
-* Arguments  : para     dram config parameter
-*
-*
-* Returns    : result
-*
-* Note       :
-*********************************************************************************************************
-*/
 void mctl_ddr3_reset(void)
 {
 	__u32 reg_val;
@@ -100,22 +82,37 @@ void mctl_enable_dll0(void)
     sdelay(0x1000);
 }
 
+/*
+ * Note: This differs from pm/standby in that it checks the bus width
+ */
 void mctl_enable_dllx(void)
 {
     __u32 i = 0;
+    __u32 n;
+    __u32 bus_width;
 
-    for(i=1; i<5; i++)
+    bus_width = mctl_read_w(SDR_DCR);
+    bus_width >>= 6;
+    bus_width &= 7;
+
+    if (bus_width == 3) {
+	n = 5;
+    } else {
+	n = 3;
+	i = 1;
+    }
+
+    for(i=1; i<n; i++)
     {
         mctl_write_w(SDR_DLLCR0+(i<<2), (mctl_read_w(SDR_DLLCR0+(i<<2)) & ~0x40000000) | 0x80000000);
     }
 
 	sdelay(0x100);
 
-    for(i=1; i<5; i++)
+    for(i=1; i<n; i++)
     {
         mctl_write_w(SDR_DLLCR0+(i<<2), mctl_read_w(SDR_DLLCR0+(i<<2)) & ~0xC0000000);
     }
-
 	sdelay(0x1000);
 
     for(i=1; i<5; i++)
@@ -156,14 +153,14 @@ void mctl_disable_dll(void)
 }
 
 __u32 hpcr_value[32] = {
-		0x0,0x0,0x0,0x0,		
-		0x0,0x0,0x0,0x0,
-		0x0,0x0,0x0,0x0,
-		0x0,0x0,0x0,0x0,
-		0x00001031,0x00001031,0x00000735,0x00001035,
-		0x00001035,0x00000731,0x00001031,0x0,
-		0x00000301,0x00000301,0x00000301,0x00000301,
-		0x00000301,0x00000301,0x00000301,0x0		
+	0, 0, 0, 0,
+	0, 0, 0, 0,
+	0, 0, 0, 0,
+	0, 0, 0, 0,
+	0x1031, 0x1031, 0x735, 0x1035,
+	0x1035, 0x731, 0x1031, 0,
+	0x301, 0x301, 0x301, 0x301,
+	0x301, 0x301, 0x301, 0
 };
 
 void mctl_configure_hostport(void)
@@ -194,12 +191,8 @@ void mctl_setup_dram_clock(__u32 clk)
     reg_val |= (__u32)0x1<<31;          //PLL En
     mctl_write_w(DRAM_CCM_SDRAM_PLL_REG, reg_val);
 
-    reg_val = mctl_read_w(DRAM_CCM_SDRAM_PLL_TUN_REG);
-    reg_val &= ~(0xFFFF);
-    reg_val |= 0x26; // RESERVED???!!
-    mctl_write_w(DRAM_CCM_SDRAM_PLL_TUN_REG, reg_val);
-
     sdelay(0x100000);
+
     reg_val = mctl_read_w(DRAM_CCM_SDRAM_PLL_REG);
 	reg_val |= 0x1<<29;
     mctl_write_w(DRAM_CCM_SDRAM_PLL_REG, reg_val);
@@ -220,9 +213,22 @@ void mctl_setup_dram_clock(__u32 clk)
 	sdelay(0x1000);
 }
 
+/*
+*********************************************************************************************************
+*                                   DRAM INIT
+*
+* Description: dram init function
+*
+* Arguments  : para     dram config parameter
+*
+*
+* Returns    : result
+*
+* Note       :
+*********************************************************************************************************
+*/
 int DRAMC_init(struct dram_para_t *para)
 {
-    volatile struct sunxi_dram_reg *dramc = (void *)DRAMC_IO_BASE;
     __u32 reg_val;
     __s32 ret_val;
 
@@ -236,13 +242,15 @@ int DRAMC_init(struct dram_para_t *para)
     //setup DRAM relative clock
     mctl_setup_dram_clock(para->dram_clk);
 
+    // This is new unknown code!
+    mctl_write_w(SDR_0x23c, 0);
+
     //reset external DRAM
     mctl_ddr3_reset();
     mctl_set_drive();
 
     //dram clock off
     DRAMC_clock_output_en(0);
-
 
     mctl_itm_disable();
     mctl_enable_dll0();
@@ -267,30 +275,31 @@ int DRAMC_init(struct dram_para_t *para)
         reg_val |= 0x5<<3;
     else
         reg_val |= 0x0<<3;
+
     reg_val |= ((para->dram_bus_width>>3) - 1)<<6;
+
     reg_val |= (para->dram_rank_num -1)<<10;
+
     reg_val |= 0x1<<12;
     reg_val |= ((0x1)&0x3)<<13;
+
     mctl_write_w(SDR_DCR, reg_val);
-
-    //dram clock on
-    DRAMC_clock_output_en(1);
-	sdelay(0x10);
-    while(mctl_read_w(SDR_CCR) & (0x1U<<31)) {};
-
-    mctl_enable_dllx();
 
 	//set odt impendance divide ratio
 	reg_val=((para->dram_zq)>>8)&0xfffff;
 	reg_val |= ((para->dram_zq)&0xff)<<20;
+
 	reg_val |= (para->dram_zq)&0xf0000000;
     mctl_write_w(SDR_ZQCR0, reg_val);
 
-    //set I/O configure register
-    reg_val = 0x00cc0000;
-    reg_val |= (para->dram_odt_en)&0x3;
-    reg_val |= ((para->dram_odt_en)&0x3)<<30;
-    mctl_write_w(SDR_IOCR, reg_val);
+    //dram clock on
+    DRAMC_clock_output_en(1);
+
+	sdelay(0x10);
+
+    while(mctl_read_w(SDR_CCR) & (0x1U<<31)) {};
+
+    mctl_enable_dllx();
 
     //set refresh period
     DRAMC_set_autorefresh_cycle(para->dram_clk);
@@ -300,10 +309,18 @@ int DRAMC_init(struct dram_para_t *para)
     mctl_write_w(SDR_TPR1, para->dram_tpr1);
     mctl_write_w(SDR_TPR2, para->dram_tpr2);
 
+#if NOT_DONE_IN_A13_BOOT0
+    //set I/O configure register
+    reg_val = 0x00cc0000;
+    reg_val |= (para->dram_odt_en)&0x3;
+    reg_val |= ((para->dram_odt_en)&0x3)<<30;
+    mctl_write_w(SDR_IOCR, reg_val);
+#endif
+
     //set mode register
     if(para->dram_type==3)                  //ddr3
     {
-        reg_val = 0x0;
+        reg_val = 0x1000;
         reg_val |= (para->dram_cas - 4)<<4;
         reg_val |= 0x5<<9;
     }
@@ -315,11 +332,8 @@ int DRAMC_init(struct dram_para_t *para)
     }
     mctl_write_w(SDR_MR, reg_val);
 
-    reg_val = 0x0;
     mctl_write_w(SDR_EMR, para->dram_emr1);
-    reg_val = 0x0;
 		mctl_write_w(SDR_EMR2, para->dram_emr2);
-    reg_val = 0x0;
 		mctl_write_w(SDR_EMR3, para->dram_emr3);
 
 	//set DQS window mode
@@ -351,31 +365,13 @@ int DRAMC_init(struct dram_para_t *para)
 
 /*
 *********************************************************************************************************
-*                                   DRAM EXIT
-*
-* Description: dram exit;
-*
-* Arguments  : none;
-*
-* Returns    : result;
-*
-* Note       :
-*********************************************************************************************************
-*/
-__s32 DRAMC_exit(void)
-{
-    return 0;
-}
-
-/*
-*********************************************************************************************************
 *                                   CHECK DDR READPIPE
 *
 * Description: check ddr readpipe;
 *
 * Arguments  : none
 *
-* Returns    : result, 0:fail, 1:success;
+* Returns    : result, -1:fail, 0:success;
 *
 * Note       :
 *********************************************************************************************************
@@ -401,22 +397,6 @@ int DRAMC_scan_readpipe(void)
 
     return (0);
 }
-
-
-/*
-*********************************************************************************************************
-*                                   DRAM SCAN READ PIPE
-*
-* Description: dram scan read pipe
-*
-* Arguments  : none
-*
-* Returns    : result, 0:fail, 1:success;
-*
-* Note       :
-*********************************************************************************************************
-*/
-
 
 /*
 *********************************************************************************************************
@@ -444,6 +424,7 @@ void DRAMC_clock_output_en(__u32 on)
 
     mctl_write_w(SDR_CR, reg_val);
 }
+
 /*
 *********************************************************************************************************
 * Description: Set autorefresh cycle
@@ -452,38 +433,21 @@ void DRAMC_clock_output_en(__u32 on)
 *
 * Returns    : none
 *
-* Note       :
+* Note       : differs significantly from arch-sun5i/pm/standby/dram_ini.c
 *********************************************************************************************************
 */
 void DRAMC_set_autorefresh_cycle(__u32 clk)
 {
-    __u32 reg_val;
-    __u32 dram_size;
-    __u32 tmp_val;
+	__u32 reg_val;
+	__u32 tmp_val;
 
-    dram_size = mctl_read_w(SDR_DCR);
-    dram_size >>=3;
-    dram_size &= 0x7;
-
-    if(clk < 600)
-    {
-        if(dram_size<=0x2)
-            tmp_val = (131*clk)>>10;
-        else
-            tmp_val = (336*clk)>>10;
-        reg_val = tmp_val;
-        tmp_val = (7987*clk)>>10;
-        tmp_val = tmp_val*9 - 200;
-        reg_val |= tmp_val<<8;
-        reg_val |= 0x8<<24;
-        mctl_write_w(SDR_DRR, reg_val);
-    }
-    else
-    {
-        mctl_write_w(SDR_DRR, 0x0);
-    }
+	reg_val = 131;
+	tmp_val = (7987*clk)>>10;
+	tmp_val = tmp_val*9 - 200;
+	reg_val |= tmp_val<<8;
+	reg_val |= 0x8<<24;
+	mctl_write_w(SDR_DRR, reg_val);
 }
-
 
 /*
 **********************************************************************************************************************
@@ -530,39 +494,3 @@ unsigned DRAMC_get_dram_size(void)
     return dram_size;
 }
 
-
-__s32 dram_init(void)
-{
-    /* do nothing for dram init */
-    return 0;
-}
-
-__s32 dram_exit(void)
-{
-    return DRAMC_exit();
-}
-
-__s32 dram_get_size(void)
-{
-    return DRAMC_get_dram_size();
-}
-
-void dram_set_clock(int clk)
-{
-    return mctl_setup_dram_clock(clk);
-}
-
-void dram_set_drive(void)
-{
-    mctl_set_drive();
-}
-
-void dram_set_autorefresh_cycle(__u32 clk)
-{
-    DRAMC_set_autorefresh_cycle(clk);
-}
-
-int dram_scan_readpipe(void)
-{
-    return DRAMC_scan_readpipe();
-}
