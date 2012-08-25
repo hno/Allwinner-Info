@@ -4,8 +4,8 @@
         .global entry
 
         .text
-    .code 32
-    .section ".start", "ax"
+	.code 32
+	.section ".start", "ax"
 entry:
-    B main
-
+	bl main
+	bx lr
