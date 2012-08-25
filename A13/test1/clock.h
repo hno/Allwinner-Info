@@ -150,25 +150,29 @@ struct sunxi_ccm_reg {
 #define APB1_FACTOR_N			0
 
 /* pll5(for ddr) bit field */
-#define DDR_CLK_HZ				(360 * 1024 * 1024)
+#define DDR_CLK_HZ			(360 * 1024 * 1024)
 #define OSC24M_CLK_HZ			(24 * 1024 * 1024)
 
 #define PLL5_FACTOR_N			(DDR_CLK_HZ / OSC24M_CLK_HZ)
 #define PLL5_FACTOR_K			1
 #define PLL5_FACTOR_M			1
 #define PLL5_OUT_DIV_P			1
-#define PLL5_ENABLE				1
+#define PLL5_ENABLE			1
 #define DDR_CLK_OUT_ENABLE		1
 #define DDR_CLK_OUT_DISABLE		0
 
 /* clock divide */
+#define CPU_CLK_SRC_LOSC		0
 #define CPU_CLK_SRC_OSC24M		1
 #define CPU_CLK_SRC_PLL1		2
-#define AXI_DIV				2
+#define CPU_CLK_SRC_200M		3
+#define AXI_DIV				0
 #define AHB_DIV				1
-#define APB0_DIV			1
+#define APB0_DIV			0
 #ifdef SUN5I
 #define AHB_CLK_SRC_AXI			0
+#define AHB_CLK_SRC_CPUCL		1
+#define AHB_CLK_SRC_PLL6_2		2
 #endif
 
 #define CLK_GATE_OPEN			0x1
