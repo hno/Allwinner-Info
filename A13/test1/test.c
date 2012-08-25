@@ -83,6 +83,9 @@ int clock_init(void)
 	sr32(SUNXI_CCM_APB1_CLK_DIV, 16, 2, APB1_FACTOR_N);
 	sr32(SUNXI_CCM_APB1_CLK_DIV, 0, 5, APB1_FACTOR_M);
 
+	/* Enable DMA clock */
+	sr32(SUNXI_CCM_AHB_GATING0, AHB_GATE_OFFSET_DMA, 1, 1);
+
 	return 0;
 }
 
