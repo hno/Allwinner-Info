@@ -50,6 +50,11 @@ int clock_init(void)
 
 	/* set clock source to OSC24M */
 	sr32(SUNXI_CCM_CPU_AHB_APB0_CFG, 16, 2, CPU_CLK_SRC_OSC24M);		/* CPU_CLK_SRC_SEL [17:16] */
+	/* set clock divider, cpu:axi:ahb:apb0 = 8:4:2:1 */
+	sr32(SUNXI_CCM_CPU_AHB_APB0_CFG, 0, 2, AXI_DIV);	/* AXI_CLK_DIV_RATIO [1:0] */
+	sr32(SUNXI_CCM_CPU_AHB_APB0_CFG, 4, 2, AHB_DIV);	/* AHB_CLK_DIV_RATIO [5:4] */
+	sr32(SUNXI_CCM_CPU_AHB_APB0_CFG, 8, 2, APB0_DIV);	/* APB0_CLK_DIV_RATIO [9:8] */
+
 
 	/* set the pll1 factors, pll1 out = 24MHz*n*k/m/p */	
 
@@ -60,11 +65,6 @@ int clock_init(void)
 	
 	/* wait for clock to be stable*/	
 	sdelay(0x4000);
-
-	/* set clock divider, cpu:axi:ahb:apb0 = 8:4:2:1 */
-	sr32(SUNXI_CCM_CPU_AHB_APB0_CFG, 0, 2, AXI_DIV);	/* AXI_CLK_DIV_RATIO [1:0] */
-	sr32(SUNXI_CCM_CPU_AHB_APB0_CFG, 4, 2, AHB_DIV);	/* AHB_CLK_DIV_RATIO [5:4] */
-	sr32(SUNXI_CCM_CPU_AHB_APB0_CFG, 8, 2, APB0_DIV);	/* APB0_CLK_DIV_RATIO [9:8] */
 
 	/* enable pll1 */
 	sr32(&ccm->pll1_cfg, 31, 1, PLL1_ENABLE);		/* PLL1_ENABLE [31] */
