@@ -88,8 +88,8 @@ _start
      2dc:	e121f000 	msr	CPSR_c, r0
      2e0:	ee110f10 	mrc	15, 0, r0, cr1, cr0, {0}; Control Register
      2e4:	e3c00005 	bic	r0, r0, #0x05		; M=0(no MMU), C=0(no Data Cache)
-     2e8:	e3c00b06 	bic	r0, r0, #0x1800		; Z=0(noProgram Flow Prediction), I=0(Instruction Cache Disabled)
-     2ec:	e3c00002 	bic	r0, r0, #0x02		; A=0(no Strict Alignment Checing)
+     2e8:	e3c00b06 	bic	r0, r0, #0x1800		; Z=0(no Program Flow Prediction), I=0(no Instruction Cache)
+     2ec:	e3c00002 	bic	r0, r0, #0x02		; A=0(no Strict Alignment Checking)
      2f0:	ee010f10 	mcr	15, 0, r0, cr1, cr0, {0}
      2f4:	eb0002cd 	bl	configureCpuBootClock
      2f8:	e3a0d902 	mov	sp, #0x8000
@@ -637,6 +637,9 @@ f_cb4_:
      cc0:	eb0000bc 	bl	f_fb8_
      cc4:	e8bd8010 	pop	{r4, pc}
 
+configureAVSClock(void)
+{
+}
 f_cc8_:
      cc8:	e59f01cc 	ldr	r0, =CCM_IO_BASE
      ccc:	e5900144 	ldr	r0, [r0, #CCM_avs_clk_cfg]	; 0x144
@@ -678,14 +681,14 @@ f_cf8_:
 main:
      d50:	e92d4070 	push	{r4, r5, r6, lr}
      d54:	ebffffe7 	bl	f_cf8_
-     d58:	ebffffda 	bl	f_cc8_
+     d58:	ebffffda 	bl	configureAVSClock
      d5c:	e59f1144 	ldr	r1, [0xea8]
-     d60:	e5910088 	ldr	r0, [r1, #136]	; 0x88
+     d60:	e5910088 	ldr	r0, [r1, #136]	; 0x88	; UART port
      d64:	e59f2140 	ldr	r2, [0xeac]
-     d68:	e281108c 	add	r1, r1, #140	; 0x8c
+     d68:	e281108c 	add	r1, r1, #140	; 0x8c	; UART GPIO 0 (start of UART GPIO)
      d6c:	eb000195 	bl	f_13c8_
      d70:	e59f0130 	ldr	r0, [0xea8]
-     d74:	e590009c 	ldr	r0, [r0, #156]	; 0x9c
+     d74:	e590009c 	ldr	r0, [r0, #156]	; 0x9c	; JTAG used?
      d78:	e3500000 	cmp	r0, #0
      d7c:	0a000001 	beq	0xd88
      d80:	e59f0128 	ldr	r0, [0xeb0]
@@ -700,7 +703,7 @@ main:
      da4:	eb000400 	bl	f_1dac_
      da8:	e59f10f8 	ldr	r1, [0xea8]
      dac:	e5d1002f 	ldrb	r0, [r1, #47]	; 0x2f
-     db0:	eb001140 	bl	configureDRAMC(r0=?)
+     db0:	eb001140 	bl	configureDRAMC(r0=?, r1=?)
      db4:	e1a04000 	mov	r4, r0
      db8:	e3540000 	cmp	r4, #0
      dbc:	0a000003 	beq	0xdd0
@@ -5234,7 +5237,6 @@ void DRAMC_set_autorefresh_cycle(__u32 clk)
 }
 
 /*
-DRAMC_set_autorefresh_cycle
     5020:	e3a01083 	mov	r1, #131	; 0x83
     5024:	e3013f33 	movw	r3, #7987	; 0x1f33
     5028:	e0030390 	mul	r3, r0, r3
@@ -5327,18 +5329,21 @@ __s32 DRAMC_init(__dram_para_t *para)
     mctl_itm_disable();
     mctl_enable_dll0();
 
+/*
     50a0:	ebfffee8 	bl	mctl_ddr3_reset
     50a4:	ebfffef3 	bl	mctl_set_drive
     50a8:	e3a00000 	mov	r0, #0
     50ac:	ebffffe6 	bl	DRAMC_clock_output_en
     50b0:	ebfffef9 	bl	mctl_itm_disable
     50b4:	ebffff04 	bl	mctl_enable_ddl0
-    50b8:	e3a06000 	mov	r6, #0
+*/
+
     //configure external DRAM
     reg_val = 0;
     if(para->dram_type == 3)
         reg_val |= 0x1;
 /*
+    50b8:	e3a06000 	mov	r6, #0
     50bc:	e5940008 	ldr	r0, [r4, #8]
     50c0:	e3500003 	cmp	r0, #3
     50c4:	1a000000 	bne	0x50cc
@@ -5474,13 +5479,12 @@ __s32 DRAMC_init(__dram_para_t *para)
     51a8:	ebffffa7 	bl	DRAMC_clock_output_en
  */
 
-	standby_delay(0x10);
+	sdelay(0x10);
 /*
     51ac:	e3a00010 	mov	r0, #16
     51b0:	ebfffe9e 	bl	sdelay
 */
 
-/*
     while(mctl_read_w(SDR_CCR) & (0x1U<<31)) {};
 */
     51b4:	e320f000 	nop	{0}
@@ -5488,6 +5492,7 @@ __s32 DRAMC_init(__dram_para_t *para)
     51bc:	e5900000 	ldr	r0, [r0, #SDR_CCR]
     51c0:	e3100102 	tst	r0, #0x80000000
     51c4:	1afffffb 	bne	0x51b8
+*/
 
     mctl_enable_dllx();
 /*
@@ -5681,7 +5686,8 @@ __s32 DRAMC_init(__dram_para_t *para)
 
 
 f_52b8_:
-configureDRAMC(r0 = ?)
+configureDRAMC(r0 = ?, r1 = ?)
+; r0 and r1 arguments seems unused
     52b8:	e92d4070 	push	{r4, r5, r6, lr}
     52bc:	e24dd050 	sub	sp, sp, #80	; 0x50
     52c0:	e1a06000 	mov	r6, r0
