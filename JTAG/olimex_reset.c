@@ -6,6 +6,7 @@
 */
 
 #include <stdio.h>
+#include <unistd.h>
 #include <ftdi.h>
 
 #define OLIMEX_DBUS_TCK		(1<<0)
@@ -56,7 +57,7 @@ int main(void)
 
     write_ftdi_command(&ftdic, SET_BITS_LOW, 0x00, 0x00);
     write_ftdi_command(&ftdic, SET_BITS_HIGH, OLIMEX_CBUS_nSRST, OLIMEX_CBUS_nSRST|OLIMEX_CBUS_LED);
-    sleep(1);
+    usleep(100);
     write_ftdi_command(&ftdic, SET_BITS_HIGH, OLIMEX_CBUS_LED, OLIMEX_CBUS_nSRST|OLIMEX_CBUS_LED);
 
     if ((ret = ftdi_usb_close(&ftdic)) < 0)
