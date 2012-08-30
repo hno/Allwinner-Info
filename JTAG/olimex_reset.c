@@ -8,6 +8,26 @@
 #include <stdio.h>
 #include <ftdi.h>
 
+#define OLIMEX_DBUS_TCK		(1<<0)
+#define OLIMEX_DBUS_TDI		(1<<1)
+#define OLIMEX_DBUS_TDO		(1<<2)
+#define OLIMEX_DBUS_TMS		(1<<3)
+#define OLIMEX_DBUS_DBUS4	(1<<4)	// ouput 0
+#define OLIMEX_DBUS_DBUS5	(1<<5)  // unused
+#define OLIMEX_DBUS_DBUS6	(1<<6)  // unused
+#define OLIMEX_DBUS_DBUS7	(1<<7)  // unused
+
+#define OLIMEX_CBUS_nTRST	(1<<0)
+#define OLIMEX_CBUS_nSRST	(1<<1)
+#define OLIMEX_CBUS_nTRSTnOE	(1<<2)
+#define OLIMEX_CBUS_LED		(1<<3)
+
+static void write_ftdi_command(struct ftdi_context *ftdic, unsigned char cmd, unsigned char data, unsigned char direction)
+{
+	unsigned char buf[3] = {cmd, data, direction};
+	ftdi_write_data(ftdic, buf, sizeof(buf));
+}
+
 int main(void)
 {
     int ret;
@@ -31,6 +51,13 @@ int main(void)
         printf("ftdi_read_chipid: %d\n", ftdi_read_chipid(&ftdic, &chipid));
         printf("FTDI chipid: %X\n", chipid);
     }
+
+    ftdi_set_bitmode(&ftdic, 0x0b, BITMODE_MPSSE); /* ctx, JTAG I/O mask */
+
+    write_ftdi_command(&ftdic, SET_BITS_LOW, 0x00, 0x00);
+    write_ftdi_command(&ftdic, SET_BITS_HIGH, OLIMEX_CBUS_nSRST, OLIMEX_CBUS_nSRST|OLIMEX_CBUS_LED);
+    sleep(1);
+    write_ftdi_command(&ftdic, SET_BITS_HIGH, OLIMEX_CBUS_LED, OLIMEX_CBUS_nSRST|OLIMEX_CBUS_LED);
 
     if ((ret = ftdi_usb_close(&ftdic)) < 0)
     {
