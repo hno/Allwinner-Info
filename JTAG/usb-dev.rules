@@ -1,0 +1,21 @@
+# Olimex ARM-USB-OCD
+# http://olimex.com/dev/arm-usb-ocd.html
+ATTRS{idVendor}=="15ba", ATTRS{idProduct}=="0003", MODE="666"
+
+# Olimex ARM-USB-OCD-H
+# http://olimex.com/dev/arm-usb-ocd-h.html
+ATTRS{idVendor}=="15ba", ATTRS{idProduct}=="002b", MODE="666"
+
+# Olimex ARM-USB-TINY
+# http://olimex.com/dev/arm-usb-tiny.html
+ATTRS{idVendor}=="15ba", ATTRS{idProduct}=="0004", MODE="666"
+
+# Olimex ARM-USB-TINY-H
+# http://olimex.com/dev/arm-usb-tiny-h.html
+ATTRS{idVendor}=="15ba", ATTRS{idProduct}=="002a", MODE="666"
+
+# FTDI USB TTL dongle
+ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", MODE="666"
+
+# A10 FEL mode 1f3a:efe8
+ATTRS{idVendor}=="1f3a", ATTRS{idProduct}=="efe8", MODE="666"
