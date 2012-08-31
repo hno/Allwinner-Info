@@ -28,7 +28,7 @@
 #include "dram.h"
 #include "sys_proto.h"
 
-void mctl_ddr3_reset(void)
+static void mctl_ddr3_reset(void)
 {
 	__u32 reg_val;
 
@@ -41,7 +41,7 @@ void mctl_ddr3_reset(void)
 	mctl_write_w(SDR_CR, reg_val);
 }
 
-void mctl_set_drive(void)
+static void mctl_set_drive(void)
 {
     __u32 reg_val;
 
@@ -52,7 +52,7 @@ void mctl_set_drive(void)
     mctl_write_w(SDR_CR, reg_val);
 }
 
-void mctl_itm_disable(void)
+static void mctl_itm_disable(void)
 {
     __u32 reg_val = 0x0;
 
@@ -61,7 +61,7 @@ void mctl_itm_disable(void)
     mctl_write_w(SDR_CCR, reg_val);
 }
 
-void mctl_itm_enable(void)
+static void mctl_itm_enable(void)
 {
     __u32 reg_val = 0x0;
 
@@ -70,7 +70,7 @@ void mctl_itm_enable(void)
     mctl_write_w(SDR_CCR, reg_val);
 }
 
-void mctl_enable_dll0(void)
+static void mctl_enable_dll0(void)
 {
     mctl_write_w(SDR_DLLCR0, (mctl_read_w(SDR_DLLCR0) & ~0x40000000) | 0x80000000);
 	sdelay(0x100);
@@ -85,7 +85,7 @@ void mctl_enable_dll0(void)
 /*
  * Note: This differs from pm/standby in that it checks the bus width
  */
-void mctl_enable_dllx(void)
+static void mctl_enable_dllx(void)
 {
     __u32 i = 0;
     __u32 n;
@@ -122,7 +122,7 @@ void mctl_enable_dllx(void)
     sdelay(0x1000);
 }
 
-void mctl_disable_dll(void)
+static void mctl_disable_dll(void)
 {
 	__u32 reg_val;
 
@@ -152,7 +152,7 @@ void mctl_disable_dll(void)
 	mctl_write_w(SDR_DLLCR4, reg_val);
 }
 
-__u32 hpcr_value[32] = {
+static __u32 hpcr_value[32] = {
 	0, 0, 0, 0,
 	0, 0, 0, 0,
 	0, 0, 0, 0,
@@ -163,7 +163,7 @@ __u32 hpcr_value[32] = {
 	0x301, 0x301, 0x301, 0
 };
 
-void mctl_configure_hostport(void)
+static void mctl_configure_hostport(void)
 {
     __u32 i;
 
@@ -173,7 +173,7 @@ void mctl_configure_hostport(void)
     }
 }
 
-void mctl_setup_dram_clock(__u32 clk)
+static void mctl_setup_dram_clock(__u32 clk)
 {
     __u32 reg_val;
 
