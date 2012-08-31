@@ -1,3 +1,4 @@
+#!/usr/bin/python
 """
 tsb.py -- A telnet <-> serial port bridge
 Copyright (C) 2005 Eli Fulkerson
@@ -285,7 +286,6 @@ def main(argv=None):
     got_a_serial_port = False
     for o,a in options:
         if o in ("-p", "--port"):
-            a = int(a)
             try:
                 com = serial.Serial()
                 com.port = a
