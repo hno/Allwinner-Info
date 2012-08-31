@@ -166,9 +166,9 @@ struct sunxi_ccm_reg {
 #define CPU_CLK_SRC_OSC24M		1
 #define CPU_CLK_SRC_PLL1		2
 #define CPU_CLK_SRC_200M		3
-#define AXI_DIV				0
+#define AXI_DIV				2
 #define AHB_DIV				1
-#define APB0_DIV			0
+#define APB0_DIV			1
 #ifdef SUN5I
 #define AHB_CLK_SRC_AXI			0
 #define AHB_CLK_SRC_CPUCL		1
