@@ -682,17 +682,17 @@ main:
      d50:	e92d4070 	push	{r4, r5, r6, lr}
      d54:	ebffffe7 	bl	f_cf8_
      d58:	ebffffda 	bl	configureAVSClock
-     d5c:	e59f1144 	ldr	r1, [0xea8]
+     d5c:	e59f1144 	ldr	r1, =0x00000000
      d60:	e5910088 	ldr	r0, [r1, #136]	; 0x88	; UART port
      d64:	e59f2140 	ldr	r2, [0xeac]
      d68:	e281108c 	add	r1, r1, #140	; 0x8c	; UART GPIO 0 (start of UART GPIO)
-     d6c:	eb000195 	bl	f_13c8_
-     d70:	e59f0130 	ldr	r0, [0xea8]
+     d6c:	eb000195 	bl	configureUART
+     d70:	e59f0130 	ldr	r0, =0x00000000
      d74:	e590009c 	ldr	r0, [r0, #156]	; 0x9c	; JTAG used?
      d78:	e3500000 	cmp	r0, #0
      d7c:	0a000001 	beq	0xd88
-     d80:	e59f0128 	ldr	r0, [0xeb0]
-     d84:	eb0001e4 	bl	f_151c_
+     d80:	e59f0128 	ldr	r0, =0x000000a0
+     d84:	eb0001e4 	bl	configureJTAG
      d88:	e28f0f49 	adr	r0, 0xeb4
      d8c:	eb000089 	bl	f_fb8_
      d90:	ebffffc7 	bl	f_cb4_
@@ -1057,7 +1057,7 @@ f_131c_:
     13a0:	"0123456789ABCDEF",0
     13b4:	"0123456789abcdef",0
 
-f_13c8_:
+configureUART:
     13c8:	e92d47f0 	push	{r4, r5, r6, r7, r8, r9, sl, lr}
     13cc:	e1a04000 	mov	r4, r0
     13d0:	e1a05001 	mov	r5, r1
@@ -1148,7 +1148,7 @@ f_14dc_:
     1514:	001c2000
     1518:	01c28000	; UART0_IO_BASE
 
-f_151c_:
+configureJTAG:
     151c:	e92d4010 	push	{r4, lr}
     1520:	e1a04000 	mov	r4, r0
     1524:	e3a02001 	mov	r2, #1
