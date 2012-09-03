@@ -88,6 +88,12 @@ def cleanup_for_serial(text):
     """
     text = replace(text, chr(13) + chr(10), chr(13))
 
+    """
+    For some reason, unix likes to send "cr/NUL" when you send a "cr".
+    Strip that so we don't get a confused prompt.\
+    """
+    text = replace(text, chr(13) + chr(0), chr(13))
+
 
     return text
 
@@ -105,14 +111,15 @@ class Connection:
     def init_tcp(self):
         "Set up the TCP connection and do telnet negotiation"
 
-        "telnet negotiation:  we don't want linemode"
-        "      COMMAND,   DONT,      linemode"
-        data = chr(255) + chr(254) + chr(34)
-        self.socket.send(data)
-
-        "telnet negotation:  we don't want local echo"
-        "      COMMAND,   DONT,      echo"
-        data = chr(255) + chr(254) + chr(1)
+        "telnet negotiation:  one character at a time"
+        "      COMMAND,   will,      suppress go ahead"
+        data = chr(255) + chr(251) + chr(3)
+        "      COMMAND,   will,      echo"
+        data += chr(255) + chr(251) + chr(1)
+        "      COMMAND,   do,        supress go ahead"
+        data += chr(255) + chr(253) + chr(3)
+        "      COMMAND,   don't,     echo"
+        data += chr(255) + chr(254) + chr(1)
         self.socket.send(data)
 
         "send the header"
