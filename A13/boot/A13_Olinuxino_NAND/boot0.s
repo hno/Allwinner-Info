@@ -96,11 +96,11 @@ _start
      2fc:	eb000293 	bl	main
      300:	eafffffe 	b	0x300
 
-f_304_:
+load_boot1:
      304:	e92d40fe 	push	{r1, r2, r3, r4, r5, r6, r7, lr}
      308:	eb00014e 	bl	f_848_
      30c:	e28f0e1a 	adr	r0, 0x4b4
-     310:	eb000328 	bl	f_fb8_
+     310:	eb000328 	bl	printf
      314:	e3a04002 	mov	r4, #2
      318:	ea00005a 	b	0x488
      31c:	e1a00004 	mov	r0, r4
@@ -119,7 +119,7 @@ f_304_:
      350:	1a000000 	bne	0x358
      354:	ea00004a 	b	0x484
      358:	e28f0f5f 	adr	r0, 0x4dc
-     35c:	eb000315 	bl	f_fb8_
+     35c:	eb000315 	bl	printf
      360:	e28f1f67 	adr	r1, 0x504
      364:	e59f016c 	ldr	r0, =0x42400000
      368:	eb000472 	bl	f_1538_
@@ -127,7 +127,7 @@ f_304_:
      370:	0a000003 	beq	0x384
      374:	e1a01004 	mov	r1, r4
      378:	e28f0e19 	adr	r0, 0x510
-     37c:	eb00030d 	bl	f_fb8_
+     37c:	eb00030d 	bl	printf
      380:	ea00003f 	b	0x484
      384:	e59f614c 	ldr	r6, =0x42400000
      388:	e5965010 	ldr	r5, [r6, #16]
@@ -138,7 +138,7 @@ f_304_:
      39c:	ea000038 	b	0x484
      3a0:	e1a01005 	mov	r1, r5
      3a4:	e28f0f66 	adr	r0, 0x544
-     3a8:	eb000302 	bl	f_fb8_
+     3a8:	eb000302 	bl	printf
      3ac:	e59f01ac 	ldr	r0, [0x560]
      3b0:	e5900000 	ldr	r0, [r0]
      3b4:	e1550000 	cmp	r5, r0
@@ -158,7 +158,7 @@ f_304_:
      3ec:	e3570000 	cmp	r7, #0
      3f0:	1a000022 	bne	0x480
      3f4:	e28f0f5a 	adr	r0, 0x564
-     3f8:	eb0002ee 	bl	f_fb8_
+     3f8:	eb0002ee 	bl	printf
      3fc:	eb0001a2 	bl	f_a8c_
      400:	e3a00000 	mov	r0, #0
      404:	e8bd80fe 	pop	{r1, r2, r3, r4, r5, r6, r7, pc}
@@ -188,7 +188,7 @@ f_304_:
      464:	1a000005 	bne	0x480
      468:	e1a01004 	mov	r1, r4
      46c:	e28f0f42 	adr	r0, 0x57c
-     470:	eb0002d0 	bl	f_fb8_
+     470:	eb0002d0 	bl	printf
      474:	eb000184 	bl	f_a8c_
      478:	e3a00000 	mov	r0, #0
      47c:	eaffffe0 	b	0x404
@@ -199,10 +199,10 @@ f_304_:
      490:	e1540000 	cmp	r4, r0
      494:	9affffa0 	bls	0x31c
      498:	e28f0f43 	adr	r0, 0x5ac
-     49c:	eb0002c5 	bl	f_fb8_
+     49c:	eb0002c5 	bl	printf
      4a0:	eb000179 	bl	f_a8c_
      4a4:	e28f0f4a 	adr	r0, 0x5d4
-     4a8:	eb0002c2 	bl	f_fb8_
+     4a8:	eb0002c2 	bl	printf
      4ac:	e3a00001 	mov	r0, #1
      4b0:	eaffffd3 	b	0x404
 
@@ -261,7 +261,7 @@ f_5fc_:
      678:	e048100b 	sub	r1, r8, fp
      67c:	e1a02004 	mov	r2, r4
      680:	e28f0e13 	adr	r0, 0x7b8
-     684:	eb00024b 	bl	f_fb8_
+     684:	eb00024b 	bl	printf
      688:	e3a00000 	mov	r0, #0
      68c:	eaffffee 	b	0x64c
      690:	e320f000 	nop	{0}
@@ -286,7 +286,7 @@ f_6ac_:
      6d4:	e1a02005 	mov	r2, r5
      6d8:	e28f0f42 	adr	r0, 0x7e8
      6dc:	e59d1000 	ldr	r1, [sp]
-     6e0:	eb000234 	bl	f_fb8_
+     6e0:	eb000234 	bl	printf
      6e4:	e59d0000 	ldr	r0, [sp]
      6e8:	eb000153 	bl	f_c3c_
      6ec:	e3500003 	cmp	r0, #3
@@ -337,7 +337,7 @@ f_6ac_:
      7a0:	e1a02007 	mov	r2, r7
      7a4:	e1a01004 	mov	r1, r4
      7a8:	e28f0064 	adr	r0, 0x814
-     7ac:	eb000201 	bl	f_fb8_
+     7ac:	eb000201 	bl	printf
      7b0:	e3a00004 	mov	r0, #4
      7b4:	eaffffe3 	b	0x748
 
@@ -359,7 +359,7 @@ f_848_:
      870:	e3700001 	cmn	r0, #1
      874:	1a000002 	bne	0x884
      878:	e28f0f77 	adr	r0, 0xa5c
-     87c:	eb0001cd 	bl	f_fb8_
+     87c:	eb0001cd 	bl	printf
      880:	ea000071 	b	0xa4c
      884:	e59f11e8 	ldr	r1, [0xa74]
      888:	e59d0014 	ldr	r0, [sp, #20]
@@ -634,7 +634,7 @@ f_cb4_:
      cb4:	e92d4010 	push	{r4, lr}
      cb8:	e59f11c4 	ldr	r1, =0x00000029
      cbc:	e28f0f71 	adr	r0, 0xe88
-     cc0:	eb0000bc 	bl	f_fb8_
+     cc0:	eb0000bc 	bl	printf
      cc4:	e8bd8010 	pop	{r4, pc}
 
 configureAVSClock(void)
@@ -694,7 +694,7 @@ main:
      d80:	e59f0128 	ldr	r0, =0x000000a0
      d84:	eb0001e4 	bl	configureJTAG
      d88:	e28f0f49 	adr	r0, 0xeb4
-     d8c:	eb000089 	bl	f_fb8_
+     d8c:	eb000089 	bl	printf
      d90:	ebffffc7 	bl	f_cb4_
      d94:	e3a02902 	mov	r2, #0x8000
      d98:	e3a01a01 	mov	r1, #0x1000
@@ -709,29 +709,29 @@ main:
      dbc:	0a000003 	beq	0xdd0
      dc0:	e1a01004 	mov	r1, r4
      dc4:	e28f0f41 	adr	r0, 0xed0
-     dc8:	eb00007a 	bl	f_fb8_
+     dc8:	eb00007a 	bl	printf
      dcc:	ea000004 	b	0xde4
      dd0:	e28f0f42 	adr	r0, 0xee0
-     dd4:	eb000077 	bl	f_fb8_
-     dd8:	eb0003fb 	bl	f_1dcc_
+     dd4:	eb000077 	bl	printf
+     dd8:	eb0003fb 	bl	disable_icache
      ddc:	e59f0118 	ldr	r0, =FEL_ENTRY_POINT
      de0:	eb0011c1 	bl	call_r0
-     de4:	ebfffd46 	bl	f_304_
+     de4:	ebfffd46 	bl	load_boot1
      de8:	e1a05000 	mov	r5, r0
      dec:	e28f0f43 	adr	r0, 0xf00
-     df0:	eb000070 	bl	f_fb8_
-     df4:	eb0003f4 	bl	f_1dcc_
+     df0:	eb000070 	bl	printf
+     df4:	eb0003f4 	bl	disable_icache
      df8:	e3550000 	cmp	r5, #0
      dfc:	1a000006 	bne	0xe1c
      e00:	e59f0114 	ldr	r0, =0x00000038
      e04:	eb0003b3 	bl	f_1cd8_
      e08:	e28f0e11 	adr	r0, 0xf20
-     e0c:	eb000069 	bl	f_fb8_
+     e0c:	eb000069 	bl	printf
      e10:	e59f0134 	ldr	r0, =0x42400000
      e14:	eb0011b4 	bl	call_r0
      e18:	ea000003 	b	0xe2c
      e1c:	e28f0f4b 	adr	r0, 0xf50
-     e20:	eb000064 	bl	f_fb8_
+     e20:	eb000064 	bl	printf
      e24:	e59f00d0 	ldr	r0, =FEL_ENTRY_POINT
      e28:	eb0011af 	bl	call_r0
      e2c:	e8bd8070 	pop	{r4, r5, r6, pc}
@@ -795,7 +795,7 @@ f_f80_:
      fb0:	1afffff5 	bne	0xf8c
      fb4:	e8bd8010 	pop	{r4, pc}
 
-f_fb8_:
+printf:
      fb8:	e92d000f 	push	{r0, r1, r2, r3}
      fbc:	e92d4030 	push	{r4, r5, lr}
      fc0:	e24dd014 	sub	sp, sp, #20
@@ -1722,6 +1722,7 @@ f_1d28_:
     1da0:	eb000d7b 	bl	f_5394_
     1da4:	eb000dd3 	bl	f_54f8_
     1da8:	e8bd81f0 	pop	{r4, r5, r6, r7, r8, pc}
+
 f_1dac_:
     1dac:	e3a00000 	mov	r0, #0
     1db0:	ee110f10 	mrc	15, 0, r0, cr1, cr0, {0}
@@ -1732,7 +1733,7 @@ f_1dac_:
     1dc4:	ee010f10 	mcr	15, 0, r0, cr1, cr0, {0}
     1dc8:	e12fff1e 	bx	lr
 
-f_1dcc_:
+disable_icache:
     1dcc:	e3a00000 	mov	r0, #0
     1dd0:	ee110f10 	mrc	15, 0, r0, cr1, cr0, {0}
     1dd4:	e3011007 	movw	r1, #0x1007

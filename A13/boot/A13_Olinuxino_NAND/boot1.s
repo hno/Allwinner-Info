@@ -44650,6 +44650,7 @@ Disassembly of section .data:
 42433f7c:	e3510000 	cmp	r1, #0
 42433f80:	cafffffc 	bgt	0x42433f78
 42433f84:	e12fff1e 	bx	lr
+
 42433f88:	e52de004 	push	{lr}		; (str lr, [sp, #-4]!)
 42433f8c:	e59f04a0 	ldr	r0, =DRAMC_IO_BASE	; 0x42434434
 42433f90:	e5903004 	ldr	r3, [r0, #4]
