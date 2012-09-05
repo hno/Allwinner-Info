@@ -4856,7 +4856,6 @@ void mctl_enable_dllx(void)
 	n = 5;
     } else {
 	n = 3;
-	i = 1;
     }
 /*
     4d38:	e59f05e0 	ldr	r0, =DRAMC_IO_BASE
@@ -4879,12 +4878,12 @@ void mctl_enable_dllx(void)
     4d60:	ea000008 	b	0x4d88
     4d64:	e59f05b4 	ldr	r0, =DRAMC_IO_BASE
     4d68:	e0800103 	add	r0, r0, r3, lsl #2
-    4d6c:	e5900204 	ldr	r0, [r0, #SDR_DLLCR0]	; 0x204
+    4d6c:	e5900204 	ldr	r0, [r0, #SDR_DLLCR]	; 0x204
     4d70:	e3c00101 	bic	r0, r0, #0x40000000
     4d74:	e3800102 	orr	r0, r0, #0x80000000
     4d78:	e59f15a0 	ldr	r1, =DRAMC_IO_BASE
     4d7c:	e0811103 	add	r1, r1, r3, lsl #2
-    4d80:	e5810204 	str	r0, [r1, #SDR_DLLCR0]	; 0x204
+    4d80:	e5810204 	str	r0, [r1, #SDR_DLLCR]	; 0x204
     4d84:	e2833001 	add	r3, r3, #1
     4d88:	e1530005 	cmp	r3, r5
     4d8c:	3afffff4 	bcc	0x4d64
@@ -4925,7 +4924,7 @@ void mctl_enable_dllx(void)
 */
 
 
-    for(i=1; i<5; i++)
+    for(i=1; i<n; i++)
     {
         mctl_write_w(SDR_DLLCR0+(i<<2), (mctl_read_w(SDR_DLLCR0+(i<<2)) & ~0x80000000) | 0x40000000);
     }

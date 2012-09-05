@@ -89,7 +89,7 @@ void mctl_enable_dllx(void)
     }
 	sdelay(0x1000);
 
-    for(i=1; i<5; i++)
+    for(i=1; i<n; i++)
     {
         mctl_write_w(SDR_DLLCR0+(i<<2), (mctl_read_w(SDR_DLLCR0+(i<<2)) & ~0x80000000) | 0x40000000);
     }
