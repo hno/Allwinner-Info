@@ -214,6 +214,137 @@ static void mctl_setup_dram_clock(__u32 clk)
 }
 
 /*
+**********************************************************************************************************************
+*                                               GET DRAM SIZE
+*
+* Description: Get DRAM Size in MB unit;
+*
+* Arguments  : None
+*
+* Returns    : 32/64/128
+*
+* Notes      :
+*
+**********************************************************************************************************************
+*/
+unsigned DRAMC_get_dram_size(void)
+{
+    __u32 reg_val;
+    __u32 dram_size;
+    __u32 chip_den;
+
+    reg_val = mctl_read_w(SDR_DCR);
+    chip_den = (reg_val>>3)&0x7;
+    if(chip_den == 0)
+        dram_size = 32;
+    else if(chip_den == 1)
+        dram_size = 64;
+    else if(chip_den == 2)
+        dram_size = 128;
+    else if(chip_den == 3)
+        dram_size = 256;
+    else if(chip_den == 4)
+        dram_size = 512;
+    else
+        dram_size = 1024;
+
+    if( ((reg_val>>1)&0x3) == 0x1)
+        dram_size<<=1;
+    if( ((reg_val>>6)&0x7) == 0x3)
+        dram_size<<=1;
+    if( ((reg_val>>10)&0x3) == 0x1)
+        dram_size<<=1;
+
+    return dram_size;
+}
+
+/*
+*********************************************************************************************************
+*                                   CHECK DDR READPIPE
+*
+* Description: check ddr readpipe;
+*
+* Arguments  : none
+*
+* Returns    : result, -1:fail, 0:success;
+*
+* Note       :
+*********************************************************************************************************
+*/
+int DRAMC_scan_readpipe(void)
+{
+    __u32 reg_val;
+
+    //data training trigger
+    reg_val = mctl_read_w(SDR_CCR);
+    reg_val |= 0x1<<30;
+    mctl_write_w(SDR_CCR, reg_val);
+
+    //check whether data training process is end
+    while(mctl_read_w(SDR_CCR) & (0x1<<30)) {};
+
+    //check data training result
+    reg_val = mctl_read_w(SDR_CSR);
+    if(reg_val & (0x1<<20))
+    {
+        return -1;
+    }
+
+    return (0);
+}
+
+/*
+*********************************************************************************************************
+* Description: Set autorefresh cycle
+*
+* Arguments  : clock value in MHz unit
+*
+* Returns    : none
+*
+* Note       : differs significantly from arch-sun5i/pm/standby/dram_ini.c
+*********************************************************************************************************
+*/
+void DRAMC_set_autorefresh_cycle(__u32 clk)
+{
+	__u32 reg_val;
+	__u32 tmp_val;
+
+	reg_val = 131;
+	tmp_val = (7987*clk)>>10;
+	tmp_val = tmp_val*9 - 200;
+	reg_val |= tmp_val<<8;
+	reg_val |= 0x8<<24;
+	mctl_write_w(SDR_DRR, reg_val);
+}
+
+/*
+*********************************************************************************************************
+*                                   DRAM CLOCK CONTROL
+*
+* Description: dram get clock
+*
+* Arguments  : on   dram clock output (0: disable, 1: enable)
+*
+* Returns    : none
+*
+* Note       :
+*********************************************************************************************************
+*/
+void DRAMC_clock_output_en(__u32 on)
+{
+    __u32 reg_val;
+
+    reg_val = mctl_read_w(SDR_CR);
+
+    if(on)
+        reg_val |= 0x1<<16;
+    else
+        reg_val &= ~(0x1<<16);
+
+    mctl_write_w(SDR_CR, reg_val);
+}
+
+/*
 *********************************************************************************************************
 *                                   DRAM INIT
 *
@@ -361,136 +492,5 @@ int DRAMC_init(struct dram_para_t *para)
     mctl_configure_hostport();
 
     return DRAMC_get_dram_size();
-}
-
-/*
-*********************************************************************************************************
-*                                   CHECK DDR READPIPE
-*
-* Description: check ddr readpipe;
-*
-* Arguments  : none
-*
-* Returns    : result, -1:fail, 0:success;
-*
-* Note       :
-*********************************************************************************************************
-*/
-int DRAMC_scan_readpipe(void)
-{
-    __u32 reg_val;
-
-    //data training trigger
-    reg_val = mctl_read_w(SDR_CCR);
-    reg_val |= 0x1<<30;
-    mctl_write_w(SDR_CCR, reg_val);
-
-    //check whether data training process is end
-    while(mctl_read_w(SDR_CCR) & (0x1<<30)) {};
-
-    //check data training result
-    reg_val = mctl_read_w(SDR_CSR);
-    if(reg_val & (0x1<<20))
-    {
-        return -1;
-    }
-
-    return (0);
-}
-
-/*
-*********************************************************************************************************
-*                                   DRAM CLOCK CONTROL
-*
-* Description: dram get clock
-*
-* Arguments  : on   dram clock output (0: disable, 1: enable)
-*
-* Returns    : none
-*
-* Note       :
-*********************************************************************************************************
-*/
-void DRAMC_clock_output_en(__u32 on)
-{
-    __u32 reg_val;
-
-    reg_val = mctl_read_w(SDR_CR);
-
-    if(on)
-        reg_val |= 0x1<<16;
-    else
-        reg_val &= ~(0x1<<16);
-
-    mctl_write_w(SDR_CR, reg_val);
-}
-
-/*
-*********************************************************************************************************
-* Description: Set autorefresh cycle
-*
-* Arguments  : clock value in MHz unit
-*
-* Returns    : none
-*
-* Note       : differs significantly from arch-sun5i/pm/standby/dram_ini.c
-*********************************************************************************************************
-*/
-void DRAMC_set_autorefresh_cycle(__u32 clk)
-{
-	__u32 reg_val;
-	__u32 tmp_val;
-
-	reg_val = 131;
-	tmp_val = (7987*clk)>>10;
-	tmp_val = tmp_val*9 - 200;
-	reg_val |= tmp_val<<8;
-	reg_val |= 0x8<<24;
-	mctl_write_w(SDR_DRR, reg_val);
-}
-
-/*
-**********************************************************************************************************************
-*                                               GET DRAM SIZE
-*
-* Description: Get DRAM Size in MB unit;
-*
-* Arguments  : None
-*
-* Returns    : 32/64/128
-*
-* Notes      :
-*
-**********************************************************************************************************************
-*/
-unsigned DRAMC_get_dram_size(void)
-{
-    __u32 reg_val;
-    __u32 dram_size;
-    __u32 chip_den;
-
-    reg_val = mctl_read_w(SDR_DCR);
-    chip_den = (reg_val>>3)&0x7;
-    if(chip_den == 0)
-        dram_size = 32;
-    else if(chip_den == 1)
-        dram_size = 64;
-    else if(chip_den == 2)
-        dram_size = 128;
-    else if(chip_den == 3)
-        dram_size = 256;
-    else if(chip_den == 4)
-        dram_size = 512;
-    else
-        dram_size = 1024;
-
-    if( ((reg_val>>1)&0x3) == 0x1)
-        dram_size<<=1;
-    if( ((reg_val>>6)&0x7) == 0x3)
-        dram_size<<=1;
-    if( ((reg_val>>10)&0x3) == 0x1)
-        dram_size<<=1;
-
-    return dram_size;
 }
 

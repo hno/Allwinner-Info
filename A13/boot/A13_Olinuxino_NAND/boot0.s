@@ -4985,6 +4985,17 @@ void mctl_disable_dll(void)
 	mctl_write_w(SDR_DLLCR4, reg_val);
 }
 
+__u32 hpcr_value[32] = {
+	0, 0, 0, 0,
+	0, 0, 0, 0,
+	0, 0, 0, 0,
+	0, 0, 0, 0,
+	0x1031, 0x1031, 0x735, 0x1035,
+	0x1035, 0x731, 0x1031, 0,
+	0x301, 0x301, 0x301, 0x301,
+	0x301, 0x301, 0x301, 0
+};
+
 void mctl_configure_hostport(void)
 {
     __u32 i;
@@ -5059,13 +5070,6 @@ void mctl_setup_dram_clock(__u32 clk)
 /*
     4ef4:	e59f042c 	ldr	r0, =CCM_IO_BASE
     4ef8:	e5805020 	str	r5, [r0, #CCM_pll5_cfg]
-*/
-
-/*
-    reg_val = mctl_read_w(DRAM_CCM_SDRAM_PLL_TUN_REG);
-    reg_val &= ~(0xFFFF);
-    reg_val |= 0x26; // RESERVED???!!
-    mctl_write_w(DRAM_CCM_SDRAM_PLL_TUN_REG, reg_val);
 */
 
     sdelay(0x100000);
@@ -5402,6 +5406,8 @@ __s32 DRAMC_init(__dram_para_t *para)
 */
     else if(para->dram_chip_density == 8192)
         reg_val |= 0x5<<3;
+    else
+        reg_val |= 0x0<<3;
 /*
     5138:	e5940010 	ldr	r0, [r4, #16]
     513c:	e3500a02 	cmp	r0, #0x2000
@@ -5410,10 +5416,6 @@ __s32 DRAMC_init(__dram_para_t *para)
     5148:	ea000000 	b	0x5150
     514c:	e320f000 	nop	{0}
 */
-    else
-        reg_val |= 0x0<<3;
-*/
-
 
     reg_val |= ((para->dram_bus_width>>3) - 1)<<6;
 /*
@@ -5486,7 +5488,7 @@ __s32 DRAMC_init(__dram_para_t *para)
 */
 
     while(mctl_read_w(SDR_CCR) & (0x1U<<31)) {};
-*/
+/*
     51b4:	e320f000 	nop	{0}
     51b8:	e59f0160 	ldr	r0, =DRAMC_IO_BASE
     51bc:	e5900000 	ldr	r0, [r0, #SDR_CCR]
@@ -5583,7 +5585,6 @@ __s32 DRAMC_init(__dram_para_t *para)
     5234:	e58061f0 	str	r6, [r0, #SDR_MR]	; 0x1f0
 */
 
-    reg_val = 0x0;
 /*
     5238:	e1a01000 	mov	r1, r0
 */
@@ -5686,13 +5687,19 @@ __s32 DRAMC_init(__dram_para_t *para)
 
 
 f_52b8_:
-configureDRAMC(r0 = ?, r1 = ?)
+int configureDRAMC(r0 = ?, r1 = ?)
+{
+	struct dram_para para;
+	u32 dram_size;
+	getDamSettings(&para);
+/*
 ; r0 and r1 arguments seems unused
     52b8:	e92d4070 	push	{r4, r5, r6, lr}
     52bc:	e24dd050 	sub	sp, sp, #80	; 0x50
     52c0:	e1a06000 	mov	r6, r0
     52c4:	e1a0000d 	mov	r0, sp
     52c8:	ebfff273 	bl	getDramSettings(struct dram_para *dst = stack, 0x50 in size)
+*/
 
     if (dram_para.clk >= 2000) {
         dram_para.clk /= 1000000;
@@ -5706,8 +5713,7 @@ configureDRAMC(r0 = ?, r1 = ?)
     52dc:	e59f104c 	ldr	r1, =1000000
     52e0:	ebfffe4b 	bl	standby_uldiv
     52e4:	e58d0004 	str	r0, [sp, #DRAM_CLOCK]
-p*/
-	int dram_size;
+ */
 	for (int i = 0; i < 4; i++) {
 		dram_size = DRAMC_init(dram_para);
 		if (dram_size)

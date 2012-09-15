@@ -60,10 +60,6 @@ void mctl_enable_dllx(void)
     __u32 i = 0;
     __u32 n;
     __u32 bus_width;
-/*
-    4d30:	e92d4030 	push	{r4, r5, lr}
-    4d34:	e3a03000 	mov	r3, #0
-*/
 
     bus_width = mctl_read_w(SDR_DCR);
     bus_width >>= 6;
@@ -322,7 +318,6 @@ void DRAMC_clock_output_en(__u32 on)
 
 __s32 DRAMC_init(__dram_para_t *para)
 {
-    __u32 i;
     __u32 reg_val;
     __s32 ret_val;
 

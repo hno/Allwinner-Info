@@ -37,6 +37,9 @@ int clock_init(void)
 	struct sunxi_ccm_reg *ccm =
 		(struct sunxi_ccm_reg *)SUNXI_CCM_BASE;
 
+#if 0
+
+	/* This isn't safe unless core voltage is also adjusted to 1.4v */
 
 /* pll1
  *       \          2:1           2:1           2:1
@@ -44,9 +47,6 @@ int clock_init(void)
  *       /
  * osc24m
  */
-
-
-
 
 	/* set clock source to OSC24M */
 	sr32(SUNXI_CCM_CPU_AHB_APB0_CFG, 16, 2, CPU_CLK_SRC_OSC24M);		/* CPU_CLK_SRC_SEL [17:16] */
@@ -77,6 +77,15 @@ int clock_init(void)
 	 * at most wait for 8 present running clock cycles
 	 */
 	sdelay(10);
+
+#else
+
+	/* Hardcode sun5i clock config for now */
+	ccm->cpu_ahb_apb0_cfg = 0x00010010;
+	ccm->pll1_cfg = 0xa1005000;
+	sdelay(200);
+	sr32(&ccm->cpu_ahb_apb0_cfg, 16, 2, CPU_CLK_SRC_PLL1);/* CPU_CLK_SRC_SEL [17:16] */
+#endif
 
 	/* config apb1 clock */
 	sr32(SUNXI_CCM_APB1_CLK_DIV, 24, 2, APB1_CLK_SRC_OSC24M);

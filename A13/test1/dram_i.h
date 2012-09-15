@@ -121,6 +121,7 @@ struct dram_para_t
 
 
 extern int   DRAMC_init(struct dram_para_t *para);
+#if 0
 extern void 	DRAMC_clock_output_en(__u32 on);
 extern void 	DRAMC_set_autorefresh_cycle(__u32 clk);
 extern int  	DRAMC_scan_readpipe(void);
@@ -132,6 +133,7 @@ extern void mctl_enable_dll0(void);
 extern void mctl_enable_dllx(void);
 extern void mctl_disable_dll(void);
 extern void DRAMC_hostport_on_off(__u32 port_idx, __u32 on);
+#endif
 
 #endif  //__DRAM_REG_H__
 
