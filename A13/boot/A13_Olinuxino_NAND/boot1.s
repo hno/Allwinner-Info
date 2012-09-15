@@ -614,18 +614,7 @@ Disassembly of section .data:
 42408b4c:	e5850000 	str	r0, [r5]
 42408b50:	ea000135 	b	0x4240902c
 
-42408b54:	5f697773
-42408b58:	646e6168
-42408b5c:	5f72656c
-42408b60:	72746e65
-42408b64:	2e292879
-42408b68:	2e2e2e2e
-42408b6c:	732e2e2e
-42408b70:	6a206977
-42408b74:	20747375
-42408b78:	20726f66
-42408b7c:	206e7566
-42408b80:	0000000a
+42408b54:	"swi_handler_entry()........swi just for fun\n",0
 
 42408b84:	e320f000 	nop	{0}
 42408b88:	e1c500d0 	ldrd	r0, [r5]
@@ -928,21 +917,8 @@ Disassembly of section .data:
 4240902c:	e320f000 	nop	{0}
 42409030:	e8bd8070 	pop	{r4, r5, r6, pc}
 
-42409034:	4f525245
-42409038:	203a2052
-4240903c:	20697773
-42409040:	72746e65
-42409044:	696d2079
-42409048:	74616d73
-4240904c:	00006863
-42409050:	20656854
-42409054:	75706e69
-42409058:	77732074
-4240905c:	756e2069
-42409060:	7265626d
-42409064:	20736920
-42409068:	202c642
-4240906c:	000a782
+42409034:	"ERROR : swi entry mismatch",0
+42409050:	"The input swi number is %d, %x\n",0
 
 42409070:	e3a00000 	mov	r0, #0
 42409074:	ee110f10 	mrc	15, 0, r0, cr1, cr0, {0}
@@ -1335,15 +1311,11 @@ Disassembly of section .data:
 42409678:	ebfffeb9 	bl	0x42409164
 4240967c:	eaffffa8 	b	0x42409524
 
-42409684:	4242f138 	submi	pc, r2, #14
-42409688:	4242f100 	submi	pc, r2, #0
-4240968c:	fffce0cc 			; <UNDEFINED> instruction: 0xfffce0cc
-42409690:	3a697861 	bcc	0x43e6781c
-42409694:	3a626861 	bcc	0x43ca3820
-42409698:	3d627061 	stclcc	0, cr7, [r2, #-388]!	; 0xfffffe7c
-4240969c:	253a6425 	ldrcs	r6, [sl, #-1061]!	; 0x425
-424096a0:	64253a64 	strtvs	r3, [r5], #-2660	; 0xa64
-424096a4:	0000000a 	andeq	r0, r0, sl
+42409684:	4242f138
+42409688:	4242f100
+4240968c:	fffce0cc
+42409690:	"axi:ahb:apb=%d:%d:%d\n",0
+
 424096a8:	e1a02000 	mov	r2, r0
 424096ac:	e3520000 	cmp	r2, #0
 424096b0:	1a000012 	bne	0x42409700
@@ -3461,14 +3433,13 @@ Disassembly of section .data:
 4240b7a8:	e5820458 	str	r0, [r2, #1112]	; 0x458
 4240b7ac:	e3a00000 	mov	r0, #0
 4240b7b0:	e12fff1e 	bx	lr
-4240b7b4:	20746e69 	rsbscs	r6, r4, r9, ror #28
-4240b7b8:	20746f6e 	rsbscs	r6, r4, lr, ror #30
-4240b7bc:	70707573 	rsbsvc	r7, r0, r3, ror r5
-4240b7c0:	0a74726f 	beq	0x44128184
-4240b7c4:	00000000 	andeq	r0, r0, r0
-4240b7c8:	01c20000 	biceq	r0, r2, r0
-4240b7cc:	4242fde4 	submi	pc, r2, #0x3900
-4240b7d0:	4240b554 	submi	fp, r0, #0x15000000
+
+4240b7b4:	"int not support\n",0
+
+4240b7c8:	01c20000
+4240b7cc:	4242fde4
+4240b7d0:	4240b554
+
 4240b7d4:	e1a01000 	mov	r1, r0
 4240b7d8:	e3510020 	cmp	r1, #32
 4240b7dc:	2a00000c 	bcs	0x4240b814
@@ -3845,52 +3816,17 @@ Disassembly of section .data:
 4240bda8:	eafffff1 	b	0x4240bd74
 4240bdac:	e3e00000 	mvn	r0, #0
 4240bdb0:	eaffffef 	b	0x4240bd74
-4240bdb4:	00003b4c 	andeq	r3, r0, ip, asr #22
-4240bdb8:	5f756d70 	svcpl	0x00756d70
-4240bdbc:	64657375 	strbtvs	r7, [r5], #-885	; 0x375
-4240bdc0:	00000032 	andeq	r0, r0, r2, lsr r0
-4240bdc4:	5f756d70 	svcpl	0x00756d70
-4240bdc8:	61726170 	cmnvs	r2, r0, ror r1
-4240bdcc:	00000000 	andeq	r0, r0, r0
-4240bdd0:	5f756d70 	svcpl	0x00756d70
-4240bdd4:	64706461 	ldrbtvs	r6, [r0], #-1121	; 0x461
-4240bdd8:	00007465 	andeq	r7, r0, r5, ror #8
-4240bddc:	5f756d70 	svcpl	0x00756d70
-4240bde0:	74756873 	ldrbtvc	r6, [r5], #-2163	; 0x873
-4240bde4:	6e776f64 	cdpvs	15, 7, cr6, cr7, cr4, {3}
-4240bde8:	6768635f 			; <UNDEFINED> instruction: 0x6768635f
-4240bdec:	00727563 	rsbseq	r7, r2, r3, ror #10
-4240bdf0:	5f756d70 	svcpl	0x00756d70
-4240bdf4:	74756873 	ldrbtvc	r6, [r5], #-2163	; 0x873
-4240bdf8:	6e776f64 	cdpvs	15, 7, cr6, cr7, cr4, {3}
-4240bdfc:	6768635f 			; <UNDEFINED> instruction: 0x6768635f
-4240be00:	32727563 	rsbscc	r7, r2, #0x18c00000
-4240be04:	00000000 	andeq	r0, r0, r0
-4240be08:	5f756d70 	svcpl	0x00756d70
-4240be0c:	6f727770 	svcvs	0x00727770
-4240be10:	765f6666 	ldrbvc	r6, [pc], -r6, ror #12
-4240be14:	00006c6f 	andeq	r6, r0, pc, ror #24
-4240be18:	746f6f62 	strbtvc	r6, [pc], #-3938	; 0x4240be20
-4240be1c:	776f7020 	strbvc	r7, [pc, -r0, lsr #32]!
-4240be20:	753a7265 	ldrvc	r7, [sl, #-613]!	; 0x265
-4240be24:	6c62616e 	stfvse	f6, [r2], #-440	; 0xfffffe48
-4240be28:	6f742065 	svcvs	0x00742065
-4240be2c:	6e696620 	cdpvs	6, 6, cr6, cr9, cr0, {1}
-4240be30:	6f702064 	svcvs	0x00702064
-4240be34:	20726577 	rsbscs	r6, r2, r7, ror r5
-4240be38:	76206e6f 	strtvc	r6, [r0], -pc, ror #28
-4240be3c:	73206c6f 	teqvc	r0, #0x6f00
-4240be40:	000a7465 	andeq	r7, sl, r5, ror #8
-4240be44:	746f6f62 	strbtvc	r6, [pc], #-3938	; 0x4240be4c
-4240be48:	776f7020 	strbvc	r7, [pc, -r0, lsr #32]!
-4240be4c:	753a7265 	ldrvc	r7, [sl, #-613]!	; 0x265
-4240be50:	6c62616e 	stfvse	f6, [r2], #-440	; 0xfffffe48
-4240be54:	6f742065 	svcvs	0x00742065
-4240be58:	74657320 	strbtvc	r7, [r5], #-800	; 0x320
-4240be5c:	776f7020 	strbvc	r7, [pc, -r0, lsr #32]!
-4240be60:	6f207265 	svcvs	0x00207265
-4240be64:	6f76206e 	svcvs	0x0076206e
-4240be68:	00000a6c 	andeq	r0, r0, ip, ror #20
+
+4240bdb4:	00003b4c
+4240bdb8:	"pmu_used2",0
+4240bdc4:	"pmu_para",0
+4240bdd0:	"pmu_adpdet",0
+4240bddc:	"pmu_shutdown_chgcur",0
+4240bdf0:	"pmu_shutdown_chgcur2",0
+4240be08:	"pmu_pwroff_vol",0
+4240be18:	"boot power:unable to find power on vol set\n",0
+4240be44:	"boot power:unable to set power on vol\n",0
+
 4240be6c:	e92d4010 	push	{r4, lr}
 4240be70:	e24dd018 	sub	sp, sp, #24
 4240be74:	e1a04000 	mov	r4, r0
@@ -4117,17 +4053,9 @@ Disassembly of section .data:
 4240c1e0:	9999999a
 4240c1e4:	3ff19999
 4240c1e8:	00003b60
-4240c1ec:	20756d70
-4240c1f0:	65707974
-4240c1f4:	25203d20
-4240c1f8:	00000a64
-4240c1fc:	20746162
-4240c200:	206c6f76
-4240c204:	6425203d
-4240c208:	0000000a
-4240c20c:	5f746162
-4240c210:	3d756f63
-4240c214:	000a7825
+4240c1ec:	"pmu type = %d\n",0
+4240c1fc:	"bat vol = %d\n",0
+4240c20c:	"bat_cou=%x\n",0
 4240c218:	00003b50
 
 4240c21c:	e59d0014 	ldr	r0, [sp, #20]
@@ -4557,18 +4485,11 @@ Disassembly of section .data:
 4240c8b4:	eaffffb2 	b	0x4240c784
 4240c8b8:	e3a00000 	mov	r0, #0
 4240c8bc:	eaffffb0 	b	0x4240c784
-4240c8c0:	20657270 	rsbcs	r7, r5, r0, ror r2
-4240c8c4:	20737973 	rsbscs	r7, r3, r3, ror r9
-4240c8c8:	65646f6d 	strbvs	r6, [r4, #-3949]!	; 0xf6d
-4240c8cc:	0000000a 	andeq	r0, r0, sl
-4240c8d0:	20657270 	rsbcs	r7, r5, r0, ror r2
-4240c8d4:	746f6f62 	strbtvc	r6, [pc], #-3938	; 0x4240c8dc
-4240c8d8:	646f6d20 	strbtvs	r6, [pc], #-3360	; 0x4240c8e0
-4240c8dc:	00000a65 	andeq	r0, r0, r5, ror #20
-4240c8e0:	65776f70 	ldrbvs	r6, [r7, #-3952]!	; 0xf70
-4240c8e4:	72742072 	rsbsvc	r2, r4, #114	; 0x72
-4240c8e8:	65676769 	strbvs	r6, [r7, #-1897]!	; 0x769
-4240c8ec:	00000a72 	andeq	r0, r0, r2, ror sl
+
+4240c8c0:	"pre sys mode\n",0
+4240c8d0:	"pre boot mode\n",0
+4240c8e0:	"power trigger\n",0
+
 4240c8f0:	e92d4010 	push	{r4, lr}
 4240c8f4:	e3e00000 	mvn	r0, #0
 4240c8f8:	eb00812e 	bl	0x4242cdb8
@@ -4790,32 +4711,12 @@ Disassembly of section .data:
 4240cc58:	e3800004 	orr	r0, r0, #4
 4240cc5c:	e58d0000 	str	r0, [sp]
 4240cc60:	ea00001e 	b	0x4240cce0
-4240cc64:	5f756d70 	svcpl	0x00756d70
-4240cc68:	6f727770 	svcvs	0x00727770
-4240cc6c:	6f765f6e 	svcvs	0x00765f6e
-4240cc70:	0000006c 	andeq	r0, r0, ip, rrx
-4240cc74:	4240bdc4 	submi	fp, r0, #0x3100
-4240cc78:	746f6f62 	strbtvc	r6, [pc], #-3938	; 0x4240cc80
-4240cc7c:	776f7020 	strbvc	r7, [pc, -r0, lsr #32]!
-4240cc80:	753a7265 	ldrvc	r7, [sl, #-613]!	; 0x265
-4240cc84:	6c62616e 	stfvse	f6, [r2], #-440	; 0xfffffe48
-4240cc88:	6f742065 	svcvs	0x00742065
-4240cc8c:	6e696620 	cdpvs	6, 6, cr6, cr9, cr0, {1}
-4240cc90:	6f702064 	svcvs	0x00702064
-4240cc94:	20726577 	rsbscs	r6, r2, r7, ror r5
-4240cc98:	2066666f 	rsbcs	r6, r6, pc, ror #12
-4240cc9c:	206c6f76 	rsbcs	r6, ip, r6, ror pc
-4240cca0:	0a746573 	beq	0x44126274
-4240cca4:	00000000 	andeq	r0, r0, r0
-4240cca8:	746f6f62 	strbtvc	r6, [pc], #-3938	; 0x4240ccb0
-4240ccac:	776f7020 	strbvc	r7, [pc, -r0, lsr #32]!
-4240ccb0:	753a7265 	ldrvc	r7, [sl, #-613]!	; 0x265
-4240ccb4:	6c62616e 	stfvse	f6, [r2], #-440	; 0xfffffe48
-4240ccb8:	6f742065 	svcvs	0x00742065
-4240ccbc:	74657320 	strbtvc	r7, [r5], #-800	; 0x320
-4240ccc0:	666f7620 	strbtvs	r7, [pc], -r0, lsr #12
-4240ccc4:	6f762066 	svcvs	0x00762066
-4240ccc8:	00000a6c 	andeq	r0, r0, ip, ror #20
+
+4240cc64:	"pmu_pwron_vol",0
+4240cc74:	4240bdc4
+4240cc78:	"boot power:unable to find power off vol set\n",0
+4240cca8:	"boot power:unable to set voff vol\n",0
+
 4240cccc:	e3560001 	cmp	r6, #1
 4240ccd0:	1a000002 	bne	0x4240cce0
 4240ccd4:	e5dd0000 	ldrb	r0, [sp]
@@ -5248,16 +5149,10 @@ Disassembly of section .data:
 4240d380:	e3a05000 	mov	r5, #0
 4240d384:	e7c15004 	strb	r5, [r1, r4]
 4240d388:	e8bd807c 	pop	{r2, r3, r4, r5, r6, pc}
-4240d38c:	33323130 	teqcc	r2, #12
-4240d390:	37363534 			; <UNDEFINED> instruction: 0x37363534
-4240d394:	42413938 	submi	r3, r1, #0xe0000
-4240d398:	46454443 	strbmi	r4, [r5], -r3, asr #8
-4240d39c:	00000000 	andeq	r0, r0, r0
-4240d3a0:	33323130 	teqcc	r2, #12
-4240d3a4:	37363534 			; <UNDEFINED> instruction: 0x37363534
-4240d3a8:	62613938 	rsbvs	r3, r1, #0xe0000
-4240d3ac:	66656463 	strbtvs	r6, [r5], -r3, ror #8
-4240d3b0:	00000000 	andeq	r0, r0, r0
+
+4240d38c:	"0123456789ABCDEF",0
+4240d3a0:	"0123456789abcdef",0
+
 4240d3b4:	e92d4070 	push	{r4, r5, r6, lr}
 4240d3b8:	e1a04000 	mov	r4, r0
 4240d3bc:	e3540000 	cmp	r4, #0
@@ -5847,12 +5742,12 @@ Disassembly of section .data:
 4240dcdc:	e58d0038 	str	r0, [sp, #56]	; 0x38
 4240dce0:	e320f000 	nop	{0}
 4240dce4:	ea000019 	b	0x4240dd50
-4240dce8:	00003b7c 	andeq	r3, r0, ip, ror fp
-4240dcec:	42430084 	submi	r0, r3, #132	; 0x84
-4240dcf0:	01c20000 	biceq	r0, r2, r0
-4240dcf4:	6438255b 	ldrtvs	r2, [r8], #-1371	; 0x55b
-4240dcf8:	6433252e 	ldrtvs	r2, [r3], #-1326	; 0x52e
-4240dcfc:	0000205d 	andeq	r2, r0, sp, asr r0
+
+4240dce8:	00003b7c
+4240dcec:	42430084
+4240dcf0:	01c20000
+4240dcf4:	"[%8d.%3d] ",0
+
 4240dd00:	e59d0038 	ldr	r0, [sp, #56]	; 0x38
 4240dd04:	e5d00000 	ldrb	r0, [r0]
 4240dd08:	e350000a 	cmp	r0, #10
@@ -6407,79 +6302,28 @@ Disassembly of section .data:
 4240e59c:	eb00235b 	bl	0x42417310
 4240e5a0:	e3a00000 	mov	r0, #0
 4240e5a4:	eaffff76 	b	0x4240e384
-4240e5a8:	0a79656b 	beq	0x44267b5c
-4240e5ac:	00000000 	andeq	r0, r0, r0
-4240e5b0:	6b206f6e 	blvs	0x42c2a370
-4240e5b4:	66207965 	strtvs	r7, [r0], -r5, ror #18
-4240e5b8:	646e756f 	strbtvs	r7, [lr], #-1391	; 0x56f
-4240e5bc:	0000000a 	andeq	r0, r0, sl
-4240e5c0:	2079656b 	rsbscs	r6, r9, fp, ror #10
-4240e5c4:	20746f6e 	rsbscs	r6, r4, lr, ror #30
-4240e5c8:	73657270 	cmnvc	r5, #7
-4240e5cc:	20646573 	rsbcs	r6, r4, r3, ror r5
-4240e5d0:	6d796e61 	ldclvs	14, cr6, [r9, #-388]!	; 0xfffffe7c
-4240e5d4:	0a65726f 	beq	0x43d6af98
-4240e5d8:	00000000 	andeq	r0, r0, r0
-4240e5dc:	00000a31 	andeq	r0, r0, r1, lsr sl
-4240e5e0:	63726f66 	cmnvs	r2, #408	; 0x198
-4240e5e4:	6f742065 	svcvs	0x00742065
-4240e5e8:	62656420 	rsbvs	r6, r5, #0x20000000
-4240e5ec:	6d206775 	stcvs	7, cr6, [r0, #-468]!	; 0xfffffe2c
-4240e5f0:	0a65646f 	beq	0x43d677b4
-4240e5f4:	00000000 	andeq	r0, r0, r0
-4240e5f8:	20756f79 	rsbscs	r6, r5, r9, ror pc
-4240e5fc:	206e6163 	rsbcs	r6, lr, r3, ror #2
-4240e600:	6c636e75 	stclvs	14, cr6, [r3], #-468	; 0xfffffe2c
-4240e604:	68636e65 	stmdavs	r3!, {r0, r2, r5, r6, r9, sl, fp, sp, lr}^
-4240e608:	65687420 	strbvs	r7, [r8, #-1056]!	; 0x420
-4240e60c:	79656b20 	stmdbvc	r5!, {r5, r8, r9, fp, sp, lr}^
-4240e610:	206f7420 	rsbcs	r7, pc, r0, lsr #8
-4240e614:	61647075 	smcvs	18181	; 0x4705
-4240e618:	6e206574 	mcrvs	5, 1, r6, cr0, cr4, {3}
-4240e61c:	000a776f 	andeq	r7, sl, pc, ror #14
-4240e620:	656d6974 	strbvs	r6, [sp, #-2420]!	; 0x974
-4240e624:	2c74756f 	cfldr64cs	mvdx7, [r4], #-444	; 0xfffffe44
-4240e628:	74756220 	ldrbtvc	r6, [r5], #-544	; 0x220
-4240e62c:	206f6e20 	rsbcs	r6, pc, r0, lsr #28
-4240e630:	65776f70 	ldrbvs	r6, [r7, #-3952]!	; 0xf70
-4240e634:	656b2072 	strbvs	r2, [fp, #-114]!	; 0x72
-4240e638:	6f662079 	svcvs	0x00662079
-4240e63c:	0a646e75 	beq	0x43d2a018
-4240e640:	00000000 	andeq	r0, r0, r0
-4240e644:	74726175 	ldrbtvc	r6, [r2], #-373	; 0x175
-4240e648:	6265645f 	rsbvs	r6, r5, #0x5f000000
-4240e64c:	705f6775 	subsvc	r6, pc, r5, ror r7	; <UNPREDICTABLE>
-4240e650:	0074726f 	rsbseq	r7, r4, pc, ror #4
-4240e654:	74726175 	ldrbtvc	r6, [r2], #-373	; 0x175
-4240e658:	7261705f 	rsbvc	r7, r1, #95	; 0x5f
-4240e65c:	00000061 	andeq	r0, r0, r1, rrx
-4240e660:	74726175 	ldrbtvc	r6, [r2], #-373	; 0x175
-4240e664:	726f665f 	rsbvc	r6, pc, #0x5f00000
-4240e668:	645f6563 	ldrbvs	r6, [pc], #-1379	; 0x4240e670
-4240e66c:	67756265 	ldrbvs	r6, [r5, -r5, ror #4]!
-4240e670:	00000000 	andeq	r0, r0, r0
-4240e674:	01c20800 	biceq	r0, r2, r0, lsl #16
-4240e678:	016e3600 	cmneq	lr, r0, lsl #12
-4240e67c:	0001c200 	andeq	ip, r1, r0, lsl #4
-4240e680:	74726175 	ldrbtvc	r6, [r2], #-373	; 0x175
-4240e684:	6573755f 	ldrbvs	r7, [r3, #-1375]!	; 0x55f
-4240e688:	00000064 	andeq	r0, r0, r4, rrx
-4240e68c:	74726175 	ldrbtvc	r6, [r2], #-373	; 0x175
-4240e690:	7261705f 	rsbvc	r7, r1, #95	; 0x5f
-4240e694:	00003061 	andeq	r3, r0, r1, rrx
-4240e698:	74726175 	ldrbtvc	r6, [r2], #-373	; 0x175
-4240e69c:	726f705f 	rsbvc	r7, pc, #95	; 0x5f
-4240e6a0:	00000074 	andeq	r0, r0, r4, ror r0
-4240e6a4:	74726175 	ldrbtvc	r6, [r2], #-373	; 0x175
-4240e6a8:	0078745f 	rsbseq	r7, r8, pc, asr r4
-4240e6ac:	74726175 	ldrbtvc	r6, [r2], #-373	; 0x175
-4240e6b0:	0078725f 	rsbseq	r7, r8, pc, asr r2
-4240e6b4:	5f636473 	svcpl	0x00636473
-4240e6b8:	64657375 	strbtvs	r7, [r5], #-885	; 0x375
-4240e6bc:	00000000 	andeq	r0, r0, r0
-4240e6c0:	30636d6d 	rsbcc	r6, r3, sp, ror #26
-4240e6c4:	7261705f 	rsbvc	r7, r1, #95	; 0x5f
-4240e6c8:	00000061 	andeq	r0, r0, r1, rrx
+
+4240e5a8:	"key\n",0
+4240e5b0:	"no key found\n",0
+4240e5c0:	"key not pressed anymore\n",0
+4240e5dc:	"1\n",0
+4240e5e0:	"force to debug mode\n",0
+4240e5f8:	"you can unclench the key to update now\n",0
+4240e620:	"timeout, but no power key found\n",0
+4240e644:	"uart_debug_port",0
+4240e654:	"uart_para",0
+4240e660:	"uart_force_debug",0
+4240e674:	01c20800
+4240e678:	016e3600
+4240e67c:	0001c200
+4240e680:	"uart_used",0
+4240e68c:	"uart_para0",0
+4240e698:	"uart_port",0
+4240e6a4:	"uart_tx",0
+4240e6ac:	"uart_rx",0
+4240e6b4:	"sdc_used",0
+4240e6c0:	"mmc0_para",0
+
 4240e6cc:	e92d4010 	push	{r4, lr}
 4240e6d0:	e1a04000 	mov	r4, r0
 4240e6d4:	e3a0000e 	mov	r0, #14
@@ -6571,7 +6415,9 @@ Disassembly of section .data:
 4240e82c:	ebfff508 	bl	0x4240bc54
 4240e830:	e320f000 	nop	{0}
 4240e834:	eafffffe 	b	0x4240e834
-4240e838:	ffff0020 			; <UNDEFINED> instruction: 0xffff0020
+
+4240e838:	ffff0020
+
 4240e83c:	e92d401f 	push	{r0, r1, r2, r3, r4, lr}
 4240e840:	e1a04000 	mov	r4, r0
 4240e844:	e3a00001 	mov	r0, #1
@@ -6744,34 +6590,14 @@ Disassembly of section .data:
 4240eae0:	e12fff30 	blx	r0
 4240eae4:	e3a00000 	mov	r0, #0
 4240eae8:	eaffffca 	b	0x4240ea18
-4240eaec:	424314c0 	submi	r1, r3, #0xc0000000
-	...
-4240eaf8:	424314c8 	submi	r1, r3, #0xc8000000
-4240eafc:	76697264 	strbtvc	r7, [r9], -r4, ror #4
-4240eb00:	69207265 	stmdbvs	r0!, {r0, r2, r5, r6, r9, ip, sp, lr}
-4240eb04:	73692064 	cmnvc	r9, #100	; 0x64
-4240eb08:	6f6f7420 	svcvs	0x006f7420
-4240eb0c:	72616c20 	rsbvc	r6, r1, #0x2000
-4240eb10:	000a6567 	andeq	r6, sl, r7, ror #10
-4240eb14:	73696874 	cmnvc	r9, #0x740000
-4240eb18:	69726420 	ldmdbvs	r2!, {r5, sl, sp, lr}^
-4240eb1c:	20726576 	rsbscs	r6, r2, r6, ror r5
-4240eb20:	61207369 	teqvs	r0, r9, ror #6
-4240eb24:	6165726c 	cmnvs	r5, ip, ror #4
-4240eb28:	69207964 	stmdbvs	r0!, {r2, r5, r6, r8, fp, ip, sp, lr}
-4240eb2c:	6174736e 	cmnvs	r4, lr, ror #6
-4240eb30:	64656c6c 	strbtvs	r6, [r5], #-3180	; 0xc6c
-4240eb34:	0000000a 	andeq	r0, r0, sl
-4240eb38:	656d6f73 	strbvs	r6, [sp, #-3955]!	; 0xf73
-4240eb3c:	69726420 	ldmdbvs	r2!, {r5, sl, sp, lr}^
-4240eb40:	20726576 	rsbscs	r6, r2, r6, ror r5
-4240eb44:	636e7566 	cmnvs	lr, #0x19800000
-4240eb48:	6e6f6974 	mcrvs	9, 3, r6, cr15, cr4, {3}
-4240eb4c:	72612073 	rsbvc	r2, r1, #115	; 0x73
-4240eb50:	6f6e2065 	svcvs	0x006e2065
-4240eb54:	61762074 	cmnvs	r6, r4, ror r0
-4240eb58:	0a64696c 	beq	0x43d29110
-4240eb5c:	00000000 	andeq	r0, r0, r0
+
+4240eaec:	424314c0
+4240eaf0:	00000000
+4240eaf4:	00000000
+4240eaf8:	424314c8
+4240eafc:	"driver id is too large\n",0
+4240eb14:	"this driver is already installed\n",0
+4240eb38:	"some driver functions are not valid\n",0
 4240eb60:	e92d4070 	push	{r4, r5, r6, lr}
 4240eb64:	e1a04000 	mov	r4, r0
 4240eb68:	e3a05000 	mov	r5, #0
@@ -7176,40 +7002,42 @@ Disassembly of section .data:
 4240f1a4:	e12fff38 	blx	r8
 4240f1a8:	e3a00000 	mov	r0, #0
 4240f1ac:	eaffffb5 	b	0x4240f088
-4240f1b0:	424321c8 	submi	r2, r3, #50	; 0x32
-4240f1b4:	00002b72 	andeq	r2, r0, r2, ror fp
-4240f1b8:	276e6163 	strbcs	r6, [lr, -r3, ror #2]!
-4240f1bc:	69662074 	stmdbvs	r6!, {r2, r4, r5, r6, sp}^
-4240f1c0:	2520646e 	strcs	r6, [r0, #-1134]!	; 0x46e
-4240f1c4:	00000a73 	andeq	r0, r0, r3, ror sl
-4240f1c8:	6f727265 	svcvs	0x00727265
-4240f1cc:	66203a72 			; <UNDEFINED> instruction: 0x66203a72
-4240f1d0:	20656c69 	rsbcs	r6, r5, r9, ror #24
-4240f1d4:	6c207325 	stcvs	3, cr7, [r0], #-148	; 0xffffff6c
-4240f1d8:	74676e65 	strbtvc	r6, [r7], #-3685	; 0xe65
-4240f1dc:	73692068 	cmnvc	r9, #104	; 0x68
-4240f1e0:	000a3020 	andeq	r3, sl, r0, lsr #32
-4240f1e4:	62616e75 	rsbvs	r6, r1, #1872	; 0x750
-4240f1e8:	7420656c 	strtvc	r6, [r0], #-1388	; 0x56c
-4240f1ec:	616d206f 	cmnvs	sp, pc, rrx
-4240f1f0:	636f6c6c 	cmnvs	pc, #0x6c00
-4240f1f4:	6d656d20 	stclvs	13, cr6, [r5, #-128]!	; 0xffffff80
-4240f1f8:	2079726f 	rsbscs	r7, r9, pc, ror #4
-4240f1fc:	20726f66 	rsbscs	r6, r2, r6, ror #30
-4240f200:	74736e69 	ldrbtvc	r6, [r3], #-3689	; 0xe69
-4240f204:	206c6c61 	rsbcs	r6, ip, r1, ror #24
-4240f208:	76697264 	strbtvc	r7, [r9], -r4, ror #4
-4240f20c:	000a7265 	andeq	r7, sl, r5, ror #4
-4240f210:	64616572 	strbtvs	r6, [r1], #-1394	; 0x572
-4240f214:	20732520 	rsbscs	r2, r3, r0, lsr #10
-4240f218:	6c696166 	stfvse	f6, [r9], #-408	; 0xfffffe68
-4240f21c:	0000000a 	andeq	r0, r0, sl
-4240f220:	20666c65 	rsbcs	r6, r6, r5, ror #24
-4240f224:	656c6966 	strbvs	r6, [ip, #-2406]!	; 0x966
-4240f228:	20732520 	rsbscs	r2, r3, r0, lsr #10
-4240f22c:	64616f6c 	strbtvs	r6, [r1], #-3948	; 0xf6c
-4240f230:	69616620 	stmdbvs	r1!, {r5, r9, sl, sp, lr}^
-4240f234:	00000a6c 	andeq	r0, r0, ip, ror #20
+
+4240f1b0:	424321c8
+4240f1b4:	00002b72
+4240f1b8:	276e6163
+4240f1bc:	69662074
+4240f1c0:	2520646e
+4240f1c4:	00000a73
+4240f1c8:	6f727265
+4240f1cc:	66203a72
+4240f1d0:	20656c69
+4240f1d4:	6c207325
+4240f1d8:	74676e65
+4240f1dc:	73692068
+4240f1e0:	000a3020
+4240f1e4:	62616e75
+4240f1e8:	7420656c
+4240f1ec:	616d206f
+4240f1f0:	636f6c6c
+4240f1f4:	6d656d20
+4240f1f8:	2079726f
+4240f1fc:	20726f66
+4240f200:	74736e69
+4240f204:	206c6c61
+4240f208:	76697264
+4240f20c:	000a7265
+4240f210:	64616572
+4240f214:	20732520
+4240f218:	6c696166
+4240f21c:	0000000a
+4240f220:	20666c65
+4240f224:	656c6966
+4240f228:	20732520
+4240f22c:	64616f6c
+4240f230:	69616620
+4240f234:	00000a6c
+
 4240f238:	e92d47f0 	push	{r4, r5, r6, r7, r8, r9, sl, lr}
 4240f23c:	e1a04000 	mov	r4, r0
 4240f240:	e1a05001 	mov	r5, r1
@@ -7759,57 +7587,59 @@ Disassembly of section .data:
 4240fac0:	e5850010 	str	r0, [r5, #16]
 4240fac4:	e3e00000 	mvn	r0, #0
 4240fac8:	eaffffcc 	b	0x4240fa00
-4240facc:	4242d4f4 	submi	sp, r2, #0xf4000000
-4240fad0:	424328c8 	submi	r2, r3, #0xc80000
-4240fad4:	42432b88 	submi	r2, r3, #0x22000
-4240fad8:	424325c8 	submi	r2, r3, #0x32000000
-4240fadc:	6b736964 	blvs	0x440ea074
-4240fae0:	6d797320 	ldclvs	3, cr7, [r9, #-128]!	; 0xffffff80
-4240fae4:	20656c62 	rsbcs	r6, r5, r2, ror #24
-4240fae8:	69207369 	stmdbvs	r0!, {r0, r3, r5, r6, r8, r9, ip, sp, lr}
-4240faec:	6c61766e 	stclvs	6, cr7, [r1], #-440	; 0xfffffe48
-4240faf0:	202c6469 	eorcs	r6, ip, r9, ror #8
-4240faf4:	465f5346 	ldrbmi	r5, [pc], -r6, asr #6
-4240faf8:	214c4941 	cmpcs	ip, r1, asr #18
-4240fafc:	0000000a 	andeq	r0, r0, sl
-4240fb00:	424300b8 	submi	r0, r3, #184	; 0xb8
-4240fb04:	20656874 	rsbcs	r6, r5, r4, ror r8
-4240fb08:	656c6966 	strbvs	r6, [ip, #-2406]!	; 0x966
-4240fb0c:	74737973 	ldrbtvc	r7, [r3], #-2419	; 0x973
-4240fb10:	74206d65 	strtvc	r6, [r0], #-3429	; 0xd65
-4240fb14:	20657079 	rsbcs	r7, r5, r9, ror r0
-4240fb18:	6e207369 	cdpvs	3, 2, cr7, cr0, cr9, {3}
-4240fb1c:	7320746f 	teqvc	r0, #0x6f000000
-4240fb20:	6f707075 	svcvs	0x00707075
-4240fb24:	202c7472 	eorcs	r7, ip, r2, ror r4
-4240fb28:	465f5346 	ldrbmi	r5, [pc], -r6, asr #6
-4240fb2c:	214c4941 	cmpcs	ip, r1, asr #18
-4240fb30:	0000000a 	andeq	r0, r0, sl
-4240fb34:	6f6b6e75 	svcvs	0x006b6e75
-4240fb38:	66206e77 			; <UNDEFINED> instruction: 0x66206e77
-4240fb3c:	79742073 	ldmdbvc	r4!, {r0, r1, r4, r5, r6, sp}^
-4240fb40:	69206570 	stmdbvs	r0!, {r4, r5, r6, r8, sl, sp, lr}
-4240fb44:	6874206e 	ldmdavs	r4!, {r1, r2, r3, r5, r6, sp}^
-4240fb48:	6e692065 	cdpvs	0, 6, cr2, cr9, cr5, {3}
-4240fb4c:	20747570 	rsbscs	r7, r4, r0, ror r5
-4240fb50:	656c6966 	strbvs	r6, [ip, #-2406]!	; 0x966
-4240fb54:	5346202c 	movtpl	r2, #24620	; 0x602c
-4240fb58:	4941465f 	stmdbmi	r1, {r0, r1, r2, r3, r4, r6, r9, sl, lr}^
-4240fb5c:	000a214c 	andeq	r2, sl, ip, asr #2
-4240fb60:	6b736964 	blvs	0x440ea0f8
-4240fb64:	20632520 	rsbcs	r2, r3, r0, lsr #10
-4240fb68:	20736168 	rsbscs	r6, r3, r8, ror #2
-4240fb6c:	6e656562 	cdpvs	5, 6, cr6, cr5, cr2, {3}
-4240fb70:	65737520 	ldrbvs	r7, [r3, #-1312]!	; 0x520
-4240fb74:	46202164 	strtmi	r2, [r0], -r4, ror #2
-4240fb78:	41465f53 	cmpmi	r6, r3, asr pc
-4240fb7c:	000a4c49 	andeq	r4, sl, r9, asr #24
-4240fb80:	6e756f6d 	cdpvs	15, 7, cr6, cr5, cr13, {3}
-4240fb84:	72652074 	rsbvc	r2, r5, #116	; 0x74
-4240fb88:	2c726f72 	ldclcs	15, cr6, [r2], #-456	; 0xfffffe38
-4240fb8c:	5f534620 	svcpl	0x00534620
-4240fb90:	4c494146 	stfmie	f4, [r9], {70}	; 0x46
-4240fb94:	00000a21 	andeq	r0, r0, r1, lsr #20
+
+4240facc:	4242d4f4
+4240fad0:	424328c8
+4240fad4:	42432b88
+4240fad8:	424325c8
+4240fadc:	6b736964
+4240fae0:	6d797320
+4240fae4:	20656c62
+4240fae8:	69207369
+4240faec:	6c61766e
+4240faf0:	202c6469
+4240faf4:	465f5346
+4240faf8:	214c4941
+4240fafc:	0000000a
+4240fb00:	424300b8
+4240fb04:	20656874
+4240fb08:	656c6966
+4240fb0c:	74737973
+4240fb10:	74206d65
+4240fb14:	20657079
+4240fb18:	6e207369
+4240fb1c:	7320746f
+4240fb20:	6f707075
+4240fb24:	202c7472
+4240fb28:	465f5346
+4240fb2c:	214c4941
+4240fb30:	0000000a
+4240fb34:	6f6b6e75
+4240fb38:	66206e77
+4240fb3c:	79742073
+4240fb40:	69206570
+4240fb44:	6874206e
+4240fb48:	6e692065
+4240fb4c:	20747570
+4240fb50:	656c6966
+4240fb54:	5346202c
+4240fb58:	4941465f
+4240fb5c:	000a214c
+4240fb60:	6b736964
+4240fb64:	20632520
+4240fb68:	20736168
+4240fb6c:	6e656562
+4240fb70:	65737520
+4240fb74:	46202164
+4240fb78:	41465f53
+4240fb7c:	000a4c49
+4240fb80:	6e756f6d
+4240fb84:	72652074
+4240fb88:	2c726f72
+4240fb8c:	5f534620
+4240fb90:	4c494146
+4240fb94:	00000a21
+
 4240fb98:	e92d4031 	push	{r0, r4, r5, lr}
 4240fb9c:	e3a05000 	mov	r5, #0
 4240fba0:	e1a0000d 	mov	r0, sp
@@ -14924,14 +14754,18 @@ Disassembly of section .data:
 42416ab4:	e1a00005 	mov	r0, r5
 42416ab8:	e28dd020 	add	sp, sp, #32
 42416abc:	e8bd81f0 	pop	{r4, r5, r6, r7, r8, pc}
-42416ac0:	424334e8 	submi	r3, r3, #0xe8000000
-42416ac4:	74666f73 	strbtvc	r6, [r6], #-3955	; 0xf73
-42416ac8:	31313377 	teqcc	r1, r7, ror r3
-	...
-42416ad8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42416adc:	00000000 	andeq	r0, r0, r0
-42416ae0:	424325c8 	submi	r2, r3, #0x32000000
-42416ae4:	42430138 	submi	r0, r3, #14
+
+42416ac0:	424334e8
+42416ac4:	74666f73
+42416ac8:	31313377
+42416acc:	00000000
+42416ad0:	00000000
+42416ad4:	00000000
+42416ad8:	ffffffff
+42416adc:	00000000
+42416ae0:	424325c8
+42416ae4:	42430138
+
 42416ae8:	e92d4010 	push	{r4, lr}
 42416aec:	e51f1034 	ldr	r1, [pc, #-52]	; 0x42416ac0
 42416af0:	e5910008 	ldr	r0, [r1, #8]
@@ -16387,27 +16221,29 @@ Disassembly of section .data:
 42418188:	e1540000 	cmp	r4, r0
 4241818c:	bafffffb 	blt	0x42418180
 42418190:	eafffff8 	b	0x42418178
-42418194:	62616e75 	rsbvs	r6, r1, #1872	; 0x750
-42418198:	7420656c 	strtvc	r6, [r0], #-1388	; 0x56c
-4241819c:	706f206f 	rsbvc	r2, pc, pc, rrx
-424181a0:	73206e65 	teqvc	r0, #1616	; 0x650
-424181a4:	70697263 	rsbvc	r7, r9, r3, ror #4
-424181a8:	69662074 	stmdbvs	r6!, {r2, r4, r5, r6, sp}^
-424181ac:	202c656c 	eorcs	r6, ip, ip, ror #10
-424181b0:	63656863 	cmnvs	r5, #0x630000
-424181b4:	7469206b 	strbtvc	r2, [r9], #-107	; 0x6b
-424181b8:	72616320 	rsbvc	r6, r1, #0x80000000
-424181bc:	6c756665 	ldclvs	6, cr6, [r5], #-404	; 0xfffffe6c
-424181c0:	000a796c 	andeq	r7, sl, ip, ror #18
-424181c4:	69726373 	ldmdbvs	r2!, {r0, r1, r4, r5, r6, r8, r9, sp, lr}^
-424181c8:	66207470 			; <UNDEFINED> instruction: 0x66207470
-424181cc:	73696e69 	cmnvc	r9, #1680	; 0x690
-424181d0:	00000a68 	andeq	r0, r0, r8, ror #20
-424181d4:	65776f70 	ldrbvs	r6, [r7, #-3952]!	; 0xf70
-424181d8:	69662072 	stmdbvs	r6!, {r1, r4, r5, r6, sp}^
-424181dc:	6873696e 	ldmdavs	r3!, {r1, r2, r3, r5, r6, r8, fp, sp, lr}^
-424181e0:	0000000a 	andeq	r0, r0, sl
-424181e4:	4242d618 	submi	sp, r2, #0x1800000
+
+42418194:	62616e75
+42418198:	7420656c
+4241819c:	706f206f
+424181a0:	73206e65
+424181a4:	70697263
+424181a8:	69662074
+424181ac:	202c656c
+424181b0:	63656863
+424181b4:	7469206b
+424181b8:	72616320
+424181bc:	6c756665
+424181c0:	000a796c
+424181c4:	69726373
+424181c8:	66207470
+424181cc:	73696e69
+424181d0:	00000a68
+424181d4:	65776f70
+424181d8:	69662072
+424181dc:	6873696e
+424181e0:	0000000a
+424181e4:	4242d618
+
 424181e8:	e92d4010 	push	{r4, lr}
 424181ec:	e1a04000 	mov	r4, r0
 424181f0:	e1a00004 	mov	r0, r4
@@ -16790,60 +16626,62 @@ Disassembly of section .data:
 424187d4:	e35000ee 	cmp	r0, #238	; 0xee
 424187d8:	1a000036 	bne	0x424188b8
 424187dc:	ea00003e 	b	0x424188dc
-424187e0:	2031424e 	eorscs	r4, r1, lr, asr #4
-424187e4:	6f66203a 	svcvs	0x0066203a
-424187e8:	74616d72 	strbtvc	r6, [r1], #-3442	; 0xd72
-424187ec:	69616620 	stmdbvs	r1!, {r5, r9, sl, sp, lr}^
-424187f0:	00000a6c 	andeq	r0, r0, ip, ror #20
-424187f4:	2031424e 	eorscs	r4, r1, lr, asr #4
-424187f8:	6e69203a 	mcrvs	0, 3, r2, cr9, cr10, {1}
-424187fc:	6f207469 	svcvs	0x00207469
-42418800:	00000a6b 	andeq	r0, r0, fp, ror #20
-42418804:	2057484e 	subscs	r4, r7, lr, asr #16
-42418808:	7473203a 	ldrbtvc	r2, [r3], #-58	; 0x3a
-4241880c:	20747261 	rsbscs	r7, r4, r1, ror #4
-42418810:	646e616e 	strbtvs	r6, [lr], #-366	; 0x16e
-42418814:	61637320 	cmnvs	r3, r0, lsr #6
-42418818:	00000a6e 	andeq	r0, r0, lr, ror #20
-4241881c:	2057484e 	subscs	r4, r7, lr, asr #16
-42418820:	616e203a 	cmnvs	lr, sl, lsr r0
-42418824:	7020646e 	eorvc	r6, r0, lr, ror #8
-42418828:	69207968 	stmdbvs	r0!, {r3, r5, r6, r8, fp, ip, sp, lr}
-4241882c:	2074696e 	rsbscs	r6, r4, lr, ror #18
-42418830:	6c696166 	stfvse	f6, [r9], #-408	; 0xfffffe68
-42418834:	0000000a 	andeq	r0, r0, sl
-42418838:	2057484e 	subscs	r4, r7, lr, asr #16
-4241883c:	616e203a 	cmnvs	lr, sl, lsr r0
-42418840:	7320646e 	teqvc	r0, #0x6e000000
-42418844:	206e6163 	rsbcs	r6, lr, r3, ror #2
-42418848:	6c696166 	stfvse	f6, [r9], #-408	; 0xfffffe68
-4241884c:	0000000a 	andeq	r0, r0, sl
-42418850:	2057484e 	subscs	r4, r7, lr, asr #16
-42418854:	616e203a 	cmnvs	lr, sl, lsr r0
-42418858:	6820646e 	stmdavs	r0!, {r1, r2, r3, r5, r6, sl, sp, lr}
-4241885c:	63732077 	cmnvs	r3, #119	; 0x77
-42418860:	6f206e61 	svcvs	0x00206e61
-42418864:	00000a6b 	andeq	r0, r0, fp, ror #20
-42418868:	2057484e 	subscs	r4, r7, lr, asr #16
-4241886c:	616e203a 	cmnvs	lr, sl, lsr r0
-42418870:	6820646e 	stmdavs	r0!, {r1, r2, r3, r5, r6, sl, sp, lr}
-42418874:	78652077 	stmdavc	r5!, {r0, r1, r2, r4, r5, r6, sp}^
-42418878:	000a7469 	andeq	r7, sl, r9, ror #8
-4241887c:	20746567 	rsbscs	r6, r4, r7, ror #10
-42418880:	73616c66 	cmnvc	r1, #0x6600
-42418884:	6e692068 	cdpvs	0, 6, cr2, cr9, cr8, {3}
-42418888:	66206f66 	strtvs	r6, [r0], -r6, ror #30
-4241888c:	656c6961 	strbvs	r6, [ip, #-2401]!	; 0x961
-42418890:	000a2e64 	andeq	r2, sl, r4, ror #28
-42418894:	6c6c616d 	stfvse	f6, [ip], #-436	; 0xfffffe4c
-42418898:	6d20636f 	stcvs	3, cr6, [r0, #-444]!	; 0xfffffe44
-4241889c:	726f6d65 	rsbvc	r6, pc, #6464	; 0x1940
-424188a0:	6f662079 	svcvs	0x00662079
-424188a4:	61702072 	cmnvs	r0, r2, ror r0
-424188a8:	62206567 	eorvs	r6, r0, #0x19c00000
-424188ac:	66206675 			; <UNDEFINED> instruction: 0x66206675
-424188b0:	0a6c6961 	beq	0x43f32e3c
-424188b4:	00000000 	andeq	r0, r0, r0
+
+424187e0:	2031424e
+424187e4:	6f66203a
+424187e8:	74616d72
+424187ec:	69616620
+424187f0:	00000a6c
+424187f4:	2031424e
+424187f8:	6e69203a
+424187fc:	6f207469
+42418800:	00000a6b
+42418804:	2057484e
+42418808:	7473203a
+4241880c:	20747261
+42418810:	646e616e
+42418814:	61637320
+42418818:	00000a6e
+4241881c:	2057484e
+42418820:	616e203a
+42418824:	7020646e
+42418828:	69207968
+4241882c:	2074696e
+42418830:	6c696166
+42418834:	0000000a
+42418838:	2057484e
+4241883c:	616e203a
+42418840:	7320646e
+42418844:	206e6163
+42418848:	6c696166
+4241884c:	0000000a
+42418850:	2057484e
+42418854:	616e203a
+42418858:	6820646e
+4241885c:	63732077
+42418860:	6f206e61
+42418864:	00000a6b
+42418868:	2057484e
+4241886c:	616e203a
+42418870:	6820646e
+42418874:	78652077
+42418878:	000a7469
+4241887c:	20746567
+42418880:	73616c66
+42418884:	6e692068
+42418888:	66206f66
+4241888c:	656c6961
+42418890:	000a2e64
+42418894:	6c6c616d
+42418898:	6d20636f
+4241889c:	726f6d65
+424188a0:	6f662079
+424188a4:	61702072
+424188a8:	62206567
+424188ac:	66206675
+424188b0:	0a6c6961
+424188b4:	00000000
+
 424188b8:	e28d0034 	add	r0, sp, #52	; 0x34
 424188bc:	ebfffe58 	bl	0x42418224
 424188c0:	e28d0034 	add	r0, sp, #52	; 0x34
@@ -18794,50 +18632,52 @@ Disassembly of section .data:
 4241a724:	eb00042a 	bl	0x4241b7d4
 4241a728:	e3e00000 	mvn	r0, #0
 4241a72c:	eaffff40 	b	0x4241a434
-4241a730:	4243a5c8 	submi	sl, r3, #0x32000000
-4241a734:	4243a470 	submi	sl, r3, #0x70000000
-4241a738:	42430158 	submi	r0, r3, #22
-4241a73c:	4243a508 	submi	sl, r3, #0x2000000
-4241a740:	4242d768 	submi	sp, r2, #0x1a00000
-4241a744:	4242d894 	submi	sp, r2, #0x940000
-4241a748:	4242d8d8 	submi	sp, r2, #0xd80000
-4241a74c:	4242d91c 	submi	sp, r2, #0x70000
-4241a750:	4242d970 	submi	sp, r2, #0x1c0000
-4241a754:	474f4c5b 	smlsldmi	r4, pc, fp, ip	; <UNPREDICTABLE>
-4241a758:	54434349 	strbpl	r4, [r3], #-841	; 0x349
-4241a75c:	52455f4c 	subpl	r5, r5, #304	; 0x130
-4241a760:	47205d52 			; <UNDEFINED> instruction: 0x47205d52
-4241a764:	6c207465 	cfstrsvs	mvf7, [r0], #-404	; 0xfffffe6c
-4241a768:	7020676f 	eorvc	r6, r0, pc, ror #14
-4241a76c:	20656761 	rsbcs	r6, r5, r1, ror #14
-4241a770:	6c696166 	stfvse	f6, [r9], #-408	; 0xfffffe68
-4241a774:	77206465 	strvc	r6, [r0, -r5, ror #8]!
-4241a778:	206e6568 	rsbcs	r6, lr, r8, ror #10
-4241a77c:	74697277 	strbtvc	r7, [r9], #-631	; 0x277
-4241a780:	6f6c2065 	svcvs	0x006c2065
-4241a784:	61636967 	cmnvs	r3, r7, ror #18
-4241a788:	6170206c 	cmnvs	r0, ip, rrx
-4241a78c:	0a216567 	beq	0x42c73d30
-4241a790:	00000000 	andeq	r0, r0, r0
-4241a794:	4243a510 	submi	sl, r3, #0x4000000
-4241a798:	474f4c5b 	smlsldmi	r4, pc, fp, ip	; <UNPREDICTABLE>
-4241a79c:	54434349 	strbpl	r4, [r3], #-841	; 0x349
-4241a7a0:	52455f4c 	subpl	r5, r5, #304	; 0x130
-4241a7a4:	47205d52 			; <UNDEFINED> instruction: 0x47205d52
-4241a7a8:	6c207465 	cfstrsvs	mvf7, [r0], #-404	; 0xfffffe6c
-4241a7ac:	6220676f 	eorvs	r6, r0, #0x1bc0000
-4241a7b0:	6b636f6c 	blvs	0x43cf6568
-4241a7b4:	69616620 	stmdbvs	r1!, {r5, r9, sl, sp, lr}^
-4241a7b8:	2064656c 	rsbcs	r6, r4, ip, ror #10
-4241a7bc:	6e656877 	mcrvs	8, 3, r6, cr5, cr7, {3}
-4241a7c0:	69727720 	ldmdbvs	r2!, {r5, r8, r9, sl, ip, sp, lr}^
-4241a7c4:	6c206574 	cfstr32vs	mvfx6, [r0], #-464	; 0xfffffe30
-4241a7c8:	6369676f 	cmnvs	r9, #0x1bc0000
-4241a7cc:	70206c61 	eorvc	r6, r0, r1, ror #24
-4241a7d0:	21656761 	cmncs	r5, r1, ror #14
-4241a7d4:	0000000a 	andeq	r0, r0, sl
-4241a7d8:	4242d9b4 	submi	sp, r2, #0x2d0000
-4241a7dc:	4242da08 	submi	sp, r2, #0x8000
+
+4241a730:	4243a5c8
+4241a734:	4243a470
+4241a738:	42430158
+4241a73c:	4243a508
+4241a740:	4242d768
+4241a744:	4242d894
+4241a748:	4242d8d8
+4241a74c:	4242d91c
+4241a750:	4242d970
+4241a754:	474f4c5b
+4241a758:	54434349
+4241a75c:	52455f4c
+4241a760:	47205d52
+4241a764:	6c207465
+4241a768:	7020676f
+4241a76c:	20656761
+4241a770:	6c696166
+4241a774:	77206465
+4241a778:	206e6568
+4241a77c:	74697277
+4241a780:	6f6c2065
+4241a784:	61636967
+4241a788:	6170206c
+4241a78c:	0a216567
+4241a790:	00000000
+4241a794:	4243a510
+4241a798:	474f4c5b
+4241a79c:	54434349
+4241a7a0:	52455f4c
+4241a7a4:	47205d52
+4241a7a8:	6c207465
+4241a7ac:	6220676f
+4241a7b0:	6b636f6c
+4241a7b4:	69616620
+4241a7b8:	2064656c
+4241a7bc:	6e656877
+4241a7c0:	69727720
+4241a7c4:	6c206574
+4241a7c8:	6369676f
+4241a7cc:	70206c61
+4241a7d0:	21656761
+4241a7d4:	0000000a
+4241a7d8:	4242d9b4
+4241a7dc:	4242da08
+
 4241a7e0:	e51f10ac 	ldr	r1, [pc, #-172]	; 0x4241a73c
 4241a7e4:	e1d100b2 	ldrh	r0, [r1, #2]
 4241a7e8:	e1a0100d 	mov	r1, sp
@@ -19551,39 +19391,41 @@ Disassembly of section .data:
 4241b2f8:	eb000135 	bl	0x4241b7d4
 4241b2fc:	e3e00011 	mvn	r0, #17
 4241b300:	eaffffce 	b	0x4241b240
-4241b304:	4242dc18 	submi	sp, r2, #0x1800
-4241b308:	474f4c5b 	smlsldmi	r4, pc, fp, ip	; <UNPREDICTABLE>
-4241b30c:	54434349 	strbpl	r4, [r3], #-841	; 0x349
-4241b310:	52455f4c 	subpl	r5, r5, #304	; 0x130
-4241b314:	57205d52 			; <UNDEFINED> instruction: 0x57205d52
-4241b318:	65746972 	ldrbvs	r6, [r4, #-2418]!	; 0x972
-4241b31c:	67617020 	strbvs	r7, [r1, -r0, lsr #32]!
-4241b320:	61632065 	cmnvs	r3, r5, rrx
-4241b324:	20656863 	rsbcs	r6, r5, r3, ror #16
-4241b328:	6e206f74 	mcrvs	15, 1, r6, cr0, cr4, {3}
-4241b32c:	20646e61 	rsbcs	r6, r4, r1, ror #28
-4241b330:	73616c66 	cmnvc	r1, #0x6600
-4241b334:	61662068 	cmnvs	r6, r8, rrx
-4241b338:	64656c69 	strbtvs	r6, [r5], #-3177	; 0xc69
-4241b33c:	00000a21 	andeq	r0, r0, r1, lsr #20
-4241b340:	474f4c5b 	smlsldmi	r4, pc, fp, ip	; <UNPREDICTABLE>
-4241b344:	54434349 	strbpl	r4, [r3], #-841	; 0x349
-4241b348:	52455f4c 	subpl	r5, r5, #304	; 0x130
-4241b34c:	57205d52 			; <UNDEFINED> instruction: 0x57205d52
-4241b350:	65746972 	ldrbvs	r6, [r4, #-2418]!	; 0x972
-4241b354:	676f6c20 	strbvs	r6, [pc, -r0, lsr #24]!
-4241b358:	6c616369 	stclvs	3, cr6, [r1], #-420	; 0xfffffe5c
-4241b35c:	67617020 	strbvs	r7, [r1, -r0, lsr #32]!
-4241b360:	61662065 	cmnvs	r6, r5, rrx
-4241b364:	64656c69 	strbtvs	r6, [r5], #-3177	; 0xc69
-4241b368:	72452021 	subvc	r2, r5, #33	; 0x21
-4241b36c:	3a726f72 	bcc	0x440b713c
-4241b370:	78257830 	stmdavc	r5!, {r4, r5, fp, ip, sp, lr}
-4241b374:	0000000a 	andeq	r0, r0, sl
-4241b378:	4242dc78 	submi	sp, r2, #0x7800
-4241b37c:	4242dcbc 	submi	sp, r2, #0xbc00
-4241b380:	4242dd00 	submi	sp, r2, #0
-4241b384:	4242dd48 	submi	sp, r2, #0x1200
+
+4241b304:	4242dc18
+4241b308:	474f4c5b
+4241b30c:	54434349
+4241b310:	52455f4c
+4241b314:	57205d52
+4241b318:	65746972
+4241b31c:	67617020
+4241b320:	61632065
+4241b324:	20656863
+4241b328:	6e206f74
+4241b32c:	20646e61
+4241b330:	73616c66
+4241b334:	61662068
+4241b338:	64656c69
+4241b33c:	00000a21
+4241b340:	474f4c5b
+4241b344:	54434349
+4241b348:	52455f4c
+4241b34c:	57205d52
+4241b350:	65746972
+4241b354:	676f6c20
+4241b358:	6c616369
+4241b35c:	67617020
+4241b360:	61662065
+4241b364:	64656c69
+4241b368:	72452021
+4241b36c:	3a726f72
+4241b370:	78257830
+4241b374:	0000000a
+4241b378:	4242dc78
+4241b37c:	4242dcbc
+4241b380:	4242dd00
+4241b384:	4242dd48
+
 4241b388:	e3a00000 	mov	r0, #0
 4241b38c:	eaffffab 	b	0x4241b240
 4241b390:	e92d4010 	push	{r4, lr}
@@ -43241,45 +43083,18 @@ Disassembly of section .data:
 424329a0:	eaffffb8 	b	0x42432888
 424329a4:	e3a00000 	mov	r0, #0
 424329a8:	eaffffb6 	b	0x42432888
-424329ac:	00003b60 	andeq	r3, r0, r0, ror #22
-424329b0:	00003b4c 	andeq	r3, r0, ip, asr #22
-424329b4:	00003b64 	andeq	r3, r0, r4, ror #22
-424329b8:	63646364 	cmnvs	r4, #0x90000001
-424329bc:	6f765f33 	svcvs	0x00765f33
-424329c0:	0000006c 	andeq	r0, r0, ip, rrx
-424329c4:	67726174 			; <UNDEFINED> instruction: 0x67726174
-424329c8:	00007465 	andeq	r7, r0, r5, ror #8
-424329cc:	746f6f62 	strbtvc	r6, [pc], #-3938	; 0x424329d4
-424329d0:	776f7020 	strbvc	r7, [pc, -r0, lsr #32]!
-424329d4:	753a7265 	ldrvc	r7, [sl, #-613]!	; 0x265
-424329d8:	6c62616e 	stfvse	f6, [r2], #-440	; 0xfffffe48
-424329dc:	6f742065 	svcvs	0x00742065
-424329e0:	6e696620 	cdpvs	6, 6, cr6, cr9, cr0, {1}
-424329e4:	63642064 	cmnvs	r4, #100	; 0x64
-424329e8:	20336364 	eorscs	r6, r3, r4, ror #6
-424329ec:	0a746573 	beq	0x4414bfc0
-424329f0:	00000000 	andeq	r0, r0, r0
-424329f4:	00003b68 	andeq	r3, r0, r8, ror #22
-424329f8:	326f646c 	rsbcc	r6, pc, #0x6c000000
-424329fc:	6c6f765f 	stclvs	6, cr7, [pc], #-380	; 0x42432888
-42432a00:	00000000 	andeq	r0, r0, r0
-42432a04:	746f6f62 	strbtvc	r6, [pc], #-3938	; 0x42432a0c
-42432a08:	776f7020 	strbvc	r7, [pc, -r0, lsr #32]!
-42432a0c:	753a7265 	ldrvc	r7, [sl, #-613]!	; 0x265
-42432a10:	6c62616e 	stfvse	f6, [r2], #-440	; 0xfffffe48
-42432a14:	6f742065 	svcvs	0x00742065
-42432a18:	6e696620 	cdpvs	6, 6, cr6, cr9, cr0, {1}
-42432a1c:	646c2064 	strbtvs	r2, [ip], #-100	; 0x64
-42432a20:	7320326f 	teqvc	r0, #0xf0000006
-42432a24:	000a7465 	andeq	r7, sl, r5, ror #8
-42432a28:	746f6f62 	strbtvc	r6, [pc], #-3938	; 0x42432a30
-42432a2c:	776f7020 	strbvc	r7, [pc, -r0, lsr #32]!
-42432a30:	753a7265 	ldrvc	r7, [sl, #-613]!	; 0x265
-42432a34:	6c62616e 	stfvse	f6, [r2], #-440	; 0xfffffe48
-42432a38:	6f742065 	svcvs	0x00742065
-42432a3c:	74657320 	strbtvc	r7, [r5], #-800	; 0x320
-42432a40:	6f646c20 	svcvs	0x00646c20
-42432a44:	00000a32 	andeq	r0, r0, r2, lsr sl
+
+424329ac:	00003b60
+424329b0:	00003b4c
+424329b4:	00003b64
+424329b8:	"dcdc3_vol",0
+424329c4:	"target",0
+424329cc:	"boot power:unable to find dcdc3 set\n",0
+424329f4:	00003b68
+424329f8:	"ldo2_vol",0
+42432a04:	"boot power:unable to find ldo2 set\n",0
+42432a28:	"boot power:unable to set ldo2\n",0
+
 42432a48:	e92d403e 	push	{r1, r2, r3, r4, r5, lr}
 42432a4c:	e1a05000 	mov	r5, r0
 42432a50:	e3750001 	cmn	r5, #1
@@ -43474,40 +43289,15 @@ Disassembly of section .data:
 42432d44:	e20000ff 	and	r0, r0, #0xff
 42432d48:	e58d0000 	str	r0, [sp]
 42432d4c:	ea000038 	b	0x42432e34
-42432d50:	00003b6c 	andeq	r3, r0, ip, ror #22
-42432d54:	336f646c 	cmncc	pc, #0x6c000000
-42432d58:	6c6f765f 	stclvs	6, cr7, [pc], #-380	; 0x42432be4
-42432d5c:	00000000 	andeq	r0, r0, r0
-42432d60:	746f6f62 	strbtvc	r6, [pc], #-3938	; 0x42432d68
-42432d64:	776f7020 	strbvc	r7, [pc, -r0, lsr #32]!
-42432d68:	753a7265 	ldrvc	r7, [sl, #-613]!	; 0x265
-42432d6c:	6c62616e 	stfvse	f6, [r2], #-440	; 0xfffffe48
-42432d70:	6f742065 	svcvs	0x00742065
-42432d74:	6e696620 	cdpvs	6, 6, cr6, cr9, cr0, {1}
-42432d78:	646c2064 	strbtvs	r2, [ip], #-100	; 0x64
-42432d7c:	7320336f 	teqvc	r0, #0xbc000001
-42432d80:	000a7465 	andeq	r7, sl, r5, ror #8
-42432d84:	746f6f62 	strbtvc	r6, [pc], #-3938	; 0x42432d8c
-42432d88:	776f7020 	strbvc	r7, [pc, -r0, lsr #32]!
-42432d8c:	753a7265 	ldrvc	r7, [sl, #-613]!	; 0x265
-42432d90:	6c62616e 	stfvse	f6, [r2], #-440	; 0xfffffe48
-42432d94:	6f742065 	svcvs	0x00742065
-42432d98:	74657320 	strbtvc	r7, [r5], #-800	; 0x320
-42432d9c:	6f646c20 	svcvs	0x00646c20
-42432da0:	00000a33 	andeq	r0, r0, r3, lsr sl
-42432da4:	00003b70 	andeq	r3, r0, r0, ror fp
-42432da8:	346f646c 	strbtcc	r6, [pc], #-1132	; 0x42432db0
-42432dac:	6c6f765f 	stclvs	6, cr7, [pc], #-380	; 0x42432c38
-42432db0:	00000000 	andeq	r0, r0, r0
-42432db4:	746f6f62 	strbtvc	r6, [pc], #-3938	; 0x42432dbc
-42432db8:	776f7020 	strbvc	r7, [pc, -r0, lsr #32]!
-42432dbc:	753a7265 	ldrvc	r7, [sl, #-613]!	; 0x265
-42432dc0:	6c62616e 	stfvse	f6, [r2], #-440	; 0xfffffe48
-42432dc4:	6f742065 	svcvs	0x00742065
-42432dc8:	6e696620 	cdpvs	6, 6, cr6, cr9, cr0, {1}
-42432dcc:	646c2064 	strbtvs	r2, [ip], #-100	; 0x64
-42432dd0:	7320346f 	teqvc	r0, #0x6f000000
-42432dd4:	000a7465 	andeq	r7, sl, r5, ror #8
+
+42432d50:	00003b6c
+42432d54:	"ldo3_vol",0
+42432d60:	"boot power:unable to find ldo3 set\n",0
+42432d84:	"boot power:unable to set ldo3\n",0
+42432da4:	00003b70
+42432da8:	"ldo4_vol",0
+42432db4:	"boot power:unable to find ldo4 set\n",0
+
 42432dd8:	e3001bb8 	movw	r1, #3000	; 0xbb8
 42432ddc:	e59d0008 	ldr	r0, [sp, #8]
 42432de0:	e1500001 	cmp	r0, r1
@@ -43694,14 +43484,9 @@ Disassembly of section .data:
 424330b4:	eaffffc6 	b	0x42432fd4
 424330b8:	e3a00000 	mov	r0, #0
 424330bc:	eaffffc4 	b	0x42432fd4
-424330c0:	746f6f62 	strbtvc	r6, [pc], #-3938	; 0x424330c8
-424330c4:	776f7020 	strbvc	r7, [pc, -r0, lsr #32]!
-424330c8:	753a7265 	ldrvc	r7, [sl, #-613]!	; 0x265
-424330cc:	6c62616e 	stfvse	f6, [r2], #-440	; 0xfffffe48
-424330d0:	6f742065 	svcvs	0x00742065
-424330d4:	74657320 	strbtvc	r7, [r5], #-800	; 0x320
-424330d8:	6f646c20 	svcvs	0x00646c20
-424330dc:	00000a34 	andeq	r0, r0, r4, lsr sl
+
+424330c0:	"boot power:unable to set ldo4\n",0
+
 424330e0:	e92d401c 	push	{r2, r3, r4, lr}
 424330e4:	e51f073c 	ldr	r0, [pc, #-1852]	; 0x424329b0
 424330e8:	e5900000 	ldr	r0, [r0]
@@ -45378,1319 +45163,1312 @@ Disassembly of section .data:
 42434ad8:	ebfff293 	bl	0x4243152c
 42434adc:	e1a00004 	mov	r0, r4
 42434ae0:	eaffffdf 	b	0x42434a64
-42434ae4:	00013880 	andeq	r3, r1, r0, lsl #17
-42434ae8:	016e3600 	cmneq	lr, r0, lsl #12
-	...
-42434b2c:	00001031 	andeq	r1, r0, r1, lsr r0
-42434b30:	00001031 	andeq	r1, r0, r1, lsr r0
-42434b34:	00000735 	andeq	r0, r0, r5, lsr r7
-42434b38:	00001035 	andeq	r1, r0, r5, lsr r0
-42434b3c:	00001035 	andeq	r1, r0, r5, lsr r0
-42434b40:	00000731 	andeq	r0, r0, r1, lsr r7
-42434b44:	00001031 	andeq	r1, r0, r1, lsr r0
-42434b48:	00000000 	andeq	r0, r0, r0
-42434b4c:	00000301 	andeq	r0, r0, r1, lsl #6
-42434b50:	00000301 	andeq	r0, r0, r1, lsl #6
-42434b54:	00000301 	andeq	r0, r0, r1, lsl #6
-42434b58:	00000301 	andeq	r0, r0, r1, lsl #6
-42434b5c:	00000301 	andeq	r0, r0, r1, lsl #6
-42434b60:	00000301 	andeq	r0, r0, r1, lsl #6
-42434b64:	00000301 	andeq	r0, r0, r1, lsl #6
-42434b68:	00000000 	andeq	r0, r0, r0
-42434b6c:	6e617473 	mcrvs	4, 3, r7, cr1, cr3, {3}
-42434b70:	20796264 	rsbscs	r6, r9, r4, ror #4
-42434b74:	65746e65 	ldrbvs	r6, [r4, #-3685]!	; 0xe65
-42434b78:	72652072 	rsbvc	r2, r5, #114	; 0x72
-42434b7c:	3a726f72 	bcc	0x440d094c
-42434b80:	6c616d20 	stclvs	13, cr6, [r1], #-128	; 0xffffff80
-42434b84:	20636f6c 	rsbcs	r6, r3, ip, ror #30
-42434b88:	6f6d656d 	svcvs	0x006d656d
-42434b8c:	74207972 	strtvc	r7, [r0], #-2418	; 0x972
-42434b90:	7473206f 	ldrbtvc	r2, [r3], #-111	; 0x6f
-42434b94:	2065726f 	rsbcs	r7, r5, pc, ror #4
-42434b98:	20746e69 	rsbscs	r6, r4, r9, ror #28
-42434b9c:	69676572 	stmdbvs	r7!, {r1, r4, r5, r6, r8, sl, sp, lr}^
-42434ba0:	72657473 	rsbvc	r7, r5, #0x73000000
-42434ba4:	6c617620 	stclvs	6, cr7, [r1], #-128	; 0xffffff80
-42434ba8:	66206575 			; <UNDEFINED> instruction: 0x66206575
-42434bac:	0a6c6961 	beq	0x43f4f138
-42434bb0:	00000000 	andeq	r0, r0, r0
-42434bb4:	6e617473 	mcrvs	4, 3, r7, cr1, cr3, {3}
-42434bb8:	20796264 	rsbscs	r6, r9, r4, ror #4
-42434bbc:	74697865 	strbtvc	r7, [r9], #-2149	; 0x865
-42434bc0:	72726520 	rsbsvc	r6, r2, #0x8000000
-42434bc4:	203a726f 	eorscs	r7, sl, pc, ror #4
-42434bc8:	6c6c616d 	stfvse	f6, [ip], #-436	; 0xfffffe4c
-42434bcc:	6d20636f 	stcvs	3, cr6, [r0, #-444]!	; 0xfffffe44
-42434bd0:	726f6d65 	rsbvc	r6, pc, #6464	; 0x1940
-42434bd4:	6f742079 	svcvs	0x00742079
-42434bd8:	6f747320 	svcvs	0x00747320
-42434bdc:	69206572 	stmdbvs	r0!, {r1, r4, r5, r6, r8, sl, sp, lr}
-42434be0:	7220746e 	eorvc	r7, r0, #0x6e000000
-42434be4:	73696765 	cmnvc	r9, #0x1940000
-42434be8:	20726574 	rsbscs	r6, r2, r4, ror r5
-42434bec:	756c6176 	strbvc	r6, [ip, #-374]!	; 0x176
-42434bf0:	61662065 	cmnvs	r6, r5, rrx
-42434bf4:	000a6c69 	andeq	r6, sl, r9, ror #24
-42434bf8:	01c2ac00 	biceq	sl, r2, r0, lsl #24
-42434bfc:	01c2b000 	biceq	fp, r2, r0
-42434c00:	01c2b400 	biceq	fp, r2, r0, lsl #8
-	...
-42434c38:	01c28000 	biceq	r8, r2, r0
-42434c3c:	01c28400 	biceq	r8, r2, r0, lsl #8
-42434c40:	01c28800 	biceq	r8, r2, r0, lsl #16
-42434c44:	01c28c00 	biceq	r8, r2, r0, lsl #24
-42434c48:	01c29000 	biceq	r9, r2, r0
-42434c4c:	01c29400 	biceq	r9, r2, r0, lsl #8
-42434c50:	01c29800 	biceq	r9, r2, r0, lsl #16
-42434c54:	01c29c00 	biceq	r9, r2, r0, lsl #24
-	...
-42434c7c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434c80:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434c84:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434c88:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434c8c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434c90:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434c94:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434c98:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434c9c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434ca0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434ca4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434ca8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434cac:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434cb0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434cb4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434cb8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434cbc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434cc0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434cc4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434cc8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434ccc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434cd0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434cd4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434cd8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434cdc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434ce0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434ce4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434ce8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434cec:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434cf0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434cf4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434cf8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434cfc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434d00:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434d04:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434d08:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434d0c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434d10:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434d14:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434d18:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434d1c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434d20:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434d24:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434d28:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434d2c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434d30:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434d34:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434d38:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434d3c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434d40:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434d44:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434d48:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434d4c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434d50:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434d54:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434d58:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434d5c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434d60:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434d64:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434d68:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434d6c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434d70:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434d74:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434d78:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434d7c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434d80:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434d84:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434d88:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434d8c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434d90:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434d94:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434d98:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434d9c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434da0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434da4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434da8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434dac:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434db0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434db4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434db8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434dbc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434dc0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434dc4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434dc8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434dcc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434dd0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434dd4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434dd8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434ddc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434de0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434de4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434de8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434dec:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434df0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434df4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434df8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434dfc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434e00:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434e04:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434e08:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434e0c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434e10:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434e14:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434e18:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434e1c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434e20:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434e24:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434e28:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434e2c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434e30:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434e34:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434e38:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434e3c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434e40:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434e44:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434e48:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434e4c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434e50:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434e54:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434e58:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434e5c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434e60:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434e64:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434e68:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434e6c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434e70:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434e74:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434e78:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434e7c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434e80:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434e84:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434e88:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434e8c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434e90:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434e94:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434e98:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434e9c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434ea0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434ea4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434ea8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434eac:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434eb0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434eb4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434eb8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434ebc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434ec0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434ec4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434ec8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434ecc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434ed0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434ed4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434ed8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434edc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434ee0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434ee4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434ee8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434eec:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434ef0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434ef4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434ef8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434efc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434f00:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434f04:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434f08:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434f0c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434f10:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434f14:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434f18:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434f1c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434f20:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434f24:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434f28:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434f2c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434f30:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434f34:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434f38:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434f3c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434f40:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434f44:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434f48:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434f4c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434f50:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434f54:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434f58:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434f5c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434f60:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434f64:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434f68:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434f6c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434f70:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434f74:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434f78:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434f7c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434f80:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434f84:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434f88:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434f8c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434f90:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434f94:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434f98:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434f9c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434fa0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434fa4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434fa8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434fac:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434fb0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434fb4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434fb8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434fbc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434fc0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434fc4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434fc8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434fcc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434fd0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434fd4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434fd8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434fdc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434fe0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434fe4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434fe8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434fec:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434ff0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434ff4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434ff8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42434ffc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435000:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435004:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435008:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243500c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435010:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435014:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435018:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243501c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435020:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435024:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435028:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243502c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435030:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435034:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435038:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243503c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435040:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435044:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435048:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243504c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435050:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435054:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435058:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243505c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435060:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435064:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435068:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243506c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435070:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435074:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435078:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243507c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435080:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435084:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435088:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243508c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435090:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435094:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435098:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243509c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424350a0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424350a4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424350a8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424350ac:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424350b0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424350b4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424350b8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424350bc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424350c0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424350c4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424350c8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424350cc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424350d0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424350d4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424350d8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424350dc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424350e0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424350e4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424350e8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424350ec:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424350f0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424350f4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424350f8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424350fc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435100:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435104:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435108:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243510c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435110:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435114:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435118:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243511c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435120:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435124:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435128:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243512c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435130:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435134:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435138:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243513c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435140:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435144:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435148:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243514c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435150:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435154:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435158:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243515c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435160:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435164:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435168:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243516c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435170:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435174:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435178:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243517c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435180:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435184:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435188:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243518c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435190:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435194:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435198:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243519c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424351a0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424351a4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424351a8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424351ac:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424351b0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424351b4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424351b8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424351bc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424351c0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424351c4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424351c8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424351cc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424351d0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424351d4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424351d8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424351dc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424351e0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424351e4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424351e8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424351ec:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424351f0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424351f4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424351f8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424351fc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435200:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435204:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435208:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243520c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435210:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435214:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435218:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243521c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435220:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435224:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435228:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243522c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435230:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435234:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435238:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243523c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435240:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435244:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435248:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243524c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435250:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435254:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435258:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243525c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435260:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435264:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435268:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243526c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435270:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435274:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435278:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243527c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435280:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435284:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435288:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243528c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435290:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435294:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435298:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243529c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424352a0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424352a4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424352a8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424352ac:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424352b0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424352b4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424352b8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424352bc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424352c0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424352c4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424352c8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424352cc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424352d0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424352d4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424352d8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424352dc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424352e0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424352e4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424352e8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424352ec:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424352f0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424352f4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424352f8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424352fc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435300:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435304:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435308:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243530c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435310:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435314:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435318:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243531c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435320:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435324:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435328:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243532c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435330:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435334:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435338:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243533c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435340:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435344:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435348:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243534c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435350:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435354:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435358:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243535c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435360:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435364:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435368:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243536c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435370:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435374:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435378:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243537c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435380:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435384:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435388:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243538c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435390:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435394:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435398:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243539c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424353a0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424353a4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424353a8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424353ac:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424353b0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424353b4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424353b8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424353bc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424353c0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424353c4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424353c8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424353cc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424353d0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424353d4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424353d8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424353dc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424353e0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424353e4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424353e8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424353ec:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424353f0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424353f4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424353f8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424353fc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435400:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435404:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435408:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243540c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435410:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435414:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435418:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243541c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435420:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435424:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435428:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243542c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435430:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435434:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435438:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243543c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435440:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435444:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435448:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243544c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435450:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435454:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435458:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243545c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435460:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435464:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435468:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243546c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435470:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435474:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435478:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243547c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435480:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435484:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435488:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243548c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435490:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435494:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435498:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243549c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424354a0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424354a4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424354a8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424354ac:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424354b0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424354b4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424354b8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424354bc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424354c0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424354c4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424354c8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424354cc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424354d0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424354d4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424354d8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424354dc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424354e0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424354e4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424354e8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424354ec:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424354f0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424354f4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424354f8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424354fc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435500:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435504:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435508:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243550c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435510:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435514:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435518:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243551c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435520:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435524:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435528:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243552c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435530:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435534:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435538:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243553c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435540:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435544:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435548:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243554c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435550:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435554:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435558:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243555c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435560:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435564:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435568:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243556c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435570:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435574:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435578:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243557c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435580:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435584:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435588:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243558c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435590:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435594:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435598:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243559c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424355a0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424355a4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424355a8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424355ac:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424355b0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424355b4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424355b8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424355bc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424355c0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424355c4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424355c8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424355cc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424355d0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424355d4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424355d8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424355dc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424355e0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424355e4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424355e8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424355ec:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424355f0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424355f4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424355f8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424355fc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435600:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435604:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435608:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243560c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435610:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435614:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435618:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243561c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435620:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435624:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435628:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243562c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435630:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435634:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435638:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243563c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435640:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435644:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435648:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243564c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435650:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435654:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435658:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243565c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435660:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435664:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435668:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243566c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435670:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435674:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435678:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243567c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435680:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435684:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435688:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243568c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435690:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435694:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435698:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243569c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424356a0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424356a4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424356a8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424356ac:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424356b0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424356b4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424356b8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424356bc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424356c0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424356c4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424356c8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424356cc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424356d0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424356d4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424356d8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424356dc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424356e0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424356e4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424356e8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424356ec:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424356f0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424356f4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424356f8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424356fc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435700:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435704:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435708:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243570c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435710:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435714:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435718:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243571c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435720:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435724:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435728:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243572c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435730:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435734:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435738:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243573c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435740:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435744:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435748:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243574c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435750:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435754:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435758:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243575c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435760:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435764:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435768:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243576c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435770:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435774:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435778:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243577c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435780:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435784:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435788:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243578c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435790:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435794:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435798:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243579c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424357a0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424357a4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424357a8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424357ac:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424357b0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424357b4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424357b8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424357bc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424357c0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424357c4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424357c8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424357cc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424357d0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424357d4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424357d8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424357dc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424357e0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424357e4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424357e8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424357ec:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424357f0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424357f4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424357f8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424357fc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435800:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435804:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435808:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243580c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435810:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435814:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435818:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243581c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435820:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435824:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435828:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243582c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435830:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435834:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435838:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243583c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435840:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435844:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435848:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243584c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435850:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435854:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435858:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243585c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435860:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435864:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435868:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243586c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435870:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435874:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435878:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243587c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435880:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435884:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435888:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243588c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435890:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435894:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435898:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243589c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424358a0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424358a4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424358a8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424358ac:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424358b0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424358b4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424358b8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424358bc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424358c0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424358c4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424358c8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424358cc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424358d0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424358d4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424358d8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424358dc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424358e0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424358e4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424358e8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424358ec:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424358f0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424358f4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424358f8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424358fc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435900:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435904:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435908:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243590c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435910:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435914:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435918:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243591c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435920:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435924:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435928:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243592c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435930:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435934:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435938:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243593c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435940:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435944:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435948:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243594c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435950:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435954:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435958:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243595c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435960:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435964:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435968:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243596c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435970:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435974:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435978:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243597c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435980:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435984:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435988:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243598c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435990:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435994:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435998:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-4243599c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424359a0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424359a4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424359a8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424359ac:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424359b0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424359b4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424359b8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424359bc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424359c0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424359c4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424359c8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424359cc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424359d0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424359d4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424359d8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424359dc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424359e0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424359e4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424359e8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424359ec:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424359f0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424359f4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424359f8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-424359fc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435a00:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435a04:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435a08:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435a0c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435a10:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435a14:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435a18:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435a1c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435a20:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435a24:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435a28:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435a2c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435a30:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435a34:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435a38:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435a3c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435a40:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435a44:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435a48:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435a4c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435a50:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435a54:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435a58:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435a5c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435a60:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435a64:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435a68:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435a6c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435a70:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435a74:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435a78:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435a7c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435a80:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435a84:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435a88:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435a8c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435a90:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435a94:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435a98:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435a9c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435aa0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435aa4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435aa8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435aac:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435ab0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435ab4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435ab8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435abc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435ac0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435ac4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435ac8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435acc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435ad0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435ad4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435ad8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435adc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435ae0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435ae4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435ae8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435aec:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435af0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435af4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435af8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435afc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435b00:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435b04:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435b08:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435b0c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435b10:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435b14:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435b18:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435b1c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435b20:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435b24:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435b28:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435b2c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435b30:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435b34:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435b38:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435b3c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435b40:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435b44:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435b48:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435b4c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435b50:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435b54:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435b58:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435b5c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435b60:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435b64:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435b68:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435b6c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435b70:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435b74:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435b78:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435b7c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435b80:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435b84:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435b88:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435b8c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435b90:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435b94:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435b98:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435b9c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435ba0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435ba4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435ba8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435bac:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435bb0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435bb4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435bb8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435bbc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435bc0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435bc4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435bc8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435bcc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435bd0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435bd4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435bd8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435bdc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435be0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435be4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435be8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435bec:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435bf0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435bf4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435bf8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435bfc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435c00:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435c04:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435c08:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435c0c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435c10:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435c14:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435c18:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435c1c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435c20:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435c24:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435c28:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435c2c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435c30:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435c34:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435c38:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435c3c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435c40:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435c44:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435c48:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435c4c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435c50:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435c54:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435c58:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435c5c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435c60:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435c64:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435c68:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435c6c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435c70:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435c74:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435c78:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435c7c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435c80:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435c84:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435c88:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435c8c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435c90:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435c94:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435c98:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435c9c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435ca0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435ca4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435ca8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435cac:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435cb0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435cb4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435cb8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435cbc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435cc0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435cc4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435cc8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435ccc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435cd0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435cd4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435cd8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435cdc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435ce0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435ce4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435ce8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435cec:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435cf0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435cf4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435cf8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435cfc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435d00:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435d04:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435d08:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435d0c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435d10:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435d14:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435d18:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435d1c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435d20:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435d24:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435d28:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435d2c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435d30:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435d34:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435d38:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435d3c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435d40:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435d44:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435d48:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435d4c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435d50:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435d54:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435d58:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435d5c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435d60:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435d64:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435d68:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435d6c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435d70:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435d74:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435d78:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435d7c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435d80:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435d84:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435d88:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435d8c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435d90:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435d94:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435d98:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435d9c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435da0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435da4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435da8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435dac:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435db0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435db4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435db8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435dbc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435dc0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435dc4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435dc8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435dcc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435dd0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435dd4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435dd8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435ddc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435de0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435de4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435de8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435dec:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435df0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435df4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435df8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435dfc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435e00:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435e04:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435e08:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435e0c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435e10:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435e14:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435e18:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435e1c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435e20:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435e24:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435e28:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435e2c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435e30:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435e34:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435e38:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435e3c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435e40:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435e44:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435e48:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435e4c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435e50:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435e54:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435e58:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435e5c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435e60:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435e64:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435e68:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435e6c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435e70:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435e74:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435e78:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435e7c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435e80:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435e84:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435e88:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435e8c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435e90:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435e94:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435e98:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435e9c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435ea0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435ea4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435ea8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435eac:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435eb0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435eb4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435eb8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435ebc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435ec0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435ec4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435ec8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435ecc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435ed0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435ed4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435ed8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435edc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435ee0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435ee4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435ee8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435eec:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435ef0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435ef4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435ef8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435efc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435f00:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435f04:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435f08:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435f0c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435f10:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435f14:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435f18:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435f1c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435f20:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435f24:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435f28:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435f2c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435f30:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435f34:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435f38:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435f3c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435f40:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435f44:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435f48:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435f4c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435f50:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435f54:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435f58:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435f5c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435f60:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435f64:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435f68:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435f6c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435f70:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435f74:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435f78:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435f7c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435f80:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435f84:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435f88:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435f8c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435f90:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435f94:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435f98:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435f9c:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435fa0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435fa4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435fa8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435fac:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435fb0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435fb4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435fb8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435fbc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435fc0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435fc4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435fc8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435fcc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435fd0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435fd4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435fd8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435fdc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435fe0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435fe4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435fe8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435fec:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435ff0:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435ff4:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435ff8:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
-42435ffc:	ffffffff 			; <UNDEFINED> instruction: 0xffffffff
+
+42434ae4:	00013880
+42434ae8:	016e3600
+
+42434aec:	00000000
+42434af0:	00000000
+42434af4:	00000000
+42434af8:	00000000
+42434afc:	00000000
+42434b00:	00000000
+42434b04:	00000000
+42434b08:	00000000
+42434b0c:	00000000
+42434b10:	00000000
+42434b14:	00000000
+42434b18:	00000000
+42434b1c:	00000000
+42434b20:	00000000
+42434b24:	00000000
+42434b28:	00000000
+42434b2c:	00001031
+42434b30:	00001031
+42434b34:	00000735
+42434b38:	00001035
+42434b3c:	00001035
+42434b40:	00000731
+42434b44:	00001031
+42434b48:	00000000
+42434b4c:	00000301
+42434b50:	00000301
+42434b54:	00000301
+42434b58:	00000301
+42434b5c:	00000301
+42434b60:	00000301
+42434b64:	00000301
+42434b68:	00000000
+
+42434b6c:	"standby enter error: malloc memory to store int register value fail\n",0
+42434bb4:	"standby exit error: malloc memory to store int register value fail\n",0
+42434bf8:	01c2ac00
+42434bfc:	01c2b000
+42434c00:	01c2b400
+42434c04:	00000000
+42434c38:	01c28000
+42434c3c:	01c28400
+42434c40:	01c28800
+42434c44:	01c28c00
+42434c48:	01c29000
+42434c4c:	01c29400
+42434c50:	01c29800
+42434c54:	01c29c00
+42434c58:	00000000
+42434c5c:	00000000
+42434c60:	00000000
+42434c64:	00000000
+42434c68:	00000000
+42434c6c:	00000000
+42434c70:	00000000
+42434c74:	00000000
+42434c78:	00000000
+42434c7c:	ffffffff
+42434c80:	ffffffff
+42434c84:	ffffffff
+42434c88:	ffffffff
+42434c8c:	ffffffff
+42434c90:	ffffffff
+42434c94:	ffffffff
+42434c98:	ffffffff
+42434c9c:	ffffffff
+42434ca0:	ffffffff
+42434ca4:	ffffffff
+42434ca8:	ffffffff
+42434cac:	ffffffff
+42434cb0:	ffffffff
+42434cb4:	ffffffff
+42434cb8:	ffffffff
+42434cbc:	ffffffff
+42434cc0:	ffffffff
+42434cc4:	ffffffff
+42434cc8:	ffffffff
+42434ccc:	ffffffff
+42434cd0:	ffffffff
+42434cd4:	ffffffff
+42434cd8:	ffffffff
+42434cdc:	ffffffff
+42434ce0:	ffffffff
+42434ce4:	ffffffff
+42434ce8:	ffffffff
+42434cec:	ffffffff
+42434cf0:	ffffffff
+42434cf4:	ffffffff
+42434cf8:	ffffffff
+42434cfc:	ffffffff
+42434d00:	ffffffff
+42434d04:	ffffffff
+42434d08:	ffffffff
+42434d0c:	ffffffff
+42434d10:	ffffffff
+42434d14:	ffffffff
+42434d18:	ffffffff
+42434d1c:	ffffffff
+42434d20:	ffffffff
+42434d24:	ffffffff
+42434d28:	ffffffff
+42434d2c:	ffffffff
+42434d30:	ffffffff
+42434d34:	ffffffff
+42434d38:	ffffffff
+42434d3c:	ffffffff
+42434d40:	ffffffff
+42434d44:	ffffffff
+42434d48:	ffffffff
+42434d4c:	ffffffff
+42434d50:	ffffffff 
+42434d54:	ffffffff 
+42434d58:	ffffffff 
+42434d5c:	ffffffff 
+42434d60:	ffffffff 
+42434d64:	ffffffff 
+42434d68:	ffffffff 
+42434d6c:	ffffffff 
+42434d70:	ffffffff 
+42434d74:	ffffffff 
+42434d78:	ffffffff 
+42434d7c:	ffffffff 
+42434d80:	ffffffff 
+42434d84:	ffffffff 
+42434d88:	ffffffff 
+42434d8c:	ffffffff 
+42434d90:	ffffffff 
+42434d94:	ffffffff 
+42434d98:	ffffffff 
+42434d9c:	ffffffff 
+42434da0:	ffffffff 
+42434da4:	ffffffff 
+42434da8:	ffffffff 
+42434dac:	ffffffff 
+42434db0:	ffffffff 
+42434db4:	ffffffff 
+42434db8:	ffffffff 
+42434dbc:	ffffffff 
+42434dc0:	ffffffff 
+42434dc4:	ffffffff 
+42434dc8:	ffffffff 
+42434dcc:	ffffffff 
+42434dd0:	ffffffff 
+42434dd4:	ffffffff 
+42434dd8:	ffffffff 
+42434ddc:	ffffffff 
+42434de0:	ffffffff 
+42434de4:	ffffffff 
+42434de8:	ffffffff 
+42434dec:	ffffffff 
+42434df0:	ffffffff 
+42434df4:	ffffffff 
+42434df8:	ffffffff 
+42434dfc:	ffffffff 
+42434e00:	ffffffff 
+42434e04:	ffffffff 
+42434e08:	ffffffff 
+42434e0c:	ffffffff 
+42434e10:	ffffffff 
+42434e14:	ffffffff 
+42434e18:	ffffffff 
+42434e1c:	ffffffff 
+42434e20:	ffffffff 
+42434e24:	ffffffff 
+42434e28:	ffffffff 
+42434e2c:	ffffffff 
+42434e30:	ffffffff 
+42434e34:	ffffffff 
+42434e38:	ffffffff 
+42434e3c:	ffffffff 
+42434e40:	ffffffff 
+42434e44:	ffffffff 
+42434e48:	ffffffff 
+42434e4c:	ffffffff 
+42434e50:	ffffffff 
+42434e54:	ffffffff 
+42434e58:	ffffffff 
+42434e5c:	ffffffff 
+42434e60:	ffffffff 
+42434e64:	ffffffff 
+42434e68:	ffffffff 
+42434e6c:	ffffffff 
+42434e70:	ffffffff 
+42434e74:	ffffffff 
+42434e78:	ffffffff 
+42434e7c:	ffffffff 
+42434e80:	ffffffff 
+42434e84:	ffffffff 
+42434e88:	ffffffff 
+42434e8c:	ffffffff 
+42434e90:	ffffffff 
+42434e94:	ffffffff 
+42434e98:	ffffffff 
+42434e9c:	ffffffff 
+42434ea0:	ffffffff 
+42434ea4:	ffffffff 
+42434ea8:	ffffffff 
+42434eac:	ffffffff 
+42434eb0:	ffffffff 
+42434eb4:	ffffffff 
+42434eb8:	ffffffff 
+42434ebc:	ffffffff 
+42434ec0:	ffffffff 
+42434ec4:	ffffffff 
+42434ec8:	ffffffff 
+42434ecc:	ffffffff 
+42434ed0:	ffffffff 
+42434ed4:	ffffffff 
+42434ed8:	ffffffff 
+42434edc:	ffffffff 
+42434ee0:	ffffffff 
+42434ee4:	ffffffff 
+42434ee8:	ffffffff 
+42434eec:	ffffffff 
+42434ef0:	ffffffff 
+42434ef4:	ffffffff 
+42434ef8:	ffffffff 
+42434efc:	ffffffff 
+42434f00:	ffffffff 
+42434f04:	ffffffff 
+42434f08:	ffffffff 
+42434f0c:	ffffffff 
+42434f10:	ffffffff 
+42434f14:	ffffffff 
+42434f18:	ffffffff 
+42434f1c:	ffffffff 
+42434f20:	ffffffff 
+42434f24:	ffffffff 
+42434f28:	ffffffff 
+42434f2c:	ffffffff 
+42434f30:	ffffffff 
+42434f34:	ffffffff 
+42434f38:	ffffffff 
+42434f3c:	ffffffff 
+42434f40:	ffffffff 
+42434f44:	ffffffff 
+42434f48:	ffffffff 
+42434f4c:	ffffffff 
+42434f50:	ffffffff 
+42434f54:	ffffffff 
+42434f58:	ffffffff 
+42434f5c:	ffffffff 
+42434f60:	ffffffff 
+42434f64:	ffffffff 
+42434f68:	ffffffff 
+42434f6c:	ffffffff 
+42434f70:	ffffffff 
+42434f74:	ffffffff 
+42434f78:	ffffffff 
+42434f7c:	ffffffff 
+42434f80:	ffffffff 
+42434f84:	ffffffff 
+42434f88:	ffffffff 
+42434f8c:	ffffffff 
+42434f90:	ffffffff 
+42434f94:	ffffffff 
+42434f98:	ffffffff 
+42434f9c:	ffffffff 
+42434fa0:	ffffffff 
+42434fa4:	ffffffff 
+42434fa8:	ffffffff 
+42434fac:	ffffffff 
+42434fb0:	ffffffff 
+42434fb4:	ffffffff 
+42434fb8:	ffffffff 
+42434fbc:	ffffffff 
+42434fc0:	ffffffff 
+42434fc4:	ffffffff 
+42434fc8:	ffffffff 
+42434fcc:	ffffffff 
+42434fd0:	ffffffff 
+42434fd4:	ffffffff 
+42434fd8:	ffffffff 
+42434fdc:	ffffffff 
+42434fe0:	ffffffff 
+42434fe4:	ffffffff 
+42434fe8:	ffffffff 
+42434fec:	ffffffff 
+42434ff0:	ffffffff 
+42434ff4:	ffffffff 
+42434ff8:	ffffffff 
+42434ffc:	ffffffff 
+42435000:	ffffffff 
+42435004:	ffffffff 
+42435008:	ffffffff 
+4243500c:	ffffffff 
+42435010:	ffffffff 
+42435014:	ffffffff 
+42435018:	ffffffff 
+4243501c:	ffffffff 
+42435020:	ffffffff 
+42435024:	ffffffff 
+42435028:	ffffffff 
+4243502c:	ffffffff 
+42435030:	ffffffff 
+42435034:	ffffffff 
+42435038:	ffffffff 
+4243503c:	ffffffff 
+42435040:	ffffffff 
+42435044:	ffffffff 
+42435048:	ffffffff 
+4243504c:	ffffffff 
+42435050:	ffffffff 
+42435054:	ffffffff 
+42435058:	ffffffff 
+4243505c:	ffffffff 
+42435060:	ffffffff 
+42435064:	ffffffff 
+42435068:	ffffffff 
+4243506c:	ffffffff 
+42435070:	ffffffff 
+42435074:	ffffffff 
+42435078:	ffffffff 
+4243507c:	ffffffff 
+42435080:	ffffffff 
+42435084:	ffffffff 
+42435088:	ffffffff 
+4243508c:	ffffffff 
+42435090:	ffffffff 
+42435094:	ffffffff 
+42435098:	ffffffff 
+4243509c:	ffffffff 
+424350a0:	ffffffff 
+424350a4:	ffffffff 
+424350a8:	ffffffff 
+424350ac:	ffffffff 
+424350b0:	ffffffff 
+424350b4:	ffffffff 
+424350b8:	ffffffff 
+424350bc:	ffffffff 
+424350c0:	ffffffff 
+424350c4:	ffffffff 
+424350c8:	ffffffff 
+424350cc:	ffffffff 
+424350d0:	ffffffff 
+424350d4:	ffffffff 
+424350d8:	ffffffff 
+424350dc:	ffffffff 
+424350e0:	ffffffff 
+424350e4:	ffffffff 
+424350e8:	ffffffff 
+424350ec:	ffffffff 
+424350f0:	ffffffff 
+424350f4:	ffffffff 
+424350f8:	ffffffff 
+424350fc:	ffffffff 
+42435100:	ffffffff 
+42435104:	ffffffff 
+42435108:	ffffffff 
+4243510c:	ffffffff 
+42435110:	ffffffff 
+42435114:	ffffffff 
+42435118:	ffffffff 
+4243511c:	ffffffff 
+42435120:	ffffffff 
+42435124:	ffffffff 
+42435128:	ffffffff 
+4243512c:	ffffffff 
+42435130:	ffffffff 
+42435134:	ffffffff 
+42435138:	ffffffff 
+4243513c:	ffffffff 
+42435140:	ffffffff 
+42435144:	ffffffff 
+42435148:	ffffffff 
+4243514c:	ffffffff 
+42435150:	ffffffff 
+42435154:	ffffffff 
+42435158:	ffffffff 
+4243515c:	ffffffff 
+42435160:	ffffffff 
+42435164:	ffffffff 
+42435168:	ffffffff 
+4243516c:	ffffffff 
+42435170:	ffffffff 
+42435174:	ffffffff 
+42435178:	ffffffff 
+4243517c:	ffffffff 
+42435180:	ffffffff 
+42435184:	ffffffff 
+42435188:	ffffffff 
+4243518c:	ffffffff 
+42435190:	ffffffff 
+42435194:	ffffffff 
+42435198:	ffffffff 
+4243519c:	ffffffff 
+424351a0:	ffffffff 
+424351a4:	ffffffff 
+424351a8:	ffffffff 
+424351ac:	ffffffff 
+424351b0:	ffffffff 
+424351b4:	ffffffff 
+424351b8:	ffffffff 
+424351bc:	ffffffff 
+424351c0:	ffffffff 
+424351c4:	ffffffff 
+424351c8:	ffffffff 
+424351cc:	ffffffff 
+424351d0:	ffffffff 
+424351d4:	ffffffff 
+424351d8:	ffffffff 
+424351dc:	ffffffff 
+424351e0:	ffffffff 
+424351e4:	ffffffff 
+424351e8:	ffffffff 
+424351ec:	ffffffff 
+424351f0:	ffffffff 
+424351f4:	ffffffff 
+424351f8:	ffffffff 
+424351fc:	ffffffff 
+42435200:	ffffffff 
+42435204:	ffffffff 
+42435208:	ffffffff 
+4243520c:	ffffffff 
+42435210:	ffffffff 
+42435214:	ffffffff 
+42435218:	ffffffff 
+4243521c:	ffffffff 
+42435220:	ffffffff 
+42435224:	ffffffff 
+42435228:	ffffffff 
+4243522c:	ffffffff 
+42435230:	ffffffff 
+42435234:	ffffffff 
+42435238:	ffffffff 
+4243523c:	ffffffff 
+42435240:	ffffffff 
+42435244:	ffffffff 
+42435248:	ffffffff 
+4243524c:	ffffffff 
+42435250:	ffffffff 
+42435254:	ffffffff 
+42435258:	ffffffff 
+4243525c:	ffffffff 
+42435260:	ffffffff 
+42435264:	ffffffff 
+42435268:	ffffffff 
+4243526c:	ffffffff 
+42435270:	ffffffff 
+42435274:	ffffffff 
+42435278:	ffffffff 
+4243527c:	ffffffff 
+42435280:	ffffffff 
+42435284:	ffffffff 
+42435288:	ffffffff 
+4243528c:	ffffffff 
+42435290:	ffffffff 
+42435294:	ffffffff 
+42435298:	ffffffff 
+4243529c:	ffffffff 
+424352a0:	ffffffff 
+424352a4:	ffffffff 
+424352a8:	ffffffff 
+424352ac:	ffffffff 
+424352b0:	ffffffff 
+424352b4:	ffffffff 
+424352b8:	ffffffff 
+424352bc:	ffffffff 
+424352c0:	ffffffff 
+424352c4:	ffffffff 
+424352c8:	ffffffff 
+424352cc:	ffffffff 
+424352d0:	ffffffff 
+424352d4:	ffffffff 
+424352d8:	ffffffff 
+424352dc:	ffffffff 
+424352e0:	ffffffff 
+424352e4:	ffffffff 
+424352e8:	ffffffff 
+424352ec:	ffffffff 
+424352f0:	ffffffff 
+424352f4:	ffffffff 
+424352f8:	ffffffff 
+424352fc:	ffffffff 
+42435300:	ffffffff 
+42435304:	ffffffff 
+42435308:	ffffffff 
+4243530c:	ffffffff 
+42435310:	ffffffff 
+42435314:	ffffffff 
+42435318:	ffffffff 
+4243531c:	ffffffff 
+42435320:	ffffffff 
+42435324:	ffffffff 
+42435328:	ffffffff 
+4243532c:	ffffffff 
+42435330:	ffffffff 
+42435334:	ffffffff 
+42435338:	ffffffff 
+4243533c:	ffffffff 
+42435340:	ffffffff 
+42435344:	ffffffff 
+42435348:	ffffffff 
+4243534c:	ffffffff 
+42435350:	ffffffff 
+42435354:	ffffffff 
+42435358:	ffffffff 
+4243535c:	ffffffff 
+42435360:	ffffffff 
+42435364:	ffffffff 
+42435368:	ffffffff 
+4243536c:	ffffffff 
+42435370:	ffffffff 
+42435374:	ffffffff 
+42435378:	ffffffff 
+4243537c:	ffffffff 
+42435380:	ffffffff 
+42435384:	ffffffff 
+42435388:	ffffffff 
+4243538c:	ffffffff 
+42435390:	ffffffff 
+42435394:	ffffffff 
+42435398:	ffffffff 
+4243539c:	ffffffff 
+424353a0:	ffffffff 
+424353a4:	ffffffff 
+424353a8:	ffffffff 
+424353ac:	ffffffff 
+424353b0:	ffffffff 
+424353b4:	ffffffff 
+424353b8:	ffffffff 
+424353bc:	ffffffff 
+424353c0:	ffffffff 
+424353c4:	ffffffff 
+424353c8:	ffffffff 
+424353cc:	ffffffff 
+424353d0:	ffffffff 
+424353d4:	ffffffff 
+424353d8:	ffffffff 
+424353dc:	ffffffff 
+424353e0:	ffffffff 
+424353e4:	ffffffff 
+424353e8:	ffffffff 
+424353ec:	ffffffff 
+424353f0:	ffffffff 
+424353f4:	ffffffff 
+424353f8:	ffffffff 
+424353fc:	ffffffff 
+42435400:	ffffffff 
+42435404:	ffffffff 
+42435408:	ffffffff 
+4243540c:	ffffffff 
+42435410:	ffffffff 
+42435414:	ffffffff 
+42435418:	ffffffff 
+4243541c:	ffffffff 
+42435420:	ffffffff 
+42435424:	ffffffff 
+42435428:	ffffffff 
+4243542c:	ffffffff 
+42435430:	ffffffff 
+42435434:	ffffffff 
+42435438:	ffffffff 
+4243543c:	ffffffff 
+42435440:	ffffffff 
+42435444:	ffffffff 
+42435448:	ffffffff 
+4243544c:	ffffffff 
+42435450:	ffffffff 
+42435454:	ffffffff 
+42435458:	ffffffff 
+4243545c:	ffffffff 
+42435460:	ffffffff 
+42435464:	ffffffff 
+42435468:	ffffffff 
+4243546c:	ffffffff 
+42435470:	ffffffff 
+42435474:	ffffffff 
+42435478:	ffffffff 
+4243547c:	ffffffff 
+42435480:	ffffffff 
+42435484:	ffffffff 
+42435488:	ffffffff 
+4243548c:	ffffffff 
+42435490:	ffffffff 
+42435494:	ffffffff 
+42435498:	ffffffff 
+4243549c:	ffffffff 
+424354a0:	ffffffff 
+424354a4:	ffffffff 
+424354a8:	ffffffff 
+424354ac:	ffffffff 
+424354b0:	ffffffff 
+424354b4:	ffffffff 
+424354b8:	ffffffff 
+424354bc:	ffffffff 
+424354c0:	ffffffff 
+424354c4:	ffffffff 
+424354c8:	ffffffff 
+424354cc:	ffffffff 
+424354d0:	ffffffff 
+424354d4:	ffffffff 
+424354d8:	ffffffff 
+424354dc:	ffffffff 
+424354e0:	ffffffff 
+424354e4:	ffffffff 
+424354e8:	ffffffff 
+424354ec:	ffffffff 
+424354f0:	ffffffff 
+424354f4:	ffffffff 
+424354f8:	ffffffff 
+424354fc:	ffffffff 
+42435500:	ffffffff 
+42435504:	ffffffff 
+42435508:	ffffffff 
+4243550c:	ffffffff 
+42435510:	ffffffff 
+42435514:	ffffffff 
+42435518:	ffffffff 
+4243551c:	ffffffff 
+42435520:	ffffffff 
+42435524:	ffffffff 
+42435528:	ffffffff 
+4243552c:	ffffffff 
+42435530:	ffffffff 
+42435534:	ffffffff 
+42435538:	ffffffff 
+4243553c:	ffffffff 
+42435540:	ffffffff 
+42435544:	ffffffff 
+42435548:	ffffffff 
+4243554c:	ffffffff 
+42435550:	ffffffff 
+42435554:	ffffffff 
+42435558:	ffffffff 
+4243555c:	ffffffff 
+42435560:	ffffffff 
+42435564:	ffffffff 
+42435568:	ffffffff 
+4243556c:	ffffffff 
+42435570:	ffffffff 
+42435574:	ffffffff 
+42435578:	ffffffff 
+4243557c:	ffffffff 
+42435580:	ffffffff 
+42435584:	ffffffff 
+42435588:	ffffffff 
+4243558c:	ffffffff 
+42435590:	ffffffff 
+42435594:	ffffffff 
+42435598:	ffffffff 
+4243559c:	ffffffff 
+424355a0:	ffffffff 
+424355a4:	ffffffff 
+424355a8:	ffffffff 
+424355ac:	ffffffff 
+424355b0:	ffffffff 
+424355b4:	ffffffff 
+424355b8:	ffffffff 
+424355bc:	ffffffff 
+424355c0:	ffffffff 
+424355c4:	ffffffff 
+424355c8:	ffffffff 
+424355cc:	ffffffff 
+424355d0:	ffffffff 
+424355d4:	ffffffff 
+424355d8:	ffffffff 
+424355dc:	ffffffff 
+424355e0:	ffffffff 
+424355e4:	ffffffff 
+424355e8:	ffffffff 
+424355ec:	ffffffff 
+424355f0:	ffffffff 
+424355f4:	ffffffff 
+424355f8:	ffffffff 
+424355fc:	ffffffff 
+42435600:	ffffffff 
+42435604:	ffffffff 
+42435608:	ffffffff 
+4243560c:	ffffffff 
+42435610:	ffffffff 
+42435614:	ffffffff 
+42435618:	ffffffff 
+4243561c:	ffffffff 
+42435620:	ffffffff 
+42435624:	ffffffff 
+42435628:	ffffffff 
+4243562c:	ffffffff 
+42435630:	ffffffff 
+42435634:	ffffffff 
+42435638:	ffffffff 
+4243563c:	ffffffff 
+42435640:	ffffffff 
+42435644:	ffffffff 
+42435648:	ffffffff 
+4243564c:	ffffffff 
+42435650:	ffffffff 
+42435654:	ffffffff 
+42435658:	ffffffff 
+4243565c:	ffffffff 
+42435660:	ffffffff 
+42435664:	ffffffff 
+42435668:	ffffffff 
+4243566c:	ffffffff 
+42435670:	ffffffff 
+42435674:	ffffffff 
+42435678:	ffffffff 
+4243567c:	ffffffff 
+42435680:	ffffffff 
+42435684:	ffffffff 
+42435688:	ffffffff 
+4243568c:	ffffffff 
+42435690:	ffffffff 
+42435694:	ffffffff 
+42435698:	ffffffff 
+4243569c:	ffffffff 
+424356a0:	ffffffff 
+424356a4:	ffffffff 
+424356a8:	ffffffff 
+424356ac:	ffffffff 
+424356b0:	ffffffff 
+424356b4:	ffffffff 
+424356b8:	ffffffff 
+424356bc:	ffffffff 
+424356c0:	ffffffff 
+424356c4:	ffffffff 
+424356c8:	ffffffff 
+424356cc:	ffffffff 
+424356d0:	ffffffff 
+424356d4:	ffffffff 
+424356d8:	ffffffff 
+424356dc:	ffffffff 
+424356e0:	ffffffff 
+424356e4:	ffffffff 
+424356e8:	ffffffff 
+424356ec:	ffffffff 
+424356f0:	ffffffff 
+424356f4:	ffffffff 
+424356f8:	ffffffff 
+424356fc:	ffffffff 
+42435700:	ffffffff 
+42435704:	ffffffff 
+42435708:	ffffffff 
+4243570c:	ffffffff 
+42435710:	ffffffff 
+42435714:	ffffffff 
+42435718:	ffffffff 
+4243571c:	ffffffff 
+42435720:	ffffffff 
+42435724:	ffffffff 
+42435728:	ffffffff 
+4243572c:	ffffffff 
+42435730:	ffffffff 
+42435734:	ffffffff 
+42435738:	ffffffff 
+4243573c:	ffffffff 
+42435740:	ffffffff 
+42435744:	ffffffff 
+42435748:	ffffffff 
+4243574c:	ffffffff 
+42435750:	ffffffff 
+42435754:	ffffffff 
+42435758:	ffffffff 
+4243575c:	ffffffff 
+42435760:	ffffffff 
+42435764:	ffffffff 
+42435768:	ffffffff 
+4243576c:	ffffffff 
+42435770:	ffffffff 
+42435774:	ffffffff 
+42435778:	ffffffff 
+4243577c:	ffffffff 
+42435780:	ffffffff 
+42435784:	ffffffff 
+42435788:	ffffffff 
+4243578c:	ffffffff 
+42435790:	ffffffff 
+42435794:	ffffffff 
+42435798:	ffffffff 
+4243579c:	ffffffff 
+424357a0:	ffffffff 
+424357a4:	ffffffff 
+424357a8:	ffffffff 
+424357ac:	ffffffff 
+424357b0:	ffffffff 
+424357b4:	ffffffff 
+424357b8:	ffffffff 
+424357bc:	ffffffff 
+424357c0:	ffffffff 
+424357c4:	ffffffff 
+424357c8:	ffffffff 
+424357cc:	ffffffff 
+424357d0:	ffffffff 
+424357d4:	ffffffff 
+424357d8:	ffffffff 
+424357dc:	ffffffff 
+424357e0:	ffffffff 
+424357e4:	ffffffff 
+424357e8:	ffffffff 
+424357ec:	ffffffff 
+424357f0:	ffffffff 
+424357f4:	ffffffff 
+424357f8:	ffffffff 
+424357fc:	ffffffff 
+42435800:	ffffffff 
+42435804:	ffffffff 
+42435808:	ffffffff 
+4243580c:	ffffffff 
+42435810:	ffffffff 
+42435814:	ffffffff 
+42435818:	ffffffff 
+4243581c:	ffffffff 
+42435820:	ffffffff 
+42435824:	ffffffff 
+42435828:	ffffffff 
+4243582c:	ffffffff 
+42435830:	ffffffff 
+42435834:	ffffffff 
+42435838:	ffffffff 
+4243583c:	ffffffff 
+42435840:	ffffffff 
+42435844:	ffffffff 
+42435848:	ffffffff 
+4243584c:	ffffffff 
+42435850:	ffffffff 
+42435854:	ffffffff 
+42435858:	ffffffff 
+4243585c:	ffffffff 
+42435860:	ffffffff 
+42435864:	ffffffff 
+42435868:	ffffffff 
+4243586c:	ffffffff 
+42435870:	ffffffff 
+42435874:	ffffffff 
+42435878:	ffffffff 
+4243587c:	ffffffff 
+42435880:	ffffffff 
+42435884:	ffffffff 
+42435888:	ffffffff 
+4243588c:	ffffffff 
+42435890:	ffffffff 
+42435894:	ffffffff 
+42435898:	ffffffff 
+4243589c:	ffffffff 
+424358a0:	ffffffff 
+424358a4:	ffffffff 
+424358a8:	ffffffff 
+424358ac:	ffffffff 
+424358b0:	ffffffff 
+424358b4:	ffffffff 
+424358b8:	ffffffff 
+424358bc:	ffffffff 
+424358c0:	ffffffff 
+424358c4:	ffffffff 
+424358c8:	ffffffff 
+424358cc:	ffffffff 
+424358d0:	ffffffff 
+424358d4:	ffffffff 
+424358d8:	ffffffff 
+424358dc:	ffffffff 
+424358e0:	ffffffff 
+424358e4:	ffffffff 
+424358e8:	ffffffff 
+424358ec:	ffffffff 
+424358f0:	ffffffff 
+424358f4:	ffffffff 
+424358f8:	ffffffff 
+424358fc:	ffffffff 
+42435900:	ffffffff 
+42435904:	ffffffff 
+42435908:	ffffffff 
+4243590c:	ffffffff 
+42435910:	ffffffff 
+42435914:	ffffffff 
+42435918:	ffffffff 
+4243591c:	ffffffff 
+42435920:	ffffffff 
+42435924:	ffffffff 
+42435928:	ffffffff 
+4243592c:	ffffffff 
+42435930:	ffffffff 
+42435934:	ffffffff 
+42435938:	ffffffff 
+4243593c:	ffffffff 
+42435940:	ffffffff 
+42435944:	ffffffff 
+42435948:	ffffffff 
+4243594c:	ffffffff 
+42435950:	ffffffff 
+42435954:	ffffffff 
+42435958:	ffffffff 
+4243595c:	ffffffff 
+42435960:	ffffffff 
+42435964:	ffffffff 
+42435968:	ffffffff 
+4243596c:	ffffffff 
+42435970:	ffffffff 
+42435974:	ffffffff 
+42435978:	ffffffff 
+4243597c:	ffffffff 
+42435980:	ffffffff 
+42435984:	ffffffff 
+42435988:	ffffffff 
+4243598c:	ffffffff 
+42435990:	ffffffff 
+42435994:	ffffffff 
+42435998:	ffffffff 
+4243599c:	ffffffff 
+424359a0:	ffffffff 
+424359a4:	ffffffff 
+424359a8:	ffffffff 
+424359ac:	ffffffff 
+424359b0:	ffffffff 
+424359b4:	ffffffff 
+424359b8:	ffffffff 
+424359bc:	ffffffff 
+424359c0:	ffffffff 
+424359c4:	ffffffff 
+424359c8:	ffffffff 
+424359cc:	ffffffff 
+424359d0:	ffffffff 
+424359d4:	ffffffff 
+424359d8:	ffffffff 
+424359dc:	ffffffff 
+424359e0:	ffffffff 
+424359e4:	ffffffff 
+424359e8:	ffffffff 
+424359ec:	ffffffff 
+424359f0:	ffffffff 
+424359f4:	ffffffff 
+424359f8:	ffffffff 
+424359fc:	ffffffff 
+42435a00:	ffffffff 
+42435a04:	ffffffff 
+42435a08:	ffffffff 
+42435a0c:	ffffffff 
+42435a10:	ffffffff 
+42435a14:	ffffffff 
+42435a18:	ffffffff 
+42435a1c:	ffffffff 
+42435a20:	ffffffff 
+42435a24:	ffffffff 
+42435a28:	ffffffff 
+42435a2c:	ffffffff 
+42435a30:	ffffffff 
+42435a34:	ffffffff 
+42435a38:	ffffffff 
+42435a3c:	ffffffff 
+42435a40:	ffffffff 
+42435a44:	ffffffff 
+42435a48:	ffffffff 
+42435a4c:	ffffffff 
+42435a50:	ffffffff 
+42435a54:	ffffffff 
+42435a58:	ffffffff 
+42435a5c:	ffffffff 
+42435a60:	ffffffff 
+42435a64:	ffffffff 
+42435a68:	ffffffff 
+42435a6c:	ffffffff 
+42435a70:	ffffffff 
+42435a74:	ffffffff 
+42435a78:	ffffffff 
+42435a7c:	ffffffff 
+42435a80:	ffffffff 
+42435a84:	ffffffff 
+42435a88:	ffffffff 
+42435a8c:	ffffffff 
+42435a90:	ffffffff 
+42435a94:	ffffffff 
+42435a98:	ffffffff 
+42435a9c:	ffffffff 
+42435aa0:	ffffffff 
+42435aa4:	ffffffff 
+42435aa8:	ffffffff 
+42435aac:	ffffffff 
+42435ab0:	ffffffff 
+42435ab4:	ffffffff 
+42435ab8:	ffffffff 
+42435abc:	ffffffff 
+42435ac0:	ffffffff 
+42435ac4:	ffffffff 
+42435ac8:	ffffffff 
+42435acc:	ffffffff 
+42435ad0:	ffffffff 
+42435ad4:	ffffffff 
+42435ad8:	ffffffff 
+42435adc:	ffffffff 
+42435ae0:	ffffffff 
+42435ae4:	ffffffff 
+42435ae8:	ffffffff 
+42435aec:	ffffffff 
+42435af0:	ffffffff 
+42435af4:	ffffffff 
+42435af8:	ffffffff 
+42435afc:	ffffffff 
+42435b00:	ffffffff 
+42435b04:	ffffffff 
+42435b08:	ffffffff 
+42435b0c:	ffffffff 
+42435b10:	ffffffff 
+42435b14:	ffffffff 
+42435b18:	ffffffff 
+42435b1c:	ffffffff 
+42435b20:	ffffffff 
+42435b24:	ffffffff 
+42435b28:	ffffffff 
+42435b2c:	ffffffff 
+42435b30:	ffffffff 
+42435b34:	ffffffff 
+42435b38:	ffffffff 
+42435b3c:	ffffffff 
+42435b40:	ffffffff 
+42435b44:	ffffffff 
+42435b48:	ffffffff 
+42435b4c:	ffffffff 
+42435b50:	ffffffff 
+42435b54:	ffffffff 
+42435b58:	ffffffff 
+42435b5c:	ffffffff 
+42435b60:	ffffffff 
+42435b64:	ffffffff 
+42435b68:	ffffffff 
+42435b6c:	ffffffff 
+42435b70:	ffffffff 
+42435b74:	ffffffff 
+42435b78:	ffffffff 
+42435b7c:	ffffffff 
+42435b80:	ffffffff 
+42435b84:	ffffffff 
+42435b88:	ffffffff 
+42435b8c:	ffffffff 
+42435b90:	ffffffff 
+42435b94:	ffffffff 
+42435b98:	ffffffff 
+42435b9c:	ffffffff 
+42435ba0:	ffffffff 
+42435ba4:	ffffffff 
+42435ba8:	ffffffff 
+42435bac:	ffffffff 
+42435bb0:	ffffffff 
+42435bb4:	ffffffff 
+42435bb8:	ffffffff 
+42435bbc:	ffffffff 
+42435bc0:	ffffffff 
+42435bc4:	ffffffff 
+42435bc8:	ffffffff 
+42435bcc:	ffffffff 
+42435bd0:	ffffffff 
+42435bd4:	ffffffff 
+42435bd8:	ffffffff 
+42435bdc:	ffffffff 
+42435be0:	ffffffff 
+42435be4:	ffffffff 
+42435be8:	ffffffff 
+42435bec:	ffffffff 
+42435bf0:	ffffffff 
+42435bf4:	ffffffff 
+42435bf8:	ffffffff 
+42435bfc:	ffffffff 
+42435c00:	ffffffff 
+42435c04:	ffffffff 
+42435c08:	ffffffff 
+42435c0c:	ffffffff 
+42435c10:	ffffffff 
+42435c14:	ffffffff 
+42435c18:	ffffffff 
+42435c1c:	ffffffff 
+42435c20:	ffffffff 
+42435c24:	ffffffff 
+42435c28:	ffffffff 
+42435c2c:	ffffffff 
+42435c30:	ffffffff 
+42435c34:	ffffffff 
+42435c38:	ffffffff 
+42435c3c:	ffffffff 
+42435c40:	ffffffff 
+42435c44:	ffffffff 
+42435c48:	ffffffff 
+42435c4c:	ffffffff 
+42435c50:	ffffffff 
+42435c54:	ffffffff 
+42435c58:	ffffffff 
+42435c5c:	ffffffff 
+42435c60:	ffffffff 
+42435c64:	ffffffff 
+42435c68:	ffffffff 
+42435c6c:	ffffffff 
+42435c70:	ffffffff 
+42435c74:	ffffffff 
+42435c78:	ffffffff 
+42435c7c:	ffffffff 
+42435c80:	ffffffff 
+42435c84:	ffffffff 
+42435c88:	ffffffff 
+42435c8c:	ffffffff 
+42435c90:	ffffffff 
+42435c94:	ffffffff 
+42435c98:	ffffffff 
+42435c9c:	ffffffff 
+42435ca0:	ffffffff 
+42435ca4:	ffffffff 
+42435ca8:	ffffffff 
+42435cac:	ffffffff 
+42435cb0:	ffffffff 
+42435cb4:	ffffffff 
+42435cb8:	ffffffff 
+42435cbc:	ffffffff 
+42435cc0:	ffffffff 
+42435cc4:	ffffffff 
+42435cc8:	ffffffff 
+42435ccc:	ffffffff 
+42435cd0:	ffffffff 
+42435cd4:	ffffffff 
+42435cd8:	ffffffff 
+42435cdc:	ffffffff 
+42435ce0:	ffffffff 
+42435ce4:	ffffffff 
+42435ce8:	ffffffff 
+42435cec:	ffffffff 
+42435cf0:	ffffffff 
+42435cf4:	ffffffff 
+42435cf8:	ffffffff 
+42435cfc:	ffffffff 
+42435d00:	ffffffff 
+42435d04:	ffffffff 
+42435d08:	ffffffff 
+42435d0c:	ffffffff 
+42435d10:	ffffffff 
+42435d14:	ffffffff 
+42435d18:	ffffffff 
+42435d1c:	ffffffff 
+42435d20:	ffffffff 
+42435d24:	ffffffff 
+42435d28:	ffffffff 
+42435d2c:	ffffffff 
+42435d30:	ffffffff 
+42435d34:	ffffffff 
+42435d38:	ffffffff 
+42435d3c:	ffffffff 
+42435d40:	ffffffff 
+42435d44:	ffffffff 
+42435d48:	ffffffff 
+42435d4c:	ffffffff 
+42435d50:	ffffffff 
+42435d54:	ffffffff 
+42435d58:	ffffffff 
+42435d5c:	ffffffff 
+42435d60:	ffffffff 
+42435d64:	ffffffff 
+42435d68:	ffffffff 
+42435d6c:	ffffffff 
+42435d70:	ffffffff 
+42435d74:	ffffffff 
+42435d78:	ffffffff 
+42435d7c:	ffffffff 
+42435d80:	ffffffff 
+42435d84:	ffffffff 
+42435d88:	ffffffff 
+42435d8c:	ffffffff 
+42435d90:	ffffffff 
+42435d94:	ffffffff 
+42435d98:	ffffffff 
+42435d9c:	ffffffff 
+42435da0:	ffffffff 
+42435da4:	ffffffff 
+42435da8:	ffffffff 
+42435dac:	ffffffff 
+42435db0:	ffffffff 
+42435db4:	ffffffff 
+42435db8:	ffffffff 
+42435dbc:	ffffffff 
+42435dc0:	ffffffff 
+42435dc4:	ffffffff 
+42435dc8:	ffffffff 
+42435dcc:	ffffffff 
+42435dd0:	ffffffff 
+42435dd4:	ffffffff 
+42435dd8:	ffffffff 
+42435ddc:	ffffffff 
+42435de0:	ffffffff 
+42435de4:	ffffffff 
+42435de8:	ffffffff 
+42435dec:	ffffffff 
+42435df0:	ffffffff 
+42435df4:	ffffffff 
+42435df8:	ffffffff 
+42435dfc:	ffffffff 
+42435e00:	ffffffff 
+42435e04:	ffffffff 
+42435e08:	ffffffff 
+42435e0c:	ffffffff 
+42435e10:	ffffffff 
+42435e14:	ffffffff 
+42435e18:	ffffffff 
+42435e1c:	ffffffff 
+42435e20:	ffffffff 
+42435e24:	ffffffff 
+42435e28:	ffffffff 
+42435e2c:	ffffffff 
+42435e30:	ffffffff 
+42435e34:	ffffffff 
+42435e38:	ffffffff 
+42435e3c:	ffffffff 
+42435e40:	ffffffff 
+42435e44:	ffffffff 
+42435e48:	ffffffff 
+42435e4c:	ffffffff 
+42435e50:	ffffffff 
+42435e54:	ffffffff 
+42435e58:	ffffffff 
+42435e5c:	ffffffff 
+42435e60:	ffffffff 
+42435e64:	ffffffff 
+42435e68:	ffffffff 
+42435e6c:	ffffffff 
+42435e70:	ffffffff 
+42435e74:	ffffffff 
+42435e78:	ffffffff 
+42435e7c:	ffffffff 
+42435e80:	ffffffff 
+42435e84:	ffffffff 
+42435e88:	ffffffff 
+42435e8c:	ffffffff 
+42435e90:	ffffffff 
+42435e94:	ffffffff 
+42435e98:	ffffffff 
+42435e9c:	ffffffff 
+42435ea0:	ffffffff 
+42435ea4:	ffffffff 
+42435ea8:	ffffffff 
+42435eac:	ffffffff 
+42435eb0:	ffffffff 
+42435eb4:	ffffffff 
+42435eb8:	ffffffff 
+42435ebc:	ffffffff 
+42435ec0:	ffffffff 
+42435ec4:	ffffffff 
+42435ec8:	ffffffff 
+42435ecc:	ffffffff 
+42435ed0:	ffffffff 
+42435ed4:	ffffffff 
+42435ed8:	ffffffff 
+42435edc:	ffffffff 
+42435ee0:	ffffffff 
+42435ee4:	ffffffff 
+42435ee8:	ffffffff 
+42435eec:	ffffffff 
+42435ef0:	ffffffff 
+42435ef4:	ffffffff 
+42435ef8:	ffffffff 
+42435efc:	ffffffff 
+42435f00:	ffffffff 
+42435f04:	ffffffff 
+42435f08:	ffffffff 
+42435f0c:	ffffffff 
+42435f10:	ffffffff 
+42435f14:	ffffffff 
+42435f18:	ffffffff 
+42435f1c:	ffffffff 
+42435f20:	ffffffff 
+42435f24:	ffffffff 
+42435f28:	ffffffff 
+42435f2c:	ffffffff 
+42435f30:	ffffffff 
+42435f34:	ffffffff 
+42435f38:	ffffffff 
+42435f3c:	ffffffff 
+42435f40:	ffffffff 
+42435f44:	ffffffff 
+42435f48:	ffffffff 
+42435f4c:	ffffffff 
+42435f50:	ffffffff 
+42435f54:	ffffffff 
+42435f58:	ffffffff 
+42435f5c:	ffffffff 
+42435f60:	ffffffff 
+42435f64:	ffffffff 
+42435f68:	ffffffff 
+42435f6c:	ffffffff 
+42435f70:	ffffffff 
+42435f74:	ffffffff 
+42435f78:	ffffffff 
+42435f7c:	ffffffff 
+42435f80:	ffffffff 
+42435f84:	ffffffff 
+42435f88:	ffffffff 
+42435f8c:	ffffffff 
+42435f90:	ffffffff 
+42435f94:	ffffffff 
+42435f98:	ffffffff 
+42435f9c:	ffffffff 
+42435fa0:	ffffffff 
+42435fa4:	ffffffff 
+42435fa8:	ffffffff 
+42435fac:	ffffffff 
+42435fb0:	ffffffff 
+42435fb4:	ffffffff 
+42435fb8:	ffffffff 
+42435fbc:	ffffffff 
+42435fc0:	ffffffff 
+42435fc4:	ffffffff 
+42435fc8:	ffffffff 
+42435fcc:	ffffffff 
+42435fd0:	ffffffff 
+42435fd4:	ffffffff 
+42435fd8:	ffffffff 
+42435fdc:	ffffffff 
+42435fe0:	ffffffff 
+42435fe4:	ffffffff 
+42435fe8:	ffffffff 
+42435fec:	ffffffff 
+42435ff0:	ffffffff 
+42435ff4:	ffffffff 
+42435ff8:	ffffffff 
+42435ffc:	ffffffff 
