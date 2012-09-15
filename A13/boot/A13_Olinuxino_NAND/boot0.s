@@ -3654,8 +3654,8 @@ f_3b84_:
     3bc8:	e2802030 	add	r2, r0, #48	; 0x30
     3bcc:	e5953008 	ldr	r3, [r5, #8]
     3bd0:	e3a00000 	mov	r0, #0
-    3bd4:	359f1a80 	ldrcc	r1, [pc, #2688]	; 0x465c
-    3bd8:	259f1a80 	ldrcs	r1, [pc, #2688]	; 0x4660
+    3bd4:	359f1a80 	ldrcc	r1, [0x465c]
+    3bd8:	259f1a80 	ldrcs	r1, [0x4660]
     3bdc:	e58d3000 	str	r3, [sp]
     3be0:	e1a0300c 	mov	r3, ip
     3be4:	ebffff0f 	bl	f_3828_
@@ -4224,7 +4224,7 @@ f_43cc_:
     440c:	e59f1260 	ldr	r1, [0x4674]
     4410:	e3560000 	cmp	r6, #0
     4414:	e0810100 	add	r0, r1, r0, lsl #2
-    4418:	059f1258 	ldreq	r1, [pc, #600]	; 0x4678
+    4418:	059f1258 	ldreq	r1, [0x4678]
     441c:	0a00001c 	beq	0x4494
     4420:	e3a01000 	mov	r1, #0
     4424:	ea00000c 	b	0x445c

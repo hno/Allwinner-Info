@@ -5,68 +5,68 @@ boot1.bin:     filformat binary
 Disassembly of section .data:
 
 42400000 <.data>:
-       4:	Magic     : eGON.BT1
-      10:	Length    : 221184
-      14:	HSize     : 48
-      18:	HEAD ver  : 1100
-      1c:	FILE ver  : 1230
-      20:	BOOT ver  : 1230
-      24:	eGON ver  : 1100
-      28:	platform  : 1.3.1a\0\0
-      30:	FHSize    : 33488
-      34:	FILE ver  : 1230
-      38:	UART port : 1
-      3c:	 GPIO 0   : port=G3, sel=4, pull=1, drv=255, data=255, reserved=00,00
-      44:	 GPIO 1   : port=G4, sel=4, pull=1, drv=255, data=255, reserved=00,00
-      4c:	DRAM base : 0x40000000
-      50:	DRAM clk  : 408
-      54:	DRAM type : 3
-      58:	DRAM rank : 1
-      5c:	DRAM den  : 4096
-      60:	DRAM iow  : 16
-      64:	DRAM busw : 16
-      68:	DRAM cas  : 9
-      6c:	DRAM zq   : 123
-      70:	DRAM odt  : 0x0
-      74:	DRAM size : 512
-      78:	DRAM tpr0 : 0x42d899b7
-      7c:	DRAM tpr1 : 0xa090
-      80:	DRAM tpr2 : 0x22a00
-      84:	DRAM tpr3 : 0x0
-      88:	DRAM tpr4 : 0x0
-      8c:	DRAM tpr5 : 0x0
-      90:	DRAM emr1 : 0x0
-      94:	DRAM emr2 : 0x10
-      98:	DRAM emr3 : 0x0
-      9c:	SCRIPT 32K
-    809c:	Set Clock : 1008
-    80a0:	Set Core Vol: 1400
-    80a4:	Vol Threshold: 0
-    80a8:	TWI port  : 0
-    80ac:	 GPIO 0   : port=B0, sel=2, pull=1, drv=255, data=255, reserved=00,00
-    80b4:	 GPIO 1   : port=B1, sel=2, pull=1, drv=255, data=255, reserved=00,00
-    80bc:	Debug     : 0
-    80c0:	Hold key min : 0
-    80c4:	Hold key max : 0
-    80c8:	Work mode : 8
-    80cc:	STORAGE   :
-    80cc:	 type   : 0
-    81d0:	 DATA 00  : 01 00 01 00 01 01 01 01 01 02 10 00 00 01 00 08
-    81e0:	 DATA 10  : 88 01 0f 03 ad d7 94 da ff ff ff ff b6 03 00 00
-    81f0:	 DATA 20  : b6 03 00 00 04 06 01 00 00 00 00 00 00 00 00 00
-    8200:	 DATA 30  : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-    8210:	 DATA 40  : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-    8220:	 DATA 50  : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-    8230:	 DATA 60  : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-    8240:	 DATA 70  : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-    8250:	 DATA 80  : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-    8260:	 DATA 90  : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-    8270:	 DATA a0  : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-    8280:	 DATA b0  : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-    8290:	 DATA c0  : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-    82a0:	 DATA d0  : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-    82b0:	 DATA e0  : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-    82c0:	 DATA f0  : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+42400004:	Magic     : eGON.BT1
+42400010:	Length    : 221184
+42400014:	HSize     : 48
+42400018:	HEAD ver  : 1100
+4240001c:	FILE ver  : 1230
+42400020:	BOOT ver  : 1230
+42400024:	eGON ver  : 1100
+42400028:	platform  : 1.3.1a\0\0
+42400030:	FHSize    : 33488
+42400034:	FILE ver  : 1230
+42400038:	UART port : 1
+4240003c:	 GPIO 0   : port=G3, sel=4, pull=1, drv=255, data=255, reserved=00,00
+42400044:	 GPIO 1   : port=G4, sel=4, pull=1, drv=255, data=255, reserved=00,00
+4240004c:	DRAM base : 0x40000000
+42400050:	DRAM clk  : 408
+42400054:	DRAM type : 3
+42400058:	DRAM rank : 1
+4240005c:	DRAM den  : 4096
+42400060:	DRAM iow  : 16
+42400064:	DRAM busw : 16
+42400068:	DRAM cas  : 9
+4240006c:	DRAM zq   : 123
+42400070:	DRAM odt  : 0x0
+42400074:	DRAM size : 512
+42400078:	DRAM tpr0 : 0x42d899b7
+4240007c:	DRAM tpr1 : 0xa090
+42400080:	DRAM tpr2 : 0x22a00
+42400084:	DRAM tpr3 : 0x0
+42400088:	DRAM tpr4 : 0x0
+4240008c:	DRAM tpr5 : 0x0
+42400090:	DRAM emr1 : 0x0
+42400094:	DRAM emr2 : 0x10
+42400098:	DRAM emr3 : 0x0
+4240009c:	SCRIPT 32K
+4240809c:	Set Clock : 1008
+424080a0:	Set Core Vol: 1400
+424080a4:	Vol Threshold: 0
+424080a8:	TWI port  : 0
+424080ac:	 GPIO 0   : port=B0, sel=2, pull=1, drv=255, data=255, reserved=00,00
+424080b4:	 GPIO 1   : port=B1, sel=2, pull=1, drv=255, data=255, reserved=00,00
+424080bc:	Debug     : 0
+424080c0:	Hold key min : 0
+424080c4:	Hold key max : 0
+424080c8:	Work mode : 8
+424080cc:	STORAGE   :
+424080cc:	 type   : 0
+424081d0:	 DATA 00  : 01 00 01 00 01 01 01 01 01 02 10 00 00 01 00 08
+424081e0:	 DATA 10  : 88 01 0f 03 ad d7 94 da ff ff ff ff b6 03 00 00
+424081f0:	 DATA 20  : b6 03 00 00 04 06 01 00 00 00 00 00 00 00 00 00
+42408200:	 DATA 30  : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+42408210:	 DATA 40  : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+42408220:	 DATA 50  : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+42408230:	 DATA 60  : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+42408240:	 DATA 70  : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+42408250:	 DATA 80  : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+42408260:	 DATA 90  : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+42408270:	 DATA a0  : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+42408280:	 DATA b0  : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+42408290:	 DATA c0  : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+424082a0:	 DATA d0  : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+424082b0:	 DATA e0  : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+424082c0:	 DATA f0  : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 
 424082d0:	e10f0000 	mrs	r0, CPSR
 424082d4:	e3c0001f 	bic	r0, r0, #31
@@ -135,8 +135,8 @@ Disassembly of section .data:
 424083dc:	e8bd80f0 	pop	{r4, r5, r6, r7, pc}
 
 424083e0:	e92d4030 	push	{r4, r5, lr}
-424083e4:	e59f3130 	ldr	r3, [pc, #304]	; 0x4240851c
-424083e8:	e59f1130 	ldr	r1, [pc, #304]	; 0x42408520
+424083e4:	e59f3130 	ldr	r3, [0x4240851c]
+424083e8:	e59f1130 	ldr	r1, [0x42408520]
 424083ec:	e1a02223 	lsr	r2, r3, #4
 424083f0:	ea000004 	b	0x42408408
 424083f4:	e3a04000 	mov	r4, #0
@@ -157,8 +157,8 @@ Disassembly of section .data:
 42408430:	1afffffa 	bne	0x42408420
 42408434:	e8bd8030 	pop	{r4, r5, pc}
 42408438:	e92d40f0 	push	{r4, r5, r6, r7, lr}
-4240843c:	e59f50e0 	ldr	r5, [pc, #224]	; 0x42408524
-42408440:	e59f20e0 	ldr	r2, [pc, #224]	; 0x42408528
+4240843c:	e59f50e0 	ldr	r5, [0x42408524]
+42408440:	e59f20e0 	ldr	r2, [0x42408528]
 42408444:	e3a04000 	mov	r4, #0
 42408448:	e1a03225 	lsr	r3, r5, #4
 4240844c:	ea000007 	b	0x42408470
@@ -184,9 +184,9 @@ Disassembly of section .data:
 4240849c:	1afffffa 	bne	0x4240848c
 424084a0:	e8bd80f0 	pop	{r4, r5, r6, r7, pc}
 424084a4:	e92d40f0 	push	{r4, r5, r6, r7, lr}
-424084a8:	e59f507c 	ldr	r5, [pc, #124]	; 0x4240852c
-424084ac:	e59f207c 	ldr	r2, [pc, #124]	; 0x42408530
-424084b0:	e59f407c 	ldr	r4, [pc, #124]	; 0x42408534
+424084a8:	e59f507c 	ldr	r5, [0x4240852c]
+424084ac:	e59f207c 	ldr	r2, [0x42408530]
+424084b0:	e59f407c 	ldr	r4, [0x42408534]
 424084b4:	e1a03225 	lsr	r3, r5, #4
 424084b8:	ea000007 	b	0x424084dc
 424084bc:	e4926004 	ldr	r6, [r2], #4
@@ -1101,6 +1101,7 @@ Disassembly of section .data:
 42409330:	e320f000 	nop	{0}
 42409334:	e1a00005 	mov	r0, r5
 42409338:	e8bd8070 	pop	{r4, r5, r6, pc}
+
 4240933c:	e92d47f0 	push	{r4, r5, r6, r7, r8, r9, sl, lr}
 42409340:	e1a0a000 	mov	sl, r0
 42409344:	e1a04001 	mov	r4, r1
@@ -1184,7 +1185,7 @@ Disassembly of section .data:
 4240947c:	eb008e2a 	bl	0x4242cd2c
 42409480:	e1a05000 	mov	r5, r0
 42409484:	e0850085 	add	r0, r5, r5, lsl #1
-42409488:	e59f11f4 	ldr	r1, [pc, #500]	; 0x42409684
+42409488:	e59f11f4 	ldr	r1, [0x42409684]
 4240948c:	e7d10100 	ldrb	r0, [r1, r0, lsl #2]
 42409490:	e5c40000 	strb	r0, [r4]
 42409494:	e0850085 	add	r0, r5, r5, lsl #1
@@ -1226,19 +1227,19 @@ Disassembly of section .data:
 42409524:	e8bd83fe 	pop	{r1, r2, r3, r4, r5, r6, r7, r8, r9, pc}
 42409528:	e3a08000 	mov	r8, #0
 4240952c:	e320f000 	nop	{0}
-42409530:	e59f0150 	ldr	r0, [pc, #336]	; 0x42409688
+42409530:	e59f0150 	ldr	r0, [0x42409688]
 42409534:	e0800188 	add	r0, r0, r8, lsl #3
 42409538:	e5900004 	ldr	r0, [r0, #4]
 4240953c:	e1500005 	cmp	r0, r5
 42409540:	8a000006 	bhi	0x42409560
-42409544:	e59f013c 	ldr	r0, [pc, #316]	; 0x42409688
+42409544:	e59f013c 	ldr	r0, [0x42409688]
 42409548:	e7900188 	ldr	r0, [r0, r8, lsl #3]
 4240954c:	e1500004 	cmp	r0, r4
 42409550:	8a000001 	bhi	0x4240955c
-42409554:	e59f012c 	ldr	r0, [pc, #300]	; 0x42409688
+42409554:	e59f012c 	ldr	r0, [0x42409688]
 42409558:	e7904188 	ldr	r4, [r0, r8, lsl #3]
 4240955c:	ea000007 	b	0x42409580
-42409560:	e59f0120 	ldr	r0, [pc, #288]	; 0x42409688
+42409560:	e59f0120 	ldr	r0, [0x42409688]
 42409564:	e7900188 	ldr	r0, [r0, r8, lsl #3]
 42409568:	e3500000 	cmp	r0, #0
 4240956c:	1a000001 	bne	0x42409578
@@ -1262,7 +1263,7 @@ Disassembly of section .data:
 424095b4:	ebffffa8 	bl	0x4240945c
 424095b8:	e59f00c0 	ldr	r0, =CCM_IO_BASE
 424095bc:	e5906000 	ldr	r6, [r0, #CCMU_PLL1_CORE]
-424095c0:	e59f00c4 	ldr	r0, [pc, #196]	; 0x4240968c
+424095c0:	e59f00c4 	ldr	r0, [0x4240968c]
 424095c4:	e0066000 	and	r6, r6, r0
 424095c8:	e5dd0000 	ldrb	r0, [sp]
 424095cc:	e1a00400 	lsl	r0, r0, #8
@@ -1321,12 +1322,12 @@ Disassembly of section .data:
 424096b0:	1a000012 	bne	0x42409700
 424096b4:	e3a01000 	mov	r1, #0
 424096b8:	ea00000d 	b	0x424096f4
-424096bc:	e59f0350 	ldr	r0, [pc, #848]	; 0x42409a14
+424096bc:	e59f0350 	ldr	r0, [0x42409a14]
 424096c0:	e7900201 	ldr	r0, [r0, r1, lsl #4]
 424096c4:	e3500000 	cmp	r0, #0
 424096c8:	1a000008 	bne	0x424096f0
 424096cc:	e3a00001 	mov	r0, #1
-424096d0:	e59f333c 	ldr	r3, [pc, #828]	; 0x42409a14
+424096d0:	e59f333c 	ldr	r3, [0x42409a14]
 424096d4:	e7830201 	str	r0, [r3, r1, lsl #4]
 424096d8:	e2830000 	add	r0, r3, #0
 424096dc:	e0800201 	add	r0, r0, r1, lsl #4
@@ -1342,12 +1343,12 @@ Disassembly of section .data:
 42409704:	1a000011 	bne	0x42409750
 42409708:	e3a01008 	mov	r1, #8
 4240970c:	ea00000d 	b	0x42409748
-42409710:	e59f02fc 	ldr	r0, [pc, #764]	; 0x42409a14
+42409710:	e59f02fc 	ldr	r0, [0x42409a14]
 42409714:	e7900201 	ldr	r0, [r0, r1, lsl #4]
 42409718:	e3500000 	cmp	r0, #0
 4240971c:	1a000008 	bne	0x42409744
 42409720:	e3a00001 	mov	r0, #1
-42409724:	e59f32e8 	ldr	r3, [pc, #744]	; 0x42409a14
+42409724:	e59f32e8 	ldr	r3, [0x42409a14]
 42409728:	e7830201 	str	r0, [r3, r1, lsl #4]
 4240972c:	e2830000 	add	r0, r3, #0
 42409730:	e0800201 	add	r0, r0, r1, lsl #4
@@ -3033,7 +3034,7 @@ Disassembly of section .data:
 4240b170:	e59d002c 	ldr	r0, [sp, #44]	; 0x2c
 4240b174:	e3c00102 	bic	r0, r0, #0x80000000
 4240b178:	e3c000ff 	bic	r0, r0, #0xff
-4240b17c:	e59fb3c4 	ldr	fp, [pc, #964]	; 0x4240b548
+4240b17c:	e59fb3c4 	ldr	fp, [0x4240b548]
 4240b180:	e150000b 	cmp	r0, fp
 4240b184:	1a00000a 	bne	0x4240b1b4
 4240b188:	e59d002c 	ldr	r0, [sp, #44]	; 0x2c
@@ -3042,7 +3043,7 @@ Disassembly of section .data:
 4240b194:	e59d0000 	ldr	r0, [sp]
 4240b198:	e1a00180 	lsl	r0, r0, #3
 4240b19c:	e58d0000 	str	r0, [sp]
-4240b1a0:	e59f03a4 	ldr	r0, [pc, #932]	; 0x4240b54c
+4240b1a0:	e59f03a4 	ldr	r0, =0x424080d0	; 0x4240b54c
 4240b1a4:	e59db000 	ldr	fp, [sp]
 4240b1a8:	e080018b 	add	r0, r0, fp, lsl #3
 4240b1ac:	e58d0028 	str	r0, [sp, #40]	; 0x28
@@ -3341,16 +3342,16 @@ Disassembly of section .data:
 4240b638:	eb008680 	bl	0x4242d040
 4240b63c:	e3540050 	cmp	r4, #80	; 0x50
 4240b640:	2a00000d 	bcs	0x4240b67c
-4240b644:	e59f0180 	ldr	r0, [pc, #384]	; 0x4240b7cc
+4240b644:	e59f0180 	ldr	r0, [0x4240b7cc]
 4240b648:	e0800184 	add	r0, r0, r4, lsl #3
 4240b64c:	e5900004 	ldr	r0, [r0, #4]
-4240b650:	e59f1178 	ldr	r1, [pc, #376]	; 0x4240b7d0
+4240b650:	e59f1178 	ldr	r1, [0x4240b7d0]
 4240b654:	e1500001 	cmp	r0, r1
 4240b658:	1a000007 	bne	0x4240b67c
-4240b65c:	e59f0168 	ldr	r0, [pc, #360]	; 0x4240b7cc
+4240b65c:	e59f0168 	ldr	r0, [0x4240b7cc]
 4240b660:	e0800184 	add	r0, r0, r4, lsl #3
 4240b664:	e5805004 	str	r5, [r0, #4]
-4240b668:	e59f015c 	ldr	r0, [pc, #348]	; 0x4240b7cc
+4240b668:	e59f015c 	ldr	r0, [0x4240b7cc]
 4240b66c:	e7806184 	str	r6, [r0, r4, lsl #3]
 4240b670:	eb00866e 	bl	0x4242d030
 4240b674:	e3a00000 	mov	r0, #0
@@ -3363,18 +3364,18 @@ Disassembly of section .data:
 4240b690:	eb00866a 	bl	0x4242d040
 4240b694:	e3540050 	cmp	r4, #80	; 0x50
 4240b698:	2a00000f 	bcs	0x4240b6dc
-4240b69c:	e59f0128 	ldr	r0, [pc, #296]	; 0x4240b7cc
+4240b69c:	e59f0128 	ldr	r0, [0x4240b7cc]
 4240b6a0:	e0800184 	add	r0, r0, r4, lsl #3
 4240b6a4:	e5900004 	ldr	r0, [r0, #4]
-4240b6a8:	e59f1120 	ldr	r1, [pc, #288]	; 0x4240b7d0
+4240b6a8:	e59f1120 	ldr	r1, [0x4240b7d0]
 4240b6ac:	e1500001 	cmp	r0, r1
 4240b6b0:	0a000009 	beq	0x4240b6dc
 4240b6b4:	e2810000 	add	r0, r1, #0
-4240b6b8:	e59f110c 	ldr	r1, [pc, #268]	; 0x4240b7cc
+4240b6b8:	e59f110c 	ldr	r1, [0x4240b7cc]
 4240b6bc:	e0811184 	add	r1, r1, r4, lsl #3
 4240b6c0:	e5810004 	str	r0, [r1, #4]
 4240b6c4:	e3a00000 	mov	r0, #0
-4240b6c8:	e59f10fc 	ldr	r1, [pc, #252]	; 0x4240b7cc
+4240b6c8:	e59f10fc 	ldr	r1, [0x4240b7cc]
 4240b6cc:	e7810184 	str	r0, [r1, r4, lsl #3]
 4240b6d0:	eb008656 	bl	0x4242d030
 4240b6d4:	e3a00000 	mov	r0, #0
@@ -3518,7 +3519,7 @@ Disassembly of section .data:
 4240b900:	e12fff1e 	bx	lr
 4240b904:	01c22000 	biceq	r2, r2, r0
 4240b908:	e92d401c 	push	{r2, r3, r4, lr}
-4240b90c:	e59f04a0 	ldr	r0, [pc, #1184]	; 0x4240bdb4
+4240b90c:	e59f04a0 	ldr	r0, [0x4240bdb4]
 4240b910:	e5900000 	ldr	r0, [r0]
 4240b914:	e3500002 	cmp	r0, #2
 4240b918:	1a000014 	bne	0x4240b970
@@ -3543,7 +3544,7 @@ Disassembly of section .data:
 4240b964:	0a00001a 	beq	0x4240b9d4
 4240b968:	e3e00000 	mvn	r0, #0
 4240b96c:	eafffff3 	b	0x4240b940
-4240b970:	e59f043c 	ldr	r0, [pc, #1084]	; 0x4240bdb4
+4240b970:	e59f043c 	ldr	r0, [0x4240bdb4]
 4240b974:	e5900000 	ldr	r0, [r0]
 4240b978:	e3500003 	cmp	r0, #3
 4240b97c:	1a000014 	bne	0x4240b9d4
@@ -3572,7 +3573,7 @@ Disassembly of section .data:
 4240b9d8:	eaffffd8 	b	0x4240b940
 4240b9dc:	e92d407c 	push	{r2, r3, r4, r5, r6, lr}
 4240b9e0:	e1a05000 	mov	r5, r0
-4240b9e4:	e59f03c8 	ldr	r0, [pc, #968]	; 0x4240bdb4
+4240b9e4:	e59f03c8 	ldr	r0, [0x4240bdb4]
 4240b9e8:	e5900000 	ldr	r0, [r0]
 4240b9ec:	e3500002 	cmp	r0, #2
 4240b9f0:	1a000023 	bne	0x4240ba84
@@ -3612,7 +3613,7 @@ Disassembly of section .data:
 4240ba78:	0a00002c 	beq	0x4240bb30
 4240ba7c:	e3e00000 	mvn	r0, #0
 4240ba80:	eaffffe4 	b	0x4240ba18
-4240ba84:	e59f0328 	ldr	r0, [pc, #808]	; 0x4240bdb4
+4240ba84:	e59f0328 	ldr	r0, [0x4240bdb4]
 4240ba88:	e5900000 	ldr	r0, [r0]
 4240ba8c:	e3500003 	cmp	r0, #3
 4240ba90:	1a000024 	bne	0x4240bb28
@@ -3947,7 +3948,7 @@ Disassembly of section .data:
 4240c03c:	1a000001 	bne	0x4240c048
 4240c040:	e3000528 	movw	r0, #1320	; 0x528
 4240c044:	e5850004 	str	r0, [r5, #4]
-4240c048:	e59f1198 	ldr	r1, [pc, #408]	; 0x4240c1e8
+4240c048:	e59f1198 	ldr	r1, [0x4240c1e8]
 4240c04c:	e5950004 	ldr	r0, [r5, #4]
 4240c050:	e5810000 	str	r0, [r1]
 4240c054:	e28d2020 	add	r2, sp, #32
@@ -4038,15 +4039,15 @@ Disassembly of section .data:
 4240c1a8:	e3500000 	cmp	r0, #0
 4240c1ac:	0a000003 	beq	0x4240c1c0
 4240c1b0:	e3a00003 	mov	r0, #3
-4240c1b4:	e59f105c 	ldr	r1, [pc, #92]	; 0x4240c218
+4240c1b4:	e59f105c 	ldr	r1, [0x4240c218]
 4240c1b8:	e5810000 	str	r0, [r1]
 4240c1bc:	ea000006 	b	0x4240c1dc
 4240c1c0:	e3a00001 	mov	r0, #1
-4240c1c4:	e59f104c 	ldr	r1, [pc, #76]	; 0x4240c218
+4240c1c4:	e59f104c 	ldr	r1, [0x4240c218]
 4240c1c8:	e5810000 	str	r0, [r1]
 4240c1cc:	ea000002 	b	0x4240c1dc
 4240c1d0:	e3a00002 	mov	r0, #2
-4240c1d4:	e59f103c 	ldr	r1, [pc, #60]	; 0x4240c218
+4240c1d4:	e59f103c 	ldr	r1, [0x4240c218]
 4240c1d8:	e5810000 	str	r0, [r1]
 4240c1dc:	ea000025 	b	0x4240c278
 
@@ -4523,7 +4524,7 @@ Disassembly of section .data:
 4240c968:	e3a03001 	mov	r3, #1
 4240c96c:	e1a0200d 	mov	r2, sp
 4240c970:	e28f1fbb 	ldr	r1, =0x4240cc64	; add r1, pc, #748	; 0x2ec
-4240c974:	e59f02f8 	ldr	r0, [pc, #760]	; 0x4240cc74
+4240c974:	e59f02f8 	ldr	r0, [0x4240cc74]
 4240c978:	eb0029bf 	bl	0x4241707c
 4240c97c:	e1a04000 	mov	r4, r0
 4240c980:	e3540000 	cmp	r4, #0
@@ -4829,7 +4830,7 @@ Disassembly of section .data:
 4240ce80:	e1a04000 	mov	r4, r0
 4240ce84:	e1a05001 	mov	r5, r1
 4240ce88:	e1a06002 	mov	r6, r2
-4240ce8c:	e59f02a4 	ldr	r0, [pc, #676]	; 0x4240d138
+4240ce8c:	e59f02a4 	ldr	r0, [0x4240d138]
 4240ce90:	e5900000 	ldr	r0, [r0]
 4240ce94:	e3500003 	cmp	r0, #3
 4240ce98:	1a00005a 	bne	0x4240d008
@@ -4930,7 +4931,7 @@ Disassembly of section .data:
 4240d014:	eaffffb3 	b	0x4240cee8
 4240d018:	e92d401c 	push	{r2, r3, r4, lr}
 4240d01c:	e1a04000 	mov	r4, r0
-4240d020:	e59f0110 	ldr	r0, [pc, #272]	; 0x4240d138
+4240d020:	e59f0110 	ldr	r0, [0x4240d138]
 4240d024:	e5900000 	ldr	r0, [r0]
 4240d028:	e3500003 	cmp	r0, #3
 4240d02c:	1a00003f 	bne	0x4240d130
@@ -5158,8 +5159,8 @@ Disassembly of section .data:
 4240d3bc:	e3540000 	cmp	r4, #0
 4240d3c0:	1a00000a 	bne	0x4240d3f0
 4240d3c4:	e320f000 	nop	{0}
-4240d3c8:	e59f1918 	ldr	r1, [pc, #2328]	; 0x4240dce8
-4240d3cc:	e59f2918 	ldr	r2, [pc, #2328]	; 0x4240dcec
+4240d3c8:	e59f1918 	ldr	r1, [0x4240dce8]
+4240d3cc:	e59f2918 	ldr	r2, [0x4240dcec]
 4240d3d0:	e5922000 	ldr	r2, [r2]
 4240d3d4:	e7910102 	ldr	r0, [r1, r2, lsl #2]
 4240d3d8:	eb007e7e 	bl	0x4242cdd8
@@ -5170,8 +5171,8 @@ Disassembly of section .data:
 4240d3ec:	e8bd8070 	pop	{r4, r5, r6, pc}
 4240d3f0:	e3a06000 	mov	r6, #0
 4240d3f4:	ea00000a 	b	0x4240d424
-4240d3f8:	e59f18e8 	ldr	r1, [pc, #2280]	; 0x4240dce8
-4240d3fc:	e59f28e8 	ldr	r2, [pc, #2280]	; 0x4240dcec
+4240d3f8:	e59f18e8 	ldr	r1, [0x4240dce8]
+4240d3fc:	e59f28e8 	ldr	r2, [0x4240dcec]
 4240d400:	e5922000 	ldr	r2, [r2]
 4240d404:	e7910102 	ldr	r0, [r1, r2, lsl #2]
 4240d408:	eb007e72 	bl	0x4242cdd8
@@ -5190,8 +5191,8 @@ Disassembly of section .data:
 4240d43c:	e1a00005 	mov	r0, r5
 4240d440:	eaffffe9 	b	0x4240d3ec
 4240d444:	e92d4010 	push	{r4, lr}
-4240d448:	e59f1898 	ldr	r1, [pc, #2200]	; 0x4240dce8
-4240d44c:	e59f2898 	ldr	r2, [pc, #2200]	; 0x4240dcec
+4240d448:	e59f1898 	ldr	r1, [0x4240dce8]
+4240d44c:	e59f2898 	ldr	r2, [0x4240dcec]
 4240d450:	e5922000 	ldr	r2, [r2]
 4240d454:	e7910102 	ldr	r0, [r1, r2, lsl #2]
 4240d458:	eb007e5e 	bl	0x4242cdd8
@@ -5200,8 +5201,8 @@ Disassembly of section .data:
 4240d464:	e1a04000 	mov	r4, r0
 4240d468:	e3a06000 	mov	r6, #0
 4240d46c:	e320f000 	nop	{0}
-4240d470:	e59f1870 	ldr	r1, [pc, #2160]	; 0x4240dce8
-4240d474:	e59f2870 	ldr	r2, [pc, #2160]	; 0x4240dcec
+4240d470:	e59f1870 	ldr	r1, [0x4240dce8]
+4240d474:	e59f2870 	ldr	r2, [0x4240dcec]
 4240d478:	e5922000 	ldr	r2, [r2]
 4240d47c:	e7910102 	ldr	r0, [r1, r2, lsl #2]
 4240d480:	eb007e54 	bl	0x4242cdd8
@@ -5217,8 +5218,8 @@ Disassembly of section .data:
 4240d4a8:	eafffff0 	b	0x4240d470
 4240d4ac:	e92d4010 	push	{r4, lr}
 4240d4b0:	e1a04000 	mov	r4, r0
-4240d4b4:	e59f182c 	ldr	r1, [pc, #2092]	; 0x4240dce8
-4240d4b8:	e59f282c 	ldr	r2, [pc, #2092]	; 0x4240dcec
+4240d4b4:	e59f182c 	ldr	r1, [0x4240dce8]
+4240d4b8:	e59f282c 	ldr	r2, [0x4240dcec]
 4240d4bc:	e5922000 	ldr	r2, [r2]
 4240d4c0:	e7910102 	ldr	r0, [r1, r2, lsl #2]
 4240d4c4:	e1a01004 	mov	r1, r4
@@ -5230,15 +5231,15 @@ Disassembly of section .data:
 4240d4dc:	e5d40000 	ldrb	r0, [r4]
 4240d4e0:	e350000a 	cmp	r0, #10
 4240d4e4:	1a000005 	bne	0x4240d500
-4240d4e8:	e59f17f8 	ldr	r1, [pc, #2040]	; 0x4240dce8
-4240d4ec:	e59f27f8 	ldr	r2, [pc, #2040]	; 0x4240dcec
+4240d4e8:	e59f17f8 	ldr	r1, [0x4240dce8]
+4240d4ec:	e59f27f8 	ldr	r2, [0x4240dcec]
 4240d4f0:	e5922000 	ldr	r2, [r2]
 4240d4f4:	e7910102 	ldr	r0, [r1, r2, lsl #2]
 4240d4f8:	e3a0100d 	mov	r1, #13
 4240d4fc:	eb007e37 	bl	0x4242cde0
 4240d500:	e4d41001 	ldrb	r1, [r4], #1
-4240d504:	e59f27dc 	ldr	r2, [pc, #2012]	; 0x4240dce8
-4240d508:	e59f37dc 	ldr	r3, [pc, #2012]	; 0x4240dcec
+4240d504:	e59f27dc 	ldr	r2, [0x4240dce8]
+4240d508:	e59f37dc 	ldr	r3, [0x4240dcec]
 4240d50c:	e5933000 	ldr	r3, [r3]
 4240d510:	e7920103 	ldr	r0, [r2, r3, lsl #2]
 4240d514:	eb007e31 	bl	0x4242cde0
@@ -5257,7 +5258,7 @@ Disassembly of section .data:
 4240d548:	e0880186 	add	r0, r8, r6, lsl #3
 4240d54c:	eb007df6 	bl	0x4242cd2c
 4240d550:	e1a09000 	mov	r9, r0
-4240d554:	e59f178c 	ldr	r1, [pc, #1932]	; 0x4240dce8
+4240d554:	e59f178c 	ldr	r1, [0x4240dce8]
 4240d558:	e7910104 	ldr	r0, [r1, r4, lsl #2]
 4240d55c:	e1a03009 	mov	r3, r9
 4240d560:	e1a02005 	mov	r2, r5
@@ -5265,7 +5266,7 @@ Disassembly of section .data:
 4240d568:	eb007e1e 	bl	0x4242cde8
 4240d56c:	e3700001 	cmn	r0, #1
 4240d570:	0a000003 	beq	0x4240d584
-4240d574:	e59f0770 	ldr	r0, [pc, #1904]	; 0x4240dcec
+4240d574:	e59f0770 	ldr	r0, [0x4240dcec]
 4240d578:	e5804000 	str	r4, [r0]
 4240d57c:	e3a00000 	mov	r0, #0
 4240d580:	e8bd87f0 	pop	{r4, r5, r6, r7, r8, r9, sl, pc}
@@ -5370,9 +5371,9 @@ Disassembly of section .data:
 4240d70c:	e59d3000 	ldr	r3, [sp]
 4240d710:	e2833004 	add	r3, r3, #4
 4240d714:	e20210ff 	and	r1, r2, #0xff
-4240d718:	e59f25c8 	ldr	r2, [pc, #1480]	; 0x4240dce8
+4240d718:	e59f25c8 	ldr	r2, [0x4240dce8]
 4240d71c:	e58d3000 	str	r3, [sp]
-4240d720:	e59f35c4 	ldr	r3, [pc, #1476]	; 0x4240dcec
+4240d720:	e59f35c4 	ldr	r3, [0x4240dcec]
 4240d724:	e5933000 	ldr	r3, [r3]
 4240d728:	e7920103 	ldr	r0, [r2, r3, lsl #2]
 4240d72c:	eb007dab 	bl	0x4242cde0
@@ -5500,16 +5501,16 @@ Disassembly of section .data:
 4240d914:	e58d0028 	str	r0, [sp, #40]	; 0x28
 4240d918:	ea000011 	b	0x4240d964
 4240d91c:	e320f000 	nop	{0}
-4240d920:	e59f13c0 	ldr	r1, [pc, #960]	; 0x4240dce8
-4240d924:	e59f23c0 	ldr	r2, [pc, #960]	; 0x4240dcec
+4240d920:	e59f13c0 	ldr	r1, [0x4240dce8]
+4240d924:	e59f23c0 	ldr	r2, [0x4240dcec]
 4240d928:	e5922000 	ldr	r2, [r2]
 4240d92c:	e7910102 	ldr	r0, [r1, r2, lsl #2]
 4240d930:	e3a01025 	mov	r1, #37	; 0x25
 4240d934:	eb007d29 	bl	0x4242cde0
 4240d938:	e59d2028 	ldr	r2, [sp, #40]	; 0x28
 4240d93c:	e5d21000 	ldrb	r1, [r2]
-4240d940:	e59f23a0 	ldr	r2, [pc, #928]	; 0x4240dce8
-4240d944:	e59f33a0 	ldr	r3, [pc, #928]	; 0x4240dcec
+4240d940:	e59f23a0 	ldr	r2, [0x4240dce8]
+4240d944:	e59f33a0 	ldr	r3, [0x4240dcec]
 4240d948:	e5933000 	ldr	r3, [r3]
 4240d94c:	e7920103 	ldr	r0, [r2, r3, lsl #2]
 4240d950:	eb007d22 	bl	0x4242cde0
@@ -5522,8 +5523,8 @@ Disassembly of section .data:
 4240d96c:	e5d00000 	ldrb	r0, [r0]
 4240d970:	e350000a 	cmp	r0, #10
 4240d974:	1a000005 	bne	0x4240d990
-4240d978:	e59f1368 	ldr	r1, [pc, #872]	; 0x4240dce8
-4240d97c:	e59f2368 	ldr	r2, [pc, #872]	; 0x4240dcec
+4240d978:	e59f1368 	ldr	r1, [0x4240dce8]
+4240d97c:	e59f2368 	ldr	r2, [0x4240dcec]
 4240d980:	e5922000 	ldr	r2, [r2]
 4240d984:	e7910102 	ldr	r0, [r1, r2, lsl #2]
 4240d988:	e3a0100d 	mov	r1, #13
@@ -5532,9 +5533,9 @@ Disassembly of section .data:
 4240d994:	e5d21000 	ldrb	r1, [r2]
 4240d998:	e59d3028 	ldr	r3, [sp, #40]	; 0x28
 4240d99c:	e2833001 	add	r3, r3, #1
-4240d9a0:	e59f2340 	ldr	r2, [pc, #832]	; 0x4240dce8
+4240d9a0:	e59f2340 	ldr	r2, [0x4240dce8]
 4240d9a4:	e58d3028 	str	r3, [sp, #40]	; 0x28
-4240d9a8:	e59f333c 	ldr	r3, [pc, #828]	; 0x4240dcec
+4240d9a8:	e59f333c 	ldr	r3, [0x4240dcec]
 4240d9ac:	e5933000 	ldr	r3, [r3]
 4240d9b0:	e7920103 	ldr	r0, [r2, r3, lsl #2]
 4240d9b4:	eb007d09 	bl	0x4242cde0
@@ -5647,9 +5648,9 @@ Disassembly of section .data:
 4240db60:	e59d3004 	ldr	r3, [sp, #4]
 4240db64:	e2833004 	add	r3, r3, #4
 4240db68:	e20210ff 	and	r1, r2, #0xff
-4240db6c:	e59f2174 	ldr	r2, [pc, #372]	; 0x4240dce8
+4240db6c:	e59f2174 	ldr	r2, [0x4240dce8]
 4240db70:	e58d3004 	str	r3, [sp, #4]
-4240db74:	e59f3170 	ldr	r3, [pc, #368]	; 0x4240dcec
+4240db74:	e59f3170 	ldr	r3, [0x4240dcec]
 4240db78:	e5933000 	ldr	r3, [r3]
 4240db7c:	e7920103 	ldr	r0, [r2, r3, lsl #2]
 4240db80:	eb007c96 	bl	0x4242cde0
@@ -5724,16 +5725,16 @@ Disassembly of section .data:
 4240dc94:	e58d0038 	str	r0, [sp, #56]	; 0x38
 4240dc98:	ea000011 	b	0x4240dce4
 4240dc9c:	e320f000 	nop	{0}
-4240dca0:	e59f1040 	ldr	r1, [pc, #64]	; 0x4240dce8
-4240dca4:	e59f2040 	ldr	r2, [pc, #64]	; 0x4240dcec
+4240dca0:	e59f1040 	ldr	r1, [0x4240dce8]
+4240dca4:	e59f2040 	ldr	r2, [0x4240dcec]
 4240dca8:	e5922000 	ldr	r2, [r2]
 4240dcac:	e7910102 	ldr	r0, [r1, r2, lsl #2]
 4240dcb0:	e3a01025 	mov	r1, #37	; 0x25
 4240dcb4:	eb007c49 	bl	0x4242cde0
 4240dcb8:	e59d2038 	ldr	r2, [sp, #56]	; 0x38
 4240dcbc:	e5d21000 	ldrb	r1, [r2]
-4240dcc0:	e59f2020 	ldr	r2, [pc, #32]	; 0x4240dce8
-4240dcc4:	e59f3020 	ldr	r3, [pc, #32]	; 0x4240dcec
+4240dcc0:	e59f2020 	ldr	r2, [0x4240dce8]
+4240dcc4:	e59f3020 	ldr	r3, [0x4240dcec]
 4240dcc8:	e5933000 	ldr	r3, [r3]
 4240dccc:	e7920103 	ldr	r0, [r2, r3, lsl #2]
 4240dcd0:	eb007c42 	bl	0x4242cde0
@@ -5783,13 +5784,13 @@ Disassembly of section .data:
 4240dd80:	e3a03000 	mov	r3, #0
 4240dd84:	ea000010 	b	0x4240ddcc
 4240dd88:	e0830103 	add	r0, r3, r3, lsl #2
-4240dd8c:	e59f5454 	ldr	r5, [pc, #1108]	; 0x4240e1e8
+4240dd8c:	e59f5454 	ldr	r5, [0x4240e1e8]
 4240dd90:	e7950100 	ldr	r0, [r5, r0, lsl #2]
 4240dd94:	e3500000 	cmp	r0, #0
 4240dd98:	1a00000a 	bne	0x4240ddc8
 4240dd9c:	e3a00001 	mov	r0, #1
 4240dda0:	e0835103 	add	r5, r3, r3, lsl #2
-4240dda4:	e59f643c 	ldr	r6, [pc, #1084]	; 0x4240e1e8
+4240dda4:	e59f643c 	ldr	r6, [0x4240e1e8]
 4240dda8:	e7860105 	str	r0, [r6, r5, lsl #2]
 4240ddac:	e59f0438 	ldr	r0, =0x01c20000
 4240ddb0:	e5900c00 	ldr	r0, [r0, #3072]	; 0xc00
@@ -5808,7 +5809,7 @@ Disassembly of section .data:
 4240dde4:	e8bd8070 	pop	{r4, r5, r6, pc}
 4240dde8:	e3a04050 	mov	r4, #80	; 0x50
 4240ddec:	e0830103 	add	r0, r3, r3, lsl #2
-4240ddf0:	e59f53f0 	ldr	r5, [pc, #1008]	; 0x4240e1e8
+4240ddf0:	e59f53f0 	ldr	r5, [0x4240e1e8]
 4240ddf4:	e0850100 	add	r0, r5, r0, lsl #2
 4240ddf8:	e5803008 	str	r3, [r0, #8]
 4240ddfc:	e0830103 	add	r0, r3, r3, lsl #2
@@ -5820,14 +5821,14 @@ Disassembly of section .data:
 4240de14:	e5804000 	str	r4, [r0]
 4240de18:	e3520000 	cmp	r2, #0
 4240de1c:	0a000002 	beq	0x4240de2c
-4240de20:	e59f03c8 	ldr	r0, [pc, #968]	; 0x4240e1f0
+4240de20:	e59f03c8 	ldr	r0, [0x4240e1f0]
 4240de24:	e7802103 	str	r2, [r0, r3, lsl #2]
 4240de28:	ea000002 	b	0x4240de38
-4240de2c:	e59f03c0 	ldr	r0, [pc, #960]	; 0x4240e1f4
-4240de30:	e59f53b8 	ldr	r5, [pc, #952]	; 0x4240e1f0
+4240de2c:	e59f03c0 	ldr	r0, [0x4240e1f4]
+4240de30:	e59f53b8 	ldr	r5, [0x4240e1f0]
 4240de34:	e7850103 	str	r0, [r5, r3, lsl #2]
 4240de38:	e0830103 	add	r0, r3, r3, lsl #2
-4240de3c:	e59f53a4 	ldr	r5, [pc, #932]	; 0x4240e1e8
+4240de3c:	e59f53a4 	ldr	r5, [0x4240e1e8]
 4240de40:	e0850100 	add	r0, r5, r0, lsl #2
 4240de44:	eaffffe6 	b	0x4240dde4
 4240de48:	e92d41f0 	push	{r4, r5, r6, r7, r8, lr}
@@ -5835,7 +5836,7 @@ Disassembly of section .data:
 4240de50:	e1a05001 	mov	r5, r1
 4240de54:	e1a06002 	mov	r6, r2
 4240de58:	e1a07004 	mov	r7, r4
-4240de5c:	e59f0384 	ldr	r0, [pc, #900]	; 0x4240e1e8
+4240de5c:	e59f0384 	ldr	r0, [0x4240e1e8]
 4240de60:	e1540000 	cmp	r4, r0
 4240de64:	0a000004 	beq	0x4240de7c
 4240de68:	e2800014 	add	r0, r0, #20
@@ -5893,7 +5894,7 @@ Disassembly of section .data:
 4240df38:	e92d4070 	push	{r4, r5, r6, lr}
 4240df3c:	e1a04000 	mov	r4, r0
 4240df40:	e1a05004 	mov	r5, r4
-4240df44:	e59f029c 	ldr	r0, [pc, #668]	; 0x4240e1e8
+4240df44:	e59f029c 	ldr	r0, [0x4240e1e8]
 4240df48:	e1540000 	cmp	r4, r0
 4240df4c:	0a000004 	beq	0x4240df64
 4240df50:	e2800014 	add	r0, r0, #20
@@ -5939,7 +5940,7 @@ Disassembly of section .data:
 4240dff0:	e92d4070 	push	{r4, r5, r6, lr}
 4240dff4:	e1a04000 	mov	r4, r0
 4240dff8:	e1a05004 	mov	r5, r4
-4240dffc:	e59f01e4 	ldr	r0, [pc, #484]	; 0x4240e1e8
+4240dffc:	e59f01e4 	ldr	r0, [0x4240e1e8]
 4240e000:	e1540000 	cmp	r4, r0
 4240e004:	0a000004 	beq	0x4240e01c
 4240e008:	e2800014 	add	r0, r0, #20
@@ -5989,12 +5990,12 @@ Disassembly of section .data:
 4240e0b8:	e5810c04 	str	r0, [r1, #3076]	; 0xc04
 4240e0bc:	e3a00016 	mov	r0, #22
 4240e0c0:	ebfff5c3 	bl	0x4240b7d4
-4240e0c4:	e59f211c 	ldr	r2, [pc, #284]	; 0x4240e1e8
+4240e0c4:	e59f211c 	ldr	r2, [0x4240e1e8]
 4240e0c8:	e592000c 	ldr	r0, [r2, #12]
-4240e0cc:	e59f211c 	ldr	r2, [pc, #284]	; 0x4240e1f0
+4240e0cc:	e59f211c 	ldr	r2, [0x4240e1f0]
 4240e0d0:	e5921000 	ldr	r1, [r2]
 4240e0d4:	e12fff31 	blx	r1
-4240e0d8:	e59f0108 	ldr	r0, [pc, #264]	; 0x4240e1e8
+4240e0d8:	e59f0108 	ldr	r0, [0x4240e1e8]
 4240e0dc:	e5900004 	ldr	r0, [r0, #4]
 4240e0e0:	e3500000 	cmp	r0, #0
 4240e0e4:	0a000001 	beq	0x4240e0f0
@@ -6017,12 +6018,12 @@ Disassembly of section .data:
 4240e128:	e5810c04 	str	r0, [r1, #3076]	; 0xc04
 4240e12c:	e3a00017 	mov	r0, #23
 4240e130:	ebfff5a7 	bl	0x4240b7d4
-4240e134:	e59f20ac 	ldr	r2, [pc, #172]	; 0x4240e1e8
+4240e134:	e59f20ac 	ldr	r2, [0x4240e1e8]
 4240e138:	e5920020 	ldr	r0, [r2, #32]
-4240e13c:	e59f20ac 	ldr	r2, [pc, #172]	; 0x4240e1f0
+4240e13c:	e59f20ac 	ldr	r2, [0x4240e1f0]
 4240e140:	e5921004 	ldr	r1, [r2, #4]
 4240e144:	e12fff31 	blx	r1
-4240e148:	e59f0098 	ldr	r0, [pc, #152]	; 0x4240e1e8
+4240e148:	e59f0098 	ldr	r0, [0x4240e1e8]
 4240e14c:	e5900018 	ldr	r0, [r0, #24]
 4240e150:	e3500000 	cmp	r0, #0
 4240e154:	0a000001 	beq	0x4240e160
@@ -6044,7 +6045,7 @@ Disassembly of section .data:
 4240e194:	e3a00000 	mov	r0, #0
 4240e198:	e59f104c 	ldr	r1, =0x01c20000
 4240e19c:	e5810c84 	str	r0, [r1, #3204]	; 0xc84
-4240e1a0:	e59f0050 	ldr	r0, [pc, #80]	; 0x4240e1f8
+4240e1a0:	e59f0050 	ldr	r0, [0x4240e1f8]
 4240e1a4:	e5810c8c 	str	r0, [r1, #3212]	; 0xc8c
 4240e1a8:	e3a00000 	mov	r0, #0
 4240e1ac:	e5810c80 	str	r0, [r1, #3200]	; 0xc80
@@ -6273,8 +6274,8 @@ Disassembly of section .data:
 4240e528:	e2855001 	add	r5, r5, #1
 4240e52c:	e3550002 	cmp	r5, #2
 4240e530:	baffffd7 	blt	0x4240e494
-4240e534:	e59f313c 	ldr	r3, [pc, #316]	; 0x4240e678
-4240e538:	e59f213c 	ldr	r2, [pc, #316]	; 0x4240e67c
+4240e534:	e59f313c 	ldr	r3, [0x4240e678]
+4240e538:	e59f213c 	ldr	r2, [0x4240e67c]
 4240e53c:	e28d1004 	add	r1, sp, #4
 4240e540:	e59d00f4 	ldr	r0, [sp, #244]	; 0xf4
 4240e544:	ebfffbf7 	bl	0x4240d528
@@ -6385,7 +6386,7 @@ Disassembly of section .data:
 4240e7b4:	e3011388 	movw	r1, #5000	; 0x1388
 4240e7b8:	e1500001 	cmp	r0, r1
 4240e7bc:	3afffffb 	bcc	0x4240e7b0
-4240e7c0:	e59f0070 	ldr	r0, [pc, #112]	; 0x4240e838
+4240e7c0:	e59f0070 	ldr	r0, [0x4240e838]
 4240e7c4:	eb007a18 	bl	0x4242d02c
 4240e7c8:	e8bd8010 	pop	{r4, pc}
 4240e7cc:	e92d4010 	push	{r4, lr}
@@ -6405,7 +6406,7 @@ Disassembly of section .data:
 4240e804:	e3011388 	movw	r1, #5000	; 0x1388
 4240e808:	e1500001 	cmp	r0, r1
 4240e80c:	3afffffb 	bcc	0x4240e800
-4240e810:	e59f0020 	ldr	r0, [pc, #32]	; 0x4240e838
+4240e810:	e59f0020 	ldr	r0, [0x4240e838]
 4240e814:	eb007a04 	bl	0x4242d02c
 4240e818:	e8bd8010 	pop	{r4, pc}
 4240e81c:	e92d4010 	push	{r4, lr}
@@ -6423,7 +6424,7 @@ Disassembly of section .data:
 4240e844:	e3a00001 	mov	r0, #1
 4240e848:	e1a00410 	lsl	r0, r0, r4
 4240e84c:	e1a01fc0 	asr	r1, r0, #31
-4240e850:	e59f3294 	ldr	r3, [pc, #660]	; 0x4240eaec
+4240e850:	e59f3294 	ldr	r3, [0x4240eaec]
 4240e854:	e1cd00f8 	strd	r0, [sp, #8]
 4240e858:	e1c320d0 	ldrd	r2, [r3]
 4240e85c:	e0000002 	and	r0, r0, r2
@@ -6443,19 +6444,19 @@ Disassembly of section .data:
 4240e894:	e92d407c 	push	{r2, r3, r4, r5, r6, lr}
 4240e898:	e0802100 	add	r2, r0, r0, lsl #2
 4240e89c:	e0822180 	add	r2, r2, r0, lsl #3
-4240e8a0:	e59f3250 	ldr	r3, [pc, #592]	; 0x4240eaf8
+4240e8a0:	e59f3250 	ldr	r3, [0x4240eaf8]
 4240e8a4:	e0831102 	add	r1, r3, r2, lsl #2
 4240e8a8:	e3a02001 	mov	r2, #1
 4240e8ac:	e1e02012 	mvn	r2, r2, lsl r0
 4240e8b0:	e1a03fc2 	asr	r3, r2, #31
 4240e8b4:	e1cd20f0 	strd	r2, [sp]
 4240e8b8:	e1a03002 	mov	r3, r2
-4240e8bc:	e59f5228 	ldr	r5, [pc, #552]	; 0x4240eaec
+4240e8bc:	e59f5228 	ldr	r5, [0x4240eaec]
 4240e8c0:	e59d2004 	ldr	r2, [sp, #4]
 4240e8c4:	e1c540d0 	ldrd	r4, [r5]
 4240e8c8:	e0033004 	and	r3, r3, r4
 4240e8cc:	e0022005 	and	r2, r2, r5
-4240e8d0:	e59f4214 	ldr	r4, [pc, #532]	; 0x4240eaec
+4240e8d0:	e59f4214 	ldr	r4, [0x4240eaec]
 4240e8d4:	e5842004 	str	r2, [r4, #4]
 4240e8d8:	e5843000 	str	r3, [r4]
 4240e8dc:	e3a02000 	mov	r2, #0
@@ -6473,7 +6474,7 @@ Disassembly of section .data:
 4240e90c:	e3a00001 	mov	r0, #1
 4240e910:	e1a00410 	lsl	r0, r0, r4
 4240e914:	e1a01fc0 	asr	r1, r0, #31
-4240e918:	e59f31cc 	ldr	r3, [pc, #460]	; 0x4240eaec
+4240e918:	e59f31cc 	ldr	r3, [0x4240eaec]
 4240e91c:	e1cd00f8 	strd	r0, [sp, #8]
 4240e920:	e1c320d0 	ldrd	r2, [r3]
 4240e924:	e0000002 	and	r0, r0, r2
@@ -6493,12 +6494,12 @@ Disassembly of section .data:
 4240e95c:	e1a01fc0 	asr	r1, r0, #31
 4240e960:	e1cd00f8 	strd	r0, [sp, #8]
 4240e964:	e1a01000 	mov	r1, r0
-4240e968:	e59f317c 	ldr	r3, [pc, #380]	; 0x4240eaec
+4240e968:	e59f317c 	ldr	r3, [0x4240eaec]
 4240e96c:	e59d000c 	ldr	r0, [sp, #12]
 4240e970:	e1c320d0 	ldrd	r2, [r3]
 4240e974:	e1811002 	orr	r1, r1, r2
 4240e978:	e1800003 	orr	r0, r0, r3
-4240e97c:	e59f2168 	ldr	r2, [pc, #360]	; 0x4240eaec
+4240e97c:	e59f2168 	ldr	r2, [0x4240eaec]
 4240e980:	e5820004 	str	r0, [r2, #4]
 4240e984:	e5821000 	str	r1, [r2]
 4240e988:	e3a00001 	mov	r0, #1
@@ -6567,7 +6568,7 @@ Disassembly of section .data:
 4240ea84:	eaffffe3 	b	0x4240ea18
 4240ea88:	e0870107 	add	r0, r7, r7, lsl #2
 4240ea8c:	e0800187 	add	r0, r0, r7, lsl #3
-4240ea90:	e59f1060 	ldr	r1, [pc, #96]	; 0x4240eaf8
+4240ea90:	e59f1060 	ldr	r1, [0x4240eaf8]
 4240ea94:	e0816100 	add	r6, r1, r0, lsl #2
 4240ea98:	e5867000 	str	r7, [r6]
 4240ea9c:	e5950014 	ldr	r0, [r5, #20]
@@ -6611,7 +6612,7 @@ Disassembly of section .data:
 4240eb88:	0a000001 	beq	0x4240eb94
 4240eb8c:	e3e00000 	mvn	r0, #0
 4240eb90:	eafffff8 	b	0x4240eb78
-4240eb94:	e59f0614 	ldr	r0, [pc, #1556]	; 0x4240f1b0
+4240eb94:	e59f0614 	ldr	r0, [0x4240f1b0]
 4240eb98:	e0800204 	add	r0, r0, r4, lsl #4
 4240eb9c:	e5900004 	ldr	r0, [r0, #4]
 4240eba0:	e3500000 	cmp	r0, #0
@@ -6646,7 +6647,7 @@ Disassembly of section .data:
 4240ec14:	e0800184 	add	r0, r0, r4, lsl #3
 4240ec18:	e51f1128 	ldr	r1, [pc, #-296]	; 0x4240eaf8
 4240ec1c:	e0816100 	add	r6, r1, r0, lsl #2
-4240ec20:	e59f0588 	ldr	r0, [pc, #1416]	; 0x4240f1b0
+4240ec20:	e59f0588 	ldr	r0, [0x4240f1b0]
 4240ec24:	e0800204 	add	r0, r0, r4, lsl #4
 4240ec28:	e5900004 	ldr	r0, [r0, #4]
 4240ec2c:	e3500000 	cmp	r0, #0
@@ -6658,37 +6659,37 @@ Disassembly of section .data:
 4240ec44:	e1a00004 	mov	r0, r4
 4240ec48:	e596200c 	ldr	r2, [r6, #12]
 4240ec4c:	e12fff32 	blx	r2
-4240ec50:	e59f1558 	ldr	r1, [pc, #1368]	; 0x4240f1b0
+4240ec50:	e59f1558 	ldr	r1, [0x4240f1b0]
 4240ec54:	e0811204 	add	r1, r1, r4, lsl #4
 4240ec58:	e5810008 	str	r0, [r1, #8]
-4240ec5c:	e59f054c 	ldr	r0, [pc, #1356]	; 0x4240f1b0
+4240ec5c:	e59f054c 	ldr	r0, [0x4240f1b0]
 4240ec60:	e0800204 	add	r0, r0, r4, lsl #4
 4240ec64:	e5900008 	ldr	r0, [r0, #8]
 4240ec68:	e3500000 	cmp	r0, #0
 4240ec6c:	1a000001 	bne	0x4240ec78
 4240ec70:	e3a00000 	mov	r0, #0
 4240ec74:	eaffffde 	b	0x4240ebf4
-4240ec78:	e59f0530 	ldr	r0, [pc, #1328]	; 0x4240f1b0
+4240ec78:	e59f0530 	ldr	r0, [0x4240f1b0]
 4240ec7c:	e7804204 	str	r4, [r0, r4, lsl #4]
 4240ec80:	e0800204 	add	r0, r0, r4, lsl #4
 4240ec84:	e5900004 	ldr	r0, [r0, #4]
 4240ec88:	e2800001 	add	r0, r0, #1
-4240ec8c:	e59f151c 	ldr	r1, [pc, #1308]	; 0x4240f1b0
+4240ec8c:	e59f151c 	ldr	r1, [0x4240f1b0]
 4240ec90:	e0811204 	add	r1, r1, r4, lsl #4
 4240ec94:	e5810004 	str	r0, [r1, #4]
-4240ec98:	e59f0510 	ldr	r0, [pc, #1296]	; 0x4240f1b0
+4240ec98:	e59f0510 	ldr	r0, [0x4240f1b0]
 4240ec9c:	e0800204 	add	r0, r0, r4, lsl #4
 4240eca0:	eaffffd3 	b	0x4240ebf4
 4240eca4:	e3a00000 	mov	r0, #0
 4240eca8:	eaffffd1 	b	0x4240ebf4
-4240ecac:	e59f04fc 	ldr	r0, [pc, #1276]	; 0x4240f1b0
+4240ecac:	e59f04fc 	ldr	r0, [0x4240f1b0]
 4240ecb0:	e0800204 	add	r0, r0, r4, lsl #4
 4240ecb4:	e5900004 	ldr	r0, [r0, #4]
 4240ecb8:	e2800001 	add	r0, r0, #1
-4240ecbc:	e59f14ec 	ldr	r1, [pc, #1260]	; 0x4240f1b0
+4240ecbc:	e59f14ec 	ldr	r1, [0x4240f1b0]
 4240ecc0:	e0811204 	add	r1, r1, r4, lsl #4
 4240ecc4:	e5810004 	str	r0, [r1, #4]
-4240ecc8:	e59f04e0 	ldr	r0, [pc, #1248]	; 0x4240f1b0
+4240ecc8:	e59f04e0 	ldr	r0, [0x4240f1b0]
 4240eccc:	e0800204 	add	r0, r0, r4, lsl #4
 4240ecd0:	eaffffc7 	b	0x4240ebf4
 4240ecd4:	e92d41f0 	push	{r4, r5, r6, r7, r8, lr}
@@ -7061,9 +7062,9 @@ Disassembly of section .data:
 4240f288:	e5d80007 	ldrb	r0, [r8, #7]
 4240f28c:	e3500070 	cmp	r0, #112	; 0x70
 4240f290:	1a000001 	bne	0x4240f29c
-4240f294:	e59f02bc 	ldr	r0, [pc, #700]	; 0x4240f558
+4240f294:	e59f02bc 	ldr	r0, [0x4240f558]
 4240f298:	e8bd87f0 	pop	{r4, r5, r6, r7, r8, r9, sl, pc}
-4240f29c:	e59f02b8 	ldr	r0, [pc, #696]	; 0x4240f55c
+4240f29c:	e59f02b8 	ldr	r0, [0x4240f55c]
 4240f2a0:	eafffffc 	b	0x4240f298
 4240f2a4:	e3a00000 	mov	r0, #0
 4240f2a8:	eafffffa 	b	0x4240f298
@@ -7178,7 +7179,7 @@ Disassembly of section .data:
 4240f45c:	e59d2000 	ldr	r2, [sp]
 4240f460:	ebffff74 	bl	0x4240f238
 4240f464:	e1a0b000 	mov	fp, r0
-4240f468:	e59f00e8 	ldr	r0, [pc, #232]	; 0x4240f558
+4240f468:	e59f00e8 	ldr	r0, [0x4240f558]
 4240f46c:	e15b0000 	cmp	fp, r0
 4240f470:	0a000002 	beq	0x4240f480
 4240f474:	e2800001 	add	r0, r0, #1
@@ -7221,13 +7222,13 @@ Disassembly of section .data:
 4240f508:	e59d0004 	ldr	r0, [sp, #4]
 4240f50c:	e3500000 	cmp	r0, #0
 4240f510:	0a00002d 	beq	0x4240f5cc
-4240f514:	e59f0040 	ldr	r0, [pc, #64]	; 0x4240f55c
+4240f514:	e59f0040 	ldr	r0, [0x4240f55c]
 4240f518:	e15a0000 	cmp	sl, r0
 4240f51c:	1a000002 	bne	0x4240f52c
 4240f520:	e59d0004 	ldr	r0, [sp, #4]
 4240f524:	ebfffd33 	bl	0x4240e9f8
 4240f528:	eaffffb1 	b	0x4240f3f4
-4240f52c:	e59f0024 	ldr	r0, [pc, #36]	; 0x4240f558
+4240f52c:	e59f0024 	ldr	r0, [0x4240f558]
 4240f530:	e15a0000 	cmp	sl, r0
 4240f534:	1a000024 	bne	0x4240f5cc
 4240f538:	e59d0004 	ldr	r0, [sp, #4]
@@ -7287,7 +7288,7 @@ Disassembly of section .data:
 4240f610:	3a000000 	bcc	0x4240f618
 4240f614:	ea00000a 	b	0x4240f644
 4240f618:	e0870087 	add	r0, r7, r7, lsl #1
-4240f61c:	e59f24a8 	ldr	r2, [pc, #1192]	; 0x4240facc
+4240f61c:	e59f24a8 	ldr	r2, [0x4240facc]
 4240f620:	e7921100 	ldr	r1, [r2, r0, lsl #2]
 4240f624:	e1a00004 	mov	r0, r4
 4240f628:	eb007538 	bl	0x4242cb10
@@ -7301,7 +7302,7 @@ Disassembly of section .data:
 4240f648:	e357000f 	cmp	r7, #15
 4240f64c:	2a000016 	bcs	0x4240f6ac
 4240f650:	e0870087 	add	r0, r7, r7, lsl #1
-4240f654:	e59f1470 	ldr	r1, [pc, #1136]	; 0x4240facc
+4240f654:	e59f1470 	ldr	r1, [0x4240facc]
 4240f658:	e0810100 	add	r0, r1, r0, lsl #2
 4240f65c:	e5d00004 	ldrb	r0, [r0, #4]
 4240f660:	e5c60027 	strb	r0, [r6, #39]	; 0x27
@@ -7330,7 +7331,7 @@ Disassembly of section .data:
 4240f6bc:	ea00000e 	b	0x4240f6fc
 4240f6c0:	e0810081 	add	r0, r1, r1, lsl #1
 4240f6c4:	e0800181 	add	r0, r0, r1, lsl #3
-4240f6c8:	e59f2400 	ldr	r2, [pc, #1024]	; 0x4240fad0
+4240f6c8:	e59f2400 	ldr	r2, [0x4240fad0]
 4240f6cc:	e0820100 	add	r0, r2, r0, lsl #2
 4240f6d0:	e5d00026 	ldrb	r0, [r0, #38]	; 0x26
 4240f6d4:	e3500000 	cmp	r0, #0
@@ -7338,7 +7339,7 @@ Disassembly of section .data:
 4240f6dc:	e3a00001 	mov	r0, #1
 4240f6e0:	e0812081 	add	r2, r1, r1, lsl #1
 4240f6e4:	e0822181 	add	r2, r2, r1, lsl #3
-4240f6e8:	e59f33e0 	ldr	r3, [pc, #992]	; 0x4240fad0
+4240f6e8:	e59f33e0 	ldr	r3, [0x4240fad0]
 4240f6ec:	e0832102 	add	r2, r3, r2, lsl #2
 4240f6f0:	e5c20026 	strb	r0, [r2, #38]	; 0x26
 4240f6f4:	ea000002 	b	0x4240f704
@@ -7352,7 +7353,7 @@ Disassembly of section .data:
 4240f714:	e12fff1e 	bx	lr
 4240f718:	e0810081 	add	r0, r1, r1, lsl #1
 4240f71c:	e0800181 	add	r0, r0, r1, lsl #3
-4240f720:	e59f23a8 	ldr	r2, [pc, #936]	; 0x4240fad0
+4240f720:	e59f23a8 	ldr	r2, [0x4240fad0]
 4240f724:	e0820100 	add	r0, r2, r0, lsl #2
 4240f728:	eafffff9 	b	0x4240f714
 4240f72c:	e3a01000 	mov	r1, #0
@@ -7363,7 +7364,7 @@ Disassembly of section .data:
 4240f740:	ea00000e 	b	0x4240f780
 4240f744:	e0610201 	rsb	r0, r1, r1, lsl #4
 4240f748:	e0800100 	add	r0, r0, r0, lsl #2
-4240f74c:	e59f2380 	ldr	r2, [pc, #896]	; 0x4240fad4
+4240f74c:	e59f2380 	ldr	r2, [0x4240fad4]
 4240f750:	e0820100 	add	r0, r2, r0, lsl #2
 4240f754:	e5d0012a 	ldrb	r0, [r0, #298]	; 0x12a
 4240f758:	e3500000 	cmp	r0, #0
@@ -7371,7 +7372,7 @@ Disassembly of section .data:
 4240f760:	e3a00001 	mov	r0, #1
 4240f764:	e0612201 	rsb	r2, r1, r1, lsl #4
 4240f768:	e0822102 	add	r2, r2, r2, lsl #2
-4240f76c:	e59f3360 	ldr	r3, [pc, #864]	; 0x4240fad4
+4240f76c:	e59f3360 	ldr	r3, [0x4240fad4]
 4240f770:	e0832102 	add	r2, r3, r2, lsl #2
 4240f774:	e5c2012a 	strb	r0, [r2, #298]	; 0x12a
 4240f778:	ea000002 	b	0x4240f788
@@ -7385,7 +7386,7 @@ Disassembly of section .data:
 4240f798:	e12fff1e 	bx	lr
 4240f79c:	e0610201 	rsb	r0, r1, r1, lsl #4
 4240f7a0:	e0800100 	add	r0, r0, r0, lsl #2
-4240f7a4:	e59f2328 	ldr	r2, [pc, #808]	; 0x4240fad4
+4240f7a4:	e59f2328 	ldr	r2, [0x4240fad4]
 4240f7a8:	e0820100 	add	r0, r2, r0, lsl #2
 4240f7ac:	eafffff9 	b	0x4240f798
 4240f7b0:	e3a01000 	mov	r1, #0
@@ -7395,14 +7396,14 @@ Disassembly of section .data:
 4240f7c0:	e320f000 	nop	{0}
 4240f7c4:	ea00000c 	b	0x4240f7fc
 4240f7c8:	e0810081 	add	r0, r1, r1, lsl #1
-4240f7cc:	e59f2304 	ldr	r2, [pc, #772]	; 0x4240fad8
+4240f7cc:	e59f2304 	ldr	r2, [0x4240fad8]
 4240f7d0:	e0820200 	add	r0, r2, r0, lsl #4
 4240f7d4:	e5900010 	ldr	r0, [r0, #16]
 4240f7d8:	e3500000 	cmp	r0, #0
 4240f7dc:	1a000005 	bne	0x4240f7f8
 4240f7e0:	e3a00001 	mov	r0, #1
 4240f7e4:	e0812081 	add	r2, r1, r1, lsl #1
-4240f7e8:	e59f32e8 	ldr	r3, [pc, #744]	; 0x4240fad8
+4240f7e8:	e59f32e8 	ldr	r3, [0x4240fad8]
 4240f7ec:	e0832202 	add	r2, r3, r2, lsl #4
 4240f7f0:	e5820010 	str	r0, [r2, #16]
 4240f7f4:	ea000002 	b	0x4240f804
@@ -7415,7 +7416,7 @@ Disassembly of section .data:
 4240f810:	e3a00000 	mov	r0, #0
 4240f814:	e12fff1e 	bx	lr
 4240f818:	e0810081 	add	r0, r1, r1, lsl #1
-4240f81c:	e59f22b4 	ldr	r2, [pc, #692]	; 0x4240fad8
+4240f81c:	e59f22b4 	ldr	r2, [0x4240fad8]
 4240f820:	e0820200 	add	r0, r2, r0, lsl #4
 4240f824:	eafffffa 	b	0x4240f814
 4240f828:	e3a01000 	mov	r1, #0
@@ -7453,7 +7454,7 @@ Disassembly of section .data:
 4240f8a8:	e3a05000 	mov	r5, #0
 4240f8ac:	ea000009 	b	0x4240f8d8
 4240f8b0:	e0850085 	add	r0, r5, r5, lsl #1
-4240f8b4:	e59f121c 	ldr	r1, [pc, #540]	; 0x4240fad8
+4240f8b4:	e59f121c 	ldr	r1, [0x4240fad8]
 4240f8b8:	e0810200 	add	r0, r1, r0, lsl #4
 4240f8bc:	e5d00004 	ldrb	r0, [r0, #4]
 4240f8c0:	e1500004 	cmp	r0, r4
@@ -7471,7 +7472,7 @@ Disassembly of section .data:
 4240f8f0:	e3a060ff 	mov	r6, #255	; 0xff
 4240f8f4:	e3a05000 	mov	r5, #0
 4240f8f8:	ea000007 	b	0x4240f91c
-4240f8fc:	e59f01fc 	ldr	r0, [pc, #508]	; 0x4240fb00
+4240f8fc:	e59f01fc 	ldr	r0, [0x4240fb00]
 4240f900:	e7900105 	ldr	r0, [r0, r5, lsl #2]
 4240f904:	e5900004 	ldr	r0, [r0, #4]
 4240f908:	e1500004 	cmp	r0, r4
@@ -7481,7 +7482,7 @@ Disassembly of section .data:
 4240f918:	e2855001 	add	r5, r5, #1
 4240f91c:	e3550008 	cmp	r5, #8
 4240f920:	aa000003 	bge	0x4240f934
-4240f924:	e59f01d4 	ldr	r0, [pc, #468]	; 0x4240fb00
+4240f924:	e59f01d4 	ldr	r0, [0x4240fb00]
 4240f928:	e7900105 	ldr	r0, [r0, r5, lsl #2]
 4240f92c:	e3500000 	cmp	r0, #0
 4240f930:	1afffff1 	bne	0x4240f8fc
@@ -7499,7 +7500,7 @@ Disassembly of section .data:
 4240f960:	e3a050ff 	mov	r5, #255	; 0xff
 4240f964:	e3a06000 	mov	r6, #0
 4240f968:	ea00000a 	b	0x4240f998
-4240f96c:	e59f018c 	ldr	r0, [pc, #396]	; 0x4240fb00
+4240f96c:	e59f018c 	ldr	r0, [0x4240fb00]
 4240f970:	e7900106 	ldr	r0, [r0, r6, lsl #2]
 4240f974:	e5900008 	ldr	r0, [r0, #8]
 4240f978:	e590103c 	ldr	r1, [r0, #60]	; 0x3c
@@ -7512,7 +7513,7 @@ Disassembly of section .data:
 4240f994:	e2866001 	add	r6, r6, #1
 4240f998:	e3560008 	cmp	r6, #8
 4240f99c:	aa000003 	bge	0x4240f9b0
-4240f9a0:	e59f0158 	ldr	r0, [pc, #344]	; 0x4240fb00
+4240f9a0:	e59f0158 	ldr	r0, [0x4240fb00]
 4240f9a4:	e7900106 	ldr	r0, [r0, r6, lsl #2]
 4240f9a8:	e3500000 	cmp	r0, #0
 4240f9ac:	1affffee 	bne	0x4240f96c
@@ -7546,13 +7547,13 @@ Disassembly of section .data:
 4240fa1c:	e5dd0000 	ldrb	r0, [sp]
 4240fa20:	e2400043 	sub	r0, r0, #67	; 0x43
 4240fa24:	e0800080 	add	r0, r0, r0, lsl #1
-4240fa28:	e59f10a8 	ldr	r1, [pc, #168]	; 0x4240fad8
+4240fa28:	e59f10a8 	ldr	r1, [0x4240fad8]
 4240fa2c:	e0815200 	add	r5, r1, r0, lsl #4
 4240fa30:	ea000004 	b	0x4240fa48
 4240fa34:	e5dd0000 	ldrb	r0, [sp]
 4240fa38:	e2400063 	sub	r0, r0, #99	; 0x63
 4240fa3c:	e0800080 	add	r0, r0, r0, lsl #1
-4240fa40:	e59f1090 	ldr	r1, [pc, #144]	; 0x4240fad8
+4240fa40:	e59f1090 	ldr	r1, [0x4240fad8]
 4240fa44:	e0815200 	add	r5, r1, r0, lsl #4
 4240fa48:	e5dd0000 	ldrb	r0, [sp]
 4240fa4c:	e5c50004 	strb	r0, [r5, #4]
@@ -7565,7 +7566,7 @@ Disassembly of section .data:
 4240fa68:	e5850010 	str	r0, [r5, #16]
 4240fa6c:	e3e00000 	mvn	r0, #0
 4240fa70:	eaffffe2 	b	0x4240fa00
-4240fa74:	e59f0084 	ldr	r0, [pc, #132]	; 0x4240fb00
+4240fa74:	e59f0084 	ldr	r0, [0x4240fb00]
 4240fa78:	e7900104 	ldr	r0, [r0, r4, lsl #2]
 4240fa7c:	e5900008 	ldr	r0, [r0, #8]
 4240fa80:	e5901034 	ldr	r1, [r0, #52]	; 0x34
@@ -7576,7 +7577,7 @@ Disassembly of section .data:
 4240fa94:	1a000006 	bne	0x4240fab4
 4240fa98:	e3a00001 	mov	r0, #1
 4240fa9c:	e5850010 	str	r0, [r5, #16]
-4240faa0:	e59f0058 	ldr	r0, [pc, #88]	; 0x4240fb00
+4240faa0:	e59f0058 	ldr	r0, [0x4240fb00]
 4240faa4:	e7900104 	ldr	r0, [r0, r4, lsl #2]
 4240faa8:	e5850008 	str	r0, [r5, #8]
 4240faac:	e3a00000 	mov	r0, #0
@@ -7891,7 +7892,7 @@ Disassembly of section .data:
 4240ff78:	e1a01000 	mov	r1, r0
 4240ff7c:	e3510000 	cmp	r1, #0
 4240ff80:	0a00000a 	beq	0x4240ffb0
-4240ff84:	e59f20dc 	ldr	r2, [pc, #220]	; 0x42410068
+4240ff84:	e59f20dc 	ldr	r2, [0x42410068]
 4240ff88:	e5910000 	ldr	r0, [r1]
 4240ff8c:	e5820000 	str	r0, [r2]
 4240ff90:	e5910004 	ldr	r0, [r1, #4]
@@ -8555,13 +8556,13 @@ Disassembly of section .data:
 424109d8:	ea000004 	b	0x424109f0
 424109dc:	e3e00000 	mvn	r0, #0
 424109e0:	e0812381 	add	r2, r1, r1, lsl #7
-424109e4:	e59f3b88 	ldr	r3, [pc, #2952]	; 0x42411574
+424109e4:	e59f3b88 	ldr	r3, [0x42411574]
 424109e8:	e7830102 	str	r0, [r3, r2, lsl #2]
 424109ec:	e2811001 	add	r1, r1, #1
 424109f0:	e3510004 	cmp	r1, #4
 424109f4:	bafffff8 	blt	0x424109dc
 424109f8:	e3a00000 	mov	r0, #0
-424109fc:	e59f2b74 	ldr	r2, [pc, #2932]	; 0x42411578
+424109fc:	e59f2b74 	ldr	r2, [0x42411578]
 42410a00:	e5820004 	str	r0, [r2, #4]
 42410a04:	e3a00004 	mov	r0, #4
 42410a08:	e5820000 	str	r0, [r2]
@@ -8571,13 +8572,13 @@ Disassembly of section .data:
 42410a18:	ea000004 	b	0x42410a30
 42410a1c:	e3e00000 	mvn	r0, #0
 42410a20:	e0812381 	add	r2, r1, r1, lsl #7
-42410a24:	e59f3b48 	ldr	r3, [pc, #2888]	; 0x42411574
+42410a24:	e59f3b48 	ldr	r3, [0x42411574]
 42410a28:	e7830102 	str	r0, [r3, r2, lsl #2]
 42410a2c:	e2811001 	add	r1, r1, #1
 42410a30:	e3510004 	cmp	r1, #4
 42410a34:	bafffff8 	blt	0x42410a1c
 42410a38:	e3a00000 	mov	r0, #0
-42410a3c:	e59f2b34 	ldr	r2, [pc, #2868]	; 0x42411578
+42410a3c:	e59f2b34 	ldr	r2, [0x42411578]
 42410a40:	e5820004 	str	r0, [r2, #4]
 42410a44:	e5820000 	str	r0, [r2]
 42410a48:	e12fff1e 	bx	lr
@@ -8587,7 +8588,7 @@ Disassembly of section .data:
 42410a58:	e3a06000 	mov	r6, #0
 42410a5c:	ea000009 	b	0x42410a88
 42410a60:	e0860386 	add	r0, r6, r6, lsl #7
-42410a64:	e59f1b08 	ldr	r1, [pc, #2824]	; 0x42411574
+42410a64:	e59f1b08 	ldr	r1, [0x42411574]
 42410a68:	e7910100 	ldr	r0, [r1, r0, lsl #2]
 42410a6c:	e1500005 	cmp	r0, r5
 42410a70:	1a000003 	bne	0x42410a84
@@ -8596,14 +8597,14 @@ Disassembly of section .data:
 42410a7c:	e2800004 	add	r0, r0, #4
 42410a80:	e8bd81f0 	pop	{r4, r5, r6, r7, r8, pc}
 42410a84:	e2866001 	add	r6, r6, #1
-42410a88:	e59f0ae8 	ldr	r0, [pc, #2792]	; 0x42411578
+42410a88:	e59f0ae8 	ldr	r0, [0x42411578]
 42410a8c:	e5900000 	ldr	r0, [r0]
 42410a90:	e1500006 	cmp	r0, r6
 42410a94:	cafffff1 	bgt	0x42410a60
-42410a98:	e59f0ad8 	ldr	r0, [pc, #2776]	; 0x42411578
+42410a98:	e59f0ad8 	ldr	r0, [0x42411578]
 42410a9c:	e5906004 	ldr	r6, [r0, #4]
 42410aa0:	e0860386 	add	r0, r6, r6, lsl #7
-42410aa4:	e59f1ac8 	ldr	r1, [pc, #2760]	; 0x42411574
+42410aa4:	e59f1ac8 	ldr	r1, [0x42411574]
 42410aa8:	e0810100 	add	r0, r1, r0, lsl #2
 42410aac:	e2808004 	add	r8, r0, #4
 42410ab0:	e2410008 	sub	r0, r1, #8
@@ -8617,7 +8618,7 @@ Disassembly of section .data:
 42410ad0:	e1500001 	cmp	r0, r1
 42410ad4:	ba000002 	blt	0x42410ae4
 42410ad8:	e3a00000 	mov	r0, #0
-42410adc:	e59f1a94 	ldr	r1, [pc, #2708]	; 0x42411578
+42410adc:	e59f1a94 	ldr	r1, [0x42411578]
 42410ae0:	e5810004 	str	r0, [r1, #4]
 42410ae4:	e594c01c 	ldr	ip, [r4, #28]
 42410ae8:	e1a03004 	mov	r3, r4
@@ -8631,7 +8632,7 @@ Disassembly of section .data:
 42410b08:	e3a00000 	mov	r0, #0
 42410b0c:	eaffffdb 	b	0x42410a80
 42410b10:	e0860386 	add	r0, r6, r6, lsl #7
-42410b14:	e59f1a58 	ldr	r1, [pc, #2648]	; 0x42411574
+42410b14:	e59f1a58 	ldr	r1, [0x42411574]
 42410b18:	e7815100 	str	r5, [r1, r0, lsl #2]
 42410b1c:	e1a00008 	mov	r0, r8
 42410b20:	eaffffd6 	b	0x42410a80
@@ -9898,13 +9899,13 @@ Disassembly of section .data:
 42411ed4:	e59d002c 	ldr	r0, [sp, #44]	; 0x2c
 42411ed8:	e2800001 	add	r0, r0, #1
 42411edc:	e58d002c 	str	r0, [sp, #44]	; 0x2c
-42411ee0:	e59f0180 	ldr	r0, [pc, #384]	; 0x42412068
+42411ee0:	e59f0180 	ldr	r0, [0x42412068]
 42411ee4:	e59d102c 	ldr	r1, [sp, #44]	; 0x2c
 42411ee8:	e7900181 	ldr	r0, [r0, r1, lsl #3]
 42411eec:	e59d1048 	ldr	r1, [sp, #72]	; 0x48
 42411ef0:	e1500001 	cmp	r0, r1
 42411ef4:	3afffff6 	bcc	0x42411ed4
-42411ef8:	e59f0168 	ldr	r0, [pc, #360]	; 0x42412068
+42411ef8:	e59f0168 	ldr	r0, [0x42412068]
 42411efc:	e59d102c 	ldr	r1, [sp, #44]	; 0x2c
 42411f00:	e0800181 	add	r0, r0, r1, lsl #3
 42411f04:	e5905004 	ldr	r5, [r0, #4]
@@ -9920,13 +9921,13 @@ Disassembly of section .data:
 42411f2c:	e59d002c 	ldr	r0, [sp, #44]	; 0x2c
 42411f30:	e2800001 	add	r0, r0, #1
 42411f34:	e58d002c 	str	r0, [sp, #44]	; 0x2c
-42411f38:	e59f012c 	ldr	r0, [pc, #300]	; 0x4241206c
+42411f38:	e59f012c 	ldr	r0, [0x4241206c]
 42411f3c:	e59d102c 	ldr	r1, [sp, #44]	; 0x2c
 42411f40:	e7900181 	ldr	r0, [r0, r1, lsl #3]
 42411f44:	e59d1048 	ldr	r1, [sp, #72]	; 0x48
 42411f48:	e1500001 	cmp	r0, r1
 42411f4c:	3afffff6 	bcc	0x42411f2c
-42411f50:	e59f1114 	ldr	r1, [pc, #276]	; 0x4241206c
+42411f50:	e59f1114 	ldr	r1, [0x4241206c]
 42411f54:	e59d002c 	ldr	r0, [sp, #44]	; 0x2c
 42411f58:	e0810180 	add	r0, r1, r0, lsl #3
 42411f5c:	e1d000b4 	ldrh	r0, [r0, #4]
@@ -10750,7 +10751,7 @@ Disassembly of section .data:
 42412c24:	ea000004 	b	0x42412c3c
 42412c28:	e3a01000 	mov	r1, #0
 42412c2c:	e0802380 	add	r2, r0, r0, lsl #7
-42412c30:	e59f3ef8 	ldr	r3, [pc, #3832]	; 0x42413b30
+42412c30:	e59f3ef8 	ldr	r3, [0x42413b30]
 42412c34:	e7831102 	str	r1, [r3, r2, lsl #2]
 42412c38:	e2800001 	add	r0, r0, #1
 42412c3c:	e3500030 	cmp	r0, #48	; 0x30
@@ -10763,13 +10764,13 @@ Disassembly of section .data:
 42412c58:	e3a04000 	mov	r4, #0
 42412c5c:	ea000013 	b	0x42412cb0
 42412c60:	e0840384 	add	r0, r4, r4, lsl #7
-42412c64:	e59f1ec4 	ldr	r1, [pc, #3780]	; 0x42413b30
+42412c64:	e59f1ec4 	ldr	r1, [0x42413b30]
 42412c68:	e7910100 	ldr	r0, [r1, r0, lsl #2]
 42412c6c:	e3500000 	cmp	r0, #0
 42412c70:	1a00000d 	bne	0x42412cac
 42412c74:	e3a00001 	mov	r0, #1
 42412c78:	e0841384 	add	r1, r4, r4, lsl #7
-42412c7c:	e59f2eac 	ldr	r2, [pc, #3756]	; 0x42413b30
+42412c7c:	e59f2eac 	ldr	r2, [0x42413b30]
 42412c80:	e7820101 	str	r0, [r2, r1, lsl #2]
 42412c84:	e0841384 	add	r1, r4, r4, lsl #7
 42412c88:	e0821101 	add	r1, r2, r1, lsl #2
@@ -10777,7 +10778,7 @@ Disassembly of section .data:
 42412c90:	e3a01c02 	mov	r1, #0x200
 42412c94:	eb00674c 	bl	0x4242c9cc
 42412c98:	e0840384 	add	r0, r4, r4, lsl #7
-42412c9c:	e59f1e8c 	ldr	r1, [pc, #3724]	; 0x42413b30
+42412c9c:	e59f1e8c 	ldr	r1, [0x42413b30]
 42412ca0:	e0810100 	add	r0, r1, r0, lsl #2
 42412ca4:	e2800004 	add	r0, r0, #4
 42412ca8:	e8bd8070 	pop	{r4, r5, r6, pc}
@@ -10790,14 +10791,14 @@ Disassembly of section .data:
 42412cc4:	e3a01000 	mov	r1, #0
 42412cc8:	ea00000b 	b	0x42412cfc
 42412ccc:	e0812381 	add	r2, r1, r1, lsl #7
-42412cd0:	e59f3e58 	ldr	r3, [pc, #3672]	; 0x42413b30
+42412cd0:	e59f3e58 	ldr	r3, [0x42413b30]
 42412cd4:	e0832102 	add	r2, r3, r2, lsl #2
 42412cd8:	e2822004 	add	r2, r2, #4
 42412cdc:	e1520000 	cmp	r2, r0
 42412ce0:	1a000004 	bne	0x42412cf8
 42412ce4:	e3a02000 	mov	r2, #0
 42412ce8:	e0813381 	add	r3, r1, r1, lsl #7
-42412cec:	e59f4e3c 	ldr	r4, [pc, #3644]	; 0x42413b30
+42412cec:	e59f4e3c 	ldr	r4, [0x42413b30]
 42412cf0:	e7842103 	str	r2, [r4, r3, lsl #2]
 42412cf4:	e8bd8010 	pop	{r4, pc}
 42412cf8:	e2811001 	add	r1, r1, #1
@@ -10808,7 +10809,7 @@ Disassembly of section .data:
 42412d0c:	ea000004 	b	0x42412d24
 42412d10:	e3a01000 	mov	r1, #0
 42412d14:	e0802100 	add	r2, r0, r0, lsl #2
-42412d18:	e59f3e14 	ldr	r3, [pc, #3604]	; 0x42413b34
+42412d18:	e59f3e14 	ldr	r3, [0x42413b34]
 42412d1c:	e7831182 	str	r1, [r3, r2, lsl #3]
 42412d20:	e2800001 	add	r0, r0, #1
 42412d24:	e3500010 	cmp	r0, #16
@@ -10818,13 +10819,13 @@ Disassembly of section .data:
 42412d34:	e3a04000 	mov	r4, #0
 42412d38:	ea000013 	b	0x42412d8c
 42412d3c:	e0840104 	add	r0, r4, r4, lsl #2
-42412d40:	e59f1dec 	ldr	r1, [pc, #3564]	; 0x42413b34
+42412d40:	e59f1dec 	ldr	r1, [0x42413b34]
 42412d44:	e7910180 	ldr	r0, [r1, r0, lsl #3]
 42412d48:	e3500000 	cmp	r0, #0
 42412d4c:	1a00000d 	bne	0x42412d88
 42412d50:	e3a00001 	mov	r0, #1
 42412d54:	e0841104 	add	r1, r4, r4, lsl #2
-42412d58:	e59f2dd4 	ldr	r2, [pc, #3540]	; 0x42413b34
+42412d58:	e59f2dd4 	ldr	r2, [0x42413b34]
 42412d5c:	e7820181 	str	r0, [r2, r1, lsl #3]
 42412d60:	e0841104 	add	r1, r4, r4, lsl #2
 42412d64:	e0821181 	add	r1, r2, r1, lsl #3
@@ -10832,7 +10833,7 @@ Disassembly of section .data:
 42412d6c:	e3a01028 	mov	r1, #40	; 0x28
 42412d70:	eb006715 	bl	0x4242c9cc
 42412d74:	e0840104 	add	r0, r4, r4, lsl #2
-42412d78:	e59f1db4 	ldr	r1, [pc, #3508]	; 0x42413b34
+42412d78:	e59f1db4 	ldr	r1, [0x42413b34]
 42412d7c:	e0810180 	add	r0, r1, r0, lsl #3
 42412d80:	e2800004 	add	r0, r0, #4
 42412d84:	e8bd8010 	pop	{r4, pc}
@@ -10845,14 +10846,14 @@ Disassembly of section .data:
 42412da0:	e3a01000 	mov	r1, #0
 42412da4:	ea00000b 	b	0x42412dd8
 42412da8:	e0812101 	add	r2, r1, r1, lsl #2
-42412dac:	e59f3d80 	ldr	r3, [pc, #3456]	; 0x42413b34
+42412dac:	e59f3d80 	ldr	r3, [0x42413b34]
 42412db0:	e0832182 	add	r2, r3, r2, lsl #3
 42412db4:	e2822004 	add	r2, r2, #4
 42412db8:	e1520000 	cmp	r2, r0
 42412dbc:	1a000004 	bne	0x42412dd4
 42412dc0:	e3a02000 	mov	r2, #0
 42412dc4:	e0813101 	add	r3, r1, r1, lsl #2
-42412dc8:	e59f4d64 	ldr	r4, [pc, #3428]	; 0x42413b34
+42412dc8:	e59f4d64 	ldr	r4, [0x42413b34]
 42412dcc:	e7842183 	str	r2, [r4, r3, lsl #3]
 42412dd0:	e8bd8010 	pop	{r4, pc}
 42412dd4:	e2811001 	add	r1, r1, #1
@@ -14348,7 +14349,7 @@ Disassembly of section .data:
 4241645c:	e3100001 	tst	r0, #1
 42416460:	0a000004 	beq	0x42416478
 42416464:	e59d000c 	ldr	r0, [sp, #12]
-42416468:	e59f6428 	ldr	r6, [pc, #1064]	; 0x42416898
+42416468:	e59f6428 	ldr	r6, [0x42416898]
 4241646c:	e02600a0 	eor	r0, r6, r0, lsr #1
 42416470:	e58d000c 	str	r0, [sp, #12]
 42416474:	ea000002 	b	0x42416484
@@ -14385,7 +14386,7 @@ Disassembly of section .data:
 424164f0:	e1a04000 	mov	r4, r0
 424164f4:	e1a05001 	mov	r5, r1
 424164f8:	e1a06002 	mov	r6, r2
-424164fc:	e59f7398 	ldr	r7, [pc, #920]	; 0x4241689c
+424164fc:	e59f7398 	ldr	r7, [0x4241689c]
 42416500:	e2878014 	add	r8, r7, #20
 42416504:	e3a09000 	mov	r9, #0
 42416508:	ea000037 	b	0x424165ec
@@ -14454,7 +14455,7 @@ Disassembly of section .data:
 42416604:	eafffff3 	b	0x424165d8
 42416608:	e92d41f0 	push	{r4, r5, r6, r7, r8, lr}
 4241660c:	e1a04000 	mov	r4, r0
-42416610:	e59f5284 	ldr	r5, [pc, #644]	; 0x4241689c
+42416610:	e59f5284 	ldr	r5, [0x4241689c]
 42416614:	e3a08002 	mov	r8, #2
 42416618:	e3540001 	cmp	r4, #1
 4241661c:	1a00000d 	bne	0x42416658
@@ -14500,7 +14501,7 @@ Disassembly of section .data:
 424166bc:	e8bd81f0 	pop	{r4, r5, r6, r7, r8, pc}
 424166c0:	e92d41f0 	push	{r4, r5, r6, r7, r8, lr}
 424166c4:	e1a04000 	mov	r4, r0
-424166c8:	e59f51cc 	ldr	r5, [pc, #460]	; 0x4241689c
+424166c8:	e59f51cc 	ldr	r5, [0x4241689c]
 424166cc:	e3a08000 	mov	r8, #0
 424166d0:	e1d501b2 	ldrh	r0, [r5, #18]
 424166d4:	e1500004 	cmp	r0, r4
@@ -14559,7 +14560,7 @@ Disassembly of section .data:
 424167a8:	eaffffcc 	b	0x424166e0
 424167ac:	e92d41f0 	push	{r4, r5, r6, r7, r8, lr}
 424167b0:	e1a04000 	mov	r4, r0
-424167b4:	e59f50e0 	ldr	r5, [pc, #224]	; 0x4241689c
+424167b4:	e59f50e0 	ldr	r5, [0x4241689c]
 424167b8:	e3a08000 	mov	r8, #0
 424167bc:	e1d501b2 	ldrh	r0, [r5, #18]
 424167c0:	e1500004 	cmp	r0, r4
@@ -14625,7 +14626,7 @@ Disassembly of section .data:
 424168b0:	e92d41f0 	push	{r4, r5, r6, r7, r8, lr}
 424168b4:	e24dd020 	sub	sp, sp, #32
 424168b8:	e3a05000 	mov	r5, #0
-424168bc:	e59f01fc 	ldr	r0, [pc, #508]	; 0x42416ac0
+424168bc:	e59f01fc 	ldr	r0, [0x42416ac0]
 424168c0:	e51f202c 	ldr	r2, [pc, #-44]	; 0x4241689c
 424168c4:	e3a01002 	mov	r1, #2
 424168c8:	e5903004 	ldr	r3, [r0, #4]
@@ -14719,7 +14720,7 @@ Disassembly of section .data:
 42416a28:	e588100c 	str	r1, [r8, #12]
 42416a2c:	e3a00000 	mov	r0, #0
 42416a30:	e0851085 	add	r1, r5, r5, lsl #1
-42416a34:	e59f20a4 	ldr	r2, [pc, #164]	; 0x42416ae0
+42416a34:	e59f20a4 	ldr	r2, [0x42416ae0]
 42416a38:	e0821201 	add	r1, r2, r1, lsl #4
 42416a3c:	e5810028 	str	r0, [r1, #40]	; 0x28
 42416a40:	e0851085 	add	r1, r5, r5, lsl #1
@@ -14737,7 +14738,7 @@ Disassembly of section .data:
 42416a70:	e2821000 	add	r1, r2, #0
 42416a74:	e0810200 	add	r0, r1, r0, lsl #4
 42416a78:	e280001c 	add	r0, r0, #28
-42416a7c:	e59f1060 	ldr	r1, [pc, #96]	; 0x42416ae4
+42416a7c:	e59f1060 	ldr	r1, [0x42416ae4]
 42416a80:	e891100c 	ldm	r1, {r2, r3, ip}
 42416a84:	e880100c 	stm	r0, {r2, r3, ip}
 42416a88:	e2855001 	add	r5, r5, #1
@@ -14829,7 +14830,7 @@ Disassembly of section .data:
 42416bd8:	e3e00000 	mvn	r0, #0
 42416bdc:	e12fff1e 	bx	lr
 42416be0:	e3a00000 	mov	r0, #0
-42416be4:	e59f32d0 	ldr	r3, [pc, #720]	; 0x42416ebc
+42416be4:	e59f32d0 	ldr	r3, [0x42416ebc]
 42416be8:	e5830004 	str	r0, [r3, #4]
 42416bec:	e2433010 	sub	r3, r3, #16
 42416bf0:	e5830004 	str	r0, [r3, #4]
@@ -14854,7 +14855,7 @@ Disassembly of section .data:
 42416c3c:	e281001f 	add	r0, r1, #31
 42416c40:	e1a002a0 	lsr	r0, r0, #5
 42416c44:	e1a04280 	lsl	r4, r0, #5
-42416c48:	e59f2270 	ldr	r2, [pc, #624]	; 0x42416ec0
+42416c48:	e59f2270 	ldr	r2, [0x42416ec0]
 42416c4c:	ea000009 	b	0x42416c78
 42416c50:	e8920021 	ldm	r2, {r0, r5}
 42416c54:	e0800005 	add	r0, r0, r5
@@ -14929,7 +14930,7 @@ Disassembly of section .data:
 42416d68:	1a000001 	bne	0x42416d74
 42416d6c:	e1a00004 	mov	r0, r4
 42416d70:	eafffffa 	b	0x42416d60
-42416d74:	e59f6144 	ldr	r6, [pc, #324]	; 0x42416ec0
+42416d74:	e59f6144 	ldr	r6, [0x42416ec0]
 42416d78:	ea000005 	b	0x42416d94
 42416d7c:	e596000c 	ldr	r0, [r6, #12]
 42416d80:	e5900000 	ldr	r0, [r0]
@@ -14989,7 +14990,7 @@ Disassembly of section .data:
 42416e58:	e3500000 	cmp	r0, #0
 42416e5c:	1a000000 	bne	0x42416e64
 42416e60:	e12fff1e 	bx	lr
-42416e64:	e59f1054 	ldr	r1, [pc, #84]	; 0x42416ec0
+42416e64:	e59f1054 	ldr	r1, [0x42416ec0]
 42416e68:	ea000005 	b	0x42416e84
 42416e6c:	e591300c 	ldr	r3, [r1, #12]
 42416e70:	e5933000 	ldr	r3, [r3]
@@ -15024,7 +15025,7 @@ Disassembly of section .data:
 42416ee4:	ea000009 	b	0x42416f10
 42416ee8:	e320f000 	nop	{0}
 42416eec:	e1a07005 	mov	r7, r5
-42416ef0:	e59f804c 	ldr	r8, [pc, #76]	; 0x42416f44
+42416ef0:	e59f804c 	ldr	r8, [0x42416f44]
 42416ef4:	e3a010ac 	mov	r1, #172	; 0xac
 42416ef8:	e1a00007 	mov	r0, r7
 42416efc:	eb0056b2 	bl	0x4242c9cc
@@ -15035,7 +15036,7 @@ Disassembly of section .data:
 42416f10:	e320f000 	nop	{0}
 42416f14:	e1a07005 	mov	r7, r5
 42416f18:	e30822a0 	movw	r2, #33440	; 0x82a0
-42416f1c:	e59f1024 	ldr	r1, [pc, #36]	; 0x42416f48
+42416f1c:	e59f1024 	ldr	r1, [0x42416f48]
 42416f20:	e1a00007 	mov	r0, r7
 42416f24:	eb0056bd 	bl	0x4242ca20
 42416f28:	ea000002 	b	0x42416f38
@@ -15048,7 +15049,7 @@ Disassembly of section .data:
 42416f44:	424081d0 	submi	r8, r0, #52	; 0x34
 42416f48:	42400030 	submi	r0, r0, #48	; 0x30
 42416f4c:	e92d41f0 	push	{r4, r5, r6, r7, r8, lr}
-42416f50:	e59f4078 	ldr	r4, [pc, #120]	; 0x42416fd0
+42416f50:	e59f4078 	ldr	r4, [0x42416fd0]
 42416f54:	e1a07004 	mov	r7, r4
 42416f58:	e3a02008 	mov	r2, #8
 42416f5c:	e28f1070 	ldr	r1, =0x42416fd4	; add r1, pc, #112	; 0x70
@@ -15107,7 +15108,7 @@ Disassembly of section .data:
 42417030:	e1a02000 	mov	r2, r0
 42417034:	e3520000 	cmp	r2, #0
 42417038:	0a000007 	beq	0x4241705c
-4241703c:	e59f0a98 	ldr	r0, [pc, #2712]	; 0x42417adc
+4241703c:	e59f0a98 	ldr	r0, [0x42417adc]
 42417040:	e5802000 	str	r2, [r0]
 42417044:	e5901000 	ldr	r1, [r0]
 42417048:	e2803004 	add	r3, r0, #4
@@ -15118,7 +15119,7 @@ Disassembly of section .data:
 4241705c:	e3e00000 	mvn	r0, #0
 42417060:	eafffffc 	b	0x42417058
 42417064:	e3a00000 	mov	r0, #0
-42417068:	e59f1a6c 	ldr	r1, [pc, #2668]	; 0x42417adc
+42417068:	e59f1a6c 	ldr	r1, [0x42417adc]
 4241706c:	e5810000 	str	r0, [r1]
 42417070:	e2811004 	add	r1, r1, #4
 42417074:	e5810000 	str	r0, [r1]
@@ -15132,7 +15133,7 @@ Disassembly of section .data:
 42417094:	e3a09000 	mov	r9, #0
 42417098:	e3a00000 	mov	r0, #0
 4241709c:	e58d000c 	str	r0, [sp, #12]
-424170a0:	e59f0a34 	ldr	r0, [pc, #2612]	; 0x42417adc
+424170a0:	e59f0a34 	ldr	r0, [0x42417adc]
 424170a4:	e5900000 	ldr	r0, [r0]
 424170a8:	e3500000 	cmp	r0, #0
 424170ac:	1a000002 	bne	0x424170bc
@@ -15179,7 +15180,7 @@ Disassembly of section .data:
 42417150:	e3a0a000 	mov	sl, #0
 42417154:	ea000067 	b	0x424172f8
 42417158:	e08a010a 	add	r0, sl, sl, lsl #2
-4241715c:	e59f1978 	ldr	r1, [pc, #2424]	; 0x42417adc
+4241715c:	e59f1978 	ldr	r1, [0x42417adc]
 42417160:	e5911000 	ldr	r1, [r1]
 42417164:	e2811010 	add	r1, r1, #16
 42417168:	e0819180 	add	r9, r1, r0, lsl #3
@@ -15192,7 +15193,7 @@ Disassembly of section .data:
 42417184:	e3a00000 	mov	r0, #0
 42417188:	e58d0008 	str	r0, [sp, #8]
 4241718c:	ea000053 	b	0x424172e0
-42417190:	e59f1944 	ldr	r1, [pc, #2372]	; 0x42417adc
+42417190:	e59f1944 	ldr	r1, [0x42417adc]
 42417194:	e5990024 	ldr	r0, [r9, #36]	; 0x24
 42417198:	e5911000 	ldr	r1, [r1]
 4241719c:	e0810100 	add	r0, r1, r0, lsl #2
@@ -15227,7 +15228,7 @@ Disassembly of section .data:
 42417210:	e320f000 	nop	{0}
 42417214:	e59d000c 	ldr	r0, [sp, #12]
 42417218:	e5900020 	ldr	r0, [r0, #32]
-4241721c:	e59f18b8 	ldr	r1, [pc, #2232]	; 0x42417adc
+4241721c:	e59f18b8 	ldr	r1, [0x42417adc]
 42417220:	e5911000 	ldr	r1, [r1]
 42417224:	e7910100 	ldr	r0, [r1, r0, lsl #2]
 42417228:	e5860000 	str	r0, [r6]
@@ -15241,7 +15242,7 @@ Disassembly of section .data:
 42417248:	e1a02100 	lsl	r2, r0, #2
 4241724c:	e59d000c 	ldr	r0, [sp, #12]
 42417250:	e5900020 	ldr	r0, [r0, #32]
-42417254:	e59f3880 	ldr	r3, [pc, #2176]	; 0x42417adc
+42417254:	e59f3880 	ldr	r3, [0x42417adc]
 42417258:	e5933000 	ldr	r3, [r3]
 4241725c:	e0831100 	add	r1, r3, r0, lsl #2
 42417260:	e1a00006 	mov	r0, r6
@@ -15261,7 +15262,7 @@ Disassembly of section .data:
 42417298:	eb00557c 	bl	0x4242c890
 4241729c:	e59d000c 	ldr	r0, [sp, #12]
 424172a0:	e5900020 	ldr	r0, [r0, #32]
-424172a4:	e59f2830 	ldr	r2, [pc, #2096]	; 0x42417adc
+424172a4:	e59f2830 	ldr	r2, [0x42417adc]
 424172a8:	e5922000 	ldr	r2, [r2]
 424172ac:	e0821100 	add	r1, r2, r0, lsl #2
 424172b0:	e3a02018 	mov	r2, #24
@@ -15282,7 +15283,7 @@ Disassembly of section .data:
 424172ec:	caffffa7 	bgt	0x42417190
 424172f0:	e320f000 	nop	{0}
 424172f4:	e28aa001 	add	sl, sl, #1
-424172f8:	e59f07e0 	ldr	r0, [pc, #2016]	; 0x42417ae0
+424172f8:	e59f07e0 	ldr	r0, [0x42417ae0]
 424172fc:	e5900000 	ldr	r0, [r0]
 42417300:	e15a0000 	cmp	sl, r0
 42417304:	baffff93 	blt	0x42417158
@@ -15295,7 +15296,7 @@ Disassembly of section .data:
 42417320:	e1a06002 	mov	r6, r2
 42417324:	e3a08000 	mov	r8, #0
 42417328:	e3a09000 	mov	r9, #0
-4241732c:	e59f07a8 	ldr	r0, [pc, #1960]	; 0x42417adc
+4241732c:	e59f07a8 	ldr	r0, [0x42417adc]
 42417330:	e5900000 	ldr	r0, [r0]
 42417334:	e3500000 	cmp	r0, #0
 42417338:	1a000002 	bne	0x42417348
@@ -15338,7 +15339,7 @@ Disassembly of section .data:
 424173cc:	e3a0a000 	mov	sl, #0
 424173d0:	ea00002c 	b	0x42417488
 424173d4:	e08a010a 	add	r0, sl, sl, lsl #2
-424173d8:	e59f16fc 	ldr	r1, [pc, #1788]	; 0x42417adc
+424173d8:	e59f16fc 	ldr	r1, [0x42417adc]
 424173dc:	e5911000 	ldr	r1, [r1]
 424173e0:	e2811010 	add	r1, r1, #16
 424173e4:	e0818180 	add	r8, r1, r0, lsl #3
@@ -15350,7 +15351,7 @@ Disassembly of section .data:
 424173fc:	ea000020 	b	0x42417484
 42417400:	e3a0b000 	mov	fp, #0
 42417404:	ea00001a 	b	0x42417474
-42417408:	e59f16cc 	ldr	r1, [pc, #1740]	; 0x42417adc
+42417408:	e59f16cc 	ldr	r1, [0x42417adc]
 4241740c:	e5980024 	ldr	r0, [r8, #36]	; 0x24
 42417410:	e5911000 	ldr	r1, [r1]
 42417414:	e0810100 	add	r0, r1, r0, lsl #2
@@ -15369,7 +15370,7 @@ Disassembly of section .data:
 42417448:	e59d0004 	ldr	r0, [sp, #4]
 4241744c:	e3500001 	cmp	r0, #1
 42417450:	1a000005 	bne	0x4241746c
-42417454:	e59f1680 	ldr	r1, [pc, #1664]	; 0x42417adc
+42417454:	e59f1680 	ldr	r1, [0x42417adc]
 42417458:	e5990020 	ldr	r0, [r9, #32]
 4241745c:	e5911000 	ldr	r1, [r1]
 42417460:	e7816100 	str	r6, [r1, r0, lsl #2]
@@ -15382,7 +15383,7 @@ Disassembly of section .data:
 4241747c:	caffffe1 	bgt	0x42417408
 42417480:	e320f000 	nop	{0}
 42417484:	e28aa001 	add	sl, sl, #1
-42417488:	e59f0650 	ldr	r0, [pc, #1616]	; 0x42417ae0
+42417488:	e59f0650 	ldr	r0, [0x42417ae0]
 4241748c:	e5900000 	ldr	r0, [r0]
 42417490:	e15a0000 	cmp	sl, r0
 42417494:	baffffce 	blt	0x424173d4
@@ -15397,7 +15398,7 @@ Disassembly of section .data:
 424174b8:	e3a08000 	mov	r8, #0
 424174bc:	e3a00000 	mov	r0, #0
 424174c0:	e58d0008 	str	r0, [sp, #8]
-424174c4:	e59f0610 	ldr	r0, [pc, #1552]	; 0x42417adc
+424174c4:	e59f0610 	ldr	r0, [0x42417adc]
 424174c8:	e5900000 	ldr	r0, [r0]
 424174cc:	e3500000 	cmp	r0, #0
 424174d0:	1a000002 	bne	0x424174e0
@@ -15447,7 +15448,7 @@ Disassembly of section .data:
 42417580:	ea000063 	b	0x42417714
 42417584:	e59d0004 	ldr	r0, [sp, #4]
 42417588:	e0800100 	add	r0, r0, r0, lsl #2
-4241758c:	e59f1548 	ldr	r1, [pc, #1352]	; 0x42417adc
+4241758c:	e59f1548 	ldr	r1, [0x42417adc]
 42417590:	e5911000 	ldr	r1, [r1]
 42417594:	e2811010 	add	r1, r1, #16
 42417598:	e0818180 	add	r8, r1, r0, lsl #3
@@ -15459,7 +15460,7 @@ Disassembly of section .data:
 424175b0:	ea000054 	b	0x42417708
 424175b4:	e3a09000 	mov	r9, #0
 424175b8:	ea00004e 	b	0x424176f8
-424175bc:	e59f1518 	ldr	r1, [pc, #1304]	; 0x42417adc
+424175bc:	e59f1518 	ldr	r1, [0x42417adc]
 424175c0:	e5980024 	ldr	r0, [r8, #36]	; 0x24
 424175c4:	e5911000 	ldr	r1, [r1]
 424175c8:	e0810100 	add	r0, r1, r0, lsl #2
@@ -15485,7 +15486,7 @@ Disassembly of section .data:
 42417618:	e5961000 	ldr	r1, [r6]
 4241761c:	e59d0008 	ldr	r0, [sp, #8]
 42417620:	e5900020 	ldr	r0, [r0, #32]
-42417624:	e59f24b0 	ldr	r2, [pc, #1200]	; 0x42417adc
+42417624:	e59f24b0 	ldr	r2, [0x42417adc]
 42417628:	e5922000 	ldr	r2, [r2]
 4241762c:	e7821100 	str	r1, [r2, r0, lsl #2]
 42417630:	e3a00000 	mov	r0, #0
@@ -15496,14 +15497,14 @@ Disassembly of section .data:
 42417644:	e1a0b006 	mov	fp, r6
 42417648:	e59d1008 	ldr	r1, [sp, #8]
 4241764c:	e5911020 	ldr	r1, [r1, #32]
-42417650:	e59f2484 	ldr	r2, [pc, #1156]	; 0x42417adc
+42417650:	e59f2484 	ldr	r2, [0x42417adc]
 42417654:	e5922000 	ldr	r2, [r2]
 42417658:	e0820101 	add	r0, r2, r1, lsl #2
 4241765c:	e3a01018 	mov	r1, #24
 42417660:	eb0054c9 	bl	0x4242c98c
 42417664:	e59d1008 	ldr	r1, [sp, #8]
 42417668:	e5911020 	ldr	r1, [r1, #32]
-4241766c:	e59f2468 	ldr	r2, [pc, #1128]	; 0x42417adc
+4241766c:	e59f2468 	ldr	r2, [0x42417adc]
 42417670:	e5922000 	ldr	r2, [r2]
 42417674:	e0820101 	add	r0, r2, r1, lsl #2
 42417678:	e3a02018 	mov	r2, #24
@@ -15522,14 +15523,14 @@ Disassembly of section .data:
 424176ac:	e1a0110a 	lsl	r1, sl, #2
 424176b0:	e59d2008 	ldr	r2, [sp, #8]
 424176b4:	e5922020 	ldr	r2, [r2, #32]
-424176b8:	e59f341c 	ldr	r3, [pc, #1052]	; 0x42417adc
+424176b8:	e59f341c 	ldr	r3, [0x42417adc]
 424176bc:	e5933000 	ldr	r3, [r3]
 424176c0:	e0830102 	add	r0, r3, r2, lsl #2
 424176c4:	eb0054b0 	bl	0x4242c98c
 424176c8:	e1a02107 	lsl	r2, r7, #2
 424176cc:	e59d1008 	ldr	r1, [sp, #8]
 424176d0:	e5911020 	ldr	r1, [r1, #32]
-424176d4:	e59f3400 	ldr	r3, [pc, #1024]	; 0x42417adc
+424176d4:	e59f3400 	ldr	r3, [0x42417adc]
 424176d8:	e5933000 	ldr	r3, [r3]
 424176dc:	e0830101 	add	r0, r3, r1, lsl #2
 424176e0:	e1a01006 	mov	r1, r6
@@ -15545,7 +15546,7 @@ Disassembly of section .data:
 42417708:	e59d0004 	ldr	r0, [sp, #4]
 4241770c:	e2800001 	add	r0, r0, #1
 42417710:	e58d0004 	str	r0, [sp, #4]
-42417714:	e59f13c4 	ldr	r1, [pc, #964]	; 0x42417ae0
+42417714:	e59f13c4 	ldr	r1, [0x42417ae0]
 42417718:	e59d0004 	ldr	r0, [sp, #4]
 4241771c:	e5911000 	ldr	r1, [r1]
 42417720:	e1500001 	cmp	r0, r1
@@ -15556,7 +15557,7 @@ Disassembly of section .data:
 42417734:	e24dd024 	sub	sp, sp, #36	; 0x24
 42417738:	e1a04000 	mov	r4, r0
 4241773c:	e3a06000 	mov	r6, #0
-42417740:	e59f0394 	ldr	r0, [pc, #916]	; 0x42417adc
+42417740:	e59f0394 	ldr	r0, [0x42417adc]
 42417744:	e5900000 	ldr	r0, [r0]
 42417748:	e3500000 	cmp	r0, #0
 4241774c:	1a000002 	bne	0x4241775c
@@ -15583,7 +15584,7 @@ Disassembly of section .data:
 424177a0:	e3a07000 	mov	r7, #0
 424177a4:	ea00000e 	b	0x424177e4
 424177a8:	e0870107 	add	r0, r7, r7, lsl #2
-424177ac:	e59f1328 	ldr	r1, [pc, #808]	; 0x42417adc
+424177ac:	e59f1328 	ldr	r1, [0x42417adc]
 424177b0:	e5911000 	ldr	r1, [r1]
 424177b4:	e2811010 	add	r1, r1, #16
 424177b8:	e0816180 	add	r6, r1, r0, lsl #3
@@ -15597,19 +15598,19 @@ Disassembly of section .data:
 424177d8:	eaffffdd 	b	0x42417754
 424177dc:	e320f000 	nop	{0}
 424177e0:	e2877001 	add	r7, r7, #1
-424177e4:	e59f02f4 	ldr	r0, [pc, #756]	; 0x42417ae0
+424177e4:	e59f02f4 	ldr	r0, [0x42417ae0]
 424177e8:	e5900000 	ldr	r0, [r0]
 424177ec:	e1570000 	cmp	r7, r0
 424177f0:	baffffec 	blt	0x424177a8
 424177f4:	e3e00000 	mvn	r0, #0
 424177f8:	eaffffd5 	b	0x42417754
-424177fc:	e59f02d8 	ldr	r0, [pc, #728]	; 0x42417adc
+424177fc:	e59f02d8 	ldr	r0, [0x42417adc]
 42417800:	e5900000 	ldr	r0, [r0]
 42417804:	e3500000 	cmp	r0, #0
 42417808:	1a000001 	bne	0x42417814
 4241780c:	e3e00000 	mvn	r0, #0
 42417810:	e12fff1e 	bx	lr
-42417814:	e59f02c4 	ldr	r0, [pc, #708]	; 0x42417ae0
+42417814:	e59f02c4 	ldr	r0, [0x42417ae0]
 42417818:	e5900000 	ldr	r0, [r0]
 4241781c:	eafffffb 	b	0x42417810
 42417820:	e92d4ff0 	push	{r4, r5, r6, r7, r8, r9, sl, fp, lr}
@@ -15618,7 +15619,7 @@ Disassembly of section .data:
 4241782c:	e3a06000 	mov	r6, #0
 42417830:	e3a07000 	mov	r7, #0
 42417834:	e3a0b000 	mov	fp, #0
-42417838:	e59f029c 	ldr	r0, [pc, #668]	; 0x42417adc
+42417838:	e59f029c 	ldr	r0, [0x42417adc]
 4241783c:	e5900000 	ldr	r0, [r0]
 42417840:	e3500000 	cmp	r0, #0
 42417844:	1a000002 	bne	0x42417854
@@ -15645,7 +15646,7 @@ Disassembly of section .data:
 42417898:	e3a08000 	mov	r8, #0
 4241789c:	ea00001e 	b	0x4241791c
 424178a0:	e0880108 	add	r0, r8, r8, lsl #2
-424178a4:	e59f1230 	ldr	r1, [pc, #560]	; 0x42417adc
+424178a4:	e59f1230 	ldr	r1, [0x42417adc]
 424178a8:	e5911000 	ldr	r1, [r1]
 424178ac:	e2811010 	add	r1, r1, #16
 424178b0:	e0816180 	add	r6, r1, r0, lsl #3
@@ -15657,7 +15658,7 @@ Disassembly of section .data:
 424178c8:	ea000012 	b	0x42417918
 424178cc:	e3a09000 	mov	r9, #0
 424178d0:	ea00000c 	b	0x42417908
-424178d4:	e59f1200 	ldr	r1, [pc, #512]	; 0x42417adc
+424178d4:	e59f1200 	ldr	r1, [0x42417adc]
 424178d8:	e5960024 	ldr	r0, [r6, #36]	; 0x24
 424178dc:	e5911000 	ldr	r1, [r1]
 424178e0:	e0810100 	add	r0, r1, r0, lsl #2
@@ -15675,7 +15676,7 @@ Disassembly of section .data:
 42417910:	caffffef 	bgt	0x424178d4
 42417914:	e320f000 	nop	{0}
 42417918:	e2888001 	add	r8, r8, #1
-4241791c:	e59f01bc 	ldr	r0, [pc, #444]	; 0x42417ae0
+4241791c:	e59f01bc 	ldr	r0, [0x42417ae0]
 42417920:	e5900000 	ldr	r0, [r0]
 42417924:	e1580000 	cmp	r8, r0
 42417928:	baffffdc 	blt	0x424178a0
@@ -15690,7 +15691,7 @@ Disassembly of section .data:
 4241794c:	e3a00000 	mov	r0, #0
 42417950:	e58d0004 	str	r0, [sp, #4]
 42417954:	e1a08005 	mov	r8, r5
-42417958:	e59f017c 	ldr	r0, [pc, #380]	; 0x42417adc
+42417958:	e59f017c 	ldr	r0, [0x42417adc]
 4241795c:	e5900000 	ldr	r0, [r0]
 42417960:	e3500000 	cmp	r0, #0
 42417964:	1a000002 	bne	0x42417974
@@ -15722,7 +15723,7 @@ Disassembly of section .data:
 424179cc:	e3a09000 	mov	r9, #0
 424179d0:	ea00003b 	b	0x42417ac4
 424179d4:	e0890109 	add	r0, r9, r9, lsl #2
-424179d8:	e59f10fc 	ldr	r1, [pc, #252]	; 0x42417adc
+424179d8:	e59f10fc 	ldr	r1, [0x42417adc]
 424179dc:	e5911000 	ldr	r1, [r1]
 424179e0:	e2811010 	add	r1, r1, #16
 424179e4:	e0817180 	add	r7, r1, r0, lsl #3
@@ -15736,7 +15737,7 @@ Disassembly of section .data:
 42417a04:	e58d0000 	str	r0, [sp]
 42417a08:	e3a0a000 	mov	sl, #0
 42417a0c:	ea000024 	b	0x42417aa4
-42417a10:	e59f10c4 	ldr	r1, [pc, #196]	; 0x42417adc
+42417a10:	e59f10c4 	ldr	r1, [0x42417adc]
 42417a14:	e5970024 	ldr	r0, [r7, #36]	; 0x24
 42417a18:	e5911000 	ldr	r1, [r1]
 42417a1c:	e0810100 	add	r0, r1, r0, lsl #2
@@ -15756,7 +15757,7 @@ Disassembly of section .data:
 42417a54:	eb00538d 	bl	0x4242c890
 42417a58:	e59d2004 	ldr	r2, [sp, #4]
 42417a5c:	e5922020 	ldr	r2, [r2, #32]
-42417a60:	e59f3074 	ldr	r3, [pc, #116]	; 0x42417adc
+42417a60:	e59f3074 	ldr	r3, [0x42417adc]
 42417a64:	e5933000 	ldr	r3, [r3]
 42417a68:	e0831102 	add	r1, r3, r2, lsl #2
 42417a6c:	e59d2000 	ldr	r2, [sp]
@@ -15781,7 +15782,7 @@ Disassembly of section .data:
 42417ab8:	eaffffab 	b	0x4241796c
 42417abc:	e320f000 	nop	{0}
 42417ac0:	e2899001 	add	r9, r9, #1
-42417ac4:	e59f0014 	ldr	r0, [pc, #20]	; 0x42417ae0
+42417ac4:	e59f0014 	ldr	r0, [0x42417ae0]
 42417ac8:	e5900000 	ldr	r0, [r0]
 42417acc:	e1590000 	cmp	r9, r0
 42417ad0:	baffffbf 	blt	0x424179d4
@@ -15790,7 +15791,7 @@ Disassembly of section .data:
 42417adc:	42430144 	submi	r0, r3, #17
 42417ae0:	42430148 	submi	r0, r3, #18
 42417ae4:	e92d4010 	push	{r4, lr}
-42417ae8:	e59f40a0 	ldr	r4, [pc, #160]	; 0x42417b90
+42417ae8:	e59f40a0 	ldr	r4, [0x42417b90]
 42417aec:	e3a00000 	mov	r0, #0
 42417af0:	e5840000 	str	r0, [r4]
 42417af4:	eb000224 	bl	0x4241838c
@@ -15820,7 +15821,7 @@ Disassembly of section .data:
 42417b54:	eb000e28 	bl	0x4241b3fc
 42417b58:	e8bd8010 	pop	{r4, pc}
 42417b5c:	e92d4070 	push	{r4, r5, r6, lr}
-42417b60:	e59f402c 	ldr	r4, [pc, #44]	; 0x42417b94
+42417b60:	e59f402c 	ldr	r4, [0x42417b94]
 42417b64:	e5945020 	ldr	r5, [r4, #32]
 42417b68:	e1a02005 	mov	r2, r5
 42417b6c:	e28f1024 	ldr	r1, =0x42417b98	; add r1, pc, #36	; 0x24
@@ -15891,7 +15892,7 @@ Disassembly of section .data:
 42417c68:	e59d0004 	ldr	r0, [sp, #4]
 42417c6c:	e59d1000 	ldr	r1, [sp]
 42417c70:	e0000190 	mul	r0, r0, r1
-42417c74:	e59f130c 	ldr	r1, [pc, #780]	; 0x42417f88
+42417c74:	e59f130c 	ldr	r1, [0x42417f88]
 42417c78:	e1500001 	cmp	r0, r1
 42417c7c:	da000026 	ble	0x42417d1c
 42417c80:	e59d0004 	ldr	r0, [sp, #4]
@@ -15942,7 +15943,7 @@ Disassembly of section .data:
 42417d2c:	e12fff1e 	bx	lr
 
 42417d30:	e92d4010 	push	{r4, lr}
-42417d34:	e59f1250 	ldr	r1, [pc, #592]	; 0x42417f8c
+42417d34:	e59f1250 	ldr	r1, [0x42417f8c]
 42417d38:	e28f0e25 	ldr	r0, =0x42417f90	; add r0, pc, #592	; 0x250
 42417d3c:	ebffd724 	bl	0x4240d9d4
 42417d40:	e8bd8010 	pop	{r4, pc}
@@ -15954,7 +15955,7 @@ Disassembly of section .data:
 42417d58:	ebffc1d1 	bl	0x424084a4
 42417d5c:	ebffc19f 	bl	0x424083e0
 42417d60:	e3a05d06 	mov	r5, #384	; 0x180
-42417d64:	e59f7238 	ldr	r7, [pc, #568]	; 0x42417fa4
+42417d64:	e59f7238 	ldr	r7, [0x42417fa4]
 42417d68:	e3a01401 	mov	r1, #0x1000000
 42417d6c:	e1a00007 	mov	r0, r7
 42417d70:	ebfffb95 	bl	0x42416bcc
@@ -15968,24 +15969,24 @@ Disassembly of section .data:
 42417d90:	ebffc1a8 	bl	0x42408438
 42417d94:	ebffc4b5 	bl	0x42409070
 42417d98:	eb0054a4 	bl	0x4242d030
-42417d9c:	e59f1204 	ldr	r1, [pc, #516]	; 0x42417fa8
+42417d9c:	e59f1204 	ldr	r1, [0x42417fa8]
 42417da0:	e5910038 	ldr	r0, [r1, #56]	; 0x38
-42417da4:	e59f3200 	ldr	r3, [pc, #512]	; 0x42417fac
-42417da8:	e59f2200 	ldr	r2, [pc, #512]	; 0x42417fb0
+42417da4:	e59f3200 	ldr	r3, [0x42417fac]
+42417da8:	e59f2200 	ldr	r2, [0x42417fb0]
 42417dac:	e281103c 	add	r1, r1, #60	; 0x3c
 42417db0:	ebffd5dc 	bl	0x4240d528
 42417db4:	ebffffdd 	bl	0x42417d30
-42417db8:	e59f11f4 	ldr	r1, =0x42408030	; [pc, #500]	; 0x42417fb4
+42417db8:	e59f11f4 	ldr	r1, =0x42408030	; [0x42417fb4]
 42417dbc:	e5910078 	ldr	r0, [r1, #120]	; 0x78		; =0x424080A8 twi_addr
-42417dc0:	e59f31f0 	ldr	r3, [pc, #496]	; 0x42417fb8
-42417dc4:	e59f21e0 	ldr	r2, [pc, #480]	; 0x42417fac
+42417dc0:	e59f31f0 	ldr	r3, [0x42417fb8]
+42417dc4:	e59f21e0 	ldr	r2, [0x42417fac]
 42417dc8:	e281107c 	add	r1, r1, #124	; 0x7c
 42417dcc:	eb00540d 	bl	0x4242ce08
 42417dd0:	e59f01e4 	ldr	r0, =0x4240809c
 42417dd4:	ebffd08f 	bl	0x4240c018
 42417dd8:	e3500000 	cmp	r0, #0
 42417ddc:	1a000012 	bne	0x42417e2c
-42417de0:	e59f01cc 	ldr	r0, =0x42408030	; [pc, #460]	; 0x42417fb4
+42417de0:	e59f01cc 	ldr	r0, =0x42408030	; [0x42417fb4]
 42417de4:	e590006c 	ldr	r0, [r0, #108]	; 0x6c		; =0x4240809c 
 42417de8:	e1500005 	cmp	r0, r5
 42417dec:	0a00000b 	beq	0x42417e20
@@ -16017,7 +16018,7 @@ Disassembly of section .data:
 42417e54:	ea000009 	b	0x42417e80
 42417e58:	e3560000 	cmp	r6, #0
 42417e5c:	da000002 	ble	0x42417e6c
-42417e60:	e59f01d8 	ldr	r0, [pc, #472]	; 0x42418040
+42417e60:	e59f01d8 	ldr	r0, [0x42418040]
 42417e64:	e5806038 	str	r6, [r0, #56]	; 0x38
 42417e68:	ea000004 	b	0x42417e80
 42417e6c:	e3760002 	cmn	r6, #2
@@ -16030,13 +16031,13 @@ Disassembly of section .data:
 42417e88:	ebffff15 	bl	0x42417ae4
 42417e8c:	e28f0f79 	ldr	r0, =0x42418078	; add r0, pc, #484	; 0x1e4
 42417e90:	ebffd6cf 	bl	0x4240d9d4
-42417e94:	e59f01f0 	ldr	r0, [pc, #496]	; 0x4241808c
+42417e94:	e59f01f0 	ldr	r0, [0x4241808c]
 42417e98:	e58d0024 	str	r0, [sp, #36]	; 0x24
-42417e9c:	e59f01ec 	ldr	r0, [pc, #492]	; 0x42418090
+42417e9c:	e59f01ec 	ldr	r0, [0x42418090]
 42417ea0:	e58d0028 	str	r0, [sp, #40]	; 0x28
-42417ea4:	e59f01e8 	ldr	r0, [pc, #488]	; 0x42418094
+42417ea4:	e59f01e8 	ldr	r0, [0x42418094]
 42417ea8:	e58d002c 	str	r0, [sp, #44]	; 0x2c
-42417eac:	e59f01e4 	ldr	r0, [pc, #484]	; 0x42418098
+42417eac:	e59f01e4 	ldr	r0, [0x42418098]
 42417eb0:	e58d0030 	str	r0, [sp, #48]	; 0x30
 42417eb4:	e28d0024 	add	r0, sp, #36	; 0x24
 42417eb8:	ebffe02e 	bl	0x4240ff78
@@ -16057,7 +16058,7 @@ Disassembly of section .data:
 42417ef4:	ebffda1d 	bl	0x4240e770
 42417ef8:	e28f0e1e 	ldr	r0, =0x424180e0	; add r0, pc, #480	; 0x1e0
 42417efc:	ebffd6b4 	bl	0x4240d9d4
-42417f00:	e59f91e8 	ldr	r9, [pc, #488]	; 0x424180f0
+42417f00:	e59f91e8 	ldr	r9, [0x424180f0]
 42417f04:	e28f1f7a 	ldr	r1, =0x424180f4	; add r1, pc, #488	; 0x1e8
 42417f08:	e28f0f7a 	ldr	r0, =0x424180f8	; add r0, pc, #488	; 0x1e8
 42417f0c:	ebffdf9e 	bl	0x4240fd8c
@@ -16209,7 +16210,7 @@ Disassembly of section .data:
 4241814c:	1a000000 	bne	0x42418154
 42418150:	ebffd880 	bl	0x4240e358
 42418154:	e3a02020 	mov	r2, #32
-42418158:	e59f1084 	ldr	r1, [pc, #132]	; 0x424181e4
+42418158:	e59f1084 	ldr	r1, [0x424181e4]
 4241815c:	e1a0000d 	mov	r0, sp
 42418160:	eb00522e 	bl	0x4242ca20
 42418164:	e58dd020 	str	sp, [sp, #32]
@@ -16284,7 +16285,7 @@ Disassembly of section .data:
 42418270:	e8bd8010 	pop	{r4, pc}
 42418274:	e92d4030 	push	{r4, r5, lr}
 42418278:	e24dd0ac 	sub	sp, sp, #172	; 0xac
-4241827c:	e59f0154 	ldr	r0, [pc, #340]	; 0x424183d8
+4241827c:	e59f0154 	ldr	r0, [0x424183d8]
 42418280:	e5900000 	ldr	r0, [r0]
 42418284:	e3500000 	cmp	r0, #0
 42418288:	1a00000b 	bne	0x424182bc
@@ -16300,7 +16301,7 @@ Disassembly of section .data:
 424182b0:	e8bd8030 	pop	{r4, r5, pc}
 424182b4:	e59d5020 	ldr	r5, [sp, #32]
 424182b8:	ea000001 	b	0x424182c4
-424182bc:	e59f0114 	ldr	r0, [pc, #276]	; 0x424183d8
+424182bc:	e59f0114 	ldr	r0, [0x424183d8]
 424182c0:	e5905000 	ldr	r5, [r0]
 424182c4:	e1a01005 	mov	r1, r5
 424182c8:	e28f0e13 	ldr	r0, =0x42418400	; add r0, pc, #304	; 0x130
@@ -16804,7 +16805,7 @@ Disassembly of section .data:
 42418a88:	e5dd300d 	ldrb	r3, [sp, #13]
 42418a8c:	e5dd200c 	ldrb	r2, [sp, #12]
 42418a90:	e1a01005 	mov	r1, r5
-42418a94:	e59f00f8 	ldr	r0, [pc, #248]	; 0x42418b94
+42418a94:	e59f00f8 	ldr	r0, [0x42418b94]
 42418a98:	eb000b4d 	bl	0x4241b7d4
 42418a9c:	e5dd000e 	ldrb	r0, [sp, #14]
 42418aa0:	e5dd100a 	ldrb	r1, [sp, #10]
@@ -16891,7 +16892,7 @@ Disassembly of section .data:
 42418be4:	e5dd300d 	ldrb	r3, [sp, #13]
 42418be8:	e5dd200c 	ldrb	r2, [sp, #12]
 42418bec:	e1a01005 	mov	r1, r5
-42418bf0:	e59f0144 	ldr	r0, [pc, #324]	; 0x42418d3c
+42418bf0:	e59f0144 	ldr	r0, [0x42418d3c]
 42418bf4:	eb000af6 	bl	0x4241b7d4
 42418bf8:	e320f000 	nop	{0}
 42418bfc:	e2855001 	add	r5, r5, #1
@@ -16956,7 +16957,7 @@ Disassembly of section .data:
 42418ce8:	eb003ad3 	bl	0x4242783c
 42418cec:	e3500000 	cmp	r0, #0
 42418cf0:	0a00004a 	beq	0x42418e20
-42418cf4:	e59f0120 	ldr	r0, [pc, #288]	; 0x42418e1c
+42418cf4:	e59f0120 	ldr	r0, [0x42418e1c]
 42418cf8:	eb000ab5 	bl	0x4241b7d4
 42418cfc:	e59d0008 	ldr	r0, [sp, #8]
 42418d00:	ef000033 	svc	0x00000033
@@ -17086,7 +17087,7 @@ Disassembly of section .data:
 42418ef0:	e5d43004 	ldrb	r3, [r4, #4]
 42418ef4:	e1d420b2 	ldrh	r2, [r4, #2]
 42418ef8:	e5d41000 	ldrb	r1, [r4]
-42418efc:	e59f026c 	ldr	r0, [pc, #620]	; 0x42419170
+42418efc:	e59f026c 	ldr	r0, [0x42419170]
 42418f00:	eb000a33 	bl	0x4241b7d4
 42418f04:	e3a05000 	mov	r5, #0
 42418f08:	ea000078 	b	0x424190f0
@@ -17203,7 +17204,7 @@ Disassembly of section .data:
 424190c4:	e1a03009 	mov	r3, r9
 424190c8:	e1a02006 	mov	r2, r6
 424190cc:	e1a01005 	mov	r1, r5
-424190d0:	e59f00c8 	ldr	r0, [pc, #200]	; 0x424191a0
+424190d0:	e59f00c8 	ldr	r0, [0x424191a0]
 424190d4:	eb0009be 	bl	0x4241b7d4
 424190d8:	e320f000 	nop	{0}
 424190dc:	e2866001 	add	r6, r6, #1
@@ -17291,7 +17292,7 @@ Disassembly of section .data:
 42419224:	bafffff9 	blt	0x42419210
 42419228:	e28f0fa6 	ldr	r0, =0x424194c8	; add r0, pc, #664	; 0x298
 4241922c:	eb000968 	bl	0x4241b7d4
-42419230:	e59f02ac 	ldr	r0, [pc, #684]	; 0x424194e4
+42419230:	e59f02ac 	ldr	r0, [0x424194e4]
 42419234:	eb000966 	bl	0x4241b7d4
 42419238:	e28d0070 	add	r0, sp, #112	; 0x70
 4241923c:	eb00397e 	bl	0x4242783c
@@ -17309,7 +17310,7 @@ Disassembly of section .data:
 4241926c:	e1a0b000 	mov	fp, r0
 42419270:	e35b0000 	cmp	fp, #0
 42419274:	1a000003 	bne	0x42419288
-42419278:	e59f0268 	ldr	r0, [pc, #616]	; 0x424194e8
+42419278:	e59f0268 	ldr	r0, [0x424194e8]
 4241927c:	eb000954 	bl	0x4241b7d4
 42419280:	e3e00000 	mvn	r0, #0
 42419284:	eafffff2 	b	0x42419254
@@ -17683,40 +17684,40 @@ Disassembly of section .data:
 42419844:	e5880000 	str	r0, [r8]
 42419848:	e3a00000 	mov	r0, #0
 4241984c:	e5880004 	str	r0, [r8, #4]
-42419850:	e59f0ed8 	ldr	r0, [pc, #3800]	; 0x4241a730
+42419850:	e59f0ed8 	ldr	r0, [0x4241a730]
 42419854:	e5d0000a 	ldrb	r0, [r0, #10]
-42419858:	e59f2ed0 	ldr	r2, [pc, #3792]	; 0x4241a730
+42419858:	e59f2ed0 	ldr	r2, [0x4241a730]
 4241985c:	e5d22009 	ldrb	r2, [r2, #9]
 42419860:	e1610280 	smulbb	r1, r0, r2
 42419864:	e1a00004 	mov	r0, r4
 42419868:	eb004d2f 	bl	0x4242cd2c
 4241986c:	e5860000 	str	r0, [r6]
-42419870:	e59f0eb8 	ldr	r0, [pc, #3768]	; 0x4241a730
+42419870:	e59f0eb8 	ldr	r0, [0x4241a730]
 42419874:	e5d0000a 	ldrb	r0, [r0, #10]
-42419878:	e59f2eb0 	ldr	r2, [pc, #3760]	; 0x4241a730
+42419878:	e59f2eb0 	ldr	r2, [0x4241a730]
 4241987c:	e5d22009 	ldrb	r2, [r2, #9]
 42419880:	e1610280 	smulbb	r1, r0, r2
 42419884:	e1a00004 	mov	r0, r4
 42419888:	eb004d27 	bl	0x4242cd2c
 4241988c:	e0819005 	add	r9, r1, r5
-42419890:	e59f0e98 	ldr	r0, [pc, #3736]	; 0x4241a730
+42419890:	e59f0e98 	ldr	r0, [0x4241a730]
 42419894:	e5d0000a 	ldrb	r0, [r0, #10]
-42419898:	e59f2e90 	ldr	r2, [pc, #3728]	; 0x4241a730
+42419898:	e59f2e90 	ldr	r2, [0x4241a730]
 4241989c:	e5d22009 	ldrb	r2, [r2, #9]
 424198a0:	e1610280 	smulbb	r1, r0, r2
 424198a4:	e1a00004 	mov	r0, r4
 424198a8:	eb004d1f 	bl	0x4242cd2c
-424198ac:	e59f0e7c 	ldr	r0, [pc, #3708]	; 0x4241a730
+424198ac:	e59f0e7c 	ldr	r0, [0x4241a730]
 424198b0:	e5d0000a 	ldrb	r0, [r0, #10]
-424198b4:	e59f2e74 	ldr	r2, [pc, #3700]	; 0x4241a730
+424198b4:	e59f2e74 	ldr	r2, [0x4241a730]
 424198b8:	e5d22009 	ldrb	r2, [r2, #9]
 424198bc:	e1600280 	smulbb	r0, r0, r2
 424198c0:	e2400001 	sub	r0, r0, #1
 424198c4:	e3a02001 	mov	r2, #1
 424198c8:	e1a00012 	lsl	r0, r2, r0
-424198cc:	e59f2e5c 	ldr	r2, [pc, #3676]	; 0x4241a730
+424198cc:	e59f2e5c 	ldr	r2, [0x4241a730]
 424198d0:	e5d2200a 	ldrb	r2, [r2, #10]
-424198d4:	e59f3e54 	ldr	r3, [pc, #3668]	; 0x4241a730
+424198d4:	e59f3e54 	ldr	r3, [0x4241a730]
 424198d8:	e5d33009 	ldrb	r3, [r3, #9]
 424198dc:	e1620382 	smulbb	r2, r2, r3
 424198e0:	e2422001 	sub	r2, r2, #1
@@ -17725,24 +17726,24 @@ Disassembly of section .data:
 424198ec:	e2422001 	sub	r2, r2, #1
 424198f0:	e1800002 	orr	r0, r0, r2
 424198f4:	e1a0a110 	lsl	sl, r0, r1
-424198f8:	e59f0e30 	ldr	r0, [pc, #3632]	; 0x4241a730
+424198f8:	e59f0e30 	ldr	r0, [0x4241a730]
 424198fc:	e5d0000a 	ldrb	r0, [r0, #10]
-42419900:	e59f1e28 	ldr	r1, [pc, #3624]	; 0x4241a730
+42419900:	e59f1e28 	ldr	r1, [0x4241a730]
 42419904:	e5d11009 	ldrb	r1, [r1, #9]
 42419908:	e1600180 	smulbb	r0, r0, r1
 4241990c:	e1500009 	cmp	r0, r9
 42419910:	2a00004c 	bcs	0x42419a48
-42419914:	e59f0e14 	ldr	r0, [pc, #3604]	; 0x4241a730
+42419914:	e59f0e14 	ldr	r0, [0x4241a730]
 42419918:	e5d0000a 	ldrb	r0, [r0, #10]
-4241991c:	e59f1e0c 	ldr	r1, [pc, #3596]	; 0x4241a730
+4241991c:	e59f1e0c 	ldr	r1, [0x4241a730]
 42419920:	e5d11009 	ldrb	r1, [r1, #9]
 42419924:	e1600180 	smulbb	r0, r0, r1
 42419928:	e2400001 	sub	r0, r0, #1
 4241992c:	e3a01001 	mov	r1, #1
 42419930:	e1a00011 	lsl	r0, r1, r0
-42419934:	e59f1df4 	ldr	r1, [pc, #3572]	; 0x4241a730
+42419934:	e59f1df4 	ldr	r1, [0x4241a730]
 42419938:	e5d1100a 	ldrb	r1, [r1, #10]
-4241993c:	e59f2dec 	ldr	r2, [pc, #3564]	; 0x4241a730
+4241993c:	e59f2dec 	ldr	r2, [0x4241a730]
 42419940:	e5d22009 	ldrb	r2, [r2, #9]
 42419944:	e1610281 	smulbb	r1, r1, r2
 42419948:	e2411001 	sub	r1, r1, #1
@@ -17752,9 +17753,9 @@ Disassembly of section .data:
 42419958:	e1800001 	orr	r0, r0, r1
 4241995c:	e000000a 	and	r0, r0, sl
 42419960:	e5860004 	str	r0, [r6, #4]
-42419964:	e59f0dc4 	ldr	r0, [pc, #3524]	; 0x4241a730
+42419964:	e59f0dc4 	ldr	r0, [0x4241a730]
 42419968:	e5d0000a 	ldrb	r0, [r0, #10]
-4241996c:	e59f1dbc 	ldr	r1, [pc, #3516]	; 0x4241a730
+4241996c:	e59f1dbc 	ldr	r1, [0x4241a730]
 42419970:	e5d11009 	ldrb	r1, [r1, #9]
 42419974:	e1600180 	smulbb	r0, r0, r1
 42419978:	e0499000 	sub	r9, r9, r0
@@ -17762,32 +17763,32 @@ Disassembly of section .data:
 42419980:	e5970000 	ldr	r0, [r7]
 42419984:	e2800001 	add	r0, r0, #1
 42419988:	e5870000 	str	r0, [r7]
-4241998c:	e59f0d9c 	ldr	r0, [pc, #3484]	; 0x4241a730
+4241998c:	e59f0d9c 	ldr	r0, [0x4241a730]
 42419990:	e5d0000a 	ldrb	r0, [r0, #10]
-42419994:	e59f1d94 	ldr	r1, [pc, #3476]	; 0x4241a730
+42419994:	e59f1d94 	ldr	r1, [0x4241a730]
 42419998:	e5d11009 	ldrb	r1, [r1, #9]
 4241999c:	e1600180 	smulbb	r0, r0, r1
 424199a0:	e0499000 	sub	r9, r9, r0
-424199a4:	e59f0d84 	ldr	r0, [pc, #3460]	; 0x4241a730
+424199a4:	e59f0d84 	ldr	r0, [0x4241a730]
 424199a8:	e5d0000a 	ldrb	r0, [r0, #10]
-424199ac:	e59f1d7c 	ldr	r1, [pc, #3452]	; 0x4241a730
+424199ac:	e59f1d7c 	ldr	r1, [0x4241a730]
 424199b0:	e5d11009 	ldrb	r1, [r1, #9]
 424199b4:	e1600180 	smulbb	r0, r0, r1
 424199b8:	e1500009 	cmp	r0, r9
 424199bc:	9affffef 	bls	0x42419980
 424199c0:	e3590000 	cmp	r9, #0
 424199c4:	0a00003a 	beq	0x42419ab4
-424199c8:	e59f0d60 	ldr	r0, [pc, #3424]	; 0x4241a730
+424199c8:	e59f0d60 	ldr	r0, [0x4241a730]
 424199cc:	e5d0000a 	ldrb	r0, [r0, #10]
-424199d0:	e59f1d58 	ldr	r1, [pc, #3416]	; 0x4241a730
+424199d0:	e59f1d58 	ldr	r1, [0x4241a730]
 424199d4:	e5d11009 	ldrb	r1, [r1, #9]
 424199d8:	e1600180 	smulbb	r0, r0, r1
 424199dc:	e2400001 	sub	r0, r0, #1
 424199e0:	e3a01001 	mov	r1, #1
 424199e4:	e1a00011 	lsl	r0, r1, r0
-424199e8:	e59f1d40 	ldr	r1, [pc, #3392]	; 0x4241a730
+424199e8:	e59f1d40 	ldr	r1, [0x4241a730]
 424199ec:	e5d1100a 	ldrb	r1, [r1, #10]
-424199f0:	e59f2d38 	ldr	r2, [pc, #3384]	; 0x4241a730
+424199f0:	e59f2d38 	ldr	r2, [0x4241a730]
 424199f4:	e5d22009 	ldrb	r2, [r2, #9]
 424199f8:	e1610281 	smulbb	r1, r1, r2
 424199fc:	e2411001 	sub	r1, r1, #1
@@ -17795,9 +17796,9 @@ Disassembly of section .data:
 42419a04:	e1a01112 	lsl	r1, r2, r1
 42419a08:	e2411001 	sub	r1, r1, #1
 42419a0c:	e1811000 	orr	r1, r1, r0
-42419a10:	e59f0d18 	ldr	r0, [pc, #3352]	; 0x4241a730
+42419a10:	e59f0d18 	ldr	r0, [0x4241a730]
 42419a14:	e5d0000a 	ldrb	r0, [r0, #10]
-42419a18:	e59f2d10 	ldr	r2, [pc, #3344]	; 0x4241a730
+42419a18:	e59f2d10 	ldr	r2, [0x4241a730]
 42419a1c:	e5d22009 	ldrb	r2, [r2, #9]
 42419a20:	e1600280 	smulbb	r0, r0, r2
 42419a24:	e0400009 	sub	r0, r0, r9
@@ -17809,17 +17810,17 @@ Disassembly of section .data:
 42419a3c:	e2800001 	add	r0, r0, #1
 42419a40:	e5880000 	str	r0, [r8]
 42419a44:	ea00001a 	b	0x42419ab4
-42419a48:	e59f0ce0 	ldr	r0, [pc, #3296]	; 0x4241a730
+42419a48:	e59f0ce0 	ldr	r0, [0x4241a730]
 42419a4c:	e5d0000a 	ldrb	r0, [r0, #10]
-42419a50:	e59f1cd8 	ldr	r1, [pc, #3288]	; 0x4241a730
+42419a50:	e59f1cd8 	ldr	r1, [0x4241a730]
 42419a54:	e5d11009 	ldrb	r1, [r1, #9]
 42419a58:	e1600180 	smulbb	r0, r0, r1
 42419a5c:	e2400001 	sub	r0, r0, #1
 42419a60:	e3a01001 	mov	r1, #1
 42419a64:	e1a01011 	lsl	r1, r1, r0
-42419a68:	e59f0cc0 	ldr	r0, [pc, #3264]	; 0x4241a730
+42419a68:	e59f0cc0 	ldr	r0, [0x4241a730]
 42419a6c:	e5d0000a 	ldrb	r0, [r0, #10]
-42419a70:	e59f2cb8 	ldr	r2, [pc, #3256]	; 0x4241a730
+42419a70:	e59f2cb8 	ldr	r2, [0x4241a730]
 42419a74:	e5d22009 	ldrb	r2, [r2, #9]
 42419a78:	e1600280 	smulbb	r0, r0, r2
 42419a7c:	e2400001 	sub	r0, r0, #1
@@ -17827,9 +17828,9 @@ Disassembly of section .data:
 42419a84:	e1a00012 	lsl	r0, r2, r0
 42419a88:	e2400001 	sub	r0, r0, #1
 42419a8c:	e1811000 	orr	r1, r1, r0
-42419a90:	e59f0c98 	ldr	r0, [pc, #3224]	; 0x4241a730
+42419a90:	e59f0c98 	ldr	r0, [0x4241a730]
 42419a94:	e5d0000a 	ldrb	r0, [r0, #10]
-42419a98:	e59f2c90 	ldr	r2, [pc, #3216]	; 0x4241a730
+42419a98:	e59f2c90 	ldr	r2, [0x4241a730]
 42419a9c:	e5d22009 	ldrb	r2, [r2, #9]
 42419aa0:	e1600280 	smulbb	r0, r0, r2
 42419aa4:	e0400009 	sub	r0, r0, r9
@@ -17842,25 +17843,25 @@ Disassembly of section .data:
 42419ac0:	e1a04000 	mov	r4, r0
 42419ac4:	e1a05001 	mov	r5, r1
 42419ac8:	e1a06002 	mov	r6, r2
-42419acc:	e59f0c60 	ldr	r0, [pc, #3168]	; 0x4241a734
+42419acc:	e59f0c60 	ldr	r0, [0x4241a734]
 42419ad0:	e5900010 	ldr	r0, [r0, #16]
 42419ad4:	e1d010b2 	ldrh	r1, [r0, #2]
 42419ad8:	e1a00005 	mov	r0, r5
 42419adc:	eb004c92 	bl	0x4242cd2c
 42419ae0:	e1a07001 	mov	r7, r1
-42419ae4:	e59f0c48 	ldr	r0, [pc, #3144]	; 0x4241a734
+42419ae4:	e59f0c48 	ldr	r0, [0x4241a734]
 42419ae8:	e5900010 	ldr	r0, [r0, #16]
 42419aec:	e1d010b2 	ldrh	r1, [r0, #2]
 42419af0:	e1a00005 	mov	r0, r5
 42419af4:	eb004c8c 	bl	0x4242cd2c
 42419af8:	e1a08000 	mov	r8, r0
-42419afc:	e59f0c30 	ldr	r0, [pc, #3120]	; 0x4241a734
+42419afc:	e59f0c30 	ldr	r0, [0x4241a734]
 42419b00:	e5900010 	ldr	r0, [r0, #16]
 42419b04:	e1d010b0 	ldrh	r1, [r0]
 42419b08:	e1a00008 	mov	r0, r8
 42419b0c:	eb004c86 	bl	0x4242cd2c
 42419b10:	e1a09000 	mov	r9, r0
-42419b14:	e59f0c18 	ldr	r0, [pc, #3096]	; 0x4241a734
+42419b14:	e59f0c18 	ldr	r0, [0x4241a734]
 42419b18:	e5900010 	ldr	r0, [r0, #16]
 42419b1c:	e1d010b0 	ldrh	r1, [r0]
 42419b20:	e1a00008 	mov	r0, r8
@@ -17875,13 +17876,13 @@ Disassembly of section .data:
 42419b44:	e92d41f0 	push	{r4, r5, r6, r7, r8, lr}
 42419b48:	e1a04000 	mov	r4, r0
 42419b4c:	e1a05001 	mov	r5, r1
-42419b50:	e59f0bdc 	ldr	r0, [pc, #3036]	; 0x4241a734
+42419b50:	e59f0bdc 	ldr	r0, [0x4241a734]
 42419b54:	e5900014 	ldr	r0, [r0, #20]
 42419b58:	e5907004 	ldr	r7, [r0, #4]
 42419b5c:	e1a08005 	mov	r8, r5
 42419b60:	e3a06000 	mov	r6, #0
 42419b64:	ea00000c 	b	0x42419b9c
-42419b68:	e59f0bc8 	ldr	r0, [pc, #3016]	; 0x4241a738
+42419b68:	e59f0bc8 	ldr	r0, [0x4241a738]
 42419b6c:	e5900004 	ldr	r0, [r0, #4]
 42419b70:	e0000004 	and	r0, r0, r4
 42419b74:	e3a01001 	mov	r1, #1
@@ -17894,9 +17895,9 @@ Disassembly of section .data:
 42419b90:	e2877c02 	add	r7, r7, #0x200
 42419b94:	e2888c02 	add	r8, r8, #0x200
 42419b98:	e2866001 	add	r6, r6, #1
-42419b9c:	e59f0b8c 	ldr	r0, [pc, #2956]	; 0x4241a730
+42419b9c:	e59f0b8c 	ldr	r0, [0x4241a730]
 42419ba0:	e5d0000a 	ldrb	r0, [r0, #10]
-42419ba4:	e59f1b84 	ldr	r1, [pc, #2948]	; 0x4241a730
+42419ba4:	e59f1b84 	ldr	r1, [0x4241a730]
 42419ba8:	e5d11009 	ldrb	r1, [r1, #9]
 42419bac:	e1600180 	smulbb	r0, r0, r1
 42419bb0:	e1500006 	cmp	r0, r6
@@ -17908,17 +17909,17 @@ Disassembly of section .data:
 42419bc8:	e1a05001 	mov	r5, r1
 42419bcc:	e1a06002 	mov	r6, r2
 42419bd0:	e1a08006 	mov	r8, r6
-42419bd4:	e59f0b58 	ldr	r0, [pc, #2904]	; 0x4241a734
+42419bd4:	e59f0b58 	ldr	r0, [0x4241a734]
 42419bd8:	e5900014 	ldr	r0, [r0, #20]
 42419bdc:	e5909004 	ldr	r9, [r0, #4]
-42419be0:	e59f0b50 	ldr	r0, [pc, #2896]	; 0x4241a738
+42419be0:	e59f0b50 	ldr	r0, [0x4241a738]
 42419be4:	e5900000 	ldr	r0, [r0]
 42419be8:	e3700001 	cmn	r0, #1
 42419bec:	1a000004 	bne	0x42419c04
-42419bf0:	e59f0b40 	ldr	r0, [pc, #2880]	; 0x4241a738
+42419bf0:	e59f0b40 	ldr	r0, [0x4241a738]
 42419bf4:	e5804000 	str	r4, [r0]
 42419bf8:	e3a00000 	mov	r0, #0
-42419bfc:	e59f1b34 	ldr	r1, [pc, #2868]	; 0x4241a738
+42419bfc:	e59f1b34 	ldr	r1, [0x4241a738]
 42419c00:	e5810004 	str	r0, [r1, #4]
 42419c04:	e3a07000 	mov	r7, #0
 42419c08:	ea000009 	b	0x42419c34
@@ -17932,17 +17933,17 @@ Disassembly of section .data:
 42419c28:	e2888c02 	add	r8, r8, #0x200
 42419c2c:	e2899c02 	add	r9, r9, #0x200
 42419c30:	e2877001 	add	r7, r7, #1
-42419c34:	e59f0af4 	ldr	r0, [pc, #2804]	; 0x4241a730
+42419c34:	e59f0af4 	ldr	r0, [0x4241a730]
 42419c38:	e5d0000a 	ldrb	r0, [r0, #10]
-42419c3c:	e59f1aec 	ldr	r1, [pc, #2796]	; 0x4241a730
+42419c3c:	e59f1aec 	ldr	r1, [0x4241a730]
 42419c40:	e5d11009 	ldrb	r1, [r1, #9]
 42419c44:	e1600180 	smulbb	r0, r0, r1
 42419c48:	e1500007 	cmp	r0, r7
 42419c4c:	caffffee 	bgt	0x42419c0c
-42419c50:	e59f0ae0 	ldr	r0, [pc, #2784]	; 0x4241a738
+42419c50:	e59f0ae0 	ldr	r0, [0x4241a738]
 42419c54:	e5900004 	ldr	r0, [r0, #4]
 42419c58:	e1800005 	orr	r0, r0, r5
-42419c5c:	e59f1ad4 	ldr	r1, [pc, #2772]	; 0x4241a738
+42419c5c:	e59f1ad4 	ldr	r1, [0x4241a738]
 42419c60:	e5810004 	str	r0, [r1, #4]
 42419c64:	e3a00000 	mov	r0, #0
 42419c68:	e8bd87f0 	pop	{r4, r5, r6, r7, r8, r9, sl, pc}
@@ -17953,17 +17954,17 @@ Disassembly of section .data:
 42419c7c:	e894004e 	ldm	r4, {r1, r2, r3, r6}
 42419c80:	e880004e 	stm	r0, {r1, r2, r3, r6}
 42419c84:	e59d700c 	ldr	r7, [sp, #12]
-42419c88:	e59f0aa0 	ldr	r0, [pc, #2720]	; 0x4241a730
+42419c88:	e59f0aa0 	ldr	r0, [0x4241a730]
 42419c8c:	e5d0000a 	ldrb	r0, [r0, #10]
-42419c90:	e59f1a98 	ldr	r1, [pc, #2712]	; 0x4241a730
+42419c90:	e59f1a98 	ldr	r1, [0x4241a730]
 42419c94:	e5d11009 	ldrb	r1, [r1, #9]
 42419c98:	e1600180 	smulbb	r0, r0, r1
 42419c9c:	e2400001 	sub	r0, r0, #1
 42419ca0:	e3a01001 	mov	r1, #1
 42419ca4:	e1a00011 	lsl	r0, r1, r0
-42419ca8:	e59f1a80 	ldr	r1, [pc, #2688]	; 0x4241a730
+42419ca8:	e59f1a80 	ldr	r1, [0x4241a730]
 42419cac:	e5d1100a 	ldrb	r1, [r1, #10]
-42419cb0:	e59f2a78 	ldr	r2, [pc, #2680]	; 0x4241a730
+42419cb0:	e59f2a78 	ldr	r2, [0x4241a730]
 42419cb4:	e5d22009 	ldrb	r2, [r2, #9]
 42419cb8:	e1610281 	smulbb	r1, r1, r2
 42419cbc:	e2411001 	sub	r1, r1, #1
@@ -17971,7 +17972,7 @@ Disassembly of section .data:
 42419cc4:	e1a01112 	lsl	r1, r2, r1
 42419cc8:	e2411001 	sub	r1, r1, #1
 42419ccc:	e1806001 	orr	r6, r0, r1
-42419cd0:	e59f0a5c 	ldr	r0, [pc, #2652]	; 0x4241a734
+42419cd0:	e59f0a5c 	ldr	r0, [0x4241a734]
 42419cd4:	e5900014 	ldr	r0, [r0, #20]
 42419cd8:	e590000c 	ldr	r0, [r0, #12]
 42419cdc:	e58d000c 	str	r0, [sp, #12]
@@ -17986,7 +17987,7 @@ Disassembly of section .data:
 42419d00:	e0207590 	mla	r0, r0, r5, r7
 42419d04:	e28d1020 	add	r1, sp, #32
 42419d08:	e7810105 	str	r0, [r1, r5, lsl #2]
-42419d0c:	e59f0a20 	ldr	r0, [pc, #2592]	; 0x4241a734
+42419d0c:	e59f0a20 	ldr	r0, [0x4241a734]
 42419d10:	e5900014 	ldr	r0, [r0, #20]
 42419d14:	e590000c 	ldr	r0, [r0, #12]
 42419d18:	e3a01004 	mov	r1, #4
@@ -18002,7 +18003,7 @@ Disassembly of section .data:
 42419d40:	baffffea 	blt	0x42419cf0
 42419d44:	e3a05000 	mov	r5, #0
 42419d48:	ea00001c 	b	0x42419dc0
-42419d4c:	e59f09dc 	ldr	r0, [pc, #2524]	; 0x4241a730
+42419d4c:	e59f09dc 	ldr	r0, [0x4241a730]
 42419d50:	e5d0000a 	ldrb	r0, [r0, #10]
 42419d54:	e0800005 	add	r0, r0, r5
 42419d58:	e3a01001 	mov	r1, #1
@@ -18014,10 +18015,10 @@ Disassembly of section .data:
 42419d70:	e28d1020 	add	r1, sp, #32
 42419d74:	e2852002 	add	r2, r5, #2
 42419d78:	e7810102 	str	r0, [r1, r2, lsl #2]
-42419d7c:	e59f09b0 	ldr	r0, [pc, #2480]	; 0x4241a734
+42419d7c:	e59f09b0 	ldr	r0, [0x4241a734]
 42419d80:	e5900014 	ldr	r0, [r0, #20]
 42419d84:	e590000c 	ldr	r0, [r0, #12]
-42419d88:	e59f19a0 	ldr	r1, [pc, #2464]	; 0x4241a730
+42419d88:	e59f19a0 	ldr	r1, [0x4241a730]
 42419d8c:	e5d1100a 	ldrb	r1, [r1, #10]
 42419d90:	e0811005 	add	r1, r1, r5
 42419d94:	e3a02004 	mov	r2, #4
@@ -18033,13 +18034,13 @@ Disassembly of section .data:
 42419dbc:	e2855001 	add	r5, r5, #1
 42419dc0:	e3550002 	cmp	r5, #2
 42419dc4:	baffffe0 	blt	0x42419d4c
-42419dc8:	e59f2960 	ldr	r2, [pc, #2400]	; 0x4241a730
+42419dc8:	e59f2960 	ldr	r2, [0x4241a730]
 42419dcc:	e5d2200a 	ldrb	r2, [r2, #10]
-42419dd0:	e59f3958 	ldr	r3, [pc, #2392]	; 0x4241a730
+42419dd0:	e59f3958 	ldr	r3, [0x4241a730]
 42419dd4:	e5d33009 	ldrb	r3, [r3, #9]
 42419dd8:	e1620382 	smulbb	r2, r2, r3
 42419ddc:	e1a01102 	lsl	r1, r2, #2
-42419de0:	e59f294c 	ldr	r2, [pc, #2380]	; 0x4241a734
+42419de0:	e59f294c 	ldr	r2, [0x4241a734]
 42419de4:	e5922014 	ldr	r2, [r2, #20]
 42419de8:	e592000c 	ldr	r0, [r2, #12]
 42419dec:	e3a020ff 	mov	r2, #255	; 0xff
@@ -18064,13 +18065,13 @@ Disassembly of section .data:
 42419e38:	e3550004 	cmp	r5, #4
 42419e3c:	baffffee 	blt	0x42419dfc
 42419e40:	ea00000a 	b	0x42419e70
-42419e44:	e59f28e4 	ldr	r2, [pc, #2276]	; 0x4241a730
+42419e44:	e59f28e4 	ldr	r2, [0x4241a730]
 42419e48:	e5d2200a 	ldrb	r2, [r2, #10]
-42419e4c:	e59f38dc 	ldr	r3, [pc, #2268]	; 0x4241a730
+42419e4c:	e59f38dc 	ldr	r3, [0x4241a730]
 42419e50:	e5d33009 	ldrb	r3, [r3, #9]
 42419e54:	e1620382 	smulbb	r2, r2, r3
 42419e58:	e1a01102 	lsl	r1, r2, #2
-42419e5c:	e59f28d0 	ldr	r2, [pc, #2256]	; 0x4241a734
+42419e5c:	e59f28d0 	ldr	r2, [0x4241a734]
 42419e60:	e5922014 	ldr	r2, [r2, #20]
 42419e64:	e592000c 	ldr	r0, [r2, #12]
 42419e68:	e3a020ff 	mov	r2, #255	; 0xff
@@ -18086,24 +18087,24 @@ Disassembly of section .data:
 42419e90:	e1a05001 	mov	r5, r1
 42419e94:	e1a06002 	mov	r6, r2
 42419e98:	e1a07003 	mov	r7, r3
-42419e9c:	e59f0890 	ldr	r0, [pc, #2192]	; 0x4241a734
+42419e9c:	e59f0890 	ldr	r0, [0x4241a734]
 42419ea0:	e5900010 	ldr	r0, [r0, #16]
 42419ea4:	e5d01005 	ldrb	r1, [r0, #5]
 42419ea8:	e1a00005 	mov	r0, r5
 42419eac:	eb004b9e 	bl	0x4242cd2c
 42419eb0:	e1a08000 	mov	r8, r0
-42419eb4:	e59f0874 	ldr	r0, [pc, #2164]	; 0x4241a730
+42419eb4:	e59f0874 	ldr	r0, [0x4241a730]
 42419eb8:	e1d001b0 	ldrh	r0, [r0, #16]
 42419ebc:	e3100020 	tst	r0, #32
 42419ec0:	0a000025 	beq	0x42419f5c
-42419ec4:	e59f0864 	ldr	r0, [pc, #2148]	; 0x4241a730
+42419ec4:	e59f0864 	ldr	r0, [0x4241a730]
 42419ec8:	e1d001b0 	ldrh	r0, [r0, #16]
 42419ecc:	e3100040 	tst	r0, #64	; 0x40
 42419ed0:	0a000021 	beq	0x42419f5c
-42419ed4:	e59f2858 	ldr	r2, [pc, #2136]	; 0x4241a734
+42419ed4:	e59f2858 	ldr	r2, [0x4241a734]
 42419ed8:	e5922000 	ldr	r2, [r2]
 42419edc:	e1d210bc 	ldrh	r1, [r2, #12]
-42419ee0:	e59f284c 	ldr	r2, [pc, #2124]	; 0x4241a734
+42419ee0:	e59f284c 	ldr	r2, [0x4241a734]
 42419ee4:	e5922010 	ldr	r2, [r2, #16]
 42419ee8:	e1d200b2 	ldrh	r0, [r2, #2]
 42419eec:	eb004b2f 	bl	0x4242cbb0
@@ -18112,19 +18113,19 @@ Disassembly of section .data:
 42419ef8:	e1a00007 	mov	r0, r7
 42419efc:	eb004b8a 	bl	0x4242cd2c
 42419f00:	e1a0b001 	mov	fp, r1
-42419f04:	e59f2828 	ldr	r2, [pc, #2088]	; 0x4241a734
+42419f04:	e59f2828 	ldr	r2, [0x4241a734]
 42419f08:	e5922000 	ldr	r2, [r2]
 42419f0c:	e1d210bc 	ldrh	r1, [r2, #12]
-42419f10:	e59f281c 	ldr	r2, [pc, #2076]	; 0x4241a734
+42419f10:	e59f281c 	ldr	r2, [0x4241a734]
 42419f14:	e5922010 	ldr	r2, [r2, #16]
 42419f18:	e1d200b2 	ldrh	r0, [r2, #2]
 42419f1c:	eb004b23 	bl	0x4242cbb0
 42419f20:	e029b098 	mla	r9, r8, r0, fp
 42419f24:	e58d6004 	str	r6, [sp, #4]
-42419f28:	e59f2804 	ldr	r2, [pc, #2052]	; 0x4241a734
+42419f28:	e59f2804 	ldr	r2, [0x4241a734]
 42419f2c:	e5922000 	ldr	r2, [r2]
 42419f30:	e1d210bc 	ldrh	r1, [r2, #12]
-42419f34:	e59f27f8 	ldr	r2, [pc, #2040]	; 0x4241a734
+42419f34:	e59f27f8 	ldr	r2, [0x4241a734]
 42419f38:	e5922010 	ldr	r2, [r2, #16]
 42419f3c:	e1d200b2 	ldrh	r0, [r2, #2]
 42419f40:	eb004b1a 	bl	0x4242cbb0
@@ -18134,18 +18135,18 @@ Disassembly of section .data:
 42419f50:	eb004b75 	bl	0x4242cd2c
 42419f54:	e58d0000 	str	r0, [sp]
 42419f58:	ea000073 	b	0x4241a12c
-42419f5c:	e59f07cc 	ldr	r0, [pc, #1996]	; 0x4241a730
+42419f5c:	e59f07cc 	ldr	r0, [0x4241a730]
 42419f60:	e1d001b0 	ldrh	r0, [r0, #16]
 42419f64:	e3100020 	tst	r0, #32
 42419f68:	0a000025 	beq	0x4241a004
-42419f6c:	e59f07bc 	ldr	r0, [pc, #1980]	; 0x4241a730
+42419f6c:	e59f07bc 	ldr	r0, [0x4241a730]
 42419f70:	e1d001b0 	ldrh	r0, [r0, #16]
 42419f74:	e3100040 	tst	r0, #64	; 0x40
 42419f78:	1a000021 	bne	0x4241a004
-42419f7c:	e59f27b0 	ldr	r2, [pc, #1968]	; 0x4241a734
+42419f7c:	e59f27b0 	ldr	r2, [0x4241a734]
 42419f80:	e5922000 	ldr	r2, [r2]
 42419f84:	e1d210bc 	ldrh	r1, [r2, #12]
-42419f88:	e59f27a4 	ldr	r2, [pc, #1956]	; 0x4241a734
+42419f88:	e59f27a4 	ldr	r2, [0x4241a734]
 42419f8c:	e5922010 	ldr	r2, [r2, #16]
 42419f90:	e1d200b2 	ldrh	r0, [r2, #2]
 42419f94:	eb004b05 	bl	0x4242cbb0
@@ -18154,19 +18155,19 @@ Disassembly of section .data:
 42419fa0:	e1a00007 	mov	r0, r7
 42419fa4:	eb004b60 	bl	0x4242cd2c
 42419fa8:	e1a0b001 	mov	fp, r1
-42419fac:	e59f2780 	ldr	r2, [pc, #1920]	; 0x4241a734
+42419fac:	e59f2780 	ldr	r2, [0x4241a734]
 42419fb0:	e5922000 	ldr	r2, [r2]
 42419fb4:	e1d210bc 	ldrh	r1, [r2, #12]
-42419fb8:	e59f2774 	ldr	r2, [pc, #1908]	; 0x4241a734
+42419fb8:	e59f2774 	ldr	r2, [0x4241a734]
 42419fbc:	e5922010 	ldr	r2, [r2, #16]
 42419fc0:	e1d200b2 	ldrh	r0, [r2, #2]
 42419fc4:	eb004af9 	bl	0x4242cbb0
 42419fc8:	e029b098 	mla	r9, r8, r0, fp
 42419fcc:	e58d6004 	str	r6, [sp, #4]
-42419fd0:	e59f275c 	ldr	r2, [pc, #1884]	; 0x4241a734
+42419fd0:	e59f275c 	ldr	r2, [0x4241a734]
 42419fd4:	e5922000 	ldr	r2, [r2]
 42419fd8:	e1d210bc 	ldrh	r1, [r2, #12]
-42419fdc:	e59f2750 	ldr	r2, [pc, #1872]	; 0x4241a734
+42419fdc:	e59f2750 	ldr	r2, [0x4241a734]
 42419fe0:	e5922010 	ldr	r2, [r2, #16]
 42419fe4:	e1d200b2 	ldrh	r0, [r2, #2]
 42419fe8:	eb004af0 	bl	0x4242cbb0
@@ -18176,18 +18177,18 @@ Disassembly of section .data:
 42419ff8:	eb004b4b 	bl	0x4242cd2c
 42419ffc:	e58d0000 	str	r0, [sp]
 4241a000:	ea000049 	b	0x4241a12c
-4241a004:	e59f0724 	ldr	r0, [pc, #1828]	; 0x4241a730
+4241a004:	e59f0724 	ldr	r0, [0x4241a730]
 4241a008:	e1d001b0 	ldrh	r0, [r0, #16]
 4241a00c:	e3100020 	tst	r0, #32
 4241a010:	1a000034 	bne	0x4241a0e8
-4241a014:	e59f0714 	ldr	r0, [pc, #1812]	; 0x4241a730
+4241a014:	e59f0714 	ldr	r0, [0x4241a730]
 4241a018:	e1d001b0 	ldrh	r0, [r0, #16]
 4241a01c:	e3100040 	tst	r0, #64	; 0x40
 4241a020:	0a000030 	beq	0x4241a0e8
-4241a024:	e59f2708 	ldr	r2, [pc, #1800]	; 0x4241a734
+4241a024:	e59f2708 	ldr	r2, [0x4241a734]
 4241a028:	e5922000 	ldr	r2, [r2]
 4241a02c:	e1d210bc 	ldrh	r1, [r2, #12]
-4241a030:	e59f26fc 	ldr	r2, [pc, #1788]	; 0x4241a734
+4241a030:	e59f26fc 	ldr	r2, [0x4241a734]
 4241a034:	e5922010 	ldr	r2, [r2, #16]
 4241a038:	e1d200b2 	ldrh	r0, [r2, #2]
 4241a03c:	eb004adb 	bl	0x4242cbb0
@@ -18196,34 +18197,34 @@ Disassembly of section .data:
 4241a048:	e1a00007 	mov	r0, r7
 4241a04c:	eb004b36 	bl	0x4242cd2c
 4241a050:	e1a0a001 	mov	sl, r1
-4241a054:	e59f06d4 	ldr	r0, [pc, #1748]	; 0x4241a730
+4241a054:	e59f06d4 	ldr	r0, [0x4241a730]
 4241a058:	e5d01008 	ldrb	r1, [r0, #8]
 4241a05c:	e1a00008 	mov	r0, r8
 4241a060:	eb004b31 	bl	0x4242cd2c
 4241a064:	e1a0b000 	mov	fp, r0
-4241a068:	e59f26c4 	ldr	r2, [pc, #1732]	; 0x4241a734
+4241a068:	e59f26c4 	ldr	r2, [0x4241a734]
 4241a06c:	e5922000 	ldr	r2, [r2]
 4241a070:	e1d210bc 	ldrh	r1, [r2, #12]
-4241a074:	e59f26b8 	ldr	r2, [pc, #1720]	; 0x4241a734
+4241a074:	e59f26b8 	ldr	r2, [0x4241a734]
 4241a078:	e5922010 	ldr	r2, [r2, #16]
 4241a07c:	e1d200b2 	ldrh	r0, [r2, #2]
 4241a080:	eb004aca 	bl	0x4242cbb0
 4241a084:	e029a09b 	mla	r9, fp, r0, sl
-4241a088:	e59f06a0 	ldr	r0, [pc, #1696]	; 0x4241a730
+4241a088:	e59f06a0 	ldr	r0, [0x4241a730]
 4241a08c:	e5d01008 	ldrb	r1, [r0, #8]
 4241a090:	e1a00008 	mov	r0, r8
 4241a094:	eb004b24 	bl	0x4242cd2c
 4241a098:	e1a0a001 	mov	sl, r1
-4241a09c:	e59f268c 	ldr	r2, [pc, #1676]	; 0x4241a730
+4241a09c:	e59f268c 	ldr	r2, [0x4241a730]
 4241a0a0:	e5d21009 	ldrb	r1, [r2, #9]
 4241a0a4:	e1d200be 	ldrh	r0, [r2, #14]
 4241a0a8:	eb004ac0 	bl	0x4242cbb0
 4241a0ac:	e020609a 	mla	r0, sl, r0, r6
 4241a0b0:	e58d0004 	str	r0, [sp, #4]
-4241a0b4:	e59f2678 	ldr	r2, [pc, #1656]	; 0x4241a734
+4241a0b4:	e59f2678 	ldr	r2, [0x4241a734]
 4241a0b8:	e5922000 	ldr	r2, [r2]
 4241a0bc:	e1d210bc 	ldrh	r1, [r2, #12]
-4241a0c0:	e59f266c 	ldr	r2, [pc, #1644]	; 0x4241a734
+4241a0c0:	e59f266c 	ldr	r2, [0x4241a734]
 4241a0c4:	e5922010 	ldr	r2, [r2, #16]
 4241a0c8:	e1d200b2 	ldrh	r0, [r2, #2]
 4241a0cc:	eb004ab7 	bl	0x4242cbb0
@@ -18233,17 +18234,17 @@ Disassembly of section .data:
 4241a0dc:	eb004b12 	bl	0x4242cd2c
 4241a0e0:	e58d0000 	str	r0, [sp]
 4241a0e4:	ea000010 	b	0x4241a12c
-4241a0e8:	e59f0640 	ldr	r0, [pc, #1600]	; 0x4241a730
+4241a0e8:	e59f0640 	ldr	r0, [0x4241a730]
 4241a0ec:	e5d01008 	ldrb	r1, [r0, #8]
 4241a0f0:	e1a00008 	mov	r0, r8
 4241a0f4:	eb004b0c 	bl	0x4242cd2c
 4241a0f8:	e1a09000 	mov	r9, r0
-4241a0fc:	e59f062c 	ldr	r0, [pc, #1580]	; 0x4241a730
+4241a0fc:	e59f062c 	ldr	r0, [0x4241a730]
 4241a100:	e5d01008 	ldrb	r1, [r0, #8]
 4241a104:	e1a00008 	mov	r0, r8
 4241a108:	eb004b07 	bl	0x4242cd2c
 4241a10c:	e1a0a001 	mov	sl, r1
-4241a110:	e59f2618 	ldr	r2, [pc, #1560]	; 0x4241a730
+4241a110:	e59f2618 	ldr	r2, [0x4241a730]
 4241a114:	e5d21009 	ldrb	r1, [r2, #9]
 4241a118:	e1d200be 	ldrh	r0, [r2, #14]
 4241a11c:	eb004aa3 	bl	0x4242cbb0
@@ -18267,7 +18268,7 @@ Disassembly of section .data:
 4241a164:	e59d7004 	ldr	r7, [sp, #4]
 4241a168:	e3580000 	cmp	r8, #0
 4241a16c:	0a00003c 	beq	0x4241a264
-4241a170:	e59f05bc 	ldr	r0, [pc, #1468]	; 0x4241a734
+4241a170:	e59f05bc 	ldr	r0, [0x4241a734]
 4241a174:	e5900014 	ldr	r0, [r0, #20]
 4241a178:	e590000c 	ldr	r0, [r0, #12]
 4241a17c:	e58d000c 	str	r0, [sp, #12]
@@ -18276,7 +18277,7 @@ Disassembly of section .data:
 4241a188:	e3a00001 	mov	r0, #1
 4241a18c:	e1170510 	tst	r7, r0, lsl r5
 4241a190:	0a00000b 	beq	0x4241a1c4
-4241a194:	e59f0598 	ldr	r0, [pc, #1432]	; 0x4241a734
+4241a194:	e59f0598 	ldr	r0, [0x4241a734]
 4241a198:	e5900014 	ldr	r0, [r0, #20]
 4241a19c:	e590000c 	ldr	r0, [r0, #12]
 4241a1a0:	e3a01004 	mov	r1, #4
@@ -18296,16 +18297,16 @@ Disassembly of section .data:
 4241a1d8:	baffffea 	blt	0x4241a188
 4241a1dc:	e3a05000 	mov	r5, #0
 4241a1e0:	ea00001c 	b	0x4241a258
-4241a1e4:	e59f0544 	ldr	r0, [pc, #1348]	; 0x4241a730
+4241a1e4:	e59f0544 	ldr	r0, [0x4241a730]
 4241a1e8:	e5d0000a 	ldrb	r0, [r0, #10]
 4241a1ec:	e0800005 	add	r0, r0, r5
 4241a1f0:	e3a01001 	mov	r1, #1
 4241a1f4:	e1170011 	tst	r7, r1, lsl r0
 4241a1f8:	0a000011 	beq	0x4241a244
-4241a1fc:	e59f0530 	ldr	r0, [pc, #1328]	; 0x4241a734
+4241a1fc:	e59f0530 	ldr	r0, [0x4241a734]
 4241a200:	e5900014 	ldr	r0, [r0, #20]
 4241a204:	e590000c 	ldr	r0, [r0, #12]
-4241a208:	e59f1520 	ldr	r1, [pc, #1312]	; 0x4241a730
+4241a208:	e59f1520 	ldr	r1, [0x4241a730]
 4241a20c:	e5d1100a 	ldrb	r1, [r1, #10]
 4241a210:	e0811005 	add	r1, r1, r5
 4241a214:	e3a02004 	mov	r2, #4
@@ -18364,11 +18365,11 @@ Disassembly of section .data:
 4241a2e8:	e8bd87f0 	pop	{r4, r5, r6, r7, r8, r9, sl, pc}
 4241a2ec:	e92d4010 	push	{r4, lr}
 4241a2f0:	e24dd018 	sub	sp, sp, #24
-4241a2f4:	e59f0440 	ldr	r0, [pc, #1088]	; 0x4241a73c
+4241a2f4:	e59f0440 	ldr	r0, [0x4241a73c]
 4241a2f8:	e5d00000 	ldrb	r0, [r0]
 4241a2fc:	e3500077 	cmp	r0, #119	; 0x77
 4241a300:	1a00002a 	bne	0x4241a3b0
-4241a304:	e59f0430 	ldr	r0, [pc, #1072]	; 0x4241a73c
+4241a304:	e59f0430 	ldr	r0, [0x4241a73c]
 4241a308:	e1d030b6 	ldrh	r3, [r0, #6]
 4241a30c:	e1d020bc 	ldrh	r2, [r0, #12]
 4241a310:	e5d01001 	ldrb	r1, [r0, #1]
@@ -18380,10 +18381,10 @@ Disassembly of section .data:
 4241a328:	e1a04000 	mov	r4, r0
 4241a32c:	e3540000 	cmp	r4, #0
 4241a330:	aa00001b 	bge	0x4241a3a4
-4241a334:	e59f0400 	ldr	r0, [pc, #1024]	; 0x4241a73c
+4241a334:	e59f0400 	ldr	r0, [0x4241a73c]
 4241a338:	e1d000b6 	ldrh	r0, [r0, #6]
 4241a33c:	e2802001 	add	r2, r0, #1
-4241a340:	e59f03f4 	ldr	r0, [pc, #1012]	; 0x4241a73c
+4241a340:	e59f03f4 	ldr	r0, [0x4241a73c]
 4241a344:	e5d01001 	ldrb	r1, [r0, #1]
 4241a348:	e280300c 	add	r3, r0, #12
 4241a34c:	e2830000 	add	r0, r3, #0
@@ -18392,19 +18393,19 @@ Disassembly of section .data:
 4241a358:	e3540000 	cmp	r4, #0
 4241a35c:	aa000005 	bge	0x4241a378
 4241a360:	e1a01004 	mov	r1, r4
-4241a364:	e59f03d4 	ldr	r0, [pc, #980]	; 0x4241a740
+4241a364:	e59f03d4 	ldr	r0, [0x4241a740]
 4241a368:	eb000519 	bl	0x4241b7d4
 4241a36c:	e3e00000 	mvn	r0, #0
 4241a370:	e28dd018 	add	sp, sp, #24
 4241a374:	e8bd8010 	pop	{r4, pc}
-4241a378:	e59f13bc 	ldr	r1, [pc, #956]	; 0x4241a73c
+4241a378:	e59f13bc 	ldr	r1, [0x4241a73c]
 4241a37c:	e1d100b2 	ldrh	r0, [r1, #2]
 4241a380:	e1a0100d 	mov	r1, sp
 4241a384:	eb001d3f 	bl	0x42421888
-4241a388:	e59f03ac 	ldr	r0, [pc, #940]	; 0x4241a73c
+4241a388:	e59f03ac 	ldr	r0, [0x4241a73c]
 4241a38c:	e590000c 	ldr	r0, [r0, #12]
 4241a390:	e58d0004 	str	r0, [sp, #4]
-4241a394:	e59f13a0 	ldr	r1, [pc, #928]	; 0x4241a73c
+4241a394:	e59f13a0 	ldr	r1, [0x4241a73c]
 4241a398:	e1d100b2 	ldrh	r0, [r1, #2]
 4241a39c:	e1a0100d 	mov	r1, sp
 4241a3a0:	eb001d5d 	bl	0x4242191c
@@ -18412,7 +18413,7 @@ Disassembly of section .data:
 4241a3a8:	e3a01000 	mov	r1, #0
 4241a3ac:	eb003433 	bl	0x42427480
 4241a3b0:	e3a0006e 	mov	r0, #110	; 0x6e
-4241a3b4:	e59f1380 	ldr	r1, [pc, #896]	; 0x4241a73c
+4241a3b4:	e59f1380 	ldr	r1, [0x4241a73c]
 4241a3b8:	e5c10000 	strb	r0, [r1]
 4241a3bc:	e3a00000 	mov	r0, #0
 4241a3c0:	eaffffea 	b	0x4241a370
@@ -18421,17 +18422,17 @@ Disassembly of section .data:
 4241a3cc:	e1a04000 	mov	r4, r0
 4241a3d0:	e1a05001 	mov	r5, r1
 4241a3d4:	e1a06002 	mov	r6, r2
-4241a3d8:	e59f0350 	ldr	r0, [pc, #848]	; 0x4241a730
+4241a3d8:	e59f0350 	ldr	r0, [0x4241a730]
 4241a3dc:	e5d0000a 	ldrb	r0, [r0, #10]
-4241a3e0:	e59f1348 	ldr	r1, [pc, #840]	; 0x4241a730
+4241a3e0:	e59f1348 	ldr	r1, [0x4241a730]
 4241a3e4:	e5d11009 	ldrb	r1, [r1, #9]
 4241a3e8:	e1600180 	smulbb	r0, r0, r1
 4241a3ec:	e2400001 	sub	r0, r0, #1
 4241a3f0:	e3a01001 	mov	r1, #1
 4241a3f4:	e1a00011 	lsl	r0, r1, r0
-4241a3f8:	e59f1330 	ldr	r1, [pc, #816]	; 0x4241a730
+4241a3f8:	e59f1330 	ldr	r1, [0x4241a730]
 4241a3fc:	e5d1100a 	ldrb	r1, [r1, #10]
-4241a400:	e59f2328 	ldr	r2, [pc, #808]	; 0x4241a730
+4241a400:	e59f2328 	ldr	r2, [0x4241a730]
 4241a404:	e5d22009 	ldrb	r2, [r2, #9]
 4241a408:	e1610281 	smulbb	r1, r1, r2
 4241a40c:	e2411001 	sub	r1, r1, #1
@@ -18441,7 +18442,7 @@ Disassembly of section .data:
 4241a41c:	e1800001 	orr	r0, r0, r1
 4241a420:	e1500005 	cmp	r0, r5
 4241a424:	0a000004 	beq	0x4241a43c
-4241a428:	e59f0314 	ldr	r0, [pc, #788]	; 0x4241a744
+4241a428:	e59f0314 	ldr	r0, [0x4241a744]
 4241a42c:	eb0004e8 	bl	0x4241b7d4
 4241a430:	e3e00012 	mvn	r0, #18
 4241a434:	e28dd034 	add	sp, sp, #52	; 0x34
@@ -18451,7 +18452,7 @@ Disassembly of section .data:
 4241a444:	e28d0028 	add	r0, sp, #40	; 0x28
 4241a448:	ebfffd9b 	bl	0x42419abc
 4241a44c:	e5dd0030 	ldrb	r0, [sp, #48]	; 0x30
-4241a450:	e59f12e4 	ldr	r1, [pc, #740]	; 0x4241a73c
+4241a450:	e59f12e4 	ldr	r1, [0x4241a73c]
 4241a454:	e5d11001 	ldrb	r1, [r1, #1]
 4241a458:	e1500001 	cmp	r0, r1
 4241a45c:	0a000016 	beq	0x4241a4bc
@@ -18459,7 +18460,7 @@ Disassembly of section .data:
 4241a464:	e1a07000 	mov	r7, r0
 4241a468:	e3570000 	cmp	r7, #0
 4241a46c:	aa000003 	bge	0x4241a480
-4241a470:	e59f02d0 	ldr	r0, [pc, #720]	; 0x4241a748
+4241a470:	e59f02d0 	ldr	r0, [0x4241a748]
 4241a474:	eb0004d6 	bl	0x4241b7d4
 4241a478:	e3e00012 	mvn	r0, #18
 4241a47c:	eaffffec 	b	0x4241a434
@@ -18469,18 +18470,18 @@ Disassembly of section .data:
 4241a48c:	e3570000 	cmp	r7, #0
 4241a490:	aa000004 	bge	0x4241a4a8
 4241a494:	e1a01007 	mov	r1, r7
-4241a498:	e59f02ac 	ldr	r0, [pc, #684]	; 0x4241a74c
+4241a498:	e59f02ac 	ldr	r0, [0x4241a74c]
 4241a49c:	eb0004cc 	bl	0x4241b7d4
 4241a4a0:	e3e00011 	mvn	r0, #17
 4241a4a4:	eaffffe2 	b	0x4241a434
 4241a4a8:	e5dd0030 	ldrb	r0, [sp, #48]	; 0x30
-4241a4ac:	e59f1288 	ldr	r1, [pc, #648]	; 0x4241a73c
+4241a4ac:	e59f1288 	ldr	r1, [0x4241a73c]
 4241a4b0:	e5c10001 	strb	r0, [r1, #1]
 4241a4b4:	e30f0fff 	movw	r0, #65535	; 0xffff
 4241a4b8:	e1c100b2 	strh	r0, [r1, #2]
 4241a4bc:	eb001659 	bl	0x4241fe28
 4241a4c0:	e1dd02bc 	ldrh	r0, [sp, #44]	; 0x2c
-4241a4c4:	e59f1270 	ldr	r1, [pc, #624]	; 0x4241a73c
+4241a4c4:	e59f1270 	ldr	r1, [0x4241a73c]
 4241a4c8:	e1d110b2 	ldrh	r1, [r1, #2]
 4241a4cc:	e1500001 	cmp	r0, r1
 4241a4d0:	0a00000a 	beq	0x4241a500
@@ -18488,22 +18489,22 @@ Disassembly of section .data:
 4241a4d8:	e1a07000 	mov	r7, r0
 4241a4dc:	e3570000 	cmp	r7, #0
 4241a4e0:	aa000003 	bge	0x4241a4f4
-4241a4e4:	e59f0264 	ldr	r0, [pc, #612]	; 0x4241a750
+4241a4e4:	e59f0264 	ldr	r0, [0x4241a750]
 4241a4e8:	eb0004b9 	bl	0x4241b7d4
 4241a4ec:	e3e00012 	mvn	r0, #18
 4241a4f0:	eaffffcf 	b	0x4241a434
 4241a4f4:	e1dd02bc 	ldrh	r0, [sp, #44]	; 0x2c
-4241a4f8:	e59f123c 	ldr	r1, [pc, #572]	; 0x4241a73c
+4241a4f8:	e59f123c 	ldr	r1, [0x4241a73c]
 4241a4fc:	e1c100b2 	strh	r0, [r1, #2]
 4241a500:	e1dd02be 	ldrh	r0, [sp, #46]	; 0x2e
-4241a504:	e59f1230 	ldr	r1, [pc, #560]	; 0x4241a73c
+4241a504:	e59f1230 	ldr	r1, [0x4241a73c]
 4241a508:	e1c100b4 	strh	r0, [r1, #4]
 4241a50c:	e2812000 	add	r2, r1, #0
 4241a510:	e1d210b4 	ldrh	r1, [r2, #4]
 4241a514:	e1d200b2 	ldrh	r0, [r2, #2]
 4241a518:	e3a02077 	mov	r2, #119	; 0x77
 4241a51c:	eb001f72 	bl	0x424222ec
-4241a520:	e59f1214 	ldr	r1, [pc, #532]	; 0x4241a73c
+4241a520:	e59f1214 	ldr	r1, [0x4241a73c]
 4241a524:	e1c100b6 	strh	r0, [r1, #6]
 4241a528:	e2810000 	add	r0, r1, #0
 4241a52c:	e1d000b6 	ldrh	r0, [r0, #6]
@@ -18515,12 +18516,12 @@ Disassembly of section .data:
 4241a544:	e3e00011 	mvn	r0, #17
 4241a548:	eaffffb9 	b	0x4241a434
 4241a54c:	e1dd02bc 	ldrh	r0, [sp, #44]	; 0x2c
-4241a550:	e59f123c 	ldr	r1, [pc, #572]	; 0x4241a794
+4241a550:	e59f123c 	ldr	r1, [0x4241a794]
 4241a554:	eb001bd7 	bl	0x424214b8
 4241a558:	e1dd02bc 	ldrh	r0, [sp, #44]	; 0x2c
 4241a55c:	e1a0100d 	mov	r1, sp
 4241a560:	eb001cc8 	bl	0x42421888
-4241a564:	e59f01d0 	ldr	r0, [pc, #464]	; 0x4241a73c
+4241a564:	e59f01d0 	ldr	r0, [0x4241a73c]
 4241a568:	e59d1004 	ldr	r1, [sp, #4]
 4241a56c:	e580100c 	str	r1, [r0, #12]
 4241a570:	e1d000bc 	ldrh	r0, [r0, #12]
@@ -18531,11 +18532,11 @@ Disassembly of section .data:
 4241a584:	eb000492 	bl	0x4241b7d4
 4241a588:	e3e00011 	mvn	r0, #17
 4241a58c:	eaffffa8 	b	0x4241a434
-4241a590:	e59f01a4 	ldr	r0, [pc, #420]	; 0x4241a73c
+4241a590:	e59f01a4 	ldr	r0, [0x4241a73c]
 4241a594:	e1d000b6 	ldrh	r0, [r0, #6]
 4241a598:	e3500000 	cmp	r0, #0
 4241a59c:	1a00001d 	bne	0x4241a618
-4241a5a0:	e59f0194 	ldr	r0, [pc, #404]	; 0x4241a73c
+4241a5a0:	e59f0194 	ldr	r0, [0x4241a73c]
 4241a5a4:	e1d020b8 	ldrh	r2, [r0, #8]
 4241a5a8:	e5d01001 	ldrb	r1, [r0, #1]
 4241a5ac:	e3a03000 	mov	r3, #0
@@ -18543,7 +18544,7 @@ Disassembly of section .data:
 4241a5b4:	ebfffe33 	bl	0x42419e88
 4241a5b8:	e3a00003 	mov	r0, #3
 4241a5bc:	e58d001c 	str	r0, [sp, #28]
-4241a5c0:	e59f016c 	ldr	r0, [pc, #364]	; 0x4241a734
+4241a5c0:	e59f016c 	ldr	r0, [0x4241a734]
 4241a5c4:	e5900014 	ldr	r0, [r0, #20]
 4241a5c8:	e5900000 	ldr	r0, [r0]
 4241a5cc:	e58d0020 	str	r0, [sp, #32]
@@ -18555,7 +18556,7 @@ Disassembly of section .data:
 4241a5e4:	e3570000 	cmp	r7, #0
 4241a5e8:	aa000004 	bge	0x4241a600
 4241a5ec:	e1a01007 	mov	r1, r7
-4241a5f0:	e59f01e0 	ldr	r0, [pc, #480]	; 0x4241a7d8
+4241a5f0:	e59f01e0 	ldr	r0, [0x4241a7d8]
 4241a5f4:	eb000476 	bl	0x4241b7d4
 4241a5f8:	e3e0000e 	mvn	r0, #14
 4241a5fc:	eaffff8c 	b	0x4241a434
@@ -18571,36 +18572,36 @@ Disassembly of section .data:
 4241a624:	e3a000ff 	mov	r0, #255	; 0xff
 4241a628:	e5cd0008 	strb	r0, [sp, #8]
 4241a62c:	e5cd0010 	strb	r0, [sp, #16]
-4241a630:	e59f20fc 	ldr	r2, [pc, #252]	; 0x4241a734
+4241a630:	e59f20fc 	ldr	r2, [0x4241a734]
 4241a634:	e5922010 	ldr	r2, [r2, #16]
 4241a638:	e5d21005 	ldrb	r1, [r2, #5]
-4241a63c:	e59f20f8 	ldr	r2, [pc, #248]	; 0x4241a73c
+4241a63c:	e59f20f8 	ldr	r2, [0x4241a73c]
 4241a640:	e5d20001 	ldrb	r0, [r2, #1]
 4241a644:	eb004959 	bl	0x4242cbb0
-4241a648:	e59f00ec 	ldr	r0, [pc, #236]	; 0x4241a73c
+4241a648:	e59f00ec 	ldr	r0, [0x4241a73c]
 4241a64c:	e1d000b2 	ldrh	r0, [r0, #2]
 4241a650:	e1800501 	orr	r0, r0, r1, lsl #10
 4241a654:	e6ff0070 	uxth	r0, r0
 4241a658:	e1cd00b9 	strh	r0, [sp, #9]
-4241a65c:	e59f20d0 	ldr	r2, [pc, #208]	; 0x4241a734
+4241a65c:	e59f20d0 	ldr	r2, [0x4241a734]
 4241a660:	e5922010 	ldr	r2, [r2, #16]
 4241a664:	e5d21005 	ldrb	r1, [r2, #5]
-4241a668:	e59f20cc 	ldr	r2, [pc, #204]	; 0x4241a73c
+4241a668:	e59f20cc 	ldr	r2, [0x4241a73c]
 4241a66c:	e5d20001 	ldrb	r0, [r2, #1]
 4241a670:	eb00494e 	bl	0x4242cbb0
-4241a674:	e59f00c0 	ldr	r0, [pc, #192]	; 0x4241a73c
+4241a674:	e59f00c0 	ldr	r0, [0x4241a73c]
 4241a678:	e1d000b2 	ldrh	r0, [r0, #2]
 4241a67c:	e1800501 	orr	r0, r0, r1, lsl #10
 4241a680:	e28d1010 	add	r1, sp, #16
 4241a684:	e1cd01b1 	strh	r0, [sp, #17]
-4241a688:	e59f00ac 	ldr	r0, [pc, #172]	; 0x4241a73c
+4241a688:	e59f00ac 	ldr	r0, [0x4241a73c]
 4241a68c:	e1d000b4 	ldrh	r0, [r0, #4]
 4241a690:	e1cd00bc 	strh	r0, [sp, #12]
-4241a694:	e59f00a0 	ldr	r0, [pc, #160]	; 0x4241a73c
+4241a694:	e59f00a0 	ldr	r0, [0x4241a73c]
 4241a698:	e1d000b4 	ldrh	r0, [r0, #4]
 4241a69c:	e1cd01b4 	strh	r0, [sp, #20]
 4241a6a0:	e320f000 	nop	{0}
-4241a6a4:	e59f0090 	ldr	r0, [pc, #144]	; 0x4241a73c
+4241a6a4:	e59f0090 	ldr	r0, [0x4241a73c]
 4241a6a8:	e1d030b6 	ldrh	r3, [r0, #6]
 4241a6ac:	e1d020bc 	ldrh	r2, [r0, #12]
 4241a6b0:	e5d01001 	ldrb	r1, [r0, #1]
@@ -18611,7 +18612,7 @@ Disassembly of section .data:
 4241a6c4:	e58d6020 	str	r6, [sp, #32]
 4241a6c8:	e28d0008 	add	r0, sp, #8
 4241a6cc:	e58d0024 	str	r0, [sp, #36]	; 0x24
-4241a6d0:	e59f0064 	ldr	r0, [pc, #100]	; 0x4241a73c
+4241a6d0:	e59f0064 	ldr	r0, [0x4241a73c]
 4241a6d4:	e5d00000 	ldrb	r0, [r0]
 4241a6d8:	e3500077 	cmp	r0, #119	; 0x77
 4241a6dc:	1a00004b 	bne	0x4241a810
@@ -18621,7 +18622,7 @@ Disassembly of section .data:
 4241a6ec:	e1a07000 	mov	r7, r0
 4241a6f0:	e3570000 	cmp	r7, #0
 4241a6f4:	aa000045 	bge	0x4241a810
-4241a6f8:	e59f003c 	ldr	r0, [pc, #60]	; 0x4241a73c
+4241a6f8:	e59f003c 	ldr	r0, [0x4241a73c]
 4241a6fc:	e1d020b6 	ldrh	r2, [r0, #6]
 4241a700:	e5d01001 	ldrb	r1, [r0, #1]
 4241a704:	e280300c 	add	r3, r0, #12
@@ -18631,7 +18632,7 @@ Disassembly of section .data:
 4241a714:	e3570000 	cmp	r7, #0
 4241a718:	aa000030 	bge	0x4241a7e0
 4241a71c:	e1a01007 	mov	r1, r7
-4241a720:	e59f00b4 	ldr	r0, [pc, #180]	; 0x4241a7dc
+4241a720:	e59f00b4 	ldr	r0, [0x4241a7dc]
 4241a724:	eb00042a 	bl	0x4241b7d4
 4241a728:	e3e00000 	mvn	r0, #0
 4241a72c:	eaffff40 	b	0x4241a434
@@ -18699,7 +18700,7 @@ Disassembly of section .data:
 4241a81c:	e3570000 	cmp	r7, #0
 4241a820:	aa000004 	bge	0x4241a838
 4241a824:	e1a01007 	mov	r1, r7
-4241a828:	e59f067c 	ldr	r0, [pc, #1660]	; 0x4241aeac
+4241a828:	e59f067c 	ldr	r0, [0x4241aeac]
 4241a82c:	eb0003e8 	bl	0x4241b7d4
 4241a830:	e3e00012 	mvn	r0, #18
 4241a834:	eafffefe 	b	0x4241a434
@@ -18729,7 +18730,7 @@ Disassembly of section .data:
 4241a894:	e1a07000 	mov	r7, r0
 4241a898:	e3570000 	cmp	r7, #0
 4241a89c:	aa000004 	bge	0x4241a8b4
-4241a8a0:	e59f0608 	ldr	r0, [pc, #1544]	; 0x4241aeb0
+4241a8a0:	e59f0608 	ldr	r0, [0x4241aeb0]
 4241a8a4:	eb0003ca 	bl	0x4241b7d4
 4241a8a8:	e3e00012 	mvn	r0, #18
 4241a8ac:	e28dd024 	add	sp, sp, #36	; 0x24
@@ -18748,7 +18749,7 @@ Disassembly of section .data:
 4241a8e0:	e3570000 	cmp	r7, #0
 4241a8e4:	aa000004 	bge	0x4241a8fc
 4241a8e8:	e1a01007 	mov	r1, r7
-4241a8ec:	e59f05c0 	ldr	r0, [pc, #1472]	; 0x4241aeb4
+4241a8ec:	e59f05c0 	ldr	r0, [0x4241aeb4]
 4241a8f0:	eb0003b7 	bl	0x4241b7d4
 4241a8f4:	e3e00011 	mvn	r0, #17
 4241a8f8:	eaffffeb 	b	0x4241a8ac
@@ -18822,7 +18823,7 @@ Disassembly of section .data:
 4241aa08:	e3570000 	cmp	r7, #0
 4241aa0c:	aa000004 	bge	0x4241aa24
 4241aa10:	e1a01007 	mov	r1, r7
-4241aa14:	e59f049c 	ldr	r0, [pc, #1180]	; 0x4241aeb8
+4241aa14:	e59f049c 	ldr	r0, [0x4241aeb8]
 4241aa18:	eb00036d 	bl	0x4241b7d4
 4241aa1c:	e3e00000 	mvn	r0, #0
 4241aa20:	eaffffa1 	b	0x4241a8ac
@@ -18975,7 +18976,7 @@ Disassembly of section .data:
 4241ac6c:	e3540000 	cmp	r4, #0
 4241ac70:	aa000004 	bge	0x4241ac88
 4241ac74:	e1a01004 	mov	r1, r4
-4241ac78:	e59f0270 	ldr	r0, [pc, #624]	; 0x4241aef0
+4241ac78:	e59f0270 	ldr	r0, [0x4241aef0]
 4241ac7c:	eb0002d4 	bl	0x4241b7d4
 4241ac80:	e3e00000 	mvn	r0, #0
 4241ac84:	e8bd8010 	pop	{r4, pc}
@@ -18984,7 +18985,7 @@ Disassembly of section .data:
 4241ac90:	e3540000 	cmp	r4, #0
 4241ac94:	aa000004 	bge	0x4241acac
 4241ac98:	e1a01004 	mov	r1, r4
-4241ac9c:	e59f0250 	ldr	r0, [pc, #592]	; 0x4241aef4
+4241ac9c:	e59f0250 	ldr	r0, [0x4241aef4]
 4241aca0:	eb0002cb 	bl	0x4241b7d4
 4241aca4:	e3e00000 	mvn	r0, #0
 4241aca8:	eafffff5 	b	0x4241ac84
@@ -19004,7 +19005,7 @@ Disassembly of section .data:
 4241ace0:	e1a02005 	mov	r2, r5
 4241ace4:	e1a01004 	mov	r1, r4
 4241ace8:	e5903010 	ldr	r3, [r0, #16]
-4241acec:	e59f0204 	ldr	r0, [pc, #516]	; 0x4241aef8
+4241acec:	e59f0204 	ldr	r0, [0x4241aef8]
 4241acf0:	eb0002b7 	bl	0x4241b7d4
 4241acf4:	e3e00013 	mvn	r0, #19
 4241acf8:	e28dd01c 	add	sp, sp, #28
@@ -19059,7 +19060,7 @@ Disassembly of section .data:
 4241adbc:	e1a0300b 	mov	r3, fp
 4241adc0:	e58d8000 	str	r8, [sp]
 4241adc4:	e1a01009 	mov	r1, r9
-4241adc8:	e59f012c 	ldr	r0, [pc, #300]	; 0x4241aefc
+4241adc8:	e59f012c 	ldr	r0, [0x4241aefc]
 4241adcc:	e59d2014 	ldr	r2, [sp, #20]
 4241add0:	eb00027f 	bl	0x4241b7d4
 4241add4:	e3e00000 	mvn	r0, #0
@@ -19150,7 +19151,7 @@ Disassembly of section .data:
 4241af28:	e1a02005 	mov	r2, r5
 4241af2c:	e1a01004 	mov	r1, r4
 4241af30:	e5903010 	ldr	r3, [r0, #16]
-4241af34:	e59f03c8 	ldr	r0, [pc, #968]	; 0x4241b304
+4241af34:	e59f03c8 	ldr	r0, [0x4241b304]
 4241af38:	eb000225 	bl	0x4241b7d4
 4241af3c:	e3550000 	cmp	r5, #0
 4241af40:	1a000002 	bne	0x4241af50
@@ -19342,7 +19343,7 @@ Disassembly of section .data:
 4241b228:	e5900004 	ldr	r0, [r0, #4]
 4241b22c:	e3500000 	cmp	r0, #0
 4241b230:	1a000003 	bne	0x4241b244
-4241b234:	e59f013c 	ldr	r0, [pc, #316]	; 0x4241b378
+4241b234:	e59f013c 	ldr	r0, [0x4241b378]
 4241b238:	eb000165 	bl	0x4241b7d4
 4241b23c:	e3e0000a 	mvn	r0, #10
 4241b240:	e8bd8010 	pop	{r4, pc}
@@ -19361,7 +19362,7 @@ Disassembly of section .data:
 4241b274:	e5900008 	ldr	r0, [r0, #8]
 4241b278:	e3500000 	cmp	r0, #0
 4241b27c:	1a000003 	bne	0x4241b290
-4241b280:	e59f00f4 	ldr	r0, [pc, #244]	; 0x4241b37c
+4241b280:	e59f00f4 	ldr	r0, [0x4241b37c]
 4241b284:	eb000152 	bl	0x4241b7d4
 4241b288:	e3e0000a 	mvn	r0, #10
 4241b28c:	eaffffeb 	b	0x4241b240
@@ -19381,7 +19382,7 @@ Disassembly of section .data:
 4241b2c4:	e3540000 	cmp	r4, #0
 4241b2c8:	aa000004 	bge	0x4241b2e0
 4241b2cc:	e1a01004 	mov	r1, r4
-4241b2d0:	e59f00a8 	ldr	r0, [pc, #168]	; 0x4241b380
+4241b2d0:	e59f00a8 	ldr	r0, [0x4241b380]
 4241b2d4:	eb00013e 	bl	0x4241b7d4
 4241b2d8:	e3e00011 	mvn	r0, #17
 4241b2dc:	eaffffd7 	b	0x4241b240
@@ -19390,7 +19391,7 @@ Disassembly of section .data:
 4241b2e8:	e3540000 	cmp	r4, #0
 4241b2ec:	aa000025 	bge	0x4241b388
 4241b2f0:	e1a01004 	mov	r1, r4
-4241b2f4:	e59f0088 	ldr	r0, [pc, #136]	; 0x4241b384
+4241b2f4:	e59f0088 	ldr	r0, [0x4241b384]
 4241b2f8:	eb000135 	bl	0x4241b7d4
 4241b2fc:	e3e00011 	mvn	r0, #17
 4241b300:	eaffffce 	b	0x4241b240
@@ -19676,17 +19677,17 @@ Disassembly of section .data:
 4241b758:	e3a01017 	mov	r1, #23
 4241b75c:	e28d0008 	add	r0, sp, #8
 4241b760:	ef0000c0 	svc	0x000000c0
-4241b764:	e59f108c 	ldr	r1, [pc, #140]	; 0x4241b7f8
+4241b764:	e59f108c 	ldr	r1, [0x4241b7f8]
 4241b768:	e5810000 	str	r0, [r1]
 4241b76c:	e28dde51 	add	sp, sp, #1296	; 0x510
 4241b770:	e8bd8010 	pop	{r4, pc}
 4241b774:	e92d4010 	push	{r4, lr}
-4241b778:	e59f0078 	ldr	r0, [pc, #120]	; 0x4241b7f8
+4241b778:	e59f0078 	ldr	r0, [0x4241b7f8]
 4241b77c:	e5900000 	ldr	r0, [r0]
 4241b780:	e3500000 	cmp	r0, #0
 4241b784:	0a000003 	beq	0x4241b798
 4241b788:	e3a01000 	mov	r1, #0
-4241b78c:	e59f0064 	ldr	r0, [pc, #100]	; 0x4241b7f8
+4241b78c:	e59f0064 	ldr	r0, [0x4241b7f8]
 4241b790:	e5900000 	ldr	r0, [r0]
 4241b794:	ef0000c1 	svc	0x000000c1
 4241b798:	e8bd8010 	pop	{r4, pc}
@@ -19732,24 +19733,24 @@ Disassembly of section .data:
 4241b838:	e1a05001 	mov	r5, r1
 4241b83c:	e1a06002 	mov	r6, r2
 4241b840:	e1a07003 	mov	r7, r3
-4241b844:	e59f0a90 	ldr	r0, [pc, #2704]	; 0x4241c2dc
+4241b844:	e59f0a90 	ldr	r0, [0x4241c2dc]
 4241b848:	e5900010 	ldr	r0, [r0, #16]
 4241b84c:	e5d01005 	ldrb	r1, [r0, #5]
 4241b850:	e1a00005 	mov	r0, r5
 4241b854:	eb004534 	bl	0x4242cd2c
 4241b858:	e1a08000 	mov	r8, r0
-4241b85c:	e59f0a7c 	ldr	r0, [pc, #2684]	; 0x4241c2e0
+4241b85c:	e59f0a7c 	ldr	r0, [0x4241c2e0]
 4241b860:	e1d001b0 	ldrh	r0, [r0, #16]
 4241b864:	e3100020 	tst	r0, #32
 4241b868:	0a000025 	beq	0x4241b904
-4241b86c:	e59f0a6c 	ldr	r0, [pc, #2668]	; 0x4241c2e0
+4241b86c:	e59f0a6c 	ldr	r0, [0x4241c2e0]
 4241b870:	e1d001b0 	ldrh	r0, [r0, #16]
 4241b874:	e3100040 	tst	r0, #64	; 0x40
 4241b878:	0a000021 	beq	0x4241b904
-4241b87c:	e59f2a58 	ldr	r2, [pc, #2648]	; 0x4241c2dc
+4241b87c:	e59f2a58 	ldr	r2, [0x4241c2dc]
 4241b880:	e5922000 	ldr	r2, [r2]
 4241b884:	e1d210bc 	ldrh	r1, [r2, #12]
-4241b888:	e59f2a4c 	ldr	r2, [pc, #2636]	; 0x4241c2dc
+4241b888:	e59f2a4c 	ldr	r2, [0x4241c2dc]
 4241b88c:	e5922010 	ldr	r2, [r2, #16]
 4241b890:	e1d200b2 	ldrh	r0, [r2, #2]
 4241b894:	eb0044c5 	bl	0x4242cbb0
@@ -19758,19 +19759,19 @@ Disassembly of section .data:
 4241b8a0:	e1a00007 	mov	r0, r7
 4241b8a4:	eb004520 	bl	0x4242cd2c
 4241b8a8:	e1a0b001 	mov	fp, r1
-4241b8ac:	e59f2a28 	ldr	r2, [pc, #2600]	; 0x4241c2dc
+4241b8ac:	e59f2a28 	ldr	r2, [0x4241c2dc]
 4241b8b0:	e5922000 	ldr	r2, [r2]
 4241b8b4:	e1d210bc 	ldrh	r1, [r2, #12]
-4241b8b8:	e59f2a1c 	ldr	r2, [pc, #2588]	; 0x4241c2dc
+4241b8b8:	e59f2a1c 	ldr	r2, [0x4241c2dc]
 4241b8bc:	e5922010 	ldr	r2, [r2, #16]
 4241b8c0:	e1d200b2 	ldrh	r0, [r2, #2]
 4241b8c4:	eb0044b9 	bl	0x4242cbb0
 4241b8c8:	e029b098 	mla	r9, r8, r0, fp
 4241b8cc:	e58d6004 	str	r6, [sp, #4]
-4241b8d0:	e59f2a04 	ldr	r2, [pc, #2564]	; 0x4241c2dc
+4241b8d0:	e59f2a04 	ldr	r2, [0x4241c2dc]
 4241b8d4:	e5922000 	ldr	r2, [r2]
 4241b8d8:	e1d210bc 	ldrh	r1, [r2, #12]
-4241b8dc:	e59f29f8 	ldr	r2, [pc, #2552]	; 0x4241c2dc
+4241b8dc:	e59f29f8 	ldr	r2, [0x4241c2dc]
 4241b8e0:	e5922010 	ldr	r2, [r2, #16]
 4241b8e4:	e1d200b2 	ldrh	r0, [r2, #2]
 4241b8e8:	eb0044b0 	bl	0x4242cbb0
@@ -19780,18 +19781,18 @@ Disassembly of section .data:
 4241b8f8:	eb00450b 	bl	0x4242cd2c
 4241b8fc:	e58d0000 	str	r0, [sp]
 4241b900:	ea000073 	b	0x4241bad4
-4241b904:	e59f09d4 	ldr	r0, [pc, #2516]	; 0x4241c2e0
+4241b904:	e59f09d4 	ldr	r0, [0x4241c2e0]
 4241b908:	e1d001b0 	ldrh	r0, [r0, #16]
 4241b90c:	e3100020 	tst	r0, #32
 4241b910:	0a000025 	beq	0x4241b9ac
-4241b914:	e59f09c4 	ldr	r0, [pc, #2500]	; 0x4241c2e0
+4241b914:	e59f09c4 	ldr	r0, [0x4241c2e0]
 4241b918:	e1d001b0 	ldrh	r0, [r0, #16]
 4241b91c:	e3100040 	tst	r0, #64	; 0x40
 4241b920:	1a000021 	bne	0x4241b9ac
-4241b924:	e59f29b0 	ldr	r2, [pc, #2480]	; 0x4241c2dc
+4241b924:	e59f29b0 	ldr	r2, [0x4241c2dc]
 4241b928:	e5922000 	ldr	r2, [r2]
 4241b92c:	e1d210bc 	ldrh	r1, [r2, #12]
-4241b930:	e59f29a4 	ldr	r2, [pc, #2468]	; 0x4241c2dc
+4241b930:	e59f29a4 	ldr	r2, [0x4241c2dc]
 4241b934:	e5922010 	ldr	r2, [r2, #16]
 4241b938:	e1d200b2 	ldrh	r0, [r2, #2]
 4241b93c:	eb00449b 	bl	0x4242cbb0
@@ -19800,19 +19801,19 @@ Disassembly of section .data:
 4241b948:	e1a00007 	mov	r0, r7
 4241b94c:	eb0044f6 	bl	0x4242cd2c
 4241b950:	e1a0b001 	mov	fp, r1
-4241b954:	e59f2980 	ldr	r2, [pc, #2432]	; 0x4241c2dc
+4241b954:	e59f2980 	ldr	r2, [0x4241c2dc]
 4241b958:	e5922000 	ldr	r2, [r2]
 4241b95c:	e1d210bc 	ldrh	r1, [r2, #12]
-4241b960:	e59f2974 	ldr	r2, [pc, #2420]	; 0x4241c2dc
+4241b960:	e59f2974 	ldr	r2, [0x4241c2dc]
 4241b964:	e5922010 	ldr	r2, [r2, #16]
 4241b968:	e1d200b2 	ldrh	r0, [r2, #2]
 4241b96c:	eb00448f 	bl	0x4242cbb0
 4241b970:	e029b098 	mla	r9, r8, r0, fp
 4241b974:	e58d6004 	str	r6, [sp, #4]
-4241b978:	e59f295c 	ldr	r2, [pc, #2396]	; 0x4241c2dc
+4241b978:	e59f295c 	ldr	r2, [0x4241c2dc]
 4241b97c:	e5922000 	ldr	r2, [r2]
 4241b980:	e1d210bc 	ldrh	r1, [r2, #12]
-4241b984:	e59f2950 	ldr	r2, [pc, #2384]	; 0x4241c2dc
+4241b984:	e59f2950 	ldr	r2, [0x4241c2dc]
 4241b988:	e5922010 	ldr	r2, [r2, #16]
 4241b98c:	e1d200b2 	ldrh	r0, [r2, #2]
 4241b990:	eb004486 	bl	0x4242cbb0
@@ -19822,18 +19823,18 @@ Disassembly of section .data:
 4241b9a0:	eb0044e1 	bl	0x4242cd2c
 4241b9a4:	e58d0000 	str	r0, [sp]
 4241b9a8:	ea000049 	b	0x4241bad4
-4241b9ac:	e59f092c 	ldr	r0, [pc, #2348]	; 0x4241c2e0
+4241b9ac:	e59f092c 	ldr	r0, [0x4241c2e0]
 4241b9b0:	e1d001b0 	ldrh	r0, [r0, #16]
 4241b9b4:	e3100020 	tst	r0, #32
 4241b9b8:	1a000034 	bne	0x4241ba90
-4241b9bc:	e59f091c 	ldr	r0, [pc, #2332]	; 0x4241c2e0
+4241b9bc:	e59f091c 	ldr	r0, [0x4241c2e0]
 4241b9c0:	e1d001b0 	ldrh	r0, [r0, #16]
 4241b9c4:	e3100040 	tst	r0, #64	; 0x40
 4241b9c8:	0a000030 	beq	0x4241ba90
-4241b9cc:	e59f2908 	ldr	r2, [pc, #2312]	; 0x4241c2dc
+4241b9cc:	e59f2908 	ldr	r2, [0x4241c2dc]
 4241b9d0:	e5922000 	ldr	r2, [r2]
 4241b9d4:	e1d210bc 	ldrh	r1, [r2, #12]
-4241b9d8:	e59f28fc 	ldr	r2, [pc, #2300]	; 0x4241c2dc
+4241b9d8:	e59f28fc 	ldr	r2, [0x4241c2dc]
 4241b9dc:	e5922010 	ldr	r2, [r2, #16]
 4241b9e0:	e1d200b2 	ldrh	r0, [r2, #2]
 4241b9e4:	eb004471 	bl	0x4242cbb0
@@ -19842,34 +19843,34 @@ Disassembly of section .data:
 4241b9f0:	e1a00007 	mov	r0, r7
 4241b9f4:	eb0044cc 	bl	0x4242cd2c
 4241b9f8:	e1a0a001 	mov	sl, r1
-4241b9fc:	e59f08dc 	ldr	r0, [pc, #2268]	; 0x4241c2e0
+4241b9fc:	e59f08dc 	ldr	r0, [0x4241c2e0]
 4241ba00:	e5d01008 	ldrb	r1, [r0, #8]
 4241ba04:	e1a00008 	mov	r0, r8
 4241ba08:	eb0044c7 	bl	0x4242cd2c
 4241ba0c:	e1a0b000 	mov	fp, r0
-4241ba10:	e59f28c4 	ldr	r2, [pc, #2244]	; 0x4241c2dc
+4241ba10:	e59f28c4 	ldr	r2, [0x4241c2dc]
 4241ba14:	e5922000 	ldr	r2, [r2]
 4241ba18:	e1d210bc 	ldrh	r1, [r2, #12]
-4241ba1c:	e59f28b8 	ldr	r2, [pc, #2232]	; 0x4241c2dc
+4241ba1c:	e59f28b8 	ldr	r2, [0x4241c2dc]
 4241ba20:	e5922010 	ldr	r2, [r2, #16]
 4241ba24:	e1d200b2 	ldrh	r0, [r2, #2]
 4241ba28:	eb004460 	bl	0x4242cbb0
 4241ba2c:	e029a09b 	mla	r9, fp, r0, sl
-4241ba30:	e59f08a8 	ldr	r0, [pc, #2216]	; 0x4241c2e0
+4241ba30:	e59f08a8 	ldr	r0, [0x4241c2e0]
 4241ba34:	e5d01008 	ldrb	r1, [r0, #8]
 4241ba38:	e1a00008 	mov	r0, r8
 4241ba3c:	eb0044ba 	bl	0x4242cd2c
 4241ba40:	e1a0a001 	mov	sl, r1
-4241ba44:	e59f2894 	ldr	r2, [pc, #2196]	; 0x4241c2e0
+4241ba44:	e59f2894 	ldr	r2, [0x4241c2e0]
 4241ba48:	e5d21009 	ldrb	r1, [r2, #9]
 4241ba4c:	e1d200be 	ldrh	r0, [r2, #14]
 4241ba50:	eb004456 	bl	0x4242cbb0
 4241ba54:	e020609a 	mla	r0, sl, r0, r6
 4241ba58:	e58d0004 	str	r0, [sp, #4]
-4241ba5c:	e59f2878 	ldr	r2, [pc, #2168]	; 0x4241c2dc
+4241ba5c:	e59f2878 	ldr	r2, [0x4241c2dc]
 4241ba60:	e5922000 	ldr	r2, [r2]
 4241ba64:	e1d210bc 	ldrh	r1, [r2, #12]
-4241ba68:	e59f286c 	ldr	r2, [pc, #2156]	; 0x4241c2dc
+4241ba68:	e59f286c 	ldr	r2, [0x4241c2dc]
 4241ba6c:	e5922010 	ldr	r2, [r2, #16]
 4241ba70:	e1d200b2 	ldrh	r0, [r2, #2]
 4241ba74:	eb00444d 	bl	0x4242cbb0
@@ -19879,17 +19880,17 @@ Disassembly of section .data:
 4241ba84:	eb0044a8 	bl	0x4242cd2c
 4241ba88:	e58d0000 	str	r0, [sp]
 4241ba8c:	ea000010 	b	0x4241bad4
-4241ba90:	e59f0848 	ldr	r0, [pc, #2120]	; 0x4241c2e0
+4241ba90:	e59f0848 	ldr	r0, [0x4241c2e0]
 4241ba94:	e5d01008 	ldrb	r1, [r0, #8]
 4241ba98:	e1a00008 	mov	r0, r8
 4241ba9c:	eb0044a2 	bl	0x4242cd2c
 4241baa0:	e1a09000 	mov	r9, r0
-4241baa4:	e59f0834 	ldr	r0, [pc, #2100]	; 0x4241c2e0
+4241baa4:	e59f0834 	ldr	r0, [0x4241c2e0]
 4241baa8:	e5d01008 	ldrb	r1, [r0, #8]
 4241baac:	e1a00008 	mov	r0, r8
 4241bab0:	eb00449d 	bl	0x4242cd2c
 4241bab4:	e1a0a001 	mov	sl, r1
-4241bab8:	e59f2820 	ldr	r2, [pc, #2080]	; 0x4241c2e0
+4241bab8:	e59f2820 	ldr	r2, [0x4241c2e0]
 4241babc:	e5d21009 	ldrb	r1, [r2, #9]
 4241bac0:	e1d200be 	ldrh	r0, [r2, #14]
 4241bac4:	eb004439 	bl	0x4242cbb0
@@ -19910,7 +19911,7 @@ Disassembly of section .data:
 4241bb00:	e1a06002 	mov	r6, r2
 4241bb04:	e1a07003 	mov	r7, r3
 4241bb08:	e1cd86d0 	ldrd	r8, [sp, #96]	; 0x60
-4241bb0c:	e59f07c8 	ldr	r0, [pc, #1992]	; 0x4241c2dc
+4241bb0c:	e59f07c8 	ldr	r0, [0x4241c2dc]
 4241bb10:	e5900010 	ldr	r0, [r0, #16]
 4241bb14:	e5d00005 	ldrb	r0, [r0, #5]
 4241bb18:	e0010490 	mul	r1, r0, r4
@@ -19922,7 +19923,7 @@ Disassembly of section .data:
 4241bb30:	e58d800c 	str	r8, [sp, #12]
 4241bb34:	e3590000 	cmp	r9, #0
 4241bb38:	0a00003d 	beq	0x4241bc34
-4241bb3c:	e59f07a0 	ldr	r0, [pc, #1952]	; 0x4241c2e4
+4241bb3c:	e59f07a0 	ldr	r0, [0x4241c2e4]
 4241bb40:	e590000c 	ldr	r0, [r0, #12]
 4241bb44:	e58d0010 	str	r0, [sp, #16]
 4241bb48:	e3a0a000 	mov	sl, #0
@@ -19930,7 +19931,7 @@ Disassembly of section .data:
 4241bb50:	e3a00001 	mov	r0, #1
 4241bb54:	e1170a10 	tst	r7, r0, lsl sl
 4241bb58:	0a00000a 	beq	0x4241bb88
-4241bb5c:	e59f0780 	ldr	r0, [pc, #1920]	; 0x4241c2e4
+4241bb5c:	e59f0780 	ldr	r0, [0x4241c2e4]
 4241bb60:	e590000c 	ldr	r0, [r0, #12]
 4241bb64:	e3a01004 	mov	r1, #4
 4241bb68:	e0200a91 	mla	r0, r1, sl, r0
@@ -19949,16 +19950,16 @@ Disassembly of section .data:
 4241bb9c:	baffffeb 	blt	0x4241bb50
 4241bba0:	e3a0a000 	mov	sl, #0
 4241bba4:	ea00001c 	b	0x4241bc1c
-4241bba8:	e59f0730 	ldr	r0, [pc, #1840]	; 0x4241c2e0
+4241bba8:	e59f0730 	ldr	r0, [0x4241c2e0]
 4241bbac:	e5d0000a 	ldrb	r0, [r0, #10]
 4241bbb0:	e080000a 	add	r0, r0, sl
 4241bbb4:	e3a01001 	mov	r1, #1
 4241bbb8:	e1170011 	tst	r7, r1, lsl r0
 4241bbbc:	0a000011 	beq	0x4241bc08
-4241bbc0:	e59f0714 	ldr	r0, [pc, #1812]	; 0x4241c2dc
+4241bbc0:	e59f0714 	ldr	r0, [0x4241c2dc]
 4241bbc4:	e5900014 	ldr	r0, [r0, #20]
 4241bbc8:	e590000c 	ldr	r0, [r0, #12]
-4241bbcc:	e59f170c 	ldr	r1, [pc, #1804]	; 0x4241c2e0
+4241bbcc:	e59f170c 	ldr	r1, [0x4241c2e0]
 4241bbd0:	e5d1100a 	ldrb	r1, [r1, #10]
 4241bbd4:	e081100a 	add	r1, r1, sl
 4241bbd8:	e3a02004 	mov	r2, #4
@@ -20039,7 +20040,7 @@ Disassembly of section .data:
 4241bd04:	e1a06003 	mov	r6, r3
 4241bd08:	e59d7068 	ldr	r7, [sp, #104]	; 0x68
 4241bd0c:	e59d806c 	ldr	r8, [sp, #108]	; 0x6c
-4241bd10:	e59f05c4 	ldr	r0, [pc, #1476]	; 0x4241c2dc
+4241bd10:	e59f05c4 	ldr	r0, [0x4241c2dc]
 4241bd14:	e5900010 	ldr	r0, [r0, #16]
 4241bd18:	e5d00005 	ldrb	r0, [r0, #5]
 4241bd1c:	e0010490 	mul	r1, r0, r4
@@ -20049,7 +20050,7 @@ Disassembly of section .data:
 4241bd2c:	ebfffebf 	bl	0x4241b830
 4241bd30:	e58d6004 	str	r6, [sp, #4]
 4241bd34:	e58d7008 	str	r7, [sp, #8]
-4241bd38:	e59f05a4 	ldr	r0, [pc, #1444]	; 0x4241c2e4
+4241bd38:	e59f05a4 	ldr	r0, [0x4241c2e4]
 4241bd3c:	e590000c 	ldr	r0, [r0, #12]
 4241bd40:	e58d000c 	str	r0, [sp, #12]
 4241bd44:	e3580000 	cmp	r8, #0
@@ -20063,7 +20064,7 @@ Disassembly of section .data:
 4241bd64:	e0208990 	mla	r0, r0, r9, r8
 4241bd68:	e28d1020 	add	r1, sp, #32
 4241bd6c:	e7810109 	str	r0, [r1, r9, lsl #2]
-4241bd70:	e59f056c 	ldr	r0, [pc, #1388]	; 0x4241c2e4
+4241bd70:	e59f056c 	ldr	r0, [0x4241c2e4]
 4241bd74:	e590000c 	ldr	r0, [r0, #12]
 4241bd78:	e3a01004 	mov	r1, #4
 4241bd7c:	e0200991 	mla	r0, r1, r9, r0
@@ -20078,7 +20079,7 @@ Disassembly of section .data:
 4241bda0:	baffffeb 	blt	0x4241bd54
 4241bda4:	e3a09000 	mov	r9, #0
 4241bda8:	ea00001c 	b	0x4241be20
-4241bdac:	e59f052c 	ldr	r0, [pc, #1324]	; 0x4241c2e0
+4241bdac:	e59f052c 	ldr	r0, [0x4241c2e0]
 4241bdb0:	e5d0000a 	ldrb	r0, [r0, #10]
 4241bdb4:	e0800009 	add	r0, r0, r9
 4241bdb8:	e3a01001 	mov	r1, #1
@@ -20090,10 +20091,10 @@ Disassembly of section .data:
 4241bdd0:	e28d1020 	add	r1, sp, #32
 4241bdd4:	e2892002 	add	r2, r9, #2
 4241bdd8:	e7810102 	str	r0, [r1, r2, lsl #2]
-4241bddc:	e59f04f8 	ldr	r0, [pc, #1272]	; 0x4241c2dc
+4241bddc:	e59f04f8 	ldr	r0, [0x4241c2dc]
 4241bde0:	e5900014 	ldr	r0, [r0, #20]
 4241bde4:	e590000c 	ldr	r0, [r0, #12]
-4241bde8:	e59f14f0 	ldr	r1, [pc, #1264]	; 0x4241c2e0
+4241bde8:	e59f14f0 	ldr	r1, [0x4241c2e0]
 4241bdec:	e5d1100a 	ldrb	r1, [r1, #10]
 4241bdf0:	e0811009 	add	r1, r1, r9
 4241bdf4:	e3a02004 	mov	r2, #4
@@ -20109,13 +20110,13 @@ Disassembly of section .data:
 4241be1c:	e2899001 	add	r9, r9, #1
 4241be20:	e3590002 	cmp	r9, #2
 4241be24:	baffffe0 	blt	0x4241bdac
-4241be28:	e59f24b0 	ldr	r2, [pc, #1200]	; 0x4241c2e0
+4241be28:	e59f24b0 	ldr	r2, [0x4241c2e0]
 4241be2c:	e5d2200a 	ldrb	r2, [r2, #10]
-4241be30:	e59f34a8 	ldr	r3, [pc, #1192]	; 0x4241c2e0
+4241be30:	e59f34a8 	ldr	r3, [0x4241c2e0]
 4241be34:	e5d33009 	ldrb	r3, [r3, #9]
 4241be38:	e1620382 	smulbb	r2, r2, r3
 4241be3c:	e1a01102 	lsl	r1, r2, #2
-4241be40:	e59f249c 	ldr	r2, [pc, #1180]	; 0x4241c2e4
+4241be40:	e59f249c 	ldr	r2, [0x4241c2e4]
 4241be44:	e592000c 	ldr	r0, [r2, #12]
 4241be48:	e3a020ff 	mov	r2, #255	; 0xff
 4241be4c:	eb0042ca 	bl	0x4242c97c
@@ -20157,13 +20158,13 @@ Disassembly of section .data:
 4241bedc:	e3590004 	cmp	r9, #4
 4241bee0:	baffffdc 	blt	0x4241be58
 4241bee4:	ea000009 	b	0x4241bf10
-4241bee8:	e59f23f0 	ldr	r2, [pc, #1008]	; 0x4241c2e0
+4241bee8:	e59f23f0 	ldr	r2, [0x4241c2e0]
 4241beec:	e5d2200a 	ldrb	r2, [r2, #10]
-4241bef0:	e59f33e8 	ldr	r3, [pc, #1000]	; 0x4241c2e0
+4241bef0:	e59f33e8 	ldr	r3, [0x4241c2e0]
 4241bef4:	e5d33009 	ldrb	r3, [r3, #9]
 4241bef8:	e1620382 	smulbb	r2, r2, r3
 4241befc:	e1a01102 	lsl	r1, r2, #2
-4241bf00:	e59f23dc 	ldr	r2, [pc, #988]	; 0x4241c2e4
+4241bf00:	e59f23dc 	ldr	r2, [0x4241c2e4]
 4241bf04:	e592000c 	ldr	r0, [r2, #12]
 4241bf08:	e3a020ff 	mov	r2, #255	; 0xff
 4241bf0c:	eb00429a 	bl	0x4242c97c
@@ -20186,7 +20187,7 @@ Disassembly of section .data:
 4241bf50:	e3a07000 	mov	r7, #0
 4241bf54:	e3a06000 	mov	r6, #0
 4241bf58:	ea00000a 	b	0x4241bf88
-4241bf5c:	e59f0378 	ldr	r0, [pc, #888]	; 0x4241c2dc
+4241bf5c:	e59f0378 	ldr	r0, [0x4241c2dc]
 4241bf60:	e5900010 	ldr	r0, [r0, #16]
 4241bf64:	e5d00005 	ldrb	r0, [r0, #5]
 4241bf68:	e0010490 	mul	r1, r0, r4
@@ -20197,10 +20198,10 @@ Disassembly of section .data:
 4241bf7c:	e1a0000d 	mov	r0, sp
 4241bf80:	eb001c8a 	bl	0x424231b0
 4241bf84:	e2866001 	add	r6, r6, #1
-4241bf88:	e59f234c 	ldr	r2, [pc, #844]	; 0x4241c2dc
+4241bf88:	e59f234c 	ldr	r2, [0x4241c2dc]
 4241bf8c:	e5922000 	ldr	r2, [r2]
 4241bf90:	e1d210bc 	ldrh	r1, [r2, #12]
-4241bf94:	e59f2340 	ldr	r2, [pc, #832]	; 0x4241c2dc
+4241bf94:	e59f2340 	ldr	r2, [0x4241c2dc]
 4241bf98:	e5922010 	ldr	r2, [r2, #16]
 4241bf9c:	e1d200b2 	ldrh	r0, [r2, #2]
 4241bfa0:	eb004302 	bl	0x4242cbb0
@@ -20218,10 +20219,10 @@ Disassembly of section .data:
 4241bfd0:	e28dd010 	add	sp, sp, #16
 4241bfd4:	e8bd81f0 	pop	{r4, r5, r6, r7, r8, pc}
 4241bfd8:	e2866001 	add	r6, r6, #1
-4241bfdc:	e59f22f8 	ldr	r2, [pc, #760]	; 0x4241c2dc
+4241bfdc:	e59f22f8 	ldr	r2, [0x4241c2dc]
 4241bfe0:	e5922000 	ldr	r2, [r2]
 4241bfe4:	e1d210bc 	ldrh	r1, [r2, #12]
-4241bfe8:	e59f22ec 	ldr	r2, [pc, #748]	; 0x4241c2dc
+4241bfe8:	e59f22ec 	ldr	r2, [0x4241c2dc]
 4241bfec:	e5922010 	ldr	r2, [r2, #16]
 4241bff0:	e1d200b2 	ldrh	r0, [r2, #2]
 4241bff4:	eb0042ed 	bl	0x4242cbb0
@@ -20237,7 +20238,7 @@ Disassembly of section .data:
 4241c01c:	e3a08000 	mov	r8, #0
 4241c020:	e3a07000 	mov	r7, #0
 4241c024:	ea00001e 	b	0x4241c0a4
-4241c028:	e59f02ac 	ldr	r0, [pc, #684]	; 0x4241c2dc
+4241c028:	e59f02ac 	ldr	r0, [0x4241c2dc]
 4241c02c:	e5900010 	ldr	r0, [r0, #16]
 4241c030:	e5d00005 	ldrb	r0, [r0, #5]
 4241c034:	e0010490 	mul	r1, r0, r4
@@ -20245,7 +20246,7 @@ Disassembly of section .data:
 4241c03c:	e1a02005 	mov	r2, r5
 4241c040:	e28d0010 	add	r0, sp, #16
 4241c044:	ebfffdf9 	bl	0x4241b830
-4241c048:	e59f028c 	ldr	r0, [pc, #652]	; 0x4241c2dc
+4241c048:	e59f028c 	ldr	r0, [0x4241c2dc]
 4241c04c:	e5900010 	ldr	r0, [r0, #16]
 4241c050:	e5d00005 	ldrb	r0, [r0, #5]
 4241c054:	e0010490 	mul	r1, r0, r4
@@ -20268,7 +20269,7 @@ Disassembly of section .data:
 4241c098:	e28dd020 	add	sp, sp, #32
 4241c09c:	e8bd81f0 	pop	{r4, r5, r6, r7, r8, pc}
 4241c0a0:	e2877001 	add	r7, r7, #1
-4241c0a4:	e59f0230 	ldr	r0, [pc, #560]	; 0x4241c2dc
+4241c0a4:	e59f0230 	ldr	r0, [0x4241c2dc]
 4241c0a8:	e5900010 	ldr	r0, [r0, #16]
 4241c0ac:	e1d000b2 	ldrh	r0, [r0, #2]
 4241c0b0:	e1500007 	cmp	r0, r7
@@ -20292,20 +20293,20 @@ Disassembly of section .data:
 4241c0f8:	e3a06000 	mov	r6, #0
 4241c0fc:	ea000040 	b	0x4241c204
 4241c100:	e28d300c 	add	r3, sp, #12
-4241c104:	e59f01d8 	ldr	r0, [pc, #472]	; 0x4241c2e4
+4241c104:	e59f01d8 	ldr	r0, [0x4241c2e4]
 4241c108:	e5902000 	ldr	r2, [r0]
-4241c10c:	e59f01cc 	ldr	r0, [pc, #460]	; 0x4241c2e0
+4241c10c:	e59f01cc 	ldr	r0, [0x4241c2e0]
 4241c110:	e1cd20f0 	strd	r2, [sp]
 4241c114:	e5d0000a 	ldrb	r0, [r0, #10]
-4241c118:	e59f11c0 	ldr	r1, [pc, #448]	; 0x4241c2e0
+4241c118:	e59f11c0 	ldr	r1, [0x4241c2e0]
 4241c11c:	e5d11009 	ldrb	r1, [r1, #9]
 4241c120:	e1600180 	smulbb	r0, r0, r1
 4241c124:	e2400001 	sub	r0, r0, #1
 4241c128:	e3a01001 	mov	r1, #1
 4241c12c:	e1a01011 	lsl	r1, r1, r0
-4241c130:	e59f01a8 	ldr	r0, [pc, #424]	; 0x4241c2e0
+4241c130:	e59f01a8 	ldr	r0, [0x4241c2e0]
 4241c134:	e5d0000a 	ldrb	r0, [r0, #10]
-4241c138:	e59f21a0 	ldr	r2, [pc, #416]	; 0x4241c2e0
+4241c138:	e59f21a0 	ldr	r2, [0x4241c2e0]
 4241c13c:	e5d22009 	ldrb	r2, [r2, #9]
 4241c140:	e1600280 	smulbb	r0, r0, r2
 4241c144:	e2400001 	sub	r0, r0, #1
@@ -20317,33 +20318,33 @@ Disassembly of section .data:
 4241c15c:	e1a01005 	mov	r1, r5
 4241c160:	e1a00004 	mov	r0, r4
 4241c164:	ebfffee2 	bl	0x4241bcf4
-4241c168:	e59f216c 	ldr	r2, [pc, #364]	; 0x4241c2dc
+4241c168:	e59f216c 	ldr	r2, [0x4241c2dc]
 4241c16c:	e5922000 	ldr	r2, [r2]
 4241c170:	e1d210bc 	ldrh	r1, [r2, #12]
-4241c174:	e59f2160 	ldr	r2, [pc, #352]	; 0x4241c2dc
+4241c174:	e59f2160 	ldr	r2, [0x4241c2dc]
 4241c178:	e5922010 	ldr	r2, [r2, #16]
 4241c17c:	e1d200b2 	ldrh	r0, [r2, #2]
 4241c180:	eb00428a 	bl	0x4242cbb0
-4241c184:	e59f1150 	ldr	r1, [pc, #336]	; 0x4241c2dc
+4241c184:	e59f1150 	ldr	r1, [0x4241c2dc]
 4241c188:	e5911010 	ldr	r1, [r1, #16]
 4241c18c:	e1d110b2 	ldrh	r1, [r1, #2]
 4241c190:	e0410000 	sub	r0, r1, r0
 4241c194:	e0807006 	add	r7, r0, r6
 4241c198:	e28d300c 	add	r3, sp, #12
-4241c19c:	e59f0140 	ldr	r0, [pc, #320]	; 0x4241c2e4
+4241c19c:	e59f0140 	ldr	r0, [0x4241c2e4]
 4241c1a0:	e5902000 	ldr	r2, [r0]
-4241c1a4:	e59f0134 	ldr	r0, [pc, #308]	; 0x4241c2e0
+4241c1a4:	e59f0134 	ldr	r0, [0x4241c2e0]
 4241c1a8:	e1cd20f0 	strd	r2, [sp]
 4241c1ac:	e5d0000a 	ldrb	r0, [r0, #10]
-4241c1b0:	e59f1128 	ldr	r1, [pc, #296]	; 0x4241c2e0
+4241c1b0:	e59f1128 	ldr	r1, [0x4241c2e0]
 4241c1b4:	e5d11009 	ldrb	r1, [r1, #9]
 4241c1b8:	e1600180 	smulbb	r0, r0, r1
 4241c1bc:	e2400001 	sub	r0, r0, #1
 4241c1c0:	e3a01001 	mov	r1, #1
 4241c1c4:	e1a00011 	lsl	r0, r1, r0
-4241c1c8:	e59f1110 	ldr	r1, [pc, #272]	; 0x4241c2e0
+4241c1c8:	e59f1110 	ldr	r1, [0x4241c2e0]
 4241c1cc:	e5d1100a 	ldrb	r1, [r1, #10]
-4241c1d0:	e59f2108 	ldr	r2, [pc, #264]	; 0x4241c2e0
+4241c1d0:	e59f2108 	ldr	r2, [0x4241c2e0]
 4241c1d4:	e5d22009 	ldrb	r2, [r2, #9]
 4241c1d8:	e1610281 	smulbb	r1, r1, r2
 4241c1dc:	e2411001 	sub	r1, r1, #1
@@ -20356,10 +20357,10 @@ Disassembly of section .data:
 4241c1f8:	e1a00004 	mov	r0, r4
 4241c1fc:	ebfffebc 	bl	0x4241bcf4
 4241c200:	e2866001 	add	r6, r6, #1
-4241c204:	e59f20d0 	ldr	r2, [pc, #208]	; 0x4241c2dc
+4241c204:	e59f20d0 	ldr	r2, [0x4241c2dc]
 4241c208:	e5922000 	ldr	r2, [r2]
 4241c20c:	e1d210bc 	ldrh	r1, [r2, #12]
-4241c210:	e59f20c4 	ldr	r2, [pc, #196]	; 0x4241c2dc
+4241c210:	e59f20c4 	ldr	r2, [0x4241c2dc]
 4241c214:	e5922010 	ldr	r2, [r2, #16]
 4241c218:	e1d200b2 	ldrh	r0, [r2, #2]
 4241c21c:	eb004263 	bl	0x4242cbb0
@@ -20372,12 +20373,12 @@ Disassembly of section .data:
 4241c238:	e1a04000 	mov	r4, r0
 4241c23c:	e28f00c8 	ldr	r0, =0x4241c30c	; add r0, pc, #200	; 0xc8
 4241c240:	ebfffd63 	bl	0x4241b7d4
-4241c244:	e59f00c4 	ldr	r0, [pc, #196]	; 0x4241c310
+4241c244:	e59f00c4 	ldr	r0, [0x4241c310]
 4241c248:	ebfffd61 	bl	0x4241b7d4
 4241c24c:	e5d41000 	ldrb	r1, [r4]
 4241c250:	e28f00bc 	ldr	r0, =0x4241c314	; add r0, pc, #188	; 0xbc
 4241c254:	ebfffd5e 	bl	0x4241b7d4
-4241c258:	e59f00e0 	ldr	r0, [pc, #224]	; 0x4241c340
+4241c258:	e59f00e0 	ldr	r0, [0x4241c340]
 4241c25c:	e5901000 	ldr	r1, [r0]
 4241c260:	e28f00dc 	ldr	r0, =0x4241c344	; add r0, pc, #220	; 0xdc
 4241c264:	ebfffd5a 	bl	0x4241b7d4
@@ -20393,7 +20394,7 @@ Disassembly of section .data:
 4241c28c:	e0811485 	add	r1, r1, r5, lsl #9
 4241c290:	e594000c 	ldr	r0, [r4, #12]
 4241c294:	e0807181 	add	r7, r0, r1, lsl #3
-4241c298:	e59f0128 	ldr	r0, [pc, #296]	; 0x4241c3c8
+4241c298:	e59f0128 	ldr	r0, [0x4241c3c8]
 4241c29c:	ebfffd4c 	bl	0x4241b7d4
 4241c2a0:	e1a01005 	mov	r1, r5
 4241c2a4:	e28f0e12 	ldr	r0, =0x4241c3cc	; add r0, pc, #288	; 0x120
@@ -20406,7 +20407,7 @@ Disassembly of section .data:
 4241c2c0:	ebfffd43 	bl	0x4241b7d4
 4241c2c4:	e28f0f5e 	ldr	r0, =0x4241c444	; add r0, pc, #376	; 0x178
 4241c2c8:	ebfffd41 	bl	0x4241b7d4
-4241c2cc:	e59f0194 	ldr	r0, [pc, #404]	; 0x4241c468
+4241c2cc:	e59f0194 	ldr	r0, [0x4241c468]
 4241c2d0:	ebfffd3f 	bl	0x4241b7d4
 4241c2d4:	e3a06000 	mov	r6, #0
 4241c2d8:	ea000078 	b	0x4241c4c0
@@ -20539,7 +20540,7 @@ Disassembly of section .data:
 4241c4d4:	e5d00005 	ldrb	r0, [r0, #5]
 4241c4d8:	e1500005 	cmp	r0, r5
 4241c4dc:	caffff69 	bgt	0x4241c288
-4241c4e0:	e59f0238 	ldr	r0, [pc, #568]	; 0x4241c720
+4241c4e0:	e59f0238 	ldr	r0, [0x4241c720]
 4241c4e4:	ebfffcba 	bl	0x4241b7d4
 4241c4e8:	e8bd83f8 	pop	{r3, r4, r5, r6, r7, r8, r9, pc}
 4241c4ec:	e92d4010 	push	{r4, lr}
@@ -21206,7 +21207,7 @@ Disassembly of section .data:
 4241cf40:	e585b000 	str	fp, [r5]
 4241cf44:	e3a00000 	mov	r0, #0
 4241cf48:	eaffff58 	b	0x4241ccb0
-4241cf4c:	e59f0c64 	ldr	r0, [pc, #3172]	; 0x4241dbb8
+4241cf4c:	e59f0c64 	ldr	r0, [0x4241dbb8]
 4241cf50:	e59d1020 	ldr	r1, [sp, #32]
 4241cf54:	e59d2014 	ldr	r2, [sp, #20]
 4241cf58:	e59d3010 	ldr	r3, [sp, #16]
@@ -21270,7 +21271,7 @@ Disassembly of section .data:
 4241d040:	e1c090b4 	strh	r9, [r0, #4]
 4241d044:	e3a00000 	mov	r0, #0
 4241d048:	eaffff18 	b	0x4241ccb0
-4241d04c:	e59f0b68 	ldr	r0, [pc, #2920]	; 0x4241dbbc
+4241d04c:	e59f0b68 	ldr	r0, [0x4241dbbc]
 4241d050:	e59d1020 	ldr	r1, [sp, #32]
 4241d054:	e1cd21d0 	ldrd	r2, [sp, #16]
 4241d058:	ebfff9dd 	bl	0x4241b7d4
@@ -21284,7 +21285,7 @@ Disassembly of section .data:
 4241d078:	e5d40000 	ldrb	r0, [r4]
 4241d07c:	e3500000 	cmp	r0, #0
 4241d080:	1a000002 	bne	0x4241d090
-4241d084:	e59f0b34 	ldr	r0, [pc, #2868]	; 0x4241dbc0
+4241d084:	e59f0b34 	ldr	r0, [0x4241dbc0]
 4241d088:	e5908000 	ldr	r8, [r0]
 4241d08c:	ea000000 	b	0x4241d094
 4241d090:	e3a08000 	mov	r8, #0
@@ -21392,7 +21393,7 @@ Disassembly of section .data:
 4241d228:	e1a07000 	mov	r7, r0
 4241d22c:	e3570000 	cmp	r7, #0
 4241d230:	aa000003 	bge	0x4241d244
-4241d234:	e59f0988 	ldr	r0, [pc, #2440]	; 0x4241dbc4
+4241d234:	e59f0988 	ldr	r0, [0x4241dbc4]
 4241d238:	ebfff965 	bl	0x4241b7d4
 4241d23c:	e3e00000 	mvn	r0, #0
 4241d240:	eaffffa3 	b	0x4241d0d4
@@ -21448,13 +21449,13 @@ Disassembly of section .data:
 4241d308:	e0812105 	add	r2, r1, r5, lsl #2
 4241d30c:	e1c270b0 	strh	r7, [r2]
 4241d310:	e2855001 	add	r5, r5, #1
-4241d314:	e59f08ac 	ldr	r0, [pc, #2220]	; 0x4241dbc8
+4241d314:	e59f08ac 	ldr	r0, [0x4241dbc8]
 4241d318:	e5900010 	ldr	r0, [r0, #16]
 4241d31c:	e1d000b0 	ldrh	r0, [r0]
 4241d320:	e2400001 	sub	r0, r0, #1
 4241d324:	e1500005 	cmp	r0, r5
 4241d328:	caffffec 	bgt	0x4241d2e0
-4241d32c:	e59f0894 	ldr	r0, [pc, #2196]	; 0x4241dbc8
+4241d32c:	e59f0894 	ldr	r0, [0x4241dbc8]
 4241d330:	e5900010 	ldr	r0, [r0, #16]
 4241d334:	e1d050b0 	ldrh	r5, [r0]
 4241d338:	ea00001d 	b	0x4241d3b4
@@ -21491,7 +21492,7 @@ Disassembly of section .data:
 4241d3b4:	e30003ff 	movw	r0, #1023	; 0x3ff
 4241d3b8:	e1550000 	cmp	r5, r0
 4241d3bc:	baffffde 	blt	0x4241d33c
-4241d3c0:	e59f0800 	ldr	r0, [pc, #2048]	; 0x4241dbc8
+4241d3c0:	e59f0800 	ldr	r0, [0x4241dbc8]
 4241d3c4:	e5900010 	ldr	r0, [r0, #16]
 4241d3c8:	e1d000b0 	ldrh	r0, [r0]
 4241d3cc:	e5942008 	ldr	r2, [r4, #8]
@@ -21545,7 +21546,7 @@ Disassembly of section .data:
 4241d48c:	e1a00004 	mov	r0, r4
 4241d490:	ebfffc64 	bl	0x4241c628
 4241d494:	e1a09000 	mov	r9, r0
-4241d498:	e59f0728 	ldr	r0, [pc, #1832]	; 0x4241dbc8
+4241d498:	e59f0728 	ldr	r0, [0x4241dbc8]
 4241d49c:	e5900010 	ldr	r0, [r0, #16]
 4241d4a0:	e1d050b0 	ldrh	r5, [r0]
 4241d4a4:	ea000014 	b	0x4241d4fc
@@ -21573,7 +21574,7 @@ Disassembly of section .data:
 4241d4fc:	e30003ff 	movw	r0, #1023	; 0x3ff
 4241d500:	e1550000 	cmp	r5, r0
 4241d504:	baffffe7 	blt	0x4241d4a8
-4241d508:	e59f06b8 	ldr	r0, [pc, #1720]	; 0x4241dbc8
+4241d508:	e59f06b8 	ldr	r0, [0x4241dbc8]
 4241d50c:	e5900010 	ldr	r0, [r0, #16]
 4241d510:	e1d000b0 	ldrh	r0, [r0]
 4241d514:	e5941008 	ldr	r1, [r4, #8]
@@ -21602,7 +21603,7 @@ Disassembly of section .data:
 4241d570:	e1a0000a 	mov	r0, sl
 4241d574:	eafffed6 	b	0x4241d0d4
 4241d578:	e320f000 	nop	{0}
-4241d57c:	e59f0648 	ldr	r0, [pc, #1608]	; 0x4241dbcc
+4241d57c:	e59f0648 	ldr	r0, [0x4241dbcc]
 4241d580:	ebfff893 	bl	0x4241b7d4
 4241d584:	e1a00007 	mov	r0, r7
 4241d588:	eafffed1 	b	0x4241d0d4
@@ -21616,11 +21617,11 @@ Disassembly of section .data:
 4241d5a8:	0a000000 	beq	0x4241d5b0
 4241d5ac:	ea000037 	b	0x4241d690
 4241d5b0:	e5d40000 	ldrb	r0, [r4]
-4241d5b4:	e59f160c 	ldr	r1, [pc, #1548]	; 0x4241dbc8
+4241d5b4:	e59f160c 	ldr	r1, [0x4241dbc8]
 4241d5b8:	e5911010 	ldr	r1, [r1, #16]
 4241d5bc:	e5d11005 	ldrb	r1, [r1, #5]
 4241d5c0:	e0205190 	mla	r0, r0, r1, r5
-4241d5c4:	e59f1604 	ldr	r1, [pc, #1540]	; 0x4241dbd0
+4241d5c4:	e59f1604 	ldr	r1, [0x4241dbd0]
 4241d5c8:	e0810100 	add	r0, r1, r0, lsl #2
 4241d5cc:	e1d000b0 	ldrh	r0, [r0]
 4241d5d0:	e3500020 	cmp	r0, #32
@@ -21642,25 +21643,25 @@ Disassembly of section .data:
 4241d610:	e3560000 	cmp	r6, #0
 4241d614:	aa000004 	bge	0x4241d62c
 4241d618:	e5d41000 	ldrb	r1, [r4]
-4241d61c:	e59f05b0 	ldr	r0, [pc, #1456]	; 0x4241dbd4
+4241d61c:	e59f05b0 	ldr	r0, [0x4241dbd4]
 4241d620:	ebfff86b 	bl	0x4241b7d4
 4241d624:	e3e00000 	mvn	r0, #0
 4241d628:	e8bd81f0 	pop	{r4, r5, r6, r7, r8, pc}
 4241d62c:	e5d41000 	ldrb	r1, [r4]
-4241d630:	e59f2590 	ldr	r2, [pc, #1424]	; 0x4241dbc8
+4241d630:	e59f2590 	ldr	r2, [0x4241dbc8]
 4241d634:	e5922010 	ldr	r2, [r2, #16]
 4241d638:	e5d22005 	ldrb	r2, [r2, #5]
 4241d63c:	e0215291 	mla	r1, r1, r2, r5
-4241d640:	e59f2588 	ldr	r2, [pc, #1416]	; 0x4241dbd0
+4241d640:	e59f2588 	ldr	r2, [0x4241dbd0]
 4241d644:	e0821101 	add	r1, r2, r1, lsl #2
 4241d648:	e1c160b0 	strh	r6, [r1]
 4241d64c:	e30f0fff 	movw	r0, #65535	; 0xffff
 4241d650:	e5d41000 	ldrb	r1, [r4]
-4241d654:	e59f256c 	ldr	r2, [pc, #1388]	; 0x4241dbc8
+4241d654:	e59f256c 	ldr	r2, [0x4241dbc8]
 4241d658:	e5922010 	ldr	r2, [r2, #16]
 4241d65c:	e5d22005 	ldrb	r2, [r2, #5]
 4241d660:	e0215291 	mla	r1, r1, r2, r5
-4241d664:	e59f2564 	ldr	r2, [pc, #1380]	; 0x4241dbd0
+4241d664:	e59f2564 	ldr	r2, [0x4241dbd0]
 4241d668:	e0821101 	add	r1, r2, r1, lsl #2
 4241d66c:	e1c100b2 	strh	r0, [r1, #2]
 4241d670:	e3a000aa 	mov	r0, #170	; 0xaa
@@ -21672,7 +21673,7 @@ Disassembly of section .data:
 4241d688:	e1c100b0 	strh	r0, [r1]
 4241d68c:	e320f000 	nop	{0}
 4241d690:	e2855001 	add	r5, r5, #1
-4241d694:	e59f052c 	ldr	r0, [pc, #1324]	; 0x4241dbc8
+4241d694:	e59f052c 	ldr	r0, [0x4241dbc8]
 4241d698:	e5900010 	ldr	r0, [r0, #16]
 4241d69c:	e5d00005 	ldrb	r0, [r0, #5]
 4241d6a0:	e1500005 	cmp	r0, r5
@@ -21689,23 +21690,23 @@ Disassembly of section .data:
 4241d6cc:	1a000000 	bne	0x4241d6d4
 4241d6d0:	ea000068 	b	0x4241d878
 4241d6d4:	e5d40000 	ldrb	r0, [r4]
-4241d6d8:	e59f14e8 	ldr	r1, [pc, #1256]	; 0x4241dbc8
+4241d6d8:	e59f14e8 	ldr	r1, [0x4241dbc8]
 4241d6dc:	e5911010 	ldr	r1, [r1, #16]
 4241d6e0:	e5d11005 	ldrb	r1, [r1, #5]
 4241d6e4:	e1005180 	smlabb	r0, r0, r1, r5
-4241d6e8:	e59f14e0 	ldr	r1, [pc, #1248]	; 0x4241dbd0
+4241d6e8:	e59f14e0 	ldr	r1, [0x4241dbd0]
 4241d6ec:	e0810100 	add	r0, r1, r0, lsl #2
 4241d6f0:	e1d070b0 	ldrh	r7, [r0]
 4241d6f4:	e5d40000 	ldrb	r0, [r4]
-4241d6f8:	e59f14c8 	ldr	r1, [pc, #1224]	; 0x4241dbc8
+4241d6f8:	e59f14c8 	ldr	r1, [0x4241dbc8]
 4241d6fc:	e5911010 	ldr	r1, [r1, #16]
 4241d700:	e5d11005 	ldrb	r1, [r1, #5]
 4241d704:	e1005180 	smlabb	r0, r0, r1, r5
-4241d708:	e59f14c0 	ldr	r1, [pc, #1216]	; 0x4241dbd0
+4241d708:	e59f14c0 	ldr	r1, [0x4241dbd0]
 4241d70c:	e0810100 	add	r0, r1, r0, lsl #2
 4241d710:	e1d080b2 	ldrh	r8, [r0, #2]
 4241d714:	e3a03000 	mov	r3, #0
-4241d718:	e59f04b8 	ldr	r0, [pc, #1208]	; 0x4241dbd8
+4241d718:	e59f04b8 	ldr	r0, [0x4241dbd8]
 4241d71c:	e5902000 	ldr	r2, [r0]
 4241d720:	e1cd20f0 	strd	r2, [sp]
 4241d724:	e5d40000 	ldrb	r0, [r4]
@@ -21718,12 +21719,12 @@ Disassembly of section .data:
 4241d740:	e594200c 	ldr	r2, [r4, #12]
 4241d744:	e0822183 	add	r2, r2, r3, lsl #3
 4241d748:	e2820008 	add	r0, r2, #8
-4241d74c:	e59f2484 	ldr	r2, [pc, #1156]	; 0x4241dbd8
+4241d74c:	e59f2484 	ldr	r2, [0x4241dbd8]
 4241d750:	e5921000 	ldr	r1, [r2]
 4241d754:	e3a02b02 	mov	r2, #0x800
 4241d758:	eb003c65 	bl	0x4242c8f4
 4241d75c:	e3a03000 	mov	r3, #0
-4241d760:	e59f0470 	ldr	r0, [pc, #1136]	; 0x4241dbd8
+4241d760:	e59f0470 	ldr	r0, [0x4241dbd8]
 4241d764:	e5902000 	ldr	r2, [r0]
 4241d768:	e1cd20f0 	strd	r2, [sp]
 4241d76c:	e5d40000 	ldrb	r0, [r4]
@@ -21737,12 +21738,12 @@ Disassembly of section .data:
 4241d78c:	e0822183 	add	r2, r2, r3, lsl #3
 4241d790:	e2822008 	add	r2, r2, #8
 4241d794:	e2820b02 	add	r0, r2, #0x800
-4241d798:	e59f2438 	ldr	r2, [pc, #1080]	; 0x4241dbd8
+4241d798:	e59f2438 	ldr	r2, [0x4241dbd8]
 4241d79c:	e5921000 	ldr	r1, [r2]
 4241d7a0:	e3a02b02 	mov	r2, #0x800
 4241d7a4:	eb003c52 	bl	0x4242c8f4
 4241d7a8:	e3a03000 	mov	r3, #0
-4241d7ac:	e59f0424 	ldr	r0, [pc, #1060]	; 0x4241dbd8
+4241d7ac:	e59f0424 	ldr	r0, [0x4241dbd8]
 4241d7b0:	e5902000 	ldr	r2, [r0]
 4241d7b4:	e1cd20f0 	strd	r2, [sp]
 4241d7b8:	e5d40000 	ldrb	r0, [r4]
@@ -21756,7 +21757,7 @@ Disassembly of section .data:
 4241d7d8:	e0822183 	add	r2, r2, r3, lsl #3
 4241d7dc:	e3013008 	movw	r3, #0x1008
 4241d7e0:	e0820003 	add	r0, r2, r3
-4241d7e4:	e59f23ec 	ldr	r2, [pc, #1004]	; 0x4241dbd8
+4241d7e4:	e59f23ec 	ldr	r2, [0x4241dbd8]
 4241d7e8:	e5921000 	ldr	r1, [r2]
 4241d7ec:	e3a02080 	mov	r2, #128	; 0x80
 4241d7f0:	eb003c3f 	bl	0x4242c8f4
@@ -21794,7 +21795,7 @@ Disassembly of section .data:
 4241d870:	baffffe1 	blt	0x4241d7fc
 4241d874:	e320f000 	nop	{0}
 4241d878:	e2855001 	add	r5, r5, #1
-4241d87c:	e59f0344 	ldr	r0, [pc, #836]	; 0x4241dbc8
+4241d87c:	e59f0344 	ldr	r0, [0x4241dbc8]
 4241d880:	e5900010 	ldr	r0, [r0, #16]
 4241d884:	e5d00005 	ldrb	r0, [r0, #5]
 4241d888:	e1500005 	cmp	r0, r5
@@ -21833,7 +21834,7 @@ Disassembly of section .data:
 4241d90c:	bafffff2 	blt	0x4241d8dc
 4241d910:	e320f000 	nop	{0}
 4241d914:	e2877001 	add	r7, r7, #1
-4241d918:	e59f02a8 	ldr	r0, [pc, #680]	; 0x4241dbc8
+4241d918:	e59f02a8 	ldr	r0, [0x4241dbc8]
 4241d91c:	e5900010 	ldr	r0, [r0, #16]
 4241d920:	e5d00005 	ldrb	r0, [r0, #5]
 4241d924:	e1500007 	cmp	r0, r7
@@ -21845,7 +21846,7 @@ Disassembly of section .data:
 4241d93c:	e5d40000 	ldrb	r0, [r4]
 4241d940:	e3500000 	cmp	r0, #0
 4241d944:	1a000003 	bne	0x4241d958
-4241d948:	e59f0270 	ldr	r0, [pc, #624]	; 0x4241dbc0
+4241d948:	e59f0270 	ldr	r0, [0x4241dbc0]
 4241d94c:	e5900000 	ldr	r0, [r0]
 4241d950:	e1c400b6 	strh	r0, [r4, #6]
 4241d954:	ea000001 	b	0x4241d960
@@ -21863,7 +21864,7 @@ Disassembly of section .data:
 4241d984:	e594000c 	ldr	r0, [r4, #12]
 4241d988:	e0800181 	add	r0, r0, r1, lsl #3
 4241d98c:	e1d000b0 	ldrh	r0, [r0]
-4241d990:	e59f1230 	ldr	r1, [pc, #560]	; 0x4241dbc8
+4241d990:	e59f1230 	ldr	r1, [0x4241dbc8]
 4241d994:	e5911010 	ldr	r1, [r1, #16]
 4241d998:	e1d110b0 	ldrh	r1, [r1]
 4241d99c:	e0410000 	sub	r0, r1, r0
@@ -21879,7 +21880,7 @@ Disassembly of section .data:
 4241d9c4:	e594000c 	ldr	r0, [r4, #12]
 4241d9c8:	e0800181 	add	r0, r0, r1, lsl #3
 4241d9cc:	e2808008 	add	r8, r0, #8
-4241d9d0:	e59f01f0 	ldr	r0, [pc, #496]	; 0x4241dbc8
+4241d9d0:	e59f01f0 	ldr	r0, [0x4241dbc8]
 4241d9d4:	e5900010 	ldr	r0, [r0, #16]
 4241d9d8:	e1d000b0 	ldrh	r0, [r0]
 4241d9dc:	e0862206 	add	r2, r6, r6, lsl #4
@@ -21922,14 +21923,14 @@ Disassembly of section .data:
 4241da70:	e0811087 	add	r1, r1, r7, lsl #1
 4241da74:	e1c100b0 	strh	r0, [r1]
 4241da78:	e2855001 	add	r5, r5, #1
-4241da7c:	e59f0144 	ldr	r0, [pc, #324]	; 0x4241dbc8
+4241da7c:	e59f0144 	ldr	r0, [0x4241dbc8]
 4241da80:	e5900010 	ldr	r0, [r0, #16]
 4241da84:	e1d000b0 	ldrh	r0, [r0]
 4241da88:	e1500005 	cmp	r0, r5
 4241da8c:	caffffd9 	bgt	0x4241d9f8
 4241da90:	e320f000 	nop	{0}
 4241da94:	e2866001 	add	r6, r6, #1
-4241da98:	e59f0128 	ldr	r0, [pc, #296]	; 0x4241dbc8
+4241da98:	e59f0128 	ldr	r0, [0x4241dbc8]
 4241da9c:	e5900010 	ldr	r0, [r0, #16]
 4241daa0:	e5d00005 	ldrb	r0, [r0, #5]
 4241daa4:	e1500006 	cmp	r0, r6
@@ -21955,7 +21956,7 @@ Disassembly of section .data:
 4241daf4:	e1a07000 	mov	r7, r0
 4241daf8:	e3570000 	cmp	r7, #0
 4241dafc:	aa000002 	bge	0x4241db0c
-4241db00:	e59f0110 	ldr	r0, [pc, #272]	; 0x4241dc18
+4241db00:	e59f0110 	ldr	r0, [0x4241dc18]
 4241db04:	ebfff732 	bl	0x4241b7d4
 4241db08:	ea000025 	b	0x4241dba4
 4241db0c:	e0862206 	add	r2, r6, r6, lsl #4
@@ -22054,7 +22055,7 @@ Disassembly of section .data:
 4241dc80:	e5940008 	ldr	r0, [r4, #8]
 4241dc84:	e0800086 	add	r0, r0, r6, lsl #1
 4241dc88:	e1d050b0 	ldrh	r5, [r0]
-4241dc8c:	e59f0318 	ldr	r0, [pc, #792]	; 0x4241dfac
+4241dc8c:	e59f0318 	ldr	r0, [0x4241dfac]
 4241dc90:	e5900000 	ldr	r0, [r0]
 4241dc94:	e2400001 	sub	r0, r0, #1
 4241dc98:	e1500006 	cmp	r0, r6
@@ -22371,7 +22372,7 @@ Disassembly of section .data:
 4241e174:	e1a09000 	mov	r9, r0
 4241e178:	e3590000 	cmp	r9, #0
 4241e17c:	aa000007 	bge	0x4241e1a0
-4241e180:	e59f03a0 	ldr	r0, [pc, #928]	; 0x4241e528
+4241e180:	e59f03a0 	ldr	r0, [0x4241e528]
 4241e184:	ebfff592 	bl	0x4241b7d4
 4241e188:	e5d40000 	ldrb	r0, [r4]
 4241e18c:	e59d1018 	ldr	r1, [sp, #24]
@@ -22442,9 +22443,9 @@ Disassembly of section .data:
 4241e290:	ebfff9b0 	bl	0x4241c958
 4241e294:	e1a09000 	mov	r9, r0
 4241e298:	e58a9ffc 	str	r9, [sl, #4092]	; 0xffc
-4241e29c:	e59f2288 	ldr	r2, [pc, #648]	; 0x4241e52c
+4241e29c:	e59f2288 	ldr	r2, [0x4241e52c]
 4241e2a0:	e5d2200a 	ldrb	r2, [r2, #10]
-4241e2a4:	e59f3280 	ldr	r3, [pc, #640]	; 0x4241e52c
+4241e2a4:	e59f3280 	ldr	r3, [0x4241e52c]
 4241e2a8:	e5d33009 	ldrb	r3, [r3, #9]
 4241e2ac:	e1620382 	smulbb	r2, r2, r3
 4241e2b0:	e1a01482 	lsl	r1, r2, #9
@@ -22460,18 +22461,18 @@ Disassembly of section .data:
 4241e2d8:	e28d3008 	add	r3, sp, #8
 4241e2dc:	e51f070c 	ldr	r0, [pc, #-1804]	; 0x4241dbd8
 4241e2e0:	e5902000 	ldr	r2, [r0]
-4241e2e4:	e59f1240 	ldr	r1, [pc, #576]	; 0x4241e52c
+4241e2e4:	e59f1240 	ldr	r1, [0x4241e52c]
 4241e2e8:	e1cd20f0 	strd	r2, [sp]
 4241e2ec:	e5d1100a 	ldrb	r1, [r1, #10]
-4241e2f0:	e59f2234 	ldr	r2, [pc, #564]	; 0x4241e52c
+4241e2f0:	e59f2234 	ldr	r2, [0x4241e52c]
 4241e2f4:	e5d22009 	ldrb	r2, [r2, #9]
 4241e2f8:	e1610281 	smulbb	r1, r1, r2
 4241e2fc:	e2411001 	sub	r1, r1, #1
 4241e300:	e3a02001 	mov	r2, #1
 4241e304:	e1a01112 	lsl	r1, r2, r1
-4241e308:	e59f221c 	ldr	r2, [pc, #540]	; 0x4241e52c
+4241e308:	e59f221c 	ldr	r2, [0x4241e52c]
 4241e30c:	e5d2200a 	ldrb	r2, [r2, #10]
-4241e310:	e59fc214 	ldr	ip, [pc, #532]	; 0x4241e52c
+4241e310:	e59fc214 	ldr	ip, [0x4241e52c]
 4241e314:	e5dcc009 	ldrb	ip, [ip, #9]
 4241e318:	e1620c82 	smulbb	r2, r2, ip
 4241e31c:	e2422001 	sub	r2, r2, #1
@@ -22501,18 +22502,18 @@ Disassembly of section .data:
 4241e37c:	e28d3008 	add	r3, sp, #8
 4241e380:	e51f07b0 	ldr	r0, [pc, #-1968]	; 0x4241dbd8
 4241e384:	e5902000 	ldr	r2, [r0]
-4241e388:	e59f119c 	ldr	r1, [pc, #412]	; 0x4241e52c
+4241e388:	e59f119c 	ldr	r1, [0x4241e52c]
 4241e38c:	e1cd20f0 	strd	r2, [sp]
 4241e390:	e5d1100a 	ldrb	r1, [r1, #10]
-4241e394:	e59f2190 	ldr	r2, [pc, #400]	; 0x4241e52c
+4241e394:	e59f2190 	ldr	r2, [0x4241e52c]
 4241e398:	e5d22009 	ldrb	r2, [r2, #9]
 4241e39c:	e1610281 	smulbb	r1, r1, r2
 4241e3a0:	e2411001 	sub	r1, r1, #1
 4241e3a4:	e3a02001 	mov	r2, #1
 4241e3a8:	e1a01112 	lsl	r1, r2, r1
-4241e3ac:	e59f2178 	ldr	r2, [pc, #376]	; 0x4241e52c
+4241e3ac:	e59f2178 	ldr	r2, [0x4241e52c]
 4241e3b0:	e5d2200a 	ldrb	r2, [r2, #10]
-4241e3b4:	e59fc170 	ldr	ip, [pc, #368]	; 0x4241e52c
+4241e3b4:	e59fc170 	ldr	ip, [0x4241e52c]
 4241e3b8:	e5dcc009 	ldrb	ip, [ip, #9]
 4241e3bc:	e1620c82 	smulbb	r2, r2, ip
 4241e3c0:	e2422001 	sub	r2, r2, #1
@@ -22534,9 +22535,9 @@ Disassembly of section .data:
 4241e400:	ebfff72e 	bl	0x4241c0c0
 4241e404:	e3e00000 	mvn	r0, #0
 4241e408:	eaffff62 	b	0x4241e198
-4241e40c:	e59f2118 	ldr	r2, [pc, #280]	; 0x4241e52c
+4241e40c:	e59f2118 	ldr	r2, [0x4241e52c]
 4241e410:	e5d2200a 	ldrb	r2, [r2, #10]
-4241e414:	e59f3110 	ldr	r3, [pc, #272]	; 0x4241e52c
+4241e414:	e59f3110 	ldr	r3, [0x4241e52c]
 4241e418:	e5d33009 	ldrb	r3, [r3, #9]
 4241e41c:	e1620382 	smulbb	r2, r2, r3
 4241e420:	e1a01482 	lsl	r1, r2, #9
@@ -22560,18 +22561,18 @@ Disassembly of section .data:
 4241e468:	e28d3008 	add	r3, sp, #8
 4241e46c:	e51f089c 	ldr	r0, [pc, #-2204]	; 0x4241dbd8
 4241e470:	e5902000 	ldr	r2, [r0]
-4241e474:	e59f10b0 	ldr	r1, [pc, #176]	; 0x4241e52c
+4241e474:	e59f10b0 	ldr	r1, [0x4241e52c]
 4241e478:	e1cd20f0 	strd	r2, [sp]
 4241e47c:	e5d1100a 	ldrb	r1, [r1, #10]
-4241e480:	e59f20a4 	ldr	r2, [pc, #164]	; 0x4241e52c
+4241e480:	e59f20a4 	ldr	r2, [0x4241e52c]
 4241e484:	e5d22009 	ldrb	r2, [r2, #9]
 4241e488:	e1610281 	smulbb	r1, r1, r2
 4241e48c:	e2411001 	sub	r1, r1, #1
 4241e490:	e3a02001 	mov	r2, #1
 4241e494:	e1a02112 	lsl	r2, r2, r1
-4241e498:	e59f108c 	ldr	r1, [pc, #140]	; 0x4241e52c
+4241e498:	e59f108c 	ldr	r1, [0x4241e52c]
 4241e49c:	e5d1100a 	ldrb	r1, [r1, #10]
-4241e4a0:	e59fc084 	ldr	ip, [pc, #132]	; 0x4241e52c
+4241e4a0:	e59fc084 	ldr	ip, [0x4241e52c]
 4241e4a4:	e5dcc009 	ldrb	ip, [ip, #9]
 4241e4a8:	e1610c81 	smulbb	r1, r1, ip
 4241e4ac:	e2411001 	sub	r1, r1, #1
@@ -22756,7 +22757,7 @@ Disassembly of section .data:
 4241e778:	e5d43000 	ldrb	r3, [r4]
 4241e77c:	e1a02006 	mov	r2, r6
 4241e780:	e1a01005 	mov	r1, r5
-4241e784:	e59f0168 	ldr	r0, [pc, #360]	; 0x4241e8f4
+4241e784:	e59f0168 	ldr	r0, [0x4241e8f4]
 4241e788:	ebfff411 	bl	0x4241b7d4
 4241e78c:	ea000064 	b	0x4241e924
 4241e790:	e3a00a01 	mov	r0, #0x1000
@@ -22800,7 +22801,7 @@ Disassembly of section .data:
 4241e828:	e5d43000 	ldrb	r3, [r4]
 4241e82c:	e1a02006 	mov	r2, r6
 4241e830:	e1a01005 	mov	r1, r5
-4241e834:	e59f00bc 	ldr	r0, [pc, #188]	; 0x4241e8f8
+4241e834:	e59f00bc 	ldr	r0, [0x4241e8f8]
 4241e838:	ebfff3e5 	bl	0x4241b7d4
 4241e83c:	e3a01a01 	mov	r1, #0x1000
 4241e840:	e1a0000a 	mov	r0, sl
@@ -22830,7 +22831,7 @@ Disassembly of section .data:
 4241e8a0:	0a000016 	beq	0x4241e900
 4241e8a4:	e5d42000 	ldrb	r2, [r4]
 4241e8a8:	e1a01006 	mov	r1, r6
-4241e8ac:	e59f0048 	ldr	r0, [pc, #72]	; 0x4241e8fc
+4241e8ac:	e59f0048 	ldr	r0, [0x4241e8fc]
 4241e8b0:	ebfff3c7 	bl	0x4241b7d4
 4241e8b4:	ea00001a 	b	0x4241e924
 4241e8b8:	524f465b 	subpl	r4, pc, #0x5b00000
@@ -22857,7 +22858,7 @@ Disassembly of section .data:
 4241e90c:	e5c40001 	strb	r0, [r4, #1]
 4241e910:	e5d42000 	ldrb	r2, [r4]
 4241e914:	e1a01006 	mov	r1, r6
-4241e918:	e59f0334 	ldr	r0, [pc, #820]	; 0x4241ec54
+4241e918:	e59f0334 	ldr	r0, [0x4241ec54]
 4241e91c:	ebfff3ac 	bl	0x4241b7d4
 4241e920:	e320f000 	nop	{0}
 4241e924:	e2855001 	add	r5, r5, #1
@@ -22893,7 +22894,7 @@ Disassembly of section .data:
 4241e99c:	e5940008 	ldr	r0, [r4, #8]
 4241e9a0:	e3500000 	cmp	r0, #0
 4241e9a4:	1a000003 	bne	0x4241e9b8
-4241e9a8:	e59f02e8 	ldr	r0, [pc, #744]	; 0x4241ec98
+4241e9a8:	e59f02e8 	ldr	r0, [0x4241ec98]
 4241e9ac:	ebfff388 	bl	0x4241b7d4
 4241e9b0:	e3e00000 	mvn	r0, #0
 4241e9b4:	e8bd8070 	pop	{r4, r5, r6, pc}
@@ -22907,7 +22908,7 @@ Disassembly of section .data:
 4241e9d4:	e594000c 	ldr	r0, [r4, #12]
 4241e9d8:	e3500000 	cmp	r0, #0
 4241e9dc:	1a000008 	bne	0x4241ea04
-4241e9e0:	e59f02b4 	ldr	r0, [pc, #692]	; 0x4241ec9c
+4241e9e0:	e59f02b4 	ldr	r0, [0x4241ec9c]
 4241e9e4:	ebfff37a 	bl	0x4241b7d4
 4241e9e8:	e51f2a44 	ldr	r2, [pc, #-2628]	; 0x4241dfac
 4241e9ec:	e5922000 	ldr	r2, [r2]
@@ -22987,7 +22988,7 @@ Disassembly of section .data:
 4241eb14:	e3560000 	cmp	r6, #0
 4241eb18:	aa000010 	bge	0x4241eb60
 4241eb1c:	e5d41000 	ldrb	r1, [r4]
-4241eb20:	e59f0178 	ldr	r0, [pc, #376]	; 0x4241eca0
+4241eb20:	e59f0178 	ldr	r0, [0x4241eca0]
 4241eb24:	ebfff32a 	bl	0x4241b7d4
 4241eb28:	e51f2b84 	ldr	r2, [pc, #-2948]	; 0x4241dfac
 4241eb2c:	e5922000 	ldr	r2, [r2]
@@ -23039,7 +23040,7 @@ Disassembly of section .data:
 4241ebe4:	e1a01082 	lsl	r1, r2, #1
 4241ebe8:	e5940008 	ldr	r0, [r4, #8]
 4241ebec:	ebfff2ef 	bl	0x4241b7b0
-4241ebf0:	e59f211c 	ldr	r2, [pc, #284]	; 0x4241ed14
+4241ebf0:	e59f211c 	ldr	r2, [0x4241ed14]
 4241ebf4:	e5922010 	ldr	r2, [r2, #16]
 4241ebf8:	e5d22005 	ldrb	r2, [r2, #5]
 4241ebfc:	e3013088 	movw	r3, #4232	; 0x1088
@@ -23055,7 +23056,7 @@ Disassembly of section .data:
 4241ec24:	e1a01082 	lsl	r1, r2, #1
 4241ec28:	e5940008 	ldr	r0, [r4, #8]
 4241ec2c:	ebfff2df 	bl	0x4241b7b0
-4241ec30:	e59f20dc 	ldr	r2, [pc, #220]	; 0x4241ed14
+4241ec30:	e59f20dc 	ldr	r2, [0x4241ed14]
 4241ec34:	e5922010 	ldr	r2, [r2, #16]
 4241ec38:	e5d22005 	ldrb	r2, [r2, #5]
 4241ec3c:	e3013088 	movw	r3, #4232	; 0x1088
@@ -23115,12 +23116,12 @@ Disassembly of section .data:
 4241ed14:	4243a470 	submi	sl, r3, #0x70000000
 4241ed18:	e92d4070 	push	{r4, r5, r6, lr}
 4241ed1c:	e3a00000 	mov	r0, #0
-4241ed20:	e59f1340 	ldr	r1, [pc, #832]	; 0x4241f068
+4241ed20:	e59f1340 	ldr	r1, [0x4241f068]
 4241ed24:	e5810000 	str	r0, [r1]
 4241ed28:	e3a04000 	mov	r4, #0
 4241ed2c:	e320f000 	nop	{0}
 4241ed30:	e0840084 	add	r0, r4, r4, lsl #1
-4241ed34:	e59f1330 	ldr	r1, [pc, #816]	; 0x4241f06c
+4241ed34:	e59f1330 	ldr	r1, [0x4241f06c]
 4241ed38:	e7915100 	ldr	r5, [r1, r0, lsl #2]
 4241ed3c:	e3750001 	cmn	r5, #1
 4241ed40:	0a000008 	beq	0x4241ed68
@@ -23134,15 +23135,15 @@ Disassembly of section .data:
 4241ed60:	e1510005 	cmp	r1, r5
 4241ed64:	1a00000b 	bne	0x4241ed98
 4241ed68:	e0840084 	add	r0, r4, r4, lsl #1
-4241ed6c:	e59f12f8 	ldr	r1, [pc, #760]	; 0x4241f06c
+4241ed6c:	e59f12f8 	ldr	r1, [0x4241f06c]
 4241ed70:	e0810100 	add	r0, r1, r0, lsl #2
 4241ed74:	e5900004 	ldr	r0, [r0, #4]
 4241ed78:	e0841084 	add	r1, r4, r4, lsl #1
-4241ed7c:	e59f22e8 	ldr	r2, [pc, #744]	; 0x4241f06c
+4241ed7c:	e59f22e8 	ldr	r2, [0x4241f06c]
 4241ed80:	e0821101 	add	r1, r2, r1, lsl #2
 4241ed84:	e5911008 	ldr	r1, [r1, #8]
 4241ed88:	e0800001 	add	r0, r0, r1
-4241ed8c:	e59f12d4 	ldr	r1, [pc, #724]	; 0x4241f068
+4241ed8c:	e59f12d4 	ldr	r1, [0x4241f068]
 4241ed90:	e5810000 	str	r0, [r1]
 4241ed94:	ea000001 	b	0x4241eda0
 4241ed98:	e2844001 	add	r4, r4, #1
@@ -23151,29 +23152,29 @@ Disassembly of section .data:
 4241eda4:	e51f0880 	ldr	r0, [pc, #-2176]	; 0x4241e52c
 4241eda8:	e51f109c 	ldr	r1, [pc, #-156]	; 0x4241ed14
 4241edac:	e5810000 	str	r0, [r1]
-4241edb0:	e59f02b8 	ldr	r0, [pc, #696]	; 0x4241f070
+4241edb0:	e59f02b8 	ldr	r0, [0x4241f070]
 4241edb4:	e5810004 	str	r0, [r1, #4]
-4241edb8:	e59f02b4 	ldr	r0, [pc, #692]	; 0x4241f074
+4241edb8:	e59f02b4 	ldr	r0, [0x4241f074]
 4241edbc:	e5810010 	str	r0, [r1, #16]
-4241edc0:	e59f02b0 	ldr	r0, [pc, #688]	; 0x4241f078
+4241edc0:	e59f02b0 	ldr	r0, [0x4241f078]
 4241edc4:	e5810014 	str	r0, [r1, #20]
 4241edc8:	e51f08a4 	ldr	r0, [pc, #-2212]	; 0x4241e52c
 4241edcc:	e1d001bc 	ldrh	r0, [r0, #28]
-4241edd0:	e59f129c 	ldr	r1, [pc, #668]	; 0x4241f074
+4241edd0:	e59f129c 	ldr	r1, [0x4241f074]
 4241edd4:	e1c100b0 	strh	r0, [r1]
 4241edd8:	e51f08b4 	ldr	r0, [pc, #-2228]	; 0x4241e52c
 4241eddc:	e5d0000a 	ldrb	r0, [r0, #10]
 4241ede0:	e51f18bc 	ldr	r1, [pc, #-2236]	; 0x4241e52c
 4241ede4:	e5d11009 	ldrb	r1, [r1, #9]
 4241ede8:	e1600180 	smulbb	r0, r0, r1
-4241edec:	e59f1280 	ldr	r1, [pc, #640]	; 0x4241f074
+4241edec:	e59f1280 	ldr	r1, [0x4241f074]
 4241edf0:	e5c10004 	strb	r0, [r1, #4]
 4241edf4:	e51f08d0 	ldr	r0, [pc, #-2256]	; 0x4241e52c
 4241edf8:	e1d000bc 	ldrh	r0, [r0, #12]
 4241edfc:	e51f18d8 	ldr	r1, [pc, #-2264]	; 0x4241e52c
 4241ee00:	e5d11007 	ldrb	r1, [r1, #7]
 4241ee04:	e0000190 	mul	r0, r0, r1
-4241ee08:	e59f1264 	ldr	r1, [pc, #612]	; 0x4241f074
+4241ee08:	e59f1264 	ldr	r1, [0x4241f074]
 4241ee0c:	e1c100b2 	strh	r0, [r1, #2]
 4241ee10:	e51f08ec 	ldr	r0, [pc, #-2284]	; 0x4241e52c
 4241ee14:	e1d001b0 	ldrh	r0, [r0, #16]
@@ -23196,15 +23197,15 @@ Disassembly of section .data:
 4241ee58:	e1a00fc0 	asr	r0, r0, #31
 4241ee5c:	e0860b20 	add	r0, r6, r0, lsr #22
 4241ee60:	e7e70550 	ubfx	r0, r0, #10, #8
-4241ee64:	e59f1208 	ldr	r1, [pc, #520]	; 0x4241f074
+4241ee64:	e59f1208 	ldr	r1, [0x4241f074]
 4241ee68:	e5c10005 	strb	r0, [r1, #5]
 4241ee6c:	e3a04000 	mov	r4, #0
 4241ee70:	ea000007 	b	0x4241ee94
 4241ee74:	e30f0fff 	movw	r0, #65535	; 0xffff
-4241ee78:	e59f11f0 	ldr	r1, [pc, #496]	; 0x4241f070
+4241ee78:	e59f11f0 	ldr	r1, [0x4241f070]
 4241ee7c:	e0811104 	add	r1, r1, r4, lsl #2
 4241ee80:	e1c100b0 	strh	r0, [r1]
-4241ee84:	e59f11e4 	ldr	r1, [pc, #484]	; 0x4241f070
+4241ee84:	e59f11e4 	ldr	r1, [0x4241f070]
 4241ee88:	e0811104 	add	r1, r1, r4, lsl #2
 4241ee8c:	e1c100b2 	strh	r0, [r1, #2]
 4241ee90:	e2844001 	add	r4, r4, #1
@@ -23214,7 +23215,7 @@ Disassembly of section .data:
 4241eea0:	e5d21007 	ldrb	r1, [r2, #7]
 4241eea4:	e5d20008 	ldrb	r0, [r2, #8]
 4241eea8:	eb003740 	bl	0x4242cbb0
-4241eeac:	e59f11c8 	ldr	r1, [pc, #456]	; 0x4241f07c
+4241eeac:	e59f11c8 	ldr	r1, [0x4241f07c]
 4241eeb0:	e5810000 	str	r0, [r1]
 4241eeb4:	e51f0990 	ldr	r0, [pc, #-2448]	; 0x4241e52c
 4241eeb8:	e1d001b0 	ldrh	r0, [r0, #16]
@@ -23224,7 +23225,7 @@ Disassembly of section .data:
 4241eec8:	e5d00000 	ldrb	r0, [r0]
 4241eecc:	e5911000 	ldr	r1, [r1]
 4241eed0:	e0000190 	mul	r0, r0, r1
-4241eed4:	e59f11a0 	ldr	r1, [pc, #416]	; 0x4241f07c
+4241eed4:	e59f11a0 	ldr	r1, [0x4241f07c]
 4241eed8:	e5810000 	str	r0, [r1]
 4241eedc:	e51f09b8 	ldr	r0, [pc, #-2488]	; 0x4241e52c
 4241eee0:	e1d001b0 	ldrh	r0, [r0, #16]
@@ -23238,10 +23239,10 @@ Disassembly of section .data:
 4241ef00:	e5d10000 	ldrb	r0, [r1]
 4241ef04:	e0801fa0 	add	r1, r0, r0, lsr #31
 4241ef08:	e1a010c1 	asr	r1, r1, #1
-4241ef0c:	e59f2168 	ldr	r2, [pc, #360]	; 0x4241f07c
+4241ef0c:	e59f2168 	ldr	r2, [0x4241f07c]
 4241ef10:	e5922000 	ldr	r2, [r2]
 4241ef14:	e0010291 	mul	r1, r1, r2
-4241ef18:	e59f215c 	ldr	r2, [pc, #348]	; 0x4241f07c
+4241ef18:	e59f215c 	ldr	r2, [0x4241f07c]
 4241ef1c:	e5821000 	str	r1, [r2]
 4241ef20:	e51f29fc 	ldr	r2, [pc, #-2556]	; 0x4241e52c
 4241ef24:	e5d21009 	ldrb	r1, [r2, #9]
@@ -23255,31 +23256,31 @@ Disassembly of section .data:
 4241ef44:	e5d33009 	ldrb	r3, [r3, #9]
 4241ef48:	e1620382 	smulbb	r2, r2, r3
 4241ef4c:	e1a01102 	lsl	r1, r2, #2
-4241ef50:	e59f2120 	ldr	r2, [pc, #288]	; 0x4241f078
+4241ef50:	e59f2120 	ldr	r2, [0x4241f078]
 4241ef54:	e592000c 	ldr	r0, [r2, #12]
 4241ef58:	e3a020ff 	mov	r2, #255	; 0xff
 4241ef5c:	eb003686 	bl	0x4242c97c
 4241ef60:	e24f0fb5 	sub	r0, pc, #724	; 0x2d4
 4241ef64:	ebfff21a 	bl	0x4241b7d4
-4241ef68:	e59f0110 	ldr	r0, [pc, #272]	; 0x4241f080
+4241ef68:	e59f0110 	ldr	r0, [0x4241f080]
 4241ef6c:	ebfff218 	bl	0x4241b7d4
-4241ef70:	e59f00fc 	ldr	r0, [pc, #252]	; 0x4241f074
+4241ef70:	e59f00fc 	ldr	r0, [0x4241f074]
 4241ef74:	e1d010b0 	ldrh	r1, [r0]
 4241ef78:	e28f0f41 	ldr	r0, =0x4241f084	; add r0, pc, #260	; 0x104
 4241ef7c:	ebfff214 	bl	0x4241b7d4
-4241ef80:	e59f00ec 	ldr	r0, [pc, #236]	; 0x4241f074
+4241ef80:	e59f00ec 	ldr	r0, [0x4241f074]
 4241ef84:	e1d010b2 	ldrh	r1, [r0, #2]
 4241ef88:	e28f0f4a 	ldr	r0, =0x4241f0b8	; add r0, pc, #296	; 0x128
 4241ef8c:	ebfff210 	bl	0x4241b7d4
-4241ef90:	e59f00dc 	ldr	r0, [pc, #220]	; 0x4241f074
+4241ef90:	e59f00dc 	ldr	r0, [0x4241f074]
 4241ef94:	e5d01004 	ldrb	r1, [r0, #4]
 4241ef98:	e28f0f53 	ldr	r0, =0x4241f0ec	; add r0, pc, #332	; 0x14c
 4241ef9c:	ebfff20c 	bl	0x4241b7d4
-4241efa0:	e59f00cc 	ldr	r0, [pc, #204]	; 0x4241f074
+4241efa0:	e59f00cc 	ldr	r0, [0x4241f074]
 4241efa4:	e5d01005 	ldrb	r1, [r0, #5]
 4241efa8:	e28f0e17 	ldr	r0, =0x4241f120	; add r0, pc, #368	; 0x170
 4241efac:	ebfff208 	bl	0x4241b7d4
-4241efb0:	e59f019c 	ldr	r0, [pc, #412]	; 0x4241f154
+4241efb0:	e59f019c 	ldr	r0, [0x4241f154]
 4241efb4:	ebfff206 	bl	0x4241b7d4
 4241efb8:	e3a00000 	mov	r0, #0
 4241efbc:	e8bd8070 	pop	{r4, r5, r6, pc}
@@ -23314,7 +23315,7 @@ Disassembly of section .data:
 4241f030:	cafffff6 	bgt	0x4241f010
 4241f034:	e320f000 	nop	{0}
 4241f038:	e2844001 	add	r4, r4, #1
-4241f03c:	e59f0038 	ldr	r0, [pc, #56]	; 0x4241f07c
+4241f03c:	e59f0038 	ldr	r0, [0x4241f07c]
 4241f040:	e5900000 	ldr	r0, [r0]
 4241f044:	e1540000 	cmp	r4, r0
 4241f048:	3affffe2 	bcc	0x4241efd8
@@ -23421,17 +23422,17 @@ Disassembly of section .data:
 4241f1dc:	e1a05001 	mov	r5, r1
 4241f1e0:	e1a06002 	mov	r6, r2
 4241f1e4:	e1a07003 	mov	r7, r3
-4241f1e8:	e59f032c 	ldr	r0, [pc, #812]	; 0x4241f51c
+4241f1e8:	e59f032c 	ldr	r0, [0x4241f51c]
 4241f1ec:	e5d0000a 	ldrb	r0, [r0, #10]
-4241f1f0:	e59f1324 	ldr	r1, [pc, #804]	; 0x4241f51c
+4241f1f0:	e59f1324 	ldr	r1, [0x4241f51c]
 4241f1f4:	e5d11009 	ldrb	r1, [r1, #9]
 4241f1f8:	e1600180 	smulbb	r0, r0, r1
 4241f1fc:	e2400001 	sub	r0, r0, #1
 4241f200:	e3a01001 	mov	r1, #1
 4241f204:	e1a00011 	lsl	r0, r1, r0
-4241f208:	e59f130c 	ldr	r1, [pc, #780]	; 0x4241f51c
+4241f208:	e59f130c 	ldr	r1, [0x4241f51c]
 4241f20c:	e5d1100a 	ldrb	r1, [r1, #10]
-4241f210:	e59f2304 	ldr	r2, [pc, #772]	; 0x4241f51c
+4241f210:	e59f2304 	ldr	r2, [0x4241f51c]
 4241f214:	e5d22009 	ldrb	r2, [r2, #9]
 4241f218:	e1610281 	smulbb	r1, r1, r2
 4241f21c:	e2411001 	sub	r1, r1, #1
@@ -23440,17 +23441,17 @@ Disassembly of section .data:
 4241f228:	e2411001 	sub	r1, r1, #1
 4241f22c:	e1800001 	orr	r0, r0, r1
 4241f230:	e58d0018 	str	r0, [sp, #24]
-4241f234:	e59f02e0 	ldr	r0, [pc, #736]	; 0x4241f51c
+4241f234:	e59f02e0 	ldr	r0, [0x4241f51c]
 4241f238:	e5d0000a 	ldrb	r0, [r0, #10]
-4241f23c:	e59f12d8 	ldr	r1, [pc, #728]	; 0x4241f51c
+4241f23c:	e59f12d8 	ldr	r1, [0x4241f51c]
 4241f240:	e5d11009 	ldrb	r1, [r1, #9]
 4241f244:	e1600180 	smulbb	r0, r0, r1
 4241f248:	e2400001 	sub	r0, r0, #1
 4241f24c:	e3a01001 	mov	r1, #1
 4241f250:	e1a01011 	lsl	r1, r1, r0
-4241f254:	e59f02c0 	ldr	r0, [pc, #704]	; 0x4241f51c
+4241f254:	e59f02c0 	ldr	r0, [0x4241f51c]
 4241f258:	e5d0000a 	ldrb	r0, [r0, #10]
-4241f25c:	e59f22b8 	ldr	r2, [pc, #696]	; 0x4241f51c
+4241f25c:	e59f22b8 	ldr	r2, [0x4241f51c]
 4241f260:	e5d22009 	ldrb	r2, [r2, #9]
 4241f264:	e1600280 	smulbb	r0, r0, r2
 4241f268:	e2400001 	sub	r0, r0, #1
@@ -23505,17 +23506,17 @@ Disassembly of section .data:
 4241f32c:	e1a03001 	mov	r3, r1
 4241f330:	e1a06001 	mov	r6, r1
 4241f334:	e880004e 	stm	r0, {r1, r2, r3, r6}
-4241f338:	e59f01dc 	ldr	r0, [pc, #476]	; 0x4241f51c
+4241f338:	e59f01dc 	ldr	r0, [0x4241f51c]
 4241f33c:	e5d0000a 	ldrb	r0, [r0, #10]
-4241f340:	e59f11d4 	ldr	r1, [pc, #468]	; 0x4241f51c
+4241f340:	e59f11d4 	ldr	r1, [0x4241f51c]
 4241f344:	e5d11009 	ldrb	r1, [r1, #9]
 4241f348:	e1600180 	smulbb	r0, r0, r1
 4241f34c:	e2400001 	sub	r0, r0, #1
 4241f350:	e3a01001 	mov	r1, #1
 4241f354:	e1a00011 	lsl	r0, r1, r0
-4241f358:	e59f11bc 	ldr	r1, [pc, #444]	; 0x4241f51c
+4241f358:	e59f11bc 	ldr	r1, [0x4241f51c]
 4241f35c:	e5d1100a 	ldrb	r1, [r1, #10]
-4241f360:	e59f21b4 	ldr	r2, [pc, #436]	; 0x4241f51c
+4241f360:	e59f21b4 	ldr	r2, [0x4241f51c]
 4241f364:	e5d22009 	ldrb	r2, [r2, #9]
 4241f368:	e1610281 	smulbb	r1, r1, r2
 4241f36c:	e2411001 	sub	r1, r1, #1
@@ -23524,7 +23525,7 @@ Disassembly of section .data:
 4241f378:	e2411001 	sub	r1, r1, #1
 4241f37c:	e1800001 	orr	r0, r0, r1
 4241f380:	e58d0014 	str	r0, [sp, #20]
-4241f384:	e59f0194 	ldr	r0, [pc, #404]	; 0x4241f520
+4241f384:	e59f0194 	ldr	r0, [0x4241f520]
 4241f388:	e5900014 	ldr	r0, [r0, #20]
 4241f38c:	e5900000 	ldr	r0, [r0]
 4241f390:	e58d0018 	str	r0, [sp, #24]
@@ -23541,14 +23542,14 @@ Disassembly of section .data:
 4241f3bc:	e5dd0010 	ldrb	r0, [sp, #16]
 4241f3c0:	e3a01000 	mov	r1, #0
 4241f3c4:	eb00202d 	bl	0x42427480
-4241f3c8:	e59f2150 	ldr	r2, [pc, #336]	; 0x4241f520
+4241f3c8:	e59f2150 	ldr	r2, [0x4241f520]
 4241f3cc:	e5922000 	ldr	r2, [r2]
 4241f3d0:	e1d210bc 	ldrh	r1, [r2, #12]
-4241f3d4:	e59f2144 	ldr	r2, [pc, #324]	; 0x4241f520
+4241f3d4:	e59f2144 	ldr	r2, [0x4241f520]
 4241f3d8:	e5922010 	ldr	r2, [r2, #16]
 4241f3dc:	e1d200b2 	ldrh	r0, [r2, #2]
 4241f3e0:	eb0035f2 	bl	0x4242cbb0
-4241f3e4:	e59f1134 	ldr	r1, [pc, #308]	; 0x4241f520
+4241f3e4:	e59f1134 	ldr	r1, [0x4241f520]
 4241f3e8:	e5911010 	ldr	r1, [r1, #16]
 4241f3ec:	e1d110b2 	ldrh	r1, [r1, #2]
 4241f3f0:	e0410000 	sub	r0, r1, r0
@@ -23564,10 +23565,10 @@ Disassembly of section .data:
 4241f418:	e3a01000 	mov	r1, #0
 4241f41c:	eb002017 	bl	0x42427480
 4241f420:	e2866001 	add	r6, r6, #1
-4241f424:	e59f20f4 	ldr	r2, [pc, #244]	; 0x4241f520
+4241f424:	e59f20f4 	ldr	r2, [0x4241f520]
 4241f428:	e5922000 	ldr	r2, [r2]
 4241f42c:	e1d210bc 	ldrh	r1, [r2, #12]
-4241f430:	e59f20e8 	ldr	r2, [pc, #232]	; 0x4241f520
+4241f430:	e59f20e8 	ldr	r2, [0x4241f520]
 4241f434:	e5922010 	ldr	r2, [r2, #16]
 4241f438:	e1d200b2 	ldrh	r0, [r2, #2]
 4241f43c:	eb0035db 	bl	0x4242cbb0
@@ -23586,7 +23587,7 @@ Disassembly of section .data:
 4241f470:	e1d400b2 	ldrh	r0, [r4, #2]
 4241f474:	e1cd00b2 	strh	r0, [sp, #2]
 4241f478:	e3a020a3 	mov	r2, #163	; 0xa3
-4241f47c:	e59f10a0 	ldr	r1, [pc, #160]	; 0x4241f524
+4241f47c:	e59f10a0 	ldr	r1, [0x4241f524]
 4241f480:	e28f00a0 	ldr	r0, =0x4241f528	; add r0, pc, #160	; 0xa0
 4241f484:	ebfff0d2 	bl	0x4241b7d4
 4241f488:	e320f000 	nop	{0}
@@ -23599,7 +23600,7 @@ Disassembly of section .data:
 4241f4a4:	e30f1fff 	movw	r1, #65535	; 0xffff
 4241f4a8:	e1500001 	cmp	r0, r1
 4241f4ac:	1a000003 	bne	0x4241f4c0
-4241f4b0:	e59f0090 	ldr	r0, [pc, #144]	; 0x4241f548
+4241f4b0:	e59f0090 	ldr	r0, [0x4241f548]
 4241f4b4:	ebfff0c6 	bl	0x4241b7d4
 4241f4b8:	e3e00000 	mvn	r0, #0
 4241f4bc:	e8bd81fc 	pop	{r2, r3, r4, r5, r6, r7, r8, pc}
@@ -23709,49 +23710,49 @@ Disassembly of section .data:
 4241f65c:	3afffffa 	bcc	0x4241f64c
 4241f660:	e8bd8010 	pop	{r4, pc}
 4241f664:	e92d4010 	push	{r4, lr}
-4241f668:	e59f0178 	ldr	r0, [pc, #376]	; 0x4241f7e8
-4241f66c:	e59f1178 	ldr	r1, [pc, #376]	; 0x4241f7ec
+4241f668:	e59f0178 	ldr	r0, [0x4241f7e8]
+4241f66c:	e59f1178 	ldr	r1, [0x4241f7ec]
 4241f670:	e581000c 	str	r0, [r1, #12]
 4241f674:	e3a04000 	mov	r4, #0
 4241f678:	ea00002f 	b	0x4241f73c
 4241f67c:	e3a00000 	mov	r0, #0
-4241f680:	e59f1164 	ldr	r1, [pc, #356]	; 0x4241f7ec
+4241f680:	e59f1164 	ldr	r1, [0x4241f7ec]
 4241f684:	e591100c 	ldr	r1, [r1, #12]
 4241f688:	e2811004 	add	r1, r1, #4
 4241f68c:	e0842084 	add	r2, r4, r4, lsl #1
 4241f690:	e0811102 	add	r1, r1, r2, lsl #2
 4241f694:	e1c100b2 	strh	r0, [r1, #2]
-4241f698:	e59f114c 	ldr	r1, [pc, #332]	; 0x4241f7ec
+4241f698:	e59f114c 	ldr	r1, [0x4241f7ec]
 4241f69c:	e591100c 	ldr	r1, [r1, #12]
 4241f6a0:	e2811004 	add	r1, r1, #4
 4241f6a4:	e0842084 	add	r2, r4, r4, lsl #1
 4241f6a8:	e0811102 	add	r1, r1, r2, lsl #2
 4241f6ac:	e5c10008 	strb	r0, [r1, #8]
 4241f6b0:	e3a010ff 	mov	r1, #255	; 0xff
-4241f6b4:	e59f0130 	ldr	r0, [pc, #304]	; 0x4241f7ec
+4241f6b4:	e59f0130 	ldr	r0, [0x4241f7ec]
 4241f6b8:	e590000c 	ldr	r0, [r0, #12]
 4241f6bc:	e2800004 	add	r0, r0, #4
 4241f6c0:	e0842084 	add	r2, r4, r4, lsl #1
 4241f6c4:	e0800102 	add	r0, r0, r2, lsl #2
 4241f6c8:	e5c01001 	strb	r1, [r0, #1]
 4241f6cc:	e3a000ff 	mov	r0, #255	; 0xff
-4241f6d0:	e59f1114 	ldr	r1, [pc, #276]	; 0x4241f7ec
+4241f6d0:	e59f1114 	ldr	r1, [0x4241f7ec]
 4241f6d4:	e591100c 	ldr	r1, [r1, #12]
 4241f6d8:	e2811004 	add	r1, r1, #4
 4241f6dc:	e0842084 	add	r2, r4, r4, lsl #1
 4241f6e0:	e7c10102 	strb	r0, [r1, r2, lsl #2]
-4241f6e4:	e59f1100 	ldr	r1, [pc, #256]	; 0x4241f7ec
+4241f6e4:	e59f1100 	ldr	r1, [0x4241f7ec]
 4241f6e8:	e5911010 	ldr	r1, [r1, #16]
 4241f6ec:	e1d110b2 	ldrh	r1, [r1, #2]
 4241f6f0:	e1a00081 	lsl	r0, r1, #1
 4241f6f4:	ebfff028 	bl	0x4241b79c
-4241f6f8:	e59f10ec 	ldr	r1, [pc, #236]	; 0x4241f7ec
+4241f6f8:	e59f10ec 	ldr	r1, [0x4241f7ec]
 4241f6fc:	e591100c 	ldr	r1, [r1, #12]
 4241f700:	e2811004 	add	r1, r1, #4
 4241f704:	e0842084 	add	r2, r4, r4, lsl #1
 4241f708:	e0811102 	add	r1, r1, r2, lsl #2
 4241f70c:	e5810004 	str	r0, [r1, #4]
-4241f710:	e59f00d4 	ldr	r0, [pc, #212]	; 0x4241f7ec
+4241f710:	e59f00d4 	ldr	r0, [0x4241f7ec]
 4241f714:	e590000c 	ldr	r0, [r0, #12]
 4241f718:	e2800004 	add	r0, r0, #4
 4241f71c:	e0841084 	add	r1, r4, r4, lsl #1
@@ -23768,14 +23769,14 @@ Disassembly of section .data:
 4241f748:	eafffff9 	b	0x4241f734
 4241f74c:	e3a00000 	mov	r0, #0
 4241f750:	ea00000d 	b	0x4241f78c
-4241f754:	e59f1090 	ldr	r1, [pc, #144]	; 0x4241f7ec
+4241f754:	e59f1090 	ldr	r1, [0x4241f7ec]
 4241f758:	e591100c 	ldr	r1, [r1, #12]
 4241f75c:	e2811004 	add	r1, r1, #4
 4241f760:	e0802080 	add	r2, r0, r0, lsl #1
 4241f764:	e0811102 	add	r1, r1, r2, lsl #2
 4241f768:	e1d110b2 	ldrh	r1, [r1, #2]
 4241f76c:	e2811001 	add	r1, r1, #1
-4241f770:	e59f2074 	ldr	r2, [pc, #116]	; 0x4241f7ec
+4241f770:	e59f2074 	ldr	r2, [0x4241f7ec]
 4241f774:	e592200c 	ldr	r2, [r2, #12]
 4241f778:	e2822004 	add	r2, r2, #4
 4241f77c:	e0803080 	add	r3, r0, r0, lsl #1
@@ -23785,7 +23786,7 @@ Disassembly of section .data:
 4241f78c:	e3500004 	cmp	r0, #4
 4241f790:	3affffef 	bcc	0x4241f754
 4241f794:	e3a01000 	mov	r1, #0
-4241f798:	e59f204c 	ldr	r2, [pc, #76]	; 0x4241f7ec
+4241f798:	e59f204c 	ldr	r2, [0x4241f7ec]
 4241f79c:	e592200c 	ldr	r2, [r2, #12]
 4241f7a0:	e5922000 	ldr	r2, [r2]
 4241f7a4:	e1c210b2 	strh	r1, [r2, #2]
@@ -23983,9 +23984,9 @@ Disassembly of section .data:
 4241faa4:	eb0033b4 	bl	0x4242c97c
 4241faa8:	e3a000aa 	mov	r0, #170	; 0xaa
 4241faac:	e5cd0022 	strb	r0, [sp, #34]	; 0x22
-4241fab0:	e59f228c 	ldr	r2, [pc, #652]	; 0x4241fd44
+4241fab0:	e59f228c 	ldr	r2, [0x4241fd44]
 4241fab4:	e5d2200a 	ldrb	r2, [r2, #10]
-4241fab8:	e59f3284 	ldr	r3, [pc, #644]	; 0x4241fd44
+4241fab8:	e59f3284 	ldr	r3, [0x4241fd44]
 4241fabc:	e5d33009 	ldrb	r3, [r3, #9]
 4241fac0:	e1620382 	smulbb	r2, r2, r3
 4241fac4:	e1a01482 	lsl	r1, r2, #9
@@ -24061,17 +24062,17 @@ Disassembly of section .data:
 4241fbdc:	e58d0014 	str	r0, [sp, #20]
 4241fbe0:	e28d001c 	add	r0, sp, #28
 4241fbe4:	e58d0018 	str	r0, [sp, #24]
-4241fbe8:	e59f0154 	ldr	r0, [pc, #340]	; 0x4241fd44
+4241fbe8:	e59f0154 	ldr	r0, [0x4241fd44]
 4241fbec:	e5d0000a 	ldrb	r0, [r0, #10]
-4241fbf0:	e59f114c 	ldr	r1, [pc, #332]	; 0x4241fd44
+4241fbf0:	e59f114c 	ldr	r1, [0x4241fd44]
 4241fbf4:	e5d11009 	ldrb	r1, [r1, #9]
 4241fbf8:	e1600180 	smulbb	r0, r0, r1
 4241fbfc:	e2400001 	sub	r0, r0, #1
 4241fc00:	e3a01001 	mov	r1, #1
 4241fc04:	e1a00011 	lsl	r0, r1, r0
-4241fc08:	e59f1134 	ldr	r1, [pc, #308]	; 0x4241fd44
+4241fc08:	e59f1134 	ldr	r1, [0x4241fd44]
 4241fc0c:	e5d1100a 	ldrb	r1, [r1, #10]
-4241fc10:	e59f212c 	ldr	r2, [pc, #300]	; 0x4241fd44
+4241fc10:	e59f212c 	ldr	r2, [0x4241fd44]
 4241fc14:	e5d22009 	ldrb	r2, [r2, #9]
 4241fc18:	e1610281 	smulbb	r1, r1, r2
 4241fc1c:	e2411001 	sub	r1, r1, #1
@@ -24535,7 +24536,7 @@ Disassembly of section .data:
 42420344:	e5900000 	ldr	r0, [r0]
 42420348:	e5d02000 	ldrb	r2, [r0]
 4242034c:	e1a01005 	mov	r1, r5
-42420350:	e59f02a8 	ldr	r0, [pc, #680]	; 0x42420600
+42420350:	e59f02a8 	ldr	r0, [0x42420600]
 42420354:	ebffed1e 	bl	0x4241b7d4
 42420358:	e3e00000 	mvn	r0, #0
 4242035c:	e8bd81f0 	pop	{r4, r5, r6, r7, r8, pc}
@@ -24595,7 +24596,7 @@ Disassembly of section .data:
 42420434:	e1a00005 	mov	r0, r5
 42420438:	e8bd8070 	pop	{r4, r5, r6, pc}
 4242043c:	e92d4010 	push	{r4, lr}
-42420440:	e59f01f0 	ldr	r0, [pc, #496]	; 0x42420638
+42420440:	e59f01f0 	ldr	r0, [0x42420638]
 42420444:	e51f1c60 	ldr	r1, [pc, #-3168]	; 0x4241f7ec
 42420448:	e5810008 	str	r0, [r1, #8]
 4242044c:	e3a00000 	mov	r0, #0
@@ -24836,7 +24837,7 @@ Disassembly of section .data:
 424207f8:	e1500003 	cmp	r0, r3
 424207fc:	da000006 	ble	0x4242081c
 42420800:	e20120ff 	and	r2, r1, #0xff
-42420804:	e59f0450 	ldr	r0, [pc, #1104]	; 0x42420c5c
+42420804:	e59f0450 	ldr	r0, [0x42420c5c]
 42420808:	e5900008 	ldr	r0, [r0, #8]
 4242080c:	e2800004 	add	r0, r0, #4
 42420810:	e0814101 	add	r4, r1, r1, lsl #2
@@ -24848,7 +24849,7 @@ Disassembly of section .data:
 42420828:	e3a01000 	mov	r1, #0
 4242082c:	ea000007 	b	0x42420850
 42420830:	e3a00000 	mov	r0, #0
-42420834:	e59f4420 	ldr	r4, [pc, #1056]	; 0x42420c5c
+42420834:	e59f4420 	ldr	r4, [0x42420c5c]
 42420838:	e5944008 	ldr	r4, [r4, #8]
 4242083c:	e2844004 	add	r4, r4, #4
 42420840:	e0815101 	add	r5, r1, r1, lsl #2
@@ -24863,14 +24864,14 @@ Disassembly of section .data:
 42420864:	e1a04000 	mov	r4, r0
 42420868:	e3a05000 	mov	r5, #0
 4242086c:	ea000027 	b	0x42420910
-42420870:	e59f03e4 	ldr	r0, [pc, #996]	; 0x42420c5c
+42420870:	e59f03e4 	ldr	r0, [0x42420c5c]
 42420874:	e590000c 	ldr	r0, [r0, #12]
 42420878:	e2800004 	add	r0, r0, #4
 4242087c:	e0851085 	add	r1, r5, r5, lsl #1
 42420880:	e7d00101 	ldrb	r0, [r0, r1, lsl #2]
 42420884:	e1500004 	cmp	r0, r4
 42420888:	1a00001f 	bne	0x4242090c
-4242088c:	e59f03c8 	ldr	r0, [pc, #968]	; 0x42420c5c
+4242088c:	e59f03c8 	ldr	r0, [0x42420c5c]
 42420890:	e590000c 	ldr	r0, [r0, #12]
 42420894:	e2800004 	add	r0, r0, #4
 42420898:	e0851085 	add	r1, r5, r5, lsl #1
@@ -24878,15 +24879,15 @@ Disassembly of section .data:
 424208a0:	e5d00008 	ldrb	r0, [r0, #8]
 424208a4:	e3500001 	cmp	r0, #1
 424208a8:	1a000017 	bne	0x4242090c
-424208ac:	e59f03a8 	ldr	r0, [pc, #936]	; 0x42420c5c
+424208ac:	e59f03a8 	ldr	r0, [0x42420c5c]
 424208b0:	e590000c 	ldr	r0, [r0, #12]
 424208b4:	e2800004 	add	r0, r0, #4
 424208b8:	e0851085 	add	r1, r5, r5, lsl #1
 424208bc:	e0800101 	add	r0, r0, r1, lsl #2
-424208c0:	e59f1394 	ldr	r1, [pc, #916]	; 0x42420c5c
+424208c0:	e59f1394 	ldr	r1, [0x42420c5c]
 424208c4:	e591100c 	ldr	r1, [r1, #12]
 424208c8:	e5810000 	str	r0, [r1]
-424208cc:	e59f1388 	ldr	r1, [pc, #904]	; 0x42420c5c
+424208cc:	e59f1388 	ldr	r1, [0x42420c5c]
 424208d0:	e591100c 	ldr	r1, [r1, #12]
 424208d4:	e5911000 	ldr	r1, [r1]
 424208d8:	e5d10001 	ldrb	r0, [r1, #1]
@@ -24898,7 +24899,7 @@ Disassembly of section .data:
 424208f0:	e3e00000 	mvn	r0, #0
 424208f4:	e8bd8070 	pop	{r4, r5, r6, pc}
 424208f8:	e3a00000 	mov	r0, #0
-424208fc:	e59f1358 	ldr	r1, [pc, #856]	; 0x42420c5c
+424208fc:	e59f1358 	ldr	r1, [0x42420c5c]
 42420900:	e591100c 	ldr	r1, [r1, #12]
 42420904:	e5911000 	ldr	r1, [r1]
 42420908:	e5c10008 	strb	r0, [r1, #8]
@@ -24919,15 +24920,15 @@ Disassembly of section .data:
 42420944:	e3e00000 	mvn	r0, #0
 42420948:	e28dd028 	add	sp, sp, #40	; 0x28
 4242094c:	e8bd8070 	pop	{r4, r5, r6, pc}
-42420950:	e59f0304 	ldr	r0, [pc, #772]	; 0x42420c5c
+42420950:	e59f0304 	ldr	r0, [0x42420c5c]
 42420954:	e5900004 	ldr	r0, [r0, #4]
 42420958:	e0800104 	add	r0, r0, r4, lsl #2
 4242095c:	e1d060b0 	ldrh	r6, [r0]
-42420960:	e59f02f4 	ldr	r0, [pc, #756]	; 0x42420c5c
+42420960:	e59f02f4 	ldr	r0, [0x42420c5c]
 42420964:	e5900004 	ldr	r0, [r0, #4]
 42420968:	e0800104 	add	r0, r0, r4, lsl #2
 4242096c:	e1d050b2 	ldrh	r5, [r0, #2]
-42420970:	e59f02e4 	ldr	r0, [pc, #740]	; 0x42420c5c
+42420970:	e59f02e4 	ldr	r0, [0x42420c5c]
 42420974:	e5900010 	ldr	r0, [r0, #16]
 42420978:	e1d000b2 	ldrh	r0, [r0, #2]
 4242097c:	e2400004 	sub	r0, r0, #4
@@ -24940,7 +24941,7 @@ Disassembly of section .data:
 42420998:	0a000010 	beq	0x424209e0
 4242099c:	e6ff0076 	uxth	r0, r6
 424209a0:	e1cd00b4 	strh	r0, [sp, #4]
-424209a4:	e59f02b0 	ldr	r0, [pc, #688]	; 0x42420c5c
+424209a4:	e59f02b0 	ldr	r0, [0x42420c5c]
 424209a8:	e5900008 	ldr	r0, [r0, #8]
 424209ac:	e5900000 	ldr	r0, [r0]
 424209b0:	e5d01000 	ldrb	r1, [r0]
@@ -24957,21 +24958,21 @@ Disassembly of section .data:
 424209dc:	e1dd60b0 	ldrh	r6, [sp]
 424209e0:	e3e05003 	mvn	r5, #3
 424209e4:	e2855004 	add	r5, r5, #4
-424209e8:	e59f226c 	ldr	r2, [pc, #620]	; 0x42420c5c
+424209e8:	e59f226c 	ldr	r2, [0x42420c5c]
 424209ec:	e5922010 	ldr	r2, [r2, #16]
 424209f0:	e1d220b0 	ldrh	r2, [r2]
-424209f4:	e59f3260 	ldr	r3, [pc, #608]	; 0x42420c5c
+424209f4:	e59f3260 	ldr	r3, [0x42420c5c]
 424209f8:	e5933010 	ldr	r3, [r3, #16]
 424209fc:	e1d330b0 	ldrh	r3, [r3]
 42420a00:	e2633b01 	rsb	r3, r3, #0x400
 42420a04:	e2433001 	sub	r3, r3, #1
 42420a08:	e0821003 	add	r1, r2, r3
-42420a0c:	e59f2248 	ldr	r2, [pc, #584]	; 0x42420c5c
+42420a0c:	e59f2248 	ldr	r2, [0x42420c5c]
 42420a10:	e5922008 	ldr	r2, [r2, #8]
 42420a14:	e5922000 	ldr	r2, [r2]
 42420a18:	e5920004 	ldr	r0, [r2, #4]
 42420a1c:	ebfffb05 	bl	0x4241f638
-42420a20:	e59f1234 	ldr	r1, [pc, #564]	; 0x42420c5c
+42420a20:	e59f1234 	ldr	r1, [0x42420c5c]
 42420a24:	e5911008 	ldr	r1, [r1, #8]
 42420a28:	e5911000 	ldr	r1, [r1]
 42420a2c:	e5911004 	ldr	r1, [r1, #4]
@@ -24982,7 +24983,7 @@ Disassembly of section .data:
 42420a40:	e5d33009 	ldrb	r3, [r3, #9]
 42420a44:	e1620382 	smulbb	r2, r2, r3
 42420a48:	e1a01482 	lsl	r1, r2, #9
-42420a4c:	e59f2208 	ldr	r2, [pc, #520]	; 0x42420c5c
+42420a4c:	e59f2208 	ldr	r2, [0x42420c5c]
 42420a50:	e5922014 	ldr	r2, [r2, #20]
 42420a54:	e5920008 	ldr	r0, [r2, #8]
 42420a58:	e3a020ff 	mov	r2, #255	; 0xff
@@ -24992,18 +24993,18 @@ Disassembly of section .data:
 42420a68:	e3a01010 	mov	r1, #16
 42420a6c:	e28d0018 	add	r0, sp, #24
 42420a70:	eb002fc1 	bl	0x4242c97c
-42420a74:	e59f21e0 	ldr	r2, [pc, #480]	; 0x42420c5c
+42420a74:	e59f21e0 	ldr	r2, [0x42420c5c]
 42420a78:	e5922008 	ldr	r2, [r2, #8]
 42420a7c:	e5922000 	ldr	r2, [r2]
 42420a80:	e5921004 	ldr	r1, [r2, #4]
-42420a84:	e59f21d0 	ldr	r2, [pc, #464]	; 0x42420c5c
+42420a84:	e59f21d0 	ldr	r2, [0x42420c5c]
 42420a88:	e5922014 	ldr	r2, [r2, #20]
 42420a8c:	e5920008 	ldr	r0, [r2, #8]
 42420a90:	e3a02b02 	mov	r2, #0x800
 42420a94:	eb002f96 	bl	0x4242c8f4
 42420a98:	e3550000 	cmp	r5, #0
 42420a9c:	1a000009 	bne	0x42420ac8
-42420aa0:	e59f01b4 	ldr	r0, [pc, #436]	; 0x42420c5c
+42420aa0:	e59f01b4 	ldr	r0, [0x42420c5c]
 42420aa4:	e5900010 	ldr	r0, [r0, #16]
 42420aa8:	e5d01005 	ldrb	r1, [r0, #5]
 42420aac:	e1a00004 	mov	r0, r4
@@ -25015,7 +25016,7 @@ Disassembly of section .data:
 42420ac4:	e1cd01b9 	strh	r0, [sp, #25]
 42420ac8:	e3a00055 	mov	r0, #85	; 0x55
 42420acc:	e5cd001e 	strb	r0, [sp, #30]
-42420ad0:	e59f0184 	ldr	r0, [pc, #388]	; 0x42420c5c
+42420ad0:	e59f0184 	ldr	r0, [0x42420c5c]
 42420ad4:	e5900014 	ldr	r0, [r0, #20]
 42420ad8:	e5900008 	ldr	r0, [r0, #8]
 42420adc:	e58d0010 	str	r0, [sp, #16]
@@ -25068,18 +25069,18 @@ Disassembly of section .data:
 42420b98:	e1dd60b0 	ldrh	r6, [sp]
 42420b9c:	e3a05000 	mov	r5, #0
 42420ba0:	eaffffaf 	b	0x42420a64
-42420ba4:	e59f20b0 	ldr	r2, [pc, #176]	; 0x42420c5c
+42420ba4:	e59f20b0 	ldr	r2, [0x42420c5c]
 42420ba8:	e5922008 	ldr	r2, [r2, #8]
 42420bac:	e5922000 	ldr	r2, [r2]
 42420bb0:	e5922004 	ldr	r2, [r2, #4]
 42420bb4:	e2821b02 	add	r1, r2, #0x800
-42420bb8:	e59f209c 	ldr	r2, [pc, #156]	; 0x42420c5c
+42420bb8:	e59f209c 	ldr	r2, [0x42420c5c]
 42420bbc:	e5922014 	ldr	r2, [r2, #20]
 42420bc0:	e5920008 	ldr	r0, [r2, #8]
 42420bc4:	e3a02b02 	mov	r2, #0x800
 42420bc8:	eb002f49 	bl	0x4242c8f4
 42420bcc:	e2855001 	add	r5, r5, #1
-42420bd0:	e59f0084 	ldr	r0, [pc, #132]	; 0x42420c5c
+42420bd0:	e59f0084 	ldr	r0, [0x42420c5c]
 42420bd4:	e5900014 	ldr	r0, [r0, #20]
 42420bd8:	e5900008 	ldr	r0, [r0, #8]
 42420bdc:	e58d0010 	str	r0, [sp, #16]
@@ -25172,9 +25173,9 @@ Disassembly of section .data:
 42420d38:	e3a05000 	mov	r5, #0
 42420d3c:	eaffff48 	b	0x42420a64
 42420d40:	e2855001 	add	r5, r5, #1
-42420d44:	e59f2340 	ldr	r2, [pc, #832]	; 0x4242108c
+42420d44:	e59f2340 	ldr	r2, [0x4242108c]
 42420d48:	e5d2200a 	ldrb	r2, [r2, #10]
-42420d4c:	e59f3338 	ldr	r3, [pc, #824]	; 0x4242108c
+42420d4c:	e59f3338 	ldr	r3, [0x4242108c]
 42420d50:	e5d33009 	ldrb	r3, [r3, #9]
 42420d54:	e1620382 	smulbb	r2, r2, r3
 42420d58:	e1a01482 	lsl	r1, r2, #9
@@ -25612,20 +25613,20 @@ Disassembly of section .data:
 42421418:	e1a00001 	mov	r0, r1
 4242141c:	e121f001 	msr	CPSR_c, r1
 42421420:	e12fff1e 	bx	lr
-42421424:	e59f28ac 	ldr	r2, [pc, #2220]	; 0x42421cd8
+42421424:	e59f28ac 	ldr	r2, [0x42421cd8]
 42421428:	e5922008 	ldr	r2, [r2, #8]
 4242142c:	e1d227b4 	ldrh	r2, [r2, #116]	; 0x74
 42421430:	e30f3fff 	movw	r3, #65535	; 0xffff
 42421434:	e1520003 	cmp	r2, r3
 42421438:	1a00000e 	bne	0x42421478
 4242143c:	e3a02000 	mov	r2, #0
-42421440:	e59f3890 	ldr	r3, [pc, #2192]	; 0x42421cd8
+42421440:	e59f3890 	ldr	r3, [0x42421cd8]
 42421444:	e5933008 	ldr	r3, [r3, #8]
 42421448:	e1c327b4 	strh	r2, [r3, #116]	; 0x74
 4242144c:	e3a01000 	mov	r1, #0
 42421450:	ea000006 	b	0x42421470
 42421454:	e3a02000 	mov	r2, #0
-42421458:	e59f3878 	ldr	r3, [pc, #2168]	; 0x42421cd8
+42421458:	e59f3878 	ldr	r3, [0x42421cd8]
 4242145c:	e5933008 	ldr	r3, [r3, #8]
 42421460:	e2833054 	add	r3, r3, #84	; 0x54
 42421464:	e0833081 	add	r3, r3, r1, lsl #1
@@ -25633,17 +25634,17 @@ Disassembly of section .data:
 4242146c:	e2811001 	add	r1, r1, #1
 42421470:	e3510010 	cmp	r1, #16
 42421474:	bafffff6 	blt	0x42421454
-42421478:	e59f2858 	ldr	r2, [pc, #2136]	; 0x42421cd8
+42421478:	e59f2858 	ldr	r2, [0x42421cd8]
 4242147c:	e5922008 	ldr	r2, [r2, #8]
 42421480:	e1d227b4 	ldrh	r2, [r2, #116]	; 0x74
 42421484:	e2822001 	add	r2, r2, #1
-42421488:	e59f3848 	ldr	r3, [pc, #2120]	; 0x42421cd8
+42421488:	e59f3848 	ldr	r3, [0x42421cd8]
 4242148c:	e5933008 	ldr	r3, [r3, #8]
 42421490:	e1c327b4 	strh	r2, [r3, #116]	; 0x74
-42421494:	e59f283c 	ldr	r2, [pc, #2108]	; 0x42421cd8
+42421494:	e59f283c 	ldr	r2, [0x42421cd8]
 42421498:	e5922008 	ldr	r2, [r2, #8]
 4242149c:	e1d227b4 	ldrh	r2, [r2, #116]	; 0x74
-424214a0:	e59f3830 	ldr	r3, [pc, #2096]	; 0x42421cd8
+424214a0:	e59f3830 	ldr	r3, [0x42421cd8]
 424214a4:	e5933008 	ldr	r3, [r3, #8]
 424214a8:	e2833054 	add	r3, r3, #84	; 0x54
 424214ac:	e0833080 	add	r3, r3, r0, lsl #1
@@ -25652,27 +25653,27 @@ Disassembly of section .data:
 424214b8:	e92d4070 	push	{r4, r5, r6, lr}
 424214bc:	e1a04000 	mov	r4, r0
 424214c0:	e1a05001 	mov	r5, r1
-424214c4:	e59f080c 	ldr	r0, [pc, #2060]	; 0x42421cd8
+424214c4:	e59f080c 	ldr	r0, [0x42421cd8]
 424214c8:	e5900010 	ldr	r0, [r0, #16]
 424214cc:	e1d000b0 	ldrh	r0, [r0]
 424214d0:	e1500004 	cmp	r0, r4
 424214d4:	2a000007 	bcs	0x424214f8
 424214d8:	e1a01004 	mov	r1, r4
-424214dc:	e59f07f8 	ldr	r0, [pc, #2040]	; 0x42421cdc
+424214dc:	e59f07f8 	ldr	r0, [0x42421cdc]
 424214e0:	ebffe8bb 	bl	0x4241b7d4
 424214e4:	e30f0fff 	movw	r0, #65535	; 0xffff
 424214e8:	e1c500b2 	strh	r0, [r5, #2]
 424214ec:	e1c500b0 	strh	r0, [r5]
 424214f0:	e3e00000 	mvn	r0, #0
 424214f4:	e8bd8070 	pop	{r4, r5, r6, pc}
-424214f8:	e59f07d8 	ldr	r0, [pc, #2008]	; 0x42421cd8
+424214f8:	e59f07d8 	ldr	r0, [0x42421cd8]
 424214fc:	e5900008 	ldr	r0, [r0, #8]
 42421500:	e5900000 	ldr	r0, [r0]
 42421504:	e5900004 	ldr	r0, [r0, #4]
 42421508:	e0800104 	add	r0, r0, r4, lsl #2
 4242150c:	e1d000b2 	ldrh	r0, [r0, #2]
 42421510:	e1c500b2 	strh	r0, [r5, #2]
-42421514:	e59f07bc 	ldr	r0, [pc, #1980]	; 0x42421cd8
+42421514:	e59f07bc 	ldr	r0, [0x42421cd8]
 42421518:	e5900008 	ldr	r0, [r0, #8]
 4242151c:	e5900000 	ldr	r0, [r0]
 42421520:	e5900004 	ldr	r0, [r0, #4]
@@ -25684,22 +25685,22 @@ Disassembly of section .data:
 42421538:	e92d4070 	push	{r4, r5, r6, lr}
 4242153c:	e1a04000 	mov	r4, r0
 42421540:	e1a05001 	mov	r5, r1
-42421544:	e59f078c 	ldr	r0, [pc, #1932]	; 0x42421cd8
+42421544:	e59f078c 	ldr	r0, [0x42421cd8]
 42421548:	e5900010 	ldr	r0, [r0, #16]
 4242154c:	e1d000b0 	ldrh	r0, [r0]
 42421550:	e1500004 	cmp	r0, r4
 42421554:	2a000011 	bcs	0x424215a0
 42421558:	e1a01004 	mov	r1, r4
-4242155c:	e59f077c 	ldr	r0, [pc, #1916]	; 0x42421ce0
+4242155c:	e59f077c 	ldr	r0, [0x42421ce0]
 42421560:	ebffe89b 	bl	0x4241b7d4
 42421564:	e30f0fff 	movw	r0, #65535	; 0xffff
-42421568:	e59f1768 	ldr	r1, [pc, #1896]	; 0x42421cd8
+42421568:	e59f1768 	ldr	r1, [0x42421cd8]
 4242156c:	e5911008 	ldr	r1, [r1, #8]
 42421570:	e5911000 	ldr	r1, [r1]
 42421574:	e5911004 	ldr	r1, [r1, #4]
 42421578:	e0811104 	add	r1, r1, r4, lsl #2
 4242157c:	e1c100b2 	strh	r0, [r1, #2]
-42421580:	e59f1750 	ldr	r1, [pc, #1872]	; 0x42421cd8
+42421580:	e59f1750 	ldr	r1, [0x42421cd8]
 42421584:	e5911008 	ldr	r1, [r1, #8]
 42421588:	e5911000 	ldr	r1, [r1]
 4242158c:	e5911004 	ldr	r1, [r1, #4]
@@ -25708,14 +25709,14 @@ Disassembly of section .data:
 42421598:	e3e00000 	mvn	r0, #0
 4242159c:	e8bd8070 	pop	{r4, r5, r6, pc}
 424215a0:	e1d500b2 	ldrh	r0, [r5, #2]
-424215a4:	e59f172c 	ldr	r1, [pc, #1836]	; 0x42421cd8
+424215a4:	e59f172c 	ldr	r1, [0x42421cd8]
 424215a8:	e5911008 	ldr	r1, [r1, #8]
 424215ac:	e5911000 	ldr	r1, [r1]
 424215b0:	e5911004 	ldr	r1, [r1, #4]
 424215b4:	e0811104 	add	r1, r1, r4, lsl #2
 424215b8:	e1c100b2 	strh	r0, [r1, #2]
 424215bc:	e1d500b0 	ldrh	r0, [r5]
-424215c0:	e59f1710 	ldr	r1, [pc, #1808]	; 0x42421cd8
+424215c0:	e59f1710 	ldr	r1, [0x42421cd8]
 424215c4:	e5911008 	ldr	r1, [r1, #8]
 424215c8:	e5911000 	ldr	r1, [r1]
 424215cc:	e5911004 	ldr	r1, [r1, #4]
@@ -25727,7 +25728,7 @@ Disassembly of section .data:
 424215e4:	e1a04000 	mov	r4, r0
 424215e8:	e1a05001 	mov	r5, r1
 424215ec:	e3e07000 	mvn	r7, #0
-424215f0:	e59f06e0 	ldr	r0, [pc, #1760]	; 0x42421cd8
+424215f0:	e59f06e0 	ldr	r0, [0x42421cd8]
 424215f4:	e5900008 	ldr	r0, [r0, #8]
 424215f8:	e5900000 	ldr	r0, [r0]
 424215fc:	e1d001b0 	ldrh	r0, [r0, #16]
@@ -25740,7 +25741,7 @@ Disassembly of section .data:
 42421618:	e3a08000 	mov	r8, #0
 4242161c:	e3a06000 	mov	r6, #0
 42421620:	ea00002e 	b	0x424216e0
-42421624:	e59f06ac 	ldr	r0, [pc, #1708]	; 0x42421cd8
+42421624:	e59f06ac 	ldr	r0, [0x42421cd8]
 42421628:	e5900010 	ldr	r0, [r0, #16]
 4242162c:	e1d000b0 	ldrh	r0, [r0]
 42421630:	e2600b01 	rsb	r0, r0, #0x400
@@ -25748,7 +25749,7 @@ Disassembly of section .data:
 42421638:	e1500009 	cmp	r0, r9
 4242163c:	ca000000 	bgt	0x42421644
 42421640:	e3a09000 	mov	r9, #0
-42421644:	e59f068c 	ldr	r0, [pc, #1676]	; 0x42421cd8
+42421644:	e59f068c 	ldr	r0, [0x42421cd8]
 42421648:	e5900008 	ldr	r0, [r0, #8]
 4242164c:	e5900000 	ldr	r0, [r0]
 42421650:	e590000c 	ldr	r0, [r0, #12]
@@ -25759,7 +25760,7 @@ Disassembly of section .data:
 42421664:	0a00001a 	beq	0x424216d4
 42421668:	e3540000 	cmp	r4, #0
 4242166c:	1a000007 	bne	0x42421690
-42421670:	e59f0660 	ldr	r0, [pc, #1632]	; 0x42421cd8
+42421670:	e59f0660 	ldr	r0, [0x42421cd8]
 42421674:	e5900008 	ldr	r0, [r0, #8]
 42421678:	e5900000 	ldr	r0, [r0]
 4242167c:	e590000c 	ldr	r0, [r0, #12]
@@ -25769,7 +25770,7 @@ Disassembly of section .data:
 4242168c:	9a000009 	bls	0x424216b8
 42421690:	e3540000 	cmp	r4, #0
 42421694:	0a00000e 	beq	0x424216d4
-42421698:	e59f0638 	ldr	r0, [pc, #1592]	; 0x42421cd8
+42421698:	e59f0638 	ldr	r0, [0x42421cd8]
 4242169c:	e5900008 	ldr	r0, [r0, #8]
 424216a0:	e5900000 	ldr	r0, [r0]
 424216a4:	e590000c 	ldr	r0, [r0, #12]
@@ -25777,7 +25778,7 @@ Disassembly of section .data:
 424216ac:	e1d000b2 	ldrh	r0, [r0, #2]
 424216b0:	e1500008 	cmp	r0, r8
 424216b4:	3a000006 	bcc	0x424216d4
-424216b8:	e59f0618 	ldr	r0, [pc, #1560]	; 0x42421cd8
+424216b8:	e59f0618 	ldr	r0, [0x42421cd8]
 424216bc:	e5900008 	ldr	r0, [r0, #8]
 424216c0:	e5900000 	ldr	r0, [r0]
 424216c4:	e590000c 	ldr	r0, [r0, #12]
@@ -25787,7 +25788,7 @@ Disassembly of section .data:
 424216d4:	e2866001 	add	r6, r6, #1
 424216d8:	e2890001 	add	r0, r9, #1
 424216dc:	e6ff9070 	uxth	r9, r0
-424216e0:	e59f05f0 	ldr	r0, [pc, #1520]	; 0x42421cd8
+424216e0:	e59f05f0 	ldr	r0, [0x42421cd8]
 424216e4:	e5900010 	ldr	r0, [r0, #16]
 424216e8:	e1d000b0 	ldrh	r0, [r0]
 424216ec:	e2600b01 	rsb	r0, r0, #0x400
@@ -25796,39 +25797,39 @@ Disassembly of section .data:
 424216f8:	caffffc9 	bgt	0x42421624
 424216fc:	e3570000 	cmp	r7, #0
 42421700:	aa000006 	bge	0x42421720
-42421704:	e59f05d8 	ldr	r0, [pc, #1496]	; 0x42421ce4
+42421704:	e59f05d8 	ldr	r0, [0x42421ce4]
 42421708:	ebffe831 	bl	0x4241b7d4
 4242170c:	e30f0fff 	movw	r0, #65535	; 0xffff
 42421710:	e1c500b0 	strh	r0, [r5]
 42421714:	e1c500b2 	strh	r0, [r5, #2]
 42421718:	e3e00000 	mvn	r0, #0
 4242171c:	e8bd87f0 	pop	{r4, r5, r6, r7, r8, r9, sl, pc}
-42421720:	e59f05b0 	ldr	r0, [pc, #1456]	; 0x42421cd8
+42421720:	e59f05b0 	ldr	r0, [0x42421cd8]
 42421724:	e5900008 	ldr	r0, [r0, #8]
 42421728:	e5900000 	ldr	r0, [r0]
 4242172c:	e590000c 	ldr	r0, [r0, #12]
 42421730:	e0800107 	add	r0, r0, r7, lsl #2
 42421734:	e1d000b0 	ldrh	r0, [r0]
 42421738:	e1c500b0 	strh	r0, [r5]
-4242173c:	e59f0594 	ldr	r0, [pc, #1428]	; 0x42421cd8
+4242173c:	e59f0594 	ldr	r0, [0x42421cd8]
 42421740:	e5900008 	ldr	r0, [r0, #8]
 42421744:	e5900000 	ldr	r0, [r0]
 42421748:	e590000c 	ldr	r0, [r0, #12]
 4242174c:	e0800107 	add	r0, r0, r7, lsl #2
 42421750:	e1d000b2 	ldrh	r0, [r0, #2]
 42421754:	e1c500b2 	strh	r0, [r5, #2]
-42421758:	e59f1578 	ldr	r1, [pc, #1400]	; 0x42421cd8
+42421758:	e59f1578 	ldr	r1, [0x42421cd8]
 4242175c:	e5911008 	ldr	r1, [r1, #8]
 42421760:	e5911000 	ldr	r1, [r1]
 42421764:	e1c171b0 	strh	r7, [r1, #16]
 42421768:	e30f0fff 	movw	r0, #65535	; 0xffff
-4242176c:	e59f1564 	ldr	r1, [pc, #1380]	; 0x42421cd8
+4242176c:	e59f1564 	ldr	r1, [0x42421cd8]
 42421770:	e5911008 	ldr	r1, [r1, #8]
 42421774:	e5911000 	ldr	r1, [r1]
 42421778:	e591100c 	ldr	r1, [r1, #12]
 4242177c:	e0811107 	add	r1, r1, r7, lsl #2
 42421780:	e1c100b0 	strh	r0, [r1]
-42421784:	e59f154c 	ldr	r1, [pc, #1356]	; 0x42421cd8
+42421784:	e59f154c 	ldr	r1, [0x42421cd8]
 42421788:	e5911008 	ldr	r1, [r1, #8]
 4242178c:	e5911000 	ldr	r1, [r1]
 42421790:	e591100c 	ldr	r1, [r1, #12]
@@ -25839,7 +25840,7 @@ Disassembly of section .data:
 424217a4:	e1a02000 	mov	r2, r0
 424217a8:	e3a01000 	mov	r1, #0
 424217ac:	ea000019 	b	0x42421818
-424217b0:	e59f0520 	ldr	r0, [pc, #1312]	; 0x42421cd8
+424217b0:	e59f0520 	ldr	r0, [0x42421cd8]
 424217b4:	e5900008 	ldr	r0, [r0, #8]
 424217b8:	e5900000 	ldr	r0, [r0]
 424217bc:	e590000c 	ldr	r0, [r0, #12]
@@ -25849,14 +25850,14 @@ Disassembly of section .data:
 424217cc:	e1500003 	cmp	r0, r3
 424217d0:	1a00000f 	bne	0x42421814
 424217d4:	e1d200b0 	ldrh	r0, [r2]
-424217d8:	e59f34f8 	ldr	r3, [pc, #1272]	; 0x42421cd8
+424217d8:	e59f34f8 	ldr	r3, [0x42421cd8]
 424217dc:	e5933008 	ldr	r3, [r3, #8]
 424217e0:	e5933000 	ldr	r3, [r3]
 424217e4:	e593300c 	ldr	r3, [r3, #12]
 424217e8:	e0833101 	add	r3, r3, r1, lsl #2
 424217ec:	e1c300b0 	strh	r0, [r3]
 424217f0:	e1d200b2 	ldrh	r0, [r2, #2]
-424217f4:	e59f34dc 	ldr	r3, [pc, #1244]	; 0x42421cd8
+424217f4:	e59f34dc 	ldr	r3, [0x42421cd8]
 424217f8:	e5933008 	ldr	r3, [r3, #8]
 424217fc:	e5933000 	ldr	r3, [r3]
 42421800:	e593300c 	ldr	r3, [r3, #12]
@@ -25865,7 +25866,7 @@ Disassembly of section .data:
 4242180c:	e3a00000 	mov	r0, #0
 42421810:	e12fff1e 	bx	lr
 42421814:	e2811001 	add	r1, r1, #1
-42421818:	e59f04b8 	ldr	r0, [pc, #1208]	; 0x42421cd8
+42421818:	e59f04b8 	ldr	r0, [0x42421cd8]
 4242181c:	e5900010 	ldr	r0, [r0, #16]
 42421820:	e1d000b0 	ldrh	r0, [r0]
 42421824:	e2600b01 	rsb	r0, r0, #0x400
@@ -25878,7 +25879,7 @@ Disassembly of section .data:
 42421840:	e3e00000 	mvn	r0, #0
 42421844:	e3a01000 	mov	r1, #0
 42421848:	ea00000a 	b	0x42421878
-4242184c:	e59f3484 	ldr	r3, [pc, #1156]	; 0x42421cd8
+4242184c:	e59f3484 	ldr	r3, [0x42421cd8]
 42421850:	e5933008 	ldr	r3, [r3, #8]
 42421854:	e5933000 	ldr	r3, [r3]
 42421858:	e5933008 	ldr	r3, [r3, #8]
@@ -25901,13 +25902,13 @@ Disassembly of section .data:
 4242189c:	e1a05000 	mov	r5, r0
 424218a0:	e3550000 	cmp	r5, #0
 424218a4:	aa000010 	bge	0x424218ec
-424218a8:	e59f0428 	ldr	r0, [pc, #1064]	; 0x42421cd8
+424218a8:	e59f0428 	ldr	r0, [0x42421cd8]
 424218ac:	e5900010 	ldr	r0, [r0, #16]
 424218b0:	e1d000b0 	ldrh	r0, [r0]
 424218b4:	e1500004 	cmp	r0, r4
 424218b8:	2a000002 	bcs	0x424218c8
 424218bc:	e1a01004 	mov	r1, r4
-424218c0:	e59f0420 	ldr	r0, [pc, #1056]	; 0x42421ce8
+424218c0:	e59f0420 	ldr	r0, [0x42421ce8]
 424218c4:	ebffe7c2 	bl	0x4241b7d4
 424218c8:	e3560000 	cmp	r6, #0
 424218cc:	0a000004 	beq	0x424218e4
@@ -25920,7 +25921,7 @@ Disassembly of section .data:
 424218e8:	e8bd8070 	pop	{r4, r5, r6, pc}
 424218ec:	e3560000 	cmp	r6, #0
 424218f0:	0a000007 	beq	0x42421914
-424218f4:	e59f03dc 	ldr	r0, [pc, #988]	; 0x42421cd8
+424218f4:	e59f03dc 	ldr	r0, [0x42421cd8]
 424218f8:	e5900008 	ldr	r0, [r0, #8]
 424218fc:	e5900000 	ldr	r0, [r0]
 42421900:	e5900008 	ldr	r0, [r0, #8]
@@ -25947,7 +25948,7 @@ Disassembly of section .data:
 42421954:	ebffe79e 	bl	0x4241b7d4
 42421958:	e3e00000 	mvn	r0, #0
 4242195c:	e8bd8070 	pop	{r4, r5, r6, pc}
-42421960:	e59f1370 	ldr	r1, [pc, #880]	; 0x42421cd8
+42421960:	e59f1370 	ldr	r1, [0x42421cd8]
 42421964:	e5911008 	ldr	r1, [r1, #8]
 42421968:	e5911000 	ldr	r1, [r1]
 4242196c:	e5911008 	ldr	r1, [r1, #8]
@@ -25965,7 +25966,7 @@ Disassembly of section .data:
 4242199c:	e30f9fff 	movw	r9, #65535	; 0xffff
 424219a0:	e3a06000 	mov	r6, #0
 424219a4:	ea00000b 	b	0x424219d8
-424219a8:	e59f0328 	ldr	r0, [pc, #808]	; 0x42421cd8
+424219a8:	e59f0328 	ldr	r0, [0x42421cd8]
 424219ac:	e5900008 	ldr	r0, [r0, #8]
 424219b0:	e5900000 	ldr	r0, [r0]
 424219b4:	e5900008 	ldr	r0, [r0, #8]
@@ -25984,13 +25985,13 @@ Disassembly of section .data:
 424219e8:	1a000042 	bne	0x42421af8
 424219ec:	e3a06000 	mov	r6, #0
 424219f0:	ea00000e 	b	0x42421a30
-424219f4:	e59f02dc 	ldr	r0, [pc, #732]	; 0x42421cd8
+424219f4:	e59f02dc 	ldr	r0, [0x42421cd8]
 424219f8:	e5900008 	ldr	r0, [r0, #8]
 424219fc:	e5900000 	ldr	r0, [r0]
 42421a00:	e5900008 	ldr	r0, [r0, #8]
 42421a04:	e0800186 	add	r0, r0, r6, lsl #3
 42421a08:	e1d000b2 	ldrh	r0, [r0, #2]
-42421a0c:	e59f12c4 	ldr	r1, [pc, #708]	; 0x42421cd8
+42421a0c:	e59f12c4 	ldr	r1, [0x42421cd8]
 42421a10:	e5911010 	ldr	r1, [r1, #16]
 42421a14:	e1d110b2 	ldrh	r1, [r1, #2]
 42421a18:	e2411001 	sub	r1, r1, #1
@@ -26006,14 +26007,14 @@ Disassembly of section .data:
 42421a40:	1a000011 	bne	0x42421a8c
 42421a44:	e3a06000 	mov	r6, #0
 42421a48:	ea00000d 	b	0x42421a84
-42421a4c:	e59f0284 	ldr	r0, [pc, #644]	; 0x42421cd8
+42421a4c:	e59f0284 	ldr	r0, [0x42421cd8]
 42421a50:	e5900008 	ldr	r0, [r0, #8]
 42421a54:	e2800054 	add	r0, r0, #84	; 0x54
 42421a58:	e0800086 	add	r0, r0, r6, lsl #1
 42421a5c:	e1d000b0 	ldrh	r0, [r0]
 42421a60:	e1500009 	cmp	r0, r9
 42421a64:	aa000005 	bge	0x42421a80
-42421a68:	e59f0268 	ldr	r0, [pc, #616]	; 0x42421cd8
+42421a68:	e59f0268 	ldr	r0, [0x42421cd8]
 42421a6c:	e5900008 	ldr	r0, [r0, #8]
 42421a70:	e2800054 	add	r0, r0, #84	; 0x54
 42421a74:	e0800086 	add	r0, r0, r6, lsl #1
@@ -26028,12 +26029,12 @@ Disassembly of section .data:
 42421a98:	e3570000 	cmp	r7, #0
 42421a9c:	aa000005 	bge	0x42421ab8
 42421aa0:	e1a01007 	mov	r1, r7
-42421aa4:	e59f0270 	ldr	r0, [pc, #624]	; 0x42421d1c
+42421aa4:	e59f0270 	ldr	r0, [0x42421d1c]
 42421aa8:	ebffe749 	bl	0x4241b7d4
 42421aac:	e3e00000 	mvn	r0, #0
 42421ab0:	e28dd024 	add	sp, sp, #36	; 0x24
 42421ab4:	e8bd83f0 	pop	{r4, r5, r6, r7, r8, r9, pc}
-42421ab8:	e59f0218 	ldr	r0, [pc, #536]	; 0x42421cd8
+42421ab8:	e59f0218 	ldr	r0, [0x42421cd8]
 42421abc:	e5900008 	ldr	r0, [r0, #8]
 42421ac0:	e5900000 	ldr	r0, [r0]
 42421ac4:	e5900008 	ldr	r0, [r0, #8]
@@ -26045,7 +26046,7 @@ Disassembly of section .data:
 42421adc:	e3570000 	cmp	r7, #0
 42421ae0:	aa000004 	bge	0x42421af8
 42421ae4:	e1a01007 	mov	r1, r7
-42421ae8:	e59f0230 	ldr	r0, [pc, #560]	; 0x42421d20
+42421ae8:	e59f0230 	ldr	r0, [0x42421d20]
 42421aec:	ebffe738 	bl	0x4241b7d4
 42421af0:	e3e00000 	mvn	r0, #0
 42421af4:	eaffffed 	b	0x42421ab0
@@ -26059,20 +26060,20 @@ Disassembly of section .data:
 42421b14:	ebffe72e 	bl	0x4241b7d4
 42421b18:	e3e00000 	mvn	r0, #0
 42421b1c:	eaffffe3 	b	0x42421ab0
-42421b20:	e59f11b0 	ldr	r1, [pc, #432]	; 0x42421cd8
+42421b20:	e59f11b0 	ldr	r1, [0x42421cd8]
 42421b24:	e5911008 	ldr	r1, [r1, #8]
 42421b28:	e5911000 	ldr	r1, [r1]
 42421b2c:	e5911008 	ldr	r1, [r1, #8]
 42421b30:	e0811188 	add	r1, r1, r8, lsl #3
 42421b34:	e1c140b0 	strh	r4, [r1]
 42421b38:	e30f0fff 	movw	r0, #65535	; 0xffff
-42421b3c:	e59f1194 	ldr	r1, [pc, #404]	; 0x42421cd8
+42421b3c:	e59f1194 	ldr	r1, [0x42421cd8]
 42421b40:	e5911008 	ldr	r1, [r1, #8]
 42421b44:	e5911000 	ldr	r1, [r1]
 42421b48:	e5911008 	ldr	r1, [r1, #8]
 42421b4c:	e0811188 	add	r1, r1, r8, lsl #3
 42421b50:	e1c100b2 	strh	r0, [r1, #2]
-42421b54:	e59f017c 	ldr	r0, [pc, #380]	; 0x42421cd8
+42421b54:	e59f017c 	ldr	r0, [0x42421cd8]
 42421b58:	e5900008 	ldr	r0, [r0, #8]
 42421b5c:	e5900000 	ldr	r0, [r0]
 42421b60:	e5900008 	ldr	r0, [r0, #8]
@@ -26083,13 +26084,13 @@ Disassembly of section .data:
 42421b74:	e1c010b6 	strh	r1, [r0, #6]
 42421b78:	e5858000 	str	r8, [r5]
 42421b7c:	e320f000 	nop	{0}
-42421b80:	e59f0150 	ldr	r0, [pc, #336]	; 0x42421cd8
+42421b80:	e59f0150 	ldr	r0, [0x42421cd8]
 42421b84:	e5900008 	ldr	r0, [r0, #8]
 42421b88:	e5900000 	ldr	r0, [r0]
 42421b8c:	e5900004 	ldr	r0, [r0, #4]
 42421b90:	e0800104 	add	r0, r0, r4, lsl #2
 42421b94:	e1d020b0 	ldrh	r2, [r0]
-42421b98:	e59f0138 	ldr	r0, [pc, #312]	; 0x42421cd8
+42421b98:	e59f0138 	ldr	r0, [0x42421cd8]
 42421b9c:	e5900008 	ldr	r0, [r0, #8]
 42421ba0:	e5900000 	ldr	r0, [r0]
 42421ba4:	e5d01000 	ldrb	r1, [r0]
@@ -26098,7 +26099,7 @@ Disassembly of section .data:
 42421bb0:	ebffe0b4 	bl	0x42419e88
 42421bb4:	e3a00003 	mov	r0, #3
 42421bb8:	e58d0014 	str	r0, [sp, #20]
-42421bbc:	e59f0114 	ldr	r0, [pc, #276]	; 0x42421cd8
+42421bbc:	e59f0114 	ldr	r0, [0x42421cd8]
 42421bc0:	e5900014 	ldr	r0, [r0, #20]
 42421bc4:	e5900000 	ldr	r0, [r0]
 42421bc8:	e58d0018 	str	r0, [sp, #24]
@@ -26112,10 +26113,10 @@ Disassembly of section .data:
 42421be8:	e3a000ff 	mov	r0, #255	; 0xff
 42421bec:	e5cd0000 	strb	r0, [sp]
 42421bf0:	e5cd0008 	strb	r0, [sp, #8]
-42421bf4:	e59f20dc 	ldr	r2, [pc, #220]	; 0x42421cd8
+42421bf4:	e59f20dc 	ldr	r2, [0x42421cd8]
 42421bf8:	e5922010 	ldr	r2, [r2, #16]
 42421bfc:	e5d21005 	ldrb	r1, [r2, #5]
-42421c00:	e59f20d0 	ldr	r2, [pc, #208]	; 0x42421cd8
+42421c00:	e59f20d0 	ldr	r2, [0x42421cd8]
 42421c04:	e5922008 	ldr	r2, [r2, #8]
 42421c08:	e5922000 	ldr	r2, [r2]
 42421c0c:	e5d20000 	ldrb	r0, [r2]
@@ -26123,10 +26124,10 @@ Disassembly of section .data:
 42421c14:	e1840501 	orr	r0, r4, r1, lsl #10
 42421c18:	e6ff0070 	uxth	r0, r0
 42421c1c:	e1cd00b1 	strh	r0, [sp, #1]
-42421c20:	e59f20b0 	ldr	r2, [pc, #176]	; 0x42421cd8
+42421c20:	e59f20b0 	ldr	r2, [0x42421cd8]
 42421c24:	e5922010 	ldr	r2, [r2, #16]
 42421c28:	e5d21005 	ldrb	r1, [r2, #5]
-42421c2c:	e59f20a4 	ldr	r2, [pc, #164]	; 0x42421cd8
+42421c2c:	e59f20a4 	ldr	r2, [0x42421cd8]
 42421c30:	e5922008 	ldr	r2, [r2, #8]
 42421c34:	e5922000 	ldr	r2, [r2]
 42421c38:	e5d20000 	ldrb	r0, [r2]
@@ -26140,17 +26141,17 @@ Disassembly of section .data:
 42421c58:	e3a000ff 	mov	r0, #255	; 0xff
 42421c5c:	e5cd0006 	strb	r0, [sp, #6]
 42421c60:	e5cd000e 	strb	r0, [sp, #14]
-42421c64:	e59f00f8 	ldr	r0, [pc, #248]	; 0x42421d64
+42421c64:	e59f00f8 	ldr	r0, [0x42421d64]
 42421c68:	e5d0000a 	ldrb	r0, [r0, #10]
-42421c6c:	e59f10f0 	ldr	r1, [pc, #240]	; 0x42421d64
+42421c6c:	e59f10f0 	ldr	r1, [0x42421d64]
 42421c70:	e5d11009 	ldrb	r1, [r1, #9]
 42421c74:	e1600180 	smulbb	r0, r0, r1
 42421c78:	e2400001 	sub	r0, r0, #1
 42421c7c:	e3a01001 	mov	r1, #1
 42421c80:	e1a01011 	lsl	r1, r1, r0
-42421c84:	e59f00d8 	ldr	r0, [pc, #216]	; 0x42421d64
+42421c84:	e59f00d8 	ldr	r0, [0x42421d64]
 42421c88:	e5d0000a 	ldrb	r0, [r0, #10]
-42421c8c:	e59f20d0 	ldr	r2, [pc, #208]	; 0x42421d64
+42421c8c:	e59f20d0 	ldr	r2, [0x42421d64]
 42421c90:	e5d22009 	ldrb	r2, [r2, #9]
 42421c94:	e1600280 	smulbb	r0, r0, r2
 42421c98:	e2400001 	sub	r0, r0, #1
@@ -26165,7 +26166,7 @@ Disassembly of section .data:
 42421cbc:	e3570000 	cmp	r7, #0
 42421cc0:	aa000029 	bge	0x42421d6c
 42421cc4:	e1a01007 	mov	r1, r7
-42421cc8:	e59f0098 	ldr	r0, [pc, #152]	; 0x42421d68
+42421cc8:	e59f0098 	ldr	r0, [0x42421d68]
 42421ccc:	ebffe6c0 	bl	0x4241b7d4
 42421cd0:	e3e00000 	mvn	r0, #0
 42421cd4:	eaffff75 	b	0x42421ab0
@@ -26228,7 +26229,7 @@ Disassembly of section .data:
 42421db8:	e3570000 	cmp	r7, #0
 42421dbc:	aa000004 	bge	0x42421dd4
 42421dc0:	e1a01007 	mov	r1, r7
-42421dc4:	e59f0424 	ldr	r0, [pc, #1060]	; 0x424221f0
+42421dc4:	e59f0424 	ldr	r0, [0x424221f0]
 42421dc8:	ebffe681 	bl	0x4241b7d4
 42421dcc:	e3e00000 	mvn	r0, #0
 42421dd0:	eaffff36 	b	0x42421ab0
@@ -26273,7 +26274,7 @@ Disassembly of section .data:
 42421e6c:	e3580000 	cmp	r8, #0
 42421e70:	aa000004 	bge	0x42421e88
 42421e74:	e1a01008 	mov	r1, r8
-42421e78:	e59f03a0 	ldr	r0, [pc, #928]	; 0x42422220
+42421e78:	e59f03a0 	ldr	r0, [0x42422220]
 42421e7c:	ebffe654 	bl	0x4241b7d4
 42421e80:	e3e00000 	mvn	r0, #0
 42421e84:	eafffff3 	b	0x42421e58
@@ -26515,7 +26516,7 @@ Disassembly of section .data:
 42422234:	e3580000 	cmp	r8, #0
 42422238:	aa000004 	bge	0x42422250
 4242223c:	e1a01008 	mov	r1, r8
-42422240:	e59f02cc 	ldr	r0, [pc, #716]	; 0x42422514
+42422240:	e59f02cc 	ldr	r0, [0x42422514]
 42422244:	ebffe562 	bl	0x4241b7d4
 42422248:	e3e00000 	mvn	r0, #0
 4242224c:	eaffff01 	b	0x42421e58
@@ -26548,7 +26549,7 @@ Disassembly of section .data:
 424222b8:	e3580000 	cmp	r8, #0
 424222bc:	aa000004 	bge	0x424222d4
 424222c0:	e1a01008 	mov	r1, r8
-424222c4:	e59f024c 	ldr	r0, [pc, #588]	; 0x42422518
+424222c4:	e59f024c 	ldr	r0, [0x42422518]
 424222c8:	ebffe541 	bl	0x4241b7d4
 424222cc:	e3e00000 	mvn	r0, #0
 424222d0:	eafffee0 	b	0x42421e58
@@ -26578,7 +26579,7 @@ Disassembly of section .data:
 42422330:	e3560000 	cmp	r6, #0
 42422334:	aa000004 	bge	0x4242234c
 42422338:	e1a01006 	mov	r1, r6
-4242233c:	e59f01d8 	ldr	r0, [pc, #472]	; 0x4242251c
+4242233c:	e59f01d8 	ldr	r0, [0x4242251c]
 42422340:	ebffe523 	bl	0x4241b7d4
 42422344:	e30f0fff 	movw	r0, #65535	; 0xffff
 42422348:	eafffff4 	b	0x42422320
@@ -26616,7 +26617,7 @@ Disassembly of section .data:
 424223c8:	e3560000 	cmp	r6, #0
 424223cc:	aa000004 	bge	0x424223e4
 424223d0:	e1a01006 	mov	r1, r6
-424223d4:	e59f0174 	ldr	r0, [pc, #372]	; 0x42422550
+424223d4:	e59f0174 	ldr	r0, [0x42422550]
 424223d8:	ebffe4fd 	bl	0x4241b7d4
 424223dc:	e30f0fff 	movw	r0, #65535	; 0xffff
 424223e0:	eaffffce 	b	0x42422320
@@ -26734,21 +26735,21 @@ Disassembly of section .data:
 424225a0:	e3550000 	cmp	r5, #0
 424225a4:	aa000004 	bge	0x424225bc
 424225a8:	e1a01005 	mov	r1, r5
-424225ac:	e59f0110 	ldr	r0, [pc, #272]	; 0x424226c4
+424225ac:	e59f0110 	ldr	r0, [0x424226c4]
 424225b0:	ebffe487 	bl	0x4241b7d4
 424225b4:	e3e00000 	mvn	r0, #0
 424225b8:	e8bd8070 	pop	{r4, r5, r6, pc}
-424225bc:	e59f0104 	ldr	r0, [pc, #260]	; 0x424226c8
+424225bc:	e59f0104 	ldr	r0, [0x424226c8]
 424225c0:	e5d0000a 	ldrb	r0, [r0, #10]
-424225c4:	e59f30fc 	ldr	r3, [pc, #252]	; 0x424226c8
+424225c4:	e59f30fc 	ldr	r3, [0x424226c8]
 424225c8:	e5d33009 	ldrb	r3, [r3, #9]
 424225cc:	e1600380 	smulbb	r0, r0, r3
 424225d0:	e2400001 	sub	r0, r0, #1
 424225d4:	e3a03001 	mov	r3, #1
 424225d8:	e1a00013 	lsl	r0, r3, r0
-424225dc:	e59f30e4 	ldr	r3, [pc, #228]	; 0x424226c8
+424225dc:	e59f30e4 	ldr	r3, [0x424226c8]
 424225e0:	e5d3300a 	ldrb	r3, [r3, #10]
-424225e4:	e59f60dc 	ldr	r6, [pc, #220]	; 0x424226c8
+424225e4:	e59f60dc 	ldr	r6, [0x424226c8]
 424225e8:	e5d66009 	ldrb	r6, [r6, #9]
 424225ec:	e1630683 	smulbb	r3, r3, r6
 424225f0:	e2433001 	sub	r3, r3, #1
@@ -26756,7 +26757,7 @@ Disassembly of section .data:
 424225f8:	e1a03316 	lsl	r3, r6, r3
 424225fc:	e2433001 	sub	r3, r3, #1
 42422600:	e1801003 	orr	r1, r0, r3
-42422604:	e59f00c0 	ldr	r0, [pc, #192]	; 0x424226cc
+42422604:	e59f00c0 	ldr	r0, [0x424226cc]
 42422608:	e5900014 	ldr	r0, [r0, #20]
 4242260c:	e5902004 	ldr	r2, [r0, #4]
 42422610:	e1a00004 	mov	r0, r4
@@ -26766,17 +26767,17 @@ Disassembly of section .data:
 42422620:	aa000001 	bge	0x4242262c
 42422624:	e3e00000 	mvn	r0, #0
 42422628:	eaffffe2 	b	0x424225b8
-4242262c:	e59f0094 	ldr	r0, [pc, #148]	; 0x424226c8
+4242262c:	e59f0094 	ldr	r0, [0x424226c8]
 42422630:	e5d0000a 	ldrb	r0, [r0, #10]
-42422634:	e59f308c 	ldr	r3, [pc, #140]	; 0x424226c8
+42422634:	e59f308c 	ldr	r3, [0x424226c8]
 42422638:	e5d33009 	ldrb	r3, [r3, #9]
 4242263c:	e1600380 	smulbb	r0, r0, r3
 42422640:	e2400001 	sub	r0, r0, #1
 42422644:	e3a03001 	mov	r3, #1
 42422648:	e1a03013 	lsl	r3, r3, r0
-4242264c:	e59f0074 	ldr	r0, [pc, #116]	; 0x424226c8
+4242264c:	e59f0074 	ldr	r0, [0x424226c8]
 42422650:	e5d0000a 	ldrb	r0, [r0, #10]
-42422654:	e59f606c 	ldr	r6, [pc, #108]	; 0x424226c8
+42422654:	e59f606c 	ldr	r6, [0x424226c8]
 42422658:	e5d66009 	ldrb	r6, [r6, #9]
 4242265c:	e1600680 	smulbb	r0, r0, r6
 42422660:	e2400001 	sub	r0, r0, #1
@@ -26784,7 +26785,7 @@ Disassembly of section .data:
 42422668:	e1a00016 	lsl	r0, r6, r0
 4242266c:	e2400001 	sub	r0, r0, #1
 42422670:	e1831000 	orr	r1, r3, r0
-42422674:	e59f0050 	ldr	r0, [pc, #80]	; 0x424226cc
+42422674:	e59f0050 	ldr	r0, [0x424226cc]
 42422678:	e5900014 	ldr	r0, [r0, #20]
 4242267c:	e5902004 	ldr	r2, [r0, #4]
 42422680:	e1a00004 	mov	r0, r4
@@ -26823,31 +26824,31 @@ Disassembly of section .data:
 42422704:	e92d41f0 	push	{r4, r5, r6, r7, r8, lr}
 42422708:	e1a05000 	mov	r5, r0
 4242270c:	e1a06001 	mov	r6, r1
-42422710:	e59f0a20 	ldr	r0, [pc, #2592]	; 0x42423138
+42422710:	e59f0a20 	ldr	r0, [0x42423138]
 42422714:	e5d01007 	ldrb	r1, [r0, #7]
 42422718:	e1a00005 	mov	r0, r5
 4242271c:	eb002982 	bl	0x4242cd2c
-42422720:	e59f0a10 	ldr	r0, [pc, #2576]	; 0x42423138
+42422720:	e59f0a10 	ldr	r0, [0x42423138]
 42422724:	e1d000be 	ldrh	r0, [r0, #14]
 42422728:	e0080091 	mul	r8, r1, r0
-4242272c:	e59f0a04 	ldr	r0, [pc, #2564]	; 0x42423138
+4242272c:	e59f0a04 	ldr	r0, [0x42423138]
 42422730:	e1d001b0 	ldrh	r0, [r0, #16]
 42422734:	e3100008 	tst	r0, #8
 42422738:	0a000008 	beq	0x42422760
-4242273c:	e59f09f4 	ldr	r0, [pc, #2548]	; 0x42423138
+4242273c:	e59f09f4 	ldr	r0, [0x42423138]
 42422740:	e1d013b6 	ldrh	r1, [r0, #54]	; 0x36
 42422744:	e1a00006 	mov	r0, r6
 42422748:	eb002977 	bl	0x4242cd2c
-4242274c:	e59f09e4 	ldr	r0, [pc, #2532]	; 0x42423138
+4242274c:	e59f09e4 	ldr	r0, [0x42423138]
 42422750:	e5d00009 	ldrb	r0, [r0, #9]
 42422754:	e0000690 	mul	r0, r0, r6
 42422758:	e0407001 	sub	r7, r0, r1
 4242275c:	ea000000 	b	0x42422764
 42422760:	e1a07006 	mov	r7, r6
 42422764:	e0884007 	add	r4, r8, r7
-42422768:	e59f09c8 	ldr	r0, [pc, #2504]	; 0x42423138
+42422768:	e59f09c8 	ldr	r0, [0x42423138]
 4242276c:	e5d00008 	ldrb	r0, [r0, #8]
-42422770:	e59f19c0 	ldr	r1, [pc, #2496]	; 0x42423138
+42422770:	e59f19c0 	ldr	r1, [0x42423138]
 42422774:	e1d110be 	ldrh	r1, [r1, #14]
 42422778:	e0000190 	mul	r0, r0, r1
 4242277c:	e1500004 	cmp	r0, r4
@@ -26859,7 +26860,7 @@ Disassembly of section .data:
 42422794:	e24dd0a8 	sub	sp, sp, #168	; 0xa8
 42422798:	e1a04000 	mov	r4, r0
 4242279c:	e1a05001 	mov	r5, r1
-424227a0:	e59f0990 	ldr	r0, [pc, #2448]	; 0x42423138
+424227a0:	e59f0990 	ldr	r0, [0x42423138]
 424227a4:	e5d0000a 	ldrb	r0, [r0, #10]
 424227a8:	e3500001 	cmp	r0, #1
 424227ac:	1a000011 	bne	0x424227f8
@@ -26999,7 +27000,7 @@ Disassembly of section .data:
 424229c4:	e24dd0a8 	sub	sp, sp, #168	; 0xa8
 424229c8:	e1a04000 	mov	r4, r0
 424229cc:	e1a05001 	mov	r5, r1
-424229d0:	e59f0760 	ldr	r0, [pc, #1888]	; 0x42423138
+424229d0:	e59f0760 	ldr	r0, [0x42423138]
 424229d4:	e5d0000a 	ldrb	r0, [r0, #10]
 424229d8:	e3500001 	cmp	r0, #1
 424229dc:	1a000011 	bne	0x42422a28
@@ -27140,7 +27141,7 @@ Disassembly of section .data:
 42422bf8:	e1a04000 	mov	r4, r0
 42422bfc:	e1a05001 	mov	r5, r1
 42422c00:	e3a07000 	mov	r7, #0
-42422c04:	e59f052c 	ldr	r0, [pc, #1324]	; 0x42423138
+42422c04:	e59f052c 	ldr	r0, [0x42423138]
 42422c08:	e5d0000a 	ldrb	r0, [r0, #10]
 42422c0c:	e3500001 	cmp	r0, #1
 42422c10:	1a000011 	bne	0x42422c5c
@@ -27235,30 +27236,30 @@ Disassembly of section .data:
 42422d74:	eb001d9c 	bl	0x4242a3ec
 42422d78:	e1a0000a 	mov	r0, sl
 42422d7c:	eb001da6 	bl	0x4242a41c
-42422d80:	e59f03b0 	ldr	r0, [pc, #944]	; 0x42423138
+42422d80:	e59f03b0 	ldr	r0, [0x42423138]
 42422d84:	e1d001b0 	ldrh	r0, [r0, #16]
 42422d88:	e3100c01 	tst	r0, #0x100
 42422d8c:	0a0000b3 	beq	0x42423060
-42422d90:	e59f03a0 	ldr	r0, [pc, #928]	; 0x42423138
+42422d90:	e59f03a0 	ldr	r0, [0x42423138]
 42422d94:	e5900020 	ldr	r0, [r0, #32]
 42422d98:	e7e70850 	ubfx	r0, r0, #16, #8
 42422d9c:	e3500010 	cmp	r0, #16
 42422da0:	3a000008 	bcc	0x42422dc8
-42422da4:	e59f038c 	ldr	r0, [pc, #908]	; 0x42423138
+42422da4:	e59f038c 	ldr	r0, [0x42423138]
 42422da8:	e5900020 	ldr	r0, [r0, #32]
 42422dac:	e7e70850 	ubfx	r0, r0, #16, #8
 42422db0:	e3500030 	cmp	r0, #48	; 0x30
 42422db4:	2a000003 	bcs	0x42422dc8
 42422db8:	e3a00000 	mov	r0, #0
 42422dbc:	e5d41000 	ldrb	r1, [r4]
-42422dc0:	e59f2374 	ldr	r2, [pc, #884]	; 0x4242313c
+42422dc0:	e59f2374 	ldr	r2, [0x4242313c]
 42422dc4:	e7820101 	str	r0, [r2, r1, lsl #2]
 42422dc8:	e3a07000 	mov	r7, #0
 42422dcc:	ea000088 	b	0x42422ff4
 42422dd0:	e5d40000 	ldrb	r0, [r4]
-42422dd4:	e59f1360 	ldr	r1, [pc, #864]	; 0x4242313c
+42422dd4:	e59f1360 	ldr	r1, [0x4242313c]
 42422dd8:	e7910100 	ldr	r0, [r1, r0, lsl #2]
-42422ddc:	e59f1354 	ldr	r1, [pc, #852]	; 0x42423138
+42422ddc:	e59f1354 	ldr	r1, [0x42423138]
 42422de0:	e5911020 	ldr	r1, [r1, #32]
 42422de4:	e7e71451 	ubfx	r1, r1, #8, #8
 42422de8:	e2811001 	add	r1, r1, #1
@@ -27266,14 +27267,14 @@ Disassembly of section .data:
 42422df0:	1a000003 	bne	0x42422e04
 42422df4:	e3a00000 	mov	r0, #0
 42422df8:	e5d41000 	ldrb	r1, [r4]
-42422dfc:	e59f2338 	ldr	r2, [pc, #824]	; 0x4242313c
+42422dfc:	e59f2338 	ldr	r2, [0x4242313c]
 42422e00:	e7820101 	str	r0, [r2, r1, lsl #2]
 42422e04:	e3570000 	cmp	r7, #0
 42422e08:	0a00000c 	beq	0x42422e40
-42422e0c:	e59f3324 	ldr	r3, [pc, #804]	; 0x42423138
+42422e0c:	e59f3324 	ldr	r3, [0x42423138]
 42422e10:	e5932020 	ldr	r2, [r3, #32]
 42422e14:	e5d43000 	ldrb	r3, [r4]
-42422e18:	e59fc31c 	ldr	ip, [pc, #796]	; 0x4242313c
+42422e18:	e59fc31c 	ldr	ip, [0x4242313c]
 42422e1c:	e79c1103 	ldr	r1, [ip, r3, lsl #2]
 42422e20:	e1a00003 	mov	r0, r3
 42422e24:	eb001f3f 	bl	0x4242ab28
@@ -27283,7 +27284,7 @@ Disassembly of section .data:
 42422e34:	ebffe266 	bl	0x4241b7d4
 42422e38:	e3e00000 	mvn	r0, #0
 42422e3c:	eaffffc6 	b	0x42422d5c
-42422e40:	e59f02f0 	ldr	r0, [pc, #752]	; 0x42423138
+42422e40:	e59f02f0 	ldr	r0, [0x42423138]
 42422e44:	e1d001b0 	ldrh	r0, [r0, #16]
 42422e48:	e3100080 	tst	r0, #128	; 0x80
 42422e4c:	0a000034 	beq	0x42422f24
@@ -27350,17 +27351,17 @@ Disassembly of section .data:
 42422f40:	e1a06000 	mov	r6, r0
 42422f44:	e376000c 	cmn	r6, #12
 42422f48:	1a000004 	bne	0x42422f60
-42422f4c:	e59f01e4 	ldr	r0, [pc, #484]	; 0x42423138
+42422f4c:	e59f01e4 	ldr	r0, [0x42423138]
 42422f50:	e5900020 	ldr	r0, [r0, #32]
 42422f54:	e7e70450 	ubfx	r0, r0, #8, #8
 42422f58:	e1500007 	cmp	r0, r7
 42422f5c:	1a00001c 	bne	0x42422fd4
-42422f60:	e59f01d0 	ldr	r0, [pc, #464]	; 0x42423138
+42422f60:	e59f01d0 	ldr	r0, [0x42423138]
 42422f64:	e5900020 	ldr	r0, [r0, #32]
 42422f68:	e7e70850 	ubfx	r0, r0, #16, #8
 42422f6c:	e3500010 	cmp	r0, #16
 42422f70:	3a000007 	bcc	0x42422f94
-42422f74:	e59f01bc 	ldr	r0, [pc, #444]	; 0x42423138
+42422f74:	e59f01bc 	ldr	r0, [0x42423138]
 42422f78:	e5900020 	ldr	r0, [r0, #32]
 42422f7c:	e7e70850 	ubfx	r0, r0, #16, #8
 42422f80:	e3500020 	cmp	r0, #32
@@ -27368,31 +27369,31 @@ Disassembly of section .data:
 42422f88:	e5d40000 	ldrb	r0, [r4]
 42422f8c:	eb000da6 	bl	0x4242662c
 42422f90:	ea00000e 	b	0x42422fd0
-42422f94:	e59f019c 	ldr	r0, [pc, #412]	; 0x42423138
+42422f94:	e59f019c 	ldr	r0, [0x42423138]
 42422f98:	e5900020 	ldr	r0, [r0, #32]
 42422f9c:	e7e70850 	ubfx	r0, r0, #16, #8
 42422fa0:	e3500020 	cmp	r0, #32
 42422fa4:	3a000009 	bcc	0x42422fd0
-42422fa8:	e59f0188 	ldr	r0, [pc, #392]	; 0x42423138
+42422fa8:	e59f0188 	ldr	r0, [0x42423138]
 42422fac:	e5900020 	ldr	r0, [r0, #32]
 42422fb0:	e7e70850 	ubfx	r0, r0, #16, #8
 42422fb4:	e3500030 	cmp	r0, #48	; 0x30
 42422fb8:	2a000004 	bcs	0x42422fd0
-42422fbc:	e59f1174 	ldr	r1, [pc, #372]	; 0x42423138
+42422fbc:	e59f1174 	ldr	r1, [0x42423138]
 42422fc0:	e5912020 	ldr	r2, [r1, #32]
 42422fc4:	e5d40000 	ldrb	r0, [r4]
 42422fc8:	e28d106c 	add	r1, sp, #108	; 0x6c
 42422fcc:	eb002046 	bl	0x4242b0ec
 42422fd0:	ea00000d 	b	0x4242300c
 42422fd4:	e5d40000 	ldrb	r0, [r4]
-42422fd8:	e59f115c 	ldr	r1, [pc, #348]	; 0x4242313c
+42422fd8:	e59f115c 	ldr	r1, [0x4242313c]
 42422fdc:	e7910100 	ldr	r0, [r1, r0, lsl #2]
 42422fe0:	e2800001 	add	r0, r0, #1
 42422fe4:	e5d41000 	ldrb	r1, [r4]
-42422fe8:	e59f214c 	ldr	r2, [pc, #332]	; 0x4242313c
+42422fe8:	e59f214c 	ldr	r2, [0x4242313c]
 42422fec:	e7820101 	str	r0, [r2, r1, lsl #2]
 42422ff0:	e2877001 	add	r7, r7, #1
-42422ff4:	e59f013c 	ldr	r0, [pc, #316]	; 0x42423138
+42422ff4:	e59f013c 	ldr	r0, [0x42423138]
 42422ff8:	e5900020 	ldr	r0, [r0, #32]
 42422ffc:	e7e70450 	ubfx	r0, r0, #8, #8
 42423000:	e2800001 	add	r0, r0, #1
@@ -27402,14 +27403,14 @@ Disassembly of section .data:
 42423010:	e3570000 	cmp	r7, #0
 42423014:	0a00000d 	beq	0x42423050
 42423018:	e5d40000 	ldrb	r0, [r4]
-4242301c:	e59f1118 	ldr	r1, [pc, #280]	; 0x4242313c
+4242301c:	e59f1118 	ldr	r1, [0x4242313c]
 42423020:	e7913100 	ldr	r3, [r1, r0, lsl #2]
 42423024:	e1d420b4 	ldrh	r2, [r4, #4]
 42423028:	e1cd20f0 	strd	r2, [sp]
 4242302c:	e1d430b2 	ldrh	r3, [r4, #2]
 42423030:	e5d42000 	ldrb	r2, [r4]
 42423034:	e1a01007 	mov	r1, r7
-42423038:	e59f0130 	ldr	r0, [pc, #304]	; 0x42423170
+42423038:	e59f0130 	ldr	r0, [0x42423170]
 4242303c:	ebffe1e4 	bl	0x4241b7d4
 42423040:	e376000c 	cmn	r6, #12
 42423044:	1a000001 	bne	0x42423050
@@ -27419,7 +27420,7 @@ Disassembly of section .data:
 42423054:	1a000027 	bne	0x424230f8
 42423058:	e3a06000 	mov	r6, #0
 4242305c:	ea000025 	b	0x424230f8
-42423060:	e59f00d0 	ldr	r0, [pc, #208]	; 0x42423138
+42423060:	e59f00d0 	ldr	r0, [0x42423138]
 42423064:	e1d001b0 	ldrh	r0, [r0, #16]
 42423068:	e3100080 	tst	r0, #128	; 0x80
 4242306c:	0a000019 	beq	0x424230d8
@@ -27617,7 +27618,7 @@ Disassembly of section .data:
 4242336c:	e24dd0bc 	sub	sp, sp, #188	; 0xbc
 42423370:	e1a04000 	mov	r4, r0
 42423374:	e1a05001 	mov	r5, r1
-42423378:	e59f01d8 	ldr	r0, [pc, #472]	; 0x42423558
+42423378:	e59f01d8 	ldr	r0, [0x42423558]
 4242337c:	e590a010 	ldr	sl, [r0, #16]
 42423380:	e51f0250 	ldr	r0, [pc, #-592]	; 0x42423138
 42423384:	e5d0000a 	ldrb	r0, [r0, #10]
@@ -27919,11 +27920,11 @@ Disassembly of section .data:
 42423824:	e1d430b2 	ldrh	r3, [r4, #2]
 42423828:	e5d42000 	ldrb	r2, [r4]
 4242382c:	e1a01007 	mov	r1, r7
-42423830:	e59f010c 	ldr	r0, [pc, #268]	; 0x42423944
+42423830:	e59f010c 	ldr	r0, [0x42423944]
 42423834:	ebffdfe6 	bl	0x4241b7d4
 42423838:	e376000c 	cmn	r6, #12
 4242383c:	1a000001 	bne	0x42423848
-42423840:	e59f0100 	ldr	r0, [pc, #256]	; 0x42423948
+42423840:	e59f0100 	ldr	r0, [0x42423948]
 42423844:	ebffdfe2 	bl	0x4241b7d4
 42423848:	e356000a 	cmp	r6, #10
 4242384c:	1a000027 	bne	0x424238f0
@@ -28313,7 +28314,7 @@ Disassembly of section .data:
 42423e4c:	e355000a 	cmp	r5, #10
 42423e50:	1a000003 	bne	0x42423e64
 42423e54:	e300230b 	movw	r2, #779	; 0x30b
-42423e58:	e59f12e8 	ldr	r1, [pc, #744]	; 0x42424148
+42423e58:	e59f12e8 	ldr	r1, [0x42424148]
 42423e5c:	e28f0fba 	ldr	r0, =0x4242414c	; add r0, pc, #744	; 0x2e8
 42423e60:	ebffde5b 	bl	0x4241b7d4
 42423e64:	e1a00005 	mov	r0, r5
@@ -28536,7 +28537,7 @@ Disassembly of section .data:
 424241c8:	e3a01000 	mov	r1, #0
 424241cc:	e1a00001 	mov	r0, r1
 424241d0:	ebffff25 	bl	0x42423e6c
-424241d4:	e59f0aac 	ldr	r0, [pc, #2732]	; 0x42424c88
+424241d4:	e59f0aac 	ldr	r0, [0x42424c88]
 424241d8:	e5d0000a 	ldrb	r0, [r0, #10]
 424241dc:	e1a00480 	lsl	r0, r0, #9
 424241e0:	e59d1068 	ldr	r1, [sp, #104]	; 0x68
@@ -28601,30 +28602,30 @@ Disassembly of section .data:
 424242cc:	0a000001 	beq	0x424242d8
 424242d0:	e3a0000e 	mov	r0, #14
 424242d4:	eaffff82 	b	0x424240e4
-424242d8:	e59f09a8 	ldr	r0, [pc, #2472]	; 0x42424c88
+424242d8:	e59f09a8 	ldr	r0, [0x42424c88]
 424242dc:	e1d001b0 	ldrh	r0, [r0, #16]
 424242e0:	e3100c01 	tst	r0, #0x100
 424242e4:	0a000111 	beq	0x42424730
-424242e8:	e59f0998 	ldr	r0, [pc, #2456]	; 0x42424c88
+424242e8:	e59f0998 	ldr	r0, [0x42424c88]
 424242ec:	e5900020 	ldr	r0, [r0, #32]
 424242f0:	e7e70850 	ubfx	r0, r0, #16, #8
 424242f4:	e3500010 	cmp	r0, #16
 424242f8:	3a000008 	bcc	0x42424320
-424242fc:	e59f0984 	ldr	r0, [pc, #2436]	; 0x42424c88
+424242fc:	e59f0984 	ldr	r0, [0x42424c88]
 42424300:	e5900020 	ldr	r0, [r0, #32]
 42424304:	e7e70850 	ubfx	r0, r0, #16, #8
 42424308:	e3500030 	cmp	r0, #48	; 0x30
 4242430c:	2a000003 	bcs	0x42424320
 42424310:	e3a00000 	mov	r0, #0
 42424314:	e5d41000 	ldrb	r1, [r4]
-42424318:	e59f296c 	ldr	r2, [pc, #2412]	; 0x42424c8c
+42424318:	e59f296c 	ldr	r2, [0x42424c8c]
 4242431c:	e7820101 	str	r0, [r2, r1, lsl #2]
 42424320:	e3a0a000 	mov	sl, #0
 42424324:	ea0000e3 	b	0x424246b8
 42424328:	e5d40000 	ldrb	r0, [r4]
-4242432c:	e59f1958 	ldr	r1, [pc, #2392]	; 0x42424c8c
+4242432c:	e59f1958 	ldr	r1, [0x42424c8c]
 42424330:	e7910100 	ldr	r0, [r1, r0, lsl #2]
-42424334:	e59f194c 	ldr	r1, [pc, #2380]	; 0x42424c88
+42424334:	e59f194c 	ldr	r1, [0x42424c88]
 42424338:	e5911020 	ldr	r1, [r1, #32]
 4242433c:	e7e71451 	ubfx	r1, r1, #8, #8
 42424340:	e2811001 	add	r1, r1, #1
@@ -28632,24 +28633,24 @@ Disassembly of section .data:
 42424348:	1a000003 	bne	0x4242435c
 4242434c:	e3a00000 	mov	r0, #0
 42424350:	e5d41000 	ldrb	r1, [r4]
-42424354:	e59f2930 	ldr	r2, [pc, #2352]	; 0x42424c8c
+42424354:	e59f2930 	ldr	r2, [0x42424c8c]
 42424358:	e7820101 	str	r0, [r2, r1, lsl #2]
 4242435c:	e35a0000 	cmp	sl, #0
 42424360:	0a00000c 	beq	0x42424398
-42424364:	e59f391c 	ldr	r3, [pc, #2332]	; 0x42424c88
+42424364:	e59f391c 	ldr	r3, [0x42424c88]
 42424368:	e5932020 	ldr	r2, [r3, #32]
 4242436c:	e5d43000 	ldrb	r3, [r4]
-42424370:	e59fc914 	ldr	ip, [pc, #2324]	; 0x42424c8c
+42424370:	e59fc914 	ldr	ip, [0x42424c8c]
 42424374:	e79c1103 	ldr	r1, [ip, r3, lsl #2]
 42424378:	e1a00003 	mov	r0, r3
 4242437c:	eb0019e9 	bl	0x4242ab28
 42424380:	e3500000 	cmp	r0, #0
 42424384:	0a000003 	beq	0x42424398
-42424388:	e59f0900 	ldr	r0, [pc, #2304]	; 0x42424c90
+42424388:	e59f0900 	ldr	r0, [0x42424c90]
 4242438c:	ebffdd10 	bl	0x4241b7d4
 42424390:	e3e00000 	mvn	r0, #0
 42424394:	eaffff52 	b	0x424240e4
-42424398:	e59f08e8 	ldr	r0, [pc, #2280]	; 0x42424c88
+42424398:	e59f08e8 	ldr	r0, [0x42424c88]
 4242439c:	e1d001b0 	ldrh	r0, [r0, #16]
 424243a0:	e3100080 	tst	r0, #128	; 0x80
 424243a4:	0a00008c 	beq	0x424245dc
@@ -28808,48 +28809,48 @@ Disassembly of section .data:
 42424608:	e59d0070 	ldr	r0, [sp, #112]	; 0x70
 4242460c:	e370000c 	cmn	r0, #12
 42424610:	1a000004 	bne	0x42424628
-42424614:	e59f066c 	ldr	r0, [pc, #1644]	; 0x42424c88
+42424614:	e59f066c 	ldr	r0, [0x42424c88]
 42424618:	e5900020 	ldr	r0, [r0, #32]
 4242461c:	e7e70450 	ubfx	r0, r0, #8, #8
 42424620:	e150000a 	cmp	r0, sl
 42424624:	1a00001b 	bne	0x42424698
-42424628:	e59f0658 	ldr	r0, [pc, #1624]	; 0x42424c88
+42424628:	e59f0658 	ldr	r0, [0x42424c88]
 4242462c:	e5900020 	ldr	r0, [r0, #32]
 42424630:	e7e70850 	ubfx	r0, r0, #16, #8
 42424634:	e3500010 	cmp	r0, #16
 42424638:	3a000006 	bcc	0x42424658
-4242463c:	e59f0644 	ldr	r0, [pc, #1604]	; 0x42424c88
+4242463c:	e59f0644 	ldr	r0, [0x42424c88]
 42424640:	e5900020 	ldr	r0, [r0, #32]
 42424644:	e7e70850 	ubfx	r0, r0, #16, #8
 42424648:	e3500020 	cmp	r0, #32
 4242464c:	2a000001 	bcs	0x42424658
 42424650:	e3a0b001 	mov	fp, #1
 42424654:	ea00000e 	b	0x42424694
-42424658:	e59f0628 	ldr	r0, [pc, #1576]	; 0x42424c88
+42424658:	e59f0628 	ldr	r0, [0x42424c88]
 4242465c:	e5900020 	ldr	r0, [r0, #32]
 42424660:	e7e70850 	ubfx	r0, r0, #16, #8
 42424664:	e3500020 	cmp	r0, #32
 42424668:	3a000009 	bcc	0x42424694
-4242466c:	e59f0614 	ldr	r0, [pc, #1556]	; 0x42424c88
+4242466c:	e59f0614 	ldr	r0, [0x42424c88]
 42424670:	e5900020 	ldr	r0, [r0, #32]
 42424674:	e7e70850 	ubfx	r0, r0, #16, #8
 42424678:	e3500030 	cmp	r0, #48	; 0x30
 4242467c:	2a000004 	bcs	0x42424694
-42424680:	e59f1600 	ldr	r1, [pc, #1536]	; 0x42424c88
+42424680:	e59f1600 	ldr	r1, [0x42424c88]
 42424684:	e5912020 	ldr	r2, [r1, #32]
 42424688:	e5d40000 	ldrb	r0, [r4]
 4242468c:	e28d108c 	add	r1, sp, #140	; 0x8c
 42424690:	eb001a95 	bl	0x4242b0ec
 42424694:	ea00000d 	b	0x424246d0
 42424698:	e5d40000 	ldrb	r0, [r4]
-4242469c:	e59f15e8 	ldr	r1, [pc, #1512]	; 0x42424c8c
+4242469c:	e59f15e8 	ldr	r1, [0x42424c8c]
 424246a0:	e7910100 	ldr	r0, [r1, r0, lsl #2]
 424246a4:	e2800001 	add	r0, r0, #1
 424246a8:	e5d41000 	ldrb	r1, [r4]
-424246ac:	e59f25d8 	ldr	r2, [pc, #1496]	; 0x42424c8c
+424246ac:	e59f25d8 	ldr	r2, [0x42424c8c]
 424246b0:	e7820101 	str	r0, [r2, r1, lsl #2]
 424246b4:	e28aa001 	add	sl, sl, #1
-424246b8:	e59f05c8 	ldr	r0, [pc, #1480]	; 0x42424c88
+424246b8:	e59f05c8 	ldr	r0, [0x42424c88]
 424246bc:	e5900020 	ldr	r0, [r0, #32]
 424246c0:	e7e70450 	ubfx	r0, r0, #8, #8
 424246c4:	e2800001 	add	r0, r0, #1
@@ -28859,14 +28860,14 @@ Disassembly of section .data:
 424246d4:	e35a0000 	cmp	sl, #0
 424246d8:	0a00000e 	beq	0x42424718
 424246dc:	e5d40000 	ldrb	r0, [r4]
-424246e0:	e59f15a4 	ldr	r1, [pc, #1444]	; 0x42424c8c
+424246e0:	e59f15a4 	ldr	r1, [0x42424c8c]
 424246e4:	e7912100 	ldr	r2, [r1, r0, lsl #2]
 424246e8:	e1d410b4 	ldrh	r1, [r4, #4]
 424246ec:	e88d0106 	stm	sp, {r1, r2, r8}
 424246f0:	e1d430b2 	ldrh	r3, [r4, #2]
 424246f4:	e5d42000 	ldrb	r2, [r4]
 424246f8:	e1a0100a 	mov	r1, sl
-424246fc:	e59f0590 	ldr	r0, [pc, #1424]	; 0x42424c94
+424246fc:	e59f0590 	ldr	r0, [0x42424c94]
 42424700:	ebffdc33 	bl	0x4241b7d4
 42424704:	e59d0070 	ldr	r0, [sp, #112]	; 0x70
 42424708:	e370000c 	cmn	r0, #12
@@ -28879,7 +28880,7 @@ Disassembly of section .data:
 42424724:	e3a00000 	mov	r0, #0
 42424728:	e58d0070 	str	r0, [sp, #112]	; 0x70
 4242472c:	ea000080 	b	0x42424934
-42424730:	e59f0550 	ldr	r0, [pc, #1360]	; 0x42424c88
+42424730:	e59f0550 	ldr	r0, [0x42424c88]
 42424734:	e1d001b0 	ldrh	r0, [r0, #16]
 42424738:	e3100080 	tst	r0, #128	; 0x80
 4242473c:	0a000071 	beq	0x42424908
@@ -29041,11 +29042,11 @@ Disassembly of section .data:
 424249ac:	e92d47ff 	push	{r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, sl, lr}
 424249b0:	e1a04000 	mov	r4, r0
 424249b4:	e3a05000 	mov	r5, #0
-424249b8:	e59f02c8 	ldr	r0, [pc, #712]	; 0x42424c88
+424249b8:	e59f02c8 	ldr	r0, [0x42424c88]
 424249bc:	e1d001b0 	ldrh	r0, [r0, #16]
 424249c0:	e3100008 	tst	r0, #8
 424249c4:	0a000002 	beq	0x424249d4
-424249c8:	e59f02b8 	ldr	r0, [pc, #696]	; 0x42424c88
+424249c8:	e59f02b8 	ldr	r0, [0x42424c88]
 424249cc:	e5d00009 	ldrb	r0, [r0, #9]
 424249d0:	ea000000 	b	0x424249d8
 424249d4:	e3a00001 	mov	r0, #1
@@ -29055,7 +29056,7 @@ Disassembly of section .data:
 424249e4:	e1a06000 	mov	r6, r0
 424249e8:	e35600ff 	cmp	r6, #255	; 0xff
 424249ec:	1a000004 	bne	0x42424a04
-424249f0:	e59f02a0 	ldr	r0, [pc, #672]	; 0x42424c98
+424249f0:	e59f02a0 	ldr	r0, [0x42424c98]
 424249f4:	ebffdb76 	bl	0x4241b7d4
 424249f8:	e3e00014 	mvn	r0, #20
 424249fc:	e28dd010 	add	sp, sp, #16
@@ -29066,21 +29067,21 @@ Disassembly of section .data:
 42424a10:	e1a07000 	mov	r7, r0
 42424a14:	e3770001 	cmn	r7, #1
 42424a18:	1a000003 	bne	0x42424a2c
-42424a1c:	e59f0278 	ldr	r0, [pc, #632]	; 0x42424c9c
+42424a1c:	e59f0278 	ldr	r0, [0x42424c9c]
 42424a20:	ebffdb6b 	bl	0x4241b7d4
 42424a24:	e3e00014 	mvn	r0, #20
 42424a28:	eafffff3 	b	0x424249fc
 42424a2c:	e3a09000 	mov	r9, #0
 42424a30:	ea000039 	b	0x42424b1c
 42424a34:	e5cd6000 	strb	r6, [sp]
-42424a38:	e59f0248 	ldr	r0, [pc, #584]	; 0x42424c88
+42424a38:	e59f0248 	ldr	r0, [0x42424c88]
 42424a3c:	e1d003b6 	ldrh	r0, [r0, #54]	; 0x36
 42424a40:	e0207099 	mla	r0, r9, r0, r7
 42424a44:	e6ff0070 	uxth	r0, r0
 42424a48:	e1cd00b2 	strh	r0, [sp, #2]
 42424a4c:	e5d40001 	ldrb	r0, [r4, #1]
 42424a50:	e1cd00b4 	strh	r0, [sp, #4]
-42424a54:	e59f122c 	ldr	r1, [pc, #556]	; 0x42424c88
+42424a54:	e59f122c 	ldr	r1, [0x42424c88]
 42424a58:	e5940008 	ldr	r0, [r4, #8]
 42424a5c:	e5d1100a 	ldrb	r1, [r1, #10]
 42424a60:	e1a01481 	lsl	r1, r1, #9
@@ -29089,7 +29090,7 @@ Disassembly of section .data:
 42424a6c:	e594000c 	ldr	r0, [r4, #12]
 42424a70:	e3500000 	cmp	r0, #0
 42424a74:	0a000006 	beq	0x42424a94
-42424a78:	e59f1208 	ldr	r1, [pc, #520]	; 0x42424c88
+42424a78:	e59f1208 	ldr	r1, [0x42424c88]
 42424a7c:	e594000c 	ldr	r0, [r4, #12]
 42424a80:	e5d1100a 	ldrb	r1, [r1, #10]
 42424a84:	e1a01101 	lsl	r1, r1, #2
@@ -29098,12 +29099,12 @@ Disassembly of section .data:
 42424a90:	ea000001 	b	0x42424a9c
 42424a94:	e3a00000 	mov	r0, #0
 42424a98:	e58d000c 	str	r0, [sp, #12]
-42424a9c:	e59f11e4 	ldr	r1, [pc, #484]	; 0x42424c88
+42424a9c:	e59f11e4 	ldr	r1, [0x42424c88]
 42424aa0:	e5940004 	ldr	r0, [r4, #4]
 42424aa4:	e5d1100a 	ldrb	r1, [r1, #10]
 42424aa8:	e0010991 	mul	r1, r1, r9
 42424aac:	e1a00130 	lsr	r0, r0, r1
-42424ab0:	e59f11d0 	ldr	r1, [pc, #464]	; 0x42424c88
+42424ab0:	e59f11d0 	ldr	r1, [0x42424c88]
 42424ab4:	e5d1100a 	ldrb	r1, [r1, #10]
 42424ab8:	e3a02001 	mov	r2, #1
 42424abc:	e1a01112 	lsl	r1, r2, r1
@@ -29113,7 +29114,7 @@ Disassembly of section .data:
 42424acc:	e1cd00b6 	strh	r0, [sp, #6]
 42424ad0:	e35a0000 	cmp	sl, #0
 42424ad4:	0a00000f 	beq	0x42424b18
-42424ad8:	e59f01a8 	ldr	r0, [pc, #424]	; 0x42424c88
+42424ad8:	e59f01a8 	ldr	r0, [0x42424c88]
 42424adc:	e5d0000a 	ldrb	r0, [r0, #10]
 42424ae0:	e3a01001 	mov	r1, #1
 42424ae4:	e1a00011 	lsl	r0, r1, r0
@@ -29147,8 +29148,8 @@ Disassembly of section .data:
 42424b54:	e355000a 	cmp	r5, #10
 42424b58:	1a000003 	bne	0x42424b6c
 42424b5c:	e300247b 	movw	r2, #1147	; 0x47b
-42424b60:	e59f119c 	ldr	r1, [pc, #412]	; 0x42424d04
-42424b64:	e59f019c 	ldr	r0, [pc, #412]	; 0x42424d08
+42424b60:	e59f119c 	ldr	r1, [0x42424d04]
+42424b64:	e59f019c 	ldr	r0, [0x42424d08]
 42424b68:	ebffdb19 	bl	0x4241b7d4
 42424b6c:	e1a00005 	mov	r0, r5
 42424b70:	eaffffa1 	b	0x424249fc
@@ -29176,7 +29177,7 @@ Disassembly of section .data:
 42424bc8:	e7d00005 	ldrb	r0, [r0, r5]
 42424bcc:	e35000ff 	cmp	r0, #255	; 0xff
 42424bd0:	0a00000d 	beq	0x42424c0c
-42424bd4:	e59f1130 	ldr	r1, [pc, #304]	; 0x42424d0c
+42424bd4:	e59f1130 	ldr	r1, [0x42424d0c]
 42424bd8:	e28f0e13 	ldr	r0, =0x42424d10	; add r0, pc, #304	; 0x130
 42424bdc:	ebffdafc 	bl	0x4241b7d4
 42424be0:	e5dd3022 	ldrb	r3, [sp, #34]	; 0x22
@@ -29202,11 +29203,11 @@ Disassembly of section .data:
 42424c30:	e24dd014 	sub	sp, sp, #20
 42424c34:	e1a04000 	mov	r4, r0
 42424c38:	e3a05000 	mov	r5, #0
-42424c3c:	e59f0044 	ldr	r0, [pc, #68]	; 0x42424c88
+42424c3c:	e59f0044 	ldr	r0, [0x42424c88]
 42424c40:	e1d001b0 	ldrh	r0, [r0, #16]
 42424c44:	e3100008 	tst	r0, #8
 42424c48:	0a000002 	beq	0x42424c58
-42424c4c:	e59f0034 	ldr	r0, [pc, #52]	; 0x42424c88
+42424c4c:	e59f0034 	ldr	r0, [0x42424c88]
 42424c50:	e5d00009 	ldrb	r0, [r0, #9]
 42424c54:	ea000000 	b	0x42424c5c
 42424c58:	e3a00001 	mov	r0, #1
@@ -29853,11 +29854,11 @@ Disassembly of section .data:
 4242565c:	e1800001 	orr	r0, r0, r1
 42425660:	e5860004 	str	r0, [r6, #4]
 42425664:	e5840004 	str	r0, [r4, #4]
-42425668:	e59f009c 	ldr	r0, [pc, #156]	; 0x4242570c
+42425668:	e59f009c 	ldr	r0, [0x4242570c]
 4242566c:	e5900000 	ldr	r0, [r0]
 42425670:	e5860008 	str	r0, [r6, #8]
 42425674:	e5840008 	str	r0, [r4, #8]
-42425678:	e59f008c 	ldr	r0, [pc, #140]	; 0x4242570c
+42425678:	e59f008c 	ldr	r0, [0x4242570c]
 4242567c:	e590000c 	ldr	r0, [r0, #12]
 42425680:	e586000c 	str	r0, [r6, #12]
 42425684:	e584000c 	str	r0, [r4, #12]
@@ -29925,7 +29926,7 @@ Disassembly of section .data:
 4242577c:	e1a06002 	mov	r6, r2
 42425780:	e1a07003 	mov	r7, r3
 42425784:	e59d80d8 	ldr	r8, [sp, #216]	; 0xd8
-42425788:	e59f093c 	ldr	r0, [pc, #2364]	; 0x424260cc
+42425788:	e59f093c 	ldr	r0, [0x424260cc]
 4242578c:	e5d0000a 	ldrb	r0, [r0, #10]
 42425790:	e1a01100 	lsl	r1, r0, #2
 42425794:	e3a020ff 	mov	r2, #255	; 0xff
@@ -29934,13 +29935,13 @@ Disassembly of section .data:
 424257a0:	e594000c 	ldr	r0, [r4, #12]
 424257a4:	e3500000 	cmp	r0, #0
 424257a8:	0a000005 	beq	0x424257c4
-424257ac:	e59f0918 	ldr	r0, [pc, #2328]	; 0x424260cc
+424257ac:	e59f0918 	ldr	r0, [0x424260cc]
 424257b0:	e5d0000a 	ldrb	r0, [r0, #10]
 424257b4:	e1a02100 	lsl	r2, r0, #2
 424257b8:	e28d006c 	add	r0, sp, #108	; 0x6c
 424257bc:	e594100c 	ldr	r1, [r4, #12]
 424257c0:	eb001c4b 	bl	0x4242c8f4
-424257c4:	e59f0900 	ldr	r0, [pc, #2304]	; 0x424260cc
+424257c4:	e59f0900 	ldr	r0, [0x424260cc]
 424257c8:	e5d0000a 	ldrb	r0, [r0, #10]
 424257cc:	e3500001 	cmp	r0, #1
 424257d0:	1a000001 	bne	0x424257dc
@@ -30005,7 +30006,7 @@ Disassembly of section .data:
 424258bc:	eb0012ca 	bl	0x4242a3ec
 424258c0:	e59d00b0 	ldr	r0, [sp, #176]	; 0xb0
 424258c4:	eb0012d4 	bl	0x4242a41c
-424258c8:	e59f07fc 	ldr	r0, [pc, #2044]	; 0x424260cc
+424258c8:	e59f07fc 	ldr	r0, [0x424260cc]
 424258cc:	e1d001b0 	ldrh	r0, [r0, #16]
 424258d0:	e3100080 	tst	r0, #128	; 0x80
 424258d4:	0a000010 	beq	0x4242591c
@@ -30052,7 +30053,7 @@ Disassembly of section .data:
 42425978:	e1a06002 	mov	r6, r2
 4242597c:	e1a07003 	mov	r7, r3
 42425980:	e59d80d8 	ldr	r8, [sp, #216]	; 0xd8
-42425984:	e59f0740 	ldr	r0, [pc, #1856]	; 0x424260cc
+42425984:	e59f0740 	ldr	r0, [0x424260cc]
 42425988:	e5d0000a 	ldrb	r0, [r0, #10]
 4242598c:	e1a01100 	lsl	r1, r0, #2
 42425990:	e3a020ff 	mov	r2, #255	; 0xff
@@ -30061,13 +30062,13 @@ Disassembly of section .data:
 4242599c:	e594000c 	ldr	r0, [r4, #12]
 424259a0:	e3500000 	cmp	r0, #0
 424259a4:	0a000005 	beq	0x424259c0
-424259a8:	e59f071c 	ldr	r0, [pc, #1820]	; 0x424260cc
+424259a8:	e59f071c 	ldr	r0, [0x424260cc]
 424259ac:	e5d0000a 	ldrb	r0, [r0, #10]
 424259b0:	e1a02100 	lsl	r2, r0, #2
 424259b4:	e28d0070 	add	r0, sp, #112	; 0x70
 424259b8:	e594100c 	ldr	r1, [r4, #12]
 424259bc:	eb001bcc 	bl	0x4242c8f4
-424259c0:	e59f0704 	ldr	r0, [pc, #1796]	; 0x424260cc
+424259c0:	e59f0704 	ldr	r0, [0x424260cc]
 424259c4:	e5d0000a 	ldrb	r0, [r0, #10]
 424259c8:	e3500001 	cmp	r0, #1
 424259cc:	1a000001 	bne	0x424259d8
@@ -30139,7 +30140,7 @@ Disassembly of section .data:
 42425ad4:	eb001244 	bl	0x4242a3ec
 42425ad8:	e59d00b0 	ldr	r0, [sp, #176]	; 0xb0
 42425adc:	eb00124e 	bl	0x4242a41c
-42425ae0:	e59f05e4 	ldr	r0, [pc, #1508]	; 0x424260cc
+42425ae0:	e59f05e4 	ldr	r0, [0x424260cc]
 42425ae4:	e1d001b0 	ldrh	r0, [r0, #16]
 42425ae8:	e3100080 	tst	r0, #128	; 0x80
 42425aec:	0a00000e 	beq	0x42425b2c
@@ -30183,7 +30184,7 @@ Disassembly of section .data:
 42425b84:	e1a05001 	mov	r5, r1
 42425b88:	e1a06002 	mov	r6, r2
 42425b8c:	e1a07003 	mov	r7, r3
-42425b90:	e59f0534 	ldr	r0, [pc, #1332]	; 0x424260cc
+42425b90:	e59f0534 	ldr	r0, [0x424260cc]
 42425b94:	e5d0000a 	ldrb	r0, [r0, #10]
 42425b98:	e1a01100 	lsl	r1, r0, #2
 42425b9c:	e3a020ff 	mov	r2, #255	; 0xff
@@ -30192,13 +30193,13 @@ Disassembly of section .data:
 42425ba8:	e594000c 	ldr	r0, [r4, #12]
 42425bac:	e3500000 	cmp	r0, #0
 42425bb0:	0a000005 	beq	0x42425bcc
-42425bb4:	e59f0510 	ldr	r0, [pc, #1296]	; 0x424260cc
+42425bb4:	e59f0510 	ldr	r0, [0x424260cc]
 42425bb8:	e5d0000a 	ldrb	r0, [r0, #10]
 42425bbc:	e1a02100 	lsl	r2, r0, #2
 42425bc0:	e28d0070 	add	r0, sp, #112	; 0x70
 42425bc4:	e594100c 	ldr	r1, [r4, #12]
 42425bc8:	eb001b49 	bl	0x4242c8f4
-42425bcc:	e59f04f8 	ldr	r0, [pc, #1272]	; 0x424260cc
+42425bcc:	e59f04f8 	ldr	r0, [0x424260cc]
 42425bd0:	e5d0000a 	ldrb	r0, [r0, #10]
 42425bd4:	e3500001 	cmp	r0, #1
 42425bd8:	1a000001 	bne	0x42425be4
@@ -30548,7 +30549,7 @@ Disassembly of section .data:
 42426138:	e92d40f0 	push	{r4, r5, r6, r7, lr}
 4242613c:	e59d4014 	ldr	r4, [sp, #20]
 42426140:	e1a06482 	lsl	r6, r2, #9
-42426144:	e59f75ac 	ldr	r7, [pc, #1452]	; 0x424266f8
+42426144:	e59f75ac 	ldr	r7, [0x424266f8]
 42426148:	e1d770bc 	ldrh	r7, [r7, #12]
 4242614c:	e0251790 	mla	r5, r0, r7, r1
 42426150:	e3540006 	cmp	r4, #6
@@ -30606,7 +30607,7 @@ Disassembly of section .data:
 42426220:	e92d4038 	push	{r3, r4, r5, lr}
 42426224:	e1a04000 	mov	r4, r0
 42426228:	e3a05000 	mov	r5, #0
-4242622c:	e59f04c4 	ldr	r0, [pc, #1220]	; 0x424266f8
+4242622c:	e59f04c4 	ldr	r0, [0x424266f8]
 42426230:	e5d00006 	ldrb	r0, [r0, #6]
 42426234:	e3500000 	cmp	r0, #0
 42426238:	1a000008 	bne	0x42426260
@@ -30619,7 +30620,7 @@ Disassembly of section .data:
 42426254:	e3a05000 	mov	r5, #0
 42426258:	e1a00005 	mov	r0, r5
 4242625c:	e8bd8038 	pop	{r3, r4, r5, pc}
-42426260:	e59f0490 	ldr	r0, [pc, #1168]	; 0x424266f8
+42426260:	e59f0490 	ldr	r0, [0x424266f8]
 42426264:	e5d00006 	ldrb	r0, [r0, #6]
 42426268:	e3500001 	cmp	r0, #1
 4242626c:	1a000004 	bne	0x42426284
@@ -30628,7 +30629,7 @@ Disassembly of section .data:
 42426278:	e20450ff 	and	r5, r4, #0xff
 4242627c:	e1a00005 	mov	r0, r5
 42426280:	eafffff5 	b	0x4242625c
-42426284:	e59f046c 	ldr	r0, [pc, #1132]	; 0x424266f8
+42426284:	e59f046c 	ldr	r0, [0x424266f8]
 42426288:	e5d00006 	ldrb	r0, [r0, #6]
 4242628c:	e3500002 	cmp	r0, #2
 42426290:	1a000004 	bne	0x424262a8
@@ -30637,7 +30638,7 @@ Disassembly of section .data:
 4242629c:	e20450ff 	and	r5, r4, #0xff
 424262a0:	e1a00005 	mov	r0, r5
 424262a4:	eaffffec 	b	0x4242625c
-424262a8:	e59f0448 	ldr	r0, [pc, #1096]	; 0x424266f8
+424262a8:	e59f0448 	ldr	r0, [0x424266f8]
 424262ac:	e5d00006 	ldrb	r0, [r0, #6]
 424262b0:	e3500003 	cmp	r0, #3
 424262b4:	1a000005 	bne	0x424262d0
@@ -30647,7 +30648,7 @@ Disassembly of section .data:
 424262c4:	e1a05c20 	lsr	r5, r0, #24
 424262c8:	e1a00005 	mov	r0, r5
 424262cc:	eaffffe2 	b	0x4242625c
-424262d0:	e59f0420 	ldr	r0, [pc, #1056]	; 0x424266f8
+424262d0:	e59f0420 	ldr	r0, [0x424266f8]
 424262d4:	e5d00006 	ldrb	r0, [r0, #6]
 424262d8:	e3500004 	cmp	r0, #4
 424262dc:	1a00001c 	bne	0x42426354
@@ -30680,7 +30681,7 @@ Disassembly of section .data:
 42426348:	e320f000 	nop	{0}
 4242634c:	e1a00005 	mov	r0, r5
 42426350:	eaffffc1 	b	0x4242625c
-42426354:	e59f039c 	ldr	r0, [pc, #924]	; 0x424266f8
+42426354:	e59f039c 	ldr	r0, [0x424266f8]
 42426358:	e5d00006 	ldrb	r0, [r0, #6]
 4242635c:	e3500005 	cmp	r0, #5
 42426360:	1a000005 	bne	0x4242637c
@@ -30690,7 +30691,7 @@ Disassembly of section .data:
 42426370:	e1a05c20 	lsr	r5, r0, #24
 42426374:	e1a00005 	mov	r0, r5
 42426378:	eaffffb7 	b	0x4242625c
-4242637c:	e59f0374 	ldr	r0, [pc, #884]	; 0x424266f8
+4242637c:	e59f0374 	ldr	r0, [0x424266f8]
 42426380:	e5d00006 	ldrb	r0, [r0, #6]
 42426384:	e3500008 	cmp	r0, #8
 42426388:	1a00002a 	bne	0x42426438
@@ -30737,50 +30738,50 @@ Disassembly of section .data:
 4242642c:	e320f000 	nop	{0}
 42426430:	e1a00005 	mov	r0, r5
 42426434:	eaffff88 	b	0x4242625c
-42426438:	e59f02b8 	ldr	r0, [pc, #696]	; 0x424266f8
+42426438:	e59f02b8 	ldr	r0, [0x424266f8]
 4242643c:	e1d030b2 	ldrh	r3, [r0, #2]
 42426440:	e58d3000 	str	r3, [sp]
 42426444:	e5d01006 	ldrb	r1, [r0, #6]
 42426448:	e1a03005 	mov	r3, r5
 4242644c:	e1a02004 	mov	r2, r4
-42426450:	e59f02a4 	ldr	r0, [pc, #676]	; 0x424266fc
+42426450:	e59f02a4 	ldr	r0, [0x424266fc]
 42426454:	ebffd4de 	bl	0x4241b7d4
 42426458:	e3a000ff 	mov	r0, #255	; 0xff
 4242645c:	eaffff7e 	b	0x4242625c
 42426460:	e92d4070 	push	{r4, r5, r6, lr}
 42426464:	e1a04000 	mov	r4, r0
 42426468:	e3a05000 	mov	r5, #0
-4242646c:	e59f0284 	ldr	r0, [pc, #644]	; 0x424266f8
+4242646c:	e59f0284 	ldr	r0, [0x424266f8]
 42426470:	e5d00006 	ldrb	r0, [r0, #6]
 42426474:	e3500000 	cmp	r0, #0
 42426478:	1a000000 	bne	0x42426480
 4242647c:	e320f000 	nop	{0}
-42426480:	e59f0270 	ldr	r0, [pc, #624]	; 0x424266f8
+42426480:	e59f0270 	ldr	r0, [0x424266f8]
 42426484:	e5d00006 	ldrb	r0, [r0, #6]
 42426488:	e3500001 	cmp	r0, #1
 4242648c:	1a000000 	bne	0x42426494
 42426490:	e20450ff 	and	r5, r4, #0xff
-42426494:	e59f025c 	ldr	r0, [pc, #604]	; 0x424266f8
+42426494:	e59f025c 	ldr	r0, [0x424266f8]
 42426498:	e5d00006 	ldrb	r0, [r0, #6]
 4242649c:	e3500002 	cmp	r0, #2
 424264a0:	1a000000 	bne	0x424264a8
 424264a4:	e20450ff 	and	r5, r4, #0xff
-424264a8:	e59f0248 	ldr	r0, [pc, #584]	; 0x424266f8
+424264a8:	e59f0248 	ldr	r0, [0x424266f8]
 424264ac:	e5d00006 	ldrb	r0, [r0, #6]
 424264b0:	e3500003 	cmp	r0, #3
 424264b4:	1a000000 	bne	0x424264bc
 424264b8:	e7e750d4 	ubfx	r5, r4, #1, #8
-424264bc:	e59f0234 	ldr	r0, [pc, #564]	; 0x424266f8
+424264bc:	e59f0234 	ldr	r0, [0x424266f8]
 424264c0:	e5d00006 	ldrb	r0, [r0, #6]
 424264c4:	e3500004 	cmp	r0, #4
 424264c8:	1a000000 	bne	0x424264d0
 424264cc:	e7e750d4 	ubfx	r5, r4, #1, #8
-424264d0:	e59f0220 	ldr	r0, [pc, #544]	; 0x424266f8
+424264d0:	e59f0220 	ldr	r0, [0x424266f8]
 424264d4:	e5d00006 	ldrb	r0, [r0, #6]
 424264d8:	e3500005 	cmp	r0, #5
 424264dc:	1a000000 	bne	0x424264e4
 424264e0:	e7e050d4 	ubfx	r5, r4, #1, #1
-424264e4:	e59f020c 	ldr	r0, [pc, #524]	; 0x424266f8
+424264e4:	e59f020c 	ldr	r0, [0x424266f8]
 424264e8:	e5d00006 	ldrb	r0, [r0, #6]
 424264ec:	e3500008 	cmp	r0, #8
 424264f0:	1a000000 	bne	0x424264f8
@@ -30789,7 +30790,7 @@ Disassembly of section .data:
 424264fc:	0a000008 	beq	0x42426524
 42426500:	e3550001 	cmp	r5, #1
 42426504:	0a000006 	beq	0x42426524
-42426508:	e59f01e8 	ldr	r0, [pc, #488]	; 0x424266f8
+42426508:	e59f01e8 	ldr	r0, [0x424266f8]
 4242650c:	e5d02006 	ldrb	r2, [r0, #6]
 42426510:	e1a01004 	mov	r1, r4
 42426514:	e28f0f79 	ldr	r0, =0x42426700	; add r0, pc, #484	; 0x1e4
@@ -30813,7 +30814,7 @@ Disassembly of section .data:
 4242655c:	ea000000 	b	0x42426564
 42426560:	e3a06001 	mov	r6, #1
 42426564:	e20630ff 	and	r3, r6, #0xff
-42426568:	e59f1188 	ldr	r1, [pc, #392]	; 0x424266f8
+42426568:	e59f1188 	ldr	r1, [0x424266f8]
 4242656c:	e58d3000 	str	r3, [sp]
 42426570:	e1d110be 	ldrh	r1, [r1, #14]
 42426574:	e0000591 	mul	r0, r1, r5
@@ -30858,7 +30859,7 @@ Disassembly of section .data:
 42426610:	e12fff1e 	bx	lr
 42426614:	e1a01000 	mov	r1, r0
 42426618:	e201207f 	and	r2, r1, #0x7f
-4242661c:	e59f310c 	ldr	r3, [pc, #268]	; 0x42426730
+4242661c:	e59f310c 	ldr	r3, [0x42426730]
 42426620:	e0832082 	add	r2, r3, r2, lsl #1
 42426624:	e1d200b0 	ldrh	r0, [r2]
 42426628:	e12fff1e 	bx	lr
@@ -31044,12 +31045,12 @@ Disassembly of section .data:
 424268f8:	2a000003 	bcs	0x4242690c
 424268fc:	e3a00000 	mov	r0, #0
 42426900:	e5d41000 	ldrb	r1, [r4]
-42426904:	e59f2370 	ldr	r2, [pc, #880]	; 0x42426c7c
+42426904:	e59f2370 	ldr	r2, [0x42426c7c]
 42426908:	e7820101 	str	r0, [r2, r1, lsl #2]
 4242690c:	e3a07000 	mov	r7, #0
 42426910:	ea000088 	b	0x42426b38
 42426914:	e5d40000 	ldrb	r0, [r4]
-42426918:	e59f135c 	ldr	r1, [pc, #860]	; 0x42426c7c
+42426918:	e59f135c 	ldr	r1, [0x42426c7c]
 4242691c:	e7910100 	ldr	r0, [r1, r0, lsl #2]
 42426920:	e51f1230 	ldr	r1, [pc, #-560]	; 0x424266f8
 42426924:	e5911020 	ldr	r1, [r1, #32]
@@ -31059,14 +31060,14 @@ Disassembly of section .data:
 42426934:	1a000003 	bne	0x42426948
 42426938:	e3a00000 	mov	r0, #0
 4242693c:	e5d41000 	ldrb	r1, [r4]
-42426940:	e59f2334 	ldr	r2, [pc, #820]	; 0x42426c7c
+42426940:	e59f2334 	ldr	r2, [0x42426c7c]
 42426944:	e7820101 	str	r0, [r2, r1, lsl #2]
 42426948:	e3570000 	cmp	r7, #0
 4242694c:	0a00000c 	beq	0x42426984
 42426950:	e51f3260 	ldr	r3, [pc, #-608]	; 0x424266f8
 42426954:	e5932020 	ldr	r2, [r3, #32]
 42426958:	e5d43000 	ldrb	r3, [r4]
-4242695c:	e59fc318 	ldr	ip, [pc, #792]	; 0x42426c7c
+4242695c:	e59fc318 	ldr	ip, [0x42426c7c]
 42426960:	e79c1103 	ldr	r1, [ip, r3, lsl #2]
 42426964:	e1a00003 	mov	r0, r3
 42426968:	eb00106e 	bl	0x4242ab28
@@ -31178,11 +31179,11 @@ Disassembly of section .data:
 42426b10:	eb001175 	bl	0x4242b0ec
 42426b14:	ea00000d 	b	0x42426b50
 42426b18:	e5d40000 	ldrb	r0, [r4]
-42426b1c:	e59f1158 	ldr	r1, [pc, #344]	; 0x42426c7c
+42426b1c:	e59f1158 	ldr	r1, [0x42426c7c]
 42426b20:	e7910100 	ldr	r0, [r1, r0, lsl #2]
 42426b24:	e2800001 	add	r0, r0, #1
 42426b28:	e5d41000 	ldrb	r1, [r4]
-42426b2c:	e59f2148 	ldr	r2, [pc, #328]	; 0x42426c7c
+42426b2c:	e59f2148 	ldr	r2, [0x42426c7c]
 42426b30:	e7820101 	str	r0, [r2, r1, lsl #2]
 42426b34:	e2877001 	add	r7, r7, #1
 42426b38:	e51f0448 	ldr	r0, [pc, #-1096]	; 0x424266f8
@@ -31195,14 +31196,14 @@ Disassembly of section .data:
 42426b54:	e3570000 	cmp	r7, #0
 42426b58:	0a00000d 	beq	0x42426b94
 42426b5c:	e5d40000 	ldrb	r0, [r4]
-42426b60:	e59f1114 	ldr	r1, [pc, #276]	; 0x42426c7c
+42426b60:	e59f1114 	ldr	r1, [0x42426c7c]
 42426b64:	e7913100 	ldr	r3, [r1, r0, lsl #2]
 42426b68:	e1d420b4 	ldrh	r2, [r4, #4]
 42426b6c:	e1cd20f0 	strd	r2, [sp]
 42426b70:	e1d430b2 	ldrh	r3, [r4, #2]
 42426b74:	e5d42000 	ldrb	r2, [r4]
 42426b78:	e1a01007 	mov	r1, r7
-42426b7c:	e59f0124 	ldr	r0, [pc, #292]	; 0x42426ca8
+42426b7c:	e59f0124 	ldr	r0, [0x42426ca8]
 42426b80:	ebffd313 	bl	0x4241b7d4
 42426b84:	e376000c 	cmn	r6, #12
 42426b88:	1a000001 	bne	0x42426b94
@@ -31345,7 +31346,7 @@ Disassembly of section .data:
 42426dac:	e5dd300d 	ldrb	r3, [sp, #13]
 42426db0:	e5dd200c 	ldrb	r2, [sp, #12]
 42426db4:	e1a01005 	mov	r1, r5
-42426db8:	e59f0240 	ldr	r0, [pc, #576]	; 0x42427000
+42426db8:	e59f0240 	ldr	r0, [0x42427000]
 42426dbc:	ebffd284 	bl	0x4241b7d4
 42426dc0:	e3a00000 	mov	r0, #0
 42426dc4:	e28dd01c 	add	sp, sp, #28
@@ -31383,7 +31384,7 @@ Disassembly of section .data:
 42426e44:	e5dd301d 	ldrb	r3, [sp, #29]
 42426e48:	e5dd201c 	ldrb	r2, [sp, #28]
 42426e4c:	e1a01005 	mov	r1, r5
-42426e50:	e59f01e0 	ldr	r0, [pc, #480]	; 0x42427038
+42426e50:	e59f01e0 	ldr	r0, [0x42427038]
 42426e54:	ebffd25e 	bl	0x4241b7d4
 42426e58:	e51f0768 	ldr	r0, [pc, #-1896]	; 0x424266f8
 42426e5c:	e28d100c 	add	r1, sp, #12
@@ -31396,7 +31397,7 @@ Disassembly of section .data:
 42426e78:	e5dd300d 	ldrb	r3, [sp, #13]
 42426e7c:	e5dd200c 	ldrb	r2, [sp, #12]
 42426e80:	e1a01005 	mov	r1, r5
-42426e84:	e59f01b0 	ldr	r0, [pc, #432]	; 0x4242703c
+42426e84:	e59f01b0 	ldr	r0, [0x4242703c]
 42426e88:	ebffd251 	bl	0x4241b7d4
 42426e8c:	e3a00000 	mov	r0, #0
 42426e90:	e28dd02c 	add	sp, sp, #44	; 0x2c
@@ -31410,7 +31411,7 @@ Disassembly of section .data:
 42426eb0:	1a000001 	bne	0x42426ebc
 42426eb4:	e3e00000 	mvn	r0, #0
 42426eb8:	e8bd801c 	pop	{r2, r3, r4, pc}
-42426ebc:	e59f017c 	ldr	r0, [pc, #380]	; 0x42427040
+42426ebc:	e59f017c 	ldr	r0, [0x42427040]
 42426ec0:	e5900000 	ldr	r0, [r0]
 42426ec4:	e3500000 	cmp	r0, #0
 42426ec8:	1a00000e 	bne	0x42426f08
@@ -31421,7 +31422,7 @@ Disassembly of section .data:
 42426edc:	e1610281 	smulbb	r1, r1, r2
 42426ee0:	e1a00481 	lsl	r0, r1, #9
 42426ee4:	ebffd22c 	bl	0x4241b79c
-42426ee8:	e59f1150 	ldr	r1, [pc, #336]	; 0x42427040
+42426ee8:	e59f1150 	ldr	r1, [0x42427040]
 42426eec:	e5810000 	str	r0, [r1]
 42426ef0:	e2810000 	add	r0, r1, #0
 42426ef4:	e5900000 	ldr	r0, [r0]
@@ -31429,7 +31430,7 @@ Disassembly of section .data:
 42426efc:	1a000001 	bne	0x42426f08
 42426f00:	e3e00000 	mvn	r0, #0
 42426f04:	eaffffeb 	b	0x42426eb8
-42426f08:	e59f0130 	ldr	r0, [pc, #304]	; 0x42427040
+42426f08:	e59f0130 	ldr	r0, [0x42427040]
 42426f0c:	e590000c 	ldr	r0, [r0, #12]
 42426f10:	e3500000 	cmp	r0, #0
 42426f14:	1a00000e 	bne	0x42426f54
@@ -31440,7 +31441,7 @@ Disassembly of section .data:
 42426f28:	e1610281 	smulbb	r1, r1, r2
 42426f2c:	e1a00101 	lsl	r0, r1, #2
 42426f30:	ebffd219 	bl	0x4241b79c
-42426f34:	e59f1104 	ldr	r1, [pc, #260]	; 0x42427040
+42426f34:	e59f1104 	ldr	r1, [0x42427040]
 42426f38:	e581000c 	str	r0, [r1, #12]
 42426f3c:	e2810000 	add	r0, r1, #0
 42426f40:	e590000c 	ldr	r0, [r0, #12]
@@ -31448,7 +31449,7 @@ Disassembly of section .data:
 42426f48:	1a000001 	bne	0x42426f54
 42426f4c:	e3e00000 	mvn	r0, #0
 42426f50:	eaffffd8 	b	0x42426eb8
-42426f54:	e59f00e4 	ldr	r0, [pc, #228]	; 0x42427040
+42426f54:	e59f00e4 	ldr	r0, [0x42427040]
 42426f58:	e5900010 	ldr	r0, [r0, #16]
 42426f5c:	e3500000 	cmp	r0, #0
 42426f60:	1a00000e 	bne	0x42426fa0
@@ -31459,7 +31460,7 @@ Disassembly of section .data:
 42426f74:	e1610281 	smulbb	r1, r1, r2
 42426f78:	e1a00481 	lsl	r0, r1, #9
 42426f7c:	ebffd206 	bl	0x4241b79c
-42426f80:	e59f10b8 	ldr	r1, [pc, #184]	; 0x42427040
+42426f80:	e59f10b8 	ldr	r1, [0x42427040]
 42426f84:	e5810010 	str	r0, [r1, #16]
 42426f88:	e2810000 	add	r0, r1, #0
 42426f8c:	e5900010 	ldr	r0, [r0, #16]
@@ -31841,7 +31842,7 @@ Disassembly of section .data:
 4242756c:	e1a0300a 	mov	r3, sl
 42427570:	e1a02004 	mov	r2, r4
 42427574:	e1a01008 	mov	r1, r8
-42427578:	e59f00a0 	ldr	r0, [pc, #160]	; 0x42427620
+42427578:	e59f00a0 	ldr	r0, [0x42427620]
 4242757c:	e58d7000 	str	r7, [sp]
 42427580:	ebffd093 	bl	0x4241b7d4
 42427584:	e1a00007 	mov	r0, r7
@@ -31855,7 +31856,7 @@ Disassembly of section .data:
 424275a4:	e1a0300a 	mov	r3, sl
 424275a8:	e1a02004 	mov	r2, r4
 424275ac:	e1a01008 	mov	r1, r8
-424275b0:	e59f006c 	ldr	r0, [pc, #108]	; 0x42427624
+424275b0:	e59f006c 	ldr	r0, [0x42427624]
 424275b4:	e58d7000 	str	r7, [sp]
 424275b8:	ebffd085 	bl	0x4241b7d4
 424275bc:	e3e0000d 	mvn	r0, #13
@@ -31892,7 +31893,7 @@ Disassembly of section .data:
 42427638:	e1a0300a 	mov	r3, sl
 4242763c:	e1a02004 	mov	r2, r4
 42427640:	e1a01008 	mov	r1, r8
-42427644:	e59f0020 	ldr	r0, [pc, #32]	; 0x4242766c
+42427644:	e59f0020 	ldr	r0, [0x4242766c]
 42427648:	e58d7000 	str	r7, [sp]
 4242764c:	ebffd060 	bl	0x4241b7d4
 42427650:	e3e06000 	mvn	r6, #0
@@ -31916,7 +31917,7 @@ Disassembly of section .data:
 42427698:	e1a00001 	mov	r0, r1
 4242769c:	e121f001 	msr	CPSR_c, r1
 424276a0:	e12fff1e 	bx	lr
-424276a4:	e59f04d8 	ldr	r0, [pc, #1240]	; 0x42427b84
+424276a4:	e59f04d8 	ldr	r0, [0x42427b84]
 424276a8:	e1d001bc 	ldrh	r0, [r0, #28]
 424276ac:	e12fff1e 	bx	lr
 424276b0:	e92d4038 	push	{r3, r4, r5, lr}
@@ -31925,13 +31926,13 @@ Disassembly of section .data:
 424276bc:	e58d0000 	str	r0, [sp]
 424276c0:	e1a0000d 	mov	r0, sp
 424276c4:	ebffd040 	bl	0x4241b7cc
-424276c8:	e59f14b4 	ldr	r1, [pc, #1204]	; 0x42427b84
+424276c8:	e59f14b4 	ldr	r1, [0x42427b84]
 424276cc:	e1c141bc 	strh	r4, [r1, #28]
 424276d0:	e59d0000 	ldr	r0, [sp]
 424276d4:	ebffd03b 	bl	0x4241b7c8
 424276d8:	e3a00000 	mov	r0, #0
 424276dc:	e8bd8038 	pop	{r3, r4, r5, pc}
-424276e0:	e59f049c 	ldr	r0, [pc, #1180]	; 0x42427b84
+424276e0:	e59f049c 	ldr	r0, [0x42427b84]
 424276e4:	e5d00012 	ldrb	r0, [r0, #18]
 424276e8:	e12fff1e 	bx	lr
 424276ec:	e92d4038 	push	{r3, r4, r5, lr}
@@ -31940,7 +31941,7 @@ Disassembly of section .data:
 424276f8:	e58d0000 	str	r0, [sp]
 424276fc:	e1a0000d 	mov	r0, sp
 42427700:	ebffd031 	bl	0x4241b7cc
-42427704:	e59f1478 	ldr	r1, [pc, #1144]	; 0x42427b84
+42427704:	e59f1478 	ldr	r1, [0x42427b84]
 42427708:	e5c14012 	strb	r4, [r1, #18]
 4242770c:	e59d0000 	ldr	r0, [sp]
 42427710:	ebffd02c 	bl	0x4241b7c8
@@ -31953,63 +31954,63 @@ Disassembly of section .data:
 4242772c:	e3800409 	orr	r0, r0, #0x9000000
 42427730:	e12fff1e 	bx	lr
 42427734:	e1a01000 	mov	r1, r0
-42427738:	e59f0444 	ldr	r0, [pc, #1092]	; 0x42427b84
+42427738:	e59f0444 	ldr	r0, [0x42427b84]
 4242773c:	e5d00000 	ldrb	r0, [r0]
 42427740:	e5c10000 	strb	r0, [r1]
-42427744:	e59f0438 	ldr	r0, [pc, #1080]	; 0x42427b84
+42427744:	e59f0438 	ldr	r0, [0x42427b84]
 42427748:	e1d000b2 	ldrh	r0, [r0, #2]
 4242774c:	e1c100b2 	strh	r0, [r1, #2]
-42427750:	e59f042c 	ldr	r0, [pc, #1068]	; 0x42427b84
+42427750:	e59f042c 	ldr	r0, [0x42427b84]
 42427754:	e5d00004 	ldrb	r0, [r0, #4]
 42427758:	e5c10004 	strb	r0, [r1, #4]
-4242775c:	e59f0420 	ldr	r0, [pc, #1056]	; 0x42427b84
+4242775c:	e59f0420 	ldr	r0, [0x42427b84]
 42427760:	e5d00005 	ldrb	r0, [r0, #5]
 42427764:	e5c10005 	strb	r0, [r1, #5]
-42427768:	e59f0414 	ldr	r0, [pc, #1044]	; 0x42427b84
+42427768:	e59f0414 	ldr	r0, [0x42427b84]
 4242776c:	e5d00006 	ldrb	r0, [r0, #6]
 42427770:	e5c10006 	strb	r0, [r1, #6]
-42427774:	e59f0408 	ldr	r0, [pc, #1032]	; 0x42427b84
+42427774:	e59f0408 	ldr	r0, [0x42427b84]
 42427778:	e5d00007 	ldrb	r0, [r0, #7]
 4242777c:	e5c10007 	strb	r0, [r1, #7]
-42427780:	e59f03fc 	ldr	r0, [pc, #1020]	; 0x42427b84
+42427780:	e59f03fc 	ldr	r0, [0x42427b84]
 42427784:	e5d00008 	ldrb	r0, [r0, #8]
 42427788:	e5c10008 	strb	r0, [r1, #8]
-4242778c:	e59f03f0 	ldr	r0, [pc, #1008]	; 0x42427b84
+4242778c:	e59f03f0 	ldr	r0, [0x42427b84]
 42427790:	e5d00009 	ldrb	r0, [r0, #9]
 42427794:	e5c10009 	strb	r0, [r1, #9]
-42427798:	e59f03e4 	ldr	r0, [pc, #996]	; 0x42427b84
+42427798:	e59f03e4 	ldr	r0, [0x42427b84]
 4242779c:	e5d0000a 	ldrb	r0, [r0, #10]
 424277a0:	e5c1000a 	strb	r0, [r1, #10]
-424277a4:	e59f03d8 	ldr	r0, [pc, #984]	; 0x42427b84
+424277a4:	e59f03d8 	ldr	r0, [0x42427b84]
 424277a8:	e1d000bc 	ldrh	r0, [r0, #12]
 424277ac:	e1c100bc 	strh	r0, [r1, #12]
-424277b0:	e59f03cc 	ldr	r0, [pc, #972]	; 0x42427b84
+424277b0:	e59f03cc 	ldr	r0, [0x42427b84]
 424277b4:	e1d000be 	ldrh	r0, [r0, #14]
 424277b8:	e1c100be 	strh	r0, [r1, #14]
-424277bc:	e59f03c0 	ldr	r0, [pc, #960]	; 0x42427b84
+424277bc:	e59f03c0 	ldr	r0, [0x42427b84]
 424277c0:	e1d001b0 	ldrh	r0, [r0, #16]
 424277c4:	e1c101b0 	strh	r0, [r1, #16]
-424277c8:	e59f03b4 	ldr	r0, [pc, #948]	; 0x42427b84
+424277c8:	e59f03b4 	ldr	r0, [0x42427b84]
 424277cc:	e5d00012 	ldrb	r0, [r0, #18]
 424277d0:	e5c10012 	strb	r0, [r1, #18]
-424277d4:	e59f03a8 	ldr	r0, [pc, #936]	; 0x42427b84
+424277d4:	e59f03a8 	ldr	r0, [0x42427b84]
 424277d8:	e5d00013 	ldrb	r0, [r0, #19]
 424277dc:	e5c10013 	strb	r0, [r1, #19]
-424277e0:	e59f039c 	ldr	r0, [pc, #924]	; 0x42427b84
+424277e0:	e59f039c 	ldr	r0, [0x42427b84]
 424277e4:	e1d001bc 	ldrh	r0, [r0, #28]
 424277e8:	e1c101bc 	strh	r0, [r1, #28]
-424277ec:	e59f0390 	ldr	r0, [pc, #912]	; 0x42427b84
+424277ec:	e59f0390 	ldr	r0, [0x42427b84]
 424277f0:	e1d001bc 	ldrh	r0, [r0, #28]
 424277f4:	e5810020 	str	r0, [r1, #32]
-424277f8:	e59f0384 	ldr	r0, [pc, #900]	; 0x42427b84
+424277f8:	e59f0384 	ldr	r0, [0x42427b84]
 424277fc:	e5900020 	ldr	r0, [r0, #32]
 42427800:	e5810024 	str	r0, [r1, #36]	; 0x24
-42427804:	e59f0378 	ldr	r0, [pc, #888]	; 0x42427b84
+42427804:	e59f0378 	ldr	r0, [0x42427b84]
 42427808:	e5900024 	ldr	r0, [r0, #36]	; 0x24
 4242780c:	e5810028 	str	r0, [r1, #40]	; 0x28
 42427810:	e3a02000 	mov	r2, #0
 42427814:	ea000004 	b	0x4242782c
-42427818:	e59f0368 	ldr	r0, [pc, #872]	; 0x42427b88
+42427818:	e59f0368 	ldr	r0, [0x42427b88]
 4242781c:	e7d00002 	ldrb	r0, [r0, r2]
 42427820:	e2813014 	add	r3, r1, #20
 42427824:	e7c30002 	strb	r0, [r3, r2]
@@ -32019,25 +32020,25 @@ Disassembly of section .data:
 42427834:	e3a00000 	mov	r0, #0
 42427838:	e12fff1e 	bx	lr
 4242783c:	e1a01000 	mov	r1, r0
-42427840:	e59f033c 	ldr	r0, [pc, #828]	; 0x42427b84
+42427840:	e59f033c 	ldr	r0, [0x42427b84]
 42427844:	e5d00000 	ldrb	r0, [r0]
 42427848:	e5810000 	str	r0, [r1]
-4242784c:	e59f0330 	ldr	r0, [pc, #816]	; 0x42427b84
+4242784c:	e59f0330 	ldr	r0, [0x42427b84]
 42427850:	e1d000be 	ldrh	r0, [r0, #14]
-42427854:	e59f2328 	ldr	r2, [pc, #808]	; 0x42427b84
+42427854:	e59f2328 	ldr	r2, [0x42427b84]
 42427858:	e5d22008 	ldrb	r2, [r2, #8]
 4242785c:	e0000290 	mul	r0, r0, r2
 42427860:	e5810004 	str	r0, [r1, #4]
-42427864:	e59f0318 	ldr	r0, [pc, #792]	; 0x42427b84
+42427864:	e59f0318 	ldr	r0, [0x42427b84]
 42427868:	e5d0000a 	ldrb	r0, [r0, #10]
-4242786c:	e59f2310 	ldr	r2, [pc, #784]	; 0x42427b84
+4242786c:	e59f2310 	ldr	r2, [0x42427b84]
 42427870:	e1d220bc 	ldrh	r2, [r2, #12]
 42427874:	e0000290 	mul	r0, r0, r2
 42427878:	e5810008 	str	r0, [r1, #8]
-4242787c:	e59f0300 	ldr	r0, [pc, #768]	; 0x42427b84
+4242787c:	e59f0300 	ldr	r0, [0x42427b84]
 42427880:	e5d0000a 	ldrb	r0, [r0, #10]
 42427884:	e581000c 	str	r0, [r1, #12]
-42427888:	e59f02f4 	ldr	r0, [pc, #756]	; 0x42427b84
+42427888:	e59f02f4 	ldr	r0, [0x42427b84]
 4242788c:	e5d00035 	ldrb	r0, [r0, #53]	; 0x35
 42427890:	e5810010 	str	r0, [r1, #16]
 42427894:	e3a00000 	mov	r0, #0
@@ -32048,7 +32049,7 @@ Disassembly of section .data:
 424278a8:	e3a06000 	mov	r6, #0
 424278ac:	e3a07000 	mov	r7, #0
 424278b0:	e3a08000 	mov	r8, #0
-424278b4:	e59f12d0 	ldr	r1, [pc, #720]	; 0x42427b8c
+424278b4:	e59f12d0 	ldr	r1, [0x42427b8c]
 424278b8:	e1a0000d 	mov	r0, sp
 424278bc:	e891040c 	ldm	r1, {r2, r3, sl}
 424278c0:	e880040c 	stm	r0, {r2, r3, sl}
@@ -32071,31 +32072,31 @@ Disassembly of section .data:
 42427904:	0a000003 	beq	0x42427918
 42427908:	e35000ec 	cmp	r0, #236	; 0xec
 4242790c:	1a000016 	bne	0x4242796c
-42427910:	e59fa278 	ldr	sl, [pc, #632]	; 0x42427b90
+42427910:	e59fa278 	ldr	sl, [0x42427b90]
 42427914:	ea000017 	b	0x42427978
 42427918:	e320f000 	nop	{0}
-4242791c:	e59fa270 	ldr	sl, [pc, #624]	; 0x42427b94
+4242791c:	e59fa270 	ldr	sl, [0x42427b94]
 42427920:	ea000014 	b	0x42427978
 42427924:	e320f000 	nop	{0}
-42427928:	e59fa268 	ldr	sl, [pc, #616]	; 0x42427b98
+42427928:	e59fa268 	ldr	sl, [0x42427b98]
 4242792c:	ea000011 	b	0x42427978
 42427930:	e320f000 	nop	{0}
-42427934:	e59fa260 	ldr	sl, [pc, #608]	; 0x42427b9c
+42427934:	e59fa260 	ldr	sl, [0x42427b9c]
 42427938:	ea00000e 	b	0x42427978
 4242793c:	e320f000 	nop	{0}
-42427940:	e59fa258 	ldr	sl, [pc, #600]	; 0x42427ba0
+42427940:	e59fa258 	ldr	sl, [0x42427ba0]
 42427944:	ea00000b 	b	0x42427978
 42427948:	e320f000 	nop	{0}
-4242794c:	e59fa250 	ldr	sl, [pc, #592]	; 0x42427ba4
+4242794c:	e59fa250 	ldr	sl, [0x42427ba4]
 42427950:	ea000008 	b	0x42427978
 42427954:	e320f000 	nop	{0}
-42427958:	e59fa248 	ldr	sl, [pc, #584]	; 0x42427ba8
+42427958:	e59fa248 	ldr	sl, [0x42427ba8]
 4242795c:	ea000005 	b	0x42427978
 42427960:	e320f000 	nop	{0}
-42427964:	e59fa240 	ldr	sl, [pc, #576]	; 0x42427bac
+42427964:	e59fa240 	ldr	sl, [0x42427bac]
 42427968:	ea000002 	b	0x42427978
 4242796c:	e320f000 	nop	{0}
-42427970:	e59fa238 	ldr	sl, [pc, #568]	; 0x42427bb0
+42427970:	e59fa238 	ldr	sl, [0x42427bb0]
 42427974:	e320f000 	nop	{0}
 42427978:	e320f000 	nop	{0}
 4242797c:	ea000026 	b	0x42427a1c
@@ -32164,7 +32165,7 @@ Disassembly of section .data:
 42427a78:	e92d4030 	push	{r4, r5, lr}
 42427a7c:	e24dd05c 	sub	sp, sp, #92	; 0x5c
 42427a80:	e3a00001 	mov	r0, #1
-42427a84:	e59f10f8 	ldr	r1, [pc, #248]	; 0x42427b84
+42427a84:	e59f10f8 	ldr	r1, [0x42427b84]
 42427a88:	e5c10000 	strb	r0, [r1]
 42427a8c:	e1c100b2 	strh	r0, [r1, #2]
 42427a90:	e5c10006 	strb	r0, [r1, #6]
@@ -32574,7 +32575,7 @@ Disassembly of section .data:
 424280e0:	e51f0564 	ldr	r0, [pc, #-1380]	; 0x42427b84
 424280e4:	e1d030b2 	ldrh	r3, [r0, #2]
 424280e8:	e5d02000 	ldrb	r2, [r0]
-424280ec:	e59f12d8 	ldr	r1, [pc, #728]	; 0x424283cc
+424280ec:	e59f12d8 	ldr	r1, [0x424283cc]
 424280f0:	e2810018 	add	r0, r1, #24
 424280f4:	ebffcdb6 	bl	0x4241b7d4
 424280f8:	e3e00000 	mvn	r0, #0
@@ -32640,7 +32641,7 @@ Disassembly of section .data:
 424281e8:	cafffff8 	bgt	0x424281d0
 424281ec:	e28f0f7d 	ldr	r0, =0x424283e8	; add r0, pc, #500	; 0x1f4
 424281f0:	ebffcd77 	bl	0x4241b7d4
-424281f4:	e59f01f0 	ldr	r0, [pc, #496]	; 0x424283ec
+424281f4:	e59f01f0 	ldr	r0, [0x424283ec]
 424281f8:	ebffcd75 	bl	0x4241b7d4
 424281fc:	e51f0680 	ldr	r0, [pc, #-1664]	; 0x42427b84
 42428200:	e5d00018 	ldrb	r0, [r0, #24]
@@ -32722,9 +32723,9 @@ Disassembly of section .data:
 42428330:	e5901024 	ldr	r1, [r0, #36]	; 0x24
 42428334:	e28f0fc9 	ldr	r0, =0x42428660	; add r0, pc, #804	; 0x324
 42428338:	ebffcd25 	bl	0x4241b7d4
-4242833c:	e59f0348 	ldr	r0, [pc, #840]	; 0x4242868c
+4242833c:	e59f0348 	ldr	r0, [0x4242868c]
 42428340:	ebffcd23 	bl	0x4241b7d4
-42428344:	e59f0344 	ldr	r0, [pc, #836]	; 0x42428690
+42428344:	e59f0344 	ldr	r0, [0x42428690]
 42428348:	ebffcd21 	bl	0x4241b7d4
 4242834c:	e51f07d0 	ldr	r0, [pc, #-2000]	; 0x42427b84
 42428350:	e5d02029 	ldrb	r2, [r0, #41]	; 0x29
@@ -33023,7 +33024,7 @@ Disassembly of section .data:
 424287e4:	e1d013b6 	ldrh	r1, [r0, #54]	; 0x36
 424287e8:	e28f0068 	ldr	r0, =0x42428858	; add r0, pc, #104	; 0x68
 424287ec:	ebffcbf8 	bl	0x4241b7d4
-424287f0:	e59f008c 	ldr	r0, [pc, #140]	; 0x42428884
+424287f0:	e59f008c 	ldr	r0, [0x42428884]
 424287f4:	ebffcbf6 	bl	0x4241b7d4
 424287f8:	e3a00000 	mov	r0, #0
 424287fc:	eafffcc1 	b	0x42427b08
@@ -33080,7 +33081,7 @@ Disassembly of section .data:
 424288c8:	e1a05001 	mov	r5, r1
 424288cc:	e1a06002 	mov	r6, r2
 424288d0:	e1a07003 	mov	r7, r3
-424288d4:	e59f032c 	ldr	r0, [pc, #812]	; 0x42428c08
+424288d4:	e59f032c 	ldr	r0, [0x42428c08]
 424288d8:	e5900014 	ldr	r0, [r0, #20]
 424288dc:	e5900000 	ldr	r0, [r0]
 424288e0:	e58d000c 	str	r0, [sp, #12]
@@ -33094,7 +33095,7 @@ Disassembly of section .data:
 42428900:	eb00101d 	bl	0x4242c97c
 42428904:	e3a00003 	mov	r0, #3
 42428908:	e58d0018 	str	r0, [sp, #24]
-4242890c:	e59f02f4 	ldr	r0, [pc, #756]	; 0x42428c08
+4242890c:	e59f02f4 	ldr	r0, [0x42428c08]
 42428910:	e5900008 	ldr	r0, [r0, #8]
 42428914:	e5900000 	ldr	r0, [r0]
 42428918:	e5d01000 	ldrb	r1, [r0]
@@ -33113,17 +33114,17 @@ Disassembly of section .data:
 4242894c:	e8bd83f0 	pop	{r4, r5, r6, r7, r8, r9, pc}
 42428950:	e5dd802a 	ldrb	r8, [sp, #42]	; 0x2a
 42428954:	e1dd92b5 	ldrh	r9, [sp, #37]	; 0x25
-42428958:	e59f02d0 	ldr	r0, [pc, #720]	; 0x42428c30
+42428958:	e59f02d0 	ldr	r0, [0x42428c30]
 4242895c:	e5d0000a 	ldrb	r0, [r0, #10]
-42428960:	e59f12c8 	ldr	r1, [pc, #712]	; 0x42428c30
+42428960:	e59f12c8 	ldr	r1, [0x42428c30]
 42428964:	e5d11009 	ldrb	r1, [r1, #9]
 42428968:	e1600180 	smulbb	r0, r0, r1
 4242896c:	e2400001 	sub	r0, r0, #1
 42428970:	e3a01001 	mov	r1, #1
 42428974:	e1a00011 	lsl	r0, r1, r0
-42428978:	e59f12b0 	ldr	r1, [pc, #688]	; 0x42428c30
+42428978:	e59f12b0 	ldr	r1, [0x42428c30]
 4242897c:	e5d1100a 	ldrb	r1, [r1, #10]
-42428980:	e59f22a8 	ldr	r2, [pc, #680]	; 0x42428c30
+42428980:	e59f22a8 	ldr	r2, [0x42428c30]
 42428984:	e5d22009 	ldrb	r2, [r2, #9]
 42428988:	e1610281 	smulbb	r1, r1, r2
 4242898c:	e2411001 	sub	r1, r1, #1
@@ -33133,7 +33134,7 @@ Disassembly of section .data:
 4242899c:	e1800001 	orr	r0, r0, r1
 424289a0:	e58d0008 	str	r0, [sp, #8]
 424289a4:	e58d0018 	str	r0, [sp, #24]
-424289a8:	e59f0258 	ldr	r0, [pc, #600]	; 0x42428c08
+424289a8:	e59f0258 	ldr	r0, [0x42428c08]
 424289ac:	e5900008 	ldr	r0, [r0, #8]
 424289b0:	e5900000 	ldr	r0, [r0]
 424289b4:	e5d01000 	ldrb	r1, [r0]
@@ -33141,7 +33142,7 @@ Disassembly of section .data:
 424289bc:	e1a02004 	mov	r2, r4
 424289c0:	e28d0014 	add	r0, sp, #20
 424289c4:	ebffc52f 	bl	0x42419e88
-424289c8:	e59f0238 	ldr	r0, [pc, #568]	; 0x42428c08
+424289c8:	e59f0238 	ldr	r0, [0x42428c08]
 424289cc:	e5900008 	ldr	r0, [r0, #8]
 424289d0:	e5900000 	ldr	r0, [r0]
 424289d4:	e5d01000 	ldrb	r1, [r0]
@@ -33184,7 +33185,7 @@ Disassembly of section .data:
 42428a68:	e6ff6070 	uxth	r6, r0
 42428a6c:	ea000033 	b	0x42428b40
 42428a70:	e1dd22bc 	ldrh	r2, [sp, #44]	; 0x2c
-42428a74:	e59f018c 	ldr	r0, [pc, #396]	; 0x42428c08
+42428a74:	e59f018c 	ldr	r0, [0x42428c08]
 42428a78:	e5900008 	ldr	r0, [r0, #8]
 42428a7c:	e5900000 	ldr	r0, [r0]
 42428a80:	e5d01000 	ldrb	r1, [r0]
@@ -33192,7 +33193,7 @@ Disassembly of section .data:
 42428a88:	e28d0014 	add	r0, sp, #20
 42428a8c:	ebffc4fd 	bl	0x42419e88
 42428a90:	e1dd22b8 	ldrh	r2, [sp, #40]	; 0x28
-42428a94:	e59f016c 	ldr	r0, [pc, #364]	; 0x42428c08
+42428a94:	e59f016c 	ldr	r0, [0x42428c08]
 42428a98:	e5900008 	ldr	r0, [r0, #8]
 42428a9c:	e5900000 	ldr	r0, [r0]
 42428aa0:	e5d01000 	ldrb	r1, [r0]
@@ -33214,7 +33215,7 @@ Disassembly of section .data:
 42428ae0:	ebfffa66 	bl	0x42427480
 42428ae4:	e3500000 	cmp	r0, #0
 42428ae8:	0a000012 	beq	0x42428b38
-42428aec:	e59f0114 	ldr	r0, [pc, #276]	; 0x42428c08
+42428aec:	e59f0114 	ldr	r0, [0x42428c08]
 42428af0:	e5900008 	ldr	r0, [r0, #8]
 42428af4:	e5900000 	ldr	r0, [r0]
 42428af8:	e5d01000 	ldrb	r1, [r0]
@@ -33235,7 +33236,7 @@ Disassembly of section .data:
 42428b34:	e320f000 	nop	{0}
 42428b38:	e2860001 	add	r0, r6, #1
 42428b3c:	e6ff6070 	uxth	r6, r0
-42428b40:	e59f00c0 	ldr	r0, [pc, #192]	; 0x42428c08
+42428b40:	e59f00c0 	ldr	r0, [0x42428c08]
 42428b44:	e5900010 	ldr	r0, [r0, #16]
 42428b48:	e1d000b2 	ldrh	r0, [r0, #2]
 42428b4c:	e1500006 	cmp	r0, r6
@@ -33251,14 +33252,14 @@ Disassembly of section .data:
 42428b74:	e1a00004 	mov	r0, r4
 42428b78:	ebffe367 	bl	0x4242191c
 42428b7c:	e1dd12bc 	ldrh	r1, [sp, #44]	; 0x2c
-42428b80:	e59f2080 	ldr	r2, [pc, #128]	; 0x42428c08
+42428b80:	e59f2080 	ldr	r2, [0x42428c08]
 42428b84:	e5922008 	ldr	r2, [r2, #8]
 42428b88:	e5922000 	ldr	r2, [r2]
 42428b8c:	e5d20000 	ldrb	r0, [r2]
 42428b90:	ebffc7ff 	bl	0x4241ab94
 42428b94:	e3500000 	cmp	r0, #0
 42428b98:	0a00000d 	beq	0x42428bd4
-42428b9c:	e59f0064 	ldr	r0, [pc, #100]	; 0x42428c08
+42428b9c:	e59f0064 	ldr	r0, [0x42428c08]
 42428ba0:	e5900008 	ldr	r0, [r0, #8]
 42428ba4:	e5900000 	ldr	r0, [r0]
 42428ba8:	e5d01000 	ldrb	r1, [r0]
@@ -33966,7 +33967,7 @@ Disassembly of section .data:
 424296a0:	ebffd76b 	bl	0x4241f454
 424296a4:	e3500000 	cmp	r0, #0
 424296a8:	0a000003 	beq	0x424296bc
-424296ac:	e59f0208 	ldr	r0, [pc, #520]	; 0x424298bc
+424296ac:	e59f0208 	ldr	r0, [0x424298bc]
 424296b0:	ebffc847 	bl	0x4241b7d4
 424296b4:	e3e00000 	mvn	r0, #0
 424296b8:	eaffff48 	b	0x424293e0
@@ -34112,25 +34113,25 @@ Disassembly of section .data:
 424298e8:	e1a00001 	mov	r0, r1
 424298ec:	e121f001 	msr	CPSR_c, r1
 424298f0:	e12fff1e 	bx	lr
-424298f4:	e59f1de4 	ldr	r1, [pc, #3556]	; 0x4242a6e0
+424298f4:	e59f1de4 	ldr	r1, [0x4242a6e0]
 424298f8:	e5911000 	ldr	r1, [r1]
 424298fc:	e5910000 	ldr	r0, [r1]
 42429900:	e7e11950 	ubfx	r1, r0, #18, #2
 42429904:	e3510001 	cmp	r1, #1
 42429908:	9a000003 	bls	0x4242991c
 4242990c:	e3800601 	orr	r0, r0, #0x100000
-42429910:	e59f1dc8 	ldr	r1, [pc, #3528]	; 0x4242a6e0
+42429910:	e59f1dc8 	ldr	r1, [0x4242a6e0]
 42429914:	e5911000 	ldr	r1, [r1]
 42429918:	e5810000 	str	r0, [r1]
 4242991c:	e12fff1e 	bx	lr
-42429920:	e59f1db8 	ldr	r1, [pc, #3512]	; 0x4242a6e0
+42429920:	e59f1db8 	ldr	r1, [0x4242a6e0]
 42429924:	e5911000 	ldr	r1, [r1]
 42429928:	e5910000 	ldr	r0, [r1]
 4242992c:	e7e11950 	ubfx	r1, r0, #18, #2
 42429930:	e3510001 	cmp	r1, #1
 42429934:	9a000003 	bls	0x42429948
 42429938:	e3c00601 	bic	r0, r0, #0x100000
-4242993c:	e59f1d9c 	ldr	r1, [pc, #3484]	; 0x4242a6e0
+4242993c:	e59f1d9c 	ldr	r1, [0x4242a6e0]
 42429940:	e5911000 	ldr	r1, [r1]
 42429944:	e5810000 	str	r0, [r1]
 42429948:	e12fff1e 	bx	lr
@@ -34139,7 +34140,7 @@ Disassembly of section .data:
 42429954:	e1b00001 	movs	r0, r1
 42429958:	e2411001 	sub	r1, r1, #1
 4242995c:	0a000004 	beq	0x42429974
-42429960:	e59f0d78 	ldr	r0, [pc, #3448]	; 0x4242a6e0
+42429960:	e59f0d78 	ldr	r0, [0x4242a6e0]
 42429964:	e5900000 	ldr	r0, [r0]
 42429968:	e5900004 	ldr	r0, [r0, #4]
 4242996c:	e3100008 	tst	r0, #8
@@ -34155,7 +34156,7 @@ Disassembly of section .data:
 42429994:	e1b00001 	movs	r0, r1
 42429998:	e2411001 	sub	r1, r1, #1
 4242999c:	0a000004 	beq	0x424299b4
-424299a0:	e59f0d38 	ldr	r0, [pc, #3384]	; 0x4242a6e0
+424299a0:	e59f0d38 	ldr	r0, [0x4242a6e0]
 424299a4:	e5900000 	ldr	r0, [r0]
 424299a8:	e5900004 	ldr	r0, [r0, #4]
 424299ac:	e3100002 	tst	r0, #2
@@ -34164,11 +34165,11 @@ Disassembly of section .data:
 424299b8:	ca000001 	bgt	0x424299c4
 424299bc:	e3e0000d 	mvn	r0, #13
 424299c0:	e12fff1e 	bx	lr
-424299c4:	e59f0d14 	ldr	r0, [pc, #3348]	; 0x4242a6e0
+424299c4:	e59f0d14 	ldr	r0, [0x4242a6e0]
 424299c8:	e5900000 	ldr	r0, [r0]
 424299cc:	e5900004 	ldr	r0, [r0, #4]
 424299d0:	e2000002 	and	r0, r0, #2
-424299d4:	e59f2d04 	ldr	r2, [pc, #3332]	; 0x4242a6e0
+424299d4:	e59f2d04 	ldr	r2, [0x4242a6e0]
 424299d8:	e5922000 	ldr	r2, [r2]
 424299dc:	e5820004 	str	r0, [r2, #4]
 424299e0:	e3a00000 	mov	r0, #0
@@ -34205,7 +34206,7 @@ Disassembly of section .data:
 42429a5c:	e3a00000 	mov	r0, #0
 42429a60:	e58d0024 	str	r0, [sp, #36]	; 0x24
 42429a64:	e58d0028 	str	r0, [sp, #40]	; 0x28
-42429a68:	e59f0c74 	ldr	r0, [pc, #3188]	; 0x4242a6e4
+42429a68:	e59f0c74 	ldr	r0, [0x4242a6e4]
 42429a6c:	e58d002c 	str	r0, [sp, #44]	; 0x2c
 42429a70:	ea000018 	b	0x42429ad8
 42429a74:	e3a00003 	mov	r0, #3
@@ -34231,16 +34232,16 @@ Disassembly of section .data:
 42429ac4:	e3a00000 	mov	r0, #0
 42429ac8:	e58d0024 	str	r0, [sp, #36]	; 0x24
 42429acc:	e58d0028 	str	r0, [sp, #40]	; 0x28
-42429ad0:	e59f0c0c 	ldr	r0, [pc, #3084]	; 0x4242a6e4
+42429ad0:	e59f0c0c 	ldr	r0, [0x4242a6e4]
 42429ad4:	e58d002c 	str	r0, [sp, #44]	; 0x2c
 42429ad8:	e28d1004 	add	r1, sp, #4
-42429adc:	e59f0c04 	ldr	r0, [pc, #3076]	; 0x4242a6e8
+42429adc:	e59f0c04 	ldr	r0, [0x4242a6e8]
 42429ae0:	e5900000 	ldr	r0, [r0]
 42429ae4:	ebffc672 	bl	0x4241b4b4
 42429ae8:	e1a03007 	mov	r3, r7
 42429aec:	e1a02006 	mov	r2, r6
 42429af0:	e1a01005 	mov	r1, r5
-42429af4:	e59f0bec 	ldr	r0, [pc, #3052]	; 0x4242a6e8
+42429af4:	e59f0bec 	ldr	r0, [0x4242a6e8]
 42429af8:	e5900000 	ldr	r0, [r0]
 42429afc:	ebffc696 	bl	0x4241b55c
 42429b00:	e28dd030 	add	sp, sp, #48	; 0x30
@@ -34251,7 +34252,7 @@ Disassembly of section .data:
 42429b14:	e1b00004 	movs	r0, r4
 42429b18:	e2444001 	sub	r4, r4, #1
 42429b1c:	0a000004 	beq	0x42429b34
-42429b20:	e59f0bc0 	ldr	r0, [pc, #3008]	; 0x4242a6e8
+42429b20:	e59f0bc0 	ldr	r0, [0x4242a6e8]
 42429b24:	e5900000 	ldr	r0, [r0]
 42429b28:	ebffc6ac 	bl	0x4241b5e0
 42429b2c:	e3500000 	cmp	r0, #0
@@ -34263,18 +34264,18 @@ Disassembly of section .data:
 42429b44:	e3a00000 	mov	r0, #0
 42429b48:	eafffffc 	b	0x42429b40
 42429b4c:	e30f1fff 	movw	r1, #65535	; 0xffff
-42429b50:	e59f0b88 	ldr	r0, [pc, #2952]	; 0x4242a6e0
+42429b50:	e59f0b88 	ldr	r0, [0x4242a6e0]
 42429b54:	e5900000 	ldr	r0, [r0]
 42429b58:	e5902000 	ldr	r2, [r0]
 42429b5c:	e3822002 	orr	r2, r2, #2
-42429b60:	e59f0b78 	ldr	r0, [pc, #2936]	; 0x4242a6e0
+42429b60:	e59f0b78 	ldr	r0, [0x4242a6e0]
 42429b64:	e5900000 	ldr	r0, [r0]
 42429b68:	e5802000 	str	r2, [r0]
 42429b6c:	e320f000 	nop	{0}
 42429b70:	e1b00001 	movs	r0, r1
 42429b74:	e2411001 	sub	r1, r1, #1
 42429b78:	0a000004 	beq	0x42429b90
-42429b7c:	e59f0b5c 	ldr	r0, [pc, #2908]	; 0x4242a6e0
+42429b7c:	e59f0b5c 	ldr	r0, [0x4242a6e0]
 42429b80:	e5900000 	ldr	r0, [r0]
 42429b84:	e5900000 	ldr	r0, [r0]
 42429b88:	e3100002 	tst	r0, #2
@@ -34288,7 +34289,7 @@ Disassembly of section .data:
 42429ba8:	e92d407f 	push	{r0, r1, r2, r3, r4, r5, r6, lr}
 42429bac:	e1a01000 	mov	r1, r0
 42429bb0:	e3a04010 	mov	r4, #16
-42429bb4:	e59f0b24 	ldr	r0, [pc, #2852]	; 0x4242a6e0
+42429bb4:	e59f0b24 	ldr	r0, [0x4242a6e0]
 42429bb8:	e5900000 	ldr	r0, [r0]
 42429bbc:	e5900034 	ldr	r0, [r0, #52]	; 0x34
 42429bc0:	e7e33650 	ubfx	r3, r0, #12, #4
@@ -34319,7 +34320,7 @@ Disassembly of section .data:
 42429c24:	e3530008 	cmp	r3, #8
 42429c28:	1a000000 	bne	0x42429c30
 42429c2c:	e3a04040 	mov	r4, #64	; 0x40
-42429c30:	e59f0aa8 	ldr	r0, [pc, #2728]	; 0x4242a6e0
+42429c30:	e59f0aa8 	ldr	r0, [0x4242a6e0]
 42429c34:	e5900000 	ldr	r0, [r0]
 42429c38:	e5900038 	ldr	r0, [r0, #56]	; 0x38
 42429c3c:	e6ff5070 	uxth	r5, r0
@@ -34334,7 +34335,7 @@ Disassembly of section .data:
 42429c60:	e2822001 	add	r2, r2, #1
 42429c64:	e1520001 	cmp	r2, r1
 42429c68:	3afffff6 	bcc	0x42429c48
-42429c6c:	e59f0a6c 	ldr	r0, [pc, #2668]	; 0x4242a6e0
+42429c6c:	e59f0a6c 	ldr	r0, [0x4242a6e0]
 42429c70:	e5900000 	ldr	r0, [r0]
 42429c74:	e5905040 	ldr	r5, [r0, #64]	; 0x40
 42429c78:	e5cd5000 	strb	r5, [sp]
@@ -34344,7 +34345,7 @@ Disassembly of section .data:
 42429c88:	e5cd0002 	strb	r0, [sp, #2]
 42429c8c:	e1a00c25 	lsr	r0, r5, #24
 42429c90:	e5cd0003 	strb	r0, [sp, #3]
-42429c94:	e59f0a44 	ldr	r0, [pc, #2628]	; 0x4242a6e0
+42429c94:	e59f0a44 	ldr	r0, [0x4242a6e0]
 42429c98:	e5900000 	ldr	r0, [r0]
 42429c9c:	e5905044 	ldr	r5, [r0, #68]	; 0x44
 42429ca0:	e5cd5004 	strb	r5, [sp, #4]
@@ -34354,7 +34355,7 @@ Disassembly of section .data:
 42429cb0:	e5cd0006 	strb	r0, [sp, #6]
 42429cb4:	e1a00c25 	lsr	r0, r5, #24
 42429cb8:	e5cd0007 	strb	r0, [sp, #7]
-42429cbc:	e59f0a1c 	ldr	r0, [pc, #2588]	; 0x4242a6e0
+42429cbc:	e59f0a1c 	ldr	r0, [0x4242a6e0]
 42429cc0:	e5900000 	ldr	r0, [r0]
 42429cc4:	e5905048 	ldr	r5, [r0, #72]	; 0x48
 42429cc8:	e5cd5008 	strb	r5, [sp, #8]
@@ -34364,7 +34365,7 @@ Disassembly of section .data:
 42429cd8:	e5cd000a 	strb	r0, [sp, #10]
 42429cdc:	e1a00c25 	lsr	r0, r5, #24
 42429ce0:	e5cd000b 	strb	r0, [sp, #11]
-42429ce4:	e59f09f4 	ldr	r0, [pc, #2548]	; 0x4242a6e0
+42429ce4:	e59f09f4 	ldr	r0, [0x4242a6e0]
 42429ce8:	e5900000 	ldr	r0, [r0]
 42429cec:	e590504c 	ldr	r5, [r0, #76]	; 0x4c
 42429cf0:	e5cd500c 	strb	r5, [sp, #12]
@@ -34387,15 +34388,15 @@ Disassembly of section .data:
 42429d34:	3afffff6 	bcc	0x42429d14
 42429d38:	e3a00000 	mov	r0, #0
 42429d3c:	eaffffc5 	b	0x42429c58
-42429d40:	e59f1998 	ldr	r1, [pc, #2456]	; 0x4242a6e0
+42429d40:	e59f1998 	ldr	r1, [0x4242a6e0]
 42429d44:	e5911000 	ldr	r1, [r1]
 42429d48:	e5910034 	ldr	r0, [r1, #52]	; 0x34
 42429d4c:	e3c00001 	bic	r0, r0, #1
-42429d50:	e59f1988 	ldr	r1, [pc, #2440]	; 0x4242a6e0
+42429d50:	e59f1988 	ldr	r1, [0x4242a6e0]
 42429d54:	e5911000 	ldr	r1, [r1]
 42429d58:	e5810034 	str	r0, [r1, #52]	; 0x34
 42429d5c:	e12fff1e 	bx	lr
-42429d60:	e59f2978 	ldr	r2, [pc, #2424]	; 0x4242a6e0
+42429d60:	e59f2978 	ldr	r2, [0x4242a6e0]
 42429d64:	e5922000 	ldr	r2, [r2]
 42429d68:	e5921034 	ldr	r1, [r2, #52]	; 0x34
 42429d6c:	e3500001 	cmp	r0, #1
@@ -34409,18 +34410,18 @@ Disassembly of section .data:
 42429d8c:	ea000000 	b	0x42429d94
 42429d90:	e3811010 	orr	r1, r1, #16
 42429d94:	e3811001 	orr	r1, r1, #1
-42429d98:	e59f2940 	ldr	r2, [pc, #2368]	; 0x4242a6e0
+42429d98:	e59f2940 	ldr	r2, [0x4242a6e0]
 42429d9c:	e5922000 	ldr	r2, [r2]
 42429da0:	e5821034 	str	r1, [r2, #52]	; 0x34
 42429da4:	e12fff1e 	bx	lr
 42429da8:	e10f1000 	mrs	r1, CPSR
-42429dac:	e59f0938 	ldr	r0, [pc, #2360]	; 0x4242a6ec
+42429dac:	e59f0938 	ldr	r0, [0x4242a6ec]
 42429db0:	e5801000 	str	r1, [r0]
 42429db4:	e3811080 	orr	r1, r1, #0x80
 42429db8:	e121f001 	msr	CPSR_c, r1
 42429dbc:	e3a00000 	mov	r0, #0
 42429dc0:	e12fff1e 	bx	lr
-42429dc4:	e59f0920 	ldr	r0, [pc, #2336]	; 0x4242a6ec
+42429dc4:	e59f0920 	ldr	r0, [0x4242a6ec]
 42429dc8:	e5901000 	ldr	r1, [r0]
 42429dcc:	e121f001 	msr	CPSR_c, r1
 42429dd0:	e3a00000 	mov	r0, #0
@@ -34447,10 +34448,10 @@ Disassembly of section .data:
 42429e24:	e2822001 	add	r2, r2, #1
 42429e28:	e1520001 	cmp	r2, r1
 42429e2c:	3afffff2 	bcc	0x42429dfc
-42429e30:	e59f58a8 	ldr	r5, [pc, #2216]	; 0x4242a6e0
+42429e30:	e59f58a8 	ldr	r5, [0x4242a6e0]
 42429e34:	e5955000 	ldr	r5, [r5]
 42429e38:	e5853014 	str	r3, [r5, #20]
-42429e3c:	e59f589c 	ldr	r5, [pc, #2204]	; 0x4242a6e0
+42429e3c:	e59f589c 	ldr	r5, [0x4242a6e0]
 42429e40:	e5955000 	ldr	r5, [r5]
 42429e44:	e5854018 	str	r4, [r5, #24]
 42429e48:	e8bd8070 	pop	{r4, r5, r6, pc}
@@ -34481,11 +34482,11 @@ Disassembly of section .data:
 42429eac:	e59d0014 	ldr	r0, [sp, #20]
 42429eb0:	e5900010 	ldr	r0, [r0, #16]
 42429eb4:	e58d000c 	str	r0, [sp, #12]
-42429eb8:	e59f0820 	ldr	r0, [pc, #2080]	; 0x4242a6e0
+42429eb8:	e59f0820 	ldr	r0, [0x4242a6e0]
 42429ebc:	e5900000 	ldr	r0, [r0]
 42429ec0:	e5900000 	ldr	r0, [r0]
 42429ec4:	e3800901 	orr	r0, r0, #0x4000
-42429ec8:	e59f1810 	ldr	r1, [pc, #2064]	; 0x4242a6e0
+42429ec8:	e59f1810 	ldr	r1, [0x4242a6e0]
 42429ecc:	e5911000 	ldr	r1, [r1]
 42429ed0:	e5810000 	str	r0, [r1]
 42429ed4:	e3550101 	cmp	r5, #0x40000000
@@ -34495,16 +34496,16 @@ Disassembly of section .data:
 42429ee4:	e3a00000 	mov	r0, #0
 42429ee8:	e3500000 	cmp	r0, #0
 42429eec:	0a000002 	beq	0x42429efc
-42429ef0:	e59f07f8 	ldr	r0, [pc, #2040]	; 0x4242a6f0
+42429ef0:	e59f07f8 	ldr	r0, [0x4242a6f0]
 42429ef4:	e58d0018 	str	r0, [sp, #24]
 42429ef8:	ea000001 	b	0x42429f04
-42429efc:	e59f07f0 	ldr	r0, [pc, #2032]	; 0x4242a6f4
+42429efc:	e59f07f0 	ldr	r0, [0x4242a6f4]
 42429f00:	e58d0018 	str	r0, [sp, #24]
-42429f04:	e59f07ec 	ldr	r0, [pc, #2028]	; 0x4242a6f8
+42429f04:	e59f07ec 	ldr	r0, [0x4242a6f8]
 42429f08:	e5903000 	ldr	r3, [r0]
 42429f0c:	e58d3000 	str	r3, [sp]
 42429f10:	e1a03005 	mov	r3, r5
-42429f14:	e59f07c4 	ldr	r0, [pc, #1988]	; 0x4242a6e0
+42429f14:	e59f07c4 	ldr	r0, [0x4242a6e0]
 42429f18:	e5900000 	ldr	r0, [r0]
 42429f1c:	e2802030 	add	r2, r0, #48	; 0x30
 42429f20:	e3a00000 	mov	r0, #0
@@ -34518,7 +34519,7 @@ Disassembly of section .data:
 42429f40:	e28dd01c 	add	sp, sp, #28
 42429f44:	e8bd8ff0 	pop	{r4, r5, r6, r7, r8, r9, sl, fp, pc}
 42429f48:	e3a00b01 	mov	r0, #0x400
-42429f4c:	e59f178c 	ldr	r1, [pc, #1932]	; 0x4242a6e0
+42429f4c:	e59f178c 	ldr	r1, [0x4242a6e0]
 42429f50:	e5911000 	ldr	r1, [r1]
 42429f54:	e5810020 	str	r0, [r1, #32]
 42429f58:	e3a0b000 	mov	fp, #0
@@ -34531,13 +34532,13 @@ Disassembly of section .data:
 42429f74:	e59d0004 	ldr	r0, [sp, #4]
 42429f78:	e20000ff 	and	r0, r0, #0xff
 42429f7c:	e18bb800 	orr	fp, fp, r0, lsl #16
-42429f80:	e59f0758 	ldr	r0, [pc, #1880]	; 0x4242a6e0
+42429f80:	e59f0758 	ldr	r0, [0x4242a6e0]
 42429f84:	e5900000 	ldr	r0, [r0]
 42429f88:	e580b028 	str	fp, [r0, #40]	; 0x28
-42429f8c:	e59f0764 	ldr	r0, [pc, #1892]	; 0x4242a6f8
+42429f8c:	e59f0764 	ldr	r0, [0x4242a6f8]
 42429f90:	e5900000 	ldr	r0, [r0]
 42429f94:	e1a00520 	lsr	r0, r0, #10
-42429f98:	e59f1740 	ldr	r1, [pc, #1856]	; 0x4242a6e0
+42429f98:	e59f1740 	ldr	r1, [0x4242a6e0]
 42429f9c:	e5911000 	ldr	r1, [r1]
 42429fa0:	e581001c 	str	r0, [r1, #28]
 42429fa4:	e59d2010 	ldr	r2, [sp, #16]
@@ -34555,7 +34556,7 @@ Disassembly of section .data:
 42429fd4:	e38bb301 	orr	fp, fp, #0x4000000
 42429fd8:	e38bb77a 	orr	fp, fp, #0x1e80000
 42429fdc:	e38bb102 	orr	fp, fp, #0x80000000
-42429fe0:	e59f0710 	ldr	r0, [pc, #1808]	; 0x4242a6f8
+42429fe0:	e59f0710 	ldr	r0, [0x4242a6f8]
 42429fe4:	e5900000 	ldr	r0, [r0]
 42429fe8:	e3a01001 	mov	r1, #1
 42429fec:	e1510520 	cmp	r1, r0, lsr #10
@@ -34563,7 +34564,7 @@ Disassembly of section .data:
 42429ff4:	e38bb402 	orr	fp, fp, #0x2000000
 42429ff8:	e3a00001 	mov	r0, #1
 42429ffc:	ebffff57 	bl	0x42429d60
-4242a000:	e59f06d8 	ldr	r0, [pc, #1752]	; 0x4242a6e0
+4242a000:	e59f06d8 	ldr	r0, [0x4242a6e0]
 4242a004:	e5900000 	ldr	r0, [r0]
 4242a008:	e580b024 	str	fp, [r0, #36]	; 0x24
 4242a00c:	ebffc578 	bl	0x4241b5f4
@@ -34578,17 +34579,17 @@ Disassembly of section .data:
 4242a030:	eaffffc2 	b	0x42429f40
 4242a034:	e3a0a000 	mov	sl, #0
 4242a038:	ea000005 	b	0x4242a054
-4242a03c:	e59f169c 	ldr	r1, [pc, #1692]	; 0x4242a6e0
+4242a03c:	e59f169c 	ldr	r1, [0x4242a6e0]
 4242a040:	e5911000 	ldr	r1, [r1]
 4242a044:	e2811050 	add	r1, r1, #80	; 0x50
 4242a048:	e791010a 	ldr	r0, [r1, sl, lsl #2]
 4242a04c:	e786010a 	str	r0, [r6, sl, lsl #2]
 4242a050:	e28aa001 	add	sl, sl, #1
-4242a054:	e59f069c 	ldr	r0, [pc, #1692]	; 0x4242a6f8
+4242a054:	e59f069c 	ldr	r0, [0x4242a6f8]
 4242a058:	e5900000 	ldr	r0, [r0]
 4242a05c:	e15a0520 	cmp	sl, r0, lsr #10
 4242a060:	3afffff5 	bcc	0x4242a03c
-4242a064:	e59f168c 	ldr	r1, [pc, #1676]	; 0x4242a6f8
+4242a064:	e59f168c 	ldr	r1, [0x4242a6f8]
 4242a068:	e5911000 	ldr	r1, [r1]
 4242a06c:	e1a00521 	lsr	r0, r1, #10
 4242a070:	ebfffecc 	bl	0x42429ba8
@@ -34617,11 +34618,11 @@ Disassembly of section .data:
 4242a0cc:	e1a00004 	mov	r0, r4
 4242a0d0:	ebffff5d 	bl	0x42429e4c
 4242a0d4:	e1a09000 	mov	r9, r0
-4242a0d8:	e59f0600 	ldr	r0, [pc, #1536]	; 0x4242a6e0
+4242a0d8:	e59f0600 	ldr	r0, [0x4242a6e0]
 4242a0dc:	e5900000 	ldr	r0, [r0]
 4242a0e0:	e5900000 	ldr	r0, [r0]
 4242a0e4:	e3c00901 	bic	r0, r0, #0x4000
-4242a0e8:	e59f15f0 	ldr	r1, [pc, #1520]	; 0x4242a6e0
+4242a0e8:	e59f15f0 	ldr	r1, [0x4242a6e0]
 4242a0ec:	e5911000 	ldr	r1, [r1]
 4242a0f0:	e5810000 	str	r0, [r1]
 4242a0f4:	ebffff39 	bl	0x42429de0
@@ -34657,20 +34658,20 @@ Disassembly of section .data:
 4242a16c:	e5d70009 	ldrb	r0, [r7, #9]
 4242a170:	e3500000 	cmp	r0, #0
 4242a174:	0a00000b 	beq	0x4242a1a8
-4242a178:	e59f0560 	ldr	r0, [pc, #1376]	; 0x4242a6e0
+4242a178:	e59f0560 	ldr	r0, [0x4242a6e0]
 4242a17c:	e5900000 	ldr	r0, [r0]
 4242a180:	e5900000 	ldr	r0, [r0]
 4242a184:	e3c00901 	bic	r0, r0, #0x4000
-4242a188:	e59f1550 	ldr	r1, [pc, #1360]	; 0x4242a6e0
+4242a188:	e59f1550 	ldr	r1, [0x4242a6e0]
 4242a18c:	e5911000 	ldr	r1, [r1]
 4242a190:	e5810000 	str	r0, [r1]
 4242a194:	e3855602 	orr	r5, r5, #0x200000
-4242a198:	e59f1540 	ldr	r1, [pc, #1344]	; 0x4242a6e0
+4242a198:	e59f1540 	ldr	r1, [0x4242a6e0]
 4242a19c:	e597000c 	ldr	r0, [r7, #12]
 4242a1a0:	e5911000 	ldr	r1, [r1]
 4242a1a4:	e5810020 	str	r0, [r1, #32]
 4242a1a8:	e3855501 	orr	r5, r5, #0x400000
-4242a1ac:	e59f052c 	ldr	r0, [pc, #1324]	; 0x4242a6e0
+4242a1ac:	e59f052c 	ldr	r0, [0x4242a6e0]
 4242a1b0:	e5900000 	ldr	r0, [r0]
 4242a1b4:	e5805024 	str	r5, [r0, #36]	; 0x24
 4242a1b8:	e5977000 	ldr	r7, [r7]
@@ -34679,30 +34680,30 @@ Disassembly of section .data:
 4242a1c4:	e3a00000 	mov	r0, #0
 4242a1c8:	eaffffd5 	b	0x4242a124
 4242a1cc:	e1a02000 	mov	r2, r0
-4242a1d0:	e59f0508 	ldr	r0, [pc, #1288]	; 0x4242a6e0
+4242a1d0:	e59f0508 	ldr	r0, [0x4242a6e0]
 4242a1d4:	e5900000 	ldr	r0, [r0]
 4242a1d8:	e5901034 	ldr	r1, [r0, #52]	; 0x34
 4242a1dc:	e6ff1071 	uxth	r1, r1
 4242a1e0:	e1811802 	orr	r1, r1, r2, lsl #16
-4242a1e4:	e59f04f4 	ldr	r0, [pc, #1268]	; 0x4242a6e0
+4242a1e4:	e59f04f4 	ldr	r0, [0x4242a6e0]
 4242a1e8:	e5900000 	ldr	r0, [r0]
 4242a1ec:	e5801034 	str	r1, [r0, #52]	; 0x34
 4242a1f0:	e3a00000 	mov	r0, #0
 4242a1f4:	e12fff1e 	bx	lr
-4242a1f8:	e59f04e0 	ldr	r0, [pc, #1248]	; 0x4242a6e0
+4242a1f8:	e59f04e0 	ldr	r0, [0x4242a6e0]
 4242a1fc:	e5900000 	ldr	r0, [r0]
 4242a200:	e5901034 	ldr	r1, [r0, #52]	; 0x34
 4242a204:	e3811c02 	orr	r1, r1, #0x200
-4242a208:	e59f04d0 	ldr	r0, [pc, #1232]	; 0x4242a6e0
+4242a208:	e59f04d0 	ldr	r0, [0x4242a6e0]
 4242a20c:	e5900000 	ldr	r0, [r0]
 4242a210:	e5801034 	str	r1, [r0, #52]	; 0x34
 4242a214:	e3a00000 	mov	r0, #0
 4242a218:	e12fff1e 	bx	lr
-4242a21c:	e59f04bc 	ldr	r0, [pc, #1212]	; 0x4242a6e0
+4242a21c:	e59f04bc 	ldr	r0, [0x4242a6e0]
 4242a220:	e5900000 	ldr	r0, [r0]
 4242a224:	e5901034 	ldr	r1, [r0, #52]	; 0x34
 4242a228:	e3c11c02 	bic	r1, r1, #0x200
-4242a22c:	e59f04ac 	ldr	r0, [pc, #1196]	; 0x4242a6e0
+4242a22c:	e59f04ac 	ldr	r0, [0x4242a6e0]
 4242a230:	e5900000 	ldr	r0, [r0]
 4242a234:	e5801034 	str	r1, [r0, #52]	; 0x34
 4242a238:	e3a00000 	mov	r0, #0
@@ -34726,7 +34727,7 @@ Disassembly of section .data:
 4242a280:	e1877000 	orr	r7, r7, r0
 4242a284:	e3a06000 	mov	r6, #0
 4242a288:	ea000005 	b	0x4242a2a4
-4242a28c:	e59f044c 	ldr	r0, [pc, #1100]	; 0x4242a6e0
+4242a28c:	e59f044c 	ldr	r0, [0x4242a6e0]
 4242a290:	e5900000 	ldr	r0, [r0]
 4242a294:	e2800b01 	add	r0, r0, #0x400
 4242a298:	e7d00006 	ldrb	r0, [r0, r6]
@@ -34757,7 +34758,7 @@ Disassembly of section .data:
 4242a2fc:	e1877000 	orr	r7, r7, r0
 4242a300:	e3a06000 	mov	r6, #0
 4242a304:	ea000005 	b	0x4242a320
-4242a308:	e59f03d0 	ldr	r0, [pc, #976]	; 0x4242a6e0
+4242a308:	e59f03d0 	ldr	r0, [0x4242a6e0]
 4242a30c:	e5900000 	ldr	r0, [r0]
 4242a310:	e2800b01 	add	r0, r0, #0x400
 4242a314:	e7d00006 	ldrb	r0, [r0, r6]
@@ -34792,7 +34793,7 @@ Disassembly of section .data:
 4242a388:	eafffff5 	b	0x4242a364
 4242a38c:	ebfffd63 	bl	0x42429920
 4242a390:	ebfffe92 	bl	0x42429de0
-4242a394:	e59f0344 	ldr	r0, [pc, #836]	; 0x4242a6e0
+4242a394:	e59f0344 	ldr	r0, [0x4242a6e0]
 4242a398:	e5900000 	ldr	r0, [r0]
 4242a39c:	e5d00400 	ldrb	r0, [r0, #1024]	; 0x400
 4242a3a0:	eaffffef 	b	0x4242a364
@@ -34815,25 +34816,25 @@ Disassembly of section .data:
 4242a3e4:	e1a00005 	mov	r0, r5
 4242a3e8:	eafffff7 	b	0x4242a3cc
 4242a3ec:	e1a02000 	mov	r2, r0
-4242a3f0:	e59f02e8 	ldr	r0, [pc, #744]	; 0x4242a6e0
+4242a3f0:	e59f02e8 	ldr	r0, [0x4242a6e0]
 4242a3f4:	e5900000 	ldr	r0, [r0]
 4242a3f8:	e5901000 	ldr	r1, [r0]
 4242a3fc:	e3c11407 	bic	r1, r1, #0x7000000
 4242a400:	e2020007 	and	r0, r2, #7
 4242a404:	e1811c00 	orr	r1, r1, r0, lsl #24
-4242a408:	e59f02d0 	ldr	r0, [pc, #720]	; 0x4242a6e0
+4242a408:	e59f02d0 	ldr	r0, [0x4242a6e0]
 4242a40c:	e5900000 	ldr	r0, [r0]
 4242a410:	e5801000 	str	r1, [r0]
 4242a414:	e3a00000 	mov	r0, #0
 4242a418:	e12fff1e 	bx	lr
 4242a41c:	e1a02000 	mov	r2, r0
-4242a420:	e59f02b8 	ldr	r0, [pc, #696]	; 0x4242a6e0
+4242a420:	e59f02b8 	ldr	r0, [0x4242a6e0]
 4242a424:	e5900000 	ldr	r0, [r0]
 4242a428:	e5901000 	ldr	r1, [r0]
 4242a42c:	e3c11008 	bic	r1, r1, #8
 4242a430:	e2020001 	and	r0, r2, #1
 4242a434:	e1811180 	orr	r1, r1, r0, lsl #3
-4242a438:	e59f02a0 	ldr	r0, [pc, #672]	; 0x4242a6e0
+4242a438:	e59f02a0 	ldr	r0, [0x4242a6e0]
 4242a43c:	e5900000 	ldr	r0, [r0]
 4242a440:	e5801000 	str	r1, [r0]
 4242a444:	e3a00000 	mov	r0, #0
@@ -34846,7 +34847,7 @@ Disassembly of section .data:
 4242a460:	e12fff1e 	bx	lr
 4242a464:	e92d4010 	push	{r4, lr}
 4242a468:	e1a01000 	mov	r1, r0
-4242a46c:	e59f326c 	ldr	r3, [pc, #620]	; 0x4242a6e0
+4242a46c:	e59f326c 	ldr	r3, [0x4242a6e0]
 4242a470:	e5933000 	ldr	r3, [r3]
 4242a474:	e5932004 	ldr	r2, [r3, #4]
 4242a478:	e2013003 	and	r3, r1, #3
@@ -34862,7 +34863,7 @@ Disassembly of section .data:
 4242a4a0:	e1a04000 	mov	r4, r0
 4242a4a4:	e5d40004 	ldrb	r0, [r4, #4]
 4242a4a8:	e1a00480 	lsl	r0, r0, #9
-4242a4ac:	e59f1244 	ldr	r1, [pc, #580]	; 0x4242a6f8
+4242a4ac:	e59f1244 	ldr	r1, [0x4242a6f8]
 4242a4b0:	e5810000 	str	r0, [r1]
 4242a4b4:	ebfffda4 	bl	0x42429b4c
 4242a4b8:	e3a05000 	mov	r5, #0
@@ -34906,7 +34907,7 @@ Disassembly of section .data:
 4242a550:	e1855900 	orr	r5, r5, r0, lsl #18
 4242a554:	e5d40007 	ldrb	r0, [r4, #7]
 4242a558:	e1855f80 	orr	r5, r5, r0, lsl #31
-4242a55c:	e59f017c 	ldr	r0, [pc, #380]	; 0x4242a6e0
+4242a55c:	e59f017c 	ldr	r0, [0x4242a6e0]
 4242a560:	e5900000 	ldr	r0, [r0]
 4242a564:	e5805000 	str	r5, [r0]
 4242a568:	e3a05000 	mov	r5, #0
@@ -34930,29 +34931,29 @@ Disassembly of section .data:
 4242a5b0:	1a000001 	bne	0x4242a5bc
 4242a5b4:	e385501f 	orr	r5, r5, #31
 4242a5b8:	e3855c02 	orr	r5, r5, #0x200
-4242a5bc:	e59f011c 	ldr	r0, [pc, #284]	; 0x4242a6e0
+4242a5bc:	e59f011c 	ldr	r0, [0x4242a6e0]
 4242a5c0:	e5900000 	ldr	r0, [r0]
 4242a5c4:	e580500c 	str	r5, [r0, #12]
 4242a5c8:	e3a000ff 	mov	r0, #255	; 0xff
-4242a5cc:	e59f110c 	ldr	r1, [pc, #268]	; 0x4242a6e0
+4242a5cc:	e59f110c 	ldr	r1, [0x4242a6e0]
 4242a5d0:	e5911000 	ldr	r1, [r1]
 4242a5d4:	e5810010 	str	r0, [r1, #16]
-4242a5d8:	e59f0118 	ldr	r0, [pc, #280]	; 0x4242a6f8
+4242a5d8:	e59f0118 	ldr	r0, [0x4242a6f8]
 4242a5dc:	e5900000 	ldr	r0, [r0]
-4242a5e0:	e59f10f8 	ldr	r1, [pc, #248]	; 0x4242a6e0
+4242a5e0:	e59f10f8 	ldr	r1, [0x4242a6e0]
 4242a5e4:	e5911000 	ldr	r1, [r1]
 4242a5e8:	e58100a0 	str	r0, [r1, #160]	; 0xa0
 4242a5ec:	e3a00000 	mov	r0, #0
 4242a5f0:	e8bd8030 	pop	{r4, r5, pc}
 4242a5f4:	e1a02000 	mov	r2, r0
-4242a5f8:	e59f00e0 	ldr	r0, [pc, #224]	; 0x4242a6e0
+4242a5f8:	e59f00e0 	ldr	r0, [0x4242a6e0]
 4242a5fc:	e5900000 	ldr	r0, [r0]
 4242a600:	e5901034 	ldr	r1, [r0, #52]	; 0x34
 4242a604:	e3c11a0f 	bic	r1, r1, #0xf000
 4242a608:	e3a00a0f 	mov	r0, #0xf000
 4242a60c:	e0000602 	and	r0, r0, r2, lsl #12
 4242a610:	e1811000 	orr	r1, r1, r0
-4242a614:	e59f00c4 	ldr	r0, [pc, #196]	; 0x4242a6e0
+4242a614:	e59f00c4 	ldr	r0, [0x4242a6e0]
 4242a618:	e5900000 	ldr	r0, [r0]
 4242a61c:	e5801034 	str	r1, [r0, #52]	; 0x34
 4242a620:	e3a00000 	mov	r0, #0
@@ -34970,7 +34971,7 @@ Disassembly of section .data:
 4242a650:	e3a01a01 	mov	r1, #0x1000
 4242a654:	e59f00a0 	ldr	r0, =0x01c03000	; 0x4242a6fc
 4242a658:	ebffc45c 	bl	0x4241b7d0
-4242a65c:	e59f107c 	ldr	r1, [pc, #124]	; 0x4242a6e0
+4242a65c:	e59f107c 	ldr	r1, [0x4242a6e0]
 4242a660:	e5810000 	str	r0, [r1]
 4242a664:	e3a00000 	mov	r0, #0
 4242a668:	ebffffe1 	bl	0x4242a5f4
@@ -34979,7 +34980,7 @@ Disassembly of section .data:
 4242a674:	e1a05000 	mov	r5, r0
 4242a678:	e3a00001 	mov	r0, #1
 4242a67c:	ebffc380 	bl	0x4241b484
-4242a680:	e59f1060 	ldr	r1, [pc, #96]	; 0x4242a6e8
+4242a680:	e59f1060 	ldr	r1, [0x4242a6e8]
 4242a684:	e5810000 	str	r0, [r1]
 4242a688:	e2810000 	add	r0, r1, #0
 4242a68c:	e5900000 	ldr	r0, [r0]
@@ -34990,14 +34991,14 @@ Disassembly of section .data:
 4242a6a0:	e1a00005 	mov	r0, r5
 4242a6a4:	eaffffe8 	b	0x4242a64c
 4242a6a8:	e92d4010 	push	{r4, lr}
-4242a6ac:	e59f002c 	ldr	r0, [pc, #44]	; 0x4242a6e0
+4242a6ac:	e59f002c 	ldr	r0, [0x4242a6e0]
 4242a6b0:	e5900000 	ldr	r0, [r0]
 4242a6b4:	e5904000 	ldr	r4, [r0]
 4242a6b8:	e3c44001 	bic	r4, r4, #1
-4242a6bc:	e59f001c 	ldr	r0, [pc, #28]	; 0x4242a6e0
+4242a6bc:	e59f001c 	ldr	r0, [0x4242a6e0]
 4242a6c0:	e5900000 	ldr	r0, [r0]
 4242a6c4:	e5804000 	str	r4, [r0]
-4242a6c8:	e59f0018 	ldr	r0, [pc, #24]	; 0x4242a6e8
+4242a6c8:	e59f0018 	ldr	r0, [0x4242a6e8]
 4242a6cc:	e5900000 	ldr	r0, [r0]
 4242a6d0:	ebffc370 	bl	0x4241b498
 4242a6d4:	ebffc426 	bl	0x4241b774
@@ -35018,17 +35019,17 @@ Disassembly of section .data:
 4242a710:	e3a09000 	mov	r9, #0
 4242a714:	e3a0a000 	mov	sl, #0
 4242a718:	ebfffdae 	bl	0x42429dd8
-4242a71c:	e59f0ab8 	ldr	r0, [pc, #2744]	; 0x4242b1dc
+4242a71c:	e59f0ab8 	ldr	r0, [0x4242b1dc]
 4242a720:	e5d00000 	ldrb	r0, [r0]
 4242a724:	e3500010 	cmp	r0, #16
 4242a728:	aa000001 	bge	0x4242a734
 4242a72c:	e3a09037 	mov	r9, #55	; 0x37
 4242a730:	ea00000a 	b	0x4242a760
-4242a734:	e59f0aa0 	ldr	r0, [pc, #2720]	; 0x4242b1dc
+4242a734:	e59f0aa0 	ldr	r0, [0x4242b1dc]
 4242a738:	e5d00000 	ldrb	r0, [r0]
 4242a73c:	e3500010 	cmp	r0, #16
 4242a740:	ba000006 	blt	0x4242a760
-4242a744:	e59f0a90 	ldr	r0, [pc, #2704]	; 0x4242b1dc
+4242a744:	e59f0a90 	ldr	r0, [0x4242b1dc]
 4242a748:	e5d00000 	ldrb	r0, [r0]
 4242a74c:	e3500020 	cmp	r0, #32
 4242a750:	aa000002 	bge	0x4242a760
@@ -35078,7 +35079,7 @@ Disassembly of section .data:
 4242a800:	e3a0a0ff 	mov	sl, #255	; 0xff
 4242a804:	e3a0b000 	mov	fp, #0
 4242a808:	ebfffd72 	bl	0x42429dd8
-4242a80c:	e59f09c8 	ldr	r0, [pc, #2504]	; 0x4242b1dc
+4242a80c:	e59f09c8 	ldr	r0, [0x4242b1dc]
 4242a810:	e5d00000 	ldrb	r0, [r0]
 4242a814:	e3500010 	cmp	r0, #16
 4242a818:	aa000003 	bge	0x4242a82c
@@ -35086,11 +35087,11 @@ Disassembly of section .data:
 4242a820:	e3a08016 	mov	r8, #22
 4242a824:	e320f000 	nop	{0}
 4242a828:	ea000018 	b	0x4242a890
-4242a82c:	e59f09a8 	ldr	r0, [pc, #2472]	; 0x4242b1dc
+4242a82c:	e59f09a8 	ldr	r0, [0x4242b1dc]
 4242a830:	e5d00000 	ldrb	r0, [r0]
 4242a834:	e3500010 	cmp	r0, #16
 4242a838:	ba000008 	blt	0x4242a860
-4242a83c:	e59f0998 	ldr	r0, [pc, #2456]	; 0x4242b1dc
+4242a83c:	e59f0998 	ldr	r0, [0x4242b1dc]
 4242a840:	e5d00000 	ldrb	r0, [r0]
 4242a844:	e3500020 	cmp	r0, #32
 4242a848:	aa000004 	bge	0x4242a860
@@ -35099,11 +35100,11 @@ Disassembly of section .data:
 4242a854:	e3a09026 	mov	r9, #38	; 0x26
 4242a858:	e3a0a05d 	mov	sl, #93	; 0x5d
 4242a85c:	ea00000b 	b	0x4242a890
-4242a860:	e59f0974 	ldr	r0, [pc, #2420]	; 0x4242b1dc
+4242a860:	e59f0974 	ldr	r0, [0x4242b1dc]
 4242a864:	e5d00000 	ldrb	r0, [r0]
 4242a868:	e3500020 	cmp	r0, #32
 4242a86c:	ba000007 	blt	0x4242a890
-4242a870:	e59f0964 	ldr	r0, [pc, #2404]	; 0x4242b1dc
+4242a870:	e59f0964 	ldr	r0, [0x4242b1dc]
 4242a874:	e5d00000 	ldrb	r0, [r0]
 4242a878:	e3500030 	cmp	r0, #48	; 0x30
 4242a87c:	aa000003 	bge	0x4242a890
@@ -35113,11 +35114,11 @@ Disassembly of section .data:
 4242a88c:	e3a0a0ff 	mov	sl, #255	; 0xff
 4242a890:	e3a06000 	mov	r6, #0
 4242a894:	ea000053 	b	0x4242a9e8
-4242a898:	e59f093c 	ldr	r0, [pc, #2364]	; 0x4242b1dc
+4242a898:	e59f093c 	ldr	r0, [0x4242b1dc]
 4242a89c:	e5d00000 	ldrb	r0, [r0]
 4242a8a0:	e3500020 	cmp	r0, #32
 4242a8a4:	ba00001e 	blt	0x4242a924
-4242a8a8:	e59f092c 	ldr	r0, [pc, #2348]	; 0x4242b1dc
+4242a8a8:	e59f092c 	ldr	r0, [0x4242b1dc]
 4242a8ac:	e5d00000 	ldrb	r0, [r0]
 4242a8b0:	e3500030 	cmp	r0, #48	; 0x30
 4242a8b4:	aa00001a 	bge	0x4242a924
@@ -35242,16 +35243,16 @@ Disassembly of section .data:
 4242aa90:	e1a0000b 	mov	r0, fp
 4242aa94:	eaffffbd 	b	0x4242a990
 4242aa98:	e92d403c 	push	{r2, r3, r4, r5, lr}
-4242aa9c:	e59f173c 	ldr	r1, [pc, #1852]	; 0x4242b1e0
+4242aa9c:	e59f173c 	ldr	r1, [0x4242b1e0]
 4242aaa0:	e1c100d0 	ldrd	r0, [r1]
 4242aaa4:	e1cd00f0 	strd	r0, [sp]
 4242aaa8:	e3a05000 	mov	r5, #0
 4242aaac:	ebfffcc9 	bl	0x42429dd8
-4242aab0:	e59f0724 	ldr	r0, [pc, #1828]	; 0x4242b1dc
+4242aab0:	e59f0724 	ldr	r0, [0x4242b1dc]
 4242aab4:	e5d00000 	ldrb	r0, [r0]
 4242aab8:	e3500010 	cmp	r0, #16
 4242aabc:	ba000016 	blt	0x4242ab1c
-4242aac0:	e59f0714 	ldr	r0, [pc, #1812]	; 0x4242b1dc
+4242aac0:	e59f0714 	ldr	r0, [0x4242b1dc]
 4242aac4:	e5d00000 	ldrb	r0, [r0]
 4242aac8:	e3500020 	cmp	r0, #32
 4242aacc:	aa000012 	bge	0x4242ab1c
@@ -35282,34 +35283,34 @@ Disassembly of section .data:
 4242ab30:	e1a05001 	mov	r5, r1
 4242ab34:	e1a0a002 	mov	sl, r2
 4242ab38:	e3a07000 	mov	r7, #0
-4242ab3c:	e59f06a0 	ldr	r0, [pc, #1696]	; 0x4242b1e4
+4242ab3c:	e59f06a0 	ldr	r0, [0x4242b1e4]
 4242ab40:	e5d00000 	ldrb	r0, [r0]
 4242ab44:	e1550000 	cmp	r5, r0
 4242ab48:	9a000001 	bls	0x4242ab54
 4242ab4c:	e3e00000 	mvn	r0, #0
 4242ab50:	e8bd8ff8 	pop	{r3, r4, r5, r6, r7, r8, r9, sl, fp, pc}
-4242ab54:	e59f0680 	ldr	r0, [pc, #1664]	; 0x4242b1dc
+4242ab54:	e59f0680 	ldr	r0, [0x4242b1dc]
 4242ab58:	e5d00000 	ldrb	r0, [r0]
 4242ab5c:	e3500010 	cmp	r0, #16
 4242ab60:	aa00003f 	bge	0x4242ac64
 4242ab64:	e3550000 	cmp	r5, #0
 4242ab68:	1a000007 	bne	0x4242ab8c
-4242ab6c:	e59f1674 	ldr	r1, [pc, #1652]	; 0x4242b1e8
+4242ab6c:	e59f1674 	ldr	r1, [0x4242b1e8]
 4242ab70:	e0810104 	add	r0, r1, r4, lsl #2
-4242ab74:	e59f1670 	ldr	r1, [pc, #1648]	; 0x4242b1ec
+4242ab74:	e59f1670 	ldr	r1, [0x4242b1ec]
 4242ab78:	e5d12000 	ldrb	r2, [r1]
-4242ab7c:	e59f166c 	ldr	r1, [pc, #1644]	; 0x4242b1f0
+4242ab7c:	e59f166c 	ldr	r1, [0x4242b1f0]
 4242ab80:	ebffff17 	bl	0x4242a7e4
 4242ab84:	e1a07000 	mov	r7, r0
 4242ab88:	ea000074 	b	0x4242ad60
 4242ab8c:	e3a06000 	mov	r6, #0
 4242ab90:	ea000014 	b	0x4242abe8
 4242ab94:	e2450001 	sub	r0, r5, #1
-4242ab98:	e59f1654 	ldr	r1, [pc, #1620]	; 0x4242b1f4
+4242ab98:	e59f1654 	ldr	r1, [0x4242b1f4]
 4242ab9c:	e0810180 	add	r0, r1, r0, lsl #3
 4242aba0:	e0800086 	add	r0, r0, r6, lsl #1
 4242aba4:	e1d000b0 	ldrh	r0, [r0]
-4242aba8:	e59f1638 	ldr	r1, [pc, #1592]	; 0x4242b1e8
+4242aba8:	e59f1638 	ldr	r1, [0x4242b1e8]
 4242abac:	e0811104 	add	r1, r1, r4, lsl #2
 4242abb0:	e7d11006 	ldrb	r1, [r1, r6]
 4242abb4:	e0800001 	add	r0, r0, r1
@@ -35325,15 +35326,15 @@ Disassembly of section .data:
 4242abdc:	e20880ff 	and	r8, r8, #0xff
 4242abe0:	e7cd8006 	strb	r8, [sp, r6]
 4242abe4:	e2866001 	add	r6, r6, #1
-4242abe8:	e59f05fc 	ldr	r0, [pc, #1532]	; 0x4242b1ec
+4242abe8:	e59f05fc 	ldr	r0, [0x4242b1ec]
 4242abec:	e5d00000 	ldrb	r0, [r0]
 4242abf0:	e1560000 	cmp	r6, r0
 4242abf4:	3affffe6 	bcc	0x4242ab94
-4242abf8:	e59f05dc 	ldr	r0, [pc, #1500]	; 0x4242b1dc
+4242abf8:	e59f05dc 	ldr	r0, [0x4242b1dc]
 4242abfc:	e5d00000 	ldrb	r0, [r0]
 4242ac00:	e3500000 	cmp	r0, #0
 4242ac04:	0a000003 	beq	0x4242ac18
-4242ac08:	e59f05cc 	ldr	r0, [pc, #1484]	; 0x4242b1dc
+4242ac08:	e59f05cc 	ldr	r0, [0x4242b1dc]
 4242ac0c:	e5d00000 	ldrb	r0, [r0]
 4242ac10:	e3500001 	cmp	r0, #1
 4242ac14:	1a00000b 	bne	0x4242ac48
@@ -35349,18 +35350,18 @@ Disassembly of section .data:
 4242ac3c:	1a000001 	bne	0x4242ac48
 4242ac40:	e3a00000 	mov	r0, #0
 4242ac44:	e5cd0001 	strb	r0, [sp, #1]
-4242ac48:	e59f059c 	ldr	r0, [pc, #1436]	; 0x4242b1ec
+4242ac48:	e59f059c 	ldr	r0, [0x4242b1ec]
 4242ac4c:	e5d02000 	ldrb	r2, [r0]
-4242ac50:	e59f1598 	ldr	r1, [pc, #1432]	; 0x4242b1f0
+4242ac50:	e59f1598 	ldr	r1, [0x4242b1f0]
 4242ac54:	e1a0000d 	mov	r0, sp
 4242ac58:	ebfffee1 	bl	0x4242a7e4
 4242ac5c:	e1a07000 	mov	r7, r0
 4242ac60:	ea00003e 	b	0x4242ad60
-4242ac64:	e59f0570 	ldr	r0, [pc, #1392]	; 0x4242b1dc
+4242ac64:	e59f0570 	ldr	r0, [0x4242b1dc]
 4242ac68:	e5d00000 	ldrb	r0, [r0]
 4242ac6c:	e3500010 	cmp	r0, #16
 4242ac70:	ba000020 	blt	0x4242acf8
-4242ac74:	e59f0560 	ldr	r0, [pc, #1376]	; 0x4242b1dc
+4242ac74:	e59f0560 	ldr	r0, [0x4242b1dc]
 4242ac78:	e5d00000 	ldrb	r0, [r0]
 4242ac7c:	e3500020 	cmp	r0, #32
 4242ac80:	aa00001c 	bge	0x4242acf8
@@ -35374,48 +35375,48 @@ Disassembly of section .data:
 4242aca0:	e3a06000 	mov	r6, #0
 4242aca4:	ea000006 	b	0x4242acc4
 4242aca8:	e2450001 	sub	r0, r5, #1
-4242acac:	e59f1540 	ldr	r1, [pc, #1344]	; 0x4242b1f4
+4242acac:	e59f1540 	ldr	r1, [0x4242b1f4]
 4242acb0:	e0810180 	add	r0, r1, r0, lsl #3
 4242acb4:	e0800086 	add	r0, r0, r6, lsl #1
 4242acb8:	e1d000b0 	ldrh	r0, [r0]
 4242acbc:	e7cd0006 	strb	r0, [sp, r6]
 4242acc0:	e2866001 	add	r6, r6, #1
-4242acc4:	e59f0520 	ldr	r0, [pc, #1312]	; 0x4242b1ec
+4242acc4:	e59f0520 	ldr	r0, [0x4242b1ec]
 4242acc8:	e5d00000 	ldrb	r0, [r0]
 4242accc:	e1560000 	cmp	r6, r0
 4242acd0:	3afffff4 	bcc	0x4242aca8
-4242acd4:	e59f0510 	ldr	r0, [pc, #1296]	; 0x4242b1ec
+4242acd4:	e59f0510 	ldr	r0, [0x4242b1ec]
 4242acd8:	e5d02000 	ldrb	r2, [r0]
-4242acdc:	e59f150c 	ldr	r1, [pc, #1292]	; 0x4242b1f0
+4242acdc:	e59f150c 	ldr	r1, [0x4242b1f0]
 4242ace0:	e1a0000d 	mov	r0, sp
 4242ace4:	ebfffebe 	bl	0x4242a7e4
 4242ace8:	e1a07000 	mov	r7, r0
 4242acec:	e1a00009 	mov	r0, r9
 4242acf0:	ebffc260 	bl	0x4241b678
 4242acf4:	ea000019 	b	0x4242ad60
-4242acf8:	e59f04dc 	ldr	r0, [pc, #1244]	; 0x4242b1dc
+4242acf8:	e59f04dc 	ldr	r0, [0x4242b1dc]
 4242acfc:	e5d00000 	ldrb	r0, [r0]
 4242ad00:	e3500020 	cmp	r0, #32
 4242ad04:	ba000015 	blt	0x4242ad60
-4242ad08:	e59f04cc 	ldr	r0, [pc, #1228]	; 0x4242b1dc
+4242ad08:	e59f04cc 	ldr	r0, [0x4242b1dc]
 4242ad0c:	e5d00000 	ldrb	r0, [r0]
 4242ad10:	e3500030 	cmp	r0, #48	; 0x30
 4242ad14:	aa000011 	bge	0x4242ad60
 4242ad18:	e3a06000 	mov	r6, #0
 4242ad1c:	ea000005 	b	0x4242ad38
-4242ad20:	e59f04cc 	ldr	r0, [pc, #1228]	; 0x4242b1f4
+4242ad20:	e59f04cc 	ldr	r0, [0x4242b1f4]
 4242ad24:	e0800185 	add	r0, r0, r5, lsl #3
 4242ad28:	e0800086 	add	r0, r0, r6, lsl #1
 4242ad2c:	e1d000b0 	ldrh	r0, [r0]
 4242ad30:	e7cd0006 	strb	r0, [sp, r6]
 4242ad34:	e2866001 	add	r6, r6, #1
-4242ad38:	e59f04ac 	ldr	r0, [pc, #1196]	; 0x4242b1ec
+4242ad38:	e59f04ac 	ldr	r0, [0x4242b1ec]
 4242ad3c:	e5d00000 	ldrb	r0, [r0]
 4242ad40:	e1560000 	cmp	r6, r0
 4242ad44:	3afffff5 	bcc	0x4242ad20
-4242ad48:	e59f049c 	ldr	r0, [pc, #1180]	; 0x4242b1ec
+4242ad48:	e59f049c 	ldr	r0, [0x4242b1ec]
 4242ad4c:	e5d02000 	ldrb	r2, [r0]
-4242ad50:	e59f1498 	ldr	r1, [pc, #1176]	; 0x4242b1f0
+4242ad50:	e59f1498 	ldr	r1, [0x4242b1f0]
 4242ad54:	e1a0000d 	mov	r0, sp
 4242ad58:	ebfffea1 	bl	0x4242a7e4
 4242ad5c:	e1a07000 	mov	r7, r0
@@ -35425,14 +35426,14 @@ Disassembly of section .data:
 4242ad6c:	e24dd0e8 	sub	sp, sp, #232	; 0xe8
 4242ad70:	e1a04000 	mov	r4, r0
 4242ad74:	e3a02030 	mov	r2, #48	; 0x30
-4242ad78:	e59f1478 	ldr	r1, [pc, #1144]	; 0x4242b1f8
+4242ad78:	e59f1478 	ldr	r1, [0x4242b1f8]
 4242ad7c:	e28d00b8 	add	r0, sp, #184	; 0xb8
 4242ad80:	eb000726 	bl	0x4242ca20
 4242ad84:	e3a02030 	mov	r2, #48	; 0x30
-4242ad88:	e59f146c 	ldr	r1, [pc, #1132]	; 0x4242b1fc
+4242ad88:	e59f146c 	ldr	r1, [0x4242b1fc]
 4242ad8c:	e28d0088 	add	r0, sp, #136	; 0x88
 4242ad90:	eb000722 	bl	0x4242ca20
-4242ad94:	e59f1464 	ldr	r1, [pc, #1124]	; 0x4242b200
+4242ad94:	e59f1464 	ldr	r1, [0x4242b200]
 4242ad98:	e28d007c 	add	r0, sp, #124	; 0x7c
 4242ad9c:	e891100c 	ldm	r1, {r2, r3, ip}
 4242ada0:	e880100c 	stm	r0, {r2, r3, ip}
@@ -35441,19 +35442,19 @@ Disassembly of section .data:
 4242adac:	e28d0004 	add	r0, sp, #4
 4242adb0:	eb00071a 	bl	0x4242ca20
 4242adb4:	e1a00824 	lsr	r0, r4, #16
-4242adb8:	e59f141c 	ldr	r1, [pc, #1052]	; 0x4242b1dc
+4242adb8:	e59f141c 	ldr	r1, [0x4242b1dc]
 4242adbc:	e5c10000 	strb	r0, [r1]
 4242adc0:	e1a00424 	lsr	r0, r4, #8
-4242adc4:	e59f1418 	ldr	r1, [pc, #1048]	; 0x4242b1e4
+4242adc4:	e59f1418 	ldr	r1, [0x4242b1e4]
 4242adc8:	e5c10000 	strb	r0, [r1]
-4242adcc:	e59f1418 	ldr	r1, [pc, #1048]	; 0x4242b1ec
+4242adcc:	e59f1418 	ldr	r1, [0x4242b1ec]
 4242add0:	e5c14000 	strb	r4, [r1]
-4242add4:	e59f0400 	ldr	r0, [pc, #1024]	; 0x4242b1dc
+4242add4:	e59f0400 	ldr	r0, [0x4242b1dc]
 4242add8:	e5d00000 	ldrb	r0, [r0]
 4242addc:	e3500000 	cmp	r0, #0
 4242ade0:	1a00001f 	bne	0x4242ae64
 4242ade4:	e3a000ac 	mov	r0, #172	; 0xac
-4242ade8:	e59f1400 	ldr	r1, [pc, #1024]	; 0x4242b1f0
+4242ade8:	e59f1400 	ldr	r1, [0x4242b1f0]
 4242adec:	e5c10000 	strb	r0, [r1]
 4242adf0:	e3a000ad 	mov	r0, #173	; 0xad
 4242adf4:	e5c10001 	strb	r0, [r1, #1]
@@ -35469,27 +35470,27 @@ Disassembly of section .data:
 4242ae1c:	e0800185 	add	r0, r0, r5, lsl #3
 4242ae20:	e0800086 	add	r0, r0, r6, lsl #1
 4242ae24:	e1d000b0 	ldrh	r0, [r0]
-4242ae28:	e59f13c4 	ldr	r1, [pc, #964]	; 0x4242b1f4
+4242ae28:	e59f13c4 	ldr	r1, [0x4242b1f4]
 4242ae2c:	e0811185 	add	r1, r1, r5, lsl #3
 4242ae30:	e0811086 	add	r1, r1, r6, lsl #1
 4242ae34:	e1c100b0 	strh	r0, [r1]
 4242ae38:	e2866001 	add	r6, r6, #1
-4242ae3c:	e59f03a8 	ldr	r0, [pc, #936]	; 0x4242b1ec
+4242ae3c:	e59f03a8 	ldr	r0, [0x4242b1ec]
 4242ae40:	e5d00000 	ldrb	r0, [r0]
 4242ae44:	e1560000 	cmp	r6, r0
 4242ae48:	3afffff2 	bcc	0x4242ae18
 4242ae4c:	e2855001 	add	r5, r5, #1
-4242ae50:	e59f038c 	ldr	r0, [pc, #908]	; 0x4242b1e4
+4242ae50:	e59f038c 	ldr	r0, [0x4242b1e4]
 4242ae54:	e5d00000 	ldrb	r0, [r0]
 4242ae58:	e1550000 	cmp	r5, r0
 4242ae5c:	3affffeb 	bcc	0x4242ae10
 4242ae60:	ea000080 	b	0x4242b068
-4242ae64:	e59f0370 	ldr	r0, [pc, #880]	; 0x4242b1dc
+4242ae64:	e59f0370 	ldr	r0, [0x4242b1dc]
 4242ae68:	e5d00000 	ldrb	r0, [r0]
 4242ae6c:	e3500001 	cmp	r0, #1
 4242ae70:	1a000035 	bne	0x4242af4c
 4242ae74:	e3a000a7 	mov	r0, #167	; 0xa7
-4242ae78:	e59f1370 	ldr	r1, [pc, #880]	; 0x4242b1f0
+4242ae78:	e59f1370 	ldr	r1, [0x4242b1f0]
 4242ae7c:	e5c10000 	strb	r0, [r1]
 4242ae80:	e3a000ad 	mov	r0, #173	; 0xad
 4242ae84:	e5c10001 	strb	r0, [r1, #1]
@@ -35505,25 +35506,25 @@ Disassembly of section .data:
 4242aeac:	e0800185 	add	r0, r0, r5, lsl #3
 4242aeb0:	e0800086 	add	r0, r0, r6, lsl #1
 4242aeb4:	e1d000b0 	ldrh	r0, [r0]
-4242aeb8:	e59f1334 	ldr	r1, [pc, #820]	; 0x4242b1f4
+4242aeb8:	e59f1334 	ldr	r1, [0x4242b1f4]
 4242aebc:	e0811185 	add	r1, r1, r5, lsl #3
 4242aec0:	e0811086 	add	r1, r1, r6, lsl #1
 4242aec4:	e1c100b0 	strh	r0, [r1]
 4242aec8:	e2866001 	add	r6, r6, #1
-4242aecc:	e59f0318 	ldr	r0, [pc, #792]	; 0x4242b1ec
+4242aecc:	e59f0318 	ldr	r0, [0x4242b1ec]
 4242aed0:	e5d00000 	ldrb	r0, [r0]
 4242aed4:	e1560000 	cmp	r6, r0
 4242aed8:	3afffff2 	bcc	0x4242aea8
 4242aedc:	e2855001 	add	r5, r5, #1
-4242aee0:	e59f02fc 	ldr	r0, [pc, #764]	; 0x4242b1e4
+4242aee0:	e59f02fc 	ldr	r0, [0x4242b1e4]
 4242aee4:	e5d00000 	ldrb	r0, [r0]
 4242aee8:	e1550000 	cmp	r5, r0
 4242aeec:	3affffeb 	bcc	0x4242aea0
 4242aef0:	e3a00005 	mov	r0, #5
-4242aef4:	e59f1308 	ldr	r1, [pc, #776]	; 0x4242b204
+4242aef4:	e59f1308 	ldr	r1, [0x4242b204]
 4242aef8:	e5c10000 	strb	r0, [r1]
 4242aefc:	e3a000a4 	mov	r0, #164	; 0xa4
-4242af00:	e59f1300 	ldr	r1, [pc, #768]	; 0x4242b208
+4242af00:	e59f1300 	ldr	r1, [0x4242b208]
 4242af04:	e5c10000 	strb	r0, [r1]
 4242af08:	e3a000a5 	mov	r0, #165	; 0xa5
 4242af0c:	e5c10001 	strb	r0, [r1, #1]
@@ -35534,7 +35535,7 @@ Disassembly of section .data:
 4242af20:	e3a000c9 	mov	r0, #201	; 0xc9
 4242af24:	e5c10004 	strb	r0, [r1, #4]
 4242af28:	e3a00025 	mov	r0, #37	; 0x25
-4242af2c:	e59f12d8 	ldr	r1, [pc, #728]	; 0x4242b20c
+4242af2c:	e59f12d8 	ldr	r1, [0x4242b20c]
 4242af30:	e5c10000 	strb	r0, [r1]
 4242af34:	e5c10001 	strb	r0, [r1, #1]
 4242af38:	e5c10002 	strb	r0, [r1, #2]
@@ -35542,12 +35543,12 @@ Disassembly of section .data:
 4242af40:	e3a00001 	mov	r0, #1
 4242af44:	e5c10004 	strb	r0, [r1, #4]
 4242af48:	ea000046 	b	0x4242b068
-4242af4c:	e59f0288 	ldr	r0, [pc, #648]	; 0x4242b1dc
+4242af4c:	e59f0288 	ldr	r0, [0x4242b1dc]
 4242af50:	e5d00000 	ldrb	r0, [r0]
 4242af54:	e3500010 	cmp	r0, #16
 4242af58:	1a00001e 	bne	0x4242afd8
 4242af5c:	e3a00004 	mov	r0, #4
-4242af60:	e59f1288 	ldr	r1, [pc, #648]	; 0x4242b1f0
+4242af60:	e59f1288 	ldr	r1, [0x4242b1f0]
 4242af64:	e5c10000 	strb	r0, [r1]
 4242af68:	e3a00005 	mov	r0, #5
 4242af6c:	e5c10001 	strb	r0, [r1, #1]
@@ -35562,27 +35563,27 @@ Disassembly of section .data:
 4242af90:	e28d007c 	add	r0, sp, #124	; 0x7c
 4242af94:	e0800085 	add	r0, r0, r5, lsl #1
 4242af98:	e1d000b0 	ldrh	r0, [r0]
-4242af9c:	e59f1250 	ldr	r1, [pc, #592]	; 0x4242b1f4
+4242af9c:	e59f1250 	ldr	r1, [0x4242b1f4]
 4242afa0:	e0811185 	add	r1, r1, r5, lsl #3
 4242afa4:	e0811086 	add	r1, r1, r6, lsl #1
 4242afa8:	e1c100b0 	strh	r0, [r1]
 4242afac:	e2866001 	add	r6, r6, #1
-4242afb0:	e59f0234 	ldr	r0, [pc, #564]	; 0x4242b1ec
+4242afb0:	e59f0234 	ldr	r0, [0x4242b1ec]
 4242afb4:	e5d00000 	ldrb	r0, [r0]
 4242afb8:	e1560000 	cmp	r6, r0
 4242afbc:	3afffff3 	bcc	0x4242af90
 4242afc0:	e2855001 	add	r5, r5, #1
-4242afc4:	e59f0218 	ldr	r0, [pc, #536]	; 0x4242b1e4
+4242afc4:	e59f0218 	ldr	r0, [0x4242b1e4]
 4242afc8:	e5d00000 	ldrb	r0, [r0]
 4242afcc:	e1550000 	cmp	r5, r0
 4242afd0:	3affffec 	bcc	0x4242af88
 4242afd4:	ea000023 	b	0x4242b068
-4242afd8:	e59f01fc 	ldr	r0, [pc, #508]	; 0x4242b1dc
+4242afd8:	e59f01fc 	ldr	r0, [0x4242b1dc]
 4242afdc:	e5d00000 	ldrb	r0, [r0]
 4242afe0:	e3500020 	cmp	r0, #32
 4242afe4:	1a00001f 	bne	0x4242b068
 4242afe8:	e3a000a7 	mov	r0, #167	; 0xa7
-4242afec:	e59f11fc 	ldr	r1, [pc, #508]	; 0x4242b1f0
+4242afec:	e59f11fc 	ldr	r1, [0x4242b1f0]
 4242aff0:	e5c10000 	strb	r0, [r1]
 4242aff4:	e3a000a4 	mov	r0, #164	; 0xa4
 4242aff8:	e5c10001 	strb	r0, [r1, #1]
@@ -35598,17 +35599,17 @@ Disassembly of section .data:
 4242b020:	e0800185 	add	r0, r0, r5, lsl #3
 4242b024:	e0800086 	add	r0, r0, r6, lsl #1
 4242b028:	e1d000b0 	ldrh	r0, [r0]
-4242b02c:	e59f11c0 	ldr	r1, [pc, #448]	; 0x4242b1f4
+4242b02c:	e59f11c0 	ldr	r1, [0x4242b1f4]
 4242b030:	e0811185 	add	r1, r1, r5, lsl #3
 4242b034:	e0811086 	add	r1, r1, r6, lsl #1
 4242b038:	e1c100b0 	strh	r0, [r1]
 4242b03c:	e2866001 	add	r6, r6, #1
-4242b040:	e59f01a4 	ldr	r0, [pc, #420]	; 0x4242b1ec
+4242b040:	e59f01a4 	ldr	r0, [0x4242b1ec]
 4242b044:	e5d00000 	ldrb	r0, [r0]
 4242b048:	e1560000 	cmp	r6, r0
 4242b04c:	3afffff2 	bcc	0x4242b01c
 4242b050:	e2855001 	add	r5, r5, #1
-4242b054:	e59f0188 	ldr	r0, [pc, #392]	; 0x4242b1e4
+4242b054:	e59f0188 	ldr	r0, [0x4242b1e4]
 4242b058:	e5d00000 	ldrb	r0, [r0]
 4242b05c:	e2800001 	add	r0, r0, #1
 4242b060:	e1550000 	cmp	r5, r0
@@ -35620,25 +35621,25 @@ Disassembly of section .data:
 4242b078:	e1a04000 	mov	r4, r0
 4242b07c:	e1a05001 	mov	r5, r1
 4242b080:	e1a08002 	mov	r8, r2
-4242b084:	e59f0150 	ldr	r0, [pc, #336]	; 0x4242b1dc
+4242b084:	e59f0150 	ldr	r0, [0x4242b1dc]
 4242b088:	e5d00000 	ldrb	r0, [r0]
 4242b08c:	e3500010 	cmp	r0, #16
 4242b090:	aa000013 	bge	0x4242b0e4
-4242b094:	e59f114c 	ldr	r1, [pc, #332]	; 0x4242b1e8
+4242b094:	e59f114c 	ldr	r1, [0x4242b1e8]
 4242b098:	e0810104 	add	r0, r1, r4, lsl #2
-4242b09c:	e59f1148 	ldr	r1, [pc, #328]	; 0x4242b1ec
+4242b09c:	e59f1148 	ldr	r1, [0x4242b1ec]
 4242b0a0:	e5d12000 	ldrb	r2, [r1]
-4242b0a4:	e59f1144 	ldr	r1, [pc, #324]	; 0x4242b1f0
+4242b0a4:	e59f1144 	ldr	r1, [0x4242b1f0]
 4242b0a8:	ebfffd94 	bl	0x4242a700
 4242b0ac:	e1a06000 	mov	r6, r0
 4242b0b0:	e3a07000 	mov	r7, #0
 4242b0b4:	ea000004 	b	0x4242b0cc
-4242b0b8:	e59f0128 	ldr	r0, [pc, #296]	; 0x4242b1e8
+4242b0b8:	e59f0128 	ldr	r0, [0x4242b1e8]
 4242b0bc:	e0800104 	add	r0, r0, r4, lsl #2
 4242b0c0:	e7d00007 	ldrb	r0, [r0, r7]
 4242b0c4:	e7c50007 	strb	r0, [r5, r7]
 4242b0c8:	e2877001 	add	r7, r7, #1
-4242b0cc:	e59f0118 	ldr	r0, [pc, #280]	; 0x4242b1ec
+4242b0cc:	e59f0118 	ldr	r0, [0x4242b1ec]
 4242b0d0:	e5d00000 	ldrb	r0, [r0]
 4242b0d4:	e1570000 	cmp	r7, r0
 4242b0d8:	3afffff6 	bcc	0x4242b0b8
@@ -35650,52 +35651,52 @@ Disassembly of section .data:
 4242b0f0:	e1a04000 	mov	r4, r0
 4242b0f4:	e1a05001 	mov	r5, r1
 4242b0f8:	e1a08002 	mov	r8, r2
-4242b0fc:	e59f00d8 	ldr	r0, [pc, #216]	; 0x4242b1dc
+4242b0fc:	e59f00d8 	ldr	r0, [0x4242b1dc]
 4242b100:	e5d00000 	ldrb	r0, [r0]
 4242b104:	e3500010 	cmp	r0, #16
 4242b108:	aa000013 	bge	0x4242b15c
 4242b10c:	e3a07000 	mov	r7, #0
 4242b110:	ea000004 	b	0x4242b128
-4242b114:	e59f00cc 	ldr	r0, [pc, #204]	; 0x4242b1e8
+4242b114:	e59f00cc 	ldr	r0, [0x4242b1e8]
 4242b118:	e0800104 	add	r0, r0, r4, lsl #2
 4242b11c:	e7d00007 	ldrb	r0, [r0, r7]
 4242b120:	e7c50007 	strb	r0, [r5, r7]
 4242b124:	e2877001 	add	r7, r7, #1
-4242b128:	e59f00bc 	ldr	r0, [pc, #188]	; 0x4242b1ec
+4242b128:	e59f00bc 	ldr	r0, [0x4242b1ec]
 4242b12c:	e5d00000 	ldrb	r0, [r0]
 4242b130:	e1570000 	cmp	r7, r0
 4242b134:	3afffff6 	bcc	0x4242b114
-4242b138:	e59f10a8 	ldr	r1, [pc, #168]	; 0x4242b1e8
+4242b138:	e59f10a8 	ldr	r1, [0x4242b1e8]
 4242b13c:	e0810104 	add	r0, r1, r4, lsl #2
-4242b140:	e59f10a4 	ldr	r1, [pc, #164]	; 0x4242b1ec
+4242b140:	e59f10a4 	ldr	r1, [0x4242b1ec]
 4242b144:	e5d12000 	ldrb	r2, [r1]
-4242b148:	e59f10a0 	ldr	r1, [pc, #160]	; 0x4242b1f0
+4242b148:	e59f10a0 	ldr	r1, [0x4242b1f0]
 4242b14c:	ebfffda4 	bl	0x4242a7e4
 4242b150:	e1a06000 	mov	r6, r0
 4242b154:	e1a00006 	mov	r0, r6
 4242b158:	e8bd81f0 	pop	{r4, r5, r6, r7, r8, pc}
-4242b15c:	e59f0078 	ldr	r0, [pc, #120]	; 0x4242b1dc
+4242b15c:	e59f0078 	ldr	r0, [0x4242b1dc]
 4242b160:	e5d00000 	ldrb	r0, [r0]
 4242b164:	e3500020 	cmp	r0, #32
 4242b168:	ba000016 	blt	0x4242b1c8
-4242b16c:	e59f0068 	ldr	r0, [pc, #104]	; 0x4242b1dc
+4242b16c:	e59f0068 	ldr	r0, [0x4242b1dc]
 4242b170:	e5d00000 	ldrb	r0, [r0]
 4242b174:	e3500030 	cmp	r0, #48	; 0x30
 4242b178:	aa000012 	bge	0x4242b1c8
 4242b17c:	e3a07000 	mov	r7, #0
 4242b180:	ea000004 	b	0x4242b198
-4242b184:	e59f0068 	ldr	r0, [pc, #104]	; 0x4242b1f4
+4242b184:	e59f0068 	ldr	r0, [0x4242b1f4]
 4242b188:	e0800087 	add	r0, r0, r7, lsl #1
 4242b18c:	e1d000b0 	ldrh	r0, [r0]
 4242b190:	e7c50007 	strb	r0, [r5, r7]
 4242b194:	e2877001 	add	r7, r7, #1
-4242b198:	e59f004c 	ldr	r0, [pc, #76]	; 0x4242b1ec
+4242b198:	e59f004c 	ldr	r0, [0x4242b1ec]
 4242b19c:	e5d00000 	ldrb	r0, [r0]
 4242b1a0:	e1570000 	cmp	r7, r0
 4242b1a4:	3afffff6 	bcc	0x4242b184
-4242b1a8:	e59f003c 	ldr	r0, [pc, #60]	; 0x4242b1ec
+4242b1a8:	e59f003c 	ldr	r0, [0x4242b1ec]
 4242b1ac:	e5d02000 	ldrb	r2, [r0]
-4242b1b0:	e59f1038 	ldr	r1, [pc, #56]	; 0x4242b1f0
+4242b1b0:	e59f1038 	ldr	r1, [0x4242b1f0]
 4242b1b4:	e1a00005 	mov	r0, r5
 4242b1b8:	ebfffd89 	bl	0x4242a7e4
 4242b1bc:	e1a06000 	mov	r6, r0
@@ -35761,11 +35762,11 @@ Disassembly of section .data:
 4242b2ac:	e58d0008 	str	r0, [sp, #8]
 4242b2b0:	e59d0008 	ldr	r0, [sp, #8]
 4242b2b4:	e590b010 	ldr	fp, [r0, #16]
-4242b2b8:	e59f0fa0 	ldr	r0, [pc, #4000]	; 0x4242c260
+4242b2b8:	e59f0fa0 	ldr	r0, [0x4242c260]
 4242b2bc:	e5900000 	ldr	r0, [r0]
 4242b2c0:	e5900000 	ldr	r0, [r0]
 4242b2c4:	e3800901 	orr	r0, r0, #0x4000
-4242b2c8:	e59f1f90 	ldr	r1, [pc, #3984]	; 0x4242c260
+4242b2c8:	e59f1f90 	ldr	r1, [0x4242c260]
 4242b2cc:	e5911000 	ldr	r1, [r1]
 4242b2d0:	e5810000 	str	r0, [r1]
 4242b2d4:	e3550101 	cmp	r5, #0x40000000
@@ -35775,12 +35776,12 @@ Disassembly of section .data:
 4242b2e4:	e3a00000 	mov	r0, #0
 4242b2e8:	e3500000 	cmp	r0, #0
 4242b2ec:	0a000001 	beq	0x4242b2f8
-4242b2f0:	e59faf6c 	ldr	sl, [pc, #3948]	; 0x4242c264
+4242b2f0:	e59faf6c 	ldr	sl, [0x4242c264]
 4242b2f4:	ea000000 	b	0x4242b2fc
-4242b2f8:	e59faf68 	ldr	sl, [pc, #3944]	; 0x4242c268
-4242b2fc:	e59f0f68 	ldr	r0, [pc, #3944]	; 0x4242c26c
+4242b2f8:	e59faf68 	ldr	sl, [0x4242c268]
+4242b2fc:	e59f0f68 	ldr	r0, [0x4242c26c]
 4242b300:	e5903000 	ldr	r3, [r0]
-4242b304:	e59f0f54 	ldr	r0, [pc, #3924]	; 0x4242c260
+4242b304:	e59f0f54 	ldr	r0, [0x4242c260]
 4242b308:	e58d3000 	str	r3, [sp]
 4242b30c:	e5900000 	ldr	r0, [r0]
 4242b310:	e2803030 	add	r3, r0, #48	; 0x30
@@ -35797,7 +35798,7 @@ Disassembly of section .data:
 4242b33c:	e59d0010 	ldr	r0, [sp, #16]
 4242b340:	eaffffca 	b	0x4242b270
 4242b344:	e3a00b01 	mov	r0, #0x400
-4242b348:	e59f1f10 	ldr	r1, [pc, #3856]	; 0x4242c260
+4242b348:	e59f1f10 	ldr	r1, [0x4242c260]
 4242b34c:	e5911000 	ldr	r1, [r1]
 4242b350:	e5810020 	str	r0, [r1, #32]
 4242b354:	e3a09000 	mov	r9, #0
@@ -35806,24 +35807,24 @@ Disassembly of section .data:
 4242b360:	e59d000c 	ldr	r0, [sp, #12]
 4242b364:	e20000ff 	and	r0, r0, #0xff
 4242b368:	e1899400 	orr	r9, r9, r0, lsl #8
-4242b36c:	e59f0eec 	ldr	r0, [pc, #3820]	; 0x4242c260
+4242b36c:	e59f0eec 	ldr	r0, [0x4242c260]
 4242b370:	e5900000 	ldr	r0, [r0]
 4242b374:	e580902c 	str	r9, [r0, #44]	; 0x2c
-4242b378:	e59f0eec 	ldr	r0, [pc, #3820]	; 0x4242c26c
+4242b378:	e59f0eec 	ldr	r0, [0x4242c26c]
 4242b37c:	e5900000 	ldr	r0, [r0]
 4242b380:	e1a00520 	lsr	r0, r0, #10
-4242b384:	e59f1ed4 	ldr	r1, [pc, #3796]	; 0x4242c260
+4242b384:	e59f1ed4 	ldr	r1, [0x4242c260]
 4242b388:	e5911000 	ldr	r1, [r1]
 4242b38c:	e581001c 	str	r0, [r1, #28]
 4242b390:	e3a08000 	mov	r8, #0
 4242b394:	ea000005 	b	0x4242b3b0
 4242b398:	e7960108 	ldr	r0, [r6, r8, lsl #2]
-4242b39c:	e59f2ebc 	ldr	r2, [pc, #3772]	; 0x4242c260
+4242b39c:	e59f2ebc 	ldr	r2, [0x4242c260]
 4242b3a0:	e5922000 	ldr	r2, [r2]
 4242b3a4:	e2822050 	add	r2, r2, #80	; 0x50
 4242b3a8:	e7820108 	str	r0, [r2, r8, lsl #2]
 4242b3ac:	e2888001 	add	r8, r8, #1
-4242b3b0:	e59f0eb4 	ldr	r0, [pc, #3764]	; 0x4242c26c
+4242b3b0:	e59f0eb4 	ldr	r0, [0x4242c26c]
 4242b3b4:	e5900000 	ldr	r0, [r0]
 4242b3b8:	e1580520 	cmp	r8, r0, lsr #10
 4242b3bc:	3afffff5 	bcc	0x4242b398
@@ -35842,7 +35843,7 @@ Disassembly of section .data:
 4242b3f0:	e3899301 	orr	r9, r9, #0x4000000
 4242b3f4:	e389975e 	orr	r9, r9, #0x1780000
 4242b3f8:	e3899102 	orr	r9, r9, #0x80000000
-4242b3fc:	e59f0e68 	ldr	r0, [pc, #3688]	; 0x4242c26c
+4242b3fc:	e59f0e68 	ldr	r0, [0x4242c26c]
 4242b400:	e5900000 	ldr	r0, [r0]
 4242b404:	e3a01001 	mov	r1, #1
 4242b408:	e1510520 	cmp	r1, r0, lsr #10
@@ -35850,7 +35851,7 @@ Disassembly of section .data:
 4242b410:	e3899402 	orr	r9, r9, #0x2000000
 4242b414:	e3a00001 	mov	r0, #1
 4242b418:	ebfffa50 	bl	0x42429d60
-4242b41c:	e59f0e3c 	ldr	r0, [pc, #3644]	; 0x4242c260
+4242b41c:	e59f0e3c 	ldr	r0, [0x4242c260]
 4242b420:	e5900000 	ldr	r0, [r0]
 4242b424:	e5809024 	str	r9, [r0, #36]	; 0x24
 4242b428:	ebffc071 	bl	0x4241b5f4
@@ -35862,11 +35863,11 @@ Disassembly of section .data:
 4242b440:	ebfff9b0 	bl	0x42429b08
 4242b444:	e58d0010 	str	r0, [sp, #16]
 4242b448:	ebfffa3c 	bl	0x42429d40
-4242b44c:	e59f0e0c 	ldr	r0, [pc, #3596]	; 0x4242c260
+4242b44c:	e59f0e0c 	ldr	r0, [0x4242c260]
 4242b450:	e5900000 	ldr	r0, [r0]
 4242b454:	e5900000 	ldr	r0, [r0]
 4242b458:	e3c00901 	bic	r0, r0, #0x4000
-4242b45c:	e59f1dfc 	ldr	r1, [pc, #3580]	; 0x4242c260
+4242b45c:	e59f1dfc 	ldr	r1, [0x4242c260]
 4242b460:	e5911000 	ldr	r1, [r1]
 4242b464:	e5810000 	str	r0, [r1]
 4242b468:	ebfffa5c 	bl	0x42429de0
@@ -35901,11 +35902,11 @@ Disassembly of section .data:
 4242b4dc:	e58d0008 	str	r0, [sp, #8]
 4242b4e0:	e59d0008 	ldr	r0, [sp, #8]
 4242b4e4:	e590b010 	ldr	fp, [r0, #16]
-4242b4e8:	e59f0d70 	ldr	r0, [pc, #3440]	; 0x4242c260
+4242b4e8:	e59f0d70 	ldr	r0, [0x4242c260]
 4242b4ec:	e5900000 	ldr	r0, [r0]
 4242b4f0:	e5900000 	ldr	r0, [r0]
 4242b4f4:	e3800901 	orr	r0, r0, #0x4000
-4242b4f8:	e59f1d60 	ldr	r1, [pc, #3424]	; 0x4242c260
+4242b4f8:	e59f1d60 	ldr	r1, [0x4242c260]
 4242b4fc:	e5911000 	ldr	r1, [r1]
 4242b500:	e5810000 	str	r0, [r1]
 4242b504:	e3540101 	cmp	r4, #0x40000000
@@ -35915,12 +35916,12 @@ Disassembly of section .data:
 4242b514:	e3a00000 	mov	r0, #0
 4242b518:	e3500000 	cmp	r0, #0
 4242b51c:	0a000001 	beq	0x4242b528
-4242b520:	e59f9d3c 	ldr	r9, [pc, #3388]	; 0x4242c264
+4242b520:	e59f9d3c 	ldr	r9, [0x4242c264]
 4242b524:	ea000000 	b	0x4242b52c
-4242b528:	e59f9d38 	ldr	r9, [pc, #3384]	; 0x4242c268
-4242b52c:	e59f0d38 	ldr	r0, [pc, #3384]	; 0x4242c26c
+4242b528:	e59f9d38 	ldr	r9, [0x4242c268]
+4242b52c:	e59f0d38 	ldr	r0, [0x4242c26c]
 4242b530:	e5903000 	ldr	r3, [r0]
-4242b534:	e59f0d24 	ldr	r0, [pc, #3364]	; 0x4242c260
+4242b534:	e59f0d24 	ldr	r0, [0x4242c260]
 4242b538:	e58d3000 	str	r3, [sp]
 4242b53c:	e5900000 	ldr	r0, [r0]
 4242b540:	e2803030 	add	r3, r0, #48	; 0x30
@@ -35937,7 +35938,7 @@ Disassembly of section .data:
 4242b56c:	e59d0010 	ldr	r0, [sp, #16]
 4242b570:	eaffffc8 	b	0x4242b498
 4242b574:	e3a00b01 	mov	r0, #0x400
-4242b578:	e59f1ce0 	ldr	r1, [pc, #3296]	; 0x4242c260
+4242b578:	e59f1ce0 	ldr	r1, [0x4242c260]
 4242b57c:	e5911000 	ldr	r1, [r1]
 4242b580:	e5810020 	str	r0, [r1, #32]
 4242b584:	e3a08000 	mov	r8, #0
@@ -35946,24 +35947,24 @@ Disassembly of section .data:
 4242b590:	e59d000c 	ldr	r0, [sp, #12]
 4242b594:	e20000ff 	and	r0, r0, #0xff
 4242b598:	e1888400 	orr	r8, r8, r0, lsl #8
-4242b59c:	e59f0cbc 	ldr	r0, [pc, #3260]	; 0x4242c260
+4242b59c:	e59f0cbc 	ldr	r0, [0x4242c260]
 4242b5a0:	e5900000 	ldr	r0, [r0]
 4242b5a4:	e580802c 	str	r8, [r0, #44]	; 0x2c
-4242b5a8:	e59f0cbc 	ldr	r0, [pc, #3260]	; 0x4242c26c
+4242b5a8:	e59f0cbc 	ldr	r0, [0x4242c26c]
 4242b5ac:	e5900000 	ldr	r0, [r0]
 4242b5b0:	e1a00520 	lsr	r0, r0, #10
-4242b5b4:	e59f1ca4 	ldr	r1, [pc, #3236]	; 0x4242c260
+4242b5b4:	e59f1ca4 	ldr	r1, [0x4242c260]
 4242b5b8:	e5911000 	ldr	r1, [r1]
 4242b5bc:	e581001c 	str	r0, [r1, #28]
 4242b5c0:	e3a07000 	mov	r7, #0
 4242b5c4:	ea000005 	b	0x4242b5e0
 4242b5c8:	e7950107 	ldr	r0, [r5, r7, lsl #2]
-4242b5cc:	e59f2c8c 	ldr	r2, [pc, #3212]	; 0x4242c260
+4242b5cc:	e59f2c8c 	ldr	r2, [0x4242c260]
 4242b5d0:	e5922000 	ldr	r2, [r2]
 4242b5d4:	e2822050 	add	r2, r2, #80	; 0x50
 4242b5d8:	e7820107 	str	r0, [r2, r7, lsl #2]
 4242b5dc:	e2877001 	add	r7, r7, #1
-4242b5e0:	e59f0c84 	ldr	r0, [pc, #3204]	; 0x4242c26c
+4242b5e0:	e59f0c84 	ldr	r0, [0x4242c26c]
 4242b5e4:	e5900000 	ldr	r0, [r0]
 4242b5e8:	e1570520 	cmp	r7, r0, lsr #10
 4242b5ec:	3afffff5 	bcc	0x4242b5c8
@@ -35983,7 +35984,7 @@ Disassembly of section .data:
 4242b624:	e3888301 	orr	r8, r8, #0x4000000
 4242b628:	e388875e 	orr	r8, r8, #0x1780000
 4242b62c:	e3888102 	orr	r8, r8, #0x80000000
-4242b630:	e59f0c34 	ldr	r0, [pc, #3124]	; 0x4242c26c
+4242b630:	e59f0c34 	ldr	r0, [0x4242c26c]
 4242b634:	e5900000 	ldr	r0, [r0]
 4242b638:	e3a01001 	mov	r1, #1
 4242b63c:	e1510520 	cmp	r1, r0, lsr #10
@@ -35991,19 +35992,19 @@ Disassembly of section .data:
 4242b644:	e3888402 	orr	r8, r8, #0x2000000
 4242b648:	e3a00001 	mov	r0, #1
 4242b64c:	ebfff9c3 	bl	0x42429d60
-4242b650:	e59f0c08 	ldr	r0, [pc, #3080]	; 0x4242c260
+4242b650:	e59f0c08 	ldr	r0, [0x4242c260]
 4242b654:	e5900000 	ldr	r0, [r0]
 4242b658:	e5900034 	ldr	r0, [r0, #52]	; 0x34
 4242b65c:	e200aa0f 	and	sl, r0, #0xf000
-4242b660:	e59f0bf8 	ldr	r0, [pc, #3064]	; 0x4242c260
+4242b660:	e59f0bf8 	ldr	r0, [0x4242c260]
 4242b664:	e5900000 	ldr	r0, [r0]
 4242b668:	e5900034 	ldr	r0, [r0, #52]	; 0x34
 4242b66c:	e3c00a0f 	bic	r0, r0, #0xf000
 4242b670:	e3800a01 	orr	r0, r0, #0x1000
-4242b674:	e59f1be4 	ldr	r1, [pc, #3044]	; 0x4242c260
+4242b674:	e59f1be4 	ldr	r1, [0x4242c260]
 4242b678:	e5911000 	ldr	r1, [r1]
 4242b67c:	e5810034 	str	r0, [r1, #52]	; 0x34
-4242b680:	e59f0bd8 	ldr	r0, [pc, #3032]	; 0x4242c260
+4242b680:	e59f0bd8 	ldr	r0, [0x4242c260]
 4242b684:	e5900000 	ldr	r0, [r0]
 4242b688:	e5808024 	str	r8, [r0, #36]	; 0x24
 4242b68c:	ebffbfd8 	bl	0x4241b5f4
@@ -36015,19 +36016,19 @@ Disassembly of section .data:
 4242b6a4:	ebfff917 	bl	0x42429b08
 4242b6a8:	e58d0010 	str	r0, [sp, #16]
 4242b6ac:	ebfff9a3 	bl	0x42429d40
-4242b6b0:	e59f0ba8 	ldr	r0, [pc, #2984]	; 0x4242c260
+4242b6b0:	e59f0ba8 	ldr	r0, [0x4242c260]
 4242b6b4:	e5900000 	ldr	r0, [r0]
 4242b6b8:	e5900034 	ldr	r0, [r0, #52]	; 0x34
 4242b6bc:	e3c00a0f 	bic	r0, r0, #0xf000
 4242b6c0:	e180000a 	orr	r0, r0, sl
-4242b6c4:	e59f1b94 	ldr	r1, [pc, #2964]	; 0x4242c260
+4242b6c4:	e59f1b94 	ldr	r1, [0x4242c260]
 4242b6c8:	e5911000 	ldr	r1, [r1]
 4242b6cc:	e5810034 	str	r0, [r1, #52]	; 0x34
-4242b6d0:	e59f0b88 	ldr	r0, [pc, #2952]	; 0x4242c260
+4242b6d0:	e59f0b88 	ldr	r0, [0x4242c260]
 4242b6d4:	e5900000 	ldr	r0, [r0]
 4242b6d8:	e5900000 	ldr	r0, [r0]
 4242b6dc:	e3c00901 	bic	r0, r0, #0x4000
-4242b6e0:	e59f1b78 	ldr	r1, [pc, #2936]	; 0x4242c260
+4242b6e0:	e59f1b78 	ldr	r1, [0x4242c260]
 4242b6e4:	e5911000 	ldr	r1, [r1]
 4242b6e8:	e5810000 	str	r0, [r1]
 4242b6ec:	ebfff9bb 	bl	0x42429de0
@@ -36059,22 +36060,22 @@ Disassembly of section .data:
 4242b754:	e59d0008 	ldr	r0, [sp, #8]
 4242b758:	e5900010 	ldr	r0, [r0, #16]
 4242b75c:	e58d0010 	str	r0, [sp, #16]
-4242b760:	e59f0af8 	ldr	r0, [pc, #2808]	; 0x4242c260
+4242b760:	e59f0af8 	ldr	r0, [0x4242c260]
 4242b764:	e5900000 	ldr	r0, [r0]
 4242b768:	e5900000 	ldr	r0, [r0]
 4242b76c:	e3800901 	orr	r0, r0, #0x4000
-4242b770:	e59f1ae8 	ldr	r1, [pc, #2792]	; 0x4242c260
+4242b770:	e59f1ae8 	ldr	r1, [0x4242c260]
 4242b774:	e5911000 	ldr	r1, [r1]
 4242b778:	e5810000 	str	r0, [r1]
-4242b77c:	e59f0adc 	ldr	r0, [pc, #2780]	; 0x4242c260
+4242b77c:	e59f0adc 	ldr	r0, [0x4242c260]
 4242b780:	e5900000 	ldr	r0, [r0]
 4242b784:	e5900000 	ldr	r0, [r0]
 4242b788:	e7e3a450 	ubfx	sl, r0, #8, #4
-4242b78c:	e59f0acc 	ldr	r0, [pc, #2764]	; 0x4242c260
+4242b78c:	e59f0acc 	ldr	r0, [0x4242c260]
 4242b790:	e5900000 	ldr	r0, [r0]
 4242b794:	e5900000 	ldr	r0, [r0]
 4242b798:	e3800c03 	orr	r0, r0, #0x300
-4242b79c:	e59f1abc 	ldr	r1, [pc, #2748]	; 0x4242c260
+4242b79c:	e59f1abc 	ldr	r1, [0x4242c260]
 4242b7a0:	e5911000 	ldr	r1, [r1]
 4242b7a4:	e5810000 	str	r0, [r1]
 4242b7a8:	e59d0018 	ldr	r0, [sp, #24]
@@ -36085,11 +36086,11 @@ Disassembly of section .data:
 4242b7bc:	e3a00000 	mov	r0, #0
 4242b7c0:	e3500000 	cmp	r0, #0
 4242b7c4:	0a000001 	beq	0x4242b7d0
-4242b7c8:	e59f9a94 	ldr	r9, [pc, #2708]	; 0x4242c264
+4242b7c8:	e59f9a94 	ldr	r9, [0x4242c264]
 4242b7cc:	ea000000 	b	0x4242b7d4
-4242b7d0:	e59f9a90 	ldr	r9, [pc, #2704]	; 0x4242c268
+4242b7d0:	e59f9a90 	ldr	r9, [0x4242c268]
 4242b7d4:	e3a03b01 	mov	r3, #0x400
-4242b7d8:	e59f0a80 	ldr	r0, [pc, #2688]	; 0x4242c260
+4242b7d8:	e59f0a80 	ldr	r0, [0x4242c260]
 4242b7dc:	e58d3000 	str	r3, [sp]
 4242b7e0:	e5900000 	ldr	r0, [r0]
 4242b7e4:	e2803030 	add	r3, r0, #48	; 0x30
@@ -36105,7 +36106,7 @@ Disassembly of section .data:
 4242b80c:	e1a00006 	mov	r0, r6
 4242b810:	eaffffc0 	b	0x4242b718
 4242b814:	e3a00b01 	mov	r0, #0x400
-4242b818:	e59f1a40 	ldr	r1, [pc, #2624]	; 0x4242c260
+4242b818:	e59f1a40 	ldr	r1, [0x4242c260]
 4242b81c:	e5911000 	ldr	r1, [r1]
 4242b820:	e5810020 	str	r0, [r1, #32]
 4242b824:	e3a08000 	mov	r8, #0
@@ -36115,17 +36116,17 @@ Disassembly of section .data:
 4242b834:	e59d000c 	ldr	r0, [sp, #12]
 4242b838:	e20000ff 	and	r0, r0, #0xff
 4242b83c:	e1888400 	orr	r8, r8, r0, lsl #8
-4242b840:	e59f0a18 	ldr	r0, [pc, #2584]	; 0x4242c260
+4242b840:	e59f0a18 	ldr	r0, [0x4242c260]
 4242b844:	e5900000 	ldr	r0, [r0]
 4242b848:	e580802c 	str	r8, [r0, #44]	; 0x2c
 4242b84c:	e3a00001 	mov	r0, #1
-4242b850:	e59f1a08 	ldr	r1, [pc, #2568]	; 0x4242c260
+4242b850:	e59f1a08 	ldr	r1, [0x4242c260]
 4242b854:	e5911000 	ldr	r1, [r1]
 4242b858:	e581001c 	str	r0, [r1, #28]
 4242b85c:	e3a07000 	mov	r7, #0
 4242b860:	ea000005 	b	0x4242b87c
 4242b864:	e7950107 	ldr	r0, [r5, r7, lsl #2]
-4242b868:	e59f29f0 	ldr	r2, [pc, #2544]	; 0x4242c260
+4242b868:	e59f29f0 	ldr	r2, [0x4242c260]
 4242b86c:	e5922000 	ldr	r2, [r2]
 4242b870:	e2822050 	add	r2, r2, #80	; 0x50
 4242b874:	e7820107 	str	r0, [r2, r7, lsl #2]
@@ -36148,7 +36149,7 @@ Disassembly of section .data:
 4242b8b8:	e3888301 	orr	r8, r8, #0x4000000
 4242b8bc:	e388875e 	orr	r8, r8, #0x1780000
 4242b8c0:	e3888102 	orr	r8, r8, #0x80000000
-4242b8c4:	e59f09a0 	ldr	r0, [pc, #2464]	; 0x4242c26c
+4242b8c4:	e59f09a0 	ldr	r0, [0x4242c26c]
 4242b8c8:	e5900000 	ldr	r0, [r0]
 4242b8cc:	e3a01001 	mov	r1, #1
 4242b8d0:	e1510520 	cmp	r1, r0, lsr #10
@@ -36156,19 +36157,19 @@ Disassembly of section .data:
 4242b8d8:	e3888402 	orr	r8, r8, #0x2000000
 4242b8dc:	e3a00001 	mov	r0, #1
 4242b8e0:	ebfff91e 	bl	0x42429d60
-4242b8e4:	e59f0974 	ldr	r0, [pc, #2420]	; 0x4242c260
+4242b8e4:	e59f0974 	ldr	r0, [0x4242c260]
 4242b8e8:	e5900000 	ldr	r0, [r0]
 4242b8ec:	e5900034 	ldr	r0, [r0, #52]	; 0x34
 4242b8f0:	e200ba0f 	and	fp, r0, #0xf000
-4242b8f4:	e59f0964 	ldr	r0, [pc, #2404]	; 0x4242c260
+4242b8f4:	e59f0964 	ldr	r0, [0x4242c260]
 4242b8f8:	e5900000 	ldr	r0, [r0]
 4242b8fc:	e5900034 	ldr	r0, [r0, #52]	; 0x34
 4242b900:	e3c00a0f 	bic	r0, r0, #0xf000
 4242b904:	e3800902 	orr	r0, r0, #0x8000
-4242b908:	e59f1950 	ldr	r1, [pc, #2384]	; 0x4242c260
+4242b908:	e59f1950 	ldr	r1, [0x4242c260]
 4242b90c:	e5911000 	ldr	r1, [r1]
 4242b910:	e5810034 	str	r0, [r1, #52]	; 0x34
-4242b914:	e59f0944 	ldr	r0, [pc, #2372]	; 0x4242c260
+4242b914:	e59f0944 	ldr	r0, [0x4242c260]
 4242b918:	e5900000 	ldr	r0, [r0]
 4242b91c:	e5808024 	str	r8, [r0, #36]	; 0x24
 4242b920:	ebffbf33 	bl	0x4241b5f4
@@ -36181,27 +36182,27 @@ Disassembly of section .data:
 4242b93c:	ebfff871 	bl	0x42429b08
 4242b940:	e1a06000 	mov	r6, r0
 4242b944:	ebfff8fd 	bl	0x42429d40
-4242b948:	e59f0910 	ldr	r0, [pc, #2320]	; 0x4242c260
+4242b948:	e59f0910 	ldr	r0, [0x4242c260]
 4242b94c:	e5900000 	ldr	r0, [r0]
 4242b950:	e5900034 	ldr	r0, [r0, #52]	; 0x34
 4242b954:	e3c00a0f 	bic	r0, r0, #0xf000
 4242b958:	e180000b 	orr	r0, r0, fp
-4242b95c:	e59f18fc 	ldr	r1, [pc, #2300]	; 0x4242c260
+4242b95c:	e59f18fc 	ldr	r1, [0x4242c260]
 4242b960:	e5911000 	ldr	r1, [r1]
 4242b964:	e5810034 	str	r0, [r1, #52]	; 0x34
-4242b968:	e59f08f0 	ldr	r0, [pc, #2288]	; 0x4242c260
+4242b968:	e59f08f0 	ldr	r0, [0x4242c260]
 4242b96c:	e5900000 	ldr	r0, [r0]
 4242b970:	e5900000 	ldr	r0, [r0]
 4242b974:	e3c00c0f 	bic	r0, r0, #0xf00
 4242b978:	e180040a 	orr	r0, r0, sl, lsl #8
-4242b97c:	e59f18dc 	ldr	r1, [pc, #2268]	; 0x4242c260
+4242b97c:	e59f18dc 	ldr	r1, [0x4242c260]
 4242b980:	e5911000 	ldr	r1, [r1]
 4242b984:	e5810000 	str	r0, [r1]
-4242b988:	e59f08d0 	ldr	r0, [pc, #2256]	; 0x4242c260
+4242b988:	e59f08d0 	ldr	r0, [0x4242c260]
 4242b98c:	e5900000 	ldr	r0, [r0]
 4242b990:	e5900000 	ldr	r0, [r0]
 4242b994:	e3c00901 	bic	r0, r0, #0x4000
-4242b998:	e59f18c0 	ldr	r1, [pc, #2240]	; 0x4242c260
+4242b998:	e59f18c0 	ldr	r1, [0x4242c260]
 4242b99c:	e5911000 	ldr	r1, [r1]
 4242b9a0:	e5810000 	str	r0, [r1]
 4242b9a4:	ebfff90d 	bl	0x42429de0
@@ -36292,11 +36293,11 @@ Disassembly of section .data:
 4242baf8:	e59d001c 	ldr	r0, [sp, #28]
 4242bafc:	e5900010 	ldr	r0, [r0, #16]
 4242bb00:	e58d0014 	str	r0, [sp, #20]
-4242bb04:	e59f0754 	ldr	r0, [pc, #1876]	; 0x4242c260
+4242bb04:	e59f0754 	ldr	r0, [0x4242c260]
 4242bb08:	e5900000 	ldr	r0, [r0]
 4242bb0c:	e5900000 	ldr	r0, [r0]
 4242bb10:	e3800901 	orr	r0, r0, #0x4000
-4242bb14:	e59f1744 	ldr	r1, [pc, #1860]	; 0x4242c260
+4242bb14:	e59f1744 	ldr	r1, [0x4242c260]
 4242bb18:	e5911000 	ldr	r1, [r1]
 4242bb1c:	e5810000 	str	r0, [r1]
 4242bb20:	e3550101 	cmp	r5, #0x40000000
@@ -36306,16 +36307,16 @@ Disassembly of section .data:
 4242bb30:	e3a00000 	mov	r0, #0
 4242bb34:	e3500000 	cmp	r0, #0
 4242bb38:	0a000002 	beq	0x4242bb48
-4242bb3c:	e59f072c 	ldr	r0, [pc, #1836]	; 0x4242c270
+4242bb3c:	e59f072c 	ldr	r0, [0x4242c270]
 4242bb40:	e58d0020 	str	r0, [sp, #32]
 4242bb44:	ea000001 	b	0x4242bb50
-4242bb48:	e59f0724 	ldr	r0, [pc, #1828]	; 0x4242c274
+4242bb48:	e59f0724 	ldr	r0, [0x4242c274]
 4242bb4c:	e58d0020 	str	r0, [sp, #32]
-4242bb50:	e59f0714 	ldr	r0, [pc, #1812]	; 0x4242c26c
+4242bb50:	e59f0714 	ldr	r0, [0x4242c26c]
 4242bb54:	e5903000 	ldr	r3, [r0]
 4242bb58:	e58d3000 	str	r3, [sp]
 4242bb5c:	e1a03005 	mov	r3, r5
-4242bb60:	e59f06f8 	ldr	r0, [pc, #1784]	; 0x4242c260
+4242bb60:	e59f06f8 	ldr	r0, [0x4242c260]
 4242bb64:	e5900000 	ldr	r0, [r0]
 4242bb68:	e2802030 	add	r2, r0, #48	; 0x30
 4242bb6c:	e3a00000 	mov	r0, #0
@@ -36329,7 +36330,7 @@ Disassembly of section .data:
 4242bb8c:	e28dd024 	add	sp, sp, #36	; 0x24
 4242bb90:	e8bd8ff0 	pop	{r4, r5, r6, r7, r8, r9, sl, fp, pc}
 4242bb94:	e3a00b01 	mov	r0, #0x400
-4242bb98:	e59f16c0 	ldr	r1, [pc, #1728]	; 0x4242c260
+4242bb98:	e59f16c0 	ldr	r1, [0x4242c260]
 4242bb9c:	e5911000 	ldr	r1, [r1]
 4242bba0:	e5810020 	str	r0, [r1, #32]
 4242bba4:	e3a0b000 	mov	fp, #0
@@ -36342,13 +36343,13 @@ Disassembly of section .data:
 4242bbc0:	e59d000c 	ldr	r0, [sp, #12]
 4242bbc4:	e20000ff 	and	r0, r0, #0xff
 4242bbc8:	e18bb800 	orr	fp, fp, r0, lsl #16
-4242bbcc:	e59f068c 	ldr	r0, [pc, #1676]	; 0x4242c260
+4242bbcc:	e59f068c 	ldr	r0, [0x4242c260]
 4242bbd0:	e5900000 	ldr	r0, [r0]
 4242bbd4:	e580b028 	str	fp, [r0, #40]	; 0x28
-4242bbd8:	e59f068c 	ldr	r0, [pc, #1676]	; 0x4242c26c
+4242bbd8:	e59f068c 	ldr	r0, [0x4242c26c]
 4242bbdc:	e5900000 	ldr	r0, [r0]
 4242bbe0:	e1a00520 	lsr	r0, r0, #10
-4242bbe4:	e59f1674 	ldr	r1, [pc, #1652]	; 0x4242c260
+4242bbe4:	e59f1674 	ldr	r1, [0x4242c260]
 4242bbe8:	e5911000 	ldr	r1, [r1]
 4242bbec:	e581001c 	str	r0, [r1, #28]
 4242bbf0:	e59d2018 	ldr	r2, [sp, #24]
@@ -36367,7 +36368,7 @@ Disassembly of section .data:
 4242bc24:	e38bb301 	orr	fp, fp, #0x4000000
 4242bc28:	e38bb77a 	orr	fp, fp, #0x1e80000
 4242bc2c:	e38bb102 	orr	fp, fp, #0x80000000
-4242bc30:	e59f0634 	ldr	r0, [pc, #1588]	; 0x4242c26c
+4242bc30:	e59f0634 	ldr	r0, [0x4242c26c]
 4242bc34:	e5900000 	ldr	r0, [r0]
 4242bc38:	e3a01001 	mov	r1, #1
 4242bc3c:	e1510520 	cmp	r1, r0, lsr #10
@@ -36375,20 +36376,20 @@ Disassembly of section .data:
 4242bc44:	e38bb402 	orr	fp, fp, #0x2000000
 4242bc48:	e3a00001 	mov	r0, #1
 4242bc4c:	ebfff843 	bl	0x42429d60
-4242bc50:	e59f0608 	ldr	r0, [pc, #1544]	; 0x4242c260
+4242bc50:	e59f0608 	ldr	r0, [0x4242c260]
 4242bc54:	e5900000 	ldr	r0, [r0]
 4242bc58:	e5900034 	ldr	r0, [r0, #52]	; 0x34
 4242bc5c:	e2000a0f 	and	r0, r0, #0xf000
 4242bc60:	e58d0008 	str	r0, [sp, #8]
-4242bc64:	e59f05f4 	ldr	r0, [pc, #1524]	; 0x4242c260
+4242bc64:	e59f05f4 	ldr	r0, [0x4242c260]
 4242bc68:	e5900000 	ldr	r0, [r0]
 4242bc6c:	e5900034 	ldr	r0, [r0, #52]	; 0x34
 4242bc70:	e3c00a0f 	bic	r0, r0, #0xf000
 4242bc74:	e3800a01 	orr	r0, r0, #0x1000
-4242bc78:	e59f15e0 	ldr	r1, [pc, #1504]	; 0x4242c260
+4242bc78:	e59f15e0 	ldr	r1, [0x4242c260]
 4242bc7c:	e5911000 	ldr	r1, [r1]
 4242bc80:	e5810034 	str	r0, [r1, #52]	; 0x34
-4242bc84:	e59f05d4 	ldr	r0, [pc, #1492]	; 0x4242c260
+4242bc84:	e59f05d4 	ldr	r0, [0x4242c260]
 4242bc88:	e5900000 	ldr	r0, [r0]
 4242bc8c:	e580b024 	str	fp, [r0, #36]	; 0x24
 4242bc90:	ebffbe57 	bl	0x4241b5f4
@@ -36403,29 +36404,29 @@ Disassembly of section .data:
 4242bcb4:	eaffffb4 	b	0x4242bb8c
 4242bcb8:	e3a0a000 	mov	sl, #0
 4242bcbc:	ea000005 	b	0x4242bcd8
-4242bcc0:	e59f1598 	ldr	r1, [pc, #1432]	; 0x4242c260
+4242bcc0:	e59f1598 	ldr	r1, [0x4242c260]
 4242bcc4:	e5911000 	ldr	r1, [r1]
 4242bcc8:	e2811050 	add	r1, r1, #80	; 0x50
 4242bccc:	e791010a 	ldr	r0, [r1, sl, lsl #2]
 4242bcd0:	e786010a 	str	r0, [r6, sl, lsl #2]
 4242bcd4:	e28aa001 	add	sl, sl, #1
-4242bcd8:	e59f058c 	ldr	r0, [pc, #1420]	; 0x4242c26c
+4242bcd8:	e59f058c 	ldr	r0, [0x4242c26c]
 4242bcdc:	e5900000 	ldr	r0, [r0]
 4242bce0:	e15a0520 	cmp	sl, r0, lsr #10
 4242bce4:	3afffff5 	bcc	0x4242bcc0
-4242bce8:	e59f157c 	ldr	r1, [pc, #1404]	; 0x4242c26c
+4242bce8:	e59f157c 	ldr	r1, [0x4242c26c]
 4242bcec:	e5911000 	ldr	r1, [r1]
 4242bcf0:	e1a00521 	lsr	r0, r1, #10
 4242bcf4:	ebfff7ab 	bl	0x42429ba8
 4242bcf8:	e1a08000 	mov	r8, r0
 4242bcfc:	ebfff80f 	bl	0x42429d40
-4242bd00:	e59f0558 	ldr	r0, [pc, #1368]	; 0x4242c260
+4242bd00:	e59f0558 	ldr	r0, [0x4242c260]
 4242bd04:	e5900000 	ldr	r0, [r0]
 4242bd08:	e5900034 	ldr	r0, [r0, #52]	; 0x34
 4242bd0c:	e3c00a0f 	bic	r0, r0, #0xf000
 4242bd10:	e59d1008 	ldr	r1, [sp, #8]
 4242bd14:	e1800001 	orr	r0, r0, r1
-4242bd18:	e59f1540 	ldr	r1, [pc, #1344]	; 0x4242c260
+4242bd18:	e59f1540 	ldr	r1, [0x4242c260]
 4242bd1c:	e5911000 	ldr	r1, [r1]
 4242bd20:	e5810034 	str	r0, [r1, #52]	; 0x34
 4242bd24:	e3570000 	cmp	r7, #0
@@ -36465,23 +36466,23 @@ Disassembly of section .data:
 4242bdac:	e59d0018 	ldr	r0, [sp, #24]
 4242bdb0:	e5900010 	ldr	r0, [r0, #16]
 4242bdb4:	e58d0010 	str	r0, [sp, #16]
-4242bdb8:	e59f04a0 	ldr	r0, [pc, #1184]	; 0x4242c260
+4242bdb8:	e59f04a0 	ldr	r0, [0x4242c260]
 4242bdbc:	e5900000 	ldr	r0, [r0]
 4242bdc0:	e5900000 	ldr	r0, [r0]
 4242bdc4:	e3800901 	orr	r0, r0, #0x4000
-4242bdc8:	e59f1490 	ldr	r1, [pc, #1168]	; 0x4242c260
+4242bdc8:	e59f1490 	ldr	r1, [0x4242c260]
 4242bdcc:	e5911000 	ldr	r1, [r1]
 4242bdd0:	e5810000 	str	r0, [r1]
-4242bdd4:	e59f0484 	ldr	r0, [pc, #1156]	; 0x4242c260
+4242bdd4:	e59f0484 	ldr	r0, [0x4242c260]
 4242bdd8:	e5900000 	ldr	r0, [r0]
 4242bddc:	e5900000 	ldr	r0, [r0]
 4242bde0:	e7e30450 	ubfx	r0, r0, #8, #4
 4242bde4:	e58d0004 	str	r0, [sp, #4]
-4242bde8:	e59f0470 	ldr	r0, [pc, #1136]	; 0x4242c260
+4242bde8:	e59f0470 	ldr	r0, [0x4242c260]
 4242bdec:	e5900000 	ldr	r0, [r0]
 4242bdf0:	e5900000 	ldr	r0, [r0]
 4242bdf4:	e3800c03 	orr	r0, r0, #0x300
-4242bdf8:	e59f1460 	ldr	r1, [pc, #1120]	; 0x4242c260
+4242bdf8:	e59f1460 	ldr	r1, [0x4242c260]
 4242bdfc:	e5911000 	ldr	r1, [r1]
 4242be00:	e5810000 	str	r0, [r1]
 4242be04:	e3550101 	cmp	r5, #0x40000000
@@ -36491,15 +36492,15 @@ Disassembly of section .data:
 4242be14:	e3a00000 	mov	r0, #0
 4242be18:	e3500000 	cmp	r0, #0
 4242be1c:	0a000002 	beq	0x4242be2c
-4242be20:	e59f0448 	ldr	r0, [pc, #1096]	; 0x4242c270
+4242be20:	e59f0448 	ldr	r0, [0x4242c270]
 4242be24:	e58d001c 	str	r0, [sp, #28]
 4242be28:	ea000001 	b	0x4242be34
-4242be2c:	e59f0440 	ldr	r0, [pc, #1088]	; 0x4242c274
+4242be2c:	e59f0440 	ldr	r0, [0x4242c274]
 4242be30:	e58d001c 	str	r0, [sp, #28]
 4242be34:	e3a03b01 	mov	r3, #0x400
 4242be38:	e58d3000 	str	r3, [sp]
 4242be3c:	e1a03005 	mov	r3, r5
-4242be40:	e59f0418 	ldr	r0, [pc, #1048]	; 0x4242c260
+4242be40:	e59f0418 	ldr	r0, [0x4242c260]
 4242be44:	e5900000 	ldr	r0, [r0]
 4242be48:	e2802030 	add	r2, r0, #48	; 0x30
 4242be4c:	e3a00000 	mov	r0, #0
@@ -36513,7 +36514,7 @@ Disassembly of section .data:
 4242be6c:	e28dd024 	add	sp, sp, #36	; 0x24
 4242be70:	e8bd8ff0 	pop	{r4, r5, r6, r7, r8, r9, sl, fp, pc}
 4242be74:	e3a00b01 	mov	r0, #0x400
-4242be78:	e59f13e0 	ldr	r1, [pc, #992]	; 0x4242c260
+4242be78:	e59f13e0 	ldr	r1, [0x4242c260]
 4242be7c:	e5911000 	ldr	r1, [r1]
 4242be80:	e5810020 	str	r0, [r1, #32]
 4242be84:	e3a0a000 	mov	sl, #0
@@ -36526,11 +36527,11 @@ Disassembly of section .data:
 4242bea0:	e59d0008 	ldr	r0, [sp, #8]
 4242bea4:	e20000ff 	and	r0, r0, #0xff
 4242bea8:	e18aa800 	orr	sl, sl, r0, lsl #16
-4242beac:	e59f03ac 	ldr	r0, [pc, #940]	; 0x4242c260
+4242beac:	e59f03ac 	ldr	r0, [0x4242c260]
 4242beb0:	e5900000 	ldr	r0, [r0]
 4242beb4:	e580a028 	str	sl, [r0, #40]	; 0x28
 4242beb8:	e3a00001 	mov	r0, #1
-4242bebc:	e59f139c 	ldr	r1, [pc, #924]	; 0x4242c260
+4242bebc:	e59f139c 	ldr	r1, [0x4242c260]
 4242bec0:	e5911000 	ldr	r1, [r1]
 4242bec4:	e581001c 	str	r0, [r1, #28]
 4242bec8:	e59d2014 	ldr	r2, [sp, #20]
@@ -36552,19 +36553,19 @@ Disassembly of section .data:
 4242bf08:	e38aa402 	orr	sl, sl, #0x2000000
 4242bf0c:	e3a00001 	mov	r0, #1
 4242bf10:	ebfff792 	bl	0x42429d60
-4242bf14:	e59f0344 	ldr	r0, [pc, #836]	; 0x4242c260
+4242bf14:	e59f0344 	ldr	r0, [0x4242c260]
 4242bf18:	e5900000 	ldr	r0, [r0]
 4242bf1c:	e5900034 	ldr	r0, [r0, #52]	; 0x34
 4242bf20:	e200ba0f 	and	fp, r0, #0xf000
-4242bf24:	e59f0334 	ldr	r0, [pc, #820]	; 0x4242c260
+4242bf24:	e59f0334 	ldr	r0, [0x4242c260]
 4242bf28:	e5900000 	ldr	r0, [r0]
 4242bf2c:	e5900034 	ldr	r0, [r0, #52]	; 0x34
 4242bf30:	e3c00a0f 	bic	r0, r0, #0xf000
 4242bf34:	e3800902 	orr	r0, r0, #0x8000
-4242bf38:	e59f1320 	ldr	r1, [pc, #800]	; 0x4242c260
+4242bf38:	e59f1320 	ldr	r1, [0x4242c260]
 4242bf3c:	e5911000 	ldr	r1, [r1]
 4242bf40:	e5810034 	str	r0, [r1, #52]	; 0x34
-4242bf44:	e59f0314 	ldr	r0, [pc, #788]	; 0x4242c260
+4242bf44:	e59f0314 	ldr	r0, [0x4242c260]
 4242bf48:	e5900000 	ldr	r0, [r0]
 4242bf4c:	e580a024 	str	sl, [r0, #36]	; 0x24
 4242bf50:	ebffbda7 	bl	0x4241b5f4
@@ -36580,7 +36581,7 @@ Disassembly of section .data:
 4242bf78:	e3a00000 	mov	r0, #0
 4242bf7c:	e58d0020 	str	r0, [sp, #32]
 4242bf80:	ea000009 	b	0x4242bfac
-4242bf84:	e59f12d4 	ldr	r1, [pc, #724]	; 0x4242c260
+4242bf84:	e59f12d4 	ldr	r1, [0x4242c260]
 4242bf88:	e59d0020 	ldr	r0, [sp, #32]
 4242bf8c:	e5911000 	ldr	r1, [r1]
 4242bf90:	e2811050 	add	r1, r1, #80	; 0x50
@@ -36593,7 +36594,7 @@ Disassembly of section .data:
 4242bfac:	e59d0020 	ldr	r0, [sp, #32]
 4242bfb0:	e3500001 	cmp	r0, #1
 4242bfb4:	bafffff2 	blt	0x4242bf84
-4242bfb8:	e59f12ac 	ldr	r1, [pc, #684]	; 0x4242c26c
+4242bfb8:	e59f12ac 	ldr	r1, [0x4242c26c]
 4242bfbc:	e5911000 	ldr	r1, [r1]
 4242bfc0:	e1a00521 	lsr	r0, r1, #10
 4242bfc4:	ebfff6f7 	bl	0x42429ba8
@@ -36607,21 +36608,21 @@ Disassembly of section .data:
 4242bfe4:	0a000001 	beq	0x4242bff0
 4242bfe8:	e1a00009 	mov	r0, r9
 4242bfec:	eaffff9e 	b	0x4242be6c
-4242bff0:	e59f0268 	ldr	r0, [pc, #616]	; 0x4242c260
+4242bff0:	e59f0268 	ldr	r0, [0x4242c260]
 4242bff4:	e5900000 	ldr	r0, [r0]
 4242bff8:	e5900034 	ldr	r0, [r0, #52]	; 0x34
 4242bffc:	e3c00a0f 	bic	r0, r0, #0xf000
 4242c000:	e180000b 	orr	r0, r0, fp
-4242c004:	e59f1254 	ldr	r1, [pc, #596]	; 0x4242c260
+4242c004:	e59f1254 	ldr	r1, [0x4242c260]
 4242c008:	e5911000 	ldr	r1, [r1]
 4242c00c:	e5810034 	str	r0, [r1, #52]	; 0x34
-4242c010:	e59f0248 	ldr	r0, [pc, #584]	; 0x4242c260
+4242c010:	e59f0248 	ldr	r0, [0x4242c260]
 4242c014:	e5900000 	ldr	r0, [r0]
 4242c018:	e5900000 	ldr	r0, [r0]
 4242c01c:	e3c00c0f 	bic	r0, r0, #0xf00
 4242c020:	e59d1004 	ldr	r1, [sp, #4]
 4242c024:	e1800401 	orr	r0, r0, r1, lsl #8
-4242c028:	e59f1230 	ldr	r1, [pc, #560]	; 0x4242c260
+4242c028:	e59f1230 	ldr	r1, [0x4242c260]
 4242c02c:	e5911000 	ldr	r1, [r1]
 4242c030:	e5810000 	str	r0, [r1]
 4242c034:	e1a00008 	mov	r0, r8
@@ -36653,11 +36654,11 @@ Disassembly of section .data:
 4242c09c:	e59d0014 	ldr	r0, [sp, #20]
 4242c0a0:	e5900010 	ldr	r0, [r0, #16]
 4242c0a4:	e58d000c 	str	r0, [sp, #12]
-4242c0a8:	e59f01b0 	ldr	r0, [pc, #432]	; 0x4242c260
+4242c0a8:	e59f01b0 	ldr	r0, [0x4242c260]
 4242c0ac:	e5900000 	ldr	r0, [r0]
 4242c0b0:	e5900000 	ldr	r0, [r0]
 4242c0b4:	e3800901 	orr	r0, r0, #0x4000
-4242c0b8:	e59f11a0 	ldr	r1, [pc, #416]	; 0x4242c260
+4242c0b8:	e59f11a0 	ldr	r1, [0x4242c260]
 4242c0bc:	e5911000 	ldr	r1, [r1]
 4242c0c0:	e5810000 	str	r0, [r1]
 4242c0c4:	e3550101 	cmp	r5, #0x40000000
@@ -36667,13 +36668,13 @@ Disassembly of section .data:
 4242c0d4:	e3a00000 	mov	r0, #0
 4242c0d8:	e3500000 	cmp	r0, #0
 4242c0dc:	0a000001 	beq	0x4242c0e8
-4242c0e0:	e59fb188 	ldr	fp, [pc, #392]	; 0x4242c270
+4242c0e0:	e59fb188 	ldr	fp, [0x4242c270]
 4242c0e4:	ea000000 	b	0x4242c0ec
-4242c0e8:	e59fb184 	ldr	fp, [pc, #388]	; 0x4242c274
+4242c0e8:	e59fb184 	ldr	fp, [0x4242c274]
 4242c0ec:	e3a03b02 	mov	r3, #0x800
 4242c0f0:	e58d3000 	str	r3, [sp]
 4242c0f4:	e1a03005 	mov	r3, r5
-4242c0f8:	e59f0160 	ldr	r0, [pc, #352]	; 0x4242c260
+4242c0f8:	e59f0160 	ldr	r0, [0x4242c260]
 4242c0fc:	e5900000 	ldr	r0, [r0]
 4242c100:	e2802030 	add	r2, r0, #48	; 0x30
 4242c104:	e1a0100b 	mov	r1, fp
@@ -36687,7 +36688,7 @@ Disassembly of section .data:
 4242c124:	e28dd01c 	add	sp, sp, #28
 4242c128:	e8bd8ff0 	pop	{r4, r5, r6, r7, r8, r9, sl, fp, pc}
 4242c12c:	e3a00b01 	mov	r0, #0x400
-4242c130:	e59f1128 	ldr	r1, [pc, #296]	; 0x4242c260
+4242c130:	e59f1128 	ldr	r1, [0x4242c260]
 4242c134:	e5911000 	ldr	r1, [r1]
 4242c138:	e5810020 	str	r0, [r1, #32]
 4242c13c:	e3a00000 	mov	r0, #0
@@ -36707,12 +36708,12 @@ Disassembly of section .data:
 4242c174:	e59d1018 	ldr	r1, [sp, #24]
 4242c178:	e1810800 	orr	r0, r1, r0, lsl #16
 4242c17c:	e58d0018 	str	r0, [sp, #24]
-4242c180:	e59f10d8 	ldr	r1, [pc, #216]	; 0x4242c260
+4242c180:	e59f10d8 	ldr	r1, [0x4242c260]
 4242c184:	e59d0018 	ldr	r0, [sp, #24]
 4242c188:	e5911000 	ldr	r1, [r1]
 4242c18c:	e5810028 	str	r0, [r1, #40]	; 0x28
 4242c190:	e3a00002 	mov	r0, #2
-4242c194:	e59f10c4 	ldr	r1, [pc, #196]	; 0x4242c260
+4242c194:	e59f10c4 	ldr	r1, [0x4242c260]
 4242c198:	e5911000 	ldr	r1, [r1]
 4242c19c:	e581001c 	str	r0, [r1, #28]
 4242c1a0:	e59d2010 	ldr	r2, [sp, #16]
@@ -36739,7 +36740,7 @@ Disassembly of section .data:
 4242c1f4:	e59d0018 	ldr	r0, [sp, #24]
 4242c1f8:	e3800102 	orr	r0, r0, #0x80000000
 4242c1fc:	e58d0018 	str	r0, [sp, #24]
-4242c200:	e59f0064 	ldr	r0, [pc, #100]	; 0x4242c26c
+4242c200:	e59f0064 	ldr	r0, [0x4242c26c]
 4242c204:	e5900000 	ldr	r0, [r0]
 4242c208:	e3a01001 	mov	r1, #1
 4242c20c:	e1510520 	cmp	r1, r0, lsr #10
@@ -36749,7 +36750,7 @@ Disassembly of section .data:
 4242c21c:	e58d0018 	str	r0, [sp, #24]
 4242c220:	e3a00001 	mov	r0, #1
 4242c224:	ebfff6cd 	bl	0x42429d60
-4242c228:	e59f1030 	ldr	r1, [pc, #48]	; 0x4242c260
+4242c228:	e59f1030 	ldr	r1, [0x4242c260]
 4242c22c:	e59d0018 	ldr	r0, [sp, #24]
 4242c230:	e5911000 	ldr	r1, [r1]
 4242c234:	e5810024 	str	r0, [r1, #36]	; 0x24
@@ -36864,28 +36865,28 @@ Disassembly of section .data:
 4242c3e8:	e8bd87f0 	pop	{r4, r5, r6, r7, r8, r9, sl, pc}
 4242c3ec:	e1a01000 	mov	r1, r0
 4242c3f0:	e1a00821 	lsr	r0, r1, #16
-4242c3f4:	e59f21c8 	ldr	r2, [pc, #456]	; 0x4242c5c4
+4242c3f4:	e59f21c8 	ldr	r2, [0x4242c5c4]
 4242c3f8:	e5c20000 	strb	r0, [r2]
 4242c3fc:	e1a00421 	lsr	r0, r1, #8
-4242c400:	e59f21c0 	ldr	r2, [pc, #448]	; 0x4242c5c8
+4242c400:	e59f21c0 	ldr	r2, [0x4242c5c8]
 4242c404:	e5c20000 	strb	r0, [r2]
-4242c408:	e59f21bc 	ldr	r2, [pc, #444]	; 0x4242c5cc
+4242c408:	e59f21bc 	ldr	r2, [0x4242c5cc]
 4242c40c:	e5c21000 	strb	r1, [r2]
 4242c410:	e3510000 	cmp	r1, #0
 4242c414:	0a00001e 	beq	0x4242c494
-4242c418:	e59f01a4 	ldr	r0, [pc, #420]	; 0x4242c5c4
+4242c418:	e59f01a4 	ldr	r0, [0x4242c5c4]
 4242c41c:	e5d00000 	ldrb	r0, [r0]
 4242c420:	e3500000 	cmp	r0, #0
 4242c424:	0a000003 	beq	0x4242c438
-4242c428:	e59f0194 	ldr	r0, [pc, #404]	; 0x4242c5c4
+4242c428:	e59f0194 	ldr	r0, [0x4242c5c4]
 4242c42c:	e5d00000 	ldrb	r0, [r0]
 4242c430:	e3500001 	cmp	r0, #1
 4242c434:	1a000016 	bne	0x4242c494
 4242c438:	e3a00005 	mov	r0, #5
-4242c43c:	e59f218c 	ldr	r2, [pc, #396]	; 0x4242c5d0
+4242c43c:	e59f218c 	ldr	r2, [0x4242c5d0]
 4242c440:	e5c20000 	strb	r0, [r2]
 4242c444:	e3a000a4 	mov	r0, #164	; 0xa4
-4242c448:	e59f2184 	ldr	r2, [pc, #388]	; 0x4242c5d4
+4242c448:	e59f2184 	ldr	r2, [0x4242c5d4]
 4242c44c:	e5c20000 	strb	r0, [r2]
 4242c450:	e3a000a5 	mov	r0, #165	; 0xa5
 4242c454:	e5c20001 	strb	r0, [r2, #1]
@@ -36896,7 +36897,7 @@ Disassembly of section .data:
 4242c468:	e3a000c9 	mov	r0, #201	; 0xc9
 4242c46c:	e5c20004 	strb	r0, [r2, #4]
 4242c470:	e3a00025 	mov	r0, #37	; 0x25
-4242c474:	e59f215c 	ldr	r2, [pc, #348]	; 0x4242c5d8
+4242c474:	e59f215c 	ldr	r2, [0x4242c5d8]
 4242c478:	e5c20000 	strb	r0, [r2]
 4242c47c:	e5c20001 	strb	r0, [r2, #1]
 4242c480:	e5c20002 	strb	r0, [r2, #2]
@@ -36912,19 +36913,19 @@ Disassembly of section .data:
 4242c4a8:	e1a07000 	mov	r7, r0
 4242c4ac:	e1a04001 	mov	r4, r1
 4242c4b0:	e1a08002 	mov	r8, r2
-4242c4b4:	e59f0114 	ldr	r0, [pc, #276]	; 0x4242c5d0
+4242c4b4:	e59f0114 	ldr	r0, [0x4242c5d0]
 4242c4b8:	e5d02000 	ldrb	r2, [r0]
-4242c4bc:	e59f1110 	ldr	r1, [pc, #272]	; 0x4242c5d4
-4242c4c0:	e59f0114 	ldr	r0, [pc, #276]	; 0x4242c5dc
+4242c4bc:	e59f1110 	ldr	r1, [0x4242c5d4]
+4242c4c0:	e59f0114 	ldr	r0, [0x4242c5dc]
 4242c4c4:	ebfff88d 	bl	0x4242a700
 4242c4c8:	e1a05000 	mov	r5, r0
 4242c4cc:	e3a06000 	mov	r6, #0
 4242c4d0:	ea000003 	b	0x4242c4e4
-4242c4d4:	e59f0100 	ldr	r0, [pc, #256]	; 0x4242c5dc
+4242c4d4:	e59f0100 	ldr	r0, [0x4242c5dc]
 4242c4d8:	e7d00006 	ldrb	r0, [r0, r6]
 4242c4dc:	e7c40006 	strb	r0, [r4, r6]
 4242c4e0:	e2866001 	add	r6, r6, #1
-4242c4e4:	e59f00e4 	ldr	r0, [pc, #228]	; 0x4242c5d0
+4242c4e4:	e59f00e4 	ldr	r0, [0x4242c5d0]
 4242c4e8:	e5d00000 	ldrb	r0, [r0]
 4242c4ec:	e1560000 	cmp	r6, r0
 4242c4f0:	3afffff7 	bcc	0x4242c4d4
@@ -36934,10 +36935,10 @@ Disassembly of section .data:
 4242c500:	e1a05000 	mov	r5, r0
 4242c504:	e1a06001 	mov	r6, r1
 4242c508:	e1a07002 	mov	r7, r2
-4242c50c:	e59f00bc 	ldr	r0, [pc, #188]	; 0x4242c5d0
+4242c50c:	e59f00bc 	ldr	r0, [0x4242c5d0]
 4242c510:	e5d02000 	ldrb	r2, [r0]
-4242c514:	e59f10b8 	ldr	r1, [pc, #184]	; 0x4242c5d4
-4242c518:	e59f00bc 	ldr	r0, [pc, #188]	; 0x4242c5dc
+4242c514:	e59f10b8 	ldr	r1, [0x4242c5d4]
+4242c518:	e59f00bc 	ldr	r0, [0x4242c5dc]
 4242c51c:	ebfff8b0 	bl	0x4242a7e4
 4242c520:	e1a04000 	mov	r4, r0
 4242c524:	e1a00004 	mov	r0, r4
@@ -36952,18 +36953,18 @@ Disassembly of section .data:
 4242c548:	e3a04000 	mov	r4, #0
 4242c54c:	ea000005 	b	0x4242c568
 4242c550:	e7dd0004 	ldrb	r0, [sp, r4]
-4242c554:	e59f107c 	ldr	r1, [pc, #124]	; 0x4242c5d8
+4242c554:	e59f107c 	ldr	r1, [0x4242c5d8]
 4242c558:	e7d11004 	ldrb	r1, [r1, r4]
 4242c55c:	e0800001 	add	r0, r0, r1
 4242c560:	e7cd0004 	strb	r0, [sp, r4]
 4242c564:	e2844001 	add	r4, r4, #1
-4242c568:	e59f0060 	ldr	r0, [pc, #96]	; 0x4242c5d0
+4242c568:	e59f0060 	ldr	r0, [0x4242c5d0]
 4242c56c:	e5d00000 	ldrb	r0, [r0]
 4242c570:	e1540000 	cmp	r4, r0
 4242c574:	3afffff5 	bcc	0x4242c550
-4242c578:	e59f0050 	ldr	r0, [pc, #80]	; 0x4242c5d0
+4242c578:	e59f0050 	ldr	r0, [0x4242c5d0]
 4242c57c:	e5d02000 	ldrb	r2, [r0]
-4242c580:	e59f104c 	ldr	r1, [pc, #76]	; 0x4242c5d4
+4242c580:	e59f104c 	ldr	r1, [0x4242c5d4]
 4242c584:	e1a0000d 	mov	r0, sp
 4242c588:	ebfff895 	bl	0x4242a7e4
 4242c58c:	e3a00000 	mov	r0, #0
@@ -37083,7 +37084,7 @@ Disassembly of section .data:
 4242c754:	e92d4010 	push	{r4, lr}
 4242c758:	e3130003 	tst	r3, #3
 4242c75c:	1a00001e 	bne	0x4242c7dc
-4242c760:	e59f40c4 	ldr	r4, [pc, #196]	; 0x4242c82c
+4242c760:	e59f40c4 	ldr	r4, [0x4242c82c]
 4242c764:	e3520004 	cmp	r2, #4
 4242c768:	3a00001b 	bcc	0x4242c7dc
 4242c76c:	e4903004 	ldr	r3, [r0], #4
@@ -37143,7 +37144,7 @@ Disassembly of section .data:
 4242c844:	012fff1e 	bxeq	lr
 4242c848:	e3100003 	tst	r0, #3
 4242c84c:	1afffff9 	bne	0x4242c838
-4242c850:	e59f3034 	ldr	r3, [pc, #52]	; 0x4242c88c
+4242c850:	e59f3034 	ldr	r3, [0x4242c88c]
 4242c854:	e4901004 	ldr	r1, [r0], #4
 4242c858:	e6631ff1 	uqsub8	r1, r3, r1
 4242c85c:	e3510000 	cmp	r1, #0
@@ -37164,7 +37165,7 @@ Disassembly of section .data:
 4242c898:	e3130003 	tst	r3, #3
 4242c89c:	e52de004 	push	{lr}		; (str lr, [sp, #-4]!)
 4242c8a0:	1a00000a 	bne	0x4242c8d0
-4242c8a4:	e59fc044 	ldr	ip, [pc, #68]	; 0x4242c8f0
+4242c8a4:	e59fc044 	ldr	ip, [0x4242c8f0]
 4242c8a8:	e4913004 	ldr	r3, [r1], #4
 4242c8ac:	e66ceff3 	uqsub8	lr, ip, r3
 4242c8b0:	e35e0000 	cmp	lr, #0
@@ -37297,7 +37298,7 @@ Disassembly of section .data:
 4242caac:	e1a04000 	mov	r4, r0
 4242cab0:	03110003 	tsteq	r1, #3
 4242cab4:	1a00000a 	bne	0x4242cae4
-4242cab8:	e59fe04c 	ldr	lr, [pc, #76]	; 0x4242cb0c
+4242cab8:	e59fe04c 	ldr	lr, [0x4242cb0c]
 4242cabc:	e2522004 	subs	r2, r2, #4
 4242cac0:	ba000006 	blt	0x4242cae0
 4242cac4:	e4913004 	ldr	r3, [r1], #4
@@ -37323,7 +37324,7 @@ Disassembly of section .data:
 4242cb14:	03110003 	tsteq	r1, #3
 4242cb18:	1a000017 	bne	0x4242cb7c
 4242cb1c:	e92d4000 	push	{lr}
-4242cb20:	e59fe084 	ldr	lr, [pc, #132]	; 0x4242cbac
+4242cb20:	e59fe084 	ldr	lr, [0x4242cbac]
 4242cb24:	e4902004 	ldr	r2, [r0], #4
 4242cb28:	e4913004 	ldr	r3, [r1], #4
 4242cb2c:	e042c00e 	sub	ip, r2, lr
@@ -37523,7 +37524,7 @@ Disassembly of section .data:
 4242ce34:	e3c0501f 	bic	r5, r0, #31
 4242ce38:	e385501f 	orr	r5, r5, #31
 4242ce3c:	e121f005 	msr	CPSR_c, r5
-4242ce40:	e59f2020 	ldr	r2, [pc, #32]	; 0x4242ce68
+4242ce40:	e59f2020 	ldr	r2, [0x4242ce68]
 4242ce44:	e1a00003 	mov	r0, r3
 4242ce48:	e1a0e00f 	mov	lr, pc
 4242ce4c:	e282f000 	add	pc, r2, #0
@@ -37658,18 +37659,18 @@ Disassembly of section .data:
 4242d050:	ee020f10 	mcr	15, 0, r0, cr2, cr0, {0}
 4242d054:	e1a0f00e 	mov	pc, lr
 4242d058:	ee130f10 	mrc	15, 0, r0, cr3, cr0, {0}
-4242d05c:	e59f0010 	ldr	r0, [pc, #16]	; 0x4242d074
+4242d05c:	e59f0010 	ldr	r0, [0x4242d074]
 4242d060:	ee030f10 	mcr	15, 0, r0, cr3, cr0, {0}
 4242d064:	e1a0f00e 	mov	pc, lr
 4242d068:	e3a00000 	mov	r0, #0
 4242d06c:	ee080f17 	mcr	15, 0, r0, cr8, cr7, {0}
 4242d070:	e1a0f00e 	mov	pc, lr
 4242d074:	55555555 	ldrbpl	r5, [r5, #-1365]	; 0x555
-4242d078:	e59f1004 	ldr	r1, [pc, #4]	; 0x4242d084
+4242d078:	e59f1004 	ldr	r1, [0x4242d084]
 4242d07c:	e3a00000 	mov	r0, #0
 4242d080:	ea0000ef 	b	0x4242d444
 4242d084:	7ff80000 	svcvc	0x00f80000
-4242d088:	e59f1004 	ldr	r1, [pc, #4]	; 0x4242d094
+4242d088:	e59f1004 	ldr	r1, [0x4242d094]
 4242d08c:	e3a00000 	mov	r0, #0
 4242d090:	ea0000eb 	b	0x4242d444
 4242d094:	7ff80000 	svcvc	0x00f80000
@@ -37695,7 +37696,7 @@ Disassembly of section .data:
 4242d0e4:	e28dd008 	add	sp, sp, #8
 4242d0e8:	e12fff1e 	bx	lr
 4242d0ec:	e8bd0003 	pop	{r0, r1}
-4242d0f0:	e59fc024 	ldr	ip, [pc, #36]	; 0x4242d11c
+4242d0f0:	e59fc024 	ldr	ip, [0x4242d11c]
 4242d0f4:	e3500001 	cmp	r0, #1
 4242d0f8:	e0a13001 	adc	r3, r1, r1
 4242d0fc:	e3730602 	cmn	r3, #0x200000
@@ -37722,7 +37723,7 @@ Disassembly of section .data:
 4242d150:	e3a03101 	mov	r3, #0x40000000
 4242d154:	e1a01000 	mov	r1, r0
 4242d158:	eafffff4 	b	0x4242d130
-4242d15c:	e59fc1b8 	ldr	ip, [pc, #440]	; 0x4242d31c
+4242d15c:	e59fc1b8 	ldr	ip, [0x4242d31c]
 4242d160:	e92d4070 	push	{r4, r5, r6, lr}
 4242d164:	e1dce221 	bics	lr, ip, r1, lsr #4
 4242d168:	11dce223 	bicsne	lr, ip, r3, lsr #4
@@ -37775,7 +37776,7 @@ Disassembly of section .data:
 4242d224:	e3a04101 	mov	r4, #0x40000000
 4242d228:	e1c00fa3 	bic	r0, r0, r3, lsr #31
 4242d22c:	13a04103 	movne	r4, #0xc0000000
-4242d230:	e59fc0e8 	ldr	ip, [pc, #232]	; 0x4242d320
+4242d230:	e59fc0e8 	ldr	ip, [0x4242d320]
 4242d234:	e3150102 	tst	r5, #0x80000000
 4242d238:	4a00000b 	bmi	0x4242d26c
 4242d23c:	e115000c 	tst	r5, ip
@@ -37817,7 +37818,7 @@ Disassembly of section .data:
 4242d2cc:	e1a06083 	lsl	r6, r3, #1
 4242d2d0:	9156028c 	cmpls	r6, ip, lsl #5
 4242d2d4:	e8bd4070 	pop	{r4, r5, r6, lr}
-4242d2d8:	e59fc044 	ldr	ip, [pc, #68]	; 0x4242d324
+4242d2d8:	e59fc044 	ldr	ip, [0x4242d324]
 4242d2dc:	03520000 	cmpeq	r2, #0
 4242d2e0:	8affff64 	bhi	0x4242d078
 4242d2e4:	e1a00000 	nop			; (mov r0, r0)
@@ -37831,7 +37832,7 @@ Disassembly of section .data:
 4242d304:	e381147f 	orr	r1, r1, #0x7f000000
 4242d308:	e381160f 	orr	r1, r1, #0xf00000
 4242d30c:	e12fff1e 	bx	lr
-4242d310:	e59f1010 	ldr	r1, [pc, #16]	; 0x4242d328
+4242d310:	e59f1010 	ldr	r1, [0x4242d328]
 4242d314:	e3a00000 	mov	r0, #0
 4242d318:	e12fff1e 	bx	lr
 4242d31c:	07ff0000 	ldrbeq	r0, [pc, r0]!
@@ -39704,14 +39705,14 @@ Disassembly of section .data:
 4242f05c:	00627700 	rsbeq	r7, r2, r0, lsl #14
 4242f060:	00770072 	rsbseq	r0, r7, r2, ror r0
 4242f064:	00746166 	rsbseq	r6, r4, r6, ror #2
-4242f068:	e59ff064 	ldr	pc, [pc, #100]	; 0x4242f0d4
-4242f06c:	e59ff064 	ldr	pc, [pc, #100]	; 0x4242f0d8
-4242f070:	e59ff078 	ldr	pc, [pc, #120]	; 0x4242f0f0
-4242f074:	e59ff060 	ldr	pc, [pc, #96]	; 0x4242f0dc
-4242f078:	e59ff060 	ldr	pc, [pc, #96]	; 0x4242f0e0
-4242f07c:	e59ff060 	ldr	pc, [pc, #96]	; 0x4242f0e4
-4242f080:	e59ff06c 	ldr	pc, [pc, #108]	; 0x4242f0f4
-4242f084:	e59ff05c 	ldr	pc, [pc, #92]	; 0x4242f0e8
+4242f068:	e59ff064 	ldr	pc, [0x4242f0d4]
+4242f06c:	e59ff064 	ldr	pc, [0x4242f0d8]
+4242f070:	e59ff078 	ldr	pc, [0x4242f0f0]
+4242f074:	e59ff060 	ldr	pc, [0x4242f0dc]
+4242f078:	e59ff060 	ldr	pc, [0x4242f0e0]
+4242f07c:	e59ff060 	ldr	pc, [0x4242f0e4]
+4242f080:	e59ff06c 	ldr	pc, [0x4242f0f4]
+4242f084:	e59ff05c 	ldr	pc, [0x4242f0e8]
 4242f088:	e24ee004 	sub	lr, lr, #4
 4242f08c:	e92d5fff 	push	{r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, sl, fp, ip, lr}
 4242f090:	e14f3000 	mrs	r3, SPSR
@@ -39720,7 +39721,7 @@ Disassembly of section .data:
 4242f09c:	e92d5fff 	push	{r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, sl, fp, ip, lr}
 4242f0a0:	e59f0050 	ldr	r0, =0x01c20400	; 0x4242f0f8
 4242f0a4:	e5901000 	ldr	r1, [r0]
-4242f0a8:	e59f004c 	ldr	r0, [pc, #76]	; 0x4242f0fc
+4242f0a8:	e59f004c 	ldr	r0, [0x4242f0fc]
 4242f0ac:	e0801081 	add	r1, r0, r1, lsl #1
 4242f0b0:	e5910000 	ldr	r0, [r1]
 4242f0b4:	e1a0e00f 	mov	lr, pc
@@ -41785,20 +41786,20 @@ Disassembly of section .data:
 42431558:	3afffffc 	bcc	0x42431550
 4243155c:	e12fff1e 	bx	lr
 42431560:	e92d4010 	push	{r4, lr}
-42431564:	e59f2d34 	ldr	r2, [pc, #3380]	; 0x424322a0
+42431564:	e59f2d34 	ldr	r2, [0x424322a0]
 42431568:	e3a00001 	mov	r0, #1
-4243156c:	e59f3d30 	ldr	r3, [pc, #3376]	; 0x424322a4
+4243156c:	e59f3d30 	ldr	r3, [0x424322a4]
 42431570:	e283400c 	add	r4, r3, #12
 42431574:	e5944000 	ldr	r4, [r4]
 42431578:	e7933104 	ldr	r3, [r3, r4, lsl #2]
 4243157c:	e5830018 	str	r0, [r3, #24]
-42431580:	e59f0d1c 	ldr	r0, [pc, #3356]	; 0x424322a4
+42431580:	e59f0d1c 	ldr	r0, [0x424322a4]
 42431584:	e280300c 	add	r3, r0, #12
 42431588:	e5933000 	ldr	r3, [r3]
 4243158c:	e7900103 	ldr	r0, [r0, r3, lsl #2]
 42431590:	e590000c 	ldr	r0, [r0, #12]
 42431594:	e3800020 	orr	r0, r0, #32
-42431598:	e59f3d04 	ldr	r3, [pc, #3332]	; 0x424322a4
+42431598:	e59f3d04 	ldr	r3, [0x424322a4]
 4243159c:	e283400c 	add	r4, r3, #12
 424315a0:	e5944000 	ldr	r4, [r4]
 424315a4:	e7933104 	ldr	r3, [r3, r4, lsl #2]
@@ -41807,7 +41808,7 @@ Disassembly of section .data:
 424315b0:	e1b00002 	movs	r0, r2
 424315b4:	e2422001 	sub	r2, r2, #1
 424315b8:	0a000006 	beq	0x424315d8
-424315bc:	e59f0ce0 	ldr	r0, [pc, #3296]	; 0x424322a4
+424315bc:	e59f0ce0 	ldr	r0, [0x424322a4]
 424315c0:	e280300c 	add	r3, r0, #12
 424315c4:	e5933000 	ldr	r3, [r3]
 424315c8:	e7900103 	ldr	r0, [r0, r3, lsl #2]
@@ -41818,7 +41819,7 @@ Disassembly of section .data:
 424315dc:	ca000001 	bgt	0x424315e8
 424315e0:	e3e00000 	mvn	r0, #0
 424315e4:	e8bd8010 	pop	{r4, pc}
-424315e8:	e59f0cb4 	ldr	r0, [pc, #3252]	; 0x424322a4
+424315e8:	e59f0cb4 	ldr	r0, [0x424322a4]
 424315ec:	e280300c 	add	r3, r0, #12
 424315f0:	e5933000 	ldr	r3, [r3]
 424315f4:	e7900103 	ldr	r0, [r0, r3, lsl #2]
@@ -41830,14 +41831,14 @@ Disassembly of section .data:
 4243160c:	e3a00000 	mov	r0, #0
 42431610:	eafffff3 	b	0x424315e4
 42431614:	e30f1fff 	movw	r1, #65535	; 0xffff
-42431618:	e59f0c84 	ldr	r0, [pc, #3204]	; 0x424322a4
+42431618:	e59f0c84 	ldr	r0, [0x424322a4]
 4243161c:	e280300c 	add	r3, r0, #12
 42431620:	e5933000 	ldr	r3, [r3]
 42431624:	e7900103 	ldr	r0, [r0, r3, lsl #2]
 42431628:	e590000c 	ldr	r0, [r0, #12]
 4243162c:	e20020c0 	and	r2, r0, #0xc0
 42431630:	e3822020 	orr	r2, r2, #32
-42431634:	e59f0c68 	ldr	r0, [pc, #3176]	; 0x424322a4
+42431634:	e59f0c68 	ldr	r0, [0x424322a4]
 42431638:	e280300c 	add	r3, r0, #12
 4243163c:	e5933000 	ldr	r3, [r3]
 42431640:	e7900103 	ldr	r0, [r0, r3, lsl #2]
@@ -41846,7 +41847,7 @@ Disassembly of section .data:
 4243164c:	e1b00001 	movs	r0, r1
 42431650:	e2411001 	sub	r1, r1, #1
 42431654:	0a000006 	beq	0x42431674
-42431658:	e59f0c44 	ldr	r0, [pc, #3140]	; 0x424322a4
+42431658:	e59f0c44 	ldr	r0, [0x424322a4]
 4243165c:	e280300c 	add	r3, r0, #12
 42431660:	e5933000 	ldr	r3, [r3]
 42431664:	e7900103 	ldr	r0, [r0, r3, lsl #2]
@@ -41857,7 +41858,7 @@ Disassembly of section .data:
 42431678:	ca000001 	bgt	0x42431684
 4243167c:	e3e00000 	mvn	r0, #0
 42431680:	e12fff1e 	bx	lr
-42431684:	e59f0c18 	ldr	r0, [pc, #3096]	; 0x424322a4
+42431684:	e59f0c18 	ldr	r0, [0x424322a4]
 42431688:	e280300c 	add	r3, r0, #12
 4243168c:	e5933000 	ldr	r3, [r3]
 42431690:	e7900103 	ldr	r0, [r0, r3, lsl #2]
@@ -41879,18 +41880,18 @@ Disassembly of section .data:
 424316d0:	e8bd8070 	pop	{r4, r5, r6, pc}
 424316d4:	e20200ff 	and	r0, r2, #0xff
 424316d8:	e1810080 	orr	r0, r1, r0, lsl #1
-424316dc:	e59f5bc0 	ldr	r5, [pc, #3008]	; 0x424322a4
+424316dc:	e59f5bc0 	ldr	r5, [0x424322a4]
 424316e0:	e285600c 	add	r6, r5, #12
 424316e4:	e5966000 	ldr	r6, [r6]
 424316e8:	e7955106 	ldr	r5, [r5, r6, lsl #2]
 424316ec:	e5850008 	str	r0, [r5, #8]
-424316f0:	e59f0bac 	ldr	r0, [pc, #2988]	; 0x424322a4
+424316f0:	e59f0bac 	ldr	r0, [0x424322a4]
 424316f4:	e280500c 	add	r5, r0, #12
 424316f8:	e5955000 	ldr	r5, [r5]
 424316fc:	e7900105 	ldr	r0, [r0, r5, lsl #2]
 42431700:	e590000c 	ldr	r0, [r0, #12]
 42431704:	e20000f7 	and	r0, r0, #0xf7
-42431708:	e59f5b94 	ldr	r5, [pc, #2964]	; 0x424322a4
+42431708:	e59f5b94 	ldr	r5, [0x424322a4]
 4243170c:	e285600c 	add	r6, r5, #12
 42431710:	e5966000 	ldr	r6, [r6]
 42431714:	e7955106 	ldr	r5, [r5, r6, lsl #2]
@@ -41899,7 +41900,7 @@ Disassembly of section .data:
 42431720:	e1b00003 	movs	r0, r3
 42431724:	e2433001 	sub	r3, r3, #1
 42431728:	0a000006 	beq	0x42431748
-4243172c:	e59f0b70 	ldr	r0, [pc, #2928]	; 0x424322a4
+4243172c:	e59f0b70 	ldr	r0, [0x424322a4]
 42431730:	e280500c 	add	r5, r0, #12
 42431734:	e5955000 	ldr	r5, [r5]
 42431738:	e7900105 	ldr	r0, [r0, r5, lsl #2]
@@ -41910,7 +41911,7 @@ Disassembly of section .data:
 4243174c:	ca000001 	bgt	0x42431758
 42431750:	e3e00000 	mvn	r0, #0
 42431754:	eaffffdd 	b	0x424316d0
-42431758:	e59f0b44 	ldr	r0, [pc, #2884]	; 0x424322a4
+42431758:	e59f0b44 	ldr	r0, [0x424322a4]
 4243175c:	e280500c 	add	r5, r0, #12
 42431760:	e5955000 	ldr	r5, [r5]
 42431764:	e7900105 	ldr	r0, [r0, r5, lsl #2]
@@ -41931,18 +41932,18 @@ Disassembly of section .data:
 424317a0:	e1a01000 	mov	r1, r0
 424317a4:	e30f3fff 	movw	r3, #65535	; 0xffff
 424317a8:	e20100ff 	and	r0, r1, #0xff
-424317ac:	e59f4af0 	ldr	r4, [pc, #2800]	; 0x424322a4
+424317ac:	e59f4af0 	ldr	r4, [0x424322a4]
 424317b0:	e284500c 	add	r5, r4, #12
 424317b4:	e5955000 	ldr	r5, [r5]
 424317b8:	e7944105 	ldr	r4, [r4, r5, lsl #2]
 424317bc:	e5840008 	str	r0, [r4, #8]
-424317c0:	e59f0adc 	ldr	r0, [pc, #2780]	; 0x424322a4
+424317c0:	e59f0adc 	ldr	r0, [0x424322a4]
 424317c4:	e280400c 	add	r4, r0, #12
 424317c8:	e5944000 	ldr	r4, [r4]
 424317cc:	e7900104 	ldr	r0, [r0, r4, lsl #2]
 424317d0:	e590000c 	ldr	r0, [r0, #12]
 424317d4:	e20040f7 	and	r4, r0, #0xf7
-424317d8:	e59f0ac4 	ldr	r0, [pc, #2756]	; 0x424322a4
+424317d8:	e59f0ac4 	ldr	r0, [0x424322a4]
 424317dc:	e280500c 	add	r5, r0, #12
 424317e0:	e5955000 	ldr	r5, [r5]
 424317e4:	e7900105 	ldr	r0, [r0, r5, lsl #2]
@@ -41951,7 +41952,7 @@ Disassembly of section .data:
 424317f0:	e1b00003 	movs	r0, r3
 424317f4:	e2433001 	sub	r3, r3, #1
 424317f8:	0a000006 	beq	0x42431818
-424317fc:	e59f0aa0 	ldr	r0, [pc, #2720]	; 0x424322a4
+424317fc:	e59f0aa0 	ldr	r0, [0x424322a4]
 42431800:	e280400c 	add	r4, r0, #12
 42431804:	e5944000 	ldr	r4, [r4]
 42431808:	e7900104 	ldr	r0, [r0, r4, lsl #2]
@@ -41962,7 +41963,7 @@ Disassembly of section .data:
 4243181c:	ca000001 	bgt	0x42431828
 42431820:	e3e00000 	mvn	r0, #0
 42431824:	e8bd8030 	pop	{r4, r5, pc}
-42431828:	e59f0a74 	ldr	r0, [pc, #2676]	; 0x424322a4
+42431828:	e59f0a74 	ldr	r0, [0x424322a4]
 4243182c:	e280400c 	add	r4, r0, #12
 42431830:	e5944000 	ldr	r4, [r4]
 42431834:	e7900104 	ldr	r0, [r0, r4, lsl #2]
@@ -41978,13 +41979,13 @@ Disassembly of section .data:
 4243185c:	e30f4fff 	movw	r4, #65535	; 0xffff
 42431860:	e3510001 	cmp	r1, #1
 42431864:	1a00002d 	bne	0x42431920
-42431868:	e59f0a34 	ldr	r0, [pc, #2612]	; 0x424322a4
+42431868:	e59f0a34 	ldr	r0, [0x424322a4]
 4243186c:	e280600c 	add	r6, r0, #12
 42431870:	e5966000 	ldr	r6, [r6]
 42431874:	e7900106 	ldr	r0, [r0, r6, lsl #2]
 42431878:	e590000c 	ldr	r0, [r0, #12]
 4243187c:	e20000f7 	and	r0, r0, #0xf7
-42431880:	e59f6a1c 	ldr	r6, [pc, #2588]	; 0x424322a4
+42431880:	e59f6a1c 	ldr	r6, [0x424322a4]
 42431884:	e286700c 	add	r7, r6, #12
 42431888:	e5977000 	ldr	r7, [r7]
 4243188c:	e7966107 	ldr	r6, [r6, r7, lsl #2]
@@ -41993,7 +41994,7 @@ Disassembly of section .data:
 42431898:	e1b00004 	movs	r0, r4
 4243189c:	e2444001 	sub	r4, r4, #1
 424318a0:	0a000006 	beq	0x424318c0
-424318a4:	e59f09f8 	ldr	r0, [pc, #2552]	; 0x424322a4
+424318a4:	e59f09f8 	ldr	r0, [0x424322a4]
 424318a8:	e280600c 	add	r6, r0, #12
 424318ac:	e5966000 	ldr	r6, [r6]
 424318b0:	e7900106 	ldr	r0, [r0, r6, lsl #2]
@@ -42009,13 +42010,13 @@ Disassembly of section .data:
 424318d8:	e2844001 	add	r4, r4, #1
 424318dc:	e3540064 	cmp	r4, #100	; 0x64
 424318e0:	bafffffc 	blt	0x424318d8
-424318e4:	e59f09b8 	ldr	r0, [pc, #2488]	; 0x424322a4
+424318e4:	e59f09b8 	ldr	r0, [0x424322a4]
 424318e8:	e280600c 	add	r6, r0, #12
 424318ec:	e5966000 	ldr	r6, [r6]
 424318f0:	e7900106 	ldr	r0, [r0, r6, lsl #2]
 424318f4:	e5900008 	ldr	r0, [r0, #8]
 424318f8:	e5c20000 	strb	r0, [r2]
-424318fc:	e59f09a0 	ldr	r0, [pc, #2464]	; 0x424322a4
+424318fc:	e59f09a0 	ldr	r0, [0x424322a4]
 42431900:	e280600c 	add	r6, r0, #12
 42431904:	e5966000 	ldr	r6, [r6]
 42431908:	e7900106 	ldr	r0, [r0, r6, lsl #2]
@@ -42027,14 +42028,14 @@ Disassembly of section .data:
 42431920:	e3a05000 	mov	r5, #0
 42431924:	ea000037 	b	0x42431a08
 42431928:	e30f4fff 	movw	r4, #65535	; 0xffff
-4243192c:	e59f0970 	ldr	r0, [pc, #2416]	; 0x424322a4
+4243192c:	e59f0970 	ldr	r0, [0x424322a4]
 42431930:	e280600c 	add	r6, r0, #12
 42431934:	e5966000 	ldr	r6, [r6]
 42431938:	e7900106 	ldr	r0, [r0, r6, lsl #2]
 4243193c:	e590000c 	ldr	r0, [r0, #12]
 42431940:	e20030f7 	and	r3, r0, #0xf7
 42431944:	e3833004 	orr	r3, r3, #4
-42431948:	e59f0954 	ldr	r0, [pc, #2388]	; 0x424322a4
+42431948:	e59f0954 	ldr	r0, [0x424322a4]
 4243194c:	e280600c 	add	r6, r0, #12
 42431950:	e5966000 	ldr	r6, [r6]
 42431954:	e7900106 	ldr	r0, [r0, r6, lsl #2]
@@ -42043,7 +42044,7 @@ Disassembly of section .data:
 42431960:	e1b00004 	movs	r0, r4
 42431964:	e2444001 	sub	r4, r4, #1
 42431968:	0a000006 	beq	0x42431988
-4243196c:	e59f0930 	ldr	r0, [pc, #2352]	; 0x424322a4
+4243196c:	e59f0930 	ldr	r0, [0x424322a4]
 42431970:	e280600c 	add	r6, r0, #12
 42431974:	e5966000 	ldr	r6, [r6]
 42431978:	e7900106 	ldr	r0, [r0, r6, lsl #2]
@@ -42060,7 +42061,7 @@ Disassembly of section .data:
 424319a4:	e3540064 	cmp	r4, #100	; 0x64
 424319a8:	bafffffc 	blt	0x424319a0
 424319ac:	e30f4fff 	movw	r4, #65535	; 0xffff
-424319b0:	e59f08ec 	ldr	r0, [pc, #2284]	; 0x424322a4
+424319b0:	e59f08ec 	ldr	r0, [0x424322a4]
 424319b4:	e280600c 	add	r6, r0, #12
 424319b8:	e5966000 	ldr	r6, [r6]
 424319bc:	e7900106 	ldr	r0, [r0, r6, lsl #2]
@@ -42070,7 +42071,7 @@ Disassembly of section .data:
 424319cc:	e1b00004 	movs	r0, r4
 424319d0:	e2444001 	sub	r4, r4, #1
 424319d4:	0a000006 	beq	0x424319f4
-424319d8:	e59f08c4 	ldr	r0, [pc, #2244]	; 0x424322a4
+424319d8:	e59f08c4 	ldr	r0, [0x424322a4]
 424319dc:	e280600c 	add	r6, r0, #12
 424319e0:	e5966000 	ldr	r6, [r6]
 424319e4:	e7900106 	ldr	r0, [r0, r6, lsl #2]
@@ -42086,13 +42087,13 @@ Disassembly of section .data:
 42431a0c:	e1500005 	cmp	r0, r5
 42431a10:	8affffc4 	bhi	0x42431928
 42431a14:	e30f4fff 	movw	r4, #65535	; 0xffff
-42431a18:	e59f0884 	ldr	r0, [pc, #2180]	; 0x424322a4
+42431a18:	e59f0884 	ldr	r0, [0x424322a4]
 42431a1c:	e280600c 	add	r6, r0, #12
 42431a20:	e5966000 	ldr	r6, [r6]
 42431a24:	e7900106 	ldr	r0, [r0, r6, lsl #2]
 42431a28:	e590000c 	ldr	r0, [r0, #12]
 42431a2c:	e20000f3 	and	r0, r0, #0xf3
-42431a30:	e59f686c 	ldr	r6, [pc, #2156]	; 0x424322a4
+42431a30:	e59f686c 	ldr	r6, [0x424322a4]
 42431a34:	e286700c 	add	r7, r6, #12
 42431a38:	e5977000 	ldr	r7, [r7]
 42431a3c:	e7966107 	ldr	r6, [r6, r7, lsl #2]
@@ -42101,7 +42102,7 @@ Disassembly of section .data:
 42431a48:	e1b00004 	movs	r0, r4
 42431a4c:	e2444001 	sub	r4, r4, #1
 42431a50:	0a000006 	beq	0x42431a70
-42431a54:	e59f0848 	ldr	r0, [pc, #2120]	; 0x424322a4
+42431a54:	e59f0848 	ldr	r0, [0x424322a4]
 42431a58:	e280600c 	add	r6, r0, #12
 42431a5c:	e5966000 	ldr	r6, [r6]
 42431a60:	e7900106 	ldr	r0, [r0, r6, lsl #2]
@@ -42117,7 +42118,7 @@ Disassembly of section .data:
 42431a88:	e2844001 	add	r4, r4, #1
 42431a8c:	e3540064 	cmp	r4, #100	; 0x64
 42431a90:	bafffffc 	blt	0x42431a88
-42431a94:	e59f0808 	ldr	r0, [pc, #2056]	; 0x424322a4
+42431a94:	e59f0808 	ldr	r0, [0x424322a4]
 42431a98:	e280600c 	add	r6, r0, #12
 42431a9c:	e5966000 	ldr	r6, [r6]
 42431aa0:	e7900106 	ldr	r0, [r0, r6, lsl #2]
@@ -42128,7 +42129,7 @@ Disassembly of section .data:
 42431ab4:	e1b00004 	movs	r0, r4
 42431ab8:	e2444001 	sub	r4, r4, #1
 42431abc:	0a000006 	beq	0x42431adc
-42431ac0:	e59f07dc 	ldr	r0, [pc, #2012]	; 0x424322a4
+42431ac0:	e59f07dc 	ldr	r0, [0x424322a4]
 42431ac4:	e280600c 	add	r6, r0, #12
 42431ac8:	e5966000 	ldr	r6, [r6]
 42431acc:	e7900106 	ldr	r0, [r0, r6, lsl #2]
@@ -42148,18 +42149,18 @@ Disassembly of section .data:
 42431b04:	ea000031 	b	0x42431bd0
 42431b08:	e30f3fff 	movw	r3, #65535	; 0xffff
 42431b0c:	e7d20004 	ldrb	r0, [r2, r4]
-42431b10:	e59f578c 	ldr	r5, [pc, #1932]	; 0x424322a4
+42431b10:	e59f578c 	ldr	r5, [0x424322a4]
 42431b14:	e285600c 	add	r6, r5, #12
 42431b18:	e5966000 	ldr	r6, [r6]
 42431b1c:	e7955106 	ldr	r5, [r5, r6, lsl #2]
 42431b20:	e5850008 	str	r0, [r5, #8]
-42431b24:	e59f0778 	ldr	r0, [pc, #1912]	; 0x424322a4
+42431b24:	e59f0778 	ldr	r0, [0x424322a4]
 42431b28:	e280500c 	add	r5, r0, #12
 42431b2c:	e5955000 	ldr	r5, [r5]
 42431b30:	e7900105 	ldr	r0, [r0, r5, lsl #2]
 42431b34:	e590000c 	ldr	r0, [r0, #12]
 42431b38:	e20050f7 	and	r5, r0, #0xf7
-42431b3c:	e59f0760 	ldr	r0, [pc, #1888]	; 0x424322a4
+42431b3c:	e59f0760 	ldr	r0, [0x424322a4]
 42431b40:	e280600c 	add	r6, r0, #12
 42431b44:	e5966000 	ldr	r6, [r6]
 42431b48:	e7900106 	ldr	r0, [r0, r6, lsl #2]
@@ -42168,7 +42169,7 @@ Disassembly of section .data:
 42431b54:	e1b00003 	movs	r0, r3
 42431b58:	e2433001 	sub	r3, r3, #1
 42431b5c:	0a000006 	beq	0x42431b7c
-42431b60:	e59f073c 	ldr	r0, [pc, #1852]	; 0x424322a4
+42431b60:	e59f073c 	ldr	r0, [0x424322a4]
 42431b64:	e280500c 	add	r5, r0, #12
 42431b68:	e5955000 	ldr	r5, [r5]
 42431b6c:	e7900105 	ldr	r0, [r0, r5, lsl #2]
@@ -42184,7 +42185,7 @@ Disassembly of section .data:
 42431b94:	e1b00003 	movs	r0, r3
 42431b98:	e2433001 	sub	r3, r3, #1
 42431b9c:	0a000006 	beq	0x42431bbc
-42431ba0:	e59f06fc 	ldr	r0, [pc, #1788]	; 0x424322a4
+42431ba0:	e59f06fc 	ldr	r0, [0x424322a4]
 42431ba4:	e280500c 	add	r5, r0, #12
 42431ba8:	e5955000 	ldr	r5, [r5]
 42431bac:	e7900105 	ldr	r0, [r0, r5, lsl #2]
@@ -42221,14 +42222,14 @@ Disassembly of section .data:
 42431c28:	e3a00000 	mov	r0, #0
 42431c2c:	eafffff5 	b	0x42431c08
 42431c30:	e30f1fff 	movw	r1, #65535	; 0xffff
-42431c34:	e59f0668 	ldr	r0, [pc, #1640]	; 0x424322a4
+42431c34:	e59f0668 	ldr	r0, [0x424322a4]
 42431c38:	e280300c 	add	r3, r0, #12
 42431c3c:	e5933000 	ldr	r3, [r3]
 42431c40:	e7900103 	ldr	r0, [r0, r3, lsl #2]
 42431c44:	e590000c 	ldr	r0, [r0, #12]
 42431c48:	e20000c0 	and	r0, r0, #0xc0
 42431c4c:	e3802010 	orr	r2, r0, #16
-42431c50:	e59f064c 	ldr	r0, [pc, #1612]	; 0x424322a4
+42431c50:	e59f064c 	ldr	r0, [0x424322a4]
 42431c54:	e280300c 	add	r3, r0, #12
 42431c58:	e5933000 	ldr	r3, [r3]
 42431c5c:	e7900103 	ldr	r0, [r0, r3, lsl #2]
@@ -42237,7 +42238,7 @@ Disassembly of section .data:
 42431c68:	e1b00001 	movs	r0, r1
 42431c6c:	e2411001 	sub	r1, r1, #1
 42431c70:	0a000006 	beq	0x42431c90
-42431c74:	e59f0628 	ldr	r0, [pc, #1576]	; 0x424322a4
+42431c74:	e59f0628 	ldr	r0, [0x424322a4]
 42431c78:	e280300c 	add	r3, r0, #12
 42431c7c:	e5933000 	ldr	r3, [r3]
 42431c80:	e7900103 	ldr	r0, [r0, r3, lsl #2]
@@ -42253,14 +42254,14 @@ Disassembly of section .data:
 42431ca8:	e1b00001 	movs	r0, r1
 42431cac:	e2411001 	sub	r1, r1, #1
 42431cb0:	0a000006 	beq	0x42431cd0
-42431cb4:	e59f05e8 	ldr	r0, [pc, #1512]	; 0x424322a4
+42431cb4:	e59f05e8 	ldr	r0, [0x424322a4]
 42431cb8:	e280300c 	add	r3, r0, #12
 42431cbc:	e5933000 	ldr	r3, [r3]
 42431cc0:	e7900103 	ldr	r0, [r0, r3, lsl #2]
 42431cc4:	e5900010 	ldr	r0, [r0, #16]
 42431cc8:	e35000f8 	cmp	r0, #248	; 0xf8
 42431ccc:	1afffff5 	bne	0x42431ca8
-42431cd0:	e59f05cc 	ldr	r0, [pc, #1484]	; 0x424322a4
+42431cd0:	e59f05cc 	ldr	r0, [0x424322a4]
 42431cd4:	e280300c 	add	r3, r0, #12
 42431cd8:	e5933000 	ldr	r3, [r3]
 42431cdc:	e7900103 	ldr	r0, [r0, r3, lsl #2]
@@ -42290,7 +42291,7 @@ Disassembly of section .data:
 42431d3c:	8a000001 	bhi	0x42431d48
 42431d40:	e3a06001 	mov	r6, #1
 42431d44:	ea00001c 	b	0x42431dbc
-42431d48:	e59f0558 	ldr	r0, [pc, #1368]	; 0x424322a8
+42431d48:	e59f0558 	ldr	r0, [0x424322a8]
 42431d4c:	e1540000 	cmp	r4, r0
 42431d50:	8a000002 	bhi	0x42431d60
 42431d54:	e3a06002 	mov	r6, #2
@@ -42321,19 +42322,19 @@ Disassembly of section .data:
 42431db8:	3affffe9 	bcc	0x42431d64
 42431dbc:	e320f000 	nop	{0}
 42431dc0:	e1870186 	orr	r0, r7, r6, lsl #3
-42431dc4:	e59f14d8 	ldr	r1, [pc, #1240]	; 0x424322a4
+42431dc4:	e59f14d8 	ldr	r1, [0x424322a4]
 42431dc8:	e281200c 	add	r2, r1, #12
 42431dcc:	e5922000 	ldr	r2, [r2]
 42431dd0:	e7911102 	ldr	r1, [r1, r2, lsl #2]
 42431dd4:	e5810014 	str	r0, [r1, #20]
 42431dd8:	e3a00040 	mov	r0, #64	; 0x40
-42431ddc:	e59f14c0 	ldr	r1, [pc, #1216]	; 0x424322a4
+42431ddc:	e59f14c0 	ldr	r1, [0x424322a4]
 42431de0:	e281200c 	add	r2, r1, #12
 42431de4:	e5922000 	ldr	r2, [r2]
 42431de8:	e7911102 	ldr	r1, [r1, r2, lsl #2]
 42431dec:	e581000c 	str	r0, [r1, #12]
 42431df0:	e3a00000 	mov	r0, #0
-42431df4:	e59f14a8 	ldr	r1, [pc, #1192]	; 0x424322a4
+42431df4:	e59f14a8 	ldr	r1, [0x424322a4]
 42431df8:	e281200c 	add	r2, r1, #12
 42431dfc:	e5922000 	ldr	r2, [r2]
 42431e00:	e7911102 	ldr	r1, [r1, r2, lsl #2]
@@ -42361,17 +42362,17 @@ Disassembly of section .data:
 42431e58:	e3a01002 	mov	r1, #2
 42431e5c:	e1a00005 	mov	r0, r5
 42431e60:	ebfffd97 	bl	0x424314c4
-42431e64:	e59f0444 	ldr	r0, [pc, #1092]	; 0x424322b0
+42431e64:	e59f0444 	ldr	r0, [0x424322b0]
 42431e68:	e5804000 	str	r4, [r0]
 42431e6c:	e30f7fff 	movw	r7, #65535	; 0xffff
 42431e70:	e3a00001 	mov	r0, #1
-42431e74:	e59f1428 	ldr	r1, [pc, #1064]	; 0x424322a4
+42431e74:	e59f1428 	ldr	r1, [0x424322a4]
 42431e78:	e281200c 	add	r2, r1, #12
 42431e7c:	e5922000 	ldr	r2, [r2]
 42431e80:	e7911102 	ldr	r1, [r1, r2, lsl #2]
 42431e84:	e5810018 	str	r0, [r1, #24]
 42431e88:	e320f000 	nop	{0}
-42431e8c:	e59f0410 	ldr	r0, [pc, #1040]	; 0x424322a4
+42431e8c:	e59f0410 	ldr	r0, [0x424322a4]
 42431e90:	e280100c 	add	r1, r0, #12
 42431e94:	e5911000 	ldr	r1, [r1]
 42431e98:	e7900101 	ldr	r0, [r0, r1, lsl #2]
@@ -42392,7 +42393,7 @@ Disassembly of section .data:
 
 42431ed4:	e59f03d0 	ldr	r0, =CCM_IO_BASE	; 0x424322ac
 42431ed8:	e590006c 	ldr	r0, [r0, #CCMU_APB1CLK_GATE]	; 0x6c
-42431edc:	e59f13cc 	ldr	r1, [pc, #972]	; 0x424322b0
+42431edc:	e59f13cc 	ldr	r1, [0x424322b0]
 42431ee0:	e5911000 	ldr	r1, [r1]
 42431ee4:	e3a02001 	mov	r2, #1
 42431ee8:	e1c00112 	bic	r0, r0, r2, lsl r1
@@ -42421,7 +42422,7 @@ Disassembly of section .data:
 42431f40:	e3e00000 	mvn	r0, #0
 42431f44:	e8bd87f0 	pop	{r4, r5, r6, r7, r8, r9, sl, pc}
 
-42431f48:	e59f0354 	ldr	r0, [pc, #852]	; 0x424322a4
+42431f48:	e59f0354 	ldr	r0, [0x424322a4]
 42431f4c:	e280100c 	add	r1, r0, #12
 42431f50:	e5911000 	ldr	r1, [r1]
 42431f54:	e7900101 	ldr	r0, [r0, r1, lsl #2]
@@ -42506,7 +42507,7 @@ Disassembly of section .data:
 42432090:	e3e06000 	mvn	r6, #0
 42432094:	e1a07004 	mov	r7, r4
 42432098:	e3a00000 	mov	r0, #0
-4243209c:	e59f1200 	ldr	r1, [pc, #512]	; 0x424322a4
+4243209c:	e59f1200 	ldr	r1, [0x424322a4]
 424320a0:	e281200c 	add	r2, r1, #12
 424320a4:	e5922000 	ldr	r2, [r2]
 424320a8:	e7911102 	ldr	r1, [r1, r2, lsl #2]
@@ -42701,9 +42702,9 @@ Disassembly of section .data:
 4243239c:	e1a04000 	mov	r4, r0
 424323a0:	e3740001 	cmn	r4, #1
 424323a4:	1a000001 	bne	0x424323b0
-424323a8:	e59f05fc 	ldr	r0, [pc, #1532]	; 0x424329ac
+424323a8:	e59f05fc 	ldr	r0, [0x424329ac]
 424323ac:	e5904000 	ldr	r4, [r0]
-424323b0:	e59f05f8 	ldr	r0, [pc, #1528]	; 0x424329b0
+424323b0:	e59f05f8 	ldr	r0, [0x424329b0]
 424323b4:	e5900000 	ldr	r0, [r0]
 424323b8:	e3500002 	cmp	r0, #2
 424323bc:	1a000061 	bne	0x42432548
@@ -42805,7 +42806,7 @@ Disassembly of section .data:
 4243253c:	e1550004 	cmp	r5, r4
 42432540:	3affffd7 	bcc	0x424324a4
 42432544:	ea000064 	b	0x424326dc
-42432548:	e59f0460 	ldr	r0, [pc, #1120]	; 0x424329b0
+42432548:	e59f0460 	ldr	r0, [0x424329b0]
 4243254c:	e5900000 	ldr	r0, [r0]
 42432550:	e3500003 	cmp	r0, #3
 42432554:	1a000060 	bne	0x424326dc
@@ -42912,7 +42913,7 @@ Disassembly of section .data:
 424326e8:	e1a05000 	mov	r5, r0
 424326ec:	e3750001 	cmn	r5, #1
 424326f0:	1a000016 	bne	0x42432750
-424326f4:	e59f02b8 	ldr	r0, [pc, #696]	; 0x424329b4
+424326f4:	e59f02b8 	ldr	r0, [0x424329b4]
 424326f8:	e5900000 	ldr	r0, [r0]
 424326fc:	e3500000 	cmp	r0, #0
 42432700:	1a00000e 	bne	0x42432740
@@ -42928,10 +42929,10 @@ Disassembly of section .data:
 42432728:	ebfffb69 	bl	0x424314d4
 4243272c:	e3e00000 	mvn	r0, #0
 42432730:	e8bd803e 	pop	{r1, r2, r3, r4, r5, pc}
-42432734:	e59f1278 	ldr	r1, [pc, #632]	; 0x424329b4
+42432734:	e59f1278 	ldr	r1, [0x424329b4]
 42432738:	e59d0008 	ldr	r0, [sp, #8]
 4243273c:	e5810000 	str	r0, [r1]
-42432740:	e59f026c 	ldr	r0, [pc, #620]	; 0x424329b4
+42432740:	e59f026c 	ldr	r0, [0x424329b4]
 42432744:	e5900000 	ldr	r0, [r0]
 42432748:	e58d0008 	str	r0, [sp, #8]
 4243274c:	ea000000 	b	0x42432754
@@ -42998,7 +42999,7 @@ Disassembly of section .data:
 42432840:	e1a05000 	mov	r5, r0
 42432844:	e3750001 	cmn	r5, #1
 42432848:	1a000016 	bne	0x424328a8
-4243284c:	e59f01a0 	ldr	r0, [pc, #416]	; 0x424329f4
+4243284c:	e59f01a0 	ldr	r0, [0x424329f4]
 42432850:	e5900000 	ldr	r0, [r0]
 42432854:	e3500000 	cmp	r0, #0
 42432858:	1a00000e 	bne	0x42432898
@@ -43014,10 +43015,10 @@ Disassembly of section .data:
 42432880:	ebfffb13 	bl	0x424314d4
 42432884:	e3e00000 	mvn	r0, #0
 42432888:	e8bd803e 	pop	{r1, r2, r3, r4, r5, pc}
-4243288c:	e59f1160 	ldr	r1, [pc, #352]	; 0x424329f4
+4243288c:	e59f1160 	ldr	r1, [0x424329f4]
 42432890:	e59d0008 	ldr	r0, [sp, #8]
 42432894:	e5810000 	str	r0, [r1]
-42432898:	e59f0154 	ldr	r0, [pc, #340]	; 0x424329f4
+42432898:	e59f0154 	ldr	r0, [0x424329f4]
 4243289c:	e5900000 	ldr	r0, [r0]
 424328a0:	e58d0008 	str	r0, [sp, #8]
 424328a4:	ea000000 	b	0x424328ac
@@ -43102,7 +43103,7 @@ Disassembly of section .data:
 42432a4c:	e1a05000 	mov	r5, r0
 42432a50:	e3750001 	cmn	r5, #1
 42432a54:	1a000016 	bne	0x42432ab4
-42432a58:	e59f02f0 	ldr	r0, [pc, #752]	; 0x42432d50
+42432a58:	e59f02f0 	ldr	r0, [0x42432d50]
 42432a5c:	e5900000 	ldr	r0, [r0]
 42432a60:	e3500000 	cmp	r0, #0
 42432a64:	1a00000e 	bne	0x42432aa4
@@ -43118,10 +43119,10 @@ Disassembly of section .data:
 42432a8c:	ebfffa90 	bl	0x424314d4
 42432a90:	e3e00000 	mvn	r0, #0
 42432a94:	e8bd803e 	pop	{r1, r2, r3, r4, r5, pc}
-42432a98:	e59f12b0 	ldr	r1, [pc, #688]	; 0x42432d50
+42432a98:	e59f12b0 	ldr	r1, [0x42432d50]
 42432a9c:	e59d0008 	ldr	r0, [sp, #8]
 42432aa0:	e5810000 	str	r0, [r1]
-42432aa4:	e59f02a4 	ldr	r0, [pc, #676]	; 0x42432d50
+42432aa4:	e59f02a4 	ldr	r0, [0x42432d50]
 42432aa8:	e5900000 	ldr	r0, [r0]
 42432aac:	e58d0008 	str	r0, [sp, #8]
 42432ab0:	ea000000 	b	0x42432ab8
@@ -43192,7 +43193,7 @@ Disassembly of section .data:
 42432bb4:	e1a05000 	mov	r5, r0
 42432bb8:	e3750001 	cmn	r5, #1
 42432bbc:	1a000016 	bne	0x42432c1c
-42432bc0:	e59f01dc 	ldr	r0, [pc, #476]	; 0x42432da4
+42432bc0:	e59f01dc 	ldr	r0, [0x42432da4]
 42432bc4:	e5900000 	ldr	r0, [r0]
 42432bc8:	e3500000 	cmp	r0, #0
 42432bcc:	1a00000e 	bne	0x42432c0c
@@ -43208,10 +43209,10 @@ Disassembly of section .data:
 42432bf4:	ebfffa36 	bl	0x424314d4
 42432bf8:	e3e00000 	mvn	r0, #0
 42432bfc:	e8bd803e 	pop	{r1, r2, r3, r4, r5, pc}
-42432c00:	e59f119c 	ldr	r1, [pc, #412]	; 0x42432da4
+42432c00:	e59f119c 	ldr	r1, [0x42432da4]
 42432c04:	e59d0008 	ldr	r0, [sp, #8]
 42432c08:	e5810000 	str	r0, [r1]
-42432c0c:	e59f0190 	ldr	r0, [pc, #400]	; 0x42432da4
+42432c0c:	e59f0190 	ldr	r0, [0x42432da4]
 42432c10:	e5900000 	ldr	r0, [r0]
 42432c14:	e58d0008 	str	r0, [sp, #8]
 42432c18:	ea000000 	b	0x42432c20
@@ -43947,7 +43948,7 @@ Disassembly of section .data:
 424337f8:	e3a00040 	mov	r0, #64	; 0x40
 424337fc:	e58d0008 	str	r0, [sp, #8]
 42433800:	e3a03005 	mov	r3, #5
-42433804:	e59f22a4 	ldr	r2, [pc, #676]	; 0x42433ab0
+42433804:	e59f22a4 	ldr	r2, [0x42433ab0]
 42433808:	e28d1008 	add	r1, sp, #8
 4243380c:	e3a00034 	mov	r0, #52	; 0x34
 42433810:	ebfffa7d 	bl	0x4243220c
@@ -43988,7 +43989,7 @@ Disassembly of section .data:
 4243389c:	e2840040 	add	r0, r4, #64	; 0x40
 424338a0:	e20000ff 	and	r0, r0, #0xff
 424338a4:	e58d0000 	str	r0, [sp]
-424338a8:	e59f0200 	ldr	r0, [pc, #512]	; 0x42433ab0
+424338a8:	e59f0200 	ldr	r0, [0x42433ab0]
 424338ac:	e0802004 	add	r2, r0, r4
 424338b0:	e1a0100d 	mov	r1, sp
 424338b4:	e3a00034 	mov	r0, #52	; 0x34
@@ -44212,7 +44213,7 @@ Disassembly of section .data:
 
 42433c10:	e59f0330 	ldr	r0, =CCM_IO_BASE	; 0x42433f48
 42433c14:	e5900000 	ldr	r0, [r0, #CCMU_PLL1_CORE]
-42433c18:	e59f132c 	ldr	r1, [pc, #812]	; 0x42433f4c
+42433c18:	e59f132c 	ldr	r1, [0x42433f4c]
 42433c1c:	e5810000 	str	r0, [r1]
 42433c20:	e59f0320 	ldr	r0, =CCM_IO_BASE	; 0x42433f48
 42433c24:	e5900008 	ldr	r0, [r0, #CCMU_PLL2_AUDIO]
@@ -44246,26 +44247,26 @@ Disassembly of section .data:
 42433c94:	e3a00000 	mov	r0, #0
 42433c98:	e12fff1e 	bx	lr
 
-42433c9c:	e59f02a8 	ldr	r0, [pc, #680]	; 0x42433f4c
+42433c9c:	e59f02a8 	ldr	r0, [0x42433f4c]
 42433ca0:	e5900000 	ldr	r0, [r0]
 42433ca4:	e59f129c 	ldr	r1, =CCM_IO_BASE	; 0x42433f48
 42433ca8:	e5810000 	str	r0, [r1, CCMU_PLL1_CORE]
-42433cac:	e59f029c 	ldr	r0, [pc, #668]	; 0x42433f50
+42433cac:	e59f029c 	ldr	r0, [0x42433f50]
 42433cb0:	e5900000 	ldr	r0, [r0]
 42433cb4:	e5810008 	str	r0, [r1, #CCMU_PLL2_AUTIO]
-42433cb8:	e59f0294 	ldr	r0, [pc, #660]	; 0x42433f54
+42433cb8:	e59f0294 	ldr	r0, [0x42433f54]
 42433cbc:	e5900000 	ldr	r0, [r0]
 42433cc0:	e5810010 	str	r0, [r1, #CCMU_PLL3_VIDEO]
-42433cc4:	e59f028c 	ldr	r0, [pc, #652]	; 0x42433f58
+42433cc4:	e59f028c 	ldr	r0, [0x42433f58]
 42433cc8:	e5900000 	ldr	r0, [r0]
 42433ccc:	e5810018 	str	r0, [r1, #CCMU_PLL4_VE]
-42433cd0:	e59f0284 	ldr	r0, [pc, #644]	; 0x42433f5c
+42433cd0:	e59f0284 	ldr	r0, [0x42433f5c]
 42433cd4:	e5900000 	ldr	r0, [r0]
 42433cd8:	e5810020 	str	r0, [r1, #CCMU_PLL5_DDR]
-42433cdc:	e59f027c 	ldr	r0, [pc, #636]	; 0x42433f60
+42433cdc:	e59f027c 	ldr	r0, [0x42433f60]
 42433ce0:	e5900000 	ldr	r0, [r0]
 42433ce4:	e5810028 	str	r0, [r1, #CCMU_PLL6_SATA]	; 0x28
-42433ce8:	e59f0274 	ldr	r0, [pc, #628]	; 0x42433f64
+42433ce8:	e59f0274 	ldr	r0, [0x42433f64]
 42433cec:	e5900000 	ldr	r0, [r0]
 42433cf0:	e5810030 	str	r0, [r1, #CCMU_PLL7_VIDEO1]	; 0x30
 42433cf4:	e3a00000 	mov	r0, #0
@@ -44277,7 +44278,7 @@ Disassembly of section .data:
 42433d08:	e3c11803 	bic	r1, r1, #0x30000
 42433d0c:	e3520c7d 	cmp	r2, #0x7d00
 42433d10:	0a000005 	beq	0x42433d2c
-42433d14:	e59f024c 	ldr	r0, [pc, #588]	; 0x42433f68
+42433d14:	e59f024c 	ldr	r0, [0x42433f68]
 42433d18:	e1520000 	cmp	r2, r0
 42433d1c:	1a000001 	bne	0x42433d28
 42433d20:	e3811801 	orr	r1, r1, #0x10000
@@ -44330,7 +44331,7 @@ Disassembly of section .data:
 42433ddc:	e1a01000 	mov	r1, r0
 42433de0:	e7c9101f 	bfc	r1, #0, #10
 42433de4:	e1a00001 	mov	r0, r1
-42433de8:	e59f117c 	ldr	r1, [pc, #380]	; 0x42433f6c
+42433de8:	e59f117c 	ldr	r1, [0x42433f6c]
 42433dec:	e5911000 	ldr	r1, [r1]
 42433df0:	e1800001 	orr	r0, r0, r1
 42433df4:	e59f114c 	ldr	r1, =CCM_IO_BASE	; 0x42433f48
@@ -44894,7 +44895,7 @@ mctl_ahb_reset
 4243465c:	e92d4010 	push	{r4, lr}
 42434660:	e24dd080 	sub	sp, sp, #128	; 0x80
 42434664:	e3a02080 	mov	r2, #128	; 0x80
-42434668:	e59f10b4 	ldr	r1, [pc, #180]	; 0x42434724
+42434668:	e59f10b4 	ldr	r1, [0x42434724]
 4243466c:	e1a0000d 	mov	r0, sp
 42434670:	ebfff39d 	bl	0x424314ec
 42434674:	e3a04000 	mov	r4, #0
@@ -44946,13 +44947,13 @@ mctl_ahb_reset
 4243472c:	ebfff370 	bl	0x424314f4
 42434730:	e3a00090 	mov	r0, #144	; 0x90
 42434734:	ebfff370 	bl	0x424314fc
-42434738:	e59f1110 	ldr	r1, [pc, #272]	; 0x42434850
+42434738:	e59f1110 	ldr	r1, [0x42434850]
 4243473c:	e5810000 	str	r0, [r1]
 42434740:	e2810000 	add	r0, r1, #0
 42434744:	e5900000 	ldr	r0, [r0]
 42434748:	e3500000 	cmp	r0, #0
 4243474c:	1a000003 	bne	0x42434760
-42434750:	e59f00fc 	ldr	r0, [pc, #252]	; 0x42434854
+42434750:	e59f00fc 	ldr	r0, [0x42434854]
 42434754:	ebfff35e 	bl	0x424314d4
 42434758:	e3e00000 	mvn	r0, #0
 4243475c:	e8bd8070 	pop	{r4, r5, r6, pc}
@@ -44960,7 +44961,7 @@ mctl_ahb_reset
 42434764:	e3a04001 	mov	r4, #1
 42434768:	ea000004 	b	0x42434780
 4243476c:	e7950104 	ldr	r0, [r5, r4, lsl #2]
-42434770:	e59f10d8 	ldr	r1, [pc, #216]	; 0x42434850
+42434770:	e59f10d8 	ldr	r1, [0x42434850]
 42434774:	e5911000 	ldr	r1, [r1]
 42434778:	e7810104 	str	r0, [r1, r4, lsl #2]
 4243477c:	e2844001 	add	r4, r4, #1
@@ -44986,17 +44987,17 @@ mctl_ahb_reset
 424347cc:	eaffffe2 	b	0x4243475c
 424347d0:	e92d4070 	push	{r4, r5, r6, lr}
 424347d4:	e59f407c 	ldr	r4, =0x01c20400	; 0x42434858
-424347d8:	e59f0070 	ldr	r0, [pc, #112]	; 0x42434850
+424347d8:	e59f0070 	ldr	r0, [0x42434850]
 424347dc:	e5900000 	ldr	r0, [r0]
 424347e0:	e3500000 	cmp	r0, #0
 424347e4:	1a000003 	bne	0x424347f8
-424347e8:	e59f0070 	ldr	r0, [pc, #112]	; 0x42434860
+424347e8:	e59f0070 	ldr	r0, [0x42434860]
 424347ec:	ebfff338 	bl	0x424314d4
 424347f0:	e3e00000 	mvn	r0, #0
 424347f4:	e8bd8070 	pop	{r4, r5, r6, pc}
 424347f8:	e3a05001 	mov	r5, #1
 424347fc:	ea000004 	b	0x42434814
-42434800:	e59f0048 	ldr	r0, [pc, #72]	; 0x42434850
+42434800:	e59f0048 	ldr	r0, [0x42434850]
 42434804:	e5900000 	ldr	r0, [r0]
 42434808:	e7900105 	ldr	r0, [r0, r5, lsl #2]
 4243480c:	e7840105 	str	r0, [r4, r5, lsl #2]
@@ -45041,7 +45042,7 @@ mctl_ahb_reset
 424348a8:	e3a04000 	mov	r4, #0
 424348ac:	ea000000 	b	0x424348b4
 424348b0:	e2844001 	add	r4, r4, #1
-424348b4:	e59f0228 	ldr	r0, [pc, #552]	; 0x42434ae4
+424348b4:	e59f0228 	ldr	r0, [0x42434ae4]
 424348b8:	e1540000 	cmp	r4, r0
 424348bc:	bafffffb 	blt	0x424348b0
 424348c0:	e3a00000 	mov	r0, #0
@@ -45059,9 +45060,9 @@ mctl_ahb_reset
 424348f0:	e92d401f 	push	{r0, r1, r2, r3, r4, lr}
 424348f4:	e3a00001 	mov	r0, #1
 424348f8:	ebfffd65 	bl	0x42433e94
-424348fc:	e59f01e4 	ldr	r0, [pc, #484]	; 0x42434ae8
+424348fc:	e59f01e4 	ldr	r0, [0x42434ae8]
 42434900:	ebfffd5a 	bl	0x42433e70
-42434904:	e59f01dc 	ldr	r0, [pc, #476]	; 0x42434ae8
+42434904:	e59f01dc 	ldr	r0, [0x42434ae8]
 42434908:	ebfffcfb 	bl	0x42433cfc
 4243490c:	ebfffd30 	bl	0x42433dd4
 42434910:	e3a04000 	mov	r4, #0
@@ -45111,7 +45112,7 @@ mctl_ahb_reset
 424349c0:	ebfffe70 	bl	0x42434388
 424349c4:	e3a00000 	mov	r0, #0
 424349c8:	ebfffd0c 	bl	0x42433e00
-424349cc:	e59f0114 	ldr	r0, [pc, #276]	; 0x42434ae8
+424349cc:	e59f0114 	ldr	r0, [0x42434ae8]
 424349d0:	ebfffcc9 	bl	0x42433cfc
 424349d4:	ebfffcd8 	bl	0x42433d3c
 424349d8:	e3a00e4b 	mov	r0, #1200	; 0x4b0
@@ -45131,6 +45132,7 @@ mctl_ahb_reset
 42434a10:	ebfffd1f 	bl	0x42433e94
 42434a14:	e3a00000 	mov	r0, #0
 42434a18:	e8bd8010 	pop	{r4, pc}
+
 42434a1c:	e92d4010 	push	{r4, lr}
 42434a20:	e3a04000 	mov	r4, #0
 42434a24:	ea000004 	b	0x42434a3c
