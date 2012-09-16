@@ -1,0 +1,91 @@
+
+
+__s32 DRAMC_retraining(void)
+{
+	__u32 i;
+	__u32 reg_val;
+	__u32 ret_val;
+	__u32 reg_dcr, reg_drr, reg_tpr0, reg_tpr1, reg_tpr2, reg_mr, reg_emr, reg_emr2, reg_emr3;
+	__u32 reg_zqcr0, reg_iocr;
+
+	//remember register value
+	reg_dcr = mctl_read_w(SDR_DCR);
+	reg_drr = mctl_read_w(SDR_DRR);
+	reg_tpr0 = mctl_read_w(SDR_TPR0);
+	reg_tpr1 = mctl_read_w(SDR_TPR1);
+	reg_tpr2 = mctl_read_w(SDR_TPR2);
+	reg_mr = mctl_read_w(SDR_MR);
+	reg_emr = mctl_read_w(SDR_EMR);
+	reg_emr2 = mctl_read_w(SDR_EMR2);
+	reg_emr3 = mctl_read_w(SDR_EMR3);
+	reg_zqcr0 = mctl_read_w(SDR_ZQCR0);
+	reg_iocr = mctl_read_w(SDR_IOCR);
+	while(1){
+		mctl_ahb_reset();
+
+		//reset external DRAM
+		mctl_ddr3_reset();
+		mctl_set_drive();
+
+		//dram clock off
+		DRAMC_clock_output_en(0);
+
+		//select dram controller 1
+		mctl_write_w(SDR_SCSR, 0x16237495);
+
+		mctl_itm_disable();
+		mctl_enable_dll0();
+
+		//configure external DRAM
+		mctl_write_w(SDR_DCR, reg_dcr);
+
+		//dram clock on
+		DRAMC_clock_output_en(1);
+        sdelay(0x10);
+		while(mctl_read_w(SDR_CCR) & (0x1U<<31)) {};
+
+		mctl_enable_dllx();
+
+		//set odt impendance divide ratio
+		mctl_write_w(SDR_ZQCR0, reg_zqcr0);
+
+		//set I/O configure register
+		mctl_write_w(SDR_IOCR, reg_iocr);
+
+		//set refresh period
+		mctl_write_w(SDR_DRR, reg_drr);
+
+		//set timing parameters
+		mctl_write_w(SDR_TPR0, reg_tpr0);
+		mctl_write_w(SDR_TPR1, reg_tpr1);
+		mctl_write_w(SDR_TPR2, reg_tpr2);
+
+		//set mode register
+		mctl_write_w(SDR_MR, reg_mr);
+		mctl_write_w(SDR_EMR, reg_emr);
+		mctl_write_w(SDR_EMR2, reg_emr2);
+		mctl_write_w(SDR_EMR3, reg_emr3);
+
+		//set DQS window mode
+		reg_val = mctl_read_w(SDR_CCR);
+		reg_val |= 0x1U<<14;
+		mctl_write_w(SDR_CCR, reg_val);
+
+		//initial external DRAM
+		reg_val = mctl_read_w(SDR_CCR);
+		reg_val |= 0x1U<<31;
+		mctl_write_w(SDR_CCR, reg_val);
+
+		while(mctl_read_w(SDR_CCR) & (0x1U<<31)) {};
+
+		//scan read pipe value
+		mctl_itm_enable();
+		ret_val = DRAMC_scan_readpipe();
+
+		//configure all host port
+		mctl_configure_hostport();
+
+		if(ret_val == 0)
+			return 0;
+    }
+}

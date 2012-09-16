@@ -1,0 +1,29 @@
+
+
+void DRAMC_enter_selfrefresh(void)
+{
+	__u32 i;
+	__u32 reg_val;
+
+	//disable all port
+	for(i=0; i<31; i++)
+	{
+		DRAMC_hostport_on_off(i, 0x0);
+	}
+
+	//disable auto-fresh
+	reg_val = mctl_read_w(SDR_DRR);
+	reg_val |= 0x1U<<31;
+	mctl_write_w(SDR_DRR, reg_val);
+
+	//issue prechage all command
+	mctl_precharge_all();
+
+	//enter into self-refresh
+	reg_val = mctl_read_w(SDR_DCR);
+	reg_val &= ~(0x1fU<<27);
+	reg_val |= 0x12U<<27;
+	mctl_write_w(SDR_DCR, reg_val);
+	while( mctl_read_w(SDR_DCR)& (0x1U<<31) );
+	sdelay(0x100);
+}

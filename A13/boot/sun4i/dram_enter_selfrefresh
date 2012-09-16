@@ -1,0 +1,7 @@
+
+
+
+void dram_enter_selfrefresh(void)
+{
+    DRAMC_enter_selfrefresh();
+}

@@ -1,0 +1,7 @@
+
+
+
+void dram_exit_selfrefresh(void)
+{
+    DRAMC_exit_selfrefresh();
+}

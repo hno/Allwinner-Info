@@ -1,0 +1,41 @@
+
+
+/*
+ * Note: This differs from pm/standby in that it checks the bus width
+ */
+void mctl_enable_dllx(void)
+{
+    __u32 i = 0;
+    __u32 n;
+    __u32 bus_width;
+
+    bus_width = mctl_read_w(SDR_DCR);
+    bus_width >>= 6;
+    bus_width &= 7;
+
+    if (bus_width == 3) {
+	n = 5;
+    } else {
+	n = 3;
+	i = 1;
+    }
+
+    for(i=1; i<n; i++)
+    {
+        mctl_write_w(SDR_DLLCR0+(i<<2), (mctl_read_w(SDR_DLLCR0+(i<<2)) & ~0x40000000) | 0x80000000);
+    }
+
+	sdelay(0x100);
+
+    for(i=1; i<n; i++)
+    {
+        mctl_write_w(SDR_DLLCR0+(i<<2), mctl_read_w(SDR_DLLCR0+(i<<2)) & ~0xC0000000);
+    }
+	sdelay(0x1000);
+
+    for(i=1; i<n; i++)
+    {
+        mctl_write_w(SDR_DLLCR0+(i<<2), (mctl_read_w(SDR_DLLCR0+(i<<2)) & ~0x80000000) | 0x40000000);
+    }
+    sdelay(0x1000);
+}

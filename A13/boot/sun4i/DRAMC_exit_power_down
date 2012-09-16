@@ -1,0 +1,6 @@
+
+
+void DRAMC_exit_power_down(void)
+{
+    mctl_mode_exit();
+}

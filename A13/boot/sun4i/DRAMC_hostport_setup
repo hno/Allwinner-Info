@@ -1,0 +1,32 @@
+
+/*
+**********************************************************************************************************************
+*                 DRAM GET HOSTPORT STATUS
+*
+* Description: dram get AHB FIFO status
+*
+* Arguments  : 	__u32 port_idx				host port index   	(0,1,...31)
+*				__u32 port_pri_level		priority level		(0,1,2,3)
+*
+* Returns    :
+*
+* Notes      :
+*
+**********************************************************************************************************************
+*/
+void DRAMC_hostport_setup(__u32 port_idx, __u32 port_pri_level, __u32 port_wait_cycle, __u32 cmd_num)
+{
+    __u32   reg_val;
+
+    if(port_idx<=31)
+    {
+	    reg_val = mctl_read_w(SDR_HPCR + (port_idx<<2));
+	    reg_val &= ~(0x3<<2);
+	    reg_val |= (port_pri_level&0x3)<<2;
+	    reg_val &= ~(0xf<<4);
+	    reg_val |= (port_wait_cycle&0xf)<<4;
+	    reg_val &= ~(0xff<<8);
+	    reg_val |= (cmd_num&0x3)<<8;
+	    mctl_write_w(SDR_HPCR + (port_idx<<2), reg_val);
+	}
+}

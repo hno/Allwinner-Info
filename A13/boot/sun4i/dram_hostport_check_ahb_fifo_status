@@ -1,0 +1,7 @@
+
+
+
+__u32 dram_hostport_check_ahb_fifo_status(__u32 port_idx)
+{
+    return DRAMC_hostport_check_ahb_fifo_status(port_idx);
+}

@@ -1,0 +1,40 @@
+
+/*
+*********************************************************************************************************
+* Description: Set autorefresh cycle
+*
+* Arguments  : clock value in MHz unit
+*
+* Returns    : none
+*
+* Note       :
+*********************************************************************************************************
+*/
+void DRAMC_set_autorefresh_cycle(__u32 clk)
+{
+    __u32 reg_val;
+    __u32 dram_size;
+    __u32 tmp_val;
+
+    dram_size = mctl_read_w(SDR_DCR);
+    dram_size >>=3;
+    dram_size &= 0x7;
+
+    if(clk < 600)
+    {
+        if(dram_size<=0x2)
+            tmp_val = (131*clk)>>10;
+        else
+            tmp_val = (336*clk)>>10;
+        reg_val = tmp_val;
+        tmp_val = (7987*clk)>>10;
+        tmp_val = tmp_val*9 - 200;
+        reg_val |= tmp_val<<8;
+        reg_val |= 0x8<<24;
+        mctl_write_w(SDR_DRR, reg_val);
+    }
+    else
+    {
+        mctl_write_w(SDR_DRR, 0x0);
+    }
+}

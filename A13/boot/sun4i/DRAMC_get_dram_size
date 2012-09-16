@@ -1,0 +1,47 @@
+
+
+
+/*
+**********************************************************************************************************************
+*                                               GET DRAM SIZE
+*
+* Description: Get DRAM Size in MB unit;
+*
+* Arguments  : None
+*
+* Returns    : 32/64/128
+*
+* Notes      :
+*
+**********************************************************************************************************************
+*/
+__u32 DRAMC_get_dram_size(void)
+{
+    __u32 reg_val;
+    __u32 dram_size;
+    __u32 chip_den;
+
+    reg_val = mctl_read_w(SDR_DCR);
+    chip_den = (reg_val>>3)&0x7;
+    if(chip_den == 0)
+        dram_size = 32;
+    else if(chip_den == 1)
+        dram_size = 64;
+    else if(chip_den == 2)
+        dram_size = 128;
+    else if(chip_den == 3)
+        dram_size = 256;
+    else if(chip_den == 4)
+        dram_size = 512;
+    else
+        dram_size = 1024;
+
+    if( ((reg_val>>1)&0x3) == 0x1)
+        dram_size<<=1;
+    if( ((reg_val>>6)&0x7) == 0x3)
+        dram_size<<=1;
+    if( ((reg_val>>10)&0x3) == 0x1)
+        dram_size<<=1;
+
+    return dram_size;
+}

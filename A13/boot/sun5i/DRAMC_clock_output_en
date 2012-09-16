@@ -1,0 +1,28 @@
+
+
+/*
+*********************************************************************************************************
+*                                   DRAM CLOCK CONTROL
+*
+* Description: dram get clock
+*
+* Arguments  : on   dram clock output (0: disable, 1: enable)
+*
+* Returns    : none
+*
+* Note       :
+*********************************************************************************************************
+*/
+void DRAMC_clock_output_en(__u32 on)
+{
+    __u32 reg_val;
+
+    reg_val = mctl_read_w(SDR_CR);
+
+    if(on)
+        reg_val |= 0x1<<16;
+    else
+        reg_val &= ~(0x1<<16);
+
+    mctl_write_w(SDR_CR, reg_val);
+}

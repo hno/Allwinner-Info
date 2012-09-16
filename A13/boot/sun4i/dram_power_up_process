@@ -1,0 +1,31 @@
+
+__u32 dram_power_up_process(void)
+{
+	__u32 i;
+	__s32 ret_val;
+
+	mctl_itm_disable();
+
+	mctl_enable_dll0();
+
+	//dram clock on
+	DRAMC_clock_output_en(1);
+    sdelay(0x10);
+
+	mctl_enable_dllx();
+
+	//enable ITM
+	mctl_itm_enable();
+
+	//exit from self-refresh state
+	DRAMC_exit_selfrefresh();
+
+	//scan read pipe value
+	ret_val = DRAMC_scan_readpipe();
+	if(ret_val != 0)
+	{
+		DRAMC_retraining();
+	}
+
+	return (ret_val);
+}

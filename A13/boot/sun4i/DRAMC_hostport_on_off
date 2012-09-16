@@ -1,0 +1,31 @@
+
+
+/*
+**********************************************************************************************************************
+*                 DRAM HOSTPORT CONTROL
+*
+* Description: dram host port enable/ disable
+*
+* Arguments  : __u32 port_idx		host port index   (0,1,...31)
+*				__u32 on		enable or disable (0: diable, 1: enable)
+*
+* Returns    :
+*
+* Notes      :
+*
+**********************************************************************************************************************
+*/
+void DRAMC_hostport_on_off(__u32 port_idx, __u32 on)
+{
+    __u32   reg_val;
+
+    if(port_idx<=31)
+    {
+	    reg_val = mctl_read_w(SDR_HPCR + (port_idx<<2));
+	    if(on)
+	    	reg_val |= 0x1;
+	    else
+	    	reg_val &= ~(0x1);
+	    mctl_write_w(SDR_HPCR + (port_idx<<2), reg_val);
+	}
+}

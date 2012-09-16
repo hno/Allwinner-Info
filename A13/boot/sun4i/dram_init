@@ -1,0 +1,8 @@
+
+
+
+__s32 dram_init(void)
+{
+    /* do nothing for dram init */
+    return 0;
+}

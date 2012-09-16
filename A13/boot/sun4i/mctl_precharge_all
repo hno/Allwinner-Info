@@ -1,0 +1,28 @@
+
+/*
+*********************************************************************************************************
+*                 DRAM ENTER SELF REFRESH
+*
+* Description: dram enter/exit self-refresh;
+*
+* Arguments  : none
+*
+* Returns    : none
+*
+* Note       :
+*********************************************************************************************************
+*/
+void mctl_precharge_all(void)
+{
+	__u32 i;
+	__u32 reg_val;
+
+	reg_val = mctl_read_w(SDR_DCR);
+	reg_val &= ~(0x1fU<<27);
+	reg_val |= 0x15U<<27;
+	mctl_write_w(SDR_DCR, reg_val);
+
+	//check whether command has been executed
+	while( mctl_read_w(SDR_DCR)& (0x1U<<31) );
+    sdelay(0x100);
+}

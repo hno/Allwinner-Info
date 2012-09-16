@@ -1,0 +1,29 @@
+
+/*
+**********************************************************************************************************************
+*                 DRAM GET HOSTPORT STATUS
+*
+* Description: dram get AHB FIFO status
+*
+* Arguments  : __u32 port_idx		host port index   	(0,1,...31)
+*
+* Returns    : __u32 ret_val		AHB FIFO status 	(0: FIFO not empty ,1: FIFO empty)
+*
+* Notes      :
+*
+**********************************************************************************************************************
+*/
+__u32 DRAMC_hostport_check_ahb_fifo_status(__u32 port_idx)
+{
+    __u32   reg_val;
+
+    if(port_idx<=31)
+    {
+	    reg_val = mctl_read_w(SDR_CFSR);
+	    return ( (reg_val>>port_idx)&0x1 );
+	}
+	else
+	{
+		return 0;
+	}
+}

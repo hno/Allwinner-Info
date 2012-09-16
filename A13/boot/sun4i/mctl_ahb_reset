@@ -1,0 +1,32 @@
+
+/*
+*********************************************************************************************************
+*                 DRAM power save process
+*
+* Description: We can save power by disable DRAM PLL.
+*			   DRAMC_power_save_process() is called to disable DRAMC ITM and DLL, then disable PLL to save power;
+*			   Before exit SDRAM self-refresh state, we should enable DRAM PLL and make sure that it is stable clock.
+*			   Then call function DRAMC_exit_selfrefresh() to exit self-refresh state. Before access external SDRAM,
+*              the function DRAMC_power_up_process() should be called to enable DLL and re-training DRAM controller.
+*
+* Arguments  : none
+*
+* Returns    : none
+*
+* Note       :
+*********************************************************************************************************
+*/
+__u32 mctl_ahb_reset(void)
+{
+	__u32 i;
+	__u32 reg_val;
+
+	reg_val = mctl_read_w(DRAM_CCM_AHB_GATE_REG);
+	reg_val &=~(0x1<<14);
+	mctl_write_w(DRAM_CCM_AHB_GATE_REG,reg_val);
+    sdelay(0x10);
+
+	reg_val = mctl_read_w(DRAM_CCM_AHB_GATE_REG);
+	reg_val |=(0x1<<14);
+	mctl_write_w(DRAM_CCM_AHB_GATE_REG,reg_val);
+}

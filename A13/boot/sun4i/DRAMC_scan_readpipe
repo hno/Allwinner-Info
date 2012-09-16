@@ -1,0 +1,36 @@
+
+
+/*
+*********************************************************************************************************
+*                                   CHECK DDR READPIPE
+*
+* Description: check ddr readpipe;
+*
+* Arguments  : none
+*
+* Returns    : result, 0:fail, 1:success;
+*
+* Note       :
+*********************************************************************************************************
+*/
+__s32 DRAMC_scan_readpipe(void)
+{
+    __u32 reg_val;
+
+    //data training trigger
+    reg_val = mctl_read_w(SDR_CCR);
+    reg_val |= 0x1<<30;
+    mctl_write_w(SDR_CCR, reg_val);
+
+    //check whether data training process is end
+    while(mctl_read_w(SDR_CCR) & (0x1<<30)) {};
+
+    //check data training result
+    reg_val = mctl_read_w(SDR_CSR);
+    if(reg_val & (0x1<<20))
+    {
+        return -1;
+    }
+
+    return (0);
+}

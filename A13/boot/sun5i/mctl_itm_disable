@@ -1,0 +1,10 @@
+
+
+void mctl_itm_disable(void)
+{
+    __u32 reg_val = 0x0;
+
+    reg_val = mctl_read_w(SDR_CCR);
+    reg_val |= 0x1<<28;
+    mctl_write_w(SDR_CCR, reg_val);
+}

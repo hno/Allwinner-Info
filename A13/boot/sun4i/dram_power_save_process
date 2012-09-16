@@ -1,0 +1,18 @@
+
+
+void dram_power_save_process(void)
+{
+	__u32 reg_val;
+
+	//put external SDRAM into self-fresh state
+	DRAMC_enter_selfrefresh();
+
+	//disable ITM
+	mctl_itm_disable();
+
+	//dramc clock off
+	DRAMC_clock_output_en(0);
+
+	//disable and reset all DLL
+	mctl_disable_dll();
+}

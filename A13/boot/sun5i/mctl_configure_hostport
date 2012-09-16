@@ -1,0 +1,11 @@
+
+
+void mctl_configure_hostport(void)
+{
+    __u32 i;
+
+    for(i=0; i<32; i++)
+    {
+        mctl_write_w(SDR_HPCR + (i<<2), hpcr_value[i]);
+    }
+}

@@ -1,0 +1,6 @@
+
+
+void dram_set_clock(int clk)
+{
+    return mctl_setup_dram_clock(clk);
+}

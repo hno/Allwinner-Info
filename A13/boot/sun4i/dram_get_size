@@ -1,0 +1,6 @@
+
+
+__s32 dram_get_size(void)
+{
+    return DRAMC_get_dram_size();
+}

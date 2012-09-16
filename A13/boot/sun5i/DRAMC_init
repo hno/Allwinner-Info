@@ -1,0 +1,132 @@
+__s32 DRAMC_init(__dram_para_t *para)
+{
+    __u32 reg_val;
+    __s32 ret_val;
+
+    //check input dram parameter structure
+    if(!para)
+    {
+        //dram parameter is invalid
+        return -1;
+    }
+
+    //setup DRAM relative clock
+    mctl_setup_dram_clock(para->dram_clk);
+
+    // This is new unknown code!
+    mctl_write_w(SDR_0x23c, 0);
+
+    //reset external DRAM
+    mctl_ddr3_reset();
+    mctl_set_drive();
+
+    //dram clock off
+    DRAMC_clock_output_en(0);
+
+    mctl_itm_disable();
+    mctl_enable_dll0();
+
+    //configure external DRAM
+    reg_val = 0;
+    if(para->dram_type == 3)
+        reg_val |= 0x1;
+    reg_val |= (para->dram_io_width>>3) <<1;
+
+    if(para->dram_chip_density == 256)
+        reg_val |= 0x0<<3;
+    else if(para->dram_chip_density == 512)
+        reg_val |= 0x1<<3;
+    else if(para->dram_chip_density == 1024)
+        reg_val |= 0x2<<3;
+    else if(para->dram_chip_density == 2048)
+        reg_val |= 0x3<<3;
+    else if(para->dram_chip_density == 4096)
+        reg_val |= 0x4<<3;
+    else if(para->dram_chip_density == 8192)
+        reg_val |= 0x5<<3;
+    else
+        reg_val |= 0x0<<3;
+
+    reg_val |= ((para->dram_bus_width>>3) - 1)<<6;
+    reg_val |= (para->dram_rank_num -1)<<10;
+    reg_val |= 0x1<<12;
+    reg_val |= ((0x1)&0x3)<<13;
+
+    mctl_write_w(SDR_DCR, reg_val);
+
+    //set odt impendance divide ratio
+    reg_val=((para->dram_zq)>>8)&0xfffff;
+    reg_val |= ((para->dram_zq)&0xff)<<20;
+    reg_val |= (para->dram_zq)&0xf0000000;
+    mctl_write_w(SDR_ZQCR0, reg_val);
+
+    //dram clock on
+    DRAMC_clock_output_en(1);
+
+    sdelay(0x10);
+
+    while(mctl_read_w(SDR_CCR) & (0x1U<<31)) {};
+
+    mctl_enable_dllx();
+
+#if NOT_DONE
+    //set I/O configure register
+    reg_val = 0x00cc0000;
+    reg_val |= (para->dram_odt_en)&0x3;
+    reg_val |= ((para->dram_odt_en)&0x3)<<30;
+    mctl_write_w(SDR_IOCR, reg_val);
+#endif
+
+    //set refresh period
+    DRAMC_set_autorefresh_cycle(para->dram_clk);
+
+    //set timing parameters
+    mctl_write_w(SDR_TPR0, para->dram_tpr0);
+    mctl_write_w(SDR_TPR1, para->dram_tpr1);
+    mctl_write_w(SDR_TPR2, para->dram_tpr2);
+
+    //set mode register
+    if(para->dram_type==3)                  //ddr3
+    {
+        reg_val = 0x1000;
+        reg_val |= (para->dram_cas - 4)<<4;
+        reg_val |= 0x5<<9;
+    }
+    else if(para->dram_type==2)             //ddr2
+    {
+        reg_val = 0x2;
+        reg_val |= para->dram_cas<<4;
+        reg_val |= 0x5<<9;
+    }
+    mctl_write_w(SDR_MR, reg_val);
+
+    mctl_write_w(SDR_EMR, para->dram_emr1);
+    mctl_write_w(SDR_EMR2, para->dram_emr2);
+    mctl_write_w(SDR_EMR3, para->dram_emr3);
+
+    //set DQS window mode
+    reg_val = mctl_read_w(SDR_CCR);
+    reg_val |= 0x1U<<14;
+    reg_val &= ~(0x1U<<17);
+    mctl_write_w(SDR_CCR, reg_val);
+
+    //initial external DRAM
+    reg_val = mctl_read_w(SDR_CCR);
+    reg_val |= 0x1U<<31;
+    mctl_write_w(SDR_CCR, reg_val);
+
+    while(mctl_read_w(SDR_CCR) & (0x1U<<31)) {};
+
+    //scan read pipe value
+    mctl_itm_enable();
+    ret_val = DRAMC_scan_readpipe();
+    if(ret_val < 0)
+    {
+        return 0;
+    }
+
+    //configure all host port
+    mctl_configure_hostport();
+
+    return DRAMC_get_dram_size();
+}

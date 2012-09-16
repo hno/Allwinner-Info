@@ -1,0 +1,6 @@
+
+
+__s32 dram_exit(void)
+{
+    return DRAMC_exit();
+}

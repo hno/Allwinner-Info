@@ -1,0 +1,12 @@
+
+
+void mctl_set_drive(void)
+{
+    __u32 reg_val;
+
+    reg_val = mctl_read_w(SDR_CR);
+    reg_val |= (0x6<<12);
+		reg_val |= 0xFFC;
+    reg_val &= ~0x3;
+    mctl_write_w(SDR_CR, reg_val);
+}

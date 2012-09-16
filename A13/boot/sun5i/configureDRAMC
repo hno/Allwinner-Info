@@ -1,0 +1,19 @@
+
+
+
+u32 configureDRAMC(struct dram_para *dram_para)
+{
+	u32 dram_size;
+
+	if (dram_para->clk >= 2000) {
+		dram_para->clk /= 1000000;
+	}
+
+	for (int i = 0; i < 4; i++) {
+		dram_size = DRAMC_init(dram_para);
+		if (dram_size)
+			break;
+	}
+
+	return dram_size;
+}

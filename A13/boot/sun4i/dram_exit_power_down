@@ -1,0 +1,7 @@
+
+
+
+void dram_exit_power_down(void)
+{
+    DRAMC_exit_power_down();
+}

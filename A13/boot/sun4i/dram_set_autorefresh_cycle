@@ -1,0 +1,6 @@
+
+
+void dram_set_autorefresh_cycle(__u32 clk)
+{
+    DRAMC_set_autorefresh_cycle(clk);
+}

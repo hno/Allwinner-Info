@@ -1,0 +1,31 @@
+
+
+void mctl_disable_dll(void)
+{
+	__u32 reg_val;
+
+	reg_val = mctl_read_w(SDR_DLLCR0);
+	reg_val &= ~(0x1<<30);
+	reg_val |= 0x1U<<31;
+	mctl_write_w(SDR_DLLCR0, reg_val);
+
+	reg_val = mctl_read_w(SDR_DLLCR1);
+	reg_val &= ~(0x1<<30);
+	reg_val |= 0x1U<<31;
+	mctl_write_w(SDR_DLLCR1, reg_val);
+
+	reg_val = mctl_read_w(SDR_DLLCR2);
+	reg_val &= ~(0x1<<30);
+	reg_val |= 0x1U<<31;
+	mctl_write_w(SDR_DLLCR2, reg_val);
+
+	reg_val = mctl_read_w(SDR_DLLCR3);
+	reg_val &= ~(0x1<<30);
+	reg_val |= 0x1U<<31;
+	mctl_write_w(SDR_DLLCR3, reg_val);
+
+	reg_val = mctl_read_w(SDR_DLLCR4);
+	reg_val &= ~(0x1<<30);
+	reg_val |= 0x1U<<31;
+	mctl_write_w(SDR_DLLCR4, reg_val);
+}

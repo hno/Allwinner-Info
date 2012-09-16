@@ -1,0 +1,13 @@
+
+void mctl_ddr3_reset(void)
+{
+	__u32 reg_val;
+
+	reg_val = mctl_read_w(SDR_CR);
+	reg_val &= ~(0x1<<12);
+	mctl_write_w(SDR_CR, reg_val);
+	sdelay(0x100);
+	reg_val = mctl_read_w(SDR_CR);
+	reg_val |= (0x1<<12);
+	mctl_write_w(SDR_CR, reg_val);
+}

@@ -1,0 +1,7 @@
+
+
+
+void dram_hostport_setup(__u32 port, __u32 prio, __u32 wait_cycle, __u32 cmd_num)
+{
+    DRAMC_hostport_setup(port, prio, wait_cycle, cmd_num);
+}

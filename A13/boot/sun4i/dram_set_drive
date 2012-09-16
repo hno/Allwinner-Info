@@ -1,0 +1,6 @@
+
+
+void dram_set_drive(void)
+{
+    mctl_set_drive();
+}

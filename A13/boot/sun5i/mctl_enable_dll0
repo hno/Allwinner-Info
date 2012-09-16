@@ -1,0 +1,13 @@
+
+
+void mctl_enable_dll0(void)
+{
+    mctl_write_w(SDR_DLLCR0, mctl_read_w(SDR_DLLCR0) & ~0x40000000 | 0x80000000);
+	sdelay(0x100);
+
+    mctl_write_w(SDR_DLLCR0, mctl_read_w(SDR_DLLCR0) & ~0xC0000000);
+	sdelay(0x1000);
+
+    mctl_write_w(SDR_DLLCR0, mctl_read_w(SDR_DLLCR0) & ~0x80000000 | 0x40000000);
+    sdelay(0x1000);
+}
