@@ -194,10 +194,11 @@ Disassembly of section .data:
      2e8:	e3c00b06 	bic	r0, r0, #0x1800	 ; 6144
      2ec:	e3c00002 	bic	r0, r0, #2
      2f0:	ee010f10 	mcr	15, 0, r0, cr1, cr0, {0}
-     2f4:	eb000346 	bl	0x1014
+     2f4:	eb000346 	bl	configureCpuBootClock
      2f8:	e3a0d902 	mov	sp, #0x8000	 ; 32768
-     2fc:	eb0002c6 	bl	0xe1c
+     2fc:	eb0002c6 	bl	main
      300:	eafffffe 	b	0x300
+
      304:	e92d40fe 	push	{r1, r2, r3, r4, r5, r6, r7, lr}
      308:	eb00014e 	bl	0x848
      30c:	e28f0e1a 	ldr	r0, =0x4b4
@@ -833,10 +834,10 @@ Disassembly of section .data:
      ce4:	e28f0f8f 	ldr	r0, =0xf28
      ce8:	eb0000ee 	bl	0x10a8
      cec:	e8bd8010 	pop	{r4, pc}
-     cf0:	e59f0234 	ldr	r0, [0xf2c]	; 0xf2c
+     cf0:	e59f0234 	ldr	r0, =CCM_IO_BASE	; 0x01c20000
      cf4:	e5900144 	ldr	r0, [r0, #324]	; 0x144
      cf8:	e3800102 	orr	r0, r0, #0x80000000	 ; 2147483648
-     cfc:	e59f1228 	ldr	r1, [0xf2c]	; 0xf2c
+     cfc:	e59f1228 	ldr	r1, =CCM_IO_BASE	; 0x01c20000
      d00:	e5810144 	str	r0, [r1, #324]	; 0x144
      d04:	e3a00001 	mov	r0, #1
      d08:	e5810c80 	str	r0, [r1, #3200]	; 0xc80
@@ -908,6 +909,8 @@ Disassembly of section .data:
      e10:	e2433001 	sub	r3, r3, #1
      e14:	1afffffa 	bne	0xe04
      e18:	e8bd80f0 	pop	{r4, r5, r6, r7, pc}
+
+main:
      e1c:	e92d4070 	push	{r4, r5, r6, lr}
      e20:	ebffffe2 	bl	0xdb0
      e24:	ebffffcb 	bl	0xd58
@@ -968,76 +971,79 @@ Disassembly of section .data:
      f00:	e59f0040 	ldr	r0, [0xf48]	; 0xf48
      f04:	eb0011f4 	bl	0x56dc
      f08:	e8bd8070 	pop	{r4, r5, r6, pc}
-     f0c:	746f6f62 	strbtvc	r6, [pc], #0xfffff09e	 ; 4294963358
-     f10:	65762030 	ldrbvs	r2, [r6, #-48]!	; 0x30
-     f14:	6f697372 	svcvs	0x00697372
-     f18:	203a206e 	eorscs	r2, sl, lr, rrx
-     f1c:	00000000 	andeq	r0, r0, r0
-     f20:	00000028 	andeq	r0, r0, r8, lsr #32
-     f24:	00006325 	andeq	r6, r0, r5, lsr #6
-     f28:	0000000a 	andeq	r0, r0, sl
-     f2c:	01c20000 	biceq	r0, r2, r0
-     f30:	01c23800 	biceq	r3, r2, r0, lsl #16
-     f34:	000000dc 	ldrdeq	r0, [r0], -ip
-     f38:	00005d28 	andeq	r5, r0, r8, lsr #26
-     f3c:	00000050 	andeq	r0, r0, r0, asr r0
-     f40:	00005cd8 	ldrdeq	r5, [r0], -r8
-     f44:	00005cd8 	ldrdeq	r5, [r0], -r8
-     f48:	ffff0020 			; <UNDEFINED> instruction: 0xffff0020
-     f4c:	00000000 	andeq	r0, r0, r0
-     f50:	016e3600 	cmneq	lr, r0, lsl #12
-     f54:	000000a0 	andeq	r0, r0, r0, lsr #1
-     f58:	4c4c4548 	cfstr64mi	mvdx4, [ip], {72}	; 0x48
-     f5c:	4220214f 	eormi	r2, r0, #0xc0000013	 ; 3221225491
-     f60:	30544f4f 	subscc	r4, r4, pc, asr #30
-     f64:	20736920 	rsbscs	r6, r3, r0, lsr #18
-     f68:	72617473 	rsbvc	r7, r1, #0x73000000	 ; 1929379840
-     f6c:	676e6974 			; <UNDEFINED> instruction: 0x676e6974
-     f70:	00000a21 	andeq	r0, r0, r1, lsr #20
-     f74:	6d617264 	sfmvs	f7, 2, [r1, #-400]!	; 0xfffffe70
-     f78:	7a697320 	bvc	0x1a5dc00
-     f7c:	253d2065 	ldrcs	r2, [sp, #-101]!	; 0x65
-     f80:	00000a64 	andeq	r0, r0, r4, ror #20
-     f84:	74696e69 	strbtvc	r6, [r9], #0xfffff197	 ; 4294963607
-     f88:	696c6169 	stmdbvs	ip!, {r0, r3, r5, r6, r8, sp, lr}^
-     f8c:	676e697a 			; <UNDEFINED> instruction: 0x676e697a
-     f90:	52445320 	subpl	r5, r4, #0x80000000	 ; 2147483648
-     f94:	46204d41 	strtmi	r4, [r0], -r1, asr #26
-     f98:	2e6c6961 	cdpcs	9, 6, cr6, cr12, cr1, {3}
-     f9c:	0000000a 	andeq	r0, r0, sl
-     fa0:	64616552 	strbtvs	r6, [r1], #0xfffffaae	 ; 4294965934
-     fa4:	6f742079 	svcvs	0x00742079
-     fa8:	73696420 	cmnvc	r9, #0x20000000	 ; 536870912
-     fac:	656c6261 	strbvs	r6, [ip, #-609]!	; 0x261
-     fb0:	61636920 	cmnvs	r3, r0, lsr #18
-     fb4:	2e656863 	cdpcs	8, 6, cr6, cr5, cr3, {3}
-     fb8:	0000000a 	andeq	r0, r0, sl
-     fbc:	63637553 	cmnvs	r3, #0x14c00000	 ; 348127232
-     fc0:	20646565 	rsbcs	r6, r4, r5, ror #10
-     fc4:	6c206e69 	stcvs	14, cr6, [r0], #0xfffffe5c	 ; 4294966876
-     fc8:	6964616f 	stmdbvs	r4!, {r0, r1, r2, r3, r5, r6, r8, sp, lr}^
-     fcc:	4220676e 	eormi	r6, r0, #0x1b80000	 ; 28835840
-     fd0:	31746f6f 	cmncc	r4, pc, ror #30
-     fd4:	754a0a2e 	strbvc	r0, [sl, #-2606]	; 0xa2e
-     fd8:	7420706d 	strtvc	r7, [r0], #0xffffff93	 ; 4294967187
-     fdc:	6f42206f 	svcvs	0x0042206f
-     fe0:	2e31746f 	cdpcs	4, 3, cr7, cr1, cr15, {3}
-     fe4:	0000000a 	andeq	r0, r0, sl
-     fe8:	42400000 	submi	r0, r0, #0
-     fec:	6c696146 	stfvse	f6, [r9], #0xfffffee8	 ; 4294967016
-     ff0:	206e6920 	rsbcs	r6, lr, r0, lsr #18
-     ff4:	64616f6c 	strbtvs	r6, [r1], #0xfffff094	 ; 4294963348
-     ff8:	20676e69 	rsbcs	r6, r7, r9, ror #28
-     ffc:	746f6f42 	strbtvc	r6, [pc], #0xfffff0be	 ; 4294963390
-    1000:	4a0a2e31 	bmi	0x28c8cc
-    1004:	20706d75 	rsbscs	r6, r0, r5, ror sp
-    1008:	46206f74 	qsub16mi	r6, r0, r4
-    100c:	0a2e6c65 	beq	0xb9c1a8
-    1010:	00000000 	andeq	r0, r0, r0
-    1014:	e59f204c 	ldr	r2, [0x1068]	; 0x1068
-    1018:	e51f30f4 	ldr	r3, [0xf2c]	; 0xf2c
+
+     f0c:	746f6f62
+     f10:	65762030
+     f14:	6f697372
+     f18:	203a206e
+     f1c:	00000000
+     f20:	00000028
+     f24:	00006325
+     f28:	0000000a
+
+     f30:	01c23800
+     f34:	000000dc
+     f38:	00005d28
+     f3c:	00000050
+     f40:	00005cd8
+     f44:	00005cd8
+     f48:	ffff0020
+     f4c:	00000000
+     f50:	016e3600
+     f54:	000000a0
+     f58:	4c4c4548
+     f5c:	4220214f
+     f60:	30544f4f
+     f64:	20736920
+     f68:	72617473
+     f6c:	676e6974
+     f70:	00000a21
+     f74:	6d617264
+     f78:	7a697320
+     f7c:	253d2065
+     f80:	00000a64
+     f84:	74696e69
+     f88:	696c6169
+     f8c:	676e697a
+     f90:	52445320
+     f94:	46204d41
+     f98:	2e6c6961
+     f9c:	0000000a
+     fa0:	64616552
+     fa4:	6f742079
+     fa8:	73696420
+     fac:	656c6261
+     fb0:	61636920
+     fb4:	2e656863
+     fb8:	0000000a
+     fbc:	63637553
+     fc0:	20646565
+     fc4:	6c206e69
+     fc8:	6964616f
+     fcc:	4220676e
+     fd0:	31746f6f
+     fd4:	754a0a2e
+     fd8:	7420706d
+     fdc:	6f42206f
+     fe0:	2e31746f
+     fe4:	0000000a
+     fe8:	42400000
+     fec:	6c696146
+     ff0:	206e6920
+     ff4:	64616f6c
+     ff8:	20676e69
+     ffc:	746f6f42
+    1000:	4a0a2e31
+    1004:	20706d75
+    1008:	46206f74
+    100c:	0a2e6c65
+    1010:	00000000
+
+configureCpuBootClock()
+    1014:	e59f204c 	ldr	r2, =0x00010010
+    1018:	e51f30f4 	ldr	r3, =CCM_IO_BASE	; 0x01c20000
     101c:	e5832054 	str	r2, [r3, #84]	; 0x54
-    1020:	e59f0044 	ldr	r0, [0x106c]	; 0x106c
+    1020:	e59f0044 	ldr	r0, =0xa1005000
     1024:	e1c321c0 	bic	r2, r3, r0, asr #3
     1028:	e5820000 	str	r0, [r2]
     102c:	e3a01000 	mov	r1, #0
@@ -1045,18 +1051,20 @@ Disassembly of section .data:
     1034:	e2811001 	add	r1, r1, #1
     1038:	e35100c8 	cmp	r1, #0xc8	 ; 200
     103c:	3afffffc 	bcc	0x1034
-    1040:	e51f211c 	ldr	r2, [0xf2c]	; 0xf2c
+    1040:	e51f211c 	ldr	r2, =CCM_IO_BASE	; 0x01c20000
     1044:	e5920054 	ldr	r0, [r2, #84]	; 0x54
     1048:	e3c00803 	bic	r0, r0, #0x30000	 ; 196608
     104c:	e3800802 	orr	r0, r0, #0x20000	 ; 131072
     1050:	e5820054 	str	r0, [r2, #84]	; 0x54
     1054:	e5922060 	ldr	r2, [r2, #96]	; 0x60
     1058:	e3822040 	orr	r2, r2, #0x40	 ; 64
-    105c:	e51f3138 	ldr	r3, [0xf2c]	; 0xf2c
+    105c:	e51f3138 	ldr	r3, =CCM_IO_BASE	; 0x01c20000
     1060:	e5832060 	str	r2, [r3, #96]	; 0x60
     1064:	e12fff1e 	bx	lr
-    1068:	00010010 	andeq	r0, r1, r0, lsl r0
-    106c:	a1005000 	mrsge	r5, (UNDEF: 0)
+
+    1068:	00010010
+    106c:	a1005000
+
     1070:	e92d4010 	push	{r4, lr}
     1074:	e1a04000 	mov	r4, r0
     1078:	ea000006 	b	0x1098
@@ -1342,40 +1350,40 @@ Disassembly of section .data:
     14d8:	e3500007 	cmp	r0, #7
     14dc:	9a000000 	bls	0x14e4
     14e0:	e8bd87f0 	pop	{r4, r5, r6, r7, r8, r9, sl, pc}
-    14e4:	e59f0114 	ldr	r0, [0x1600]	; 0x1600
+    14e4:	e59f0114 	ldr	r0, =CCM_IO_BASE	; 0x01c20000
     14e8:	e590006c 	ldr	r0, [r0, #108]	; 0x6c
     14ec:	e59f1108 	ldr	r1, [0x15fc]	; 0x15fc
     14f0:	e5911000 	ldr	r1, [r1]
     14f4:	e2811010 	add	r1, r1, #16
     14f8:	e3a02001 	mov	r2, #1
     14fc:	e1c00112 	bic	r0, r0, r2, lsl r1
-    1500:	e59f10f8 	ldr	r1, [0x1600]	; 0x1600
+    1500:	e59f10f8 	ldr	r1, =CCM_IO_BASE	; 0x01c20000
     1504:	e581006c 	str	r0, [r1, #108]	; 0x6c
     1508:	e3a09000 	mov	r9, #0
     150c:	ea000000 	b	0x1514
     1510:	e2899001 	add	r9, r9, #1
     1514:	e3590064 	cmp	r9, #0x64	 ; 100
     1518:	3afffffc 	bcc	0x1510
-    151c:	e59f00dc 	ldr	r0, [0x1600]	; 0x1600
+    151c:	e59f00dc 	ldr	r0, =CCM_IO_BASE	; 0x01c20000
     1520:	e590006c 	ldr	r0, [r0, #108]	; 0x6c
     1524:	e59f10d0 	ldr	r1, [0x15fc]	; 0x15fc
     1528:	e5911000 	ldr	r1, [r1]
     152c:	e2811010 	add	r1, r1, #16
     1530:	e3a02001 	mov	r2, #1
     1534:	e1800112 	orr	r0, r0, r2, lsl r1
-    1538:	e59f10c0 	ldr	r1, [0x1600]	; 0x1600
+    1538:	e59f10c0 	ldr	r1, =CCM_IO_BASE	; 0x01c20000
     153c:	e581006c 	str	r0, [r1, #108]	; 0x6c
     1540:	e3a01002 	mov	r1, #2
     1544:	e1a00005 	mov	r0, r5
     1548:	eb000112 	bl	0x1998
-    154c:	e59f10b0 	ldr	r1, [0x1604]	; 0x1604
+    154c:	e59f10b0 	ldr	r1, =0x001c2000
     1550:	e2860ae1 	add	r0, r6, #0xe1000	 ; 921600
     1554:	eb000df7 	bl	0x4d38
     1558:	e1a08000 	mov	r8, r0
     155c:	e3a00080 	mov	r0, #0x80	 ; 128
     1560:	e59f1094 	ldr	r1, [0x15fc]	; 0x15fc
     1564:	e5911000 	ldr	r1, [r1]
-    1568:	e59f2098 	ldr	r2, [0x1608]	; 0x1608
+    1568:	e59f2098 	ldr	r2, =0x01c28000
     156c:	e0821501 	add	r1, r2, r1, lsl #10
     1570:	e581000c 	str	r0, [r1, #12]
     1574:	e1a00428 	lsr	r0, r8, #8
@@ -1403,7 +1411,7 @@ Disassembly of section .data:
     15cc:	e320f000 	nop	{0}
     15d0:	e59f1024 	ldr	r1, [0x15fc]	; 0x15fc
     15d4:	e5911000 	ldr	r1, [r1]
-    15d8:	e59f2028 	ldr	r2, [0x1608]	; 0x1608
+    15d8:	e59f2028 	ldr	r2, =0x01c28000
     15dc:	e0821501 	add	r1, r2, r1, lsl #10
     15e0:	e5911014 	ldr	r1, [r1, #20]
     15e4:	e3110040 	tst	r1, #0x40	 ; 64
@@ -1412,10 +1420,9 @@ Disassembly of section .data:
     15f0:	e5911000 	ldr	r1, [r1]
     15f4:	e7820501 	str	r0, [r2, r1, lsl #10]
     15f8:	e12fff1e 	bx	lr
-    15fc:	00005cf0 	strdeq	r5, [r0], -r0
-    1600:	01c20000 	biceq	r0, r2, r0
-    1604:	001c2000 	andseq	r2, ip, r0
-    1608:	01c28000 	biceq	r8, r2, r0
+
+    15fc:	00005cf0
+
     160c:	e92d4010 	push	{r4, lr}
     1610:	e1a04000 	mov	r4, r0
     1614:	e3a02001 	mov	r2, #1
@@ -1889,9 +1896,9 @@ Disassembly of section .data:
     1d64:	e5806000 	str	r6, [r0]
     1d68:	e3a00000 	mov	r0, #0
     1d6c:	eaffff75 	b	0x1b48
-    1d70:	7fffff00 	svcvc	0x00ffff00
-    1d74:	000000c8 	andeq	r0, r0, r8, asr #1
-    1d78:	01c20800 	biceq	r0, r2, r0, lsl #16
+    1d70:	7fffff00
+    1d74:	000000c8
+    1d78:	01c20800
     1d7c:	e3a00001 	mov	r0, #1
     1d80:	e12fff1e 	bx	lr
     1d84:	e59f0050 	ldr	r0, [0x1ddc]	; 0x1ddc
@@ -2045,12 +2052,12 @@ Disassembly of section .data:
     1fd4:	e3a00000 	mov	r0, #0
     1fd8:	e12fff1e 	bx	lr
     1fdc:	e1a01000 	mov	r1, r0
-    1fe0:	e59f0320 	ldr	r0, [0x2308]	; 0x2308
+    1fe0:	e59f0320 	ldr	r0, =0x00005cf4
     1fe4:	e5900000 	ldr	r0, [r0]
     1fe8:	e12fff1e 	bx	lr
     1fec:	e1a01000 	mov	r1, r0
     1ff0:	e3a00000 	mov	r0, #0
-    1ff4:	e59f230c 	ldr	r2, [0x2308]	; 0x2308
+    1ff4:	e59f230c 	ldr	r2, =0x00005cf4
     1ff8:	e5922000 	ldr	r2, [r2]
     1ffc:	e5820000 	str	r0, [r2]
     2000:	e12fff1e 	bx	lr
@@ -2074,11 +2081,11 @@ Disassembly of section .data:
     2048:	e1a01002 	mov	r1, r2
     204c:	e5925024 	ldr	r5, [r2, #36]	; 0x24
     2050:	e1803e85 	orr	r3, r0, r5, lsl #29
-    2054:	e59f02ac 	ldr	r0, [0x2308]	; 0x2308
+    2054:	e59f02ac 	ldr	r0, =0x00005cf4
     2058:	e5900000 	ldr	r0, [r0]
     205c:	e5803000 	str	r3, [r0]
     2060:	e1a01002 	mov	r1, r2
-    2064:	e59f529c 	ldr	r5, [0x2308]	; 0x2308
+    2064:	e59f529c 	ldr	r5, =0x00005cf4
     2068:	e5920028 	ldr	r0, [r2, #40]	; 0x28
     206c:	e5955000 	ldr	r5, [r5]
     2070:	e5850018 	str	r0, [r5, #24]
@@ -2089,7 +2096,7 @@ Disassembly of section .data:
     2084:	e1a04001 	mov	r4, r1
     2088:	e1a05002 	mov	r5, r2
     208c:	e1a06003 	mov	r6, r3
-    2090:	e59f0274 	ldr	r0, [0x230c]	; 0x230c
+    2090:	e59f0274 	ldr	r0, =0x01c03000
     2094:	e0000004 	and	r0, r0, r4
     2098:	e2401507 	sub	r1, r0, #0x1c00000	 ; 29360128
     209c:	e2511a03 	subs	r1, r1, #0x3000	 ; 12288
@@ -2101,46 +2108,46 @@ Disassembly of section .data:
     20b4:	e1a01006 	mov	r1, r6
     20b8:	e1a00004 	mov	r0, r4
     20bc:	eb000a6a 	bl	0x4a6c
-    20c0:	e59f0240 	ldr	r0, [0x2308]	; 0x2308
+    20c0:	e59f0240 	ldr	r0, =0x00005cf4
     20c4:	e5900000 	ldr	r0, [r0]
     20c8:	e5804004 	str	r4, [r0, #4]
-    20cc:	e59f0234 	ldr	r0, [0x2308]	; 0x2308
+    20cc:	e59f0234 	ldr	r0, =0x00005cf4
     20d0:	e5900000 	ldr	r0, [r0]
     20d4:	e5805008 	str	r5, [r0, #8]
-    20d8:	e59f0228 	ldr	r0, [0x2308]	; 0x2308
+    20d8:	e59f0228 	ldr	r0, =0x00005cf4
     20dc:	e5900000 	ldr	r0, [r0]
     20e0:	e580600c 	str	r6, [r0, #12]
-    20e4:	e59f021c 	ldr	r0, [0x2308]	; 0x2308
+    20e4:	e59f021c 	ldr	r0, =0x00005cf4
     20e8:	e5900000 	ldr	r0, [r0]
     20ec:	e5900000 	ldr	r0, [r0]
     20f0:	e3800102 	orr	r0, r0, #0x80000000	 ; 2147483648
-    20f4:	e59f120c 	ldr	r1, [0x2308]	; 0x2308
+    20f4:	e59f120c 	ldr	r1, =0x00005cf4
     20f8:	e5911000 	ldr	r1, [r1]
     20fc:	e5810000 	str	r0, [r1]
     2100:	e3a00000 	mov	r0, #0
     2104:	e8bd81f0 	pop	{r4, r5, r6, r7, r8, pc}
     2108:	e1a01000 	mov	r1, r0
-    210c:	e59f01f4 	ldr	r0, [0x2308]	; 0x2308
+    210c:	e59f01f4 	ldr	r0, =0x00005cf4
     2110:	e5900000 	ldr	r0, [r0]
     2114:	e5900000 	ldr	r0, [r0]
     2118:	e3800102 	orr	r0, r0, #0x80000000	 ; 2147483648
-    211c:	e59f21e4 	ldr	r2, [0x2308]	; 0x2308
+    211c:	e59f21e4 	ldr	r2, =0x00005cf4
     2120:	e5922000 	ldr	r2, [r2]
     2124:	e5820000 	str	r0, [r2]
     2128:	e3a00000 	mov	r0, #0
     212c:	e12fff1e 	bx	lr
     2130:	e1a01000 	mov	r1, r0
-    2134:	e59f01cc 	ldr	r0, [0x2308]	; 0x2308
+    2134:	e59f01cc 	ldr	r0, =0x00005cf4
     2138:	e5900000 	ldr	r0, [r0]
     213c:	e5900000 	ldr	r0, [r0]
     2140:	e3c00103 	bic	r0, r0, #0xc0000000	 ; 3221225472
-    2144:	e59f21bc 	ldr	r2, [0x2308]	; 0x2308
+    2144:	e59f21bc 	ldr	r2, =0x00005cf4
     2148:	e5922000 	ldr	r2, [r2]
     214c:	e5820000 	str	r0, [r2]
     2150:	e3a00000 	mov	r0, #0
     2154:	e12fff1e 	bx	lr
     2158:	e1a01000 	mov	r1, r0
-    215c:	e59f01a4 	ldr	r0, [0x2308]	; 0x2308
+    215c:	e59f01a4 	ldr	r0, =0x00005cf4
     2160:	e5900000 	ldr	r0, [r0]
     2164:	e5900000 	ldr	r0, [r0]
     2168:	e2000101 	and	r0, r0, #0x40000000	 ; 1073741824
@@ -2148,20 +2155,20 @@ Disassembly of section .data:
     2170:	e1a01000 	mov	r1, r0
     2174:	e3a00000 	mov	r0, #0
     2178:	e12fff1e 	bx	lr
-    217c:	e59f018c 	ldr	r0, [0x2310]	; 0x2310
+    217c:	e59f018c 	ldr	r0, =CCM_IO_BASE	; 0x01c20000
     2180:	e5900060 	ldr	r0, [r0, #96]	; 0x60
     2184:	e3800a02 	orr	r0, r0, #0x2000	 ; 8192
-    2188:	e59f1180 	ldr	r1, [0x2310]	; 0x2310
+    2188:	e59f1180 	ldr	r1, =CCM_IO_BASE	; 0x01c20000
     218c:	e5810060 	str	r0, [r1, #96]	; 0x60
     2190:	e12fff1e 	bx	lr
-    2194:	e59f0174 	ldr	r0, [0x2310]	; 0x2310
+    2194:	e59f0174 	ldr	r0, =CCM_IO_BASE	; 0x01c20000
     2198:	e5900060 	ldr	r0, [r0, #96]	; 0x60
     219c:	e3c00a02 	bic	r0, r0, #0x2000	 ; 8192
-    21a0:	e59f1168 	ldr	r1, [0x2310]	; 0x2310
+    21a0:	e59f1168 	ldr	r1, =CCM_IO_BASE	; 0x01c20000
     21a4:	e5810060 	str	r0, [r1, #96]	; 0x60
     21a8:	e12fff1e 	bx	lr
     21ac:	e92d47f0 	push	{r4, r5, r6, r7, r8, r9, sl, lr}
-    21b0:	e59f0158 	ldr	r0, [0x2310]	; 0x2310
+    21b0:	e59f0158 	ldr	r0, =CCM_IO_BASE	; 0x01c20000
     21b4:	e5904020 	ldr	r4, [r0, #32]
     21b8:	e7e15854 	ubfx	r5, r4, #16, #2
     21bc:	e7e46454 	ubfx	r6, r4, #8, #5
@@ -2202,7 +2209,7 @@ Disassembly of section .data:
     2248:	e3a0700f 	mov	r7, #15
     224c:	ea000000 	b	0x2254
     2250:	e2477001 	sub	r7, r7, #1
-    2254:	e59f00b4 	ldr	r0, [0x2310]	; 0x2310
+    2254:	e59f00b4 	ldr	r0, =CCM_IO_BASE	; 0x01c20000
     2258:	e5906080 	ldr	r6, [r0, #128]	; 0x80
     225c:	e3866102 	orr	r6, r6, #0x80000000	 ; 2147483648
     2260:	e3c66403 	bic	r6, r6, #0x3000000	 ; 50331648
@@ -2211,13 +2218,13 @@ Disassembly of section .data:
     226c:	e3c6600f 	bic	r6, r6, #15
     2270:	e207000f 	and	r0, r7, #15
     2274:	e1866000 	orr	r6, r6, r0
-    2278:	e59f0090 	ldr	r0, [0x2310]	; 0x2310
+    2278:	e59f0090 	ldr	r0, =CCM_IO_BASE	; 0x01c20000
     227c:	e5806080 	str	r6, [r0, #128]	; 0x80
     2280:	e8bd81f0 	pop	{r4, r5, r6, r7, r8, pc}
     2284:	e92d41f0 	push	{r4, r5, r6, r7, r8, lr}
     2288:	ebffffc7 	bl	0x21ac
     228c:	e1a07000 	mov	r7, r0
-    2290:	e59f0078 	ldr	r0, [0x2310]	; 0x2310
+    2290:	e59f0078 	ldr	r0, =CCM_IO_BASE	; 0x01c20000
     2294:	e5904080 	ldr	r4, [r0, #128]	; 0x80
     2298:	e204000f 	and	r0, r4, #15
     229c:	e2806001 	add	r6, r0, #1
@@ -2231,7 +2238,7 @@ Disassembly of section .data:
     22bc:	e1a04000 	mov	r4, r0
     22c0:	e3a02001 	mov	r2, #1
     22c4:	e1a01004 	mov	r1, r4
-    22c8:	e59f0044 	ldr	r0, [0x2314]	; 0x2314
+    22c8:	e59f0044 	ldr	r0, =0x7fffff00
     22cc:	ebfffdb1 	bl	0x1998
     22d0:	e8bd8010 	pop	{r4, pc}
     22d4:	e12fff1e 	bx	lr
@@ -2247,10 +2254,7 @@ Disassembly of section .data:
     22fc:	e1a04000 	mov	r4, r0
     2300:	e3a00000 	mov	r0, #0
     2304:	e8bd8010 	pop	{r4, pc}
-    2308:	00005cf4 	strdeq	r5, [r0], -r4
-    230c:	01c03000 	biceq	r3, r0, r0
-    2310:	01c20000 	biceq	r0, r2, r0
-    2314:	7fffff00 	svcvc	0x00ffff00
+
     2318:	e92d40f0 	push	{r4, r5, r6, r7, lr}
     231c:	e1cd41dc 	ldrd	r4, [sp, #28]
     2320:	e59d6018 	ldr	r6, [sp, #24]
@@ -4954,15 +4958,19 @@ Disassembly of section .data:
     4d48:	3affffa6 	bcc	0x4be8
     4d4c:	e3a0c000 	mov	ip, #0
     4d50:	eaffffc5 	b	0x4c6c
+
+standby_delay:
     4d54:	e3a01000 	mov	r1, #0
     4d58:	ea000000 	b	0x4d60
     4d5c:	e2811001 	add	r1, r1, #1
     4d60:	e1510000 	cmp	r1, r0
     4d64:	3afffffc 	bcc	0x4d5c
     4d68:	e12fff1e 	bx	lr
+
+mctl_ddr3_reset:
     4d6c:	e52de004 	push	{lr}		; (str lr, [sp, #-4]!)
     4d70:	e3a00000 	mov	r0, #0
-    4d74:	e59f1794 	ldr	r1, [0x5510]	; 0x5510
+    4d74:	e59f1794 	ldr	r1, =CCM_IO_BASE	; 0x01c20000
     4d78:	e5810d3c 	str	r0, [r1, #3388]	; 0xd3c
     4d7c:	e1c10000 	bic	r0, r1, r0
     4d80:	e5903d3c 	ldr	r3, [r0, #3388]	; 0xd3c
@@ -4975,117 +4983,127 @@ Disassembly of section .data:
     4d9c:	e3c33a01 	bic	r3, r3, #0x1000	 ; 4096
     4da0:	e5803230 	str	r3, [r0, #560]	; 0x230
     4da4:	e3a00c01 	mov	r0, #0x100	 ; 256
-    4da8:	ebffffe9 	bl	0x4d54
-    4dac:	e59f0760 	ldr	r0, [0x5514]	; 0x5514
+    4da8:	ebffffe9 	bl	standby_delay
+    4dac:	e59f0760 	ldr	r0, =DRAMC_IO_BASE	; =0x01c01000
     4db0:	e5903230 	ldr	r3, [r0, #560]	; 0x230
     4db4:	e3833a01 	orr	r3, r3, #0x1000	 ; 4096
     4db8:	e5803230 	str	r3, [r0, #560]	; 0x230
     4dbc:	ea000009 	b	0x4de8
-    4dc0:	e59f074c 	ldr	r0, [0x5514]	; 0x5514
+    4dc0:	e59f074c 	ldr	r0, =DRAMC_IO_BASE	; =0x01c01000
     4dc4:	e5903230 	ldr	r3, [r0, #560]	; 0x230
     4dc8:	e3833a01 	orr	r3, r3, #0x1000	 ; 4096
     4dcc:	e5803230 	str	r3, [r0, #560]	; 0x230
     4dd0:	e3a00c01 	mov	r0, #0x100	 ; 256
-    4dd4:	ebffffde 	bl	0x4d54
-    4dd8:	e59f0734 	ldr	r0, [0x5514]	; 0x5514
+    4dd4:	ebffffde 	bl	standby_delay
+    4dd8:	e59f0734 	ldr	r0, =DRAMC_IO_BASE	; =0x01c01000
     4ddc:	e5903230 	ldr	r3, [r0, #560]	; 0x230
     4de0:	e3c33a01 	bic	r3, r3, #0x1000	 ; 4096
     4de4:	e5803230 	str	r3, [r0, #560]	; 0x230
     4de8:	e49df004 	pop	{pc}		; (ldr pc, [sp], #4)
-    4dec:	e59f1720 	ldr	r1, [0x5514]	; 0x5514
+
+mctl_set_drive:
+    4dec:	e59f1720 	ldr	r1, =DRAMC_IO_BASE	; =0x01c01000
     4df0:	e5910230 	ldr	r0, [r1, #560]	; 0x230
     4df4:	e3800a06 	orr	r0, r0, #0x6000	 ; 24576
     4df8:	e3001ffc 	movw	r1, #0xffc	 ; 4092
     4dfc:	e1800001 	orr	r0, r0, r1
     4e00:	e3c00003 	bic	r0, r0, #3
-    4e04:	e59f1708 	ldr	r1, [0x5514]	; 0x5514
+    4e04:	e59f1708 	ldr	r1, =DRAMC_IO_BASE	; =0x01c01000
     4e08:	e5810230 	str	r0, [r1, #560]	; 0x230
     4e0c:	e12fff1e 	bx	lr
+
+mctl_itm_disable:
     4e10:	e3a00000 	mov	r0, #0
-    4e14:	e59f16f8 	ldr	r1, [0x5514]	; 0x5514
+    4e14:	e59f16f8 	ldr	r1, =DRAMC_IO_BASE	; =0x01c01000
     4e18:	e5910000 	ldr	r0, [r1]
     4e1c:	e3800201 	orr	r0, r0, #0x10000000	 ; 268435456
     4e20:	e5810000 	str	r0, [r1]
     4e24:	e12fff1e 	bx	lr
+
+mctl_itm_enable:
     4e28:	e3a00000 	mov	r0, #0
-    4e2c:	e59f16e0 	ldr	r1, [0x5514]	; 0x5514
+    4e2c:	e59f16e0 	ldr	r1, =DRAMC_IO_BASE	; =0x01c01000
     4e30:	e5910000 	ldr	r0, [r1]
     4e34:	e3c00201 	bic	r0, r0, #0x10000000	 ; 268435456
     4e38:	e5810000 	str	r0, [r1]
     4e3c:	e12fff1e 	bx	lr
+
+mctl_enable_dll0:
     4e40:	e52de004 	push	{lr}		; (str lr, [sp, #-4]!)
-    4e44:	e59f06c8 	ldr	r0, [0x5514]	; 0x5514
+    4e44:	e59f06c8 	ldr	r0, =DRAMC_IO_BASE	; =0x01c01000
     4e48:	e5900204 	ldr	r0, [r0, #516]	; 0x204
     4e4c:	e3c00101 	bic	r0, r0, #0x40000000	 ; 1073741824
     4e50:	e3800102 	orr	r0, r0, #0x80000000	 ; 2147483648
-    4e54:	e59f16b8 	ldr	r1, [0x5514]	; 0x5514
+    4e54:	e59f16b8 	ldr	r1, =DRAMC_IO_BASE	; =0x01c01000
     4e58:	e5810204 	str	r0, [r1, #516]	; 0x204
     4e5c:	e3a00c01 	mov	r0, #0x100	 ; 256
-    4e60:	ebffffbb 	bl	0x4d54
-    4e64:	e59f06a8 	ldr	r0, [0x5514]	; 0x5514
+    4e60:	ebffffbb 	bl	standby_delay
+    4e64:	e59f06a8 	ldr	r0, =DRAMC_IO_BASE	; =0x01c01000
     4e68:	e5900204 	ldr	r0, [r0, #516]	; 0x204
     4e6c:	e3c00103 	bic	r0, r0, #0xc0000000	 ; 3221225472
-    4e70:	e59f169c 	ldr	r1, [0x5514]	; 0x5514
+    4e70:	e59f169c 	ldr	r1, =DRAMC_IO_BASE	; =0x01c01000
     4e74:	e5810204 	str	r0, [r1, #516]	; 0x204
     4e78:	e3a00a01 	mov	r0, #0x1000	 ; 4096
-    4e7c:	ebffffb4 	bl	0x4d54
-    4e80:	e59f068c 	ldr	r0, [0x5514]	; 0x5514
+    4e7c:	ebffffb4 	bl	standby_delay
+    4e80:	e59f068c 	ldr	r0, =DRAMC_IO_BASE	; =0x01c01000
     4e84:	e5900204 	ldr	r0, [r0, #516]	; 0x204
     4e88:	e3c00102 	bic	r0, r0, #0x80000000	 ; 2147483648
     4e8c:	e3800101 	orr	r0, r0, #0x40000000	 ; 1073741824
-    4e90:	e59f167c 	ldr	r1, [0x5514]	; 0x5514
+    4e90:	e59f167c 	ldr	r1, =DRAMC_IO_BASE	; =0x01c01000
     4e94:	e5810204 	str	r0, [r1, #516]	; 0x204
     4e98:	e3a00a01 	mov	r0, #0x1000	 ; 4096
-    4e9c:	ebffffac 	bl	0x4d54
+    4e9c:	ebffffac 	bl	standby_delay
     4ea0:	e49df004 	pop	{pc}		; (ldr pc, [sp], #4)
+
+mctl_enable_dllx:
     4ea4:	e52de004 	push	{lr}		; (str lr, [sp, #-4]!)
     4ea8:	e3a03000 	mov	r3, #0
     4eac:	e3a03001 	mov	r3, #1
     4eb0:	ea000008 	b	0x4ed8
-    4eb4:	e59f0658 	ldr	r0, [0x5514]	; 0x5514
+    4eb4:	e59f0658 	ldr	r0, =DRAMC_IO_BASE	; =0x01c01000
     4eb8:	e0800103 	add	r0, r0, r3, lsl #2
     4ebc:	e5900204 	ldr	r0, [r0, #516]	; 0x204
     4ec0:	e3c00101 	bic	r0, r0, #0x40000000	 ; 1073741824
     4ec4:	e3800102 	orr	r0, r0, #0x80000000	 ; 2147483648
-    4ec8:	e59f1644 	ldr	r1, [0x5514]	; 0x5514
+    4ec8:	e59f1644 	ldr	r1, =DRAMC_IO_BASE	; =0x01c01000
     4ecc:	e0811103 	add	r1, r1, r3, lsl #2
     4ed0:	e5810204 	str	r0, [r1, #516]	; 0x204
     4ed4:	e2833001 	add	r3, r3, #1
     4ed8:	e3530005 	cmp	r3, #5
     4edc:	3afffff4 	bcc	0x4eb4
     4ee0:	e3a00c01 	mov	r0, #0x100	 ; 256
-    4ee4:	ebffff9a 	bl	0x4d54
+    4ee4:	ebffff9a 	bl	standby_delay
     4ee8:	e3a03001 	mov	r3, #1
     4eec:	ea000007 	b	0x4f10
-    4ef0:	e59f061c 	ldr	r0, [0x5514]	; 0x5514
+    4ef0:	e59f061c 	ldr	r0, =DRAMC_IO_BASE	; =0x01c01000
     4ef4:	e0800103 	add	r0, r0, r3, lsl #2
     4ef8:	e5900204 	ldr	r0, [r0, #516]	; 0x204
     4efc:	e3c00103 	bic	r0, r0, #0xc0000000	 ; 3221225472
-    4f00:	e59f160c 	ldr	r1, [0x5514]	; 0x5514
+    4f00:	e59f160c 	ldr	r1, =DRAMC_IO_BASE	; =0x01c01000
     4f04:	e0811103 	add	r1, r1, r3, lsl #2
     4f08:	e5810204 	str	r0, [r1, #516]	; 0x204
     4f0c:	e2833001 	add	r3, r3, #1
     4f10:	e3530005 	cmp	r3, #5
     4f14:	3afffff5 	bcc	0x4ef0
     4f18:	e3a00a01 	mov	r0, #0x1000	 ; 4096
-    4f1c:	ebffff8c 	bl	0x4d54
+    4f1c:	ebffff8c 	bl	standby_delay
     4f20:	e3a03001 	mov	r3, #1
     4f24:	ea000008 	b	0x4f4c
-    4f28:	e59f05e4 	ldr	r0, [0x5514]	; 0x5514
+    4f28:	e59f05e4 	ldr	r0, =DRAMC_IO_BASE	; =0x01c01000
     4f2c:	e0800103 	add	r0, r0, r3, lsl #2
     4f30:	e5900204 	ldr	r0, [r0, #516]	; 0x204
     4f34:	e3c00102 	bic	r0, r0, #0x80000000	 ; 2147483648
     4f38:	e3800101 	orr	r0, r0, #0x40000000	 ; 1073741824
-    4f3c:	e59f15d0 	ldr	r1, [0x5514]	; 0x5514
+    4f3c:	e59f15d0 	ldr	r1, =DRAMC_IO_BASE	; =0x01c01000
     4f40:	e0811103 	add	r1, r1, r3, lsl #2
     4f44:	e5810204 	str	r0, [r1, #516]	; 0x204
     4f48:	e2833001 	add	r3, r3, #1
     4f4c:	e3530005 	cmp	r3, #5
     4f50:	3afffff4 	bcc	0x4f28
     4f54:	e3a00a01 	mov	r0, #0x1000	 ; 4096
-    4f58:	ebffff7d 	bl	0x4d54
+    4f58:	ebffff7d 	bl	standby_delay
     4f5c:	e49df004 	pop	{pc}		; (ldr pc, [sp], #4)
-    4f60:	e59f15ac 	ldr	r1, [0x5514]	; 0x5514
+    4f60:	e59f15ac 	ldr	r1, =DRAMC_IO_BASE	; =0x01c01000
     4f64:	e5910204 	ldr	r0, [r1, #516]	; 0x204
     4f68:	e3c00101 	bic	r0, r0, #0x40000000	 ; 1073741824
     4f6c:	e3800102 	orr	r0, r0, #0x80000000	 ; 2147483648
@@ -5107,16 +5125,18 @@ Disassembly of section .data:
     4fac:	e3800102 	orr	r0, r0, #0x80000000	 ; 2147483648
     4fb0:	e5810214 	str	r0, [r1, #532]	; 0x214
     4fb4:	e12fff1e 	bx	lr
+
+mctl_configure_hostport:
     4fb8:	e92d4010 	push	{r4, lr}
     4fbc:	e24dd080 	sub	sp, sp, #0x80	 ; 128
     4fc0:	e3a02080 	mov	r2, #0x80	 ; 128
-    4fc4:	e59f154c 	ldr	r1, [0x5518]	; 0x5518
+    4fc4:	e59f154c 	ldr	r1, =0x00005c58
     4fc8:	e1a0000d 	mov	r0, sp
     4fcc:	ebfffed9 	bl	0x4b38
     4fd0:	e3a04000 	mov	r4, #0
     4fd4:	ea000004 	b	0x4fec
     4fd8:	e79d0104 	ldr	r0, [sp, r4, lsl #2]
-    4fdc:	e59f1530 	ldr	r1, [0x5514]	; 0x5514
+    4fdc:	e59f1530 	ldr	r1, =DRAMC_IO_BASE	; =0x01c01000
     4fe0:	e0811104 	add	r1, r1, r4, lsl #2
     4fe4:	e5810250 	str	r0, [r1, #592]	; 0x250
     4fe8:	e2844001 	add	r4, r4, #1
@@ -5124,9 +5144,11 @@ Disassembly of section .data:
     4ff0:	3afffff8 	bcc	0x4fd8
     4ff4:	e28dd080 	add	sp, sp, #0x80	 ; 128
     4ff8:	e8bd8010 	pop	{r4, pc}
+
+mctl_setup_dram_clock:
     4ffc:	e92d4070 	push	{r4, r5, r6, lr}
     5000:	e1a04000 	mov	r4, r0
-    5004:	e59f0504 	ldr	r0, [0x5510]	; 0x5510
+    5004:	e59f0504 	ldr	r0, =CCM_IO_BASE	; 0x01c20000
     5008:	e5905020 	ldr	r5, [r0, #32]
     500c:	e3c55003 	bic	r5, r5, #3
     5010:	e3855001 	orr	r5, r5, #1
@@ -5142,11 +5164,11 @@ Disassembly of section .data:
     5038:	e3855801 	orr	r5, r5, #0x10000	 ; 65536
     503c:	e3c55202 	bic	r5, r5, #0x20000000	 ; 536870912
     5040:	e3855102 	orr	r5, r5, #0x80000000	 ; 2147483648
-    5044:	e59f04c4 	ldr	r0, [0x5510]	; 0x5510
+    5044:	e59f04c4 	ldr	r0, =CCM_IO_BASE	; 0x01c20000
     5048:	e5805020 	str	r5, [r0, #32]
     504c:	e3a00601 	mov	r0, #0x100000	 ; 1048576
-    5050:	ebffff3f 	bl	0x4d54
-    5054:	e59f04b4 	ldr	r0, [0x5510]	; 0x5510
+    5050:	ebffff3f 	bl	standby_delay
+    5054:	e59f04b4 	ldr	r0, =CCM_IO_BASE	; 0x01c20000
     5058:	e5905020 	ldr	r5, [r0, #32]
     505c:	e3855202 	orr	r5, r5, #0x20000000	 ; 536870912
     5060:	e5805020 	str	r5, [r0, #32]
@@ -5157,8 +5179,8 @@ Disassembly of section .data:
     5074:	e3855301 	orr	r5, r5, #0x4000000	 ; 67108864
     5078:	e5805060 	str	r5, [r0, #96]	; 0x60
     507c:	e3a00c01 	mov	r0, #0x100	 ; 256
-    5080:	ebffff33 	bl	0x4d54
-    5084:	e59f0484 	ldr	r0, [0x5510]	; 0x5510
+    5080:	ebffff33 	bl	standby_delay
+    5084:	e59f0484 	ldr	r0, =CCM_IO_BASE	; 0x01c20000
     5088:	e5905060 	ldr	r5, [r0, #96]	; 0x60
     508c:	e3c55301 	bic	r5, r5, #0x4000000	 ; 67108864
     5090:	e5805060 	str	r5, [r0, #96]	; 0x60
@@ -5166,14 +5188,16 @@ Disassembly of section .data:
     5098:	e3c55901 	bic	r5, r5, #0x4000	 ; 16384
     509c:	e5805060 	str	r5, [r0, #96]	; 0x60
     50a0:	e3a00a01 	mov	r0, #0x1000	 ; 4096
-    50a4:	ebffff2a 	bl	0x4d54
+    50a4:	ebffff2a 	bl	standby_delay
     50a8:	e3855901 	orr	r5, r5, #0x4000	 ; 16384
-    50ac:	e59f045c 	ldr	r0, [0x5510]	; 0x5510
+    50ac:	e59f045c 	ldr	r0, =CCM_IO_BASE	; 0x01c20000
     50b0:	e5805060 	str	r5, [r0, #96]	; 0x60
     50b4:	e3a00a01 	mov	r0, #0x1000	 ; 4096
-    50b8:	ebffff25 	bl	0x4d54
+    50b8:	ebffff25 	bl	standby_delay
     50bc:	e8bd8070 	pop	{r4, r5, r6, pc}
-    50c0:	e59f344c 	ldr	r3, [0x5514]	; 0x5514
+
+DRAMC_get_dram_size:
+    50c0:	e59f344c 	ldr	r3, =DRAMC_IO_BASE	; =0x01c01000
     50c4:	e5931004 	ldr	r1, [r3, #4]
     50c8:	e7e221d1 	ubfx	r2, r1, #3, #3
     50cc:	e3520000 	cmp	r2, #0
@@ -5210,16 +5234,18 @@ Disassembly of section .data:
     5148:	1a000000 	bne	0x5150
     514c:	e1a00080 	lsl	r0, r0, #1
     5150:	e12fff1e 	bx	lr
-    5154:	e59f03b8 	ldr	r0, [0x5514]	; 0x5514
+
+DRAMC_scan_readpipe:
+    5154:	e59f03b8 	ldr	r0, =DRAMC_IO_BASE	; =0x01c01000
     5158:	e5901000 	ldr	r1, [r0]
     515c:	e3811101 	orr	r1, r1, #0x40000000	 ; 1073741824
     5160:	e5801000 	str	r1, [r0]
     5164:	e320f000 	nop	{0}
-    5168:	e59f03a4 	ldr	r0, [0x5514]	; 0x5514
+    5168:	e59f03a4 	ldr	r0, =DRAMC_IO_BASE	; =0x01c01000
     516c:	e5900000 	ldr	r0, [r0]
     5170:	e3100101 	tst	r0, #0x40000000	 ; 1073741824
     5174:	1afffffb 	bne	0x5168
-    5178:	e59f0394 	ldr	r0, [0x5514]	; 0x5514
+    5178:	e59f0394 	ldr	r0, =DRAMC_IO_BASE	; =0x01c01000
     517c:	e590100c 	ldr	r1, [r0, #12]
     5180:	e3110601 	tst	r1, #0x100000	 ; 1048576
     5184:	0a000001 	beq	0x5190
@@ -5227,8 +5253,10 @@ Disassembly of section .data:
     518c:	e12fff1e 	bx	lr
     5190:	e3a00000 	mov	r0, #0
     5194:	eafffffc 	b	0x518c
+
+DRAMC_set_autorefresh_cycle:
     5198:	e92d4030 	push	{r4, r5, lr}
-    519c:	e59f4370 	ldr	r4, [0x5514]	; 0x5514
+    519c:	e59f4370 	ldr	r4, =DRAMC_IO_BASE	; =0x01c01000
     51a0:	e5942004 	ldr	r2, [r4, #4]
     51a4:	e1a021a2 	lsr	r2, r2, #3
     51a8:	e2022007 	and	r2, r2, #7
@@ -5251,126 +5279,285 @@ Disassembly of section .data:
     51ec:	e24430c8 	sub	r3, r4, #0xc8	 ; 200
     51f0:	e1811403 	orr	r1, r1, r3, lsl #8
     51f4:	e3811302 	orr	r1, r1, #0x8000000	 ; 134217728
-    51f8:	e59f4314 	ldr	r4, [0x5514]	; 0x5514
+    51f8:	e59f4314 	ldr	r4, =DRAMC_IO_BASE	; =0x01c01000
     51fc:	e5841010 	str	r1, [r4, #16]
     5200:	ea000002 	b	0x5210
     5204:	e3a04000 	mov	r4, #0
-    5208:	e59f5304 	ldr	r5, [0x5514]	; 0x5514
+    5208:	e59f5304 	ldr	r5, =DRAMC_IO_BASE	; =0x01c01000
     520c:	e5854010 	str	r4, [r5, #16]
     5210:	e8bd8030 	pop	{r4, r5, pc}
-    5214:	e59f22f4 	ldr	r2, [0x5510]	; 0x5510
-    5218:	e5921100 	ldr	r1, [r2, #256]	; 0x100
+
+void DRAMC_clock_output_en(__u32 on)
+{
+    5214:	e59f22f4 	ldr	r2, =CCM_IO_BASE	; 0x01c20000
+    5218:	e5921100 	ldr	r1, [r2, #DRAM_CCM_SDRAM_CLK_REG]	; 0x100
     521c:	e3500000 	cmp	r0, #0
     5220:	0a000001 	beq	0x522c
-    5224:	e3811902 	orr	r1, r1, #0x8000	 ; 32768
+    5224:	e3811902 	orr	r1, r1, #(1<<15)	 ; 32768
     5228:	ea000000 	b	0x5230
-    522c:	e3c11902 	bic	r1, r1, #0x8000	 ; 32768
-    5230:	e59f22d8 	ldr	r2, [0x5510]	; 0x5510
-    5234:	e5821100 	str	r1, [r2, #256]	; 0x100
+    522c:	e3c11902 	bic	r1, r1, #(1<<15)	 ; 32768
+    5230:	e59f22d8 	ldr	r2, =CCM_IO_BASE	; 0x01c20000
+    5234:	e5821100 	str	r1, [r2, #DRAM_CCM_SDRAM_CLK_REG]	; 0x100
     5238:	e12fff1e 	bx	lr
+}
+
+__s32 DRAMC_init(__dram_para_t *para)
+{
+    __u32 i;
+    __u32 reg_val;
+    __s32 ret_val;
+
+/*
     523c:	e92d4070 	push	{r4, r5, r6, lr}
     5240:	e1a04000 	mov	r4, r0
+*/
+
+    //check input dram parameter structure
+    if(!para)
+    {
+        //dram parameter is invalid
+        return -1;
+    }
+/*
     5244:	e3540000 	cmp	r4, #0
     5248:	1a000001 	bne	0x5254
     524c:	e3e00000 	mvn	r0, #0
     5250:	e8bd8070 	pop	{r4, r5, r6, pc}
+*/
+
+    //setup DRAM relative clock
+    mctl_setup_dram_clock(para->dram_clk);
+/*
     5254:	e5940004 	ldr	r0, [r4, #4]
-    5258:	ebffff67 	bl	0x4ffc
-    525c:	ebfffec2 	bl	0x4d6c
-    5260:	ebfffee1 	bl	0x4dec
+    5258:	ebffff67 	bl	mctl_setup_dram_clock
+*/
+
+    //reset external DRAM
+    mctl_ddr3_reset();
+    mctl_set_drive();
+/*
+    525c:	ebfffec2 	bl	mctl_ddr3_reset
+    5260:	ebfffee1 	bl	mctl_set_drive
+*/
+
+    //dram clock off
+    DRAMC_clock_output_en(0);
+/*
     5264:	e3a00000 	mov	r0, #0
-    5268:	ebffffe9 	bl	0x5214
-    526c:	e59f02a8 	ldr	r0, [0x551c]	; 0x551c
-    5270:	e59f129c 	ldr	r1, [0x5514]	; 0x5514
+    5268:	ebffffe9 	bl	DRAMC_clock_output_en
+*/
+
+    //select dram controller 1
+    mctl_write_w(SDR_SCSR, 0x16237495);
+/*
+    526c:	e59f02a8 	ldr	r0, =0x16237495
+    5270:	e59f129c 	ldr	r1, =DRAMC_IO_BASE	; =0x01c01000
     5274:	e58102e0 	str	r0, [r1, #736]	; 0x2e0
-    5278:	ebfffee4 	bl	0x4e10
-    527c:	ebfffeef 	bl	0x4e40
+*/
+
+    mctl_itm_disable();
+    mctl_enable_dll0();
+/*
+    5278:	ebfffee4 	bl	mctl_itm_disable
+    527c:	ebfffeef 	bl	mctl_enable_dll0
+*/
+    //configure external DRAM
+    reg_val = 0;
+    if(para->dram_type == 3)
+        reg_val |= 0x1;
+/*
     5280:	e3a06000 	mov	r6, #0
     5284:	e5940008 	ldr	r0, [r4, #8]
     5288:	e3500003 	cmp	r0, #3
     528c:	1a000000 	bne	0x5294
     5290:	e3866001 	orr	r6, r6, #1
+*/
+    reg_val |= (para->dram_io_width>>3) <<1;
+/*
     5294:	e5940014 	ldr	r0, [r4, #20]
     5298:	e1a001a0 	lsr	r0, r0, #3
     529c:	e1866080 	orr	r6, r6, r0, lsl #1
+*/
+
+    if(para->dram_chip_density == 256)
+        reg_val |= 0x0<<3;
+/*
     52a0:	e5940010 	ldr	r0, [r4, #16]
     52a4:	e3500c01 	cmp	r0, #0x100	 ; 256
     52a8:	1a000000 	bne	0x52b0
     52ac:	ea000019 	b	0x5318
+*/
+    else if(para->dram_chip_density == 512)
+        reg_val |= 0x1<<3;
+/*
     52b0:	e5940010 	ldr	r0, [r4, #16]
     52b4:	e3500c02 	cmp	r0, #0x200	 ; 512
     52b8:	1a000001 	bne	0x52c4
     52bc:	e3866008 	orr	r6, r6, #8
     52c0:	ea000014 	b	0x5318
+*/
+    else if(para->dram_chip_density == 1024)
+        reg_val |= 0x2<<3;
+/*
     52c4:	e5940010 	ldr	r0, [r4, #16]
     52c8:	e3500b01 	cmp	r0, #0x400	 ; 1024
     52cc:	1a000001 	bne	0x52d8
     52d0:	e3866010 	orr	r6, r6, #16
     52d4:	ea00000f 	b	0x5318
+*/
+    else if(para->dram_chip_density == 2048)
+        reg_val |= 0x3<<3;
+/*
     52d8:	e5940010 	ldr	r0, [r4, #16]
     52dc:	e3500b02 	cmp	r0, #0x800	 ; 2048
     52e0:	1a000001 	bne	0x52ec
     52e4:	e3866018 	orr	r6, r6, #24
     52e8:	ea00000a 	b	0x5318
+*/
+    else if(para->dram_chip_density == 4096)
+        reg_val |= 0x4<<3;
+/*
     52ec:	e5940010 	ldr	r0, [r4, #16]
     52f0:	e3500a01 	cmp	r0, #0x1000	 ; 4096
     52f4:	1a000001 	bne	0x5300
     52f8:	e3866020 	orr	r6, r6, #32
     52fc:	ea000005 	b	0x5318
+*/
+    else if(para->dram_chip_density == 8192)
+        reg_val |= 0x5<<3;
+/*
     5300:	e5940010 	ldr	r0, [r4, #16]
     5304:	e3500a02 	cmp	r0, #0x2000	 ; 8192
     5308:	1a000001 	bne	0x5314
     530c:	e3866028 	orr	r6, r6, #0x28	 ; 40
     5310:	ea000000 	b	0x5318
+*/
+    else
+        reg_val |= 0x0<<3;
+/*
     5314:	e320f000 	nop	{0}
+*/
+
+    reg_val |= ((para->dram_bus_width>>3) - 1)<<6;
+/*
     5318:	e3a01001 	mov	r1, #1
     531c:	e5940018 	ldr	r0, [r4, #24]
     5320:	e06101a0 	rsb	r0, r1, r0, lsr #3
     5324:	e1866300 	orr	r6, r6, r0, lsl #6
+*/
+    reg_val |= (para->dram_rank_num -1)<<10;
+/*
     5328:	e594000c 	ldr	r0, [r4, #12]
     532c:	e2400001 	sub	r0, r0, #1
     5330:	e1866500 	orr	r6, r6, r0, lsl #10
+*/
+    reg_val |= 0x1<<12;
+/*
     5334:	e3866a01 	orr	r6, r6, #0x1000	 ; 4096
+*/
+    reg_val |= ((0x1)&0x3)<<13;
+/*
     5338:	e3866a02 	orr	r6, r6, #0x2000	 ; 8192
-    533c:	e59f01d0 	ldr	r0, [0x5514]	; 0x5514
+*/
+    mctl_write_w(SDR_DCR, reg_val);
+/*
+    533c:	e59f01d0 	ldr	r0, =DRAMC_IO_BASE	; =0x01c01000
     5340:	e5806004 	str	r6, [r0, #4]
+*/
+
+    //dram clock on
+    DRAMC_clock_output_en(1);
+/*
     5344:	e3a00001 	mov	r0, #1
-    5348:	ebffffb1 	bl	0x5214
+    5348:	ebffffb1 	bl	DRAMC_clock_output_en
+*/
+	standby_delay(0x10);
+/*
     534c:	e3a00010 	mov	r0, #16
-    5350:	ebfffe7f 	bl	0x4d54
+    5350:	ebfffe7f 	bl	standby_delay
     5354:	e320f000 	nop	{0}
-    5358:	e59f01b4 	ldr	r0, [0x5514]	; 0x5514
+*/
+    while(mctl_read_w(SDR_CCR) & (0x1U<<31)) {};
+/*
+    5358:	e59f01b4 	ldr	r0, =DRAMC_IO_BASE	; =0x01c01000
     535c:	e5900000 	ldr	r0, [r0]
     5360:	e3100102 	tst	r0, #0x80000000	 ; 2147483648
     5364:	1afffffb 	bne	0x5358
-    5368:	ebfffecd 	bl	0x4ea4
+*/
+
+		mctl_enable_dllx();
+/*
+    5368:	ebfffecd 	bl	mctl_enable_dllx
+*/
+        //set odt impendance divide ratio
+        reg_val=((para->dram_zq)>>8)&0xfffff;
+/*
     536c:	e5940020 	ldr	r0, [r4, #32]
     5370:	e7f36450 	ubfx	r6, r0, #8, #20
+*/
+        reg_val |= ((para->dram_zq)&0xff)<<20;
+/*
     5374:	e5940020 	ldr	r0, [r4, #32]
     5378:	e20000ff 	and	r0, r0, #0xff	 ; 255
     537c:	e1866a00 	orr	r6, r6, r0, lsl #20
+*/
+        reg_val |= (para->dram_zq)&0xf0000000;
+/*
     5380:	e5940020 	ldr	r0, [r4, #32]
     5384:	e200020f 	and	r0, r0, #0xf0000000	 ; 4026531840
     5388:	e1866000 	orr	r6, r6, r0
-    538c:	e59f0180 	ldr	r0, [0x5514]	; 0x5514
+*/
+    mctl_write_w(SDR_ZQCR0, reg_val);
+/*
+    538c:	e59f0180 	ldr	r0, =DRAMC_IO_BASE	; =0x01c01000
     5390:	e58060a8 	str	r6, [r0, #168]	; 0xa8
+*/
+
+		//set I/O configure register
+		reg_val = 0x00cc0000;
+		reg_val |= (para->dram_odt_en)&0x3;
+		reg_val |= ((para->dram_odt_en)&0x3)<<30;
+		mctl_write_w(SDR_IOCR, reg_val);
+/*
     5394:	e3a06733 	mov	r6, #0xcc0000	 ; 13369344
     5398:	e5940024 	ldr	r0, [r4, #36]	; 0x24
     539c:	e2000003 	and	r0, r0, #3
     53a0:	e1866000 	orr	r6, r6, r0
     53a4:	e5940024 	ldr	r0, [r4, #36]	; 0x24
     53a8:	e1866f00 	orr	r6, r6, r0, lsl #30
-    53ac:	e59f0160 	ldr	r0, [0x5514]	; 0x5514
+    53ac:	e59f0160 	ldr	r0, =DRAMC_IO_BASE	; =0x01c01000
     53b0:	e5806008 	str	r6, [r0, #8]
+*/
+
+		//set refresh period
+    DRAMC_set_autorefresh_cycle(para->dram_clk);
+/*
     53b4:	e5940004 	ldr	r0, [r4, #4]
-    53b8:	ebffff76 	bl	0x5198
+    53b8:	ebffff76 	bl	DRAMC_set_autorefresh_cycle
+*/
+
+    //set timing parameters
+    mctl_write_w(SDR_TPR0, para->dram_tpr0);
+    mctl_write_w(SDR_TPR1, para->dram_tpr1);
+    mctl_write_w(SDR_TPR2, para->dram_tpr2);
+/*
     53bc:	e594002c 	ldr	r0, [r4, #44]	; 0x2c
-    53c0:	e59f114c 	ldr	r1, [0x5514]	; 0x5514
+    53c0:	e59f114c 	ldr	r1, =DRAMC_IO_BASE	; =0x01c01000
     53c4:	e5810014 	str	r0, [r1, #20]
     53c8:	e5940030 	ldr	r0, [r4, #48]	; 0x30
     53cc:	e5810018 	str	r0, [r1, #24]
     53d0:	e5940034 	ldr	r0, [r4, #52]	; 0x34
     53d4:	e581001c 	str	r0, [r1, #28]
+*/
+
+    //set mode register
+    if(para->dram_type==3)                  //ddr3
+    {
+        reg_val = 0x0;
+        reg_val |= (para->dram_cas - 4)<<4;
+        reg_val |= 0x5<<9;
+    }
+/*
     53d8:	e5940008 	ldr	r0, [r4, #8]
     53dc:	e3500003 	cmp	r0, #3
     53e0:	1a000005 	bne	0x53fc
@@ -5380,6 +5567,14 @@ Disassembly of section .data:
     53f0:	e1866200 	orr	r6, r6, r0, lsl #4
     53f4:	e3866c0a 	orr	r6, r6, #0xa00	 ; 2560
     53f8:	ea000006 	b	0x5418
+*/
+    else if(para->dram_type==2)             //ddr2
+    {
+        reg_val = 0x2;
+        reg_val |= para->dram_cas<<4;
+        reg_val |= 0x5<<9;
+    }
+/*
     53fc:	e5940008 	ldr	r0, [r4, #8]
     5400:	e3500002 	cmp	r0, #2
     5404:	1a000003 	bne	0x5418
@@ -5387,9 +5582,23 @@ Disassembly of section .data:
     540c:	e594001c 	ldr	r0, [r4, #28]
     5410:	e1866200 	orr	r6, r6, r0, lsl #4
     5414:	e3866c0a 	orr	r6, r6, #0xa00	 ; 2560
-    5418:	e59f00f4 	ldr	r0, [0x5514]	; 0x5514
+*/
+    mctl_write_w(SDR_MR, reg_val);
+/*
+    5418:	e59f00f4 	ldr	r0, =DRAMC_IO_BASE	; =0x01c01000
     541c:	e58061f0 	str	r6, [r0, #496]	; 0x1f0
+*/
+
+    reg_val = 0x0;
+/*
     5420:	e3a06000 	mov	r6, #0
+*/
+    mctl_write_w(SDR_EMR, para->dram_emr1);
+    reg_val = 0x0;
+		mctl_write_w(SDR_EMR2, para->dram_emr2);
+    reg_val = 0x0;
+		mctl_write_w(SDR_EMR3, para->dram_emr3);
+/*
     5424:	e1a01000 	mov	r1, r0
     5428:	e5940044 	ldr	r0, [r4, #68]	; 0x44
     542c:	e58101f4 	str	r0, [r1, #500]	; 0x1f4
@@ -5399,31 +5608,77 @@ Disassembly of section .data:
     543c:	e320f000 	nop	{0}
     5440:	e594004c 	ldr	r0, [r4, #76]	; 0x4c
     5444:	e58101fc 	str	r0, [r1, #508]	; 0x1fc
+*/
+
+	//set DQS window mode
+	reg_val = mctl_read_w(SDR_CCR);
+	reg_val |= 0x1U<<14;
+	reg_val &= ~(0x1U<<17);
+	mctl_write_w(SDR_CCR, reg_val);
+/*
     5448:	e1a00001 	mov	r0, r1
     544c:	e5906000 	ldr	r6, [r0]
     5450:	e3866901 	orr	r6, r6, #0x4000	 ; 16384
     5454:	e3c66802 	bic	r6, r6, #0x20000	 ; 131072
     5458:	e5806000 	str	r6, [r0]
+*/
+
+    //initial external DRAM
+    reg_val = mctl_read_w(SDR_CCR);
+    reg_val |= 0x1U<<31;
+    mctl_write_w(SDR_CCR, reg_val);
+/*
     545c:	e5906000 	ldr	r6, [r0]
     5460:	e3866102 	orr	r6, r6, #0x80000000	 ; 2147483648
     5464:	e5806000 	str	r6, [r0]
     5468:	e320f000 	nop	{0}
-    546c:	e59f00a0 	ldr	r0, [0x5514]	; 0x5514
+*/
+
+    while(mctl_read_w(SDR_CCR) & (0x1U<<31)) {};
+/*
+    546c:	e59f00a0 	ldr	r0, =DRAMC_IO_BASE	; =0x01c01000
     5470:	e5900000 	ldr	r0, [r0]
     5474:	e3100102 	tst	r0, #0x80000000	 ; 2147483648
     5478:	1afffffb 	bne	0x546c
-    547c:	ebfffe69 	bl	0x4e28
-    5480:	ebffff33 	bl	0x5154
+*/
+
+    //scan read pipe value
+    mctl_itm_enable();
+    ret_val = DRAMC_scan_readpipe();
+/*
+    547c:	ebfffe69 	bl	mctl_itm_enable
+    5480:	ebffff33 	bl	DRAMC_scan_readpipe
     5484:	e1a05000 	mov	r5, r0
+*/
+
+    if(ret_val < 0)
+    {
+        return 0;
+    }
+/*
     5488:	e3550000 	cmp	r5, #0
     548c:	aa000001 	bge	0x5498
     5490:	e3a00000 	mov	r0, #0
     5494:	eaffff6d 	b	0x5250
-    5498:	ebfffec6 	bl	0x4fb8
-    549c:	ebffff07 	bl	0x50c0
+*/
+    //configure all host port
+    mctl_configure_hostport();
+/*
+    5498:	ebfffec6 	bl	mctl_configure_hostport
+*/
+
+    return DRAMC_get_dram_size();
+/*
+    549c:	ebffff07 	bl	DRAMC_get_dram_size
     54a0:	eaffff6a 	b	0x5250
+*/
+/*
     54a4:	e3a00000 	mov	r0, #0
     54a8:	e12fff1e 	bx	lr
+*/
+}
+
+configureDRAMC:
     54ac:	e92d4030 	push	{r4, r5, lr}
     54b0:	e24dd054 	sub	sp, sp, #0x54	 ; 84
     54b4:	e28d0004 	add	r0, sp, #4
@@ -5432,14 +5687,14 @@ Disassembly of section .data:
     54c0:	e3500e7d 	cmp	r0, #0x7d0	 ; 2000
     54c4:	9a000003 	bls	0x54d8
     54c8:	e59d0008 	ldr	r0, [sp, #8]
-    54cc:	e59f104c 	ldr	r1, [0x5520]	; 0x5520
+    54cc:	e59f104c 	ldr	r1, =1000000
     54d0:	ebfffe18 	bl	0x4d38
     54d4:	e58d0008 	str	r0, [sp, #8]
     54d8:	e3a05000 	mov	r5, #0
     54dc:	e3a04000 	mov	r4, #0
     54e0:	ea000003 	b	0x54f4
     54e4:	e28d0004 	add	r0, sp, #4
-    54e8:	ebffff53 	bl	0x523c
+    54e8:	ebffff53 	bl	DRAMC_init
     54ec:	e1a05000 	mov	r5, r0
     54f0:	e2844001 	add	r4, r4, #1
     54f4:	e3550000 	cmp	r5, #0
@@ -5449,35 +5704,35 @@ Disassembly of section .data:
     5504:	e1a00005 	mov	r0, r5
     5508:	e28dd054 	add	sp, sp, #0x54	 ; 84
     550c:	e8bd8030 	pop	{r4, r5, pc}
-    5510:	01c20000 	biceq	r0, r2, r0
-    5514:	01c01000 	biceq	r1, r0, r0
-    5518:	00005c58 	andeq	r5, r0, r8, asr ip
-    551c:	16237495 			; <UNDEFINED> instruction: 0x16237495
-    5520:	000f4240 	andeq	r4, pc, r0, asr #4
+
     5524:	e3a00000 	mov	r0, #0
     5528:	ee070f15 	mcr	15, 0, r0, cr7, cr5, {0}
     552c:	ee110f10 	mrc	15, 0, r0, cr1, cr0, {0}
     5530:	e3800a01 	orr	r0, r0, #0x1000	 ; 4096
     5534:	ee010f10 	mcr	15, 0, r0, cr1, cr0, {0}
     5538:	e1a0f00e 	mov	pc, lr
+
     553c:	e3a00000 	mov	r0, #0
     5540:	ee070f15 	mcr	15, 0, r0, cr7, cr5, {0}
     5544:	ee110f10 	mrc	15, 0, r0, cr1, cr0, {0}
     5548:	e3800a01 	orr	r0, r0, #0x1000	 ; 4096
     554c:	ee010f10 	mcr	15, 0, r0, cr1, cr0, {0}
     5550:	e1a0f00e 	mov	pc, lr
+
     5554:	e3a00000 	mov	r0, #0
     5558:	ee070f15 	mcr	15, 0, r0, cr7, cr5, {0}
     555c:	ee110f10 	mrc	15, 0, r0, cr1, cr0, {0}
     5560:	e3c00004 	bic	r0, r0, #4
     5564:	ee010f10 	mcr	15, 0, r0, cr1, cr0, {0}
     5568:	e1a0f00e 	mov	pc, lr
+
     556c:	e3a00000 	mov	r0, #0
     5570:	ee070f15 	mcr	15, 0, r0, cr7, cr5, {0}
     5574:	ee110f10 	mrc	15, 0, r0, cr1, cr0, {0}
     5578:	e3c00004 	bic	r0, r0, #4
     557c:	ee010f10 	mcr	15, 0, r0, cr1, cr0, {0}
     5580:	e1a0f00e 	mov	pc, lr
+
     5584:	ee300f30 	mrc	15, 1, r0, cr0, cr0, {1}
     5588:	e2103407 	ands	r3, r0, #0x7000000	 ; 117440512
     558c:	e1a03ba3 	lsr	r3, r3, #23
