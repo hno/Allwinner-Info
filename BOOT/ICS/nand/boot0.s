@@ -416,7 +416,7 @@ Disassembly of section .data:
      65c:	ea00000c 	b	0x694
      660:	e1a01006 	mov	r1, r6
      664:	e1a00005 	mov	r0, r5
-     668:	e59d2028 	ldr	r2, [sp, #40]	; 0x28
+     668:	e59d2028 	ldr	r2, [sp, #0x28]	; 40
      66c:	eb000425 	bl	0x1708
      670:	e3500000 	cmp	r0, #0
      674:	1a000005 	bne	0x690
@@ -438,7 +438,7 @@ Disassembly of section .data:
      6b4:	e1a05001 	mov	r5, r1
      6b8:	e1a06002 	mov	r6, r2
      6bc:	e1a07003 	mov	r7, r3
-     6c0:	e1cd83d8 	ldrd	r8, [sp, #56]	; 0x38
+     6c0:	e1cd83d8 	ldrd	r8, [sp, #0x38]	; 56
      6c4:	e58d4000 	str	r4, [sp]
      6c8:	e58d600c 	str	r6, [sp, #12]
      6cc:	e3a0a000 	mov	sl, #0
@@ -698,7 +698,7 @@ Disassembly of section .data:
      ac4:	e5900000 	ldr	r0, [r0]
      ac8:	e1a074a0 	lsr	r7, r0, #9
      acc:	e3a00000 	mov	r0, #0
-     ad0:	e5cd005c 	strb	r0, [sp, #92]	; 0x5c
+     ad0:	e5cd005c 	strb	r0, [sp, #0x5c]	; 92
      ad4:	e51f0064 	ldr	r0, [0xa78]	; 0xa78
      ad8:	e5900000 	ldr	r0, [r0]
      adc:	e1a014a0 	lsr	r1, r0, #9
@@ -708,7 +708,7 @@ Disassembly of section .data:
      aec:	e58d000c 	str	r0, [sp, #12]
      af0:	e59d0008 	ldr	r0, [sp, #8]
      af4:	e6ff0070 	uxth	r0, r0
-     af8:	e1cd05be 	strh	r0, [sp, #94]	; 0x5e
+     af8:	e1cd05be 	strh	r0, [sp, #0x5e]	; 94
      afc:	e51f0080 	ldr	r0, [0xa84]	; 0xa84
      b00:	e5900000 	ldr	r0, [r0]
      b04:	e1a014a0 	lsr	r1, r0, #9
@@ -721,7 +721,7 @@ Disassembly of section .data:
      b20:	e28dd06c 	add	sp, sp, #0x6c	 ; 108
      b24:	e8bd8ff0 	pop	{r4, r5, r6, r7, r8, r9, sl, fp, pc}
      b28:	e28d001c 	add	r0, sp, #28
-     b2c:	e58d0068 	str	r0, [sp, #104]	; 0x68
+     b2c:	e58d0068 	str	r0, [sp, #0x68]	; 104
      b30:	e28d2018 	add	r2, sp, #24
      b34:	e1a01007 	mov	r1, r7
      b38:	e1a00006 	mov	r0, r6
@@ -732,11 +732,11 @@ Disassembly of section .data:
      b4c:	e51f00d0 	ldr	r0, [0xa84]	; 0xa84
      b50:	e5900000 	ldr	r0, [r0]
      b54:	e0205890 	mla	r0, r0, r8, r5
-     b58:	e58d0064 	str	r0, [sp, #100]	; 0x64
+     b58:	e58d0064 	str	r0, [sp, #0x64]	; 100
      b5c:	e59d0010 	ldr	r0, [sp, #16]
      b60:	e0800008 	add	r0, r0, r8
      b64:	e6ff0070 	uxth	r0, r0
-     b68:	e1cd06b0 	strh	r0, [sp, #96]	; 0x60
+     b68:	e1cd06b0 	strh	r0, [sp, #0x60]	; 96
      b6c:	e28d005c 	add	r0, sp, #0x5c	 ; 92
      b70:	eb0004fd 	bl	0x1f6c
      b74:	e3700001 	cmn	r0, #1
@@ -752,10 +752,10 @@ Disassembly of section .data:
      b9c:	0a000024 	beq	0xc34
      ba0:	eb000477 	bl	0x1d84
      ba4:	e1a09000 	mov	r9, r0
-     ba8:	e58d9064 	str	r9, [sp, #100]	; 0x64
+     ba8:	e58d9064 	str	r9, [sp, #0x64]	; 100
      bac:	e59d0018 	ldr	r0, [sp, #24]
      bb0:	e6ff0070 	uxth	r0, r0
-     bb4:	e1cd06b0 	strh	r0, [sp, #96]	; 0x60
+     bb4:	e1cd06b0 	strh	r0, [sp, #0x60]	; 96
      bb8:	e28d005c 	add	r0, sp, #0x5c	 ; 92
      bbc:	eb0004ea 	bl	0x1f6c
      bc0:	e3700001 	cmn	r0, #1
@@ -795,16 +795,16 @@ Disassembly of section .data:
      c48:	eb00044d 	bl	0x1d84
      c4c:	e1a05000 	mov	r5, r0
      c50:	e3a00000 	mov	r0, #0
-     c54:	e5cd0044 	strb	r0, [sp, #68]	; 0x44
+     c54:	e5cd0044 	strb	r0, [sp, #0x44]	; 68
      c58:	e6ff0074 	uxth	r0, r4
-     c5c:	e1cd04b6 	strh	r0, [sp, #70]	; 0x46
+     c5c:	e1cd04b6 	strh	r0, [sp, #0x46]	; 70
      c60:	e51f01f4 	ldr	r0, [0xa74]	; 0xa74
      c64:	e5900000 	ldr	r0, [r0]
      c68:	e6ff0070 	uxth	r0, r0
-     c6c:	e1cd04b8 	strh	r0, [sp, #72]	; 0x48
-     c70:	e58d504c 	str	r5, [sp, #76]	; 0x4c
+     c6c:	e1cd04b8 	strh	r0, [sp, #0x48]	; 72
+     c70:	e58d504c 	str	r5, [sp, #0x4c]	; 76
      c74:	e28d0004 	add	r0, sp, #4
-     c78:	e58d0050 	str	r0, [sp, #80]	; 0x50
+     c78:	e58d0050 	str	r0, [sp, #0x50]	; 80
      c7c:	e28d0044 	add	r0, sp, #0x44	 ; 68
      c80:	eb0004b9 	bl	0x1f6c
      c84:	e3700001 	cmn	r0, #1
@@ -835,16 +835,16 @@ Disassembly of section .data:
      ce8:	eb0000ee 	bl	0x10a8
      cec:	e8bd8010 	pop	{r4, pc}
      cf0:	e59f0234 	ldr	r0, =CCM_IO_BASE	; 0x01c20000
-     cf4:	e5900144 	ldr	r0, [r0, #324]	; 0x144
+     cf4:	e5900144 	ldr	r0, [r0, #0x144]	; 324
      cf8:	e3800102 	orr	r0, r0, #0x80000000	 ; 2147483648
      cfc:	e59f1228 	ldr	r1, =CCM_IO_BASE	; 0x01c20000
-     d00:	e5810144 	str	r0, [r1, #324]	; 0x144
+     d00:	e5810144 	str	r0, [r1, #0x144]	; 324
      d04:	e3a00001 	mov	r0, #1
-     d08:	e5810c80 	str	r0, [r1, #3200]	; 0xc80
+     d08:	e5810c80 	str	r0, [r1, #0xc80]	; 3200
      d0c:	e3020ee0 	movw	r0, #0x2ee0	 ; 12000
-     d10:	e5810c8c 	str	r0, [r1, #3212]	; 0xc8c
+     d10:	e5810c8c 	str	r0, [r1, #0xc8c]	; 3212
      d14:	e3a00000 	mov	r0, #0
-     d18:	e5810c84 	str	r0, [r1, #3204]	; 0xc84
+     d18:	e5810c84 	str	r0, [r1, #0xc84]	; 3204
      d1c:	e12fff1e 	bx	lr
      d20:	e59f1208 	ldr	r1, [0xf30]	; 0xf30
      d24:	e3a03000 	mov	r3, #0
@@ -921,12 +921,12 @@ main:
      e38:	eb001227 	bl	0x56dc
      e3c:	ebffffab 	bl	0xcf0
      e40:	e59f1104 	ldr	r1, [0xf4c]	; 0xf4c
-     e44:	e5910088 	ldr	r0, [r1, #136]	; 0x88
+     e44:	e5910088 	ldr	r0, [r1, #0x88]	; 136
      e48:	e59f2100 	ldr	r2, [0xf50]	; 0xf50
      e4c:	e281108c 	add	r1, r1, #0x8c	 ; 140
      e50:	eb000198 	bl	0x14b8
      e54:	e59f00f0 	ldr	r0, [0xf4c]	; 0xf4c
-     e58:	e590009c 	ldr	r0, [r0, #156]	; 0x9c
+     e58:	e590009c 	ldr	r0, [r0, #0x9c]	; 156
      e5c:	e3500000 	cmp	r0, #0
      e60:	0a000001 	beq	0xe6c
      e64:	e59f00e8 	ldr	r0, [0xf54]	; 0xf54
@@ -1042,7 +1042,7 @@ main:
 configureCpuBootClock()
     1014:	e59f204c 	ldr	r2, =0x00010010
     1018:	e51f30f4 	ldr	r3, =CCM_IO_BASE	; 0x01c20000
-    101c:	e5832054 	str	r2, [r3, #84]	; 0x54
+    101c:	e5832054 	str	r2, [r3, #0x54]	; 84
     1020:	e59f0044 	ldr	r0, =0xa1005000
     1024:	e1c321c0 	bic	r2, r3, r0, asr #3
     1028:	e5820000 	str	r0, [r2]
@@ -1052,14 +1052,14 @@ configureCpuBootClock()
     1038:	e35100c8 	cmp	r1, #0xc8	 ; 200
     103c:	3afffffc 	bcc	0x1034
     1040:	e51f211c 	ldr	r2, =CCM_IO_BASE	; 0x01c20000
-    1044:	e5920054 	ldr	r0, [r2, #84]	; 0x54
+    1044:	e5920054 	ldr	r0, [r2, #0x54]	; 84
     1048:	e3c00803 	bic	r0, r0, #0x30000	 ; 196608
     104c:	e3800802 	orr	r0, r0, #0x20000	 ; 131072
-    1050:	e5820054 	str	r0, [r2, #84]	; 0x54
-    1054:	e5922060 	ldr	r2, [r2, #96]	; 0x60
+    1050:	e5820054 	str	r0, [r2, #0x54]	; 84
+    1054:	e5922060 	ldr	r2, [r2, #0x60]	; 96
     1058:	e3822040 	orr	r2, r2, #0x40	 ; 64
     105c:	e51f3138 	ldr	r3, =CCM_IO_BASE	; 0x01c20000
-    1060:	e5832060 	str	r2, [r3, #96]	; 0x60
+    1060:	e5832060 	str	r2, [r3, #0x60]	; 96
     1064:	e12fff1e 	bx	lr
 
     1068:	00010010
@@ -1351,28 +1351,28 @@ configureCpuBootClock()
     14dc:	9a000000 	bls	0x14e4
     14e0:	e8bd87f0 	pop	{r4, r5, r6, r7, r8, r9, sl, pc}
     14e4:	e59f0114 	ldr	r0, =CCM_IO_BASE	; 0x01c20000
-    14e8:	e590006c 	ldr	r0, [r0, #108]	; 0x6c
+    14e8:	e590006c 	ldr	r0, [r0, #0x6c]	; 108
     14ec:	e59f1108 	ldr	r1, [0x15fc]	; 0x15fc
     14f0:	e5911000 	ldr	r1, [r1]
     14f4:	e2811010 	add	r1, r1, #16
     14f8:	e3a02001 	mov	r2, #1
     14fc:	e1c00112 	bic	r0, r0, r2, lsl r1
     1500:	e59f10f8 	ldr	r1, =CCM_IO_BASE	; 0x01c20000
-    1504:	e581006c 	str	r0, [r1, #108]	; 0x6c
+    1504:	e581006c 	str	r0, [r1, #0x6c]	; 108
     1508:	e3a09000 	mov	r9, #0
     150c:	ea000000 	b	0x1514
     1510:	e2899001 	add	r9, r9, #1
     1514:	e3590064 	cmp	r9, #0x64	 ; 100
     1518:	3afffffc 	bcc	0x1510
     151c:	e59f00dc 	ldr	r0, =CCM_IO_BASE	; 0x01c20000
-    1520:	e590006c 	ldr	r0, [r0, #108]	; 0x6c
+    1520:	e590006c 	ldr	r0, [r0, #0x6c]	; 108
     1524:	e59f10d0 	ldr	r1, [0x15fc]	; 0x15fc
     1528:	e5911000 	ldr	r1, [r1]
     152c:	e2811010 	add	r1, r1, #16
     1530:	e3a02001 	mov	r2, #1
     1534:	e1800112 	orr	r0, r0, r2, lsl r1
     1538:	e59f10c0 	ldr	r1, =CCM_IO_BASE	; 0x01c20000
-    153c:	e581006c 	str	r0, [r1, #108]	; 0x6c
+    153c:	e581006c 	str	r0, [r1, #0x6c]	; 108
     1540:	e3a01002 	mov	r1, #2
     1544:	e1a00005 	mov	r0, r5
     1548:	eb000112 	bl	0x1998
@@ -1654,24 +1654,24 @@ configureCpuBootClock()
     199c:	e24dd028 	sub	sp, sp, #0x28	 ; 40
     19a0:	e3a00000 	mov	r0, #0
     19a4:	e58d0020 	str	r0, [sp, #32]
-    19a8:	e59d0028 	ldr	r0, [sp, #40]	; 0x28
+    19a8:	e59d0028 	ldr	r0, [sp, #0x28]	; 40
     19ac:	e3c00102 	bic	r0, r0, #0x80000000	 ; 2147483648
     19b0:	e3c000ff 	bic	r0, r0, #0xff	 ; 255
     19b4:	e59fb3b4 	ldr	fp, [0x1d70]	; 0x1d70
     19b8:	e150000b 	cmp	r0, fp
     19bc:	1a000006 	bne	0x19dc
-    19c0:	e59db028 	ldr	fp, [sp, #40]	; 0x28
+    19c0:	e59db028 	ldr	fp, [sp, #0x28]	; 40
     19c4:	e20b0003 	and	r0, fp, #3
     19c8:	e1a00180 	lsl	r0, r0, #3
     19cc:	e59fb3a0 	ldr	fp, [0x1d74]	; 0x1d74
     19d0:	e08bb180 	add	fp, fp, r0, lsl #3
-    19d4:	e58db024 	str	fp, [sp, #36]	; 0x24
+    19d4:	e58db024 	str	fp, [sp, #0x24]	; 36
     19d8:	ea000001 	b	0x19e4
-    19dc:	e59d0028 	ldr	r0, [sp, #40]	; 0x28
-    19e0:	e58d0024 	str	r0, [sp, #36]	; 0x24
+    19dc:	e59d0028 	ldr	r0, [sp, #0x28]	; 40
+    19e0:	e58d0024 	str	r0, [sp, #0x24]	; 36
     19e4:	e3a02000 	mov	r2, #0
     19e8:	ea00004e 	b	0x1b28
-    19ec:	e59d0024 	ldr	r0, [sp, #36]	; 0x24
+    19ec:	e59d0024 	ldr	r0, [sp, #0x24]	; 36
     19f0:	e0801182 	add	r1, r0, r2, lsl #3
     19f4:	e5d10000 	ldrb	r0, [r1]
     19f8:	e58d0010 	str	r0, [sp, #16]
@@ -1711,7 +1711,7 @@ configureCpuBootClock()
     1a80:	e1a0a100 	lsl	sl, r0, #2
     1a84:	e3a00007 	mov	r0, #7
     1a88:	e1c33a10 	bic	r3, r3, r0, lsl sl
-    1a8c:	e59d0030 	ldr	r0, [sp, #48]	; 0x30
+    1a8c:	e59d0030 	ldr	r0, [sp, #0x30]	; 48
     1a90:	e3500000 	cmp	r0, #0
     1a94:	0a000002 	beq	0x1aa4
     1a98:	e5d10002 	ldrb	r0, [r1, #2]
@@ -1750,11 +1750,11 @@ configureCpuBootClock()
     1b1c:	ea000004 	b	0x1b34
     1b20:	e320f000 	nop	{0}
     1b24:	e2822001 	add	r2, r2, #1
-    1b28:	e59d002c 	ldr	r0, [sp, #44]	; 0x2c
+    1b28:	e59d002c 	ldr	r0, [sp, #0x2c]	; 44
     1b2c:	e1520000 	cmp	r2, r0
     1b30:	3affffad 	bcc	0x19ec
     1b34:	e320f000 	nop	{0}
-    1b38:	e59d002c 	ldr	r0, [sp, #44]	; 0x2c
+    1b38:	e59d002c 	ldr	r0, [sp, #0x2c]	; 44
     1b3c:	e1520000 	cmp	r2, r0
     1b40:	3a000002 	bcc	0x1b50
     1b44:	e3e00000 	mvn	r0, #0
@@ -1763,7 +1763,7 @@ configureCpuBootClock()
     1b50:	e2820001 	add	r0, r2, #1
     1b54:	e58d0000 	str	r0, [sp]
     1b58:	ea000071 	b	0x1d24
-    1b5c:	e59d0024 	ldr	r0, [sp, #36]	; 0x24
+    1b5c:	e59d0024 	ldr	r0, [sp, #0x24]	; 36
     1b60:	e59db000 	ldr	fp, [sp]
     1b64:	e080118b 	add	r1, r0, fp, lsl #3
     1b68:	e5d10000 	ldrb	r0, [r1]
@@ -1838,7 +1838,7 @@ configureCpuBootClock()
     1c7c:	0a000007 	beq	0x1ca0
     1c80:	e3a00007 	mov	r0, #7
     1c84:	e1c33a10 	bic	r3, r3, r0, lsl sl
-    1c88:	e59d0030 	ldr	r0, [sp, #48]	; 0x30
+    1c88:	e59d0030 	ldr	r0, [sp, #0x30]	; 48
     1c8c:	e3500000 	cmp	r0, #0
     1c90:	0a000002 	beq	0x1ca0
     1c94:	e5d10002 	ldrb	r0, [r1, #2]
@@ -1878,7 +1878,7 @@ configureCpuBootClock()
     1d1c:	e2800001 	add	r0, r0, #1
     1d20:	e58d0000 	str	r0, [sp]
     1d24:	e59d0000 	ldr	r0, [sp]
-    1d28:	e59db02c 	ldr	fp, [sp, #44]	; 0x2c
+    1d28:	e59db02c 	ldr	fp, [sp, #0x2c]	; 44
     1d2c:	e150000b 	cmp	r0, fp
     1d30:	3affff89 	bcc	0x1b5c
     1d34:	e320f000 	nop	{0}
@@ -1913,7 +1913,7 @@ configureCpuBootClock()
     1da8:	e3500001 	cmp	r0, #1
     1dac:	da000001 	ble	0x1db8
     1db0:	e59f102c 	ldr	r1, [0x1de4]	; 0x1de4
-    1db4:	e5810074 	str	r0, [r1, #116]	; 0x74
+    1db4:	e5810074 	str	r0, [r1, #0x74]	; 116
     1db8:	e12fff1e 	bx	lr
     1dbc:	e92d4010 	push	{r4, lr}
     1dc0:	e1a04000 	mov	r4, r0
@@ -2079,14 +2079,14 @@ configureCpuBootClock()
     2040:	e592501c 	ldr	r5, [r2, #28]
     2044:	e1800c85 	orr	r0, r0, r5, lsl #25
     2048:	e1a01002 	mov	r1, r2
-    204c:	e5925024 	ldr	r5, [r2, #36]	; 0x24
+    204c:	e5925024 	ldr	r5, [r2, #0x24]	; 36
     2050:	e1803e85 	orr	r3, r0, r5, lsl #29
     2054:	e59f02ac 	ldr	r0, =0x00005cf4
     2058:	e5900000 	ldr	r0, [r0]
     205c:	e5803000 	str	r3, [r0]
     2060:	e1a01002 	mov	r1, r2
     2064:	e59f529c 	ldr	r5, =0x00005cf4
-    2068:	e5920028 	ldr	r0, [r2, #40]	; 0x28
+    2068:	e5920028 	ldr	r0, [r2, #0x28]	; 40
     206c:	e5955000 	ldr	r5, [r5]
     2070:	e5850018 	str	r0, [r5, #24]
     2074:	e3a00000 	mov	r0, #0
@@ -2156,16 +2156,16 @@ configureCpuBootClock()
     2174:	e3a00000 	mov	r0, #0
     2178:	e12fff1e 	bx	lr
     217c:	e59f018c 	ldr	r0, =CCM_IO_BASE	; 0x01c20000
-    2180:	e5900060 	ldr	r0, [r0, #96]	; 0x60
+    2180:	e5900060 	ldr	r0, [r0, #0x60]	; 96
     2184:	e3800a02 	orr	r0, r0, #0x2000	 ; 8192
     2188:	e59f1180 	ldr	r1, =CCM_IO_BASE	; 0x01c20000
-    218c:	e5810060 	str	r0, [r1, #96]	; 0x60
+    218c:	e5810060 	str	r0, [r1, #0x60]	; 96
     2190:	e12fff1e 	bx	lr
     2194:	e59f0174 	ldr	r0, =CCM_IO_BASE	; 0x01c20000
-    2198:	e5900060 	ldr	r0, [r0, #96]	; 0x60
+    2198:	e5900060 	ldr	r0, [r0, #0x60]	; 96
     219c:	e3c00a02 	bic	r0, r0, #0x2000	 ; 8192
     21a0:	e59f1168 	ldr	r1, =CCM_IO_BASE	; 0x01c20000
-    21a4:	e5810060 	str	r0, [r1, #96]	; 0x60
+    21a4:	e5810060 	str	r0, [r1, #0x60]	; 96
     21a8:	e12fff1e 	bx	lr
     21ac:	e92d47f0 	push	{r4, r5, r6, r7, r8, r9, sl, lr}
     21b0:	e59f0158 	ldr	r0, =CCM_IO_BASE	; 0x01c20000
@@ -2210,7 +2210,7 @@ configureCpuBootClock()
     224c:	ea000000 	b	0x2254
     2250:	e2477001 	sub	r7, r7, #1
     2254:	e59f00b4 	ldr	r0, =CCM_IO_BASE	; 0x01c20000
-    2258:	e5906080 	ldr	r6, [r0, #128]	; 0x80
+    2258:	e5906080 	ldr	r6, [r0, #0x80]	; 128
     225c:	e3866102 	orr	r6, r6, #0x80000000	 ; 2147483648
     2260:	e3c66403 	bic	r6, r6, #0x3000000	 ; 50331648
     2264:	e3866402 	orr	r6, r6, #0x2000000	 ; 33554432
@@ -2219,13 +2219,13 @@ configureCpuBootClock()
     2270:	e207000f 	and	r0, r7, #15
     2274:	e1866000 	orr	r6, r6, r0
     2278:	e59f0090 	ldr	r0, =CCM_IO_BASE	; 0x01c20000
-    227c:	e5806080 	str	r6, [r0, #128]	; 0x80
+    227c:	e5806080 	str	r6, [r0, #0x80]	; 128
     2280:	e8bd81f0 	pop	{r4, r5, r6, r7, r8, pc}
     2284:	e92d41f0 	push	{r4, r5, r6, r7, r8, lr}
     2288:	ebffffc7 	bl	0x21ac
     228c:	e1a07000 	mov	r7, r0
     2290:	e59f0078 	ldr	r0, =CCM_IO_BASE	; 0x01c20000
-    2294:	e5904080 	ldr	r4, [r0, #128]	; 0x80
+    2294:	e5904080 	ldr	r4, [r0, #0x80]	; 128
     2298:	e204000f 	and	r0, r4, #15
     229c:	e2806001 	add	r6, r0, #1
     22a0:	e1a01086 	lsl	r1, r6, #1
@@ -2684,22 +2684,22 @@ configureCpuBootClock()
     29c0:	e370000c 	cmn	r0, #12
     29c4:	e1a05000 	mov	r5, r0
     29c8:	1a000021 	bne	0x2a54
-    29cc:	e5dd007c 	ldrb	r0, [sp, #124]	; 0x7c
+    29cc:	e5dd007c 	ldrb	r0, [sp, #0x7c]	; 124
     29d0:	e35000ff 	cmp	r0, #0xff	 ; 255
-    29d4:	05dd007d 	ldrbeq	r0, [sp, #125]	; 0x7d
+    29d4:	05dd007d 	ldrbeq	r0, [sp, #0x7d]	; 125
     29d8:	035000ff 	cmpeq	r0, #0xff	 ; 255
-    29dc:	05dd007e 	ldrbeq	r0, [sp, #126]	; 0x7e
+    29dc:	05dd007e 	ldrbeq	r0, [sp, #0x7e]	; 126
     29e0:	035000ff 	cmpeq	r0, #0xff	 ; 255
-    29e4:	05dd007f 	ldrbeq	r0, [sp, #127]	; 0x7f
+    29e4:	05dd007f 	ldrbeq	r0, [sp, #0x7f]	; 127
     29e8:	035000ff 	cmpeq	r0, #0xff	 ; 255
-    29ec:	05dd0080 	ldrbeq	r0, [sp, #128]	; 0x80
+    29ec:	05dd0080 	ldrbeq	r0, [sp, #0x80]	; 128
     29f0:	035000ff 	cmpeq	r0, #0xff	 ; 255
-    29f4:	05dd0081 	ldrbeq	r0, [sp, #129]	; 0x81
+    29f4:	05dd0081 	ldrbeq	r0, [sp, #0x81]	; 129
     29f8:	035000ff 	cmpeq	r0, #0xff	 ; 255
-    29fc:	05dd0082 	ldrbeq	r0, [sp, #130]	; 0x82
+    29fc:	05dd0082 	ldrbeq	r0, [sp, #0x82]	; 130
     2a00:	035000ff 	cmpeq	r0, #0xff	 ; 255
     2a04:	1a00000e 	bne	0x2a44
-    2a08:	e5dd0083 	ldrb	r0, [sp, #131]	; 0x83
+    2a08:	e5dd0083 	ldrb	r0, [sp, #0x83]	; 131
     2a0c:	e35000ff 	cmp	r0, #0xff	 ; 255
     2a10:	03a05000 	moveq	r5, #0
     2a14:	0a00000e 	beq	0x2a54
@@ -2756,17 +2756,17 @@ configureCpuBootClock()
     2ae0:	e375000c 	cmn	r5, #12
     2ae4:	028f00f8 	ldreq	r0, =0x2be4
     2ae8:	0bfffe02 	bleq	0x22f8
-    2aec:	e5dd3083 	ldrb	r3, [sp, #131]	; 0x83
-    2af0:	e5dd2082 	ldrb	r2, [sp, #130]	; 0x82
-    2af4:	e5dd1081 	ldrb	r1, [sp, #129]	; 0x81
-    2af8:	e5dd0080 	ldrb	r0, [sp, #128]	; 0x80
+    2aec:	e5dd3083 	ldrb	r3, [sp, #0x83]	; 131
+    2af0:	e5dd2082 	ldrb	r2, [sp, #0x82]	; 130
+    2af4:	e5dd1081 	ldrb	r1, [sp, #0x81]	; 129
+    2af8:	e5dd0080 	ldrb	r0, [sp, #0x80]	; 128
     2afc:	e98d000f 	stmib	sp, {r0, r1, r2, r3}
     2b00:	e28f00e8 	ldr	r0, =0x2bf0
-    2b04:	e5dd307f 	ldrb	r3, [sp, #127]	; 0x7f
-    2b08:	e5dd207d 	ldrb	r2, [sp, #125]	; 0x7d
+    2b04:	e5dd307f 	ldrb	r3, [sp, #0x7f]	; 127
+    2b08:	e5dd207d 	ldrb	r2, [sp, #0x7d]	; 125
     2b0c:	e58d3000 	str	r3, [sp]
-    2b10:	e5dd307e 	ldrb	r3, [sp, #126]	; 0x7e
-    2b14:	e5dd107c 	ldrb	r1, [sp, #124]	; 0x7c
+    2b10:	e5dd307e 	ldrb	r3, [sp, #0x7e]	; 126
+    2b14:	e5dd107c 	ldrb	r1, [sp, #0x7c]	; 124
     2b18:	ebfffdf6 	bl	0x22f8
     2b1c:	e355000a 	cmp	r5, #10
     2b20:	03a05000 	moveq	r5, #0
@@ -2986,7 +2986,7 @@ configureCpuBootClock()
     2e78:	e5d4000a 	ldrb	r0, [r4, #10]
     2e7c:	e5cd0004 	strb	r0, [sp, #4]
     2e80:	e5cd6005 	strb	r6, [sp, #5]
-    2e84:	e5940024 	ldr	r0, [r4, #36]	; 0x24
+    2e84:	e5940024 	ldr	r0, [r4, #0x24]	; 36
     2e88:	e5cd0006 	strb	r0, [sp, #6]
     2e8c:	e1a0000d 	mov	r0, sp
     2e90:	eb000488 	bl	0x40b8
@@ -3004,7 +3004,7 @@ configureCpuBootClock()
     2ec0:	6150746c 	cmpvs	r0, ip, ror #8
     2ec4:	3a6d6172 	bcc	0x1b5b494
     2ec8:	61655220 	cmnvs	r5, r0, lsr #4
-    2ecc:	65522064 	ldrbvs	r2, [r2, #-100]	; 0x64
+    2ecc:	65522064 	ldrbvs	r2, [r2, #-0x64]	; 100
     2ed0:	20797274 	rsbscs	r7, r9, r4, ror r2
     2ed4:	65707954 	ldrbvs	r7, [r0, #-2388]!	; 0x954
     2ed8:	20736920 	rsbscs	r6, r3, r0, lsr #18
@@ -3263,12 +3263,12 @@ configureCpuBootClock()
     32cc:	e1a0000b 	mov	r0, fp
     32d0:	eb000698 	bl	0x4d38
     32d4:	e3510000 	cmp	r1, #0
-    32d8:	15d86034 	ldrbne	r6, [r8, #52]	; 0x34
-    32dc:	05d86033 	ldrbeq	r6, [r8, #51]	; 0x33
+    32d8:	15d86034 	ldrbne	r6, [r8, #0x34]	; 52
+    32dc:	05d86033 	ldrbeq	r6, [r8, #0x33]	; 51
     32e0:	ea000003 	b	0x32f4
     32e4:	e1d801b0 	ldrh	r0, [r8, #16]
     32e8:	e3100008 	tst	r0, #8
-    32ec:	15d86032 	ldrbne	r6, [r8, #50]	; 0x32
+    32ec:	15d86032 	ldrbne	r6, [r8, #0x32]	; 50
     32f0:	03a06070 	moveq	r6, #0x70	 ; 112
     32f4:	e1a0000a 	mov	r0, sl
     32f8:	eb00034f 	bl	0x403c
@@ -3391,10 +3391,10 @@ configureCpuBootClock()
     34cc:	e5c1201a 	strb	r2, [r1, #26]
     34d0:	e5d0201b 	ldrb	r2, [r0, #27]
     34d4:	e5c1201b 	strb	r2, [r1, #27]
-    34d8:	e5902024 	ldr	r2, [r0, #36]	; 0x24
+    34d8:	e5902024 	ldr	r2, [r0, #0x24]	; 36
     34dc:	e5812020 	str	r2, [r1, #32]
-    34e0:	e5900028 	ldr	r0, [r0, #40]	; 0x28
-    34e4:	e5810024 	str	r0, [r1, #36]	; 0x24
+    34e0:	e5900028 	ldr	r0, [r0, #0x28]	; 40
+    34e4:	e5810024 	str	r0, [r1, #0x24]	; 36
     34e8:	e12fff1e 	bx	lr
     34ec:	e59f320c 	ldr	r3, [0x3700]	; 0x3700
     34f0:	e3a01001 	mov	r1, #1
@@ -3461,30 +3461,30 @@ configureCpuBootClock()
     35e4:	e3500000 	cmp	r0, #0
     35e8:	128f0f51 	ldrne	r0, =0x3734
     35ec:	1a000020 	bne	0x3674
-    35f0:	e5dd30c9 	ldrb	r3, [sp, #201]	; 0xc9
+    35f0:	e5dd30c9 	ldrb	r3, [sp, #0xc9]	; 201
     35f4:	e28f0f5a 	ldr	r0, =0x3764
-    35f8:	e5dd20c8 	ldrb	r2, [sp, #200]	; 0xc8
-    35fc:	e5dd10c7 	ldrb	r1, [sp, #199]	; 0xc7
+    35f8:	e5dd20c8 	ldrb	r2, [sp, #0xc8]	; 200
+    35fc:	e5dd10c7 	ldrb	r1, [sp, #0xc7]	; 199
     3600:	e88d000e 	stm	sp, {r1, r2, r3}
-    3604:	e5dd30c6 	ldrb	r3, [sp, #198]	; 0xc6
-    3608:	e5dd20c5 	ldrb	r2, [sp, #197]	; 0xc5
-    360c:	e5dd10c4 	ldrb	r1, [sp, #196]	; 0xc4
+    3604:	e5dd30c6 	ldrb	r3, [sp, #0xc6]	; 198
+    3608:	e5dd20c5 	ldrb	r2, [sp, #0xc5]	; 197
+    360c:	e5dd10c4 	ldrb	r1, [sp, #0xc4]	; 196
     3610:	ebfffb38 	bl	0x22f8
     3614:	e28d0018 	add	r0, sp, #24
     3618:	ebfff9e7 	bl	0x1dbc
     361c:	e3500000 	cmp	r0, #0
     3620:	128f0f5f 	ldrne	r0, =0x37a4
     3624:	1a000012 	bne	0x3674
-    3628:	e5dd3033 	ldrb	r3, [sp, #51]	; 0x33
-    362c:	e5dd2032 	ldrb	r2, [sp, #50]	; 0x32
-    3630:	e5dd1031 	ldrb	r1, [sp, #49]	; 0x31
-    3634:	e5dd0030 	ldrb	r0, [sp, #48]	; 0x30
+    3628:	e5dd3033 	ldrb	r3, [sp, #0x33]	; 51
+    362c:	e5dd2032 	ldrb	r2, [sp, #0x32]	; 50
+    3630:	e5dd1031 	ldrb	r1, [sp, #0x31]	; 49
+    3634:	e5dd0030 	ldrb	r0, [sp, #0x30]	; 48
     3638:	e98d000f 	stmib	sp, {r0, r1, r2, r3}
-    363c:	e5dd302f 	ldrb	r3, [sp, #47]	; 0x2f
-    3640:	e5dd202d 	ldrb	r2, [sp, #45]	; 0x2d
+    363c:	e5dd302f 	ldrb	r3, [sp, #0x2f]	; 47
+    3640:	e5dd202d 	ldrb	r2, [sp, #0x2d]	; 45
     3644:	e58d3000 	str	r3, [sp]
-    3648:	e5dd302e 	ldrb	r3, [sp, #46]	; 0x2e
-    364c:	e5dd102c 	ldrb	r1, [sp, #44]	; 0x2c
+    3648:	e5dd302e 	ldrb	r3, [sp, #0x2e]	; 46
+    364c:	e5dd102c 	ldrb	r1, [sp, #0x2c]	; 44
     3650:	e59f017c 	ldr	r0, [0x37d4]	; 0x37d4
     3654:	ebfffb27 	bl	0x22f8
     3658:	e28d0018 	add	r0, sp, #24
@@ -3677,7 +3677,7 @@ configureCpuBootClock()
     3944:	e59f7e30 	ldr	r7, [0x477c]	; 0x477c
     3948:	e1a04002 	mov	r4, r2
     394c:	e1a05003 	mov	r5, r3
-    3950:	e59d6040 	ldr	r6, [sp, #64]	; 0x40
+    3950:	e59d6040 	ldr	r6, [sp, #0x40]	; 64
     3954:	e3a0c003 	mov	ip, #3
     3958:	e3a03002 	mov	r3, #2
     395c:	e3a02001 	mov	r2, #1
@@ -3696,11 +3696,11 @@ configureCpuBootClock()
     3990:	e58d2004 	str	r2, [sp, #4]
     3994:	158d2010 	strne	r2, [sp, #16]
     3998:	e58d1014 	str	r1, [sp, #20]
-    399c:	e58d7028 	str	r7, [sp, #40]	; 0x28
+    399c:	e58d7028 	str	r7, [sp, #0x28]	; 40
     39a0:	e59f7dd0 	ldr	r7, [0x4778]	; 0x4778
     39a4:	e1cd21f8 	strd	r2, [sp, #24]
     39a8:	e58d1020 	str	r1, [sp, #32]
-    39ac:	e58d1024 	str	r1, [sp, #36]	; 0x24
+    39ac:	e58d1024 	str	r1, [sp, #0x24]	; 36
     39b0:	e1a0100d 	mov	r1, sp
     39b4:	e597000c 	ldr	r0, [r7, #12]
     39b8:	ebfff991 	bl	0x2004
@@ -3745,7 +3745,7 @@ configureCpuBootClock()
     3a54:	e3a01010 	mov	r1, #16
     3a58:	e59f2d18 	ldr	r2, [0x4778]	; 0x4778
     3a5c:	e5923004 	ldr	r3, [r2, #4]
-    3a60:	e5932034 	ldr	r2, [r3, #52]	; 0x34
+    3a60:	e5932034 	ldr	r2, [r3, #0x34]	; 52
     3a64:	e7e32652 	ubfx	r2, r2, #12, #4
     3a68:	e3520000 	cmp	r2, #0
     3a6c:	0a000016 	beq	0x3acc
@@ -3772,7 +3772,7 @@ configureCpuBootClock()
     3ac0:	0a000001 	beq	0x3acc
     3ac4:	e3520008 	cmp	r2, #8
     3ac8:	03a01040 	moveq	r1, #0x40	 ; 64
-    3acc:	e5934038 	ldr	r4, [r3, #56]	; 0x38
+    3acc:	e5934038 	ldr	r4, [r3, #0x38]	; 56
     3ad0:	e3a02000 	mov	r2, #0
     3ad4:	e6ff5074 	uxth	r5, r4
     3ad8:	e3a04001 	mov	r4, #1
@@ -3785,7 +3785,7 @@ configureCpuBootClock()
     3af4:	e8bd8070 	pop	{r4, r5, r6, pc}
     3af8:	e1520000 	cmp	r2, r0
     3afc:	3afffff7 	bcc	0x3ae0
-    3b00:	e5932040 	ldr	r2, [r3, #64]	; 0x40
+    3b00:	e5932040 	ldr	r2, [r3, #0x40]	; 64
     3b04:	e5cd2000 	strb	r2, [sp]
     3b08:	e1a04422 	lsr	r4, r2, #8
     3b0c:	e5cd4001 	strb	r4, [sp, #1]
@@ -3793,7 +3793,7 @@ configureCpuBootClock()
     3b14:	e1a02c22 	lsr	r2, r2, #24
     3b18:	e5cd4002 	strb	r4, [sp, #2]
     3b1c:	e5cd2003 	strb	r2, [sp, #3]
-    3b20:	e5932044 	ldr	r2, [r3, #68]	; 0x44
+    3b20:	e5932044 	ldr	r2, [r3, #0x44]	; 68
     3b24:	e5cd2004 	strb	r2, [sp, #4]
     3b28:	e1a04422 	lsr	r4, r2, #8
     3b2c:	e5cd4005 	strb	r4, [sp, #5]
@@ -3801,7 +3801,7 @@ configureCpuBootClock()
     3b34:	e1a02c22 	lsr	r2, r2, #24
     3b38:	e5cd4006 	strb	r4, [sp, #6]
     3b3c:	e5cd2007 	strb	r2, [sp, #7]
-    3b40:	e5932048 	ldr	r2, [r3, #72]	; 0x48
+    3b40:	e5932048 	ldr	r2, [r3, #0x48]	; 72
     3b44:	e5cd2008 	strb	r2, [sp, #8]
     3b48:	e1a04422 	lsr	r4, r2, #8
     3b4c:	e5cd4009 	strb	r4, [sp, #9]
@@ -3809,7 +3809,7 @@ configureCpuBootClock()
     3b54:	e1a02c22 	lsr	r2, r2, #24
     3b58:	e5cd400a 	strb	r4, [sp, #10]
     3b5c:	e5cd200b 	strb	r2, [sp, #11]
-    3b60:	e593204c 	ldr	r2, [r3, #76]	; 0x4c
+    3b60:	e593204c 	ldr	r2, [r3, #0x4c]	; 76
     3b64:	e2411004 	sub	r1, r1, #4
     3b68:	e5cd200c 	strb	r2, [sp, #12]
     3b6c:	e1a03422 	lsr	r3, r2, #8
@@ -3833,21 +3833,21 @@ configureCpuBootClock()
     3bb4:	eaffffcd 	b	0x3af0
     3bb8:	e59f0bb8 	ldr	r0, [0x4778]	; 0x4778
     3bbc:	e5900004 	ldr	r0, [r0, #4]
-    3bc0:	e5901034 	ldr	r1, [r0, #52]	; 0x34
+    3bc0:	e5901034 	ldr	r1, [r0, #0x34]	; 52
     3bc4:	e3c11001 	bic	r1, r1, #1
-    3bc8:	e5801034 	str	r1, [r0, #52]	; 0x34
+    3bc8:	e5801034 	str	r1, [r0, #0x34]	; 52
     3bcc:	e12fff1e 	bx	lr
     3bd0:	e59f1ba0 	ldr	r1, [0x4778]	; 0x4778
     3bd4:	e3500001 	cmp	r0, #1
     3bd8:	e5911004 	ldr	r1, [r1, #4]
-    3bdc:	e5910034 	ldr	r0, [r1, #52]	; 0x34
+    3bdc:	e5910034 	ldr	r0, [r1, #0x34]	; 52
     3be0:	13c00008 	bicne	r0, r0, #8
     3be4:	03800008 	orreq	r0, r0, #8
     3be8:	e3100c02 	tst	r0, #0x200	 ; 512
     3bec:	03800010 	orreq	r0, r0, #16
     3bf0:	13c00010 	bicne	r0, r0, #16
     3bf4:	e3800001 	orr	r0, r0, #1
-    3bf8:	e5810034 	str	r0, [r1, #52]	; 0x34
+    3bf8:	e5810034 	str	r0, [r1, #0x34]	; 52
     3bfc:	e12fff1e 	bx	lr
     3c00:	e10f0000 	mrs	r0, CPSR
     3c04:	e59f1b6c 	ldr	r1, [0x4778]	; 0x4778
@@ -3922,7 +3922,7 @@ configureCpuBootClock()
     3d18:	e1811402 	orr	r1, r1, r2, lsl #8
     3d1c:	e20a20ff 	and	r2, sl, #0xff	 ; 255
     3d20:	e1811802 	orr	r1, r1, r2, lsl #16
-    3d24:	e5801028 	str	r1, [r0, #40]	; 0x28
+    3d24:	e5801028 	str	r1, [r0, #0x28]	; 40
     3d28:	e5951008 	ldr	r1, [r5, #8]
     3d2c:	e1a01521 	lsr	r1, r1, #10
     3d30:	e580101c 	str	r1, [r0, #28]
@@ -3943,7 +3943,7 @@ configureCpuBootClock()
     3d6c:	33833402 	orrcc	r3, r3, #0x2000000	 ; 33554432
     3d70:	ebffff96 	bl	0x3bd0
     3d74:	e5950004 	ldr	r0, [r5, #4]
-    3d78:	e5803024 	str	r3, [r0, #36]	; 0x24
+    3d78:	e5803024 	str	r3, [r0, #0x24]	; 36
     3d7c:	ebfff955 	bl	0x22d8
     3d80:	ebfffecf 	bl	0x38c4
     3d84:	e1a03000 	mov	r3, r0
@@ -3957,7 +3957,7 @@ configureCpuBootClock()
     3da4:	e5952004 	ldr	r2, [r5, #4]
     3da8:	e2801001 	add	r1, r0, #1
     3dac:	e0822100 	add	r2, r2, r0, lsl #2
-    3db0:	e5922050 	ldr	r2, [r2, #80]	; 0x50
+    3db0:	e5922050 	ldr	r2, [r2, #0x50]	; 80
     3db4:	e7862100 	str	r2, [r6, r0, lsl #2]
     3db8:	e1a00001 	mov	r0, r1
     3dbc:	e5951008 	ldr	r1, [r5, #8]
@@ -4016,7 +4016,7 @@ configureCpuBootClock()
     3e90:	e5812020 	str	r2, [r1, #32]
     3e94:	e3800501 	orr	r0, r0, #0x400000	 ; 4194304
     3e98:	e5951004 	ldr	r1, [r5, #4]
-    3e9c:	e5810024 	str	r0, [r1, #36]	; 0x24
+    3e9c:	e5810024 	str	r0, [r1, #0x24]	; 36
     3ea0:	e5944000 	ldr	r4, [r4]
     3ea4:	e3540000 	cmp	r4, #0
     3ea8:	1affffdd 	bne	0x3e24
@@ -4024,24 +4024,24 @@ configureCpuBootClock()
     3eb0:	e8bd8030 	pop	{r4, r5, pc}
     3eb4:	e59f18bc 	ldr	r1, [0x4778]	; 0x4778
     3eb8:	e5911004 	ldr	r1, [r1, #4]
-    3ebc:	e5912034 	ldr	r2, [r1, #52]	; 0x34
+    3ebc:	e5912034 	ldr	r2, [r1, #0x34]	; 52
     3ec0:	e6ff2072 	uxth	r2, r2
     3ec4:	e1820800 	orr	r0, r2, r0, lsl #16
-    3ec8:	e5810034 	str	r0, [r1, #52]	; 0x34
+    3ec8:	e5810034 	str	r0, [r1, #0x34]	; 52
     3ecc:	e3a00000 	mov	r0, #0
     3ed0:	e12fff1e 	bx	lr
     3ed4:	e59f089c 	ldr	r0, [0x4778]	; 0x4778
     3ed8:	e5900004 	ldr	r0, [r0, #4]
-    3edc:	e5901034 	ldr	r1, [r0, #52]	; 0x34
+    3edc:	e5901034 	ldr	r1, [r0, #0x34]	; 52
     3ee0:	e3811c02 	orr	r1, r1, #0x200	 ; 512
-    3ee4:	e5801034 	str	r1, [r0, #52]	; 0x34
+    3ee4:	e5801034 	str	r1, [r0, #0x34]	; 52
     3ee8:	e3a00000 	mov	r0, #0
     3eec:	e12fff1e 	bx	lr
     3ef0:	e59f0880 	ldr	r0, [0x4778]	; 0x4778
     3ef4:	e5900004 	ldr	r0, [r0, #4]
-    3ef8:	e5901034 	ldr	r1, [r0, #52]	; 0x34
+    3ef8:	e5901034 	ldr	r1, [r0, #0x34]	; 52
     3efc:	e3c11c02 	bic	r1, r1, #0x200	 ; 512
-    3f00:	e5801034 	str	r1, [r0, #52]	; 0x34
+    3f00:	e5801034 	str	r1, [r0, #0x34]	; 52
     3f04:	e3a00000 	mov	r0, #0
     3f08:	e12fff1e 	bx	lr
     3f0c:	e92d4030 	push	{r4, r5, lr}
@@ -4063,7 +4063,7 @@ configureCpuBootClock()
     3f4c:	e5925004 	ldr	r5, [r2, #4]
     3f50:	e3500006 	cmp	r0, #6
     3f54:	e0855001 	add	r5, r5, r1
-    3f58:	e5d55400 	ldrb	r5, [r5, #1024]	; 0x400
+    3f58:	e5d55400 	ldrb	r5, [r5, #0x400]	; 1024
     3f5c:	e7c45001 	strb	r5, [r4, r1]
     3f60:	3afffff7 	bcc	0x3f44
     3f64:	ebfffe4e 	bl	0x38a4
@@ -4088,7 +4088,7 @@ configureCpuBootClock()
     3fb0:	e5925004 	ldr	r5, [r2, #4]
     3fb4:	e3500020 	cmp	r0, #32
     3fb8:	e0855001 	add	r5, r5, r1
-    3fbc:	e5d55400 	ldrb	r5, [r5, #1024]	; 0x400
+    3fbc:	e5d55400 	ldrb	r5, [r5, #0x400]	; 1024
     3fc0:	e7c45001 	strb	r5, [r4, r1]
     3fc4:	3afffff7 	bcc	0x3fa8
     3fc8:	ebfffe35 	bl	0x38a4
@@ -4109,7 +4109,7 @@ configureCpuBootClock()
     4004:	ebfffe26 	bl	0x38a4
     4008:	e59f0768 	ldr	r0, [0x4778]	; 0x4778
     400c:	e5900004 	ldr	r0, [r0, #4]
-    4010:	e5d00400 	ldrb	r0, [r0, #1024]	; 0x400
+    4010:	e5d00400 	ldrb	r0, [r0, #0x400]	; 1024
     4014:	e49df004 	pop	{pc}		; (ldr pc, [sp], #4)
     4018:	e52de004 	push	{lr}		; (str lr, [sp, #-4]!)
     401c:	ebffff7c 	bl	0x3e14
@@ -4208,17 +4208,17 @@ configureCpuBootClock()
     4190:	e3a000ff 	mov	r0, #0xff	 ; 255
     4194:	e5810010 	str	r0, [r1, #16]
     4198:	e5940008 	ldr	r0, [r4, #8]
-    419c:	e58100a0 	str	r0, [r1, #160]	; 0xa0
+    419c:	e58100a0 	str	r0, [r1, #0xa0]	; 160
     41a0:	e3a00000 	mov	r0, #0
     41a4:	e8bd8030 	pop	{r4, r5, pc}
     41a8:	e59f15c8 	ldr	r1, [0x4778]	; 0x4778
     41ac:	e5911004 	ldr	r1, [r1, #4]
-    41b0:	e5912034 	ldr	r2, [r1, #52]	; 0x34
+    41b0:	e5912034 	ldr	r2, [r1, #0x34]	; 52
     41b4:	e3a03a0f 	mov	r3, #0xf000	 ; 61440
     41b8:	e0030600 	and	r0, r3, r0, lsl #12
     41bc:	e3c22a0f 	bic	r2, r2, #0xf000	 ; 61440
     41c0:	e1800002 	orr	r0, r0, r2
-    41c4:	e5810034 	str	r0, [r1, #52]	; 0x34
+    41c4:	e5810034 	str	r0, [r1, #0x34]	; 52
     41c8:	e3a00000 	mov	r0, #0
     41cc:	e12fff1e 	bx	lr
     41d0:	e92d4070 	push	{r4, r5, r6, lr}
@@ -4281,7 +4281,7 @@ configureCpuBootClock()
     42b4:	e5990004 	ldr	r0, [r9, #4]
     42b8:	e5808020 	str	r8, [r0, #32]
     42bc:	e385171a 	orr	r1, r5, #0x680000	 ; 6815744
-    42c0:	e5801024 	str	r1, [r0, #36]	; 0x24
+    42c0:	e5801024 	str	r1, [r0, #0x24]	; 36
     42c4:	ebfffd7e 	bl	0x38c4
     42c8:	e1a03000 	mov	r3, r0
     42cc:	ebfffd89 	bl	0x38f8
@@ -4289,7 +4289,7 @@ configureCpuBootClock()
     42d4:	18bd83f0 	popne	{r4, r5, r6, r7, r8, r9, pc}
     42d8:	e2841001 	add	r1, r4, #1
     42dc:	e5992004 	ldr	r2, [r9, #4]
-    42e0:	e5d22400 	ldrb	r2, [r2, #1024]	; 0x400
+    42e0:	e5d22400 	ldrb	r2, [r2, #0x400]	; 1024
     42e4:	e7c62004 	strb	r2, [r6, r4]
     42e8:	e1a04001 	mov	r4, r1
     42ec:	e154000c 	cmp	r4, ip
@@ -4327,22 +4327,22 @@ configureCpuBootClock()
     436c:	2a00000e 	bcs	0x43ac
     4370:	e5970004 	ldr	r0, [r7, #4]
     4374:	e3a01000 	mov	r1, #0
-    4378:	e5c01400 	strb	r1, [r0, #1024]	; 0x400
+    4378:	e5c01400 	strb	r1, [r0, #0x400]	; 1024
     437c:	e7d81004 	ldrb	r1, [r8, r4]
-    4380:	e5c01401 	strb	r1, [r0, #1025]	; 0x401
+    4380:	e5c01401 	strb	r1, [r0, #0x401]	; 1025
     4384:	e7dc1004 	ldrb	r1, [ip, r4]
-    4388:	e5c01402 	strb	r1, [r0, #1026]	; 0x402
+    4388:	e5c01402 	strb	r1, [r0, #0x402]	; 1026
     438c:	e3a01003 	mov	r1, #3
     4390:	e5801020 	str	r1, [r0, #32]
     4394:	e3853607 	orr	r3, r5, #0x700000	 ; 7340032
     4398:	ebfffd39 	bl	0x3884
     439c:	e5970004 	ldr	r0, [r7, #4]
-    43a0:	e5803024 	str	r3, [r0, #36]	; 0x24
+    43a0:	e5803024 	str	r3, [r0, #0x24]	; 36
     43a4:	ebfffd3e 	bl	0x38a4
     43a8:	ea00000a 	b	0x43d8
     43ac:	e5971004 	ldr	r1, [r7, #4]
     43b0:	e7dc0004 	ldrb	r0, [ip, r4]
-    43b4:	e5c10400 	strb	r0, [r1, #1024]	; 0x400
+    43b4:	e5c10400 	strb	r0, [r1, #0x400]	; 1024
     43b8:	e0880004 	add	r0, r8, r4
     43bc:	e3a01001 	mov	r1, #1
     43c0:	ebfffe1e 	bl	0x3c40
@@ -4350,7 +4350,7 @@ configureCpuBootClock()
     43c8:	e3a01001 	mov	r1, #1
     43cc:	e5801020 	str	r1, [r0, #32]
     43d0:	e385171e 	orr	r1, r5, #0x780000	 ; 7864320
-    43d4:	e5801024 	str	r1, [r0, #36]	; 0x24
+    43d4:	e5801024 	str	r1, [r0, #0x24]	; 36
     43d8:	ebfffd39 	bl	0x38c4
     43dc:	e1a03000 	mov	r3, r0
     43e0:	ebfffd44 	bl	0x38f8
@@ -4360,7 +4360,7 @@ configureCpuBootClock()
     43f0:	0a000007 	beq	0x4414
     43f4:	e5971004 	ldr	r1, [r7, #4]
     43f8:	e3860501 	orr	r0, r6, #0x400000	 ; 4194304
-    43fc:	e5810024 	str	r0, [r1, #36]	; 0x24
+    43fc:	e5810024 	str	r0, [r1, #0x24]	; 36
     4400:	ebfffd2f 	bl	0x38c4
     4404:	e1a03000 	mov	r3, r0
     4408:	ebfffd3a 	bl	0x38f8
@@ -4373,7 +4373,7 @@ configureCpuBootClock()
     4424:	0a000007 	beq	0x4448
     4428:	e5971004 	ldr	r1, [r7, #4]
     442c:	e3890501 	orr	r0, r9, #0x400000	 ; 4194304
-    4430:	e5810024 	str	r0, [r1, #36]	; 0x24
+    4430:	e5810024 	str	r0, [r1, #0x24]	; 36
     4434:	ebfffd22 	bl	0x38c4
     4438:	e1a03000 	mov	r3, r0
     443c:	ebfffd2d 	bl	0x38f8
@@ -4383,7 +4383,7 @@ configureCpuBootClock()
     444c:	08bd8ff0 	popeq	{r4, r5, r6, r7, r8, r9, sl, fp, pc}
     4450:	e38a0501 	orr	r0, sl, #0x400000	 ; 4194304
     4454:	e5971004 	ldr	r1, [r7, #4]
-    4458:	e5810024 	str	r0, [r1, #36]	; 0x24
+    4458:	e5810024 	str	r0, [r1, #0x24]	; 36
     445c:	ebfffd18 	bl	0x38c4
     4460:	e1a03000 	mov	r3, r0
     4464:	ebfffd23 	bl	0x38f8
@@ -4406,7 +4406,7 @@ configureCpuBootClock()
     44a8:	e5951004 	ldr	r1, [r5, #4]
     44ac:	e7940103 	ldr	r0, [r4, r3, lsl #2]
     44b0:	e3800501 	orr	r0, r0, #0x400000	 ; 4194304
-    44b4:	e5810024 	str	r0, [r1, #36]	; 0x24
+    44b4:	e5810024 	str	r0, [r1, #0x24]	; 36
     44b8:	ebfffd01 	bl	0x38c4
     44bc:	e1a06000 	mov	r6, r0
     44c0:	ebfffd0c 	bl	0x38f8
@@ -4828,7 +4828,7 @@ configureCpuBootClock()
     4b40:	3a00000d 	bcc	0x4b7c
     4b44:	e3520e12 	cmp	r2, #0x120	 ; 288
     4b48:	3a000007 	bcc	0x4b6c
-    4b4c:	f5d1f100 	pld	[r1, #256]	; 0x100
+    4b4c:	f5d1f100 	pld	[r1, #0x100]	; 256
     4b50:	e8b151f8 	ldm	r1!, {r3, r4, r5, r6, r7, r8, ip, lr}
     4b54:	e2422040 	sub	r2, r2, #0x40	 ; 64
     4b58:	e3520e12 	cmp	r2, #0x120	 ; 288
@@ -4971,45 +4971,45 @@ mctl_ddr3_reset:
     4d6c:	e52de004 	push	{lr}		; (str lr, [sp, #-4]!)
     4d70:	e3a00000 	mov	r0, #0
     4d74:	e59f1794 	ldr	r1, =CCM_IO_BASE	; 0x01c20000
-    4d78:	e5810d3c 	str	r0, [r1, #3388]	; 0xd3c
+    4d78:	e5810d3c 	str	r0, [r1, #0xd3c]	; 3388
     4d7c:	e1c10000 	bic	r0, r1, r0
-    4d80:	e5903d3c 	ldr	r3, [r0, #3388]	; 0xd3c
+    4d80:	e5903d3c 	ldr	r3, [r0, #0xd3c]	; 3388
     4d84:	e1a03323 	lsr	r3, r3, #6
     4d88:	e2033003 	and	r3, r3, #3
     4d8c:	e3530000 	cmp	r3, #0
     4d90:	1a00000a 	bne	0x4dc0
     4d94:	e2400a1f 	sub	r0, r0, #0x1f000	 ; 126976
-    4d98:	e5903230 	ldr	r3, [r0, #560]	; 0x230
+    4d98:	e5903230 	ldr	r3, [r0, #0x230]	; 560
     4d9c:	e3c33a01 	bic	r3, r3, #0x1000	 ; 4096
-    4da0:	e5803230 	str	r3, [r0, #560]	; 0x230
+    4da0:	e5803230 	str	r3, [r0, #0x230]	; 560
     4da4:	e3a00c01 	mov	r0, #0x100	 ; 256
     4da8:	ebffffe9 	bl	standby_delay
     4dac:	e59f0760 	ldr	r0, =DRAMC_IO_BASE	; =0x01c01000
-    4db0:	e5903230 	ldr	r3, [r0, #560]	; 0x230
+    4db0:	e5903230 	ldr	r3, [r0, #0x230]	; 560
     4db4:	e3833a01 	orr	r3, r3, #0x1000	 ; 4096
-    4db8:	e5803230 	str	r3, [r0, #560]	; 0x230
+    4db8:	e5803230 	str	r3, [r0, #0x230]	; 560
     4dbc:	ea000009 	b	0x4de8
     4dc0:	e59f074c 	ldr	r0, =DRAMC_IO_BASE	; =0x01c01000
-    4dc4:	e5903230 	ldr	r3, [r0, #560]	; 0x230
+    4dc4:	e5903230 	ldr	r3, [r0, #0x230]	; 560
     4dc8:	e3833a01 	orr	r3, r3, #0x1000	 ; 4096
-    4dcc:	e5803230 	str	r3, [r0, #560]	; 0x230
+    4dcc:	e5803230 	str	r3, [r0, #0x230]	; 560
     4dd0:	e3a00c01 	mov	r0, #0x100	 ; 256
     4dd4:	ebffffde 	bl	standby_delay
     4dd8:	e59f0734 	ldr	r0, =DRAMC_IO_BASE	; =0x01c01000
-    4ddc:	e5903230 	ldr	r3, [r0, #560]	; 0x230
+    4ddc:	e5903230 	ldr	r3, [r0, #0x230]	; 560
     4de0:	e3c33a01 	bic	r3, r3, #0x1000	 ; 4096
-    4de4:	e5803230 	str	r3, [r0, #560]	; 0x230
+    4de4:	e5803230 	str	r3, [r0, #0x230]	; 560
     4de8:	e49df004 	pop	{pc}		; (ldr pc, [sp], #4)
 
 mctl_set_drive:
     4dec:	e59f1720 	ldr	r1, =DRAMC_IO_BASE	; =0x01c01000
-    4df0:	e5910230 	ldr	r0, [r1, #560]	; 0x230
+    4df0:	e5910230 	ldr	r0, [r1, #0x230]	; 560
     4df4:	e3800a06 	orr	r0, r0, #0x6000	 ; 24576
     4df8:	e3001ffc 	movw	r1, #0xffc	 ; 4092
     4dfc:	e1800001 	orr	r0, r0, r1
     4e00:	e3c00003 	bic	r0, r0, #3
     4e04:	e59f1708 	ldr	r1, =DRAMC_IO_BASE	; =0x01c01000
-    4e08:	e5810230 	str	r0, [r1, #560]	; 0x230
+    4e08:	e5810230 	str	r0, [r1, #0x230]	; 560
     4e0c:	e12fff1e 	bx	lr
 
 mctl_itm_disable:
@@ -5031,26 +5031,26 @@ mctl_itm_enable:
 mctl_enable_dll0:
     4e40:	e52de004 	push	{lr}		; (str lr, [sp, #-4]!)
     4e44:	e59f06c8 	ldr	r0, =DRAMC_IO_BASE	; =0x01c01000
-    4e48:	e5900204 	ldr	r0, [r0, #516]	; 0x204
+    4e48:	e5900204 	ldr	r0, [r0, #0x204]	; 516
     4e4c:	e3c00101 	bic	r0, r0, #0x40000000	 ; 1073741824
     4e50:	e3800102 	orr	r0, r0, #0x80000000	 ; 2147483648
     4e54:	e59f16b8 	ldr	r1, =DRAMC_IO_BASE	; =0x01c01000
-    4e58:	e5810204 	str	r0, [r1, #516]	; 0x204
+    4e58:	e5810204 	str	r0, [r1, #0x204]	; 516
     4e5c:	e3a00c01 	mov	r0, #0x100	 ; 256
     4e60:	ebffffbb 	bl	standby_delay
     4e64:	e59f06a8 	ldr	r0, =DRAMC_IO_BASE	; =0x01c01000
-    4e68:	e5900204 	ldr	r0, [r0, #516]	; 0x204
+    4e68:	e5900204 	ldr	r0, [r0, #0x204]	; 516
     4e6c:	e3c00103 	bic	r0, r0, #0xc0000000	 ; 3221225472
     4e70:	e59f169c 	ldr	r1, =DRAMC_IO_BASE	; =0x01c01000
-    4e74:	e5810204 	str	r0, [r1, #516]	; 0x204
+    4e74:	e5810204 	str	r0, [r1, #0x204]	; 516
     4e78:	e3a00a01 	mov	r0, #0x1000	 ; 4096
     4e7c:	ebffffb4 	bl	standby_delay
     4e80:	e59f068c 	ldr	r0, =DRAMC_IO_BASE	; =0x01c01000
-    4e84:	e5900204 	ldr	r0, [r0, #516]	; 0x204
+    4e84:	e5900204 	ldr	r0, [r0, #0x204]	; 516
     4e88:	e3c00102 	bic	r0, r0, #0x80000000	 ; 2147483648
     4e8c:	e3800101 	orr	r0, r0, #0x40000000	 ; 1073741824
     4e90:	e59f167c 	ldr	r1, =DRAMC_IO_BASE	; =0x01c01000
-    4e94:	e5810204 	str	r0, [r1, #516]	; 0x204
+    4e94:	e5810204 	str	r0, [r1, #0x204]	; 516
     4e98:	e3a00a01 	mov	r0, #0x1000	 ; 4096
     4e9c:	ebffffac 	bl	standby_delay
     4ea0:	e49df004 	pop	{pc}		; (ldr pc, [sp], #4)
@@ -5062,12 +5062,12 @@ mctl_enable_dllx:
     4eb0:	ea000008 	b	0x4ed8
     4eb4:	e59f0658 	ldr	r0, =DRAMC_IO_BASE	; =0x01c01000
     4eb8:	e0800103 	add	r0, r0, r3, lsl #2
-    4ebc:	e5900204 	ldr	r0, [r0, #516]	; 0x204
+    4ebc:	e5900204 	ldr	r0, [r0, #0x204]	; 516
     4ec0:	e3c00101 	bic	r0, r0, #0x40000000	 ; 1073741824
     4ec4:	e3800102 	orr	r0, r0, #0x80000000	 ; 2147483648
     4ec8:	e59f1644 	ldr	r1, =DRAMC_IO_BASE	; =0x01c01000
     4ecc:	e0811103 	add	r1, r1, r3, lsl #2
-    4ed0:	e5810204 	str	r0, [r1, #516]	; 0x204
+    4ed0:	e5810204 	str	r0, [r1, #0x204]	; 516
     4ed4:	e2833001 	add	r3, r3, #1
     4ed8:	e3530005 	cmp	r3, #5
     4edc:	3afffff4 	bcc	0x4eb4
@@ -5077,11 +5077,11 @@ mctl_enable_dllx:
     4eec:	ea000007 	b	0x4f10
     4ef0:	e59f061c 	ldr	r0, =DRAMC_IO_BASE	; =0x01c01000
     4ef4:	e0800103 	add	r0, r0, r3, lsl #2
-    4ef8:	e5900204 	ldr	r0, [r0, #516]	; 0x204
+    4ef8:	e5900204 	ldr	r0, [r0, #0x204]	; 516
     4efc:	e3c00103 	bic	r0, r0, #0xc0000000	 ; 3221225472
     4f00:	e59f160c 	ldr	r1, =DRAMC_IO_BASE	; =0x01c01000
     4f04:	e0811103 	add	r1, r1, r3, lsl #2
-    4f08:	e5810204 	str	r0, [r1, #516]	; 0x204
+    4f08:	e5810204 	str	r0, [r1, #0x204]	; 516
     4f0c:	e2833001 	add	r3, r3, #1
     4f10:	e3530005 	cmp	r3, #5
     4f14:	3afffff5 	bcc	0x4ef0
@@ -5091,12 +5091,12 @@ mctl_enable_dllx:
     4f24:	ea000008 	b	0x4f4c
     4f28:	e59f05e4 	ldr	r0, =DRAMC_IO_BASE	; =0x01c01000
     4f2c:	e0800103 	add	r0, r0, r3, lsl #2
-    4f30:	e5900204 	ldr	r0, [r0, #516]	; 0x204
+    4f30:	e5900204 	ldr	r0, [r0, #0x204]	; 516
     4f34:	e3c00102 	bic	r0, r0, #0x80000000	 ; 2147483648
     4f38:	e3800101 	orr	r0, r0, #0x40000000	 ; 1073741824
     4f3c:	e59f15d0 	ldr	r1, =DRAMC_IO_BASE	; =0x01c01000
     4f40:	e0811103 	add	r1, r1, r3, lsl #2
-    4f44:	e5810204 	str	r0, [r1, #516]	; 0x204
+    4f44:	e5810204 	str	r0, [r1, #0x204]	; 516
     4f48:	e2833001 	add	r3, r3, #1
     4f4c:	e3530005 	cmp	r3, #5
     4f50:	3afffff4 	bcc	0x4f28
@@ -5104,26 +5104,26 @@ mctl_enable_dllx:
     4f58:	ebffff7d 	bl	standby_delay
     4f5c:	e49df004 	pop	{pc}		; (ldr pc, [sp], #4)
     4f60:	e59f15ac 	ldr	r1, =DRAMC_IO_BASE	; =0x01c01000
-    4f64:	e5910204 	ldr	r0, [r1, #516]	; 0x204
+    4f64:	e5910204 	ldr	r0, [r1, #0x204]	; 516
     4f68:	e3c00101 	bic	r0, r0, #0x40000000	 ; 1073741824
     4f6c:	e3800102 	orr	r0, r0, #0x80000000	 ; 2147483648
-    4f70:	e5810204 	str	r0, [r1, #516]	; 0x204
-    4f74:	e5910208 	ldr	r0, [r1, #520]	; 0x208
+    4f70:	e5810204 	str	r0, [r1, #0x204]	; 516
+    4f74:	e5910208 	ldr	r0, [r1, #0x208]	; 520
     4f78:	e3c00101 	bic	r0, r0, #0x40000000	 ; 1073741824
     4f7c:	e3800102 	orr	r0, r0, #0x80000000	 ; 2147483648
-    4f80:	e5810208 	str	r0, [r1, #520]	; 0x208
-    4f84:	e591020c 	ldr	r0, [r1, #524]	; 0x20c
+    4f80:	e5810208 	str	r0, [r1, #0x208]	; 520
+    4f84:	e591020c 	ldr	r0, [r1, #0x20c]	; 524
     4f88:	e3c00101 	bic	r0, r0, #0x40000000	 ; 1073741824
     4f8c:	e3800102 	orr	r0, r0, #0x80000000	 ; 2147483648
-    4f90:	e581020c 	str	r0, [r1, #524]	; 0x20c
-    4f94:	e5910210 	ldr	r0, [r1, #528]	; 0x210
+    4f90:	e581020c 	str	r0, [r1, #0x20c]	; 524
+    4f94:	e5910210 	ldr	r0, [r1, #0x210]	; 528
     4f98:	e3c00101 	bic	r0, r0, #0x40000000	 ; 1073741824
     4f9c:	e3800102 	orr	r0, r0, #0x80000000	 ; 2147483648
-    4fa0:	e5810210 	str	r0, [r1, #528]	; 0x210
-    4fa4:	e5910214 	ldr	r0, [r1, #532]	; 0x214
+    4fa0:	e5810210 	str	r0, [r1, #0x210]	; 528
+    4fa4:	e5910214 	ldr	r0, [r1, #0x214]	; 532
     4fa8:	e3c00101 	bic	r0, r0, #0x40000000	 ; 1073741824
     4fac:	e3800102 	orr	r0, r0, #0x80000000	 ; 2147483648
-    4fb0:	e5810214 	str	r0, [r1, #532]	; 0x214
+    4fb0:	e5810214 	str	r0, [r1, #0x214]	; 532
     4fb4:	e12fff1e 	bx	lr
 
 mctl_configure_hostport:
@@ -5138,7 +5138,7 @@ mctl_configure_hostport:
     4fd8:	e79d0104 	ldr	r0, [sp, r4, lsl #2]
     4fdc:	e59f1530 	ldr	r1, =DRAMC_IO_BASE	; =0x01c01000
     4fe0:	e0811104 	add	r1, r1, r4, lsl #2
-    4fe4:	e5810250 	str	r0, [r1, #592]	; 0x250
+    4fe4:	e5810250 	str	r0, [r1, #0x250]	; 592
     4fe8:	e2844001 	add	r4, r4, #1
     4fec:	e3540020 	cmp	r4, #32
     4ff0:	3afffff8 	bcc	0x4fd8
@@ -5172,26 +5172,26 @@ mctl_setup_dram_clock:
     5058:	e5905020 	ldr	r5, [r0, #32]
     505c:	e3855202 	orr	r5, r5, #0x20000000	 ; 536870912
     5060:	e5805020 	str	r5, [r0, #32]
-    5064:	e59050d0 	ldr	r5, [r0, #208]	; 0xd0
+    5064:	e59050d0 	ldr	r5, [r0, #0xd0]	; 208
     5068:	e3c55003 	bic	r5, r5, #3
-    506c:	e58050d0 	str	r5, [r0, #208]	; 0xd0
-    5070:	e5905060 	ldr	r5, [r0, #96]	; 0x60
+    506c:	e58050d0 	str	r5, [r0, #0xd0]	; 208
+    5070:	e5905060 	ldr	r5, [r0, #0x60]	; 96
     5074:	e3855301 	orr	r5, r5, #0x4000000	 ; 67108864
-    5078:	e5805060 	str	r5, [r0, #96]	; 0x60
+    5078:	e5805060 	str	r5, [r0, #0x60]	; 96
     507c:	e3a00c01 	mov	r0, #0x100	 ; 256
     5080:	ebffff33 	bl	standby_delay
     5084:	e59f0484 	ldr	r0, =CCM_IO_BASE	; 0x01c20000
-    5088:	e5905060 	ldr	r5, [r0, #96]	; 0x60
+    5088:	e5905060 	ldr	r5, [r0, #0x60]	; 96
     508c:	e3c55301 	bic	r5, r5, #0x4000000	 ; 67108864
-    5090:	e5805060 	str	r5, [r0, #96]	; 0x60
-    5094:	e5905060 	ldr	r5, [r0, #96]	; 0x60
+    5090:	e5805060 	str	r5, [r0, #0x60]	; 96
+    5094:	e5905060 	ldr	r5, [r0, #0x60]	; 96
     5098:	e3c55901 	bic	r5, r5, #0x4000	 ; 16384
-    509c:	e5805060 	str	r5, [r0, #96]	; 0x60
+    509c:	e5805060 	str	r5, [r0, #0x60]	; 96
     50a0:	e3a00a01 	mov	r0, #0x1000	 ; 4096
     50a4:	ebffff2a 	bl	standby_delay
     50a8:	e3855901 	orr	r5, r5, #0x4000	 ; 16384
     50ac:	e59f045c 	ldr	r0, =CCM_IO_BASE	; 0x01c20000
-    50b0:	e5805060 	str	r5, [r0, #96]	; 0x60
+    50b0:	e5805060 	str	r5, [r0, #0x60]	; 96
     50b4:	e3a00a01 	mov	r0, #0x1000	 ; 4096
     50b8:	ebffff25 	bl	standby_delay
     50bc:	e8bd8070 	pop	{r4, r5, r6, pc}
@@ -5352,7 +5352,7 @@ __s32 DRAMC_init(__dram_para_t *para)
 /*
     526c:	e59f02a8 	ldr	r0, =0x16237495
     5270:	e59f129c 	ldr	r1, =DRAMC_IO_BASE	; =0x01c01000
-    5274:	e58102e0 	str	r0, [r1, #736]	; 0x2e0
+    5274:	e58102e0 	str	r0, [r1, #0x2e0]	; 736
 */
 
     mctl_itm_disable();
@@ -5510,7 +5510,7 @@ __s32 DRAMC_init(__dram_para_t *para)
     mctl_write_w(SDR_ZQCR0, reg_val);
 /*
     538c:	e59f0180 	ldr	r0, =DRAMC_IO_BASE	; =0x01c01000
-    5390:	e58060a8 	str	r6, [r0, #168]	; 0xa8
+    5390:	e58060a8 	str	r6, [r0, #0xa8]	; 168
 */
 
 		//set I/O configure register
@@ -5520,10 +5520,10 @@ __s32 DRAMC_init(__dram_para_t *para)
 		mctl_write_w(SDR_IOCR, reg_val);
 /*
     5394:	e3a06733 	mov	r6, #0xcc0000	 ; 13369344
-    5398:	e5940024 	ldr	r0, [r4, #36]	; 0x24
+    5398:	e5940024 	ldr	r0, [r4, #0x24]	; 36
     539c:	e2000003 	and	r0, r0, #3
     53a0:	e1866000 	orr	r6, r6, r0
-    53a4:	e5940024 	ldr	r0, [r4, #36]	; 0x24
+    53a4:	e5940024 	ldr	r0, [r4, #0x24]	; 36
     53a8:	e1866f00 	orr	r6, r6, r0, lsl #30
     53ac:	e59f0160 	ldr	r0, =DRAMC_IO_BASE	; =0x01c01000
     53b0:	e5806008 	str	r6, [r0, #8]
@@ -5541,12 +5541,12 @@ __s32 DRAMC_init(__dram_para_t *para)
     mctl_write_w(SDR_TPR1, para->dram_tpr1);
     mctl_write_w(SDR_TPR2, para->dram_tpr2);
 /*
-    53bc:	e594002c 	ldr	r0, [r4, #44]	; 0x2c
+    53bc:	e594002c 	ldr	r0, [r4, #0x2c]	; 44
     53c0:	e59f114c 	ldr	r1, =DRAMC_IO_BASE	; =0x01c01000
     53c4:	e5810014 	str	r0, [r1, #20]
-    53c8:	e5940030 	ldr	r0, [r4, #48]	; 0x30
+    53c8:	e5940030 	ldr	r0, [r4, #0x30]	; 48
     53cc:	e5810018 	str	r0, [r1, #24]
-    53d0:	e5940034 	ldr	r0, [r4, #52]	; 0x34
+    53d0:	e5940034 	ldr	r0, [r4, #0x34]	; 52
     53d4:	e581001c 	str	r0, [r1, #28]
 */
 
@@ -5586,7 +5586,7 @@ __s32 DRAMC_init(__dram_para_t *para)
     mctl_write_w(SDR_MR, reg_val);
 /*
     5418:	e59f00f4 	ldr	r0, =DRAMC_IO_BASE	; =0x01c01000
-    541c:	e58061f0 	str	r6, [r0, #496]	; 0x1f0
+    541c:	e58061f0 	str	r6, [r0, #0x1f0]	; 496
 */
 
     reg_val = 0x0;
@@ -5600,14 +5600,14 @@ __s32 DRAMC_init(__dram_para_t *para)
 		mctl_write_w(SDR_EMR3, para->dram_emr3);
 /*
     5424:	e1a01000 	mov	r1, r0
-    5428:	e5940044 	ldr	r0, [r4, #68]	; 0x44
-    542c:	e58101f4 	str	r0, [r1, #500]	; 0x1f4
+    5428:	e5940044 	ldr	r0, [r4, #0x44]	; 68
+    542c:	e58101f4 	str	r0, [r1, #0x1f4]	; 500
     5430:	e320f000 	nop	{0}
-    5434:	e5940048 	ldr	r0, [r4, #72]	; 0x48
-    5438:	e58101f8 	str	r0, [r1, #504]	; 0x1f8
+    5434:	e5940048 	ldr	r0, [r4, #0x48]	; 72
+    5438:	e58101f8 	str	r0, [r1, #0x1f8]	; 504
     543c:	e320f000 	nop	{0}
-    5440:	e594004c 	ldr	r0, [r4, #76]	; 0x4c
-    5444:	e58101fc 	str	r0, [r1, #508]	; 0x1fc
+    5440:	e594004c 	ldr	r0, [r4, #0x4c]	; 76
+    5444:	e58101fc 	str	r0, [r1, #0x1fc]	; 508
 */
 
 	//set DQS window mode
@@ -5829,7 +5829,7 @@ configureDRAMC:
     56f8:	e3a00000 	mov	r0, #0
     56fc:	ee080f17 	mcr	15, 0, r0, cr8, cr7, {0}
     5700:	e1a0f00e 	mov	pc, lr
-    5704:	55555555 	ldrbpl	r5, [r5, #-1365]	; 0x555
+    5704:	55555555 	ldrbpl	r5, [r5, #-0x555]	; 1365
     5708:	0bd02b75 	bleq	0xff4104e4
     570c:	62d15ca3 	sbcsvs	r5, r1, #0xa300	 ; 41728
     5710:	07e91c93 			; <UNDEFINED> instruction: 0x07e91c93
@@ -5838,7 +5838,7 @@ configureDRAMC:
     571c:	077d1be7 	ldrbeq	r1, [sp, -r7, ror #23]!
     5720:	0dac032f 	stceq	3, cr0, [ip, #188]!	; 0xbc
     5724:	24362716 	ldrtcs	r2, [r6], #0xfffff8ea	 ; 4294965482
-    5728:	15107922 	ldrne	r7, [r0, #-2338]	; 0x922
+    5728:	15107922 	ldrne	r7, [r0, #-0x922]	; 2338
     572c:	52873860 	addpl	r3, r7, #0x600000	 ; 6291456
     5730:	4252480f 	subsmi	r4, r2, #0xf0000	 ; 983040
     5734:	5a2d1789 	bpl	0xb4b560
@@ -5879,11 +5879,11 @@ configureDRAMC:
     57c0:	6d751380 	ldclvs	3, cr1, [r5, #-512]!	; 0xfffffe00
     57c4:	0f8e24c3 	svceq	0x008e24c3
     57c8:	14182b7a 	ldrne	r2, [r8], #0xfffff486	 ; 4294964358
-    57cc:	7dc11fd1 	stclvc	15, cr1, [r1, #836]	; 0x344
+    57cc:	7dc11fd1 	stclvc	15, cr1, [r1, #0x344]	; 836
     57d0:	43af2d8e 			; <UNDEFINED> instruction: 0x43af2d8e
     57d4:	7da32267 	sfmvc	f2, 4, [r3, #412]!	; 0x19c
     57d8:	13384e3d 	teqne	r8, #0x3d0	 ; 976
-    57dc:	454d50db 	strbmi	r5, [sp, #-219]	; 0xdb
+    57dc:	454d50db 	strbmi	r5, [sp, #-0xdb]	; 219
     57e0:	40a3764d 	adcmi	r7, r3, sp, asr #12
     57e4:	262b42e6 	strtcs	r4, [fp], -r6, ror #5
     57e8:	1aea2d2e 	bne	0xffa90ca8
@@ -5931,7 +5931,7 @@ configureDRAMC:
     5890:	70202c64 	eorvc	r2, r0, r4, ror #24
     5894:	20656761 	rsbcs	r6, r5, r1, ror #14
     5898:	6425203d 	strtvs	r2, [r5], #0xffffffc3	 ; 4294967235
-    589c:	6552202c 	ldrbvs	r2, [r2, #-44]	; 0x2c
+    589c:	6552202c 	ldrbvs	r2, [r2, #-0x2c]	; 44
     58a0:	43797274 	cmnmi	r9, #0x40000007	 ; 1073741831
     58a4:	746e756f 	strbtvc	r7, [lr], #0xfffffa91	 ; 4294965905
     58a8:	25203d20 	strcs	r3, [r0, #-3360]!	; 0xd20
