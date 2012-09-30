@@ -4524,7 +4524,7 @@ Disassembly of section .data:
 4240c968:	e3a03001 	mov	r3, #1
 4240c96c:	e1a0200d 	mov	r2, sp
 4240c970:	e28f1fbb 	ldr	r1, =0x4240cc64	; add r1, pc, #748	; 0x2ec
-4240c974:	e59f02f8 	ldr	r0, [0x4240cc74]
+4240c974:	e59f02f8 	ldr	r0, =0x4240bdc4
 4240c978:	eb0029bf 	bl	0x4241707c
 4240c97c:	e1a04000 	mov	r4, r0
 4240c980:	e3540000 	cmp	r4, #0
@@ -4714,7 +4714,6 @@ Disassembly of section .data:
 4240cc60:	ea00001e 	b	0x4240cce0
 
 4240cc64:	"pmu_pwron_vol",0
-4240cc74:	4240bdc4
 4240cc78:	"boot power:unable to find power off vol set\n",0
 4240cca8:	"boot power:unable to set voff vol\n",0
 
