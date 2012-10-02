@@ -15395,7 +15395,7 @@ f_42416ec4:
 42416f18:	e30822a0 	movw	r2, #33440	; 0x82a0
 42416f1c:	e59f1024 	ldr	r1, [0x42416f48]
 42416f20:	e1a00007 	mov	r0, r7
-42416f24:	eb0056bd 	bl	f_4242ca20
+42416f24:	eb0056bd 	bl	memcpy
 42416f28:	ea000002 	b	0x42416f38
 42416f2c:	e320f000 	nop	{0}
 42416f30:	e3e06000 	mvn	r6, #0
@@ -16605,7 +16605,7 @@ f_42417d44:
 42418154:	e3a02020 	mov	r2, #32
 42418158:	e59f1084 	ldr	r1, [0x424181e4]
 4241815c:	e1a0000d 	mov	r0, sp
-42418160:	eb00522e 	bl	f_4242ca20
+42418160:	eb00522e 	bl	memcpy
 42418164:	e58dd020 	str	sp, [sp, #32]
 42418168:	e28d1020 	add	r1, sp, #32
 4241816c:	e3a00001 	mov	r0, #1
@@ -32893,7 +32893,7 @@ f_4242789c:
 42427a4c:	e08a1100 	add	r1, sl, r0, lsl #2
 42427a50:	e3a02024 	mov	r2, #36	; 0x24
 42427a54:	e1a00005 	mov	r0, r5
-42427a58:	eb0013f0 	bl	f_4242ca20
+42427a58:	eb0013f0 	bl	memcpy
 42427a5c:	e3a00000 	mov	r0, #0
 42427a60:	e8bd8ffe 	pop	{r1, r2, r3, r4, r5, r6, r7, r8, r9, sl, fp, pc}
 42427a64:	e2488001 	sub	r8, r8, #1
@@ -36257,11 +36257,11 @@ f_4242ad68:
 4242ad74:	e3a02030 	mov	r2, #48	; 0x30
 4242ad78:	e59f1478 	ldr	r1, [0x4242b1f8]
 4242ad7c:	e28d00b8 	add	r0, sp, #184	; 0xb8
-4242ad80:	eb000726 	bl	f_4242ca20
+4242ad80:	eb000726 	bl	memcpy
 4242ad84:	e3a02030 	mov	r2, #48	; 0x30
 4242ad88:	e59f146c 	ldr	r1, [0x4242b1fc]
 4242ad8c:	e28d0088 	add	r0, sp, #136	; 0x88
-4242ad90:	eb000722 	bl	f_4242ca20
+4242ad90:	eb000722 	bl	memcpy
 4242ad94:	e59f1464 	ldr	r1, [0x4242b200]
 4242ad98:	e28d007c 	add	r0, sp, #124	; 0x7c
 4242ad9c:	e891100c 	ldm	r1, {r2, r3, ip}
@@ -36269,7 +36269,7 @@ f_4242ad68:
 4242ada4:	e3a02078 	mov	r2, #120	; 0x78
 4242ada8:	e281100c 	add	r1, r1, #12
 4242adac:	e28d0004 	add	r0, sp, #4
-4242adb0:	eb00071a 	bl	f_4242ca20
+4242adb0:	eb00071a 	bl	memcpy
 4242adb4:	e1a00824 	lsr	r0, r4, #16
 4242adb8:	e59f141c 	ldr	r1, [0x4242b1dc]
 4242adbc:	e5c10000 	strb	r0, [r1]
@@ -38075,7 +38075,7 @@ f_4242c8f4:
 4242c920:	e2422004 	sub	r2, r2, #4
 4242c924:	34c03001 	strbcc	r3, [r0], #1
 4242c928:	e2113003 	ands	r3, r1, #3
-4242c92c:	0a00003b 	beq	f_4242ca20
+4242c92c:	0a00003b 	beq	memcpy
 4242c930:	e2522008 	subs	r2, r2, #8
 4242c934:	3a000004 	bcc	0x4242c94c
 4242c938:	e4913004 	ldr	r3, [r1], #4
@@ -38143,7 +38143,7 @@ f_4242c9cc:
 4242ca18:	14c02001 	strbne	r2, [r0], #1
 4242ca1c:	e12fff1e 	bx	lr
 
-f_4242ca20:
+memcpy:
 4242ca20:	e92d41f0 	push	{r4, r5, r6, r7, r8, lr}
 4242ca24:	e2522020 	subs	r2, r2, #32
 4242ca28:	3a00000d 	bcc	0x4242ca64
@@ -42830,9 +42830,9 @@ f_0428:
 0428:		e51ff004 	ldr	pc, [pc, #-4]	; 0x042c
 042c:		4240e1c4
 
-f_0430:
+memcpy_:
 0430:		e51ff004 	ldr	pc, [pc, #-4]	; 0x0434
-0434:		4242ca20
+0434:		4242ca20	=memcpy
 
 f_0438:
 0438:		e51ff004 	ldr	pc, [pc, #-4]	; 0x043c
@@ -45526,7 +45526,7 @@ f_2d18:
 2d3c:		e5810054 	str	r0, [r1, #CCMU_SYSCLK_RATIO]	; 0x54
 2d40:		e12fff1e 	bx	lr
 
-f_2d44:
+standby_clk_dramgating:
 2d44:		e59f2140 	ldr	r2, =CCM_IO_BASE	; 0x2e8c
 2d48:		e5921020 	ldr	r1, [r2, #CCMU_PLL5_DDR]
 2d4c:		e3500000 	cmp	r0, #0
@@ -45632,7 +45632,7 @@ f_2dd8:
 2eac:		016e3600 	cmneq	lr, r0, lsl #12
 2eb0:		00003bb8 			; <UNDEFINED> instruction: 0x00003bb8
 
-f_2eb4:
+standby_delay:
 2eb4:		e1a01000 	mov	r1, r0
 2eb8:		ea000000 	b	0x2ec0
 2ebc:		e2411001 	sub	r1, r1, #1
@@ -45640,9 +45640,7 @@ f_2eb4:
 2ec4:		cafffffc 	bgt	0x2ebc
 2ec8:		e12fff1e 	bx	lr
 
-mctl_precharge_all
-
-f_2ecc:
+mctl_precharge_all:
 2ecc:		e52de004 	push	{lr}		; (str lr, [sp, #-4]!)
 2ed0:		e59f04a0 	ldr	r0, =DRAMC_IO_BASE	; 0x3378
 2ed4:		e5903004 	ldr	r3, [r0, #SDR_DCR]
@@ -45655,12 +45653,11 @@ f_2ecc:
 2ef0:		e3100102 	tst	r0, #0x80000000
 2ef4:		1afffffb 	bne	0x2ee8
 2ef8:		e3a00c01 	mov	r0, #0x100
-2efc:		ebffffec 	bl	f_2eb4
+2efc:		ebffffec 	bl	standby_delay
 2f00:		e49df004 	pop	{pc}		; (ldr pc, [sp], #4)
 
-DRAMC_hostport_on_off
 ; Opens/Closes a DRAMC host port (bit 0)
-
+DRAMC_hostport_on_off:
 f_2f04:
 2f04:		e350001f 	cmp	r0, #31
 2f08:		8a00000a 	bhi	0x2f38
@@ -45678,18 +45675,16 @@ f_2f04:
 2f38:		e12fff1e 	bx	lr
 
 DRAMC_enter_selfrefresh
-
-f_2f3c:
 2f3c:		e92d4030 	push	{r4, r5, lr}
 2f40:		e3a04000 	mov	r4, #0
 2f44:		ea000003 	b	0x2f58
 2f48:		e3a01000 	mov	r1, #0
 2f4c:		e1a00004 	mov	r0, r4
-2f50:		ebffffeb 	bl	f_2f04
+2f50:		ebffffeb 	bl	DRAMC_hostport_on_off
 2f54:		e2844001 	add	r4, r4, #1
 2f58:		e354001f 	cmp	r4, #31
 2f5c:		3afffff9 	bcc	0x2f48
-2f60:		ebffffd9 	bl	f_2ecc
+2f60:		ebffffd9 	bl	mctl_precharge_all
 2f64:		e59f040c 	ldr	r0, =DRAMC_IO_BASE	; 0x3378
 2f68:		e5905004 	ldr	r5, [r0, SDR_DCR]
 2f6c:		e3c5533e 	bic	r5, r5, #0xf8000000
@@ -45701,14 +45696,14 @@ f_2f3c:
 2f84:		e3100102 	tst	r0, #0x80000000
 2f88:		1afffffb 	bne	0x2f7c
 2f8c:		e3a00c01 	mov	r0, #0x100
-2f90:		ebffffc7 	bl	f_2eb4
+2f90:		ebffffc7 	bl	standby_delay
 2f94:		e3a00001 	mov	r0, #1
 2f98:		e59f13d8 	ldr	r1, =DRAMC_IO_BASE	; 0x3378
 2f9c:		e581023c 	str	r0, [r1, #572]	; 0x23c
 2fa0:		e8bd8030 	pop	{r4, r5, pc}
 
 
-f_2fa4:
+mctl_mode_exit:
 2fa4:		e52de004 	push	{lr}		; (str lr, [sp, #-4]!)
 2fa8:		e59f03c8 	ldr	r0, =DRAMC_IO_BASE	; 0x3378
 2fac:		e5903004 	ldr	r3, [r0, SDR_DCR]
@@ -45721,12 +45716,12 @@ f_2fa4:
 2fc8:		e3100102 	tst	r0, #0x80000000
 2fcc:		1afffffb 	bne	0x2fc0
 2fd0:		e3a00c01 	mov	r0, #0x100
-2fd4:		ebffffb6 	bl	f_2eb4
+2fd4:		ebffffb6 	bl	standby_delay
 2fd8:		e49df004 	pop	{pc}		; (ldr pc, [sp], #4)
 
-f_2fdc:
+DRAMC_exit_selfrefresh:
 2fdc:		e92d4030 	push	{r4, r5, lr}
-2fe0:		ebffffef 	bl	f_2fa4
+2fe0:		ebffffef 	bl	mctl_mode_exit
 2fe4:		e59f038c 	ldr	r0, =DRAMC_IO_BASE	; 0x3378
 2fe8:		e5904004 	ldr	r4, [r0, SDR_DCR]
 2fec:		e3c4433e 	bic	r4, r4, #0xf8000000
@@ -45738,7 +45733,7 @@ f_2fdc:
 3004:		e3100102 	tst	r0, #0x80000000
 3008:		1afffffb 	bne	0x2ffc
 300c:		e3a00c01 	mov	r0, #0x100
-3010:		ebffffa7 	bl	f_2eb4
+3010:		ebffffa7 	bl	standby_delay
 3014:		e59f035c 	ldr	r0, =DRAMC_IO_BASE	; 0x3378
 3018:		e5904010 	ldr	r4, [r0, #16]
 301c:		e3c44102 	bic	r4, r4, #0x80000000
@@ -45747,13 +45742,13 @@ f_2fdc:
 3028:		ea000003 	b	0x303c
 302c:		e3a01001 	mov	r1, #1
 3030:		e1a00005 	mov	r0, r5
-3034:		ebffffb2 	bl	f_2f04
+3034:		ebffffb2 	bl	DRAMC_hostport_on_off
 3038:		e2855001 	add	r5, r5, #1
 303c:		e355001f 	cmp	r5, #31
 3040:		3afffff9 	bcc	0x302c
 3044:		e8bd8030 	pop	{r4, r5, pc}
 
-f_3048:
+DRAMC_enter_power_down:
 3048:		e52de004 	push	{lr}		; (str lr, [sp, #-4]!)
 304c:		e59f0324 	ldr	r0, =DRAMC_IO_BASE	; 0x3378
 3050:		e5903004 	ldr	r3, [r0, SDR_DCR]
@@ -45766,17 +45761,15 @@ f_3048:
 306c:		e3100102 	tst	r0, #0x80000000
 3070:		1afffffb 	bne	0x3064
 3074:		e3a00c01 	mov	r0, #0x100
-3078:		ebffff8d 	bl	f_2eb4
+3078:		ebffff8d 	bl	standby_delay
 307c:		e49df004 	pop	{pc}		; (ldr pc, [sp], #4)
 
-f_3080:
+DRAMC_exit_power_down:
 3080:		e52de004 	push	{lr}		; (str lr, [sp, #-4]!)
-3084:		ebffffc6 	bl	f_2fa4
+3084:		ebffffc6 	bl	mctl_mode_exit
 3088:		e49df004 	pop	{pc}		; (ldr pc, [sp], #4)
 
 DRAMC_hostport_check_ahb_fifo_status
-
-f_308c:
 308c:		e1a02000 	mov	r2, r0
 3090:		e352001f 	cmp	r2, #31
 3094:		8a000004 	bhi	0x30ac
@@ -45789,7 +45782,6 @@ f_308c:
 30b0:		eafffffc 	b	0x30a8
 
 DRAMC_hostport_setup
-
 f_30b4:
 30b4:		e92d4030 	push	{r4, r5, lr}
 30b8:		e350001f 	cmp	r0, #31
@@ -45811,16 +45803,14 @@ f_30b4:
 30f8:		e5854250 	str	r4, [r5, #592]	; 0x250
 30fc:		e8bd8030 	pop	{r4, r5, pc}
 
-mctl_ahb_reset
-
-f_3100:
+mctl_ahb_reset:
 3100:		e52de004 	push	{lr}		; (str lr, [sp, #-4]!)
 3104:		e59f0270 	ldr	r0, =CCM_IO_BASE	; 0x337c
 3108:		e5903060 	ldr	r3, [r0, #CCMU_AHBCLK_GATE0]	; 0x60
 310c:		e3c33903 	bic	r3, r3, #0xc000
 3110:		e5803060 	str	r3, [r0, #CCMU_AHBCLK_GATE0]	; 0x60
 3114:		e3a00010 	mov	r0, #16
-3118:		ebffff65 	bl	f_2eb4
+3118:		ebffff65 	bl	standby_delay
 311c:		e59f0258 	ldr	r0, =CCM_IO_BASE	; 0x337c
 3120:		e5903060 	ldr	r3, [r0, #CCMU_AHBCLK_GATE0]	; 0x60
 3124:		e3833903 	orr	r3, r3, #0xc000
@@ -45828,9 +45818,7 @@ f_3100:
 312c:		e3a00000 	mov	r0, #0
 3130:		e49df004 	pop	{pc}		; (ldr pc, [sp], #4)
 
-
-
-f_3134:
+DRAMC_retraining:
 3134:		e92d4ff0 	push	{r4, r5, r6, r7, r8, r9, sl, fp, lr}
 3138:		e24dd01c 	sub	sp, sp, #28
 313c:		e59f0234 	ldr	r0, =DRAMC_IO_BASE	; 0x3378
@@ -45861,11 +45849,11 @@ f_3134:
 31a0:		e59000b0 	ldr	r0, [r0, #176]	; 0xb0
 31a4:		e58d0000 	str	r0, [sp]
 31a8:		ea000046 	b	0x32c8
-31ac:		ebffffd3 	bl	f_3100
+31ac:		ebffffd3 	bl	mctl_ahb_reset
 31b0:		eb000072 	bl	f_3380
 31b4:		eb00007d 	bl	f_33b0
-31b8:		eb000085 	bl	f_33d4
-31bc:		eb000090 	bl	f_3404
+31b8:		eb000085 	bl	mctl_itm_disable
+31bc:		eb000090 	bl	mctl_enable_dll0
 31c0:		e59d0004 	ldr	r0, [sp, #4]
 31c4:		e59f11ac 	ldr	r1, =DRAMC_IO_BASE	; 0x3378
 31c8:		e5810000 	str	r0, [r1]
@@ -45887,13 +45875,13 @@ f_3134:
 3208:		e3a00001 	mov	r0, #1
 320c:		eb000107 	bl	f_3630
 3210:		e3a00010 	mov	r0, #16
-3214:		ebffff26 	bl	f_2eb4
+3214:		ebffff26 	bl	standby_delay
 3218:		e320f000 	nop	{0}
 321c:		e59f0154 	ldr	r0, =DRAMC_IO_BASE	; 0x3378
 3220:		e5900000 	ldr	r0, [r0]
 3224:		e3100102 	tst	r0, #0x80000000
 3228:		1afffffb 	bne	0x321c
-322c:		eb00008d 	bl	f_3468
+322c:		eb00008d 	bl	mctl_enable_dllx
 3230:		e59d0008 	ldr	r0, [sp, #8]
 3234:		e59f113c 	ldr	r1, =DRAMC_IO_BASE	; 0x3378
 3238:		e5810008 	str	r0, [r1, #8]
@@ -45922,11 +45910,11 @@ f_3134:
 3294:		e59f10dc 	ldr	r1, =DRAMC_IO_BASE	; 0x3378
 3298:		e581023c 	str	r0, [r1, #572]	; 0x23c
 329c:		e3a00801 	mov	r0, #0x10000
-32a0:		ebffff03 	bl	f_2eb4
-32a4:		eb000050 	bl	f_33ec
+32a0:		ebffff03 	bl	standby_delay
+32a4:		eb000050 	bl	mctl_itm_enable
 32a8:		eb0000cf 	bl	f_35ec
 32ac:		e1a05000 	mov	r5, r0
-32b0:		eb0000ba 	bl	f_35a0
+32b0:		eb0000ba 	bl	mctl_configure_hostport
 32b4:		e3550000 	cmp	r5, #0
 32b8:		1a000002 	bne	0x32c8
 32bc:		e3a00000 	mov	r0, #0
@@ -45936,38 +45924,43 @@ f_3134:
 
 f_32cc:
 32cc:		e92d4010 	push	{r4, lr}
-32d0:		ebffff19 	bl	f_2f3c
-32d4:		eb00003e 	bl	f_33d4
-32d8:		eb00009a 	bl	f_3548
+32d0:		ebffff19 	bl	DRAMC_enter_selfrefresh
+32d4:		eb00003e 	bl	mctl_itm_disable
+32d8:		eb00009a 	bl	mctl_disable_dll
 32dc:		e8bd8010 	pop	{r4, pc}
 
 f_32e0:
 32e0:		e92d4010 	push	{r4, lr}
-32e4:		ebffff92 	bl	f_3134
+32e4:		ebffff92 	bl	DRAMC_retraining
 32e8:		e8bd8010 	pop	{r4, pc}
+
 32ec:		e52de004 	push	{lr}		; (str lr, [sp, #-4]!)
-32f0:		ebffff11 	bl	f_2f3c
+32f0:		ebffff11 	bl	DRAMC_enter_selfrefresh
 32f4:		e49df004 	pop	{pc}		; (ldr pc, [sp], #4)
+
 32f8:		e52de004 	push	{lr}		; (str lr, [sp, #-4]!)
-32fc:		ebffff36 	bl	f_2fdc
+32fc:		ebffff36 	bl	DRAMC_exit_selfrefresh
 3300:		e49df004 	pop	{pc}		; (ldr pc, [sp], #4)
+
 3304:		e52de004 	push	{lr}		; (str lr, [sp, #-4]!)
-3308:		ebffff4e 	bl	f_3048
+3308:		ebffff4e 	bl	DRAMC_enter_power_down
 330c:		e49df004 	pop	{pc}		; (ldr pc, [sp], #4)
+
 3310:		e52de004 	push	{lr}		; (str lr, [sp, #-4]!)
-3314:		ebffff59 	bl	f_3080
+3314:		ebffff59 	bl	DRAMC_exit_power_down
 3318:		e49df004 	pop	{pc}		; (ldr pc, [sp], #4)
+
 331c:		e92d4030 	push	{r4, r5, lr}
 3320:		e1a04000 	mov	r4, r0
 3324:		e1a05001 	mov	r5, r1
 3328:		e1a01005 	mov	r1, r5
 332c:		e1a00004 	mov	r0, r4
-3330:		ebfffef3 	bl	f_2f04
+3330:		ebfffef3 	bl	DRAMC_hostport_on_off
 3334:		e8bd8030 	pop	{r4, r5, pc}
 3338:		e52de004 	push	{lr}		; (str lr, [sp, #-4]!)
 333c:		e1a03000 	mov	r3, r0
 3340:		e1a00003 	mov	r0, r3
-3344:		ebffff50 	bl	f_308c
+3344:		ebffff50 	bl	DRAMC_hostport_check_ahb_fifo_status
 3348:		e49df004 	pop	{pc}		; (ldr pc, [sp], #4)
 334c:		e92d40f0 	push	{r4, r5, r6, r7, lr}
 3350:		e1a04000 	mov	r4, r0
@@ -45990,7 +45983,7 @@ f_3380:
 338c:		e3c44a01 	bic	r4, r4, #0x1000
 3390:		e5804230 	str	r4, [r0, #560]	; 0x230
 3394:		e3a00c01 	mov	r0, #0x100
-3398:		ebfffec5 	bl	f_2eb4
+3398:		ebfffec5 	bl	standby_delay
 339c:		e59f02c0 	ldr	r0, =DRAMC_IO_BASE	; 0x3664
 33a0:		e5904230 	ldr	r4, [r0, #560]	; 0x230
 33a4:		e3844a01 	orr	r4, r4, #0x1000
@@ -46008,7 +46001,7 @@ f_33b0:
 33cc:		e5810230 	str	r0, [r1, #560]	; 0x230
 33d0:		e12fff1e 	bx	lr
 
-f_33d4:
+mctl_itm_disable:
 33d4:		e3a00000 	mov	r0, #0
 33d8:		e59f1284 	ldr	r1, =DRAMC_IO_BASE	; 0x3664
 33dc:		e5910000 	ldr	r0, [r1]
@@ -46016,7 +46009,7 @@ f_33d4:
 33e4:		e5810000 	str	r0, [r1]
 33e8:		e12fff1e 	bx	lr
 
-f_33ec:
+mctl_itm_enable:
 33ec:		e3a00000 	mov	r0, #0
 33f0:		e59f126c 	ldr	r1, =DRAMC_IO_BASE	; 0x3664
 33f4:		e5910000 	ldr	r0, [r1]
@@ -46024,7 +46017,7 @@ f_33ec:
 33fc:		e5810000 	str	r0, [r1]
 3400:		e12fff1e 	bx	lr
 
-f_3404:
+mctl_enable_dll0:
 3404:		e92d4010 	push	{r4, lr}
 3408:		e59f0254 	ldr	r0, =DRAMC_IO_BASE	; 0x3664
 340c:		e5900204 	ldr	r0, [r0, #516]	; 0x204
@@ -46033,14 +46026,14 @@ f_3404:
 3418:		e59f1244 	ldr	r1, =DRAMC_IO_BASE	; 0x3664
 341c:		e5810204 	str	r0, [r1, #516]	; 0x204
 3420:		e3a00c01 	mov	r0, #0x100
-3424:		ebfffea2 	bl	f_2eb4
+3424:		ebfffea2 	bl	standby_delay
 3428:		e59f0234 	ldr	r0, =DRAMC_IO_BASE	; 0x3664
 342c:		e5900204 	ldr	r0, [r0, #516]	; 0x204
 3430:		e3c00103 	bic	r0, r0, #0xc0000000
 3434:		e59f1228 	ldr	r1, =DRAMC_IO_BASE	; 0x3664
 3438:		e5810204 	str	r0, [r1, #516]	; 0x204
 343c:		e3a00a01 	mov	r0, #0x1000
-3440:		ebfffe9b 	bl	f_2eb4
+3440:		ebfffe9b 	bl	standby_delay
 3444:		e59f0218 	ldr	r0, =DRAMC_IO_BASE	; 0x3664
 3448:		e5900204 	ldr	r0, [r0, #516]	; 0x204
 344c:		e3c00102 	bic	r0, r0, #0x80000000
@@ -46048,10 +46041,10 @@ f_3404:
 3454:		e59f1208 	ldr	r1, =DRAMC_IO_BASE	; 0x3664
 3458:		e5810204 	str	r0, [r1, #516]	; 0x204
 345c:		e3a00a01 	mov	r0, #0x1000
-3460:		ebfffe93 	bl	f_2eb4
+3460:		ebfffe93 	bl	standby_delay
 3464:		e8bd8010 	pop	{r4, pc}
 
-f_3468:
+mctl_enable_dllx:
 3468:		e92d4070 	push	{r4, r5, r6, lr}
 346c:		e3a04000 	mov	r4, #0
 3470:		e59f01ec 	ldr	r0, =DRAMC_IO_BASE	; 0x3664
@@ -46077,7 +46070,7 @@ f_3468:
 34c0:		e1540006 	cmp	r4, r6
 34c4:		3afffff4 	bcc	0x349c
 34c8:		e3a00c01 	mov	r0, #0x100
-34cc:		ebfffe78 	bl	f_2eb4
+34cc:		ebfffe78 	bl	standby_delay
 34d0:		e3a04001 	mov	r4, #1
 34d4:		ea000007 	b	0x34f8
 34d8:		e59f0184 	ldr	r0, =DRAMC_IO_BASE	; 0x3664
@@ -46091,7 +46084,7 @@ f_3468:
 34f8:		e1540006 	cmp	r4, r6
 34fc:		3afffff5 	bcc	0x34d8
 3500:		e3a00a01 	mov	r0, #0x1000
-3504:		ebfffe6a 	bl	f_2eb4
+3504:		ebfffe6a 	bl	standby_delay
 3508:		e3a04001 	mov	r4, #1
 350c:		ea000008 	b	0x3534
 3510:		e59f014c 	ldr	r0, =DRAMC_IO_BASE	; 0x3664
@@ -46106,10 +46099,10 @@ f_3468:
 3534:		e1540006 	cmp	r4, r6
 3538:		3afffff4 	bcc	0x3510
 353c:		e3a00a01 	mov	r0, #0x1000
-3540:		ebfffe5b 	bl	f_2eb4
+3540:		ebfffe5b 	bl	standby_delay
 3544:		e8bd8070 	pop	{r4, r5, r6, pc}
 
-f_3548:
+mctl_disable_dll:
 3548:		e59f1114 	ldr	r1, =DRAMC_IO_BASE	; 0x3664
 354c:		e5910204 	ldr	r0, [r1, #516]	; 0x204
 3550:		e3c00101 	bic	r0, r0, #0x40000000
@@ -46133,13 +46126,13 @@ f_3548:
 3598:		e5810214 	str	r0, [r1, #532]	; 0x214
 359c:		e12fff1e 	bx	lr
 
-f_35a0:
+mctl_configure_hostport:
 35a0:		e92d4010 	push	{r4, lr}
 35a4:		e24dd080 	sub	sp, sp, #128	; 0x80
 35a8:		e3a02080 	mov	r2, #128	; 0x80
 35ac:		e59f10b4 	ldr	r1, =hpcr_table
 35b0:		e1a0000d 	mov	r0, sp
-35b4:		ebfff39d 	bl	f_0430
+35b4:		ebfff39d 	bl	memcpy_
 35b8:		e3a04000 	mov	r4, #0
 35bc:		ea000004 	b	0x35d4
 35c0:		e79d0104 	ldr	r0, [sp, r4, lsl #2]
@@ -46304,7 +46297,7 @@ f_37d8:
 3804:		e3a00000 	mov	r0, #0
 3808:		ebfffd0c 	bl	f_2c40
 380c:		e3a00001 	mov	r0, #1
-3810:		ebfffd4b 	bl	f_2d44
+3810:		ebfffd4b 	bl	standby_clk_dramgating:
 3814:		ebfffd54 	bl	f_2d6c
 3818:		ebfffeb0 	bl	f_32e0
 381c:		ebfffd5a 	bl	f_2d8c
@@ -46371,7 +46364,7 @@ f_38f0:
 3900:		ebfffc93 	bl	f_2b54
 3904:		ebfffe70 	bl	f_32cc
 3908:		e3a00000 	mov	r0, #0
-390c:		ebfffd0c 	bl	f_2d44
+390c:		ebfffd0c 	bl	standby_clk_dramgating:
 3910:		e59f0114 	ldr	r0, [0x3a2c]
 3914:		ebfffcc9 	bl	f_2c40
 3918:		ebfffcd8 	bl	f_2c80
