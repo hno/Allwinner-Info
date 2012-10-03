@@ -42889,18 +42889,18 @@ f_04a4:
 04b4:		e283400c 	add	r4, r3, #12
 04b8:		e5944000 	ldr	r4, [r4]
 04bc:		e7933104 	ldr	r3, [r3, r4, lsl #2]
-04c0:		e5830018 	str	r0, [r3, #24]
+04c0:		e5830018 	str	r0, [r3, #TWI_RESET]
 04c4:		e59f0d1c 	ldr	r0, [0x11e8]
 04c8:		e280300c 	add	r3, r0, #12
 04cc:		e5933000 	ldr	r3, [r3]
 04d0:		e7900103 	ldr	r0, [r0, r3, lsl #2]
-04d4:		e590000c 	ldr	r0, [r0, #12]
+04d4:		e590000c 	ldr	r0, [r0, #TWI_CTL]
 04d8:		e3800020 	orr	r0, r0, #32
 04dc:		e59f3d04 	ldr	r3, [0x11e8]
 04e0:		e283400c 	add	r4, r3, #12
 04e4:		e5944000 	ldr	r4, [r4]
 04e8:		e7933104 	ldr	r3, [r3, r4, lsl #2]
-04ec:		e583000c 	str	r0, [r3, #12]
+04ec:		e583000c 	str	r0, [r3, #TWI_CTL]
 04f0:		e320f000 	nop	{0}
 l_04f4:		e1b00002 	movs	r0, r2
 04f8:		e2422001 	sub	r2, r2, #1
@@ -42909,7 +42909,7 @@ l_04f4:		e1b00002 	movs	r0, r2
 0504:		e280300c 	add	r3, r0, #12
 0508:		e5933000 	ldr	r3, [r3]
 050c:		e7900103 	ldr	r0, [r0, r3, lsl #2]
-0510:		e590000c 	ldr	r0, [r0, #12]
+0510:		e590000c 	ldr	r0, [r0, #TWI_CTL]
 0514:		e3100008 	tst	r0, #8
 0518:		0afffff5 	beq	l_04f4
 l_051c:		e3520000 	cmp	r2, #0
@@ -42920,7 +42920,7 @@ l_052c:		e59f0cb4 	ldr	r0, [0x11e8]
 0530:		e280300c 	add	r3, r0, #12
 0534:		e5933000 	ldr	r3, [r3]
 0538:		e7900103 	ldr	r0, [r0, r3, lsl #2]
-053c:		e5901010 	ldr	r1, [r0, #16]
+053c:		e5901010 	ldr	r1, [r0, #TWI_STATUS]
 0540:		e3510008 	cmp	r1, #8
 0544:		0a000001 	beq	l_0550
 0548:		e3e00000 	mvn	r0, #0
@@ -42934,14 +42934,14 @@ f_0558:
 0560:		e280300c 	add	r3, r0, #12
 0564:		e5933000 	ldr	r3, [r3]
 0568:		e7900103 	ldr	r0, [r0, r3, lsl #2]
-056c:		e590000c 	ldr	r0, [r0, #12]
+056c:		e590000c 	ldr	r0, [r0, #TWI_CTL]
 0570:		e20020c0 	and	r2, r0, #0xc0
 0574:		e3822020 	orr	r2, r2, #32
 0578:		e59f0c68 	ldr	r0, [0x11e8]
 057c:		e280300c 	add	r3, r0, #12
 0580:		e5933000 	ldr	r3, [r3]
 0584:		e7900103 	ldr	r0, [r0, r3, lsl #2]
-0588:		e580200c 	str	r2, [r0, #12]
+0588:		e580200c 	str	r2, [r0, #TWI_CTL]
 058c:		e320f000 	nop	{0}
 l_0590:		e1b00001 	movs	r0, r1
 0594:		e2411001 	sub	r1, r1, #1
@@ -42950,7 +42950,7 @@ l_0590:		e1b00001 	movs	r0, r1
 05a0:		e280300c 	add	r3, r0, #12
 05a4:		e5933000 	ldr	r3, [r3]
 05a8:		e7900103 	ldr	r0, [r0, r3, lsl #2]
-05ac:		e590000c 	ldr	r0, [r0, #12]
+05ac:		e590000c 	ldr	r0, [r0, #TWI_CTL]
 05b0:		e3100008 	tst	r0, #8
 05b4:		0afffff5 	beq	l_0590
 l_05b8:		e3510000 	cmp	r1, #0
@@ -42961,7 +42961,7 @@ l_05c8:		e59f0c18 	ldr	r0, [0x11e8]
 05cc:		e280300c 	add	r3, r0, #12
 05d0:		e5933000 	ldr	r3, [r3]
 05d4:		e7900103 	ldr	r0, [r0, r3, lsl #2]
-05d8:		e5902010 	ldr	r2, [r0, #16]
+05d8:		e5902010 	ldr	r2, [r0, #TWI_STATUS]
 05dc:		e3520010 	cmp	r2, #16
 05e0:		0a000001 	beq	l_05ec
 05e4:		e3e00000 	mvn	r0, #0
@@ -42986,18 +42986,18 @@ l_0618:		e20200ff 	and	r0, r2, #0xff
 0624:		e285600c 	add	r6, r5, #12
 0628:		e5966000 	ldr	r6, [r6]
 062c:		e7955106 	ldr	r5, [r5, r6, lsl #2]
-0630:		e5850008 	str	r0, [r5, #8]
+0630:		e5850008 	str	r0, [r5, #TWI_DATA]
 0634:		e59f0bac 	ldr	r0, [0x11e8]
 0638:		e280500c 	add	r5, r0, #12
 063c:		e5955000 	ldr	r5, [r5]
 0640:		e7900105 	ldr	r0, [r0, r5, lsl #2]
-0644:		e590000c 	ldr	r0, [r0, #12]
+0644:		e590000c 	ldr	r0, [r0, #TWI_CTL]
 0648:		e20000f7 	and	r0, r0, #0xf7
 064c:		e59f5b94 	ldr	r5, [0x11e8]
 0650:		e285600c 	add	r6, r5, #12
 0654:		e5966000 	ldr	r6, [r6]
 0658:		e7955106 	ldr	r5, [r5, r6, lsl #2]
-065c:		e585000c 	str	r0, [r5, #12]
+065c:		e585000c 	str	r0, [r5, #TWI_CTL]
 0660:		e320f000 	nop	{0}
 l_0664:		e1b00003 	movs	r0, r3
 0668:		e2433001 	sub	r3, r3, #1
@@ -43006,7 +43006,7 @@ l_0664:		e1b00003 	movs	r0, r3
 0674:		e280500c 	add	r5, r0, #12
 0678:		e5955000 	ldr	r5, [r5]
 067c:		e7900105 	ldr	r0, [r0, r5, lsl #2]
-0680:		e590000c 	ldr	r0, [r0, #12]
+0680:		e590000c 	ldr	r0, [r0, #TWI_CTL]
 0684:		e3100008 	tst	r0, #8
 0688:		0afffff5 	beq	l_0664
 l_068c:		e3530000 	cmp	r3, #0
@@ -43017,7 +43017,7 @@ l_069c:		e59f0b44 	ldr	r0, [0x11e8]
 06a0:		e280500c 	add	r5, r0, #12
 06a4:		e5955000 	ldr	r5, [r5]
 06a8:		e7900105 	ldr	r0, [r0, r5, lsl #2]
-06ac:		e5904010 	ldr	r4, [r0, #16]
+06ac:		e5904010 	ldr	r4, [r0, #TWI_STATUS]
 06b0:		e3510000 	cmp	r1, #0
 06b4:		1a000003 	bne	l_06c8
 06b8:		e3540018 	cmp	r4, #24
@@ -43040,18 +43040,18 @@ f_06e0:
 06f4:		e284500c 	add	r5, r4, #12
 06f8:		e5955000 	ldr	r5, [r5]
 06fc:		e7944105 	ldr	r4, [r4, r5, lsl #2]
-0700:		e5840008 	str	r0, [r4, #8]
+0700:		e5840008 	str	r0, [r4, #TWI_DATA]
 0704:		e59f0adc 	ldr	r0, [0x11e8]
 0708:		e280400c 	add	r4, r0, #12
 070c:		e5944000 	ldr	r4, [r4]
 0710:		e7900104 	ldr	r0, [r0, r4, lsl #2]
-0714:		e590000c 	ldr	r0, [r0, #12]
+0714:		e590000c 	ldr	r0, [r0, #TWI_CTL]
 0718:		e20040f7 	and	r4, r0, #0xf7
 071c:		e59f0ac4 	ldr	r0, [0x11e8]
 0720:		e280500c 	add	r5, r0, #12
 0724:		e5955000 	ldr	r5, [r5]
 0728:		e7900105 	ldr	r0, [r0, r5, lsl #2]
-072c:		e580400c 	str	r4, [r0, #12]
+072c:		e580400c 	str	r4, [r0, #TWI_CTL]
 0730:		e320f000 	nop	{0}
 l_0734:		e1b00003 	movs	r0, r3
 0738:		e2433001 	sub	r3, r3, #1
@@ -43060,7 +43060,7 @@ l_0734:		e1b00003 	movs	r0, r3
 0744:		e280400c 	add	r4, r0, #12
 0748:		e5944000 	ldr	r4, [r4]
 074c:		e7900104 	ldr	r0, [r0, r4, lsl #2]
-0750:		e590000c 	ldr	r0, [r0, #12]
+0750:		e590000c 	ldr	r0, [r0, #TWI_CTL]
 0754:		e3100008 	tst	r0, #8
 0758:		0afffff5 	beq	l_0734
 l_075c:		e3530000 	cmp	r3, #0
@@ -43071,7 +43071,7 @@ l_076c:		e59f0a74 	ldr	r0, [0x11e8]
 0770:		e280400c 	add	r4, r0, #12
 0774:		e5944000 	ldr	r4, [r4]
 0778:		e7900104 	ldr	r0, [r0, r4, lsl #2]
-077c:		e5902010 	ldr	r2, [r0, #16]
+077c:		e5902010 	ldr	r2, [r0, #TWI_STATUS]
 0780:		e3520028 	cmp	r2, #40	; 0x28
 0784:		0a000001 	beq	l_0790
 0788:		e3e00000 	mvn	r0, #0
@@ -43089,13 +43089,13 @@ f_0798:
 07b0:		e280600c 	add	r6, r0, #12
 07b4:		e5966000 	ldr	r6, [r6]
 07b8:		e7900106 	ldr	r0, [r0, r6, lsl #2]
-07bc:		e590000c 	ldr	r0, [r0, #12]
+07bc:		e590000c 	ldr	r0, [r0, #TWI_CTL]
 07c0:		e20000f7 	and	r0, r0, #0xf7
 07c4:		e59f6a1c 	ldr	r6, [0x11e8]
 07c8:		e286700c 	add	r7, r6, #12
 07cc:		e5977000 	ldr	r7, [r7]
 07d0:		e7966107 	ldr	r6, [r6, r7, lsl #2]
-07d4:		e586000c 	str	r0, [r6, #12]
+07d4:		e586000c 	str	r0, [r6, #TWI_CTL]
 07d8:		e320f000 	nop	{0}
 l_07dc:		e1b00004 	movs	r0, r4
 07e0:		e2444001 	sub	r4, r4, #1
@@ -43104,7 +43104,7 @@ l_07dc:		e1b00004 	movs	r0, r4
 07ec:		e280600c 	add	r6, r0, #12
 07f0:		e5966000 	ldr	r6, [r6]
 07f4:		e7900106 	ldr	r0, [r0, r6, lsl #2]
-07f8:		e590000c 	ldr	r0, [r0, #12]
+07f8:		e590000c 	ldr	r0, [r0, #TWI_CTL]
 07fc:		e3100008 	tst	r0, #8
 0800:		0afffff5 	beq	l_07dc
 l_0804:		e3540000 	cmp	r4, #0
@@ -43120,13 +43120,13 @@ l_0820:		e3540064 	cmp	r4, #100	; 0x64
 082c:		e280600c 	add	r6, r0, #12
 0830:		e5966000 	ldr	r6, [r6]
 0834:		e7900106 	ldr	r0, [r0, r6, lsl #2]
-0838:		e5900008 	ldr	r0, [r0, #8]
+0838:		e5900008 	ldr	r0, [r0, #TWI_DATA]
 083c:		e5c20000 	strb	r0, [r2]
 0840:		e59f09a0 	ldr	r0, [0x11e8]
 0844:		e280600c 	add	r6, r0, #12
 0848:		e5966000 	ldr	r6, [r6]
 084c:		e7900106 	ldr	r0, [r0, r6, lsl #2]
-0850:		e5903010 	ldr	r3, [r0, #16]
+0850:		e5903010 	ldr	r3, [r0, #TWI_STATUS]
 0854:		e3530058 	cmp	r3, #88	; 0x58
 0858:		0a000074 	beq	l_0a30
 085c:		e3e00000 	mvn	r0, #0
@@ -43138,14 +43138,14 @@ l_086c:		e30f4fff 	movw	r4, #65535	; 0xffff
 0874:		e280600c 	add	r6, r0, #12
 0878:		e5966000 	ldr	r6, [r6]
 087c:		e7900106 	ldr	r0, [r0, r6, lsl #2]
-0880:		e590000c 	ldr	r0, [r0, #12]
+0880:		e590000c 	ldr	r0, [r0, #TWI_CTL]
 0884:		e20030f7 	and	r3, r0, #0xf7
 0888:		e3833004 	orr	r3, r3, #4
 088c:		e59f0954 	ldr	r0, [0x11e8]
 0890:		e280600c 	add	r6, r0, #12
 0894:		e5966000 	ldr	r6, [r6]
 0898:		e7900106 	ldr	r0, [r0, r6, lsl #2]
-089c:		e580300c 	str	r3, [r0, #12]
+089c:		e580300c 	str	r3, [r0, #TWI_CTL]
 08a0:		e320f000 	nop	{0}
 l_08a4:		e1b00004 	movs	r0, r4
 08a8:		e2444001 	sub	r4, r4, #1
@@ -43154,7 +43154,7 @@ l_08a4:		e1b00004 	movs	r0, r4
 08b4:		e280600c 	add	r6, r0, #12
 08b8:		e5966000 	ldr	r6, [r6]
 08bc:		e7900106 	ldr	r0, [r0, r6, lsl #2]
-08c0:		e590000c 	ldr	r0, [r0, #12]
+08c0:		e590000c 	ldr	r0, [r0, #TWI_CTL]
 08c4:		e3100008 	tst	r0, #8
 08c8:		0afffff5 	beq	l_08a4
 l_08cc:		e3540000 	cmp	r4, #0
@@ -43171,7 +43171,7 @@ l_08e8:		e3540064 	cmp	r4, #100	; 0x64
 08f8:		e280600c 	add	r6, r0, #12
 08fc:		e5966000 	ldr	r6, [r6]
 0900:		e7900106 	ldr	r0, [r0, r6, lsl #2]
-0904:		e5900008 	ldr	r0, [r0, #8]
+0904:		e5900008 	ldr	r0, [r0, #TWI_DATA]
 0908:		e7c20005 	strb	r0, [r2, r5]
 090c:		e320f000 	nop	{0}
 l_0910:		e1b00004 	movs	r0, r4
@@ -43181,7 +43181,7 @@ l_0910:		e1b00004 	movs	r0, r4
 0920:		e280600c 	add	r6, r0, #12
 0924:		e5966000 	ldr	r6, [r6]
 0928:		e7900106 	ldr	r0, [r0, r6, lsl #2]
-092c:		e5900010 	ldr	r0, [r0, #16]
+092c:		e5900010 	ldr	r0, [r0, #TWI_STATUS]
 0930:		e3500050 	cmp	r0, #80	; 0x50
 0934:		1afffff5 	bne	l_0910
 l_0938:		e3540000 	cmp	r4, #0
@@ -43197,13 +43197,13 @@ l_094c:		e2410001 	sub	r0, r1, #1
 0960:		e280600c 	add	r6, r0, #12
 0964:		e5966000 	ldr	r6, [r6]
 0968:		e7900106 	ldr	r0, [r0, r6, lsl #2]
-096c:		e590000c 	ldr	r0, [r0, #12]
+096c:		e590000c 	ldr	r0, [r0, #TWI_CTL]
 0970:		e20000f3 	and	r0, r0, #0xf3
 0974:		e59f686c 	ldr	r6, [0x11e8]
 0978:		e286700c 	add	r7, r6, #12
 097c:		e5977000 	ldr	r7, [r7]
 0980:		e7966107 	ldr	r6, [r6, r7, lsl #2]
-0984:		e586000c 	str	r0, [r6, #12]
+0984:		e586000c 	str	r0, [r6, #TWI_CTL]
 0988:		e320f000 	nop	{0}
 l_098c:		e1b00004 	movs	r0, r4
 0990:		e2444001 	sub	r4, r4, #1
@@ -43212,7 +43212,7 @@ l_098c:		e1b00004 	movs	r0, r4
 099c:		e280600c 	add	r6, r0, #12
 09a0:		e5966000 	ldr	r6, [r6]
 09a4:		e7900106 	ldr	r0, [r0, r6, lsl #2]
-09a8:		e590000c 	ldr	r0, [r0, #12]
+09a8:		e590000c 	ldr	r0, [r0, #TWI_CTL]
 09ac:		e3100008 	tst	r0, #8
 09b0:		0afffff5 	beq	l_098c
 l_09b4:		e3540000 	cmp	r4, #0
@@ -43228,7 +43228,7 @@ l_09d0:		e3540064 	cmp	r4, #100	; 0x64
 09dc:		e280600c 	add	r6, r0, #12
 09e0:		e5966000 	ldr	r6, [r6]
 09e4:		e7900106 	ldr	r0, [r0, r6, lsl #2]
-09e8:		e5900008 	ldr	r0, [r0, #8]
+09e8:		e5900008 	ldr	r0, [r0, #TWI_DATA]
 09ec:		e2416001 	sub	r6, r1, #1
 09f0:		e7c20006 	strb	r0, [r2, r6]
 09f4:		e320f000 	nop	{0}
@@ -43239,7 +43239,7 @@ l_09f8:		e1b00004 	movs	r0, r4
 0a08:		e280600c 	add	r6, r0, #12
 0a0c:		e5966000 	ldr	r6, [r6]
 0a10:		e7900106 	ldr	r0, [r0, r6, lsl #2]
-0a14:		e5900010 	ldr	r0, [r0, #16]
+0a14:		e5900010 	ldr	r0, [r0, #TWI_STATUS]
 0a18:		e3500058 	cmp	r0, #88	; 0x58
 0a1c:		1afffff5 	bne	l_09f8
 l_0a20:		e3540000 	cmp	r4, #0
@@ -43261,18 +43261,18 @@ l_0a4c:		e30f3fff 	movw	r3, #65535	; 0xffff
 0a58:		e285600c 	add	r6, r5, #12
 0a5c:		e5966000 	ldr	r6, [r6]
 0a60:		e7955106 	ldr	r5, [r5, r6, lsl #2]
-0a64:		e5850008 	str	r0, [r5, #8]
+0a64:		e5850008 	str	r0, [r5, #TWI_DATA]
 0a68:		e59f0778 	ldr	r0, [0x11e8]
 0a6c:		e280500c 	add	r5, r0, #12
 0a70:		e5955000 	ldr	r5, [r5]
 0a74:		e7900105 	ldr	r0, [r0, r5, lsl #2]
-0a78:		e590000c 	ldr	r0, [r0, #12]
+0a78:		e590000c 	ldr	r0, [r0, #TWI_CTL]
 0a7c:		e20050f7 	and	r5, r0, #0xf7
 0a80:		e59f0760 	ldr	r0, [0x11e8]
 0a84:		e280600c 	add	r6, r0, #12
 0a88:		e5966000 	ldr	r6, [r6]
 0a8c:		e7900106 	ldr	r0, [r0, r6, lsl #2]
-0a90:		e580500c 	str	r5, [r0, #12]
+0a90:		e580500c 	str	r5, [r0, #TWI_CTL]
 0a94:		e320f000 	nop	{0}
 l_0a98:		e1b00003 	movs	r0, r3
 0a9c:		e2433001 	sub	r3, r3, #1
@@ -43281,7 +43281,7 @@ l_0a98:		e1b00003 	movs	r0, r3
 0aa8:		e280500c 	add	r5, r0, #12
 0aac:		e5955000 	ldr	r5, [r5]
 0ab0:		e7900105 	ldr	r0, [r0, r5, lsl #2]
-0ab4:		e590000c 	ldr	r0, [r0, #12]
+0ab4:		e590000c 	ldr	r0, [r0, #TWI_CTL]
 0ab8:		e3100008 	tst	r0, #8
 0abc:		0afffff5 	beq	l_0a98
 l_0ac0:		e3530000 	cmp	r3, #0
@@ -43297,7 +43297,7 @@ l_0ad8:		e1b00003 	movs	r0, r3
 0ae8:		e280500c 	add	r5, r0, #12
 0aec:		e5955000 	ldr	r5, [r5]
 0af0:		e7900105 	ldr	r0, [r0, r5, lsl #2]
-0af4:		e5900010 	ldr	r0, [r0, #16]
+0af4:		e5900010 	ldr	r0, [r0, #TWI_STATUS]
 0af8:		e3500028 	cmp	r0, #40	; 0x28
 0afc:		1afffff5 	bne	l_0ad8
 l_0b00:		e3530000 	cmp	r3, #0
@@ -43338,14 +43338,14 @@ f_0b74:
 0b7c:		e280300c 	add	r3, r0, #12
 0b80:		e5933000 	ldr	r3, [r3]
 0b84:		e7900103 	ldr	r0, [r0, r3, lsl #2]
-0b88:		e590000c 	ldr	r0, [r0, #12]
+0b88:		e590000c 	ldr	r0, [r0, #TWI_CTL]
 0b8c:		e20000c0 	and	r0, r0, #0xc0
 0b90:		e3802010 	orr	r2, r0, #16
 0b94:		e59f064c 	ldr	r0, [0x11e8]
 0b98:		e280300c 	add	r3, r0, #12
 0b9c:		e5933000 	ldr	r3, [r3]
 0ba0:		e7900103 	ldr	r0, [r0, r3, lsl #2]
-0ba4:		e580200c 	str	r2, [r0, #12]
+0ba4:		e580200c 	str	r2, [r0, #TWI_CTL]
 0ba8:		e320f000 	nop	{0}
 l_0bac:		e1b00001 	movs	r0, r1
 0bb0:		e2411001 	sub	r1, r1, #1
@@ -43354,7 +43354,7 @@ l_0bac:		e1b00001 	movs	r0, r1
 0bbc:		e280300c 	add	r3, r0, #12
 0bc0:		e5933000 	ldr	r3, [r3]
 0bc4:		e7900103 	ldr	r0, [r0, r3, lsl #2]
-0bc8:		e590000c 	ldr	r0, [r0, #12]
+0bc8:		e590000c 	ldr	r0, [r0, #TWI_CTL]
 0bcc:		e3100010 	tst	r0, #16
 0bd0:		1afffff5 	bne	l_0bac
 l_0bd4:		e3510000 	cmp	r1, #0
@@ -43370,14 +43370,14 @@ l_0bec:		e1b00001 	movs	r0, r1
 0bfc:		e280300c 	add	r3, r0, #12
 0c00:		e5933000 	ldr	r3, [r3]
 0c04:		e7900103 	ldr	r0, [r0, r3, lsl #2]
-0c08:		e5900010 	ldr	r0, [r0, #16]
+0c08:		e5900010 	ldr	r0, [r0, #TWI_STATUS]
 0c0c:		e35000f8 	cmp	r0, #248	; 0xf8
 0c10:		1afffff5 	bne	l_0bec
 l_0c14:		e59f05cc 	ldr	r0, [0x11e8]
 0c18:		e280300c 	add	r3, r0, #12
 0c1c:		e5933000 	ldr	r3, [r3]
 0c20:		e7900103 	ldr	r0, [r0, r3, lsl #2]
-0c24:		e5902010 	ldr	r2, [r0, #16]
+0c24:		e5902010 	ldr	r2, [r0, #TWI_STATUS]
 0c28:		e35200f8 	cmp	r2, #248	; 0xf8
 0c2c:		0a000001 	beq	l_0c38
 0c30:		e3e00000 	mvn	r0, #0
@@ -43440,19 +43440,19 @@ l_0d04:		e1870186 	orr	r0, r7, r6, lsl #3
 0d0c:		e281200c 	add	r2, r1, #12
 0d10:		e5922000 	ldr	r2, [r2]
 0d14:		e7911102 	ldr	r1, [r1, r2, lsl #2]
-0d18:		e5810014 	str	r0, [r1, #20]
+0d18:		e5810014 	str	r0, [r1, #TWI_CLKCR]
 0d1c:		e3a00040 	mov	r0, #64	; 0x40
 0d20:		e59f14c0 	ldr	r1, [0x11e8]
 0d24:		e281200c 	add	r2, r1, #12
 0d28:		e5922000 	ldr	r2, [r2]
 0d2c:		e7911102 	ldr	r1, [r1, r2, lsl #2]
-0d30:		e581000c 	str	r0, [r1, #12]
+0d30:		e581000c 	str	r0, [r1, #TWI_CTL]
 0d34:		e3a00000 	mov	r0, #0
 0d38:		e59f14a8 	ldr	r1, [0x11e8]
 0d3c:		e281200c 	add	r2, r1, #12
 0d40:		e5922000 	ldr	r2, [r2]
 0d44:		e7911102 	ldr	r1, [r1, r2, lsl #2]
-0d48:		e581001c 	str	r0, [r1, #28]
+0d48:		e581001c 	str	r0, [r1, #TWI_ERR]
 0d4c:		e8bd8ff8 	pop	{r3, r4, r5, r6, r7, r8, r9, sl, fp, pc}
 
 standby_0d50:
@@ -43486,13 +43486,13 @@ standby_0d50:
 0dbc:		e281200c 	add	r2, r1, #12
 0dc0:		e5922000 	ldr	r2, [r2]
 0dc4:		e7911102 	ldr	r1, [r1, r2, lsl #2]
-0dc8:		e5810018 	str	r0, [r1, #24]
+0dc8:		e5810018 	str	r0, [r1, #TWI_RESET]
 0dcc:		e320f000 	nop	{0}
 l_0dd0:		e59f0410 	ldr	r0, [0x11e8]
 0dd4:		e280100c 	add	r1, r0, #12
 0dd8:		e5911000 	ldr	r1, [r1]
 0ddc:		e7900101 	ldr	r0, [r0, r1, lsl #2]
-0de0:		e5900018 	ldr	r0, [r0, #24]
+0de0:		e5900018 	ldr	r0, [r0, #TWI_RESET]
 0de4:		e3500000 	cmp	r0, #0
 0de8:		0a000002 	beq	l_0df8
 0dec:		e1b00007 	movs	r0, r7
@@ -43544,7 +43544,7 @@ l_0e8c:		e59f0354 	ldr	r0, [0x11e8]
 0e90:		e280100c 	add	r1, r0, #12
 0e94:		e5911000 	ldr	r1, [r1]
 0e98:		e7900101 	ldr	r0, [r0, r1, lsl #2]
-0e9c:		e580501c 	str	r5, [r0, #28]
+0e9c:		e580501c 	str	r5, [r0, #TWI_ERR]
 0ea0:		ebfffd7f 	bl	f_04a4
 0ea4:		e3500000 	cmp	r0, #0
 0ea8:		0a000001 	beq	l_0eb4
@@ -43632,7 +43632,7 @@ f_0fcc:
 0fe4:		e281200c 	add	r2, r1, #12
 0fe8:		e5922000 	ldr	r2, [r2]
 0fec:		e7911102 	ldr	r1, [r1, r2, lsl #2]
-0ff0:		e581001c 	str	r0, [r1, #28]
+0ff0:		e581001c 	str	r0, [r1, #TWI_ERR]
 0ff4:		ebfffd2a 	bl	f_04a4
 0ff8:		e3500000 	cmp	r0, #0
 0ffc:		0a000001 	beq	l_1008
