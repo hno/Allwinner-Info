@@ -1,4 +1,4 @@
-0x03    R 0x21	?????
+0x03    R 0x21	Chip version
 
 0xb8=0x80	Coulomb Counter Control = Enable
 0x00    R 0xc0	PowerInputStatus is ACIN && AC Usable
