@@ -29,15 +29,15 @@ ffff406c:	e3003333 	movw	r3, #819	; 0x333
 ffff4070:	e1c22003 	bic	r2, r2, r3
 ffff4074:	e3a03000 	mov	r3, #0
 ffff4078:	e1822003 	orr	r2, r2, r3
-ffff407c:	e5812054 	str	r2, [r1, #84]	; 0x54	# 0x01c20084
-ffff4080:	e5912060 	ldr	r2, [r1, #96]	; 0x60	# 0x01c20096
+ffff407c:	e5812054 	str	r2, [r1, #84]	; 0x54	# 0x01c20054
+ffff4080:	e5912060 	ldr	r2, [r1, #96]	; 0x60	# 0x01c20060
 ffff4084:	e3a03040 	mov	r3, #64	; 0x40
 ffff4088:	e1822003 	orr	r2, r2, r3
-ffff408c:	e5812060 	str	r2, [r1, #96]	; 0x60  # 0x01c20096
-ffff4090:	e5912068 	ldr	r2, [r1, #104]	; 0x68	# 0x01c20104
+ffff408c:	e5812060 	str	r2, [r1, #96]	; 0x60  # 0x01c20060
+ffff4090:	e5912068 	ldr	r2, [r1, #104]	; 0x68	# 0x01c20068
 ffff4094:	e3a03020 	mov	r3, #32
 ffff4098:	e1822003 	orr	r2, r2, r3
-ffff409c:	e5812068 	str	r2, [r1, #104]	; 0x68	# 0x01c20104
+ffff409c:	e5812068 	str	r2, [r1, #104]	; 0x68	# 0x01c20068
 ffff40a0:	e3a0d902 	mov	sp, #32768	; 0x8000
 ffff40a4:	eb000002 	bl	boot
 ffff40a8:	eafffffe 	b	0xffff40a8
