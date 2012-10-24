@@ -1395,12 +1395,22 @@ ffff550c:	1afffff6 	bne	0xffff54ec
 ffff5510:	e3a00002 	mov	r0, #2
 ffff5514:	eafffff9 	b	0xffff5500
 
-f_5518:
+
+int nand_wait_cmd_finish(int timeout)
+{
+	do {
+		if (readl(&nfc->st) & NFC_ST_CMD_INT_FLAG)
+			return 0;
+	} while (--timeout);
+	return 2;
+}
+
+nand_wait_cmd_finish:
 ffff5518:	e1a01000 	mov	r1, r0
 ffff551c:	e320f000 	nop	{0}
 ffff5520:	e59f0424 	ldr	r0, =0x01c03000
-ffff5524:	e5900004 	ldr	r0, [r0, #4]
-ffff5528:	e3100002 	tst	r0, #2
+ffff5524:	e5900004 	ldr	r0, [r0, #4]	;	NANDC_ST
+ffff5528:	e3100002 	tst	r0, #2		; 	NFC_ST_CMD_INT_FLAG
 ffff552c:	0a000001 	beq	0xffff5538
 ffff5530:	e3a00000 	mov	r0, #0
 ffff5534:	e12fff1e 	bx	lr
@@ -1410,12 +1420,21 @@ ffff5540:	1afffff6 	bne	0xffff5520
 ffff5544:	e3a00002 	mov	r0, #2
 ffff5548:	eafffff9 	b	0xffff5534
 
-f_554c:
+int nant_waid_cmd_fifo_free(int timeout)
+{
+	do {
+		if (readl(&nfc->st) & NFC_ST_CMD_FIFO_FLAG)
+			return 0;
+	} while(--timeout);
+	return 2;
+}
+
+nand_wait_cmd_fifo_free:
 ffff554c:	e1a01000 	mov	r1, r0
 ffff5550:	e320f000 	nop	{0}
 ffff5554:	e59f03f0 	ldr	r0, =0x01c03000
-ffff5558:	e5900004 	ldr	r0, [r0, #4]
-ffff555c:	e3100008 	tst	r0, #8
+ffff5558:	e5900004 	ldr	r0, [r0, #4]	;	NANDC_ST
+ffff555c:	e3100008 	tst	r0, #8		;	NFC_ST_CMD_FIFO_FLAG
 ffff5560:	1a000001 	bne	0xffff556c
 ffff5564:	e3a00000 	mov	r0, #0
 ffff5568:	e12fff1e 	bx	lr
@@ -1431,13 +1450,13 @@ ffff5584:	e1a04000 	mov	r4, r0
 ffff5588:	e1a05001 	mov	r5, r1
 ffff558c:	e1a06002 	mov	r6, r2
 ffff5590:	e1a00004 	mov	r0, r4
-ffff5594:	ebffffec 	bl	f_554c
+ffff5594:	ebffffec 	bl	nand_wait_cmd_fifo_free
 ffff5598:	e3500002 	cmp	r0, #2
 ffff559c:	1a000001 	bne	0xffff55a8
 ffff55a0:	e3a00002 	mov	r0, #2
 ffff55a4:	e8bd8070 	pop	{r4, r5, r6, pc}
 ffff55a8:	e1a00005 	mov	r0, r5
-ffff55ac:	ebffffd9 	bl	f_5518
+ffff55ac:	ebffffd9 	bl	nand_wait_cmd_finish
 ffff55b0:	e3500002 	cmp	r0, #2
 ffff55b4:	1a000001 	bne	0xffff55c0
 ffff55b8:	e3a00002 	mov	r0, #2
@@ -1451,19 +1470,29 @@ ffff55d4:	eafffff2 	b	0xffff55a4
 ffff55d8:	e3a00000 	mov	r0, #0
 ffff55dc:	eafffff0 	b	0xffff55a4
 
-f_55e0:
+int nand_reset_chip(void)
+{
+	writel(&nfc->cmd, NAND_CMD_RESET | NFC_CMD_SEND_CMD1 | NFC_CMD_WAIT_FLAG);
+	if (nand_wait_cmd_fifo_free(4800) == 2)
+		return 2;
+	if (nand_wait_cmd_finish(4920) == 2)
+		return 2;
+	return 0;
+
+}
+nand_reset_chip:
 ffff55e0:	e92d4010 	push	{r4, lr}
-ffff55e4:	e59f0364 	ldr	r0, =0x00c000ff
+ffff55e4:	e59f0364 	ldr	r0, =0x00c000ff			 CMD=0x00ff(RESET), SEND_CMD1, WAIT_FLAG RB
 ffff55e8:	e59f135c 	ldr	r1, =0x01c03000
-ffff55ec:	e5810024 	str	r0, [r1, #36]	; 0x24
+ffff55ec:	e5810024 	str	r0, [r1, #36]	; 0x24		 NFC_CMD
 ffff55f0:	e3a00d4b 	mov	r0, #4800	; 0x12c0
-ffff55f4:	ebffffd4 	bl	f_554c
+ffff55f4:	ebffffd4 	bl	nand_wait_cmd_fifo_free
 ffff55f8:	e3500002 	cmp	r0, #2
 ffff55fc:	1a000001 	bne	0xffff5608
 ffff5600:	e3a00002 	mov	r0, #2
 ffff5604:	e8bd8010 	pop	{r4, pc}
 ffff5608:	e3010338 	movw	r0, #4920	; 0x1338
-ffff560c:	ebffffc1 	bl	f_5518
+ffff560c:	ebffffc1 	bl	nand_wait_cmd_finish
 ffff5610:	e3500002 	cmp	r0, #2
 ffff5614:	1a000001 	bne	0xffff5620
 ffff5618:	e3a00002 	mov	r0, #2
@@ -1494,7 +1523,7 @@ ffff5670:	ebffff8d 	bl	f_54ac
 ffff5674:	e59f02d0 	ldr	r0, =0x01c03000
 ffff5678:	e580701c 	str	r7, [r0, #28]
 ffff567c:	e1a00009 	mov	r0, r9
-ffff5680:	ebffffb1 	bl	f_554c
+ffff5680:	ebffffb1 	bl	nand_wait_cmd_fifo_free
 ffff5684:	e3500002 	cmp	r0, #2
 ffff5688:	1a000006 	bne	0xffff56a8
 ffff568c:	e59f02ac 	ldr	r0, =0x01c02000
@@ -1516,7 +1545,7 @@ ffff56c8:	e2860003 	add	r0, r6, #3
 ffff56cc:	e59f1284 	ldr	r1, =0x87e80000
 ffff56d0:	e1810800 	orr	r0, r1, r0, lsl #16
 ffff56d4:	e59f1270 	ldr	r1, =0x01c03000
-ffff56d8:	e5810024 	str	r0, [r1, #36]	; 0x24
+ffff56d8:	e5810024 	str	r0, [r1, #36]	; 0x24	NFC_CMD
 ffff56dc:	e1a0200a 	mov	r2, sl
 ffff56e0:	e1a0100a 	mov	r1, sl
 ffff56e4:	e1a0000a 	mov	r0, sl
@@ -1574,7 +1603,7 @@ ffff57a8:	ebffff3f 	bl	f_54ac
 ffff57ac:	e59f0198 	ldr	r0, =0x01c03000
 ffff57b0:	e580701c 	str	r7, [r0, #28]
 ffff57b4:	e1a00009 	mov	r0, r9
-ffff57b8:	ebffff63 	bl	f_554c
+ffff57b8:	ebffff63 	bl	nand_wait_cmd_fifo_free
 ffff57bc:	e3500002 	cmp	r0, #2
 ffff57c0:	1a000006 	bne	0xffff57e0
 ffff57c4:	e59f0174 	ldr	r0, =0x01c02000
@@ -1825,7 +1854,7 @@ ffff5b68:	ebffff8c 	bl	f_59a0
 ffff5b6c:	e5940008 	ldr	r0, [r4, #8]
 ffff5b70:	e3500000 	cmp	r0, #0
 ffff5b74:	0a000000 	beq	0xffff5b7c
-ffff5b78:	ebfffe98 	bl	f_55e0
+ffff5b78:	ebfffe98 	bl	nand_reset_chip
 ffff5b7c:	e594001c 	ldr	r0, [r4, #28]
 ffff5b80:	e5942020 	ldr	r2, [r4, #32]
 ffff5b84:	e5941024 	ldr	r1, [r4, #36]	; 0x24
