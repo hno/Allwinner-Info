@@ -62,6 +62,36 @@ Disassembly of section .data:
      138:	 GPIO 14   : port=C14, sel=2, pull=255, drv=255, data=255, reserved=00,00
      140:	 GPIO 15   : port=C15, sel=2, pull=255, drv=255, data=255, reserved=00,00
      148:	 GPIO 16   : port=C19, sel=2, pull=255, drv=255, data=255, reserved=00,00
++00? __u8        ChipCnt = 1;                        //the count of the total nand flash chips are currently connecting on the CE pin^M
++02? __u16       ChipConnectInfo = 0x0001;           //chip connect information, bit == 1 means there is a chip connecting on the CE pin^M
++    __u8        RbCnt;
++    __u8        RbConnectInfo;                      //the connect  information of the all rb  chips are connected^M
++    __u8        RbConnectMode;                      //the rb connect  mode^M
++    __u8        BankCntPerChip;                     //the count of the banks in one nand chip, multiple banks can support Inter-Leave^M
++    __u8        DieCntPerChip;                      //the count of the dies in one nand chip, block management is based on Die^M
++    __u8        PlaneCntPerDie;                     //the count of planes in one die, multiple planes can support multi-plane operation^M
++    __u8        SectorCntPerPage;                   //the count of sectors in one single physic page, one sector is 0.5k^M
++    __u16       PageCntPerPhyBlk;                   //the count of physic pages in one physic block^M
++    __u16       BlkCntPerDie;                       //the count of the physic blocks in one die, include valid block and invalid block^M
++    __u16       OperationOpt;                       //the mask of the operation types which current nand flash can support support^M
++    __u8        FrequencePar;                       //the parameter of the hardware access clock, based on 'MHz'^M
++    __u8        EccMode;                            //the Ecc Mode for the nand flash chip, 0: bch-16, 1:bch-28, 2:bch_32   ^M
++14  __u8        NandChipId[8];                      //the nand chip id of current connecting nand chip^M
++1c  __u16       ValidBlkRatio;                      //the ratio of the valid physical blocks, based on 1024^M
++    __u32       ReadRetryType;                      //the read retry type^M
++    __u32       DDRType;^M
++    struct __OptionalPhyOpPar_t {^M
++    __u8        MultiPlaneReadCmd[2];               //the command for multi-plane read, the sequence is [0] -ADDR- [0] -ADDR- [1] - DATA^M
++    __u8        MultiPlaneWriteCmd[2];              //the command for multi-plane program, the sequence is 80 -ADDR- DATA - [0] - [1] -ADDR- DATA - 10/15^M
++    __u8        MultiPlaneCopyReadCmd[3];           //the command for multi-plane page copy-back read, the sequence is [0] -ADDR- [1] -ADDR- [2]^M
++    __u8        MultiPlaneCopyWriteCmd[3];          //the command for multi-plane page copy-back program, the sequence is [0] -ADDR- [1] - [2] -ADDR- 10^M
++    __u8        MultiPlaneStatusCmd;                //the command for multi-plane operation status read, the command may be 0x70/0x71/0x78/...^M
++    __u8        InterBnk0StatusCmd;                 //the command for inter-leave bank0 operation status read, the command may be 0xf1/0x78/...^M
++    __u8        InterBnk1StatusCmd;                 //the command for inter-leave bank1 operation status read, the command may be 0xf2/0x78/...^M
++    __u8        BadBlockFlagPosition;               //the flag that marks the position of the bad block flag,0x00-1stpage/ 0x01-1st&2nd page/ 0x02-last page/ 0x03-last 2 page^M
++    __u16       MultiPlaneBlockOffset;              //the value of the block number offset between the left-plane block and the right pane block^M
++} OptPhyOpPar;        //the parameters for some optional operation^M
+                             0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
      1c8:	 DATA 00  : 01 00 01 00 01 01 01 01 01 02 10 00 00 01 00 08
      1d8:	 DATA 10  : 88 01 0f 03 ad d7 94 da ff ff ff ff b6 03 00 00
      1e8:	 DATA 20  : b6 03 00 00 04 06 01 00 00 00 00 00 00 00 00 00

@@ -47,39 +47,39 @@ ffff40b4:	e92d4010 	push	{r4, lr}
 ffff40b8:	eb0008b1 	bl	check_uboot
 ffff40bc:	e1a04000 	mov	r4, r0
 ffff40c0:	e3540000 	cmp	r4, #0
-ffff40c4:	0a000000 	beq	.check_boot_MMC0
+ffff40c4:	0a000000 	beq	.try_boot_MMC0
 ffff40c8:	ea000016 	b	.boot_fel
-.check_boot_MMC0:
+.try_boot_MMC0:
 ffff40cc:	e3a00000 	mov	r0, #0
 ffff40d0:	eb0003fa 	bl	load_from_mmc
 ffff40d4:	e1a04000 	mov	r4, r0
 ffff40d8:	e3540000 	cmp	r4, #0
-ffff40dc:	1a000000 	bne	.check_boot_B
+ffff40dc:	1a000000 	bne	.try_boot_B
 ffff40e0:	ea000013 	b	.boot
-.check_boot_B:
+.try_boot_B:
 ffff40e4:	eb0004c9 	bl	f_5410			; NAND?
 ffff40e8:	e1a04000 	mov	r4, r0
 ffff40ec:	e3540000 	cmp	r4, #0
-ffff40f0:	1a000000 	bne	.check_boot_MMC2
+ffff40f0:	1a000000 	bne	.try_boot_MMC2
 ffff40f4:	ea00000e 	b	.boot
-.check_boot_MMC2:
+.try_boot_MMC2:
 ffff40f8:	e3a00002 	mov	r0, #2
 ffff40fc:	eb0003ef 	bl	load_from_mmc
 ffff4100:	e1a04000 	mov	r4, r0
 ffff4104:	e3540000 	cmp	r4, #0
-ffff4108:	1a000000 	bne	.check_boot_D
+ffff4108:	1a000000 	bne	.try_boot_D
 ffff410c:	ea000008 	b	.boot
-.check_boot_D:
+.try_boot_D:
 ffff4110:	eb0006e6 	bl	f_5cb0			; SPI?
 ffff4114:	e1a04000 	mov	r4, r0
 ffff4118:	e3540000 	cmp	r4, #0
 ffff411c:	1a000000 	bne	.none_found
 ffff4120:	ea000003 	b	.boot
+.none_found:
 ffff4124:	e320f000 	nop	{0}
 .boot_fel:
 ffff4128:	e59f0010 	ldr	r0, =0xffff0020
 ffff412c:	eb0008ca 	bl	call_r0
-.none_found
 ffff4130:	e320f000 	nop	{0}
 .boot
 ffff4134:	e3a00000 	mov	r0, #0
@@ -530,7 +530,7 @@ ffff47e8:	e1a05001 	mov	r5, r1
 ffff47ec:	e3a02018 	mov	r2, #24
 ffff47f0:	e59f1318 	ldr	r1, =d_6460
 ffff47f4:	e28d0004 	add	r0, sp, #4
-ffff47f8:	eb0006f6 	bl	f_63d8
+ffff47f8:	eb0006f6 	bl	memcpy
 ffff47fc:	e3a0003c 	mov	r0, #60	; 0x3c
 ffff4800:	e58d0004 	str	r0, [sp, #4]
 ffff4804:	e1a01005 	mov	r1, r5
@@ -1344,10 +1344,10 @@ ffff5454:	e1a05000 	mov	r5, r0
 ffff5458:	e1a04001 	mov	r4, r1
 ffff545c:	e0840104 	add	r0, r4, r4, lsl #2	; r1 * 5
 ffff5460:	e59f2010 	ldr	r2, =d_6478 
-ffff5464:	e0821180 	add	r1, r2, r0, lsl #3	; r1 = r1 * 5 * 8 = r1 * 40
+ffff5464:	e0821180 	add	r1, r2, r0, lsl #3	; r1 = &d_6478 + r1 * 5 * 8 = r1 * 40
 ffff5468:	e3a02028 	mov	r2, #40	; 0x28
 ffff546c:	e1a00005 	mov	r0, r5
-ffff5470:	eb0003d8 	bl	f_63d8
+ffff5470:	eb0003d8 	bl	memcpy
 ffff5474:	e8bd8070 	pop	{r4, r5, r6, pc}
 
 f_547c:
@@ -2382,7 +2382,7 @@ ffff63d0:	eafffffc 	b	0xffff63c8
 
 ffff63d4:	e12fff1e 	bx	lr
 
-f_63d8:
+memcpy:
 ffff63d8:	e92d41f0 	push	{r4, r5, r6, r7, r8, lr}
 ffff63dc:	e2522020 	subs	r2, r2, #32
 ffff63e0:	3a00000d 	bcc	0xffff641c
