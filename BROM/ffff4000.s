@@ -769,39 +769,39 @@ ffff4b7c:	e1a02000 	mov	r2, r0
 ffff4b80:	e3520000 	cmp	r2, #0x0
 ffff4b84:	1a00000b 	bne	0xffff4bb8
 ffff4b88:	e59f0510 	ldr	r0, =0x01c20000
-ffff4b8c:	e5901060 	ldr	r1, [r0, #0x0x60]
-ffff4b90:	e3811c01 	orr	r1, r1, #0x0x100]
-ffff4b94:	e5801060 	str	r1, [r0, #0x0x60]
-ffff4b98:	e3a00102 	mov	r0, #0x0x80000000
+ffff4b8c:	e5901060 	ldr	r1, [r0, #0x60]
+ffff4b90:	e3811c01 	orr	r1, r1, #0x100]
+ffff4b94:	e5801060 	str	r1, [r0, #0x60]
+ffff4b98:	e3a00102 	mov	r0, #0x80000000
 ffff4b9c:	e59f34fc 	ldr	r3, =0x01c20000
-ffff4ba0:	e5830088 	str	r0, [r3, #0x0x88]
+ffff4ba0:	e5830088 	str	r0, [r3, #0x88]
 ffff4ba4:	e59f04f8 	ldr	r0, =0x00222222		; SDC0
-ffff4ba8:	e58308b4 	str	r0, [r3, #0x0x8b4]	; PF_CFG0
-ffff4bac:	e3000555 	movw	r0, #0x0x555
-ffff4bb0:	e58308d0 	str	r0, [r3, #0x0x8d0]	; PF_PULL0
+ffff4ba8:	e58308b4 	str	r0, [r3, #0x8b4]	; PF_CFG0
+ffff4bac:	e3000555 	movw	r0, #0x555
+ffff4bb0:	e58308d0 	str	r0, [r3, #0x8d0]	; PF_PULL0
 ffff4bb4:	ea000015 	b	0xffff4c10
 ffff4bb8:	e3520002 	cmp	r2, #0x2
 ffff4bbc:	1a000013 	bne	0xffff4c10
 ffff4bc0:	e59f04d8 	ldr	r0, =0x01c20000
-ffff4bc4:	e5901060 	ldr	r1, [r0, #0x0x60]
-ffff4bc8:	e3811b01 	orr	r1, r1, #0x0x400
-ffff4bcc:	e5801060 	str	r1, [r0, #0x0x60]
-ffff4bd0:	e3a00102 	mov	r0, #0x0x80000000
+ffff4bc4:	e5901060 	ldr	r1, [r0, #0x60]
+ffff4bc8:	e3811b01 	orr	r1, r1, #0x400
+ffff4bcc:	e5801060 	str	r1, [r0, #0x60]
+ffff4bd0:	e3a00102 	mov	r0, #0x80000000
 ffff4bd4:	e59f34c4 	ldr	r3, =0x01c20000
-ffff4bd8:	e5830090 	str	r0, [r3, #0x0x90]
-ffff4bdc:	e3a00433 	mov	r0, #0x0x33000000		; SDC2
-ffff4be0:	e5830848 	str	r0, [r3, #0x0x848]	; PC_CFG0
-ffff4be4:	e3030333 	movw	r0, #0x0x3333		; SDC2
-ffff4be8:	e583084c 	str	r0, [r3, #0x0x84c]	; PC_CFG1
+ffff4bd8:	e5830090 	str	r0, [r3, #0x90]
+ffff4bdc:	e3a00433 	mov	r0, #0x33000000		; SDC2
+ffff4be0:	e5830848 	str	r0, [r3, #0x848]	; PC_CFG0
+ffff4be4:	e3030333 	movw	r0, #0x3333		; SDC2
+ffff4be8:	e583084c 	str	r0, [r3, #0x84c]	; PC_CFG1
 ffff4bec:	e1c30000 	bic	r0, r3, r0
-ffff4bf0:	e5901864 	ldr	r1, [r0, #0x0x864]	; PC_PULL0
+ffff4bf0:	e5901864 	ldr	r1, [r0, #0x864]	; PC_PULL0
 ffff4bf4:	e1a00001 	mov	r0, r1
 ffff4bf8:	e7d7061f 	bfc	r0, #0xc, #0xc
 ffff4bfc:	e1a01000 	mov	r1, r0
-ffff4c00:	e3811605 	orr	r1, r1, #0x0x500000
-ffff4c04:	e3811a55 	orr	r1, r1, #0x0x55000
+ffff4c00:	e3811605 	orr	r1, r1, #0x500000
+ffff4c04:	e3811a55 	orr	r1, r1, #0x55000
 ffff4c08:	e1a00003 	mov	r0, r3
-ffff4c0c:	e5801864 	str	r1, [r0, #0x0x864]	; PC_PULL0
+ffff4c0c:	e5801864 	str	r1, [r0, #0x864]	; PC_PULL0
 ffff4c10:	e3a00000 	mov	r0, #0x0
 ffff4c14:	e12fff1e 	bx	lr
 
@@ -841,30 +841,30 @@ ffff4c8c:	e1a01000 	mov	r1, r0
 ffff4c90:	e3510000 	cmp	r1, #0x0
 ffff4c94:	1a00000b 	bne	0xffff4cc8
 ffff4c98:	e59f0400 	ldr	r0, =0x01c20000
-ffff4c9c:	e5902060 	ldr	r2, [r0, #0x0x60]
-ffff4ca0:	e3c22c01 	bic	r2, r2, #0x0x100
-ffff4ca4:	e5802060 	str	r2, [r0, #0x0x60]
+ffff4c9c:	e5902060 	ldr	r2, [r0, #0x60]
+ffff4ca0:	e3c22c01 	bic	r2, r2, #0x100
+ffff4ca4:	e5802060 	str	r2, [r0, #0x60]
 ffff4ca8:	e3a00000 	mov	r0, #0x0
 ffff4cac:	e59f33ec 	ldr	r3, =0x01c20000
-ffff4cb0:	e5830088 	str	r0, [r3, #0x0x88]
+ffff4cb0:	e5830088 	str	r0, [r3, #0x88]
 ffff4cb4:	e59f03f0 	ldr	r0, =0x00404044	; JTAG1
-ffff4cb8:	e58308b4 	str	r0, [r3, #0x0x8b4] ; PF_CFG0
+ffff4cb8:	e58308b4 	str	r0, [r3, #0x8b4] ; PF_CFG0
 ffff4cbc:	e3a00000 	mov	r0, #0x0
-ffff4cc0:	e58308d0 	str	r0, [r3, #0x0x8d0] ; PF_PULL0
+ffff4cc0:	e58308d0 	str	r0, [r3, #0x8d0] ; PF_PULL0
 ffff4cc4:	ea00000c 	b	0xffff4cfc
 ffff4cc8:	e3510002 	cmp	r1, #0x2
 ffff4ccc:	1a00000a 	bne	0xffff4cfc
 ffff4cd0:	e59f03c8 	ldr	r0, =0x01c20000
-ffff4cd4:	e5902060 	ldr	r2, [r0, #0x0x60]
-ffff4cd8:	e3c22b01 	bic	r2, r2, #0x0x400]
-ffff4cdc:	e5802060 	str	r2, [r0, #0x0x60]
+ffff4cd4:	e5902060 	ldr	r2, [r0, #0x60]
+ffff4cd8:	e3c22b01 	bic	r2, r2, #0x400]
+ffff4cdc:	e5802060 	str	r2, [r0, #0x60]
 ffff4ce0:	e3a00000 	mov	r0, #0x0
 ffff4ce4:	e59f33b4 	ldr	r3, =0x01c20000
-ffff4ce8:	e5830090 	str	r0, [r3, #0x0x90]
-ffff4cec:	e5830848 	str	r0, [r3, #0x0x848] ; PC_CFG0
-ffff4cf0:	e583084c 	str	r0, [r3, #0x0x84c] ; PC_CFG1
-ffff4cf4:	e3050140 	movw	r0, #0x0x5140
-ffff4cf8:	e5830864 	str	r0, [r3, #0x0x864] ; PC_PULL0
+ffff4ce8:	e5830090 	str	r0, [r3, #0x90]
+ffff4cec:	e5830848 	str	r0, [r3, #0x848] ; PC_CFG0
+ffff4cf0:	e583084c 	str	r0, [r3, #0x84c] ; PC_CFG1
+ffff4cf4:	e3050140 	movw	r0, #0x5140
+ffff4cf8:	e5830864 	str	r0, [r3, #0x864] ; PC_PULL0
 ffff4cfc:	e3a00000 	mov	r0, #0x0
 ffff4d00:	e12fff1e 	bx	lr
 
@@ -1153,7 +1153,7 @@ ffff516c:	0a000000 	beq	0xffff5174
 ffff5170:	ea000028 	b	0xffff5218
 ffff5174:	e3a04000 	mov	r4, #0x0
 ffff5178:	e5946010 	ldr	r6, [r4, #0x10]
-ffff517c:	e3560a06 	cmp	r6, #0x0x6000
+ffff517c:	e3560a06 	cmp	r6, #0x6000
 ffff5180:	8a000003 	bhi	0xffff5194
 ffff5184:	e1a00006 	mov	r0, r6
 ffff5188:	e7df049f 	bfc	r0, #0x9, #0x17
@@ -1380,7 +1380,7 @@ ffff54d8:	e59f2468 	ldr	r2, =0x84000423
 ffff54dc:	e5832300 	str	r2, [r3, #0x300]
 ffff54e0:	e12fff1e 	bx	lr
 
-f_54e4:
+int wait_dma_finished(timeout):
 ffff54e4:	e1a01000 	mov	r1, r0
 ffff54e8:	e320f000 	nop	{0}
 ffff54ec:	e59f044c 	ldr	r0, =0x01c02000
@@ -1420,7 +1420,7 @@ ffff5540:	1afffff6 	bne	0xffff5520
 ffff5544:	e3a00002 	mov	r0, #0x2
 ffff5548:	eafffff9 	b	0xffff5534
 
-int nant_waid_cmd_fifo_free(int timeout)
+int nand_waid_cmd_fifo_free(int timeout)
 {
 	do {
 		if (readl(&nfc->st) & NFC_ST_CMD_FIFO_FLAG)
@@ -1444,7 +1444,8 @@ ffff5574:	1afffff6 	bne	0xffff5554
 ffff5578:	e3a00002 	mov	r0, #0x2
 ffff557c:	eafffff9 	b	0xffff5568
 
-f_5580:
+
+nand_wait_dma_transfer_complete(timeout_fifo,timeout_cmd,timeout_dma):
 ffff5580:	e92d4070 	push	{r4, r5, r6, lr}
 ffff5584:	e1a04000 	mov	r4, r0
 ffff5588:	e1a05001 	mov	r5, r1
@@ -1462,7 +1463,7 @@ ffff55b4:	1a000001 	bne	0xffff55c0
 ffff55b8:	e3a00002 	mov	r0, #0x2
 ffff55bc:	eafffff8 	b	0xffff55a4
 ffff55c0:	e1a00006 	mov	r0, r6
-ffff55c4:	ebffffc6 	bl	f_54e4
+ffff55c4:	ebffffc6 	bl	wait_dma_finished(timeout)
 ffff55c8:	e3500002 	cmp	r0, #0x2
 ffff55cc:	1a000001 	bne	0xffff55d8
 ffff55d0:	e3a00002 	mov	r0, #0x2
@@ -1500,34 +1501,35 @@ ffff561c:	eafffff8 	b	0xffff5604
 ffff5620:	e3a00000 	mov	r0, #0x0
 ffff5624:	eafffff6 	b	0xffff5604
 
-f_5628:
+nand_read_a(a,b,c):
+nand_read_a:
 ffff5628:	e92d47f0 	push	{r4, r5, r6, r7, r8, r9, sl, lr}
 ffff562c:	e1a04000 	mov	r4, r0
 ffff5630:	e1a05001 	mov	r5, r1
 ffff5634:	e1a06002 	mov	r6, r2
 ffff5638:	e59f030c 	ldr	r0, =0x01c03000
 ffff563c:	e5900000 	ldr	r0, [r0]
-ffff5640:	e3800901 	orr	r0, r0, #0x4000
+ffff5640:	e3800901 	orr	r0, r0, #0x4000		; RAM_ACCESS_MODE=DMA
 ffff5644:	e59f1300 	ldr	r1, =0x01c03000
-ffff5648:	e5810000 	str	r0, [r1]
+ffff5648:	e5810000 	str	r0, [r1]		; CTL
 ffff564c:	e3a07001 	mov	r7, #0x1
 ffff5650:	e3019318 	movw	r9, #0x1318
 ffff5654:	e3a00016 	mov	r0, #0x16
 ffff5658:	e1600087 	smulbb	r0, r7, r0
 ffff565c:	e280ad4b 	add	sl, r0, #0x12c0
 ffff5660:	e59f02ec 	ldr	r0, =0x00e00530
-ffff5664:	e5810028 	str	r0, [r1, #0x28]
+ffff5664:	e5810028 	str	r0, [r1, #0x28]		; RCMD_SET = RCMD0=05, RCMD1=E0, CMD2=30
 ffff5668:	e3a01b01 	mov	r1, #0x400
 ffff566c:	e1a00005 	mov	r0, r5
 ffff5670:	ebffff8d 	bl	f_54ac
 ffff5674:	e59f02d0 	ldr	r0, =0x01c03000
-ffff5678:	e580701c 	str	r7, [r0, #0x1c]
+ffff5678:	e580701c 	str	r7, [r0, #0x1c]		; SECTOR_NUM=?
 ffff567c:	e1a00009 	mov	r0, r9
 ffff5680:	ebffffb1 	bl	nand_wait_cmd_fifo_free
 ffff5684:	e3500002 	cmp	r0, #0x2
 ffff5688:	1a000006 	bne	0xffff56a8
 ffff568c:	e59f02ac 	ldr	r0, =0x01c02000
-ffff5690:	e5900300 	ldr	r0, [r0, #0x300]
+ffff5690:	e5900300 	ldr	r0, [r0, #0x300]	; 0x01c02300 DMA
 ffff5694:	e3c00102 	bic	r0, r0, #-0x80000000	; 0x80000000
 ffff5698:	e59f12a0 	ldr	r1, =0x01c02000
 ffff569c:	e5810300 	str	r0, [r1, #0x300]
@@ -1537,43 +1539,43 @@ ffff56a8:	e1a08004 	mov	r8, r4
 ffff56ac:	e1a04008 	mov	r4, r8
 ffff56b0:	e1a00808 	lsl	r0, r8, #0x10
 ffff56b4:	e59f1290 	ldr	r1, =0x01c03000
-ffff56b8:	e5810014 	str	r0, [r1, #0x14]
+ffff56b8:	e5810014 	str	r0, [r1, #0x14]		; ADDR_LOW
 ffff56bc:	e1a04008 	mov	r4, r8
 ffff56c0:	e1a00828 	lsr	r0, r8, #0x10
-ffff56c4:	e5810018 	str	r0, [r1, #0x18]
+ffff56c4:	e5810018 	str	r0, [r1, #0x18]		; ADDR_HIGH
 ffff56c8:	e2860003 	add	r0, r6, #0x3
-ffff56cc:	e59f1284 	ldr	r1, =0x87e80000
-ffff56d0:	e1810800 	orr	r0, r1, r0, lsl #0x10
+ffff56cc:	e59f1284 	ldr	r1, =0x87e80000		; PAGE_CMD, SEND_CMD2, SEQ, DATA_SWAP_METHOD, SEND_ADR, DATA_TRANS, SEND_CMD1, WAIT_FLAG, CMD1=00
+ffff56d0:	e1810800 	orr	r0, r1, r0, lsl #0x10	; r0 = number of addres bits
 ffff56d4:	e59f1270 	ldr	r1, =0x01c03000
 ffff56d8:	e5810024 	str	r0, [r1, #0x24]	;	NFC_CMD
 ffff56dc:	e1a0200a 	mov	r2, sl
 ffff56e0:	e1a0100a 	mov	r1, sl
 ffff56e4:	e1a0000a 	mov	r0, sl
-ffff56e8:	ebffffa4 	bl	f_5580
+ffff56e8:	ebffffa4 	bl	nand_wait_dma_transfer_complete
 ffff56ec:	e3500002 	cmp	r0, #0x2
 ffff56f0:	1a000006 	bne	0xffff5710
 ffff56f4:	e59f0244 	ldr	r0, =0x01c02000
-ffff56f8:	e5900300 	ldr	r0, [r0, #0x300]
+ffff56f8:	e5900300 	ldr	r0, [r0, #0x300]	; DMA
 ffff56fc:	e3c00102 	bic	r0, r0, #-0x80000000	; 0x80000000
 ffff5700:	e59f1238 	ldr	r1, =0x01c02000
 ffff5704:	e5810300 	str	r0, [r1, #0x300]
 ffff5708:	e3a00002 	mov	r0, #0x2
 ffff570c:	eaffffe4 	b	0xffff56a4
 ffff5710:	e59f1234 	ldr	r1, =0x01c03000
-ffff5714:	e5910038 	ldr	r0, [r1, #0x38]
+ffff5714:	e5910038 	ldr	r0, [r1, #0x38]		; ECC_ST
 ffff5718:	e1a01007 	mov	r1, r7
 ffff571c:	ebffff56 	bl	f_547c
-ffff5720:	e3500000 	cmp	r0, #0x0
+ffff5720:	e3500000 	cmp	r0, #0x0		; All sectors OK?
 ffff5724:	0a000006 	beq	0xffff5744
 ffff5728:	e59f0210 	ldr	r0, =0x01c02000
-ffff572c:	e5900300 	ldr	r0, [r0, #0x300]
+ffff572c:	e5900300 	ldr	r0, [r0, #0x300]	; DMA
 ffff5730:	e3c00102 	bic	r0, r0, #-0x80000000	; 0x80000000
 ffff5734:	e59f1204 	ldr	r1, =0x01c02000
 ffff5738:	e5810300 	str	r0, [r1, #0x300]
 ffff573c:	e3a00003 	mov	r0, #0x3
 ffff5740:	eaffffd7 	b	0xffff56a4
 ffff5744:	e59f01f4 	ldr	r0, =0x01c02000
-ffff5748:	e5900300 	ldr	r0, [r0, #0x300]
+ffff5748:	e5900300 	ldr	r0, [r0, #0x300]	; DMA
 ffff574c:	e3c00102 	bic	r0, r0, #-0x80000000	; 0x80000000
 ffff5750:	e59f11e8 	ldr	r1, =0x01c02000
 ffff5754:	e5810300 	str	r0, [r1, #0x300]
@@ -1629,7 +1631,7 @@ ffff5810:	e5810024 	str	r0, [r1, #0x24]
 ffff5814:	e1a0200a 	mov	r2, sl
 ffff5818:	e1a0100a 	mov	r1, sl
 ffff581c:	e1a0000a 	mov	r0, sl
-ffff5820:	ebffff56 	bl	f_5580
+ffff5820:	ebffff56 	bl	nand_wait_dma_transfer_complete
 ffff5824:	e3500002 	cmp	r0, #0x2
 ffff5828:	1a000006 	bne	0xffff5848
 ffff582c:	e59f010c 	ldr	r0, =0x01c02000
@@ -1660,7 +1662,8 @@ ffff588c:	e5810300 	str	r0, [r1, #0x300]
 ffff5890:	e3a00000 	mov	r0, #0x0
 ffff5894:	eaffffd0 	b	0xffff57dc
 
-f_5898:
+nand_read_a_blocks(a,b,c,d)
+nand_read_a_blocks:
 ffff5898:	e92d47f0 	push	{r4, r5, r6, r7, r8, r9, sl, lr}
 ffff589c:	e1a04000 	mov	r4, r0
 ffff58a0:	e1a05001 	mov	r5, r1
@@ -1671,7 +1674,7 @@ ffff58b0:	ea000009 	b	0xffff58dc
 ffff58b4:	e0891507 	add	r1, r9, r7, lsl #0xa
 ffff58b8:	e0840007 	add	r0, r4, r7
 ffff58bc:	e1a02006 	mov	r2, r6
-ffff58c0:	ebffff58 	bl	f_5628
+ffff58c0:	ebffff58 	bl	nand_read_a
 ffff58c4:	e1a08000 	mov	r8, r0
 ffff58c8:	e3580000 	cmp	r8, #0x0
 ffff58cc:	0a000001 	beq	0xffff58d8
@@ -1709,20 +1712,20 @@ ffff593c:	eafffff9 	b	0xffff5928
 configurePIO_PC_NAND:
 ffff595c:	e59f0330 	ldr	r0, =0x22222222
 ffff5960:	e59f1330 	ldr	r1, =0x01c20000
-ffff5964:	e5810848 	str	r0, [r1, #0x0x848] ; PC_CFG0
-ffff5968:	e581084c 	str	r0, [r1, #0x0x84c] ; PC_CFG1
+ffff5964:	e5810848 	str	r0, [r1, #0x848] ; PC_CFG0
+ffff5968:	e581084c 	str	r0, [r1, #0x84c] ; PC_CFG1
 ffff596c:	e1a00240 	asr	r0, r0, #0x4
-ffff5970:	e5810850 	str	r0, [r1, #0x0x850] ; PC_CFG2
+ffff5970:	e5810850 	str	r0, [r1, #0x850] ; PC_CFG2
 ffff5974:	e3a00002 	mov	r0, #0x2
-ffff5978:	e5810854 	str	r0, [r1, #0x0x854] ; PC_CFG3
+ffff5978:	e5810854 	str	r0, [r1, #0x854] ; PC_CFG3
 ffff597c:	e59f0318 	ldr	r0, =0x55555555
-ffff5980:	e581085c 	str	r0, [r1, #0x0x85c] ; PC_DRV0
+ffff5980:	e581085c 	str	r0, [r1, #0x85c] ; PC_DRV0
 ffff5984:	e1a00740 	asr	r0, r0, #0xe
-ffff5988:	e5810860 	str	r0, [r1, #0x0x860] ; PC_DRV1
-ffff598c:	e3050140 	movw	r0, #0x0x5140
-ffff5990:	e5810864 	str	r0, [r1, #0x0x864] ; PC_PULL0
-ffff5994:	e3040016 	movw	r0, #0x0x4016
-ffff5998:	e5810868 	str	r0, [r1, #0x0x868] ; PC_PULL1
+ffff5988:	e5810860 	str	r0, [r1, #0x860] ; PC_DRV1
+ffff598c:	e3050140 	movw	r0, #0x5140
+ffff5990:	e5810864 	str	r0, [r1, #0x864] ; PC_PULL0
+ffff5994:	e3040016 	movw	r0, #0x4016
+ffff5998:	e5810868 	str	r0, [r1, #0x868] ; PC_PULL1
 ffff599c:	e12fff1e 	bx	lr
 
 f_59a0:
@@ -1768,29 +1771,29 @@ ffff5a34:	e8bd8070 	pop	{r4, r5, r6, pc}
 f_5a38:
 ffff5a38:	e3a00000 	mov	r0, #0x0
 ffff5a3c:	e59f1254 	ldr	r1, =0x01c20000
-ffff5a40:	e5810848 	str	r0, [r1, #0x0x848]	; PC_CFG0
-ffff5a44:	e581084c 	str	r0, [r1, #0x0x84c]	; PC_CFG1
-ffff5a48:	e5810850 	str	r0, [r1, #0x0x850]	; PC_CFG2
-ffff5a4c:	e5810854 	str	r0, [r1, #0x0x854]	; PC_CFG3
+ffff5a40:	e5810848 	str	r0, [r1, #0x848]	; PC_CFG0
+ffff5a44:	e581084c 	str	r0, [r1, #0x84c]	; PC_CFG1
+ffff5a48:	e5810850 	str	r0, [r1, #0x850]	; PC_CFG2
+ffff5a4c:	e5810854 	str	r0, [r1, #0x854]	; PC_CFG3
 ffff5a50:	e59f0244 	ldr	r0, =0x55555555
-ffff5a54:	e581085c 	str	r0, [r1, #0x0x85c]	; PC_DRV0
+ffff5a54:	e581085c 	str	r0, [r1, #0x85c]	; PC_DRV0
 ffff5a58:	e1a00740 	asr	r0, r0, #0xe
-ffff5a5c:	e5810860 	str	r0, [r1, #0x0x860]	; PC_DRV1
-ffff5a60:	e3050140 	movw	r0, #0x0x5140
-ffff5a64:	e5810864 	str	r0, [r1, #0x0x864]	; PC_PULL0
-ffff5a68:	e3040016 	movw	r0, #0x0x4016
-ffff5a6c:	e5810868 	str	r0, [r1, #0x0x868]	; PC_PULL1
+ffff5a5c:	e5810860 	str	r0, [r1, #0x860]	; PC_DRV1
+ffff5a60:	e3050140 	movw	r0, #0x5140
+ffff5a64:	e5810864 	str	r0, [r1, #0x864]	; PC_PULL0
+ffff5a68:	e3040016 	movw	r0, #0x4016
+ffff5a6c:	e5810868 	str	r0, [r1, #0x868]	; PC_PULL1
 ffff5a70:	e12fff1e 	bx	lr
 
-f_5a74:
-ffff5a74:	e59f0228 	ldr	r0, =0x4a800008
-ffff5a78:	e59f1228 	ldr	r1, =0x01c03000
-ffff5a7c:	e5810034 	str	r0, [r1, #0x34]
+nand_set_boot_random_seed:
+ffff5a74:	e59f0228 	ldr	r0, =0x4a800008		; RANDOM_EN,RANDOM_SEED=0x4a80
+ffff5a78:	e59f1228 	ldr	r1, =0x01c03000		; NAND
+ffff5a7c:	e5810034 	str	r0, [r1, #0x34]		; ECC_CTL
 ffff5a80:	e12fff1e 	bx	lr
 
 f_5a84:
 ffff5a84:	e92d4010 	push	{r4, lr}
-ffff5a88:	ebfffff9 	bl	f_5a74
+ffff5a88:	ebfffff9 	bl	nand_set_boot_random_seed
 ffff5a8c:	e59f0214 	ldr	r0, =0x01c03000
 ffff5a90:	e5900000 	ldr	r0, [r0]
 ffff5a94:	e3c00001 	bic	r0, r0, #0x1
@@ -1981,16 +1984,16 @@ ffff5d78:	3054422e 	subscc	r4, r4, lr, lsr #0x4
 ffff5d7c:	00000000 	andeq	r0, r0, r0
 
 f_5d80:
-ffff5d80:	e3001333 	movw	r1, #0x0x333		; SPI0_MOSI, SPI0_MISO, SPI0_CLK
+ffff5d80:	e3001333 	movw	r1, #0x333		; SPI0_MOSI, SPI0_MISO, SPI0_CLK
 ffff5d84:	e59f2498 	ldr	r2, =0x01c20000
-ffff5d88:	e5821848 	str	r1, [r2, #0x0x848]	; PC_CFG0
-ffff5d8c:	e3a01203 	mov	r1, #0x0x30000000		; SPI0_CS0
-ffff5d90:	e5821850 	str	r1, [r2, #0x0x850]	; PC_CFG2
+ffff5d88:	e5821848 	str	r1, [r2, #0x848]	; PC_CFG0
+ffff5d8c:	e3a01203 	mov	r1, #0x30000000		; SPI0_CS0
+ffff5d90:	e5821850 	str	r1, [r2, #0x850]	; PC_CFG2
 ffff5d94:	e1c21001 	bic	r1, r2, r1
-ffff5d98:	e5910868 	ldr	r0, [r1, #0x0x868]	; PC_PULL1
-ffff5d9c:	e3c00903 	bic	r0, r0, #0x0xc000]
-ffff5da0:	e3800901 	orr	r0, r0, #0x0x4000]	; SPI0_CS0=PULLDOWN
-ffff5da4:	e5810868 	str	r0, [r1, #0x0x868]	; PC_PULL1
+ffff5d98:	e5910868 	ldr	r0, [r1, #0x868]	; PC_PULL1
+ffff5d9c:	e3c00903 	bic	r0, r0, #0xc000]
+ffff5da0:	e3800901 	orr	r0, r0, #0x4000]	; SPI0_CS0=PULLDOWN
+ffff5da4:	e5810868 	str	r0, [r1, #0x868]	; PC_PULL1
 ffff5da8:	e12fff1e 	bx	lr
 
 f_5dac:
@@ -2022,10 +2025,10 @@ ffff5e08:	e8bd8010 	pop	{r4, pc}
 f_5e0c:
 ffff5e0c:	e3a00000 	mov	r0, #0x0
 ffff5e10:	e59f140c 	ldr	r1, =0x01c20000
-ffff5e14:	e5810848 	str	r0, [r1, #0x0x848]
-ffff5e18:	e5810850 	str	r0, [r1, #0x0x850]
-ffff5e1c:	e3040016 	movw	r0, #0x0x4016	; PC_PULL1=DEFAULT
-ffff5e20:	e5810868 	str	r0, [r1, #0x0x868]
+ffff5e14:	e5810848 	str	r0, [r1, #0x848]
+ffff5e18:	e5810850 	str	r0, [r1, #0x850]
+ffff5e1c:	e3040016 	movw	r0, #0x4016	; PC_PULL1=DEFAULT
+ffff5e20:	e5810868 	str	r0, [r1, #0x868]
 ffff5e24:	e12fff1e 	bx	lr
 
 f_5e28:
@@ -2458,7 +2461,7 @@ ffff6470:	.l 0x00ffffff
 ffff6474:	.l 0x000000ff
 
 d_6478:
-ffff6478:	.l f_5898
+ffff6478:	.l nand_read_a_blocks
 ffff647c:	.l 0x00000000
 ffff6480:	.l 0x00000001
 ffff6484:	.l 0x00000000
@@ -2478,7 +2481,7 @@ ffff64b8:	.l 0x00000001
 ffff64bc:	.l 0x00000040
 ffff64c0:	.l 0x00000001
 ffff64c4:	.l 0x00000200
-ffff64c8:	.l f_5898
+ffff64c8:	.l nand_read_a_blocks
 ffff64cc:	.l 0x00000000
 ffff64d0:	.l 0x00000000
 ffff64d4:	.l 0x00000000
@@ -2498,7 +2501,7 @@ ffff6508:	.l 0x00000000
 ffff650c:	.l 0x00000040
 ffff6510:	.l 0x00000001
 ffff6514:	.l 0x00000200
-ffff6518:	.l f_5898
+ffff6518:	.l nand_read_a_blocks
 ffff651c:	.l 0x00000003
 ffff6520:	.l 0x00000001
 ffff6524:	.l 0x00000001
@@ -2508,7 +2511,7 @@ ffff6530:	.l 0x00000001
 ffff6534:	.l 0x00000040
 ffff6538:	.l 0x00000001
 ffff653c:	.l 0x00000400
-ffff6540:	.l f_5898
+ffff6540:	.l nand_read_a_blocks
 ffff6544:	.l 0x00000003
 ffff6548:	.l 0x00000000
 ffff654c:	.l 0x00000002
@@ -2518,7 +2521,7 @@ ffff6558:	.l 0x00000001
 ffff655c:	.l 0x00000040
 ffff6560:	.l 0x00000001
 ffff6564:	.l 0x00000400
-ffff6568:	.l f_5898
+ffff6568:	.l nand_read_a_blocks
 ffff656c:	.l 0x00000003
 ffff6570:	.l 0x00000000
 ffff6574:	.l 0x00000003
