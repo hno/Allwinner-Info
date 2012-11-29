@@ -124,7 +124,7 @@ extern unsigned int nand_reg_address;
 #define NFC_CMD_DATA_TRANS	(1 << 21)	If there is a data transfer part of the command
 #define NFC_CMD_SEND_CMD1	(1 << 22)	If normal command byte shuold be sent
 #define NFC_CMD_WAIT_FLAG	(1 << 23)	If the controller should wait for R/B after sending command
-#define NFC_CMD_SEND_CMD2	(1 << 24)	If CMD2 command byte should be sent (0x28 bits 0xff << 24)
+#define NFC_CMD_SEND_CMD2	(1 << 24)	If CMD2 command byte should be sent (0x28 bits 0xff << 0)
 #define NFC_CMD_SEQ		(1 << 25)	???
 #define NFC_CMD_DATA_SWAP_METHOD (1 << 26)	???
 #define NFC_CMD_ROW_AUTO_INC	(1 << 27)	???
