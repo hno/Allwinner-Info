@@ -1,0 +1,72 @@
+# Dump the important registers
+md.l 01c03000 20
+
+# Dump data sector in SRAM
+md.b 01c03400 400
+
+# Set slow clock for easier analysis with logic analyser
+mw.l 01c20080 8003000f
+
+# Initialization
+mw.l 1c03000 2	  # Reset
+mw.l 01c03000 0 40 # Wipe clear
+mw.l 01c03000 2    # Reset
+#sleep 1
+mw.l 01c0300c 100  # Timing CTL
+mw.l 01c03010 ff  # Timing CTL
+mw.l 01c030a0 800  # Spare area
+mw.l 01c03000 301  # CE, Page size, Enable
+mw.l 01c03024 004000ff  # reset nand chip
+
+# Data transfer
+mw.l 1c03000 301
+mw.l 1c03020 400
+mw.l 01c03028 e00530	# CMD2=30
+mw.l 01c0301C 1		# Sectors
+mw.l 01c03014 0
+mw.l 01c03018 0
+mw.l 01c03034 0
+mw.l 01c03034 4a801209
+mw.l 01c03024 07ec0000 # CMD_TYPE_NORMAL, DATA_SWAP, SEQ, SEND_CMD2, WAIT, SEND_CMD1, DATA_TRANS, READ, SEND_ADR, ADR_NUM=4(5) CMD1=00
+mw.l 01c03024 46a00000 # CMD_TYPE_ECC, DATA_SWAP, SEQ, WAIT, DATA_TRANS, READ
+md.l 01c03000 20
+md.b 01c03400 400
+
+# Next sector
+mw.l 01c03024 06a00000 # CMD_TYPE_NORMAL, DATA_SWAP, SEQ, WAIT, DATA_TRANS, READ
+mw.l 01c03024 46a00000 # CMD_TYPE_ECC, DATA_SWAP, SEQ, WAIT, DATA_TRANS, READ
+md.l 01c03000 20
+md.b 01c03400 400
+
+[repeat 6 times more, 8 sectors in a page]
+
+# Page 1
+mw.l 01c03014 10000
+mw.l 01c03028 e00530	# CMD2=30
+mw.l 01c03024 07ec0000 # CMD_TYPE_NORMAL, DATA_SWAP, SEQ, SEND_CMD2, WAIT, SEND_CMD1, DATA_TRANS, READ, SEND_ADR, ADR_NUM=4(5) CMD1=00
+mw.l 01c03024 46a00000 # CMD_TYPE_ECC, DATA_SWAP, SEQ, WAIT, DATA_TRANS, READ
+
+[repeat sectors as above]
+
+# Page 2
+mw.l 01c03014 20000
+mw.l 01c03028 e00530	# CMD2=30
+mw.l 01c03024 07ec0000 # CMD_TYPE_NORMAL, DATA_SWAP, SEQ, SEND_CMD2, WAIT, SEND_CMD1, DATA_TRANS, READ, SEND_ADR, ADR_NUM=4(5) CMD1=00
+mw.l 01c03024 46a00000 # CMD_TYPE_ECC, DATA_SWAP, SEQ, WAIT, DATA_TRANS, READ
+
+[repeat sectors as above]
+
+[and so on for each page]
+
+
+## Various other stuff
+
+# Seek back to 0. 05 <00 00> E0
+mw.l 01c03014 0
+mw.l 01c03028 e0
+mw.l 01c03024 07e90005 # CMD_TYPE_NORMAL, DATA_SWAP, SEQ, SEND_CMD2, WAIT, SEND_CMD1, DATA_TRANS, READ, SEND_ADR, ADR_NUM=1(2) CMD1=00
+
+# Seek to sector 2. 05 <2e 04> E0
+mw.l 01c03014 42e	# 1024 data + 46 ECC = 0x42e
+mw.l 01c03028 e0
+mw.l 01c03024 07e90005 # CMD_TYPE_NORMAL, DATA_SWAP, SEQ, SEND_CMD2, WAIT, SEND_CMD1, DATA_TRANS, READ, SEND_ADR, ADR_NUM=1(2) CMD1=00
