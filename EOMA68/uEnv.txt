@@ -1,2 +1,6 @@
 bootargs=console=ttyS0,115200 rdinit=/sbin/init panic=10
-uenvcmd=fatload mmc 3:1 0x44000000 uImage;fatload mmc 3:1 0x4c000000 initramfs.img;bootm 0x44000000 0x4c000000
+fs=fat
+path="/"
+device=mmc
+uenv_do_load=${fs}load ${device} ${partition} 0x44000000 ${path}uImage && ${fs}load ${device} ${partition} 0x4c000000 ${path}initramfs.img && ${fs}load ${device} ${partition} 0x43000000 ${path}script.bin
+uenvcmd=partition="3:1"; if run uenv_do_load; then true; else partition="0:1"; run uenv_do_load; fi; bootm 0x44000000 0x4c000000
