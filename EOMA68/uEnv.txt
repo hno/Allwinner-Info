@@ -1,0 +1,2 @@
+bootargs=console=ttyS0,115200 rdinit=/sbin/init panic=10
+uenvcmd=fatload mmc 3:1 0x44000000 uImage;fatload mmc 3:1 0x4c000000 initramfs.img;bootm 0x44000000 0x4c000000
