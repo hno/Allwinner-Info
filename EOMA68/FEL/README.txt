@@ -5,6 +5,16 @@ fel exe 0x2000
 fel write 0x4a000000 u-boot.bin
 fel exe 0x4a000000
 
+optionally load kernel + initramfs before fel exe of u-boot
+
+fel write 0x2000 fel-boot.bin
+fel exe 0x2000
+fel write 0x4a000000 u-boot.bin
+fel write 0x43000000 ../script.bin
+fel write 0x44000000 ../uImage
+fel write 0x4c000000 ../initramfs.img
+fel exe 0x4a000000
+
 Build instructions:
 
 1. You need to build u-boot sunxi-current SPL first for the same CPU generation, i.e. cubieboard.
