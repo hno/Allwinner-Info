@@ -5,46 +5,46 @@ Disassembly of section .data:
 
 00000000 <.data>:
 	...
-     100:	00 00 3c 37 	l.j l_f1dc
+     100:	00 00 3c 37 	l.j i100_reset
      104:	15 00 00 00 	l.nop 0x0
 	...
-     200:	00 00 3c 42 	l.j l_f308
+     200:	00 00 3c 42 	l.j i200
      204:	15 00 00 00 	l.nop 0x0
 	...
-     300:	00 00 3c 0b 	l.j l_f32c
+     300:	00 00 3c 0b 	l.j i300
      304:	15 00 00 00 	l.nop 0x0
 	...
-     400:	00 00 3b d4 	l.j l_f350
+     400:	00 00 3b d4 	l.j i400
      404:	15 00 00 00 	l.nop 0x0
 	...
-     500:	00 00 3b 9d 	l.j l_f374
+     500:	00 00 3b 9d 	l.j i500
      504:	15 00 00 00 	l.nop 0x0
 	...
-     600:	00 00 3b 66 	l.j l_f398
+     600:	00 00 3b 66 	l.j i600
      604:	15 00 00 00 	l.nop 0x0
 	...
-     700:	00 00 3b 2f 	l.j l_f3bc
+     700:	00 00 3b 2f 	l.j i700
      704:	15 00 00 00 	l.nop 0x0
 	...
-     800:	00 00 3a f8 	l.j l_f3e0
+     800:	00 00 3a f8 	l.j i800
      804:	15 00 00 00 	l.nop 0x0
 	...
-     900:	00 00 3a c1 	l.j l_f404
+     900:	00 00 3a c1 	l.j i900
      904:	15 00 00 00 	l.nop 0x0
 	...
-     a00:	00 00 3a 8a 	l.j l_f428
+     a00:	00 00 3a 8a 	l.j ia00
      a04:	15 00 00 00 	l.nop 0x0
 	...
-     b00:	00 00 3a 53 	l.j l_f44c
+     b00:	00 00 3a 53 	l.j ib00
      b04:	15 00 00 00 	l.nop 0x0
 	...
-     c00:	00 00 3a 1c 	l.j l_f470
+     c00:	00 00 3a 1c 	l.j ic00
      c04:	15 00 00 00 	l.nop 0x0
 	...
-     d00:	00 00 39 e5 	l.j l_f494
+     d00:	00 00 39 e5 	l.j id00
      d04:	15 00 00 00 	l.nop 0x0
 	...
-     e00:	00 00 39 ae 	l.j l_f4b8
+     e00:	00 00 39 ae 	l.j ie00
      e04:	15 00 00 00 	l.nop 0x0
 	...
 f_4000:
@@ -12410,7 +12410,6 @@ l_f174:
     f1d8:	86 01 ff f8 	l.lwz r16,0xfffffff8(r1)
 
 i100_reset:
-l_f1dc:
     f1dc:	18 20 00 00 	l.movhi r1,0x0
     f1e0:	18 40 00 00 	l.movhi r2,0x0
     f1e4:	18 60 00 00 	l.movhi r3,0x0
@@ -12490,7 +12489,6 @@ l_f2e4:
     f304:	15 00 00 00 	l.nop 0x0
 
 i200:
-l_f308:
     f308:	9c 21 ff 00 	l.addi r1,r1,0xffffff00
     f30c:	d4 01 18 04 	l.sw 0x4(r1),r3
     f310:	d4 01 20 08 	l.sw 0x8(r1),r4
@@ -12502,7 +12500,6 @@ l_f308:
     f328:	15 00 00 00 	l.nop 0x0
 
 i300:
-l_f32c:
     f32c:	9c 21 ff 00 	l.addi r1,r1,0xffffff00
     f330:	d4 01 18 04 	l.sw 0x4(r1),r3
     f334:	d4 01 20 08 	l.sw 0x8(r1),r4
@@ -12514,7 +12511,6 @@ l_f32c:
     f34c:	15 00 00 00 	l.nop 0x0
 
 i400:
-l_f350:
     f350:	9c 21 ff 00 	l.addi r1,r1,0xffffff00
     f354:	d4 01 18 04 	l.sw 0x4(r1),r3
     f358:	d4 01 20 08 	l.sw 0x8(r1),r4
@@ -12526,7 +12522,6 @@ l_f350:
     f370:	15 00 00 00 	l.nop 0x0
 
 i500:
-l_f374:
     f374:	9c 21 ff 00 	l.addi r1,r1,0xffffff00
     f378:	d4 01 18 04 	l.sw 0x4(r1),r3
     f37c:	d4 01 20 08 	l.sw 0x8(r1),r4
@@ -12538,7 +12533,6 @@ l_f374:
     f394:	15 00 00 00 	l.nop 0x0
 
 i600:
-l_f398:
     f398:	9c 21 ff 00 	l.addi r1,r1,0xffffff00
     f39c:	d4 01 18 04 	l.sw 0x4(r1),r3
     f3a0:	d4 01 20 08 	l.sw 0x8(r1),r4
@@ -12550,7 +12544,6 @@ l_f398:
     f3b8:	15 00 00 00 	l.nop 0x0
 
 i700:
-l_f3bc:
     f3bc:	9c 21 ff 00 	l.addi r1,r1,0xffffff00
     f3c0:	d4 01 18 04 	l.sw 0x4(r1),r3
     f3c4:	d4 01 20 08 	l.sw 0x8(r1),r4
@@ -12562,7 +12555,6 @@ l_f3bc:
     f3dc:	15 00 00 00 	l.nop 0x0
 
 i800:
-l_f3e0:
     f3e0:	9c 21 ff 00 	l.addi r1,r1,0xffffff00
     f3e4:	d4 01 18 04 	l.sw 0x4(r1),r3
     f3e8:	d4 01 20 08 	l.sw 0x8(r1),r4
@@ -12574,7 +12566,6 @@ l_f3e0:
     f400:	15 00 00 00 	l.nop 0x0
 
 i900:
-l_f404:
     f404:	9c 21 ff 00 	l.addi r1,r1,0xffffff00
     f408:	d4 01 18 04 	l.sw 0x4(r1),r3
     f40c:	d4 01 20 08 	l.sw 0x8(r1),r4
@@ -12586,7 +12577,6 @@ l_f404:
     f424:	15 00 00 00 	l.nop 0x0
 
 ia00:
-l_f428:
     f428:	9c 21 ff 00 	l.addi r1,r1,0xffffff00
     f42c:	d4 01 18 04 	l.sw 0x4(r1),r3
     f430:	d4 01 20 08 	l.sw 0x8(r1),r4
@@ -12598,7 +12588,6 @@ l_f428:
     f448:	15 00 00 00 	l.nop 0x0
 
 ib00:
-l_f44c:
     f44c:	9c 21 ff 00 	l.addi r1,r1,0xffffff00
     f450:	d4 01 18 04 	l.sw 0x4(r1),r3
     f454:	d4 01 20 08 	l.sw 0x8(r1),r4
@@ -12610,7 +12599,6 @@ l_f44c:
     f46c:	15 00 00 00 	l.nop 0x0
 
 ic00:
-l_f470:
     f470:	9c 21 ff 00 	l.addi r1,r1,0xffffff00
     f474:	d4 01 18 04 	l.sw 0x4(r1),r3
     f478:	d4 01 20 08 	l.sw 0x8(r1),r4
@@ -12622,7 +12610,6 @@ l_f470:
     f490:	15 00 00 00 	l.nop 0x0
 
 id00:
-l_f494:
     f494:	9c 21 ff 00 	l.addi r1,r1,0xffffff00
     f498:	d4 01 18 04 	l.sw 0x4(r1),r3
     f49c:	d4 01 20 08 	l.sw 0x8(r1),r4
@@ -12634,7 +12621,6 @@ l_f494:
     f4b4:	15 00 00 00 	l.nop 0x0
 
 ie00:
-l_f4b8:
     f4b8:	9c 21 ff 00 	l.addi r1,r1,0xffffff00
     f4bc:	d4 01 18 04 	l.sw 0x4(r1),r3
     f4c0:	d4 01 20 08 	l.sw 0x8(r1),r4
