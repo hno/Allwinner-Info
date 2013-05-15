@@ -47,6 +47,7 @@ Disassembly of section .data:
      e00:	00 00 39 ae 	l.j ie00
      e04:	15 00 00 00 	l.nop 0x0
 	...
+
 f_4000:
     4000:	d7 e1 17 dc 	l.sw 0xffffffdc(r1),r2
     4004:	d7 e1 77 e0 	l.sw 0xffffffe0(r1),r14
@@ -3025,6 +3026,7 @@ l6ab8:
     6b3c:	a8 b0 00 00 	l.ori r5,r16,0x0
     6b40:	03 ff ff de 	l.j l6ab8
     6b44:	15 00 00 00 	l.nop 0x0
+
 f_6b48:
     6b48:	d7 e1 17 f4 	l.sw 0xfffffff4(r1),r2
     6b4c:	d7 e1 77 f8 	l.sw 0xfffffff8(r1),r14
@@ -3194,6 +3196,7 @@ f_6be8:
 l6dcc:
     6dcc:	00 00 00 00 	l.j l6dcc
     6dd0:	15 00 00 00 	l.nop 0x0
+
 f_6dd4:
     6dd4:	d7 e1 4f fc 	l.sw 0xfffffffc(r1),r9
     6dd8:	9c 21 ff fc 	l.addi r1,r1,0xfffffffc
@@ -3201,8 +3204,9 @@ f_6dd4:
     6de0:	9c 21 00 04 	l.addi r1,r1,0x4
     6de4:	18 60 00 01 	l.movhi r3,0x1
     6de8:	85 21 ff fc 	l.lwz r9,0xfffffffc(r1)
-    6dec:	00 00 01 6d 	l.j l73a0
+    6dec:	00 00 01 6d 	l.j f_73a0
     6df0:	a8 63 17 f4 	l.ori r3,r3,0x17f4
+
 f_6df4:
     6df4:	d7 e1 4f fc 	l.sw 0xfffffffc(r1),r9
     6df8:	04 00 14 0d 	l.jal f_be2c
@@ -3606,7 +3610,7 @@ l7394:
     7398:	44 00 48 00 	l.jr r9
     739c:	84 41 ff fc 	l.lwz r2,0xfffffffc(r1)
 
-l73a0:
+f_73a0:
     73a0:	d7 e1 17 f4 	l.sw 0xfffffff4(r1),r2
     73a4:	d7 e1 77 f8 	l.sw 0xfffffff8(r1),r14
     73a8:	d7 e1 4f fc 	l.sw 0xfffffffc(r1),r9
@@ -4035,6 +4039,7 @@ l7964:
     796c:	a8 84 0d 34 	l.ori r4,r4,0xd34
     7970:	03 ff ff ee 	l.j l7928
     7974:	9c 60 00 00 	l.addi r3,r0,0x0
+
 f_7978:
     7978:	18 80 ff fe 	l.movhi r4,0xfffe
     797c:	d7 e1 17 f4 	l.sw 0xfffffff4(r1),r2
@@ -4105,6 +4110,7 @@ l7a64:
     7a78:	84 41 ff f4 	l.lwz r2,0xfffffff4(r1)
     7a7c:	03 ff fd 74 	l.j f_704c
     7a80:	85 c1 ff f8 	l.lwz r14,0xfffffff8(r1)
+
 f_7a84:
     7a84:	d7 e1 17 f0 	l.sw 0xfffffff0(r1),r2
     7a88:	d7 e1 77 f4 	l.sw 0xfffffff4(r1),r14
@@ -5913,7 +5919,7 @@ l94c8:
     94f8:	44 00 48 00 	l.jr r9
     94fc:	87 c1 ff f8 	l.lwz r30,0xfffffff8(r1)
 
-l9500:
+f_9500:
     9500:	d7 e1 17 ec 	l.sw 0xffffffec(r1),r2
     9504:	d7 e1 4f fc 	l.sw 0xfffffffc(r1),r9
     9508:	d7 e1 77 f0 	l.sw 0xfffffff0(r1),r14
@@ -6314,13 +6320,14 @@ l9acc:
     9ae0:	44 00 48 00 	l.jr r9
     9ae4:	86 41 ff f8 	l.lwz r18,0xfffffff8(r1)
 
-l9ae8:
+f_9ae8:
     9ae8:	d7 e1 4f fc 	l.sw 0xfffffffc(r1),r9
     9aec:	9c 21 ff fc 	l.addi r1,r1,0xfffffffc
     9af0:	9c 21 00 04 	l.addi r1,r1,0x4
     9af4:	85 21 ff fc 	l.lwz r9,0xfffffffc(r1)
-    9af8:	03 ff fe 82 	l.j l9500
+    9af8:	03 ff fe 82 	l.j f_9500
     9afc:	a8 64 00 00 	l.ori r3,r4,0x0
+
 f_9b00:
     9b00:	d7 e1 17 fc 	l.sw 0xfffffffc(r1),r2
     9b04:	9c 80 00 00 	l.addi r4,r0,0x0
@@ -6640,8 +6647,9 @@ f_9f98:
     9fa0:	a8 83 00 00 	l.ori r4,r3,0x0
     9fa4:	9c 21 00 04 	l.addi r1,r1,0x4
     9fa8:	85 21 ff fc 	l.lwz r9,0xfffffffc(r1)
-    9fac:	03 ff fe cf 	l.j l9ae8
+    9fac:	03 ff fe cf 	l.j f_9ae8
     9fb0:	9c 60 00 01 	l.addi r3,r0,0x1
+
 f_9fb4:
     9fb4:	d7 e1 17 f8 	l.sw 0xfffffff8(r1),r2
     9fb8:	d7 e1 4f fc 	l.sw 0xfffffffc(r1),r9
@@ -10037,8 +10045,10 @@ f_d028:
     d030:	18 60 00 01 	l.movhi r3,0x1
     d034:	9c 21 00 04 	l.addi r1,r1,0x4
     d038:	85 21 ff fc 	l.lwz r9,0xfffffffc(r1)
-    d03c:	03 ff e8 d9 	l.j l73a0
+    d03c:	03 ff e8 d9 	l.j f_73a0
     d040:	a8 63 1b 74 	l.ori r3,r3,0x1b74
+
+f_d044:
     d044:	d7 e1 4f fc 	l.sw 0xfffffffc(r1),r9
     d048:	9c 21 ff fc 	l.addi r1,r1,0xfffffffc
     d04c:	18 60 00 01 	l.movhi r3,0x1
@@ -10451,8 +10461,9 @@ f_d5f8:
     d604:	9c 21 00 04 	l.addi r1,r1,0x4
     d608:	18 60 00 01 	l.movhi r3,0x1
     d60c:	85 21 ff fc 	l.lwz r9,0xfffffffc(r1)
-    d610:	03 ff e7 64 	l.j l73a0
+    d610:	03 ff e7 64 	l.j f_73a0
     d614:	a8 63 18 cc 	l.ori r3,r3,0x18cc
+
 f_d618:
     d618:	18 80 00 01 	l.movhi r4,0x1
     d61c:	d7 e1 4f fc 	l.sw 0xfffffffc(r1),r9
@@ -10915,7 +10926,7 @@ f_dca0:
     dcc0:	44 00 48 00 	l.jr r9
     dcc4:	84 41 ff fc 	l.lwz r2,0xfffffffc(r1)
 
-ldcc8:
+f_dcc8:
     dcc8:	d7 e1 17 f8 	l.sw 0xfffffff8(r1),r2
     dccc:	d7 e1 4f fc 	l.sw 0xfffffffc(r1),r9
     dcd0:	a8 43 00 00 	l.ori r2,r3,0x0
@@ -10950,7 +10961,7 @@ ldd04:
     dd40:	44 00 48 00 	l.jr r9
     dd44:	84 41 ff f8 	l.lwz r2,0xfffffff8(r1)
 
-ldd48:
+f_dd48:
     dd48:	18 80 00 01 	l.movhi r4,0x1
     dd4c:	9c c0 00 01 	l.addi r6,r0,0x1
     dd50:	a8 84 1b 80 	l.ori r4,r4,0x1b80
@@ -11022,15 +11033,17 @@ f_de30:
     de34:	9c 21 ff fc 	l.addi r1,r1,0xfffffffc
     de38:	9c 21 00 04 	l.addi r1,r1,0x4
     de3c:	85 21 ff fc 	l.lwz r9,0xfffffffc(r1)
-    de40:	03 ff ff a2 	l.j ldcc8
+    de40:	03 ff ff a2 	l.j f_dcc8
     de44:	15 00 00 00 	l.nop 0x0
+
 f_de48:
     de48:	d7 e1 4f fc 	l.sw 0xfffffffc(r1),r9
     de4c:	9c 21 ff fc 	l.addi r1,r1,0xfffffffc
     de50:	9c 21 00 04 	l.addi r1,r1,0x4
     de54:	85 21 ff fc 	l.lwz r9,0xfffffffc(r1)
-    de58:	03 ff ff bc 	l.j ldd48
+    de58:	03 ff ff bc 	l.j f_dd48
     de5c:	15 00 00 00 	l.nop 0x0
+
 f_de60:
     de60:	d7 e1 4f fc 	l.sw 0xfffffffc(r1),r9
     de64:	d7 e1 17 f0 	l.sw 0xfffffff0(r1),r2
@@ -11619,6 +11632,7 @@ f_e684:
     e690:	85 21 ff fc 	l.lwz r9,0xfffffffc(r1)
     e694:	00 00 01 f3 	l.j f_ee60
     e698:	15 00 00 00 	l.nop 0x0
+
 f_e69c:
     e69c:	d7 e1 4f fc 	l.sw 0xfffffffc(r1),r9
     e6a0:	9c 21 ff fc 	l.addi r1,r1,0xfffffffc
@@ -11626,6 +11640,7 @@ f_e69c:
     e6a8:	85 21 ff fc 	l.lwz r9,0xfffffffc(r1)
     e6ac:	00 00 02 2c 	l.j f_ef5c
     e6b0:	15 00 00 00 	l.nop 0x0
+
 f_e6b4:
     e6b4:	d7 e1 17 f0 	l.sw 0xfffffff0(r1),r2
     e6b8:	d7 e1 87 f8 	l.sw 0xfffffff8(r1),r16
@@ -12695,6 +12710,7 @@ lf4dc:
     f5c8:	9c 21 01 00 	l.addi r1,r1,0x100
     f5cc:	24 00 00 00 	l.rfe 
     f5d0:	15 00 00 00 	l.nop 0x0
+
 f_f5d4:
     f5d4:	9c 21 ff fc 	l.addi r1,r1,0xfffffffc
     f5d8:	d4 01 48 00 	l.sw 0x0(r1),r9
