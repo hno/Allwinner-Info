@@ -3642,7 +3642,7 @@ l73f0:
     73fc:	44 00 48 00 	l.jr r9
     7400:	85 c1 ff f8 	l.lwz r14,0xfffffff8(r1)
 
-l7404:
+f_7404:
     7404:	d7 e1 17 fc 	l.sw 0xfffffffc(r1),r2
     7408:	84 c3 00 00 	l.lwz r6,0x0(r3)
     740c:	9c 21 ff fc 	l.addi r1,r1,0xfffffffc
@@ -3808,7 +3808,7 @@ f_7608:
     7624:	9c 21 00 18 	l.addi r1,r1,0x18
     7628:	85 21 ff fc 	l.lwz r9,0xfffffffc(r1)
     762c:	84 41 ff f4 	l.lwz r2,0xfffffff4(r1)
-    7630:	00 00 1a 40 	l.j ldf30
+    7630:	00 00 1a 40 	l.j f_df30
     7634:	85 c1 ff f8 	l.lwz r14,0xfffffff8(r1)
 
 l7638:
@@ -4029,7 +4029,6 @@ l7928:
     7944:	84 41 ff f4 	l.lwz r2,0xfffffff4(r1)
     7948:	44 00 48 00 	l.jr r9
     794c:	85 c1 ff f8 	l.lwz r14,0xfffffff8(r1)
-
 l7950:
     7950:	9c 80 00 64 	l.addi r4,r0,0x64
     7954:	04 00 19 d6 	l.jal f_e0ac
@@ -10081,9 +10080,10 @@ f_d044:
     d04c:	18 60 00 01 	l.movhi r3,0x1
     d050:	9c 21 00 04 	l.addi r1,r1,0x4
     d054:	85 21 ff fc 	l.lwz r9,0xfffffffc(r1)
-    d058:	03 ff e8 eb 	l.j l7404
+    d058:	03 ff e8 eb 	l.j f_7404
     d05c:	a8 63 1b 74 	l.ori r3,r3,0x1b74
-ld060:
+
+f_d060:
     d060:	d7 e1 4f fc 	l.sw 0xfffffffc(r1),r9
     d064:	d7 e1 17 f4 	l.sw 0xfffffff4(r1),r2
     d068:	d7 e1 77 f8 	l.sw 0xfffffff8(r1),r14
@@ -10185,8 +10185,9 @@ f_d17c:
     d1c4:	a8 62 00 00 	l.ori r3,r2,0x0
     d1c8:	9c 21 00 0c 	l.addi r1,r1,0xc
     d1cc:	85 21 ff fc 	l.lwz r9,0xfffffffc(r1)
-    d1d0:	03 ff ff a4 	l.j ld060
+    d1d0:	03 ff ff a4 	l.j f_d060
     d1d4:	84 41 ff f8 	l.lwz r2,0xfffffff8(r1)
+
     d1d8:	bc 02 00 03 	l.sfeqi r2,0x3
     d1dc:	10 00 00 0b 	l.bf ld208
     d1e0:	bc 02 00 05 	l.sfeqi r2,0x5
@@ -11131,7 +11132,7 @@ ldf20:
     df28:	44 00 48 00 	l.jr r9
     df2c:	84 41 ff f8 	l.lwz r2,0xfffffff8(r1)
 
-ldf30:
+f_df30:
     df30:	d7 e1 4f fc 	l.sw 0xfffffffc(r1),r9
     df34:	d7 e1 17 f8 	l.sw 0xfffffff8(r1),r2
     df38:	9c 21 ff f8 	l.addi r1,r1,0xfffffff8
@@ -12542,7 +12543,7 @@ i200:
     f318:	9c 60 00 02 	l.addi r3,r0,0x2
     f31c:	b4 80 00 20 	l.mfspr r4,r0,0x20
     f320:	9c a1 00 00 	l.addi r5,r1,0x0
-    f324:	00 00 00 6e 	l.j lf4dc
+    f324:	00 00 00 6e 	l.j f_f4dc
     f328:	15 00 00 00 	l.nop 0x0
 
 i300:
@@ -12553,7 +12554,7 @@ i300:
     f33c:	9c 60 00 03 	l.addi r3,r0,0x3
     f340:	b4 80 00 20 	l.mfspr r4,r0,0x20
     f344:	9c a1 00 00 	l.addi r5,r1,0x0
-    f348:	00 00 00 65 	l.j lf4dc
+    f348:	00 00 00 65 	l.j f_f4dc
     f34c:	15 00 00 00 	l.nop 0x0
 
 i400:
@@ -12564,7 +12565,7 @@ i400:
     f360:	9c 60 00 04 	l.addi r3,r0,0x4
     f364:	b4 80 00 20 	l.mfspr r4,r0,0x20
     f368:	9c a1 00 00 	l.addi r5,r1,0x0
-    f36c:	00 00 00 5c 	l.j lf4dc
+    f36c:	00 00 00 5c 	l.j f_f4dc
     f370:	15 00 00 00 	l.nop 0x0
 
 i500:
@@ -12575,7 +12576,7 @@ i500:
     f384:	9c 60 00 05 	l.addi r3,r0,0x5
     f388:	b4 80 00 20 	l.mfspr r4,r0,0x20
     f38c:	9c a1 00 00 	l.addi r5,r1,0x0
-    f390:	00 00 00 53 	l.j lf4dc
+    f390:	00 00 00 53 	l.j f_f4dc
     f394:	15 00 00 00 	l.nop 0x0
 
 i600:
@@ -12586,7 +12587,7 @@ i600:
     f3a8:	9c 60 00 06 	l.addi r3,r0,0x6
     f3ac:	b4 80 00 20 	l.mfspr r4,r0,0x20
     f3b0:	9c a1 00 00 	l.addi r5,r1,0x0
-    f3b4:	00 00 00 4a 	l.j lf4dc
+    f3b4:	00 00 00 4a 	l.j f_f4dc
     f3b8:	15 00 00 00 	l.nop 0x0
 
 i700:
@@ -12597,7 +12598,7 @@ i700:
     f3cc:	9c 60 00 07 	l.addi r3,r0,0x7
     f3d0:	b4 80 00 20 	l.mfspr r4,r0,0x20
     f3d4:	9c a1 00 00 	l.addi r5,r1,0x0
-    f3d8:	00 00 00 41 	l.j lf4dc
+    f3d8:	00 00 00 41 	l.j f_f4dc
     f3dc:	15 00 00 00 	l.nop 0x0
 
 i800:
@@ -12608,7 +12609,7 @@ i800:
     f3f0:	9c 60 00 08 	l.addi r3,r0,0x8
     f3f4:	b4 80 00 20 	l.mfspr r4,r0,0x20
     f3f8:	9c a1 00 00 	l.addi r5,r1,0x0
-    f3fc:	00 00 00 38 	l.j lf4dc
+    f3fc:	00 00 00 38 	l.j f_f4dc
     f400:	15 00 00 00 	l.nop 0x0
 
 i900:
@@ -12619,7 +12620,7 @@ i900:
     f414:	9c 60 00 09 	l.addi r3,r0,0x9
     f418:	b4 80 00 20 	l.mfspr r4,r0,0x20
     f41c:	9c a1 00 00 	l.addi r5,r1,0x0
-    f420:	00 00 00 2f 	l.j lf4dc
+    f420:	00 00 00 2f 	l.j f_f4dc
     f424:	15 00 00 00 	l.nop 0x0
 
 ia00:
@@ -12630,7 +12631,7 @@ ia00:
     f438:	9c 60 00 0a 	l.addi r3,r0,0xa
     f43c:	b4 80 00 20 	l.mfspr r4,r0,0x20
     f440:	9c a1 00 00 	l.addi r5,r1,0x0
-    f444:	00 00 00 26 	l.j lf4dc
+    f444:	00 00 00 26 	l.j f_f4dc
     f448:	15 00 00 00 	l.nop 0x0
 
 ib00:
@@ -12641,7 +12642,7 @@ ib00:
     f45c:	9c 60 00 0b 	l.addi r3,r0,0xb
     f460:	b4 80 00 20 	l.mfspr r4,r0,0x20
     f464:	9c a1 00 00 	l.addi r5,r1,0x0
-    f468:	00 00 00 1d 	l.j lf4dc
+    f468:	00 00 00 1d 	l.j f_f4dc
     f46c:	15 00 00 00 	l.nop 0x0
 
 ic00:
@@ -12652,7 +12653,7 @@ ic00:
     f480:	9c 60 00 0c 	l.addi r3,r0,0xc
     f484:	b4 80 00 20 	l.mfspr r4,r0,0x20
     f488:	9c a1 00 00 	l.addi r5,r1,0x0
-    f48c:	00 00 00 14 	l.j lf4dc
+    f48c:	00 00 00 14 	l.j f_f4dc
     f490:	15 00 00 00 	l.nop 0x0
 
 id00:
@@ -12663,7 +12664,7 @@ id00:
     f4a4:	9c 60 00 0d 	l.addi r3,r0,0xd
     f4a8:	b4 80 00 20 	l.mfspr r4,r0,0x20
     f4ac:	9c a1 00 00 	l.addi r5,r1,0x0
-    f4b0:	00 00 00 0b 	l.j lf4dc
+    f4b0:	00 00 00 0b 	l.j f_f4dc
     f4b4:	15 00 00 00 	l.nop 0x0
 
 ie00:
@@ -12674,10 +12675,10 @@ ie00:
     f4c8:	9c 60 00 0e 	l.addi r3,r0,0xe
     f4cc:	b4 80 00 20 	l.mfspr r4,r0,0x20
     f4d0:	9c a1 00 00 	l.addi r5,r1,0x0
-    f4d4:	00 00 00 02 	l.j lf4dc
+    f4d4:	00 00 00 02 	l.j f_f4dc
     f4d8:	15 00 00 00 	l.nop 0x0
 
-lf4dc:
+f_f4dc:
     f4dc:	d4 01 10 00 	l.sw 0x0(r1),r2
     f4e0:	d4 01 30 10 	l.sw 0x10(r1),r6
     f4e4:	d4 01 38 14 	l.sw 0x14(r1),r7
@@ -12707,7 +12708,6 @@ lf4dc:
     f544:	d4 01 f8 74 	l.sw 0x74(r1),r31
     f548:	07 ff e0 30 	l.jal f_7608
     f54c:	15 00 00 00 	l.nop 0x0
-
     f550:	84 41 00 00 	l.lwz r2,0x0(r1)
     f554:	84 61 00 04 	l.lwz r3,0x4(r1)
     f558:	84 81 00 08 	l.lwz r4,0x8(r1)
