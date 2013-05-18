@@ -1,6 +1,6 @@
 [product]
 version = "1.0"
-machine = "A10-EVB-V1.1"
+machine = "A10-EOMA68-DS113-V1.0"
 
 [target]
 boot_clock = 1008
@@ -181,7 +181,7 @@ uart_tx = port:PA12<4><1><default><default>
 uart_rx = port:PA13<4><1><default><default>
 
 [uart_para7]
-uart_used = 1
+uart_used = 0
 uart_port = 7
 uart_type = 2
 uart_tx = port:PI20<3><1><default><default>
@@ -268,7 +268,7 @@ tkey_twi_addr = 0x62
 tkey_int = port:PI13<6><default><default><default>
 
 [motor_para]
-motor_used = 1
+motor_used = 0
 motor_shake = port:PB03<1><default><default><0>
 
 [nand_para]
@@ -302,18 +302,23 @@ nand_ndqs = port:PC24<2><default><default><default>
 [disp_init]
 disp_init_enable = 1
 disp_mode = 0
-screen0_output_type = 1
-screen0_output_mode = 4
+
+screen0_output_type = 3
+screen0_output_mode = 10
+
 screen1_output_type = 1
 screen1_output_mode = 4
+
 fb0_framebuffer_num = 2
 fb0_format = 10
 fb0_pixel_sequence = 0
-fb0_scaler_mode_enable = 0
+fb0_scaler_mode_enable = 1
+
 fb1_framebuffer_num = 2
 fb1_format = 10
 fb1_pixel_sequence = 0
 fb1_scaler_mode_enable = 0
+
 lcd0_bright = 197
 lcd1_bright = 197
 lcd0_screen_bright = 50
@@ -356,11 +361,11 @@ lcd_gamma_correction_en = 0
 lcd_gamma_tbl_0 = 0x0
 lcd_gamma_tbl_1 = 0x10101
 lcd_gamma_tbl_255 = 0xffffff
-lcd_bl_en_used = 1
+lcd_bl_en_used = 0
 lcd_bl_en = port:PH07<1><0><default><1>
-lcd_power_used = 1
+lcd_power_used = 0
 lcd_power = port:PH08<1><0><default><1>
-lcd_pwm_used = 1
+lcd_pwm_used = 0
 lcd_pwm = port:PB02<2><0><default><default>
 lcd_gpio_0 =
 lcd_gpio_1 =
@@ -430,7 +435,7 @@ lcd_bl_en_used = 0
 lcd_bl_en =
 lcd_power_used = 0
 lcd_power =
-lcd_pwm_used = 1
+lcd_pwm_used = 0
 lcd_pwm = port:PI03<2><0><default><default>
 lcd_gpio_0 =
 lcd_gpio_1 =
@@ -466,7 +471,7 @@ lcdhsync = port:PH26<2><0><default><default>
 lcdvsync = port:PH27<2><0><default><default>
 
 [tv_out_dac_para]
-dac_used = 1
+dac_used = 0
 dac0_src = 4
 dac1_src = 5
 dac2_src = 6
@@ -738,8 +743,8 @@ usb_host_init_state = 1
 vendor_id = 6353
 mass_storage_id = 1
 adb_id = 2
-manufacturer_name = "USB Developer"
-product_name = "Android"
+manufacturer_name = "QiMod Technology Ltd"
+product_name = "A10-EOMA68"
 serial_number = "20080411"
 
 [msc_feature]
@@ -820,7 +825,7 @@ bt_uart_id = 2
 bt_mod_type = 1
 
 [i2s_para]
-i2s_used = 1
+i2s_used = 0
 i2s_channel = 2
 i2s_mclk = port:PB05<2><1><default><default>
 i2s_bclk = port:PB06<2><1><default><default>
@@ -838,7 +843,7 @@ spdif_dout = port:PB13<4><1><default><default>
 spdif_din =
 
 [audio_para]
-audio_used = 1
+audio_used = 0
 capture_used = 1
 audio_lr_change = 0
 audio_pa_ctrl = port:PH15<1><default><default><0>
@@ -850,7 +855,7 @@ audio_btpwr_ctrl = port:PG02<1><default><default><0>
 switch_used = 1
 
 [ir_para]
-ir_used = 1
+ir_used = 0
 ir0_rx = port:PB04<2><default><default><default>
 
 [pmu_para]
