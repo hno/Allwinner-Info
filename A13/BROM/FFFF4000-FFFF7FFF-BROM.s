@@ -703,10 +703,10 @@ ffff4af0:	e1800481 	orr	r0, r0, r1, lsl #9
 ffff4af4:	e5820000 	str	r0, [r2]
 ffff4af8:	e3a00000 	mov	r0, #0
 ffff4afc:	e12fff1e 	bx	lr
-ffff4b00:	40ff0000 	rscsmi	r0, pc, r0
-ffff4b04:	40ff8000 	rscsmi	r8, pc, r0
-ffff4b08:	00ff8000 	rscseq	r8, pc, r0
-ffff4b0c:	ffff6594 			; <UNDEFINED> instruction: 0xffff6594
+ffff4b00:	40ff0000
+ffff4b04:	40ff8000
+ffff4b08:	00ff8000
+ffff4b0c:	ffff6594
 ffff4b10:	e92d4010 	push	{r4, lr}
 ffff4b14:	e1a02000 	mov	r2, r0
 ffff4b18:	e30f3fff 	movw	r3, #65535	; 0xffff
@@ -1074,14 +1074,14 @@ ffff50bc:	e5870038 	str	r0, [r7, #56]	; 0x38
 ffff50c0:	e59d0090 	ldr	r0, [sp, #144]	; 0x90
 ffff50c4:	e28dd094 	add	sp, sp, #148	; 0x94
 ffff50c8:	e8bd8ff0 	pop	{r4, r5, r6, r7, r8, r9, sl, fp, pc}
-ffff50cc:	01c20000 	biceq	r0, r2, r0
-ffff50d0:	00222222 	eoreq	r2, r2, r2, lsr #4
-ffff50d4:	00070008 	andeq	r0, r7, r8
-ffff50d8:	00404044 	subeq	r4, r0, r4, asr #32
-ffff50dc:	80202000 	eorhi	r2, r0, r0
-ffff50e0:	0007ffff 	strdeq	pc, [r7], -pc	; <UNPREDICTABLE>
-ffff50e4:	01c0f100 	biceq	pc, r0, r0, lsl #2
-ffff50e8:	000fffff 	strdeq	pc, [pc], -pc	; <UNPREDICTABLE>
+ffff50cc:	01c20000 	
+ffff50d0:	00222222 	
+ffff50d4:	00070008 	
+ffff50d8:	00404044 	
+ffff50dc:	80202000 	
+ffff50e0:	0007ffff 	
+ffff50e4:	01c0f100 	
+ffff50e8:	000fffff 	
 ffff50ec:	e92d41f0 	push	{r4, r5, r6, r7, r8, lr}
 ffff50f0:	e24dd038 	sub	sp, sp, #56	; 0x38
 ffff50f4:	e1a05000 	mov	r5, r0
@@ -1346,7 +1346,7 @@ ffff54fc:	e3a02028 	mov	r2, #40	; 0x28
 ffff5500:	e1a00005 	mov	r0, r5
 ffff5504:	eb000400 	bl	0xffff650c
 ffff5508:	e8bd8070 	pop	{r4, r5, r6, pc}
-ffff550c:	ffff65ac 			; <UNDEFINED> instruction: 0xffff65ac
+ffff550c:	ffff65ac
 ffff5510:	e92d4010 	push	{r4, lr}
 ffff5514:	e1a02000 	mov	r2, r0
 ffff5518:	e3a03000 	mov	r3, #0
@@ -1906,13 +1906,13 @@ ffff5dbc:	e3a00b01 	mov	r0, #1024	; 0x400
 ffff5dc0:	e320f000 	nop	{0}
 ffff5dc4:	e320f000 	nop	{0}
 ffff5dc8:	e12fff1e 	bx	lr
-ffff5dcc:	22222222 	eorcs	r2, r2, #536870914	; 0x20000002
-ffff5dd0:	01c20000 	biceq	r0, r2, r0
-ffff5dd4:	55555555 	ldrbpl	r5, [r5, #-1365]	; 0x555
-ffff5dd8:	0303000f 	movweq	r0, #12303	; 0x300f
-ffff5ddc:	4a800008 	bmi	0xfdff5e04
-ffff5de0:	01c03000 	biceq	r3, r0, r0
-ffff5de4:	fff3b0fb 			; <UNDEFINED> instruction: 0xfff3b0fb
+ffff5dcc:	22222222 
+ffff5dd0:	01c20000 
+ffff5dd4:	55555555 
+ffff5dd8:	0303000f 
+ffff5ddc:	4a800008 
+ffff5de0:	01c03000 
+ffff5de4:	fff3b0fb 
 ffff5de8:	e92d41f0 	push	{r4, r5, r6, r7, r8, lr}
 ffff5dec:	eb00003c 	bl	0xffff5ee4
 ffff5df0:	e3a04000 	mov	r4, #0
@@ -2261,13 +2261,13 @@ ffff6348:	e8920005 	ldm	r2, {r0, r2}
 ffff634c:	e88d0005 	stm	sp, {r0, r2}
 ffff6350:	e79d0101 	ldr	r0, [sp, r1, lsl #2]
 ffff6354:	e8bd800c 	pop	{r2, r3, pc}
-ffff6358:	01c20000 	biceq	r0, r2, r0
-ffff635c:	0004831f 	andeq	r8, r4, pc, lsl r3
-ffff6360:	01c05000 	biceq	r5, r0, r0
-ffff6364:	01c02000 	biceq	r2, r0, r0
-ffff6368:	9c380415 	cfldrsls	mvf0, [r8], #-84	; 0xffffffac
-ffff636c:	9c150438 	cfldrsls	mvf0, [r5], {56}	; 0x38
-ffff6370:	ffff6854 			; <UNDEFINED> instruction: 0xffff6854
+ffff6358:	01c20000 	
+ffff635c:	0004831f 	
+ffff6360:	01c05000 	
+ffff6364:	01c02000 	
+ffff6368:	9c380415 	
+ffff636c:	9c150438 	
+ffff6370:	ffff6854 
 ffff6374:	e92d40f0 	push	{r4, r5, r6, r7, lr}
 ffff6378:	e1a02000 	mov	r2, r0
 ffff637c:	e1a03002 	mov	r3, r2
@@ -2349,6 +2349,7 @@ ffff64a8:	e2411001 	sub	r1, r1, #1
 ffff64ac:	e3510000 	cmp	r1, #0
 ffff64b0:	cafffffc 	bgt	0xffff64a8
 ffff64b4:	e12fff1e 	bx	lr
+
 ffff64b8:	e92d4070 	push	{r4, r5, r6, lr}
 ffff64bc:	e3a05000 	mov	r5, #0
 ffff64c0:	e3a0603c 	mov	r6, #60	; 0x3c
@@ -2370,6 +2371,7 @@ ffff64fc:	e8bd8070 	pop	{r4, r5, r6, pc}
 ffff6500:	e3a00000 	mov	r0, #0
 ffff6504:	eafffffc 	b	0xffff64fc
 ffff6508:	e12fff1e 	bx	lr
+
 ffff650c:	e92d41f0 	push	{r4, r5, r6, r7, r8, lr}
 ffff6510:	e2522020 	subs	r2, r2, #32
 ffff6514:	3a00000d 	bcc	0xffff6550
@@ -2405,158 +2407,158 @@ ffff6588:	44c02001 	strbmi	r2, [r0], #1
 ffff658c:	e12fff1e 	bx	lr
 ffff6590:	e1a0f000 	mov	pc, r0
 	...
-ffff659c:	00000001 	andeq	r0, r0, r1
-ffff65a0:	00000200 	andeq	r0, r0, r0, lsl #4
-ffff65a4:	00ffffff 	ldrshteq	pc, [pc], #255	; <UNPREDICTABLE>
-ffff65a8:	000000ff 	strdeq	r0, [r0], -pc	; <UNPREDICTABLE>
-ffff65ac:	ffff5944 			; <UNDEFINED> instruction: 0xffff5944
-ffff65b0:	00000000 	andeq	r0, r0, r0
-ffff65b4:	00000001 	andeq	r0, r0, r1
+ffff659c:	00000001
+ffff65a0:	00000200
+ffff65a4:	00ffffff
+ffff65a8:	000000ff
+ffff65ac:	ffff5944
+ffff65b0:	00000000 
+ffff65b4:	00000001 
 	...
-ffff65c0:	00000002 	andeq	r0, r0, r2
-ffff65c4:	00000001 	andeq	r0, r0, r1
-ffff65c8:	00000040 	andeq	r0, r0, r0, asr #32
-ffff65cc:	00000001 	andeq	r0, r0, r1
-ffff65d0:	00000400 	andeq	r0, r0, r0, lsl #8
-ffff65d4:	ffff59a0 			; <UNDEFINED> instruction: 0xffff59a0
+ffff65c0:	00000002 
+ffff65c4:	00000001 
+ffff65c8:	00000040 
+ffff65cc:	00000001 
+ffff65d0:	00000400 
+ffff65d4:	ffff59a0
 	...
-ffff65e8:	00000002 	andeq	r0, r0, r2
-ffff65ec:	00000001 	andeq	r0, r0, r1
-ffff65f0:	00000040 	andeq	r0, r0, r0, asr #32
-ffff65f4:	00000001 	andeq	r0, r0, r1
-ffff65f8:	00000200 	andeq	r0, r0, r0, lsl #4
-ffff65fc:	ffff5944 			; <UNDEFINED> instruction: 0xffff5944
+ffff65e8:	00000002 
+ffff65ec:	00000001 
+ffff65f0:	00000040 
+ffff65f4:	00000001 
+ffff65f8:	00000200 
+ffff65fc:	ffff5944
 	...
-ffff6610:	00000002 	andeq	r0, r0, r2
-ffff6614:	00000000 	andeq	r0, r0, r0
-ffff6618:	00000040 	andeq	r0, r0, r0, asr #32
-ffff661c:	00000001 	andeq	r0, r0, r1
-ffff6620:	00000400 	andeq	r0, r0, r0, lsl #8
-ffff6624:	ffff59a0 			; <UNDEFINED> instruction: 0xffff59a0
+ffff6610:	00000002 
+ffff6614:	00000000 
+ffff6618:	00000040 
+ffff661c:	00000001 
+ffff6620:	00000400 
+ffff6624:	ffff59a0
 	...
-ffff6638:	00000002 	andeq	r0, r0, r2
-ffff663c:	00000000 	andeq	r0, r0, r0
-ffff6640:	00000040 	andeq	r0, r0, r0, asr #32
-ffff6644:	00000001 	andeq	r0, r0, r1
-ffff6648:	00000200 	andeq	r0, r0, r0, lsl #4
-ffff664c:	ffff5944 			; <UNDEFINED> instruction: 0xffff5944
+ffff6638:	00000002 
+ffff663c:	00000000 
+ffff6640:	00000040 
+ffff6644:	00000001 
+ffff6648:	00000200 
+ffff664c:	ffff5944
 	...
-ffff6660:	00000010 	andeq	r0, r0, r0, lsl r0
-ffff6664:	00000001 	andeq	r0, r0, r1
-ffff6668:	00000018 	andeq	r0, r0, r8, lsl r0
-ffff666c:	00000001 	andeq	r0, r0, r1
-ffff6670:	00000400 	andeq	r0, r0, r0, lsl #8
-ffff6674:	ffff5944 			; <UNDEFINED> instruction: 0xffff5944
+ffff6660:	00000010 
+ffff6664:	00000001 
+ffff6668:	00000018 
+ffff666c:	00000001 
+ffff6670:	00000400 
+ffff6674:	ffff5944
 	...
-ffff6688:	00000010 	andeq	r0, r0, r0, lsl r0
-ffff668c:	00000001 	andeq	r0, r0, r1
-ffff6690:	00000028 	andeq	r0, r0, r8, lsr #32
-ffff6694:	00000001 	andeq	r0, r0, r1
-ffff6698:	00000400 	andeq	r0, r0, r0, lsl #8
-ffff669c:	ffff5944 			; <UNDEFINED> instruction: 0xffff5944
+ffff6688:	00000010 
+ffff668c:	00000001 
+ffff6690:	00000028 
+ffff6694:	00000001 
+ffff6698:	00000400 
+ffff669c:	ffff5944
 	...
-ffff66b0:	00000008 	andeq	r0, r0, r8
-ffff66b4:	00000001 	andeq	r0, r0, r1
-ffff66b8:	00000040 	andeq	r0, r0, r0, asr #32
-ffff66bc:	00000001 	andeq	r0, r0, r1
-ffff66c0:	00000400 	andeq	r0, r0, r0, lsl #8
-ffff66c4:	ffff59a0 			; <UNDEFINED> instruction: 0xffff59a0
+ffff66b0:	00000008 
+ffff66b4:	00000001 
+ffff66b8:	00000040 
+ffff66bc:	00000001 
+ffff66c0:	00000400 
+ffff66c4:	ffff59a0
 	...
-ffff66d8:	00000008 	andeq	r0, r0, r8
-ffff66dc:	00000001 	andeq	r0, r0, r1
-ffff66e0:	00000040 	andeq	r0, r0, r0, asr #32
-ffff66e4:	00000001 	andeq	r0, r0, r1
-ffff66e8:	00000200 	andeq	r0, r0, r0, lsl #4
-ffff66ec:	ffff5944 			; <UNDEFINED> instruction: 0xffff5944
-ffff66f0:	00000003 	andeq	r0, r0, r3
-ffff66f4:	00000001 	andeq	r0, r0, r1
-ffff66f8:	00000001 	andeq	r0, r0, r1
-ffff66fc:	0000003f 	andeq	r0, r0, pc, lsr r0
-ffff6700:	00000002 	andeq	r0, r0, r2
-ffff6704:	00000001 	andeq	r0, r0, r1
-ffff6708:	00000040 	andeq	r0, r0, r0, asr #32
-ffff670c:	00000001 	andeq	r0, r0, r1
-ffff6710:	00000400 	andeq	r0, r0, r0, lsl #8
-ffff6714:	ffff5944 			; <UNDEFINED> instruction: 0xffff5944
-ffff6718:	00000003 	andeq	r0, r0, r3
-ffff671c:	00000000 	andeq	r0, r0, r0
-ffff6720:	00000002 	andeq	r0, r0, r2
-ffff6724:	0000003f 	andeq	r0, r0, pc, lsr r0
-ffff6728:	00000002 	andeq	r0, r0, r2
-ffff672c:	00000001 	andeq	r0, r0, r1
-ffff6730:	00000040 	andeq	r0, r0, r0, asr #32
-ffff6734:	00000001 	andeq	r0, r0, r1
-ffff6738:	00000400 	andeq	r0, r0, r0, lsl #8
-ffff673c:	ffff5944 			; <UNDEFINED> instruction: 0xffff5944
-ffff6740:	00000003 	andeq	r0, r0, r3
-ffff6744:	00000000 	andeq	r0, r0, r0
-ffff6748:	00000003 	andeq	r0, r0, r3
-ffff674c:	0000003f 	andeq	r0, r0, pc, lsr r0
-ffff6750:	00000002 	andeq	r0, r0, r2
-ffff6754:	00000001 	andeq	r0, r0, r1
-ffff6758:	00000040 	andeq	r0, r0, r0, asr #32
-ffff675c:	00000001 	andeq	r0, r0, r1
-ffff6760:	00000400 	andeq	r0, r0, r0, lsl #8
-ffff6764:	ffff59a0 			; <UNDEFINED> instruction: 0xffff59a0
-ffff6768:	00000003 	andeq	r0, r0, r3
-ffff676c:	00000000 	andeq	r0, r0, r0
-ffff6770:	00000001 	andeq	r0, r0, r1
-ffff6774:	0000003f 	andeq	r0, r0, pc, lsr r0
-ffff6778:	00000002 	andeq	r0, r0, r2
-ffff677c:	00000001 	andeq	r0, r0, r1
-ffff6780:	00000040 	andeq	r0, r0, r0, asr #32
-ffff6784:	00000001 	andeq	r0, r0, r1
-ffff6788:	00000200 	andeq	r0, r0, r0, lsl #4
-ffff678c:	ffff59a0 			; <UNDEFINED> instruction: 0xffff59a0
-ffff6790:	00000003 	andeq	r0, r0, r3
-ffff6794:	00000000 	andeq	r0, r0, r0
-ffff6798:	00000002 	andeq	r0, r0, r2
-ffff679c:	0000003f 	andeq	r0, r0, pc, lsr r0
-ffff67a0:	00000002 	andeq	r0, r0, r2
-ffff67a4:	00000001 	andeq	r0, r0, r1
-ffff67a8:	00000040 	andeq	r0, r0, r0, asr #32
-ffff67ac:	00000001 	andeq	r0, r0, r1
-ffff67b0:	00000200 	andeq	r0, r0, r0, lsl #4
-ffff67b4:	ffff59a0 			; <UNDEFINED> instruction: 0xffff59a0
-ffff67b8:	00000003 	andeq	r0, r0, r3
-ffff67bc:	00000000 	andeq	r0, r0, r0
-ffff67c0:	00000003 	andeq	r0, r0, r3
-ffff67c4:	0000003f 	andeq	r0, r0, pc, lsr r0
-ffff67c8:	00000002 	andeq	r0, r0, r2
-ffff67cc:	00000001 	andeq	r0, r0, r1
-ffff67d0:	00000040 	andeq	r0, r0, r0, asr #32
-ffff67d4:	00000001 	andeq	r0, r0, r1
-ffff67d8:	00000200 	andeq	r0, r0, r0, lsl #4
-ffff67dc:	ffff59a0 			; <UNDEFINED> instruction: 0xffff59a0
-ffff67e0:	00000003 	andeq	r0, r0, r3
-ffff67e4:	00000000 	andeq	r0, r0, r0
-ffff67e8:	00000001 	andeq	r0, r0, r1
-ffff67ec:	0000003f 	andeq	r0, r0, pc, lsr r0
-ffff67f0:	00000008 	andeq	r0, r0, r8
-ffff67f4:	00000001 	andeq	r0, r0, r1
-ffff67f8:	00000040 	andeq	r0, r0, r0, asr #32
-ffff67fc:	00000001 	andeq	r0, r0, r1
-ffff6800:	00000200 	andeq	r0, r0, r0, lsl #4
-ffff6804:	ffff59a0 			; <UNDEFINED> instruction: 0xffff59a0
-ffff6808:	00000003 	andeq	r0, r0, r3
-ffff680c:	00000000 	andeq	r0, r0, r0
-ffff6810:	00000002 	andeq	r0, r0, r2
-ffff6814:	0000003f 	andeq	r0, r0, pc, lsr r0
-ffff6818:	00000008 	andeq	r0, r0, r8
-ffff681c:	00000001 	andeq	r0, r0, r1
-ffff6820:	00000040 	andeq	r0, r0, r0, asr #32
-ffff6824:	00000001 	andeq	r0, r0, r1
-ffff6828:	00000200 	andeq	r0, r0, r0, lsl #4
-ffff682c:	ffff59a0 			; <UNDEFINED> instruction: 0xffff59a0
-ffff6830:	00000003 	andeq	r0, r0, r3
-ffff6834:	00000000 	andeq	r0, r0, r0
-ffff6838:	00000003 	andeq	r0, r0, r3
-ffff683c:	0000003f 	andeq	r0, r0, pc, lsr r0
-ffff6840:	00000008 	andeq	r0, r0, r8
-ffff6844:	00000001 	andeq	r0, r0, r1
-ffff6848:	00000040 	andeq	r0, r0, r0, asr #32
-ffff684c:	00000001 	andeq	r0, r0, r1
-ffff6850:	00000200 	andeq	r0, r0, r0, lsl #4
-ffff6854:	ffff621c 			; <UNDEFINED> instruction: 0xffff621c
-ffff6858:	ffff62b4 			; <UNDEFINED> instruction: 0xffff62b4
+ffff66d8:	00000008 
+ffff66dc:	00000001 
+ffff66e0:	00000040 
+ffff66e4:	00000001 
+ffff66e8:	00000200 
+ffff66ec:	ffff5944
+ffff66f0:	00000003 
+ffff66f4:	00000001 
+ffff66f8:	00000001 
+ffff66fc:	0000003f 
+ffff6700:	00000002 
+ffff6704:	00000001 
+ffff6708:	00000040 
+ffff670c:	00000001 
+ffff6710:	00000400 
+ffff6714:	ffff5944
+ffff6718:	00000003 
+ffff671c:	00000000 
+ffff6720:	00000002 
+ffff6724:	0000003f 
+ffff6728:	00000002 
+ffff672c:	00000001 
+ffff6730:	00000040 
+ffff6734:	00000001 
+ffff6738:	00000400 
+ffff673c:	ffff5944
+ffff6740:	00000003 
+ffff6744:	00000000 
+ffff6748:	00000003 
+ffff674c:	0000003f 
+ffff6750:	00000002 
+ffff6754:	00000001 
+ffff6758:	00000040 
+ffff675c:	00000001 
+ffff6760:	00000400 
+ffff6764:	ffff59a0
+ffff6768:	00000003 
+ffff676c:	00000000 
+ffff6770:	00000001 
+ffff6774:	0000003f 
+ffff6778:	00000002 
+ffff677c:	00000001 
+ffff6780:	00000040 
+ffff6784:	00000001 
+ffff6788:	00000200 
+ffff678c:	ffff59a0
+ffff6790:	00000003 
+ffff6794:	00000000 
+ffff6798:	00000002 
+ffff679c:	0000003f 
+ffff67a0:	00000002 
+ffff67a4:	00000001 
+ffff67a8:	00000040 
+ffff67ac:	00000001 
+ffff67b0:	00000200 
+ffff67b4:	ffff59a0 
+ffff67b8:	00000003 
+ffff67bc:	00000000 
+ffff67c0:	00000003 
+ffff67c4:	0000003f 
+ffff67c8:	00000002 
+ffff67cc:	00000001 
+ffff67d0:	00000040 
+ffff67d4:	00000001 
+ffff67d8:	00000200 
+ffff67dc:	ffff59a0 
+ffff67e0:	00000003 
+ffff67e4:	00000000 
+ffff67e8:	00000001 
+ffff67ec:	0000003f 
+ffff67f0:	00000008 
+ffff67f4:	00000001 
+ffff67f8:	00000040 
+ffff67fc:	00000001 
+ffff6800:	00000200 
+ffff6804:	ffff59a0 
+ffff6808:	00000003 
+ffff680c:	00000000 
+ffff6810:	00000002 
+ffff6814:	0000003f 
+ffff6818:	00000008 
+ffff681c:	00000001 
+ffff6820:	00000040 
+ffff6824:	00000001 
+ffff6828:	00000200 
+ffff682c:	ffff59a0 
+ffff6830:	00000003 
+ffff6834:	00000000 
+ffff6838:	00000003 
+ffff683c:	0000003f 
+ffff6840:	00000008 
+ffff6844:	00000001 
+ffff6848:	00000040 
+ffff684c:	00000001 
+ffff6850:	00000200 
+ffff6854:	ffff621c 
+ffff6858:	ffff62b4 
 	...
