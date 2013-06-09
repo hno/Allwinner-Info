@@ -151,7 +151,9 @@ uart_rx = port:PA11<4><1><default><default>
 uart_rts = port:PA12<4><1><default><default>
 uart_cts = port:PA13<4><1><default><default>
 uart_dtr = port:PA14<4><1><default><default>
-uart_dsr = port:PA15<4><1><default><default> uart_dcd = port:PA16<4><1><default><default> uart_ring = port:PA17<4><1><default><default>
+uart_dsr = port:PA15<4><1><default><default>
+uart_dcd = port:PA16<4><1><default><default>
+uart_ring = port:PA17<4><1><default><default>
 
 [uart_para2]
 uart_used = 0
