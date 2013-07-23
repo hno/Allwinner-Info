@@ -47,33 +47,33 @@ ffff008c:	e59f10b0 	ldr	r1, =0x01c20000
 ffff0090:	e3a02801 	mov	r2, 65536	; 0x10000
 ffff0094:	e5913054 	ldr	r3, [r1, #84]	; 0x54
 ffff0098:	e3c33803 	bic	r3, r3, #196608	; 0x30000
-ffff009c:	e1834002 	orr	r4, r3, r2
-ffff00a0:	e5814054 	str	r4, [r1, #84]	; 0x54
+ffff009c:	e1834002 	orr	r4, r3, r2	; 
+ffff00a0:	e5814054 	str	r4, [r1, #84]	; 0x54  CPU_CLK_SRC_SEL. = OSC24M
 ffff00a4:	e3a02010 	mov	r2, #16
 ffff00a8:	e5913054 	ldr	r3, [r1, #84]	; 0x54
 ffff00ac:	e3c330ff 	bic	r3, r3, #255	; 0xff
 ffff00b0:	e3c33c0f 	bic	r3, r3, #3840	; 0xf00
 ffff00b4:	e1834002 	orr	r4, r3, r2
-ffff00b8:	e5814054 	str	r4, [r1, #84]	; 0x54
+ffff00b8:	e5814054 	str	r4, [r1, #84]	; 0x54	AXI:AHB:APB = 1:1:2
 ffff00bc:	e3a02c01 	mov	r2, #256	; 0x100
 ffff00c0:	e59130cc 	ldr	r3, [r1, #204]	; 0xcc
 ffff00c4:	e3c33c01 	bic	r3, r3, #256	; 0x100
 ffff00c8:	e1834002 	orr	r4, r3, r2
-ffff00cc:	e58140cc 	str	r4, [r1, #204]	; 0xcc
+ffff00cc:	e58140cc 	str	r4, [r1, #204]	; 0xcc	USB_CLK = ON
 ffff00d0:	e3020710 	movw	r0, #10000	; 0x2710
 .loop1:
 ffff00d4:	e2500001 	subs	r0, r0, #1
-ffff00d8:	1afffffd 	bne	.loop1
+ffff00d8:	1afffffd 	bne	.loop1		; delay 10000
 ffff00dc:	e3a02001 	mov	r2, #1
 ffff00e0:	e5913060 	ldr	r3, [r1, #96]	; 0x60
 ffff00e4:	e3c33001 	bic	r3, r3, #1
 ffff00e8:	e1834002 	orr	r4, r3, r2
-ffff00ec:	e5814060 	str	r4, [r1, #96]	; 0x60
+ffff00ec:	e5814060 	str	r4, [r1, #96]	; 0x60	AHB_USB_GATE = ON
 ffff00f0:	e3a02001 	mov	r2, #1
 ffff00f4:	e59130cc 	ldr	r3, [r1, #204]	; 0xcc
 ffff00f8:	e3c33001 	bic	r3, r3, #1
 ffff00fc:	e1834002 	orr	r4, r3, r2
-ffff0100:	e58140cc 	str	r4, [r1, #204]	; 0xcc
+ffff0100:	e58140cc 	str	r4, [r1, #204]	; 0xcc  USBPHY0_RST = 1
 ffff0104:	e3a00000 	mov	r0, #0
 ffff0108:	ee080f15 	mcr	15, 0, r0, cr8, cr5, {0}
 ffff010c:	ee080f16 	mcr	15, 0, r0, cr8, cr6, {0}
@@ -1068,9 +1068,9 @@ f_0dc8:
 ffff0dc8:	e92d4010 	push	{r4, lr}
 ffff0dcc:	e3a00000 	mov	r0, #0
 ffff0dd0:	e59f197c 	ldr	r1, =0x1c20000
-ffff0dd4:	e5810440 	str	r0, [r1, #1088]	; 0x440
-ffff0dd8:	e5810444 	str	r0, [r1, #1092]	; 0x444
-ffff0ddc:	e5810448 	str	r0, [r1, #1096]	; 0x448
+ffff0dd4:	e5810440 	str	r0, [r1, #1088]	; 0x1c20440
+ffff0dd8:	e5810444 	str	r0, [r1, #1092]	; 0x1c20444
+ffff0ddc:	e5810448 	str	r0, [r1, #1096]	; 0x1c20448
 ffff0de0:	ebffffbd 	bl	f_0cdc
 ffff0de4:	ebffffc2 	bl	f_0cf4
 ffff0de8:	ea000009 	b	0xffff0e14
