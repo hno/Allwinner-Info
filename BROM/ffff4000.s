@@ -1,4 +1,3 @@
-
 BROM:
 ffff4000:	ea000006 	b	start
 
@@ -6,41 +5,41 @@ ffff4004:	"eGON.BRM ",0
 ffff4010:	"110011001623",0
 
 start:
-ffff4020:	e30004e2 	movw	r0, #0x4e2
-ffff4024:	e2500001 	subs	r0, r0, #0x1
-ffff4028:	1afffffd 	bne	0xffff4024
-ffff402c:	e10f0000 	mrs	r0, CPSR
-ffff4030:	e3c0001f 	bic	r0, r0, #0x1f
-ffff4034:	e3800013 	orr	r0, r0, #0x13
-ffff4038:	e3800040 	orr	r0, r0, #0x40
-ffff403c:	e3c00c02 	bic	r0, r0, #0x200
-ffff4040:	e121f000 	msr	CPSR_c, r0
-ffff4044:	ee110f10 	mrc	15, 0, r0, cr1, cr0, {0}
-ffff4048:	e3c00005 	bic	r0, r0, #0x5
-ffff404c:	e3c00b06 	bic	r0, r0, #0x1800
-ffff4050:	ee010f10 	mcr	15, 0, r0, cr1, cr0, {0}
-ffff4054:	e59f1050 	ldr	r1, =0x01c20c94
-ffff4058:	e5912000 	ldr	r2, [r1]
-ffff405c:	e3c22001 	bic	r2, r2, #0x1
-ffff4060:	e5812000 	str	r2, [r1]
-ffff4064:	e59f1044 	ldr	r1, =0x01c20000
-ffff4068:	e5912054 	ldr	r2, [r1, #0x54]	;	# 0x01c20054 = CCM 0x54
-ffff406c:	e3003333 	movw	r3, #0x333
-ffff4070:	e1c22003 	bic	r2, r2, r3
-ffff4074:	e3a03000 	mov	r3, #0x0
-ffff4078:	e1822003 	orr	r2, r2, r3
-ffff407c:	e5812054 	str	r2, [r1, #0x54]	;	# 0x01c20054
-ffff4080:	e5912060 	ldr	r2, [r1, #0x60]	;	# 0x01c20060
-ffff4084:	e3a03040 	mov	r3, #0x40
-ffff4088:	e1822003 	orr	r2, r2, r3
-ffff408c:	e5812060 	str	r2, [r1, #0x60]	;  # 0x01c20060
-ffff4090:	e5912068 	ldr	r2, [r1, #0x68]	;	# 0x01c20068
-ffff4094:	e3a03020 	mov	r3, #0x20
-ffff4098:	e1822003 	orr	r2, r2, r3
-ffff409c:	e5812068 	str	r2, [r1, #0x68]	;	# 0x01c20068
-ffff40a0:	e3a0d902 	mov	sp, #0x8000
-ffff40a4:	eb000002 	bl	boot
-ffff40a8:	eafffffe 	b	0xffff40a8
+ffff4020:	e30004e2 	movw	r0, #0x4e2		; r0 = 1250;
+ffff4024:	e2500001 	subs	r0, r0, #0x1		; r0 = r0 - 1;
+ffff4028:	1afffffd 	bne	0xffff4024		; loop until r0 reaches 0, e.g. for (i = 1250; i > 0; i--);
+ffff402c:	e10f0000 	mrs	r0, CPSR		; read current program status register
+ffff4030:	e3c0001f 	bic	r0, r0, #0x1f		; load System (ARMv4+) R0-R14, CPSR, PC as MASK
+ffff4034:	e3800013 	orr	r0, r0, #0x13		; set SVC mode (supervisor) R0-R12, R13_svc R14_svc CPSR, SPSR_IRQ, PC
+ffff4038:	e3800040 	orr	r0, r0, #0x40		; enable FIQ interrupts
+ffff403c:	e3c00c02 	bic	r0, r0, #0x200		; set little endianess
+ffff4040:	e121f000 	msr	CPSR_c, r0		; write current program status register flag bits
+ffff4044:	ee110f10 	mrc	15, 0, r0, cr1, cr0, {0}; read from CoProcessor
+ffff4048:	e3c00005 	bic	r0, r0, #0x5		; MMU disabled, data caching disabled
+ffff404c:	e3c00b06 	bic	r0, r0, #0x1800		; program flow prediction disabled, instruction caching disabled
+ffff4050:	ee010f10 	mcr	15, 0, r0, cr1, cr0, {0}; write to CoProcessor
+ffff4054:	e59f1050 	ldr	r1, =0x01c20c94		; load WDT_MODE (watchdog timer) address
+ffff4058:	e5912000 	ldr	r2, [r1]		; load WDT_MODE value
+ffff405c:	e3c22001 	bic	r2, r2, #0x1		; disable watchdog reset
+ffff4060:	e5812000 	str	r2, [r1]		; store WDT_MODE register
+ffff4064:	e59f1044 	ldr	r1, =0x01c20000		; load CCM_PLL1_CFG
+ffff4068:	e5912054 	ldr	r2, [r1, #0x54]		; load CCM_CPU_AXI_AHB_APB0_CFG
+ffff406c:	e3003333 	movw	r3, #0x333		; CCM_AXI_CLK_DIV = 0x11, CCM_AHB_CLK_DIV = 0x11, CCM_APB0_CLK_DIV = 0x11
+ffff4070:	e1c22003 	bic	r2, r2, r3		; CCM_AXI_CLK_DIV = 0x00, CCM_AHB_CLK_DIV = 0x00, CCM_APB0_CLK_DIV = 0x00
+ffff4074:	e3a03000 	mov	r3, #0x0		; r3 = 0;
+ffff4078:	e1822003 	orr	r2, r2, r3		; verify?
+ffff407c:	e5812054 	str	r2, [r1, #0x54]		; store CCM_CPU_AXI_AHB_APB0_CFG
+ffff4080:	e5912060 	ldr	r2, [r1, #0x60]		; load CCM_AHB_GATING0
+ffff4084:	e3a03040 	mov	r3, #0x40		; CCM_AHB_GATE_DMA = 0x1
+ffff4088:	e1822003 	orr	r2, r2, r3		; enable CCM_AHB_GATE_DMA in r2
+ffff408c:	e5812060 	str	r2, [r1, #0x60]		; store CCM_AHB_GATING0
+ffff4090:	e5912068 	ldr	r2, [r1, #0x68]		; load CCM_APB0_GATING
+ffff4094:	e3a03020 	mov	r3, #0x20		; CCM_APB_GATE_PIO = 0x1
+ffff4098:	e1822003 	orr	r2, r2, r3		; enable CCM_APB_GATE_PIO in r2
+ffff409c:	e5812068 	str	r2, [r1, #0x68]		; store CCM_APB0_GATING
+ffff40a0:	e3a0d902 	mov	sp, #0x8000		; put 0x8000 on top of the stack
+ffff40a4:	eb000002 	bl	boot			; jump to boot
+ffff40a8:	eafffffe 	b	0xffff40a8		; loop forever
 
 boot:
 ffff40b4:	e92d4010 	push	{r4, lr}
