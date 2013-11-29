@@ -37,53 +37,53 @@ ffff4090:	e5912068 	ldr	r2, [r1, #0x68]		; load CCM_APB0_GATING
 ffff4094:	e3a03020 	mov	r3, #0x20		; CCM_APB_GATE_PIO = 0x1
 ffff4098:	e1822003 	orr	r2, r2, r3		; enable CCM_APB_GATE_PIO in r2
 ffff409c:	e5812068 	str	r2, [r1, #0x68]		; store CCM_APB0_GATING
-ffff40a0:	e3a0d902 	mov	sp, #0x8000		; put 0x8000 on top of the stack
+ffff40a0:	e3a0d902 	mov	sp, #0x8000		; setup stackpointer to 32k (SRAM_BASE + SRAM_SIZE)
 ffff40a4:	eb000002 	bl	boot			; jump to boot
 ffff40a8:	eafffffe 	b	0xffff40a8		; loop forever
 
 boot:
-ffff40b4:	e92d4010 	push	{r4, lr}
-ffff40b8:	eb0008b1 	bl	check_uboot
-ffff40bc:	e1a04000 	mov	r4, r0
-ffff40c0:	e3540000 	cmp	r4, #0x0
-ffff40c4:	0a000000 	beq	.try_boot_MMC0
-ffff40c8:	ea000016 	b	.boot_fel
+ffff40b4:	e92d4010 	push	{r4, lr}		; push r4 and link register (return address) onto the stack
+ffff40b8:	eb0008b1 	bl	check_uboot		; check if uboot button is pressed, return value in r0
+ffff40bc:	e1a04000 	mov	r4, r0			; r4 = check_uboot();
+ffff40c0:	e3540000 	cmp	r4, #0x0		; see if check_uboot returned 0
+ffff40c4:	0a000000 	beq	.try_boot_MMC0		; if check_uboot was 0, try to boot from MMC0
+ffff40c8:	ea000016 	b	.boot_fel		; if try_boot_MMC0 failed (returns) boot FEL mode
 .try_boot_MMC0:
-ffff40cc:	e3a00000 	mov	r0, #0x0
-ffff40d0:	eb0003fa 	bl	load_from_mmc
-ffff40d4:	e1a04000 	mov	r4, r0
-ffff40d8:	e3540000 	cmp	r4, #0x0
-ffff40dc:	1a000000 	bne	.try_boot_B
-ffff40e0:	ea000013 	b	.boot
-.try_boot_B:
-ffff40e4:	eb0004c9 	bl	f_5410			; NAND?
-ffff40e8:	e1a04000 	mov	r4, r0
-ffff40ec:	e3540000 	cmp	r4, #0x0
-ffff40f0:	1a000000 	bne	.try_boot_MMC2
-ffff40f4:	ea00000e 	b	.boot
+ffff40cc:	e3a00000 	mov	r0, #0x0		; r0 = 0x0; (which mmc to boot, 0 = mmc0)
+ffff40d0:	eb0003fa 	bl	load_from_mmc		; load SPL from mmc0
+ffff40d4:	e1a04000 	mov	r4, r0			; r4 = load_from_mmc();
+ffff40d8:	e3540000 	cmp	r4, #0x0		; see if load_from_mmc returned 0
+ffff40dc:	1a000000 	bne	.try_boot_NAND		; if load_from_mmc returned 0 try to boot from NAND-flash
+ffff40e0:	ea000013 	b	.boot_spl		; else skip to .boot_spl
+.try_boot_NAND:
+ffff40e4:	eb0004c9 	bl	load_from_nand		; load SPL from NAND
+ffff40e8:	e1a04000 	mov	r4, r0			; r4 = load_from_nand();
+ffff40ec:	e3540000 	cmp	r4, #0x0		; see if load_from_nand returned 0
+ffff40f0:	1a000000 	bne	.try_boot_MMC2		; if load_from_nand returned 0 try to boot from MMC2
+ffff40f4:	ea00000e 	b	.boot_spl		; else skip to .boot_spl
 .try_boot_MMC2:
-ffff40f8:	e3a00002 	mov	r0, #0x2
-ffff40fc:	eb0003ef 	bl	load_from_mmc
-ffff4100:	e1a04000 	mov	r4, r0
-ffff4104:	e3540000 	cmp	r4, #0x0
-ffff4108:	1a000000 	bne	.try_boot_D
-ffff410c:	ea000008 	b	.boot
-.try_boot_D:
-ffff4110:	eb0006e6 	bl	f_5cb0			; SPI?
-ffff4114:	e1a04000 	mov	r4, r0
-ffff4118:	e3540000 	cmp	r4, #0x0
-ffff411c:	1a000000 	bne	.none_found
-ffff4120:	ea000003 	b	.boot
+ffff40f8:	e3a00002 	mov	r0, #0x2		; r0 = 0x2; (which mmc to boot, 2 = mmc2)
+ffff40fc:	eb0003ef 	bl	load_from_mmc		; load SPL from mmc0
+ffff4100:	e1a04000 	mov	r4, r0			; r4 = load_from_mmc();
+ffff4104:	e3540000 	cmp	r4, #0x0		; see if load_from_mmc returned 0
+ffff4108:	1a000000 	bne	.try_boot_SPINOR	; if load_from_mmc returned 0 try to boot from SPI NOR-flash
+ffff410c:	ea000008 	b	.boot_spl		; else skip to .boot_spl
+.try_boot_SPINOR:
+ffff4110:	eb0006e6 	bl	load_from_spinor	; load SPL from SPI NOR-flash
+ffff4114:	e1a04000 	mov	r4, r0			; r4 = load_from_spinor();
+ffff4118:	e3540000 	cmp	r4, #0x0		; see if load_from_spinor returned 0
+ffff411c:	1a000000 	bne	.none_found		; if load_from_spinor returned 0 boot from FEL mode (via .none_found)
+ffff4120:	ea000003 	b	.boot			; else skip to .boot_spl
 .none_found:
 ffff4124:	e320f000 	nop	{0}
 .boot_fel:
-ffff4128:	e59f0010 	ldr	r0, =0xffff0020
-ffff412c:	eb0008ca 	bl	call_r0
+ffff4128:	e59f0010 	ldr	r0, =0xffff0020		; load interrupt vector 'fel_setup' into r0
+ffff412c:	eb0008ca 	bl	call_r0			; execute 'fel_setup' (via call_r0)
 ffff4130:	e320f000 	nop	{0}
-.boot
-ffff4134:	e3a00000 	mov	r0, #0x0
-ffff4138:	eb0008c7 	bl	call_r0
-ffff413c:	e8bd8010 	pop	{r4, pc}
+.boot_spl
+ffff4134:	e3a00000 	mov	r0, #0x0		; r0 = 0;
+ffff4138:	eb0008c7 	bl	call_r0			; execute from address 0 (SRAM_BASE, via call_r0) which was put here by load_from_*
+ffff413c:	e8bd8010 	pop	{r4, pc}		; pop r4 and program counter back from th stack and return to ffff40a8
 
 f_4144:
 ffff4144:	e92d401f 	push	{r0, r1, r2, r3, r4, lr}
@@ -1322,7 +1322,7 @@ ffff5404:	3affffec 	bcc	0xffff53bc
 ffff5408:	e3e00000 	mvn	r0, #0x0
 ffff540c:	eafffff7 	b	0xffff53f0
 
-f_5410:
+load_from_nand:
 ffff5410:	e92d4010 	push	{r4, lr}
 ffff5414:	ebffffe4 	bl	f_53ac
 ffff5418:	e3500000 	cmp	r0, #0x0
@@ -1928,7 +1928,7 @@ ffff5c88:	e1a00480 	lsl	r0, r0, #0x9
 ffff5c8c:	e58100a0 	str	r0, [r1, #0xa0]
 ffff5c90:	e8bd87f0 	pop	{r4, r5, r6, r7, r8, r9, sl, pc}
 
-f_5cb0:
+load_from_spinor:
 ffff5cb0:	e92d41f0 	push	{r4, r5, r6, r7, r8, lr}
 ffff5cb4:	eb00003c 	bl	f_5dac
 ffff5cb8:	e3a04000 	mov	r4, #0x0
