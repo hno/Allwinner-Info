@@ -7,7 +7,7 @@ ffff4010:	"110011001623",0
 start:
 ffff4020:	e30004e2 	movw	r0, #0x4e2		; r0 = 1250;
 ffff4024:	e2500001 	subs	r0, r0, #0x1		; r0 = r0 - 1;
-ffff4028:	1afffffd 	bne	0xffff4024		; loop until r0 reaches 0, e.g. for (i = 1250; i > 0; i--);
+ffff4028:	1afffffd 	bne	0xffff4024		; loop until r0 reaches 0
 ffff402c:	e10f0000 	mrs	r0, CPSR		; read current program status register
 ffff4030:	e3c0001f 	bic	r0, r0, #0x1f		; load System (ARMv4+) R0-R14, CPSR, PC as MASK
 ffff4034:	e3800013 	orr	r0, r0, #0x13		; set SVC mode (supervisor) R0-R12, R13_svc R14_svc CPSR, SPSR_IRQ, PC
