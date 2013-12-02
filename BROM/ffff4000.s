@@ -41,6 +41,46 @@ ffff40a0:	e3a0d902 	mov	sp, #0x8000		; setup stackpointer to 32k (SRAM_BASE + SR
 ffff40a4:	eb000002 	bl	boot			; jump to boot
 ffff40a8:	eafffffe 	b	0xffff40a8		; loop forever
 
+void main(void) {
+	int i;
+	int reg_val;
+
+	for (i = 1250; i > 0; i--);
+
+	asm("mrs r0, CPSR");
+	asm("bic r0, r0, #0x1f");
+	asm("orr r0, r0, #0x13");
+	asm("orr r0, r0, #0x40");
+	asm("bic r0, r0, #0x200");
+	asm("msr CPSRc, r0);
+	asm("mrc 15, 0, r0, cr1, cr0, {0}");
+	asm("bic r0, r0, #0x5");
+	asm("bic r0, r0, #0x18000");
+	asm("mcr 15, 0, r0, cr1, cr0, {0}");
+
+	reg_val = readl(TMR_WDT_MODE);
+	reg_val &= !TMR_WDT_RST;
+	writel(reg_val, TMR_WDT_MODE);
+
+	reg_val = readl(CCM_CPU_AXI_AHB_APB0_CFG);
+	reg_val &= !(CCM_AXI_DIV(4) | CCM_AHB_CLK_DIV(8), CCM_APB0_CLK_DIV(8));
+	writel(reg_val, CCM_CPU_AXI_AHB_APB0_CFG);
+
+	reg_val = readl(CCM_AHB_GATING0);
+	reg_val |= CCM_AHB_GATE_DMA;
+	writel(reg_val, CCM_AHB_gATING0);
+
+	reg_val = readl(CCM_APB0_GATING);
+	reg_val |= CCM_APB_GATE_PIO;
+	writel(reg_val, CCM_APB0_GATING);
+
+	asm("mov sp, 0x8000");
+
+	boot();
+
+	while (TRUE);
+}
+
 boot:
 ffff40b4:	e92d4010 	push	{r4, lr}		; push r4 and link register (return address) onto the stack
 ffff40b8:	eb0008b1 	bl	check_uboot		; check if uboot button is pressed, return value in r0
