@@ -125,6 +125,23 @@ ffff4134:	e3a00000 	mov	r0, #0x0		; r0 = 0;
 ffff4138:	eb0008c7 	bl	call_r0			; execute from address 0 (SRAM_BASE, via call_r0) which was put here by load_from_*
 ffff413c:	e8bd8010 	pop	{r4, pc}		; pop r4 and program counter back from th stack and return to ffff40a8
 
+void boot(void) {
+	int pin;
+
+	pin = check_uboot();
+	if (!pin)
+		if (load_from_mmc(MMC0))
+			call_r0(SRAM_BASE);
+		else if (load_from_nand())
+			call_r0(SRAM_BASE);
+		else if (load_from_mmc(MMC2))
+			call_r0(SRAM_BASE);
+		else if (load_from_spinor())
+			call_r0(SRAM_BASE);
+
+	call_r0(FEL_SETUP);
+}
+
 f_4144:
 ffff4144:	e92d401f 	push	{r0, r1, r2, r3, r4, lr}
 ffff4148:	e1a04000 	mov	r4, r0
