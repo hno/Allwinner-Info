@@ -87,7 +87,7 @@ ffff40b8:	eb0008b1 	bl	check_uboot		; check if uboot button is pressed, return v
 ffff40bc:	e1a04000 	mov	r4, r0			; r4 = check_uboot();
 ffff40c0:	e3540000 	cmp	r4, #0x0		; see if check_uboot returned 0
 ffff40c4:	0a000000 	beq	.try_boot_MMC0		; if check_uboot was 0, try to boot from MMC0
-ffff40c8:	ea000016 	b	.boot_fel		; if try_boot_MMC0 failed (returns) boot FEL mode
+ffff40c8:	ea000016 	b	.boot_fel		; else boot FEL mode
 .try_boot_MMC0:
 ffff40cc:	e3a00000 	mov	r0, #0x0		; r0 = 0x0; (which mmc to boot, 0 = mmc0)
 ffff40d0:	eb0003fa 	bl	load_from_mmc		; load SPL from mmc0
