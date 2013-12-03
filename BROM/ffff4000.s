@@ -7,7 +7,7 @@ ffff4010:	"110011001623",0
 start:
 ffff4020:	e30004e2 	movw	r0, #0x4e2		; r0 = 1250;
 ffff4024:	e2500001 	subs	r0, r0, #0x1		; r0 = r0 - 1;
-ffff4028:	1afffffd 	bne	0xffff4024		; loop until r0 reaches 0, e.g. for (i = 1250; i > 0; i--);
+ffff4028:	1afffffd 	bne	0xffff4024		; loop until r0 reaches 0
 ffff402c:	e10f0000 	mrs	r0, CPSR		; read current program status register
 ffff4030:	e3c0001f 	bic	r0, r0, #0x1f		; load System (ARMv4+) R0-R14, CPSR, PC as MASK
 ffff4034:	e3800013 	orr	r0, r0, #0x13		; set SVC mode (supervisor) R0-R12, R13_svc R14_svc CPSR, SPSR_IRQ, PC
@@ -41,13 +41,53 @@ ffff40a0:	e3a0d902 	mov	sp, #0x8000		; setup stackpointer to 32k (SRAM_BASE + SR
 ffff40a4:	eb000002 	bl	boot			; jump to boot
 ffff40a8:	eafffffe 	b	0xffff40a8		; loop forever
 
+void main(void) {
+	int i;
+	int reg_val;
+
+	for (i = 1250; i > 0; i--);
+
+	asm("mrs r0, CPSR");
+	asm("bic r0, r0, #0x1f");
+	asm("orr r0, r0, #0x13");
+	asm("orr r0, r0, #0x40");
+	asm("bic r0, r0, #0x200");
+	asm("msr CPSRc, r0);
+	asm("mrc 15, 0, r0, cr1, cr0, {0}");
+	asm("bic r0, r0, #0x5");
+	asm("bic r0, r0, #0x18000");
+	asm("mcr 15, 0, r0, cr1, cr0, {0}");
+
+	reg_val = readl(TMR_WDT_MODE);
+	reg_val &= !TMR_WDT_RST;
+	writel(reg_val, TMR_WDT_MODE);
+
+	reg_val = readl(CCM_CPU_AXI_AHB_APB0_CFG);
+	reg_val &= !(CCM_AXI_DIV(4) | CCM_AHB_CLK_DIV(8), CCM_APB0_CLK_DIV(8));
+	writel(reg_val, CCM_CPU_AXI_AHB_APB0_CFG);
+
+	reg_val = readl(CCM_AHB_GATING0);
+	reg_val |= CCM_AHB_GATE_DMA;
+	writel(reg_val, CCM_AHB_gATING0);
+
+	reg_val = readl(CCM_APB0_GATING);
+	reg_val |= CCM_APB_GATE_PIO;
+	writel(reg_val, CCM_APB0_GATING);
+
+	asm("mov sp, 0x8000");
+
+	boot();
+
+	while (TRUE);
+}
+
 boot:
 ffff40b4:	e92d4010 	push	{r4, lr}		; push r4 and link register (return address) onto the stack
 ffff40b8:	eb0008b1 	bl	check_uboot		; check if uboot button is pressed, return value in r0
 ffff40bc:	e1a04000 	mov	r4, r0			; r4 = check_uboot();
 ffff40c0:	e3540000 	cmp	r4, #0x0		; see if check_uboot returned 0
 ffff40c4:	0a000000 	beq	.try_boot_MMC0		; if check_uboot was 0, try to boot from MMC0
-ffff40c8:	ea000016 	b	.boot_fel		; if try_boot_MMC0 failed (returns) boot FEL mode
+ffff40c8:	ea000016 	b	.boot_fel		; else boot FEL mode
 .try_boot_MMC0:
 ffff40cc:	e3a00000 	mov	r0, #0x0		; r0 = 0x0; (which mmc to boot, 0 = mmc0)
 ffff40d0:	eb0003fa 	bl	load_from_mmc		; load SPL from mmc0
@@ -84,6 +124,23 @@ ffff4130:	e320f000 	nop	{0}
 ffff4134:	e3a00000 	mov	r0, #0x0		; r0 = 0;
 ffff4138:	eb0008c7 	bl	call_r0			; execute from address 0 (SRAM_BASE, via call_r0) which was put here by load_from_*
 ffff413c:	e8bd8010 	pop	{r4, pc}		; pop r4 and program counter back from th stack and return to ffff40a8
+
+void boot(void) {
+	int pin;
+
+	pin = check_uboot();
+	if (!pin)
+		if (load_from_mmc(MMC0))
+			call_r0(SRAM_BASE);
+		else if (load_from_nand())
+			call_r0(SRAM_BASE);
+		else if (load_from_mmc(MMC2))
+			call_r0(SRAM_BASE);
+		else if (load_from_spinor())
+			call_r0(SRAM_BASE);
+
+	call_r0(FEL_SETUP);
+}
 
 f_4144:
 ffff4144:	e92d401f 	push	{r0, r1, r2, r3, r4, lr}
