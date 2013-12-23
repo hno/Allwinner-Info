@@ -1986,10 +1986,10 @@ ffff5c8c:	e58100a0 	str	r0, [r1, #0xa0]
 ffff5c90:	e8bd87f0 	pop	{r4, r5, r6, r7, r8, r9, sl, pc}
 
 load_from_spinor:
-ffff5cb0:	e92d41f0 	push	{r4, r5, r6, r7, r8, lr}
-ffff5cb4:	eb00003c 	bl	f_5dac
-ffff5cb8:	e3a04000 	mov	r4, #0x0
-ffff5cbc:	ea000027 	b	0xffff5d60
+ffff5cb0:	e92d41f0 	push	{r4, r5, r6, r7, r8, lr}; Push vars to stack
+ffff5cb4:	eb00003c 	bl	spinor_setup_clk	; spinor_setup_clk();
+ffff5cb8:	e3a04000 	mov	r4, #0x0		; r4 = 0;
+ffff5cbc:	ea000027 	b	0xffff5d60		; goto err;
 ffff5cc0:	e1a00004 	mov	r0, r4
 ffff5cc4:	eb00014f 	bl	f_6208
 ffff5cc8:	e1a05000 	mov	r5, r0
@@ -2030,6 +2030,7 @@ ffff5d50:	e3a00000 	mov	r0, #0x0
 ffff5d54:	e8bd81f0 	pop	{r4, r5, r6, r7, r8, pc}
 ffff5d58:	e320f000 	nop	{0}
 ffff5d5c:	e2844001 	add	r4, r4, #0x1
+err:
 ffff5d60:	e3540002 	cmp	r4, #0x2
 ffff5d64:	3affffd5 	bcc	0xffff5cc0
 ffff5d68:	eb00002e 	bl	f_5e28
@@ -2039,44 +2040,89 @@ ffff5d74:	4e4f4765 	cdpmi	7, 4, cr4, cr15, cr5, {3}
 ffff5d78:	3054422e 	subscc	r4, r4, lr, lsr #0x4
 ffff5d7c:	00000000 	andeq	r0, r0, r0
 
-f_5d80:
-ffff5d80:	e3001333 	movw	r1, #0x333		; SPI0_MOSI, SPI0_MISO, SPI0_CLK
-ffff5d84:	e59f2498 	ldr	r2, =0x01c20000
-ffff5d88:	e5821848 	str	r1, [r2, #0x848]	; PC_CFG0
-ffff5d8c:	e3a01203 	mov	r1, #0x30000000		; SPI0_CS0
-ffff5d90:	e5821850 	str	r1, [r2, #0x850]	; PC_CFG2
-ffff5d94:	e1c21001 	bic	r1, r2, r1
-ffff5d98:	e5910868 	ldr	r0, [r1, #0x868]	; PC_PULL1
-ffff5d9c:	e3c00903 	bic	r0, r0, #0xc000]
-ffff5da0:	e3800901 	orr	r0, r0, #0x4000]	; SPI0_CS0=PULLDOWN
-ffff5da4:	e5810868 	str	r0, [r1, #0x868]	; PC_PULL1
-ffff5da8:	e12fff1e 	bx	lr
+spinor_setup_pinmux:
+ffff5d80:	e3001333 	movw	r1, #0x333		; Configure Port C to SPI0_MOSI, SPI0_MISO, SPI0_CLK in r1
+ffff5d84:	e59f2498 	ldr	r2, =0x01c20000		; load Port IO register (0x01c20800) to r2
+ffff5d88:	e5821848 	str	r1, [r2, #0x848]	; store r1 PC_CFG0 (2 * 0x24 + 0x00)
+ffff5d8c:	e3a01203 	mov	r1, #0x30000000		; Configure Port C to SPI0_CS0 in r1
+ffff5d90:	e5821850 	str	r1, [r2, #0x850]	; store r1 PC_CFG2 (2 * 0x24 + 0x08)
+ffff5d94:	e1c21001 	bic	r1, r2, r1		; load Port IO register (0x01c20800) to r1
+ffff5d98:	e5910868 	ldr	r0, [r1, #0x868]	; load PC_PULL1 into r0
+ffff5d9c:	e3c00903 	bic	r0, r0, #0xc000]	; clear SPI0_CS0 in PC_PULL1
+ffff5da0:	e3800901 	orr	r0, r0, #0x4000]	; set SPI0_CS0 as PULLDOWN
+ffff5da4:	e5810868 	str	r0, [r1, #0x868]	; store PC_PULL1
+ffff5da8:	e12fff1e 	bx	lr			; return
 
-f_5dac:
-ffff5dac:	e92d4010 	push	{r4, lr}
-ffff5db0:	e59f046c 	ldr	r0, =0x01c20000
-ffff5db4:	e5900060 	ldr	r0, [r0, #0x60]
-ffff5db8:	e3800601 	orr	r0, r0, #0x100000
-ffff5dbc:	e59f1460 	ldr	r1, =0x01c20000
-ffff5dc0:	e5810060 	str	r0, [r1, #0x60]
-ffff5dc4:	e1a00001 	mov	r0, r1
-ffff5dc8:	e59000a0 	ldr	r0, [r0, #0xa0]
-ffff5dcc:	e3800102 	orr	r0, r0, #-0x80000000	; 0x80000000
-ffff5dd0:	e58100a0 	str	r0, [r1, #0xa0]
-ffff5dd4:	ebffffe9 	bl	f_5d80
-ffff5dd8:	e59f0444 	ldr	r0, =0x01c20000
-ffff5ddc:	e5900060 	ldr	r0, [r0, #0x60]
-ffff5de0:	e3800040 	orr	r0, r0, #0x40
-ffff5de4:	e59f1438 	ldr	r1, =0x01c20000
-ffff5de8:	e5810060 	str	r0, [r1, #0x60]
-ffff5dec:	e3010002 	movw	r0, #0x1002
-ffff5df0:	e2411a1b 	sub	r1, r1, #0x1b000
-ffff5df4:	e581001c 	str	r0, [r1, #0x1c]
-ffff5df8:	e3000202 	movw	r0, #0x202
-ffff5dfc:	e5810014 	str	r0, [r1, #0x14]
-ffff5e00:	e59f0420 	ldr	r0, =0x0004831f
-ffff5e04:	e5810008 	str	r0, [r1, #0x8]
-ffff5e08:	e8bd8010 	pop	{r4, pc}
+void spinor_setup_pinmux(void)
+{
+	int reg_val;
+
+	reg_val = readl(PIO_PC_CFG0);
+	reg_val |= SPI0_MOSI, SPI0_MISO, SPI0_CLK;
+	writel(reg_val, PIO_PC_CFG0);
+	reg_val = readl(PIO_PC_CFG1);
+	reg_val |= SPI0_CS0;
+	writel(reg_val, PIO_PC_CFG1);
+
+	reg_val = readl(PIO_PC_PULL1);
+	reg_val |= PULL_UP < SPI0_CS0;
+	writel(reg_val, PIO_PC_PULL1);
+}
+
+spinor_setup_clk:
+ffff5dac:	e92d4010 	push	{r4, lr}		; store load_from_spinor return point in r4
+ffff5db0:	e59f046c 	ldr	r0, =0x01c20000		; load CCM (Clock Control Module) main register into r0
+ffff5db4:	e5900060 	ldr	r0, [r0, #0x60]		; load CCM_AHB_GATING0 into r0
+ffff5db8:	e3800601 	orr	r0, r0, #0x100000	; enable AHB SPI 0 clock gate in r0
+ffff5dbc:	e59f1460 	ldr	r1, =0x01c20000		; load CCM main reg in r1
+ffff5dc0:	e5810060 	str	r0, [r1, #0x60]		; store CCM_AHB_GATING
+ffff5dc4:	e1a00001 	mov	r0, r1			; load CCM_AHB_GATING0 into r0
+ffff5dc8:	e59000a0 	ldr	r0, [r0, #0xa0]		; load CCM_SPI0_CLK into r0
+ffff5dcc:	e3800102 	orr	r0, r0, #-0x80000000	; enable CCM_SPI0_GATE (with default factors, M=1; N=1; OSC24M)
+ffff5dd0:	e58100a0 	str	r0, [r1, #0xa0]		; store CCM_SPIO_CLK
+ffff5dd4:	ebffffe9 	bl	spinor_setup_pinmux	; configure SPI0 pinmuxing	
+ffff5dd8:	e59f0444 	ldr	r0, =0x01c20000		; load CCM into r0
+ffff5ddc:	e5900060 	ldr	r0, [r0, #0x60]		; load CCM_AHB_GATING into r0
+ffff5de0:	e3800040 	orr	r0, r0, #0x40		; enable CCM_AHB_GATE_DMA in r0
+ffff5de4:	e59f1438 	ldr	r1, =0x01c20000		; load CCM_AHB_GATING0 into r1
+ffff5de8:	e5810060 	str	r0, [r1, #0x60]		; store CCM_AHB_GATE_DMA in CCM_AHB_GATE_DMA
+ffff5dec:	e3010002 	movw	r0, #0x1002		; set SPI0_CLK = AHB_CLK / (2 * (2 + 1)) and set SPI0_DIV_RATE to clock divide rate 2 into r0
+ffff5df0:	e2411a1b 	sub	r1, r1, #0x1b000	; subtract 0x1b000 from r1 = 0x1c05000, SPI0 Register
+ffff5df4:	e581001c 	str	r0, [r1, #0x1c]		; store r0 into SPI0_CCTL
+ffff5df8:	e3000202 	movw	r0, #0x202		; enable SPI0_DMA_RX_FULL and SPI0_DMA_TX_HALF
+ffff5dfc:	e5810014 	str	r0, [r1, #0x14]		; store r0 in SPI0_DMACTL
+ffff5e00:	e59f0420 	ldr	r0, =0x0004831f		; set SPI0_EN, SPI0_MODE_MASTER, SPI0_PHASE_CTL_SETUP, SPI0_CLK_POL_LOW, SPI0_CS_POL_LOW, SPI0_TXFIFO_RST, SPI0_RXFIFO_RST, SPI0_DISCARD_HASH_BURST, SPI0_TX_PAUSE_EN in r0
+ffff5e04:	e5810008 	str	r0, [r1, #0x8]		; store r0 in SPI0_CTL
+ffff5e08:	e8bd8010 	pop	{r4, pc}		; return to load_from_spinor
+
+void spinor_setup_clk(void)
+{
+	int reg_val;
+
+	reg_val = readl(CCM_AHB_GATING0);
+	reg_val |= CCM_AHB_GATE_SPI0;
+	writel(reg_val, CCM_AHB_GATING0);
+
+	reg_val = readl(CCM_SPI0_CLK);
+	reg_val |= CCM_SPI0_GATE;
+	writel(reg_val, CCM_SPI0_CLK);
+
+	spinor_setup_pinmux();
+
+	reg_val = readl(SPI0_CCTL);
+	reg_val |= SPIO_AHB_CLK(6) | SPI0_DIV_RATE(2);
+	writel(reg_val, SPIO_CCTL);
+
+	reg_val = readl(SPI0_DMACTL);
+	reg_val |= SPI0_DMA_RX_FULL | SPI0_DMA_TX_HALF;
+	writel(reg_val, SPI0_DMACTL);
+
+	reg_val = readl(SPI0_CTL);
+	reg_val |= SPI0_EN | SPI0_MODE_MASTER | SPI0_PHASE_CTL_SETUP |
+		   SPI0_CLK_POL_LOW | SPI0_CS_POL_LOW | SPI0_TXFIFO_RST |
+		   SPI0_RXFIFO_RST | SPI0_DISCARD_HASH_BURST | SPI0_TX_PAUSE_EN;
+	writel(reg_val, SPI0_CTL);
+}
 
 f_5e0c:
 ffff5e0c:	e3a00000 	mov	r0, #0x0
