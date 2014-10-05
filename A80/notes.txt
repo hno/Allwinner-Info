@@ -1,0 +1,28 @@
+BROM is at address 0, at least after boot1 started.
+
+Boot code is loaded at address 0x10000 (SRAM_A1).
+
+From kernel headers, which matches observations:
+
+SUNXI_BROM0_N_PBASE                       0x00000000
+SUNXI_BROM0_N_SIZE                        0x00008000
+SUNXI_SRAM_A1_PBASE                       0x00010000
+SUNXI_SRAM_A1_SIZE                        0x0000a000
+
+Not sure what BROM1 is. Range overlaps with BROM0
+
+SUNXI_BROM1_S_PBASE                       0x00000000
+SUNXI_BROM1_S_SIZE                        0x00010000
+
+Haven't tested any of the following yet
+
+SUNXI_SRAM_A2_PBASE                       0x08100000
+SUNXI_SRAM_A2_SIZE                        0x00028000
+SUNXI_SRAM_B_PBASE                        0x00020000
+SUNXI_SRAM_B_SIZE                         0x00040000
+SUNXI_SRAM_C_PBASE                        0x01d00000
+SUNXI_SRAM_C_SIZE                         0x00100000
+SUNXI_DRAM_PBASE                          0x20000000 /* 0x20000000 ~ 0x220000000(size: 8G) */
+SUNXI_GPU_PBASE                           0x02000000
+SUNXI_GPU_SIZE                            0x01000000
+
