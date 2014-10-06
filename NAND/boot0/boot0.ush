@@ -1,11 +1,17 @@
+# Set slow clock for easier analysis with logic analyser
+mw.l 01c20080 8003000f
+
+# Enable NAND clock gate
+md.l 01c20060 1
+# bit 13 needs to be set.
+# Enable all AHB gates.
+mw.l 01c20060 0xffffffff
+
 # Dump the important registers
 md.l 01c03000 20
 
 # Dump data sector in SRAM
 md.b 01c03400 400
-
-# Set slow clock for easier analysis with logic analyser
-mw.l 01c20080 8003000f
 
 # Initialization
 mw.l 1c03000 2	  # Reset
