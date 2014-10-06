@@ -313,94 +313,16 @@ Disassembly of section .data:
      864:	eb001588 	bl	0x5e8c
      868:	ea000059 	b	0x9d4
      86c:	fdf94080 	ldc2l	0, cr4, [r9, #512]!	; 0x200
-     870:	636d6d5b 	cmnvs	sp, #5824	; 0x16c0
-     874:	6d203a5d 	vstmdbvs	r0!, {s6-s98}
-     878:	2520636d 	strcs	r6, [r0, #-877]!	; 0x36d
-     87c:	65532064 	ldrbvs	r2, [r3, #-100]	; 0x64
-     880:	7320646e 	teqvc	r0, #1845493760	; 0x6e000000
-     884:	75746174 	ldrbvc	r6, [r4, #-372]!	; 0x174
-     888:	61662073 	smcvs	25091	; 0x6203
-     88c:	64656c69 	strbtvs	r6, [r5], #-3177	; 0xc69
-     890:	0000000a 	andeq	r0, r0, sl
-     894:	636d6d5b 	cmnvs	sp, #5824	; 0x16c0
-     898:	6d203a5d 	vstmdbvs	r0!, {s6-s98}
-     89c:	2520636d 	strcs	r6, [r0, #-877]!	; 0x36d
-     8a0:	74532064 	ldrbvc	r2, [r3], #-100	; 0x64
-     8a4:	73757461 	cmnvc	r5, #1627389952	; 0x61000000
-     8a8:	72724520 	rsbsvc	r4, r2, #32, 10	; 0x8000000
-     8ac:	203a726f 	eorscs	r7, sl, pc, ror #4
-     8b0:	30257830 	eorcc	r7, r5, r0, lsr r8
-     8b4:	000a5838 	andeq	r5, sl, r8, lsr r8
-     8b8:	636d6d5b 	cmnvs	sp, #5824	; 0x16c0
-     8bc:	6d203a5d 	vstmdbvs	r0!, {s6-s98}
-     8c0:	2520636d 	strcs	r6, [r0, #-877]!	; 0x36d
-     8c4:	69542064 	ldmdbvs	r4, {r2, r5, r6, sp}^
-     8c8:	756f656d 	strbvc	r6, [pc, #-1389]!	; 0x363
-     8cc:	61772074 	cmnvs	r7, r4, ror r0
-     8d0:	6e697469 	cdpvs	4, 6, cr7, cr9, cr9, {3}
-     8d4:	61632067 	cmnvs	r3, r7, rrx
-     8d8:	72206472 	eorvc	r6, r0, #1912602624	; 0x72000000
-     8dc:	79646165 	stmdbvc	r4!, {r0, r2, r5, r6, r8, sp, lr}^
-     8e0:	0000000a 	andeq	r0, r0, sl
+     870:	"[mmc]: mmc %d Send status failed\n",0,0,0
+     894:	"[mmc]: mmc %d Status Error: 0x%08X\n",0
+     8b8:	"[mmc]: mmc %d Timeout waiting card ready\n",0,0,0
      8e4:	00016c0c 	andeq	r6, r1, ip, lsl #24
-     8e8:	636d6d5b 	cmnvs	sp, #5824	; 0x16c0
-     8ec:	4d203a5d 	vstmdbmi	r0!, {s6-s98}
-     8f0:	4420434d 	strtmi	r4, [r0], #-845	; 0x34d
-     8f4:	63697665 	cmnvs	r9, #105906176	; 0x6500000
-     8f8:	64252065 	strtvs	r2, [r5], #-101	; 0x65
-     8fc:	746f6e20 	strbtvc	r6, [pc], #-3616	; 0x904
-     900:	756f6620 	strbvc	r6, [pc, #-1568]!	; 0x2e8
-     904:	000a646e 	andeq	r6, sl, lr, ror #8
-     908:	636d6d5b 	cmnvs	sp, #5824	; 0x16c0
-     90c:	6d203a5d 	vstmdbvs	r0!, {s6-s98}
-     910:	2520636d 	strcs	r6, [r0, #-877]!	; 0x36d
-     914:	72202064 	eorvc	r2, r0, #100	; 0x64
-     918:	20646165 	rsbcs	r6, r4, r5, ror #2
-     91c:	6f636c62 	svcvs	0x00636c62
-     920:	6166206b 	cmnvs	r6, fp, rrx
-     924:	64656c69 	strbtvs	r6, [r5], #-3177	; 0xc69
-     928:	0000000a 	andeq	r0, r0, sl
-     92c:	636d6d5b 	cmnvs	sp, #5824	; 0x16c0
-     930:	6d203a5d 	vstmdbvs	r0!, {s6-s98}
-     934:	2520636d 	strcs	r6, [r0, #-877]!	; 0x36d
-     938:	61662064 	cmnvs	r6, r4, rrx
-     93c:	74206c69 	strtvc	r6, [r0], #-3177	; 0xc69
-     940:	6573206f 	ldrbvs	r2, [r3, #-111]!	; 0x6f
-     944:	7320646e 	teqvc	r0, #1845493760	; 0x6e000000
-     948:	20706f74 	rsbscs	r6, r0, r4, ror pc
-     94c:	0a646d63 	beq	0x191bee0
-     950:	00000000 	andeq	r0, r0, r0
-     954:	636d6d5b 	cmnvs	sp, #5824	; 0x16c0
-     958:	6d203a5d 	vstmdbvs	r0!, {s6-s98}
-     95c:	2520636d 	strcs	r6, [r0, #-877]!	; 0x36d
-     960:	6c622064 	stclvs	0, cr2, [r2], #-400	; 0xfffffe70
-     964:	746e636b 	strbtvc	r6, [lr], #-875	; 0x36b
-     968:	6f687320 	svcvs	0x00687320
-     96c:	20646c75 	rsbcs	r6, r4, r5, ror ip
-     970:	20746f6e 	rsbscs	r6, r4, lr, ror #30
-     974:	30206562 	eorcc	r6, r0, r2, ror #10
-     978:	0000000a 	andeq	r0, r0, sl
-     97c:	636d6d5b 	cmnvs	sp, #5824	; 0x16c0
-     980:	43203a5d 	teqmi	r0, #380928	; 0x5d000
-     984:	6e206e61 	cdpvs	14, 2, cr6, cr0, cr1, {3}
-     988:	6620746f 	strtvs	r7, [r0], -pc, ror #8
-     98c:	20646e69 	rsbcs	r6, r4, r9, ror #28
-     990:	20636d6d 	rsbcs	r6, r3, sp, ror #26
-     994:	20766564 	rsbscs	r6, r6, r4, ror #10
-     998:	000a6425 	andeq	r6, sl, r5, lsr #8
-     99c:	636d6d5b 	cmnvs	sp, #5824	; 0x16c0
-     9a0:	6d203a5d 	vstmdbvs	r0!, {s6-s98}
-     9a4:	2520636d 	strcs	r6, [r0, #-877]!	; 0x36d
-     9a8:	62203a64 	eorvs	r3, r0, #100, 20	; 0x64000
-     9ac:	6b636f6c 	blvs	0x18dc764
-     9b0:	6d756e20 	ldclvs	14, cr6, [r5, #-128]!	; 0xffffff80
-     9b4:	20726562 	rsbscs	r6, r2, r2, ror #10
-     9b8:	78257830 	stmdavc	r5!, {r4, r5, fp, ip, sp, lr}
-     9bc:	63786520 	cmnvs	r8, #32, 10	; 0x8000000
-     9c0:	73646565 	cmnvc	r4, #423624704	; 0x19400000
-     9c4:	78616d20 	stmdavc	r1!, {r5, r8, sl, fp, sp, lr}^
-     9c8:	25783028 	ldrbcs	r3, [r8, #-40]!	; 0x28
-     9cc:	000a2978 	andeq	r2, sl, r8, ror r9
+     8e8:	"[mmc]: MMC Device %d not found\n",0
+     908:	"[mmc]: mmc %d  read blcok failed\n",0,0,0
+     92c:	"[mmc]: mmc %d fail to send stop cmd\n",0,0,0,0
+     954:	"[mmc]: mmc %d blkcnt should not be 0\n",0,0,0
+     97c:	"[mmc]: Can not find mmc dev %d\n",0
+     99c:	"[mmc]: mmc %d: block number 0x%x exceeds max(0x%x)\n",0
      9d0:	eb00152d 	bl	0x5e8c
      9d4:	e3a00000 	mov	r0, #0
      9d8:	e8bd87f0 	pop	{r4, r5, r6, r7, r8, r9, sl, pc}
@@ -538,72 +460,16 @@ Disassembly of section .data:
      be8:	eb0014a7 	bl	0x5e8c
      bec:	e1a00005 	mov	r0, r5
      bf0:	eaffffc2 	b	0xb00
-     bf4:	636d6d5b 	cmnvs	sp, #5824	; 0x16c0
-     bf8:	6d203a5d 	vstmdbvs	r0!, {s6-s98}
-     bfc:	2520636d 	strcs	r6, [r0, #-877]!	; 0x36d
-     c00:	65532064 	ldrbvs	r2, [r3, #-100]	; 0x64
-     c04:	6c622074 	stclvs	0, cr2, [r2], #-464	; 0xfffffe30
-     c08:	206b636f 	rsbcs	r6, fp, pc, ror #6
-     c0c:	206e656c 	rsbcs	r6, lr, ip, ror #10
-     c10:	6c696166 	stfvse	f6, [r9], #-408	; 0xfffffe68
-     c14:	000a6465 	andeq	r6, sl, r5, ror #8
-     c18:	636d6d5b 	cmnvs	sp, #5824	; 0x16c0
-     c1c:	6d203a5d 	vstmdbvs	r0!, {s6-s98}
-     c20:	2520636d 	strcs	r6, [r0, #-877]!	; 0x36d
-     c24:	6c622064 	stclvs	0, cr2, [r2], #-400	; 0xfffffe70
-     c28:	206b636f 	rsbcs	r6, fp, pc, ror #6
-     c2c:	64616572 	strbtvs	r6, [r1], #-1394	; 0x572
-     c30:	69616620 	stmdbvs	r1!, {r5, r9, sl, sp, lr}^
-     c34:	0a64656c 	beq	0x191a1ec
-     c38:	00000000 	andeq	r0, r0, r0
-     c3c:	636d6d5b 	cmnvs	sp, #5824	; 0x16c0
-     c40:	6d203a5d 	vstmdbvs	r0!, {s6-s98}
-     c44:	2520636d 	strcs	r6, [r0, #-877]!	; 0x36d
-     c48:	6f672064 	svcvs	0x00672064
-     c4c:	6c646920 	stclvs	9, cr6, [r4], #-128	; 0xffffff80
-     c50:	61662065 	cmnvs	r6, r5, rrx
-     c54:	64656c69 	strbtvs	r6, [r5], #-3177	; 0xc69
-     c58:	0000000a 	andeq	r0, r0, sl
+     bf4:	"[mmc]: mmc %d Set block len failed\n",0
+     c18:	"[mmc]: mmc %d block read failed\n",0,0,0,0
+     c3c:	"[mmc]: mmc %d go idle failed\n",0,0,0
      c5c:	00020020 	andeq	r0, r2, r0, lsr #32
-     c60:	636d6d5b 	cmnvs	sp, #5824	; 0x16c0
-     c64:	6d203a5d 	vstmdbvs	r0!, {s6-s98}
-     c68:	2520636d 	strcs	r6, [r0, #-877]!	; 0x36d
-     c6c:	65732064 	ldrbvs	r2, [r3, #-100]!	; 0x64
-     c70:	6120646e 	teqvs	r0, lr, ror #8
-     c74:	63207070 	teqvs	r0, #112	; 0x70
-     c78:	6620646d 	strtvs	r6, [r0], -sp, ror #8
-     c7c:	656c6961 	strbvs	r6, [ip, #-2401]!	; 0x961
-     c80:	00000a64 	andeq	r0, r0, r4, ror #20
+     c60:	"[mmc]: mmc %d send app cmd failed\n",0,0
      c84:	00ff8000 	rscseq	r8, pc, r0
-     c88:	636d6d5b 	cmnvs	sp, #5824	; 0x16c0
-     c8c:	6d203a5d 	vstmdbvs	r0!, {s6-s98}
-     c90:	2520636d 	strcs	r6, [r0, #-877]!	; 0x36d
-     c94:	65732064 	ldrbvs	r2, [r3, #-100]!	; 0x64
-     c98:	6320646e 	teqvs	r0, #1845493760	; 0x6e000000
-     c9c:	3134646d 	teqcc	r4, sp, ror #8
-     ca0:	69616620 	stmdbvs	r1!, {r5, r9, sl, sp, lr}^
-     ca4:	0a64656c 	beq	0x191a25c
-     ca8:	00000000 	andeq	r0, r0, r0
-     cac:	636d6d5b 	cmnvs	sp, #5824	; 0x16c0
-     cb0:	6d203a5d 	vstmdbvs	r0!, {s6-s98}
-     cb4:	2520636d 	strcs	r6, [r0, #-877]!	; 0x36d
-     cb8:	61772064 	cmnvs	r7, r4, rrx
-     cbc:	63207469 	teqvs	r0, #1761607680	; 0x69000000
-     cc0:	20647261 	rsbcs	r7, r4, r1, ror #4
-     cc4:	74696e69 	strbtvc	r6, [r9], #-3689	; 0xe69
-     cc8:	69616620 	stmdbvs	r1!, {r5, r9, sl, sp, lr}^
-     ccc:	0a64656c 	beq	0x191a284
-     cd0:	00000000 	andeq	r0, r0, r0
+     c88:	"[mmc]: mmc %d send cmd41 failed\n",0,0,0,0
+     cac:	"[mmc]: mmc %d wait card init failed\n",0,0,0,0
      cd4:	00020010 	andeq	r0, r2, r0, lsl r0
-     cd8:	636d6d5b 	cmnvs	sp, #5824	; 0x16c0
-     cdc:	6d203a5d 	vstmdbvs	r0!, {s6-s98}
-     ce0:	2520636d 	strcs	r6, [r0, #-877]!	; 0x36d
-     ce4:	70732064 	rsbsvc	r2, r3, r4, rrx
-     ce8:	65722069 	ldrbvs	r2, [r2, #-105]!	; 0x69
-     cec:	6f206461 	svcvs	0x00206461
-     cf0:	66207263 	strtvs	r7, [r0], -r3, ror #4
-     cf4:	656c6961 	strbvs	r6, [ip, #-2401]!	; 0x961
-     cf8:	00000a64 	andeq	r0, r0, r4, ror #20
+     cd8:	"[mmc]: mmc %d spi read ocr failed\n",0,0
      cfc:	e59d000c 	ldr	r0, [sp, #12]
      d00:	e5840050 	str	r0, [r4, #80]	; 0x50
      d04:	e7e00f50 	ubfx	r0, r0, #30, #1
@@ -804,32 +670,10 @@ Disassembly of section .data:
     104c:	"[mmc]: mmc %d send ext csd failed\n",0,0
     1070:	"[mmc]: mmc %d switch failed\n",0,0,0,0
     1090:	00010040 	andeq	r0, r1, r0, asr #32
-    1094:	636d6d5b 	cmnvs	sp, #5824	; 0x16c0
-    1098:	6d203a5d 	vstmdbvs	r0!, {s6-s98}
-    109c:	2520636d 	strcs	r6, [r0, #-877]!	; 0x36d
-    10a0:	65672064 	strbvs	r2, [r7, #-100]!	; 0x64
-    10a4:	78652074 	stmdavc	r5!, {r2, r4, r5, r6, sp}^
-    10a8:	73632074 	cmnvc	r3, #116	; 0x74
-    10ac:	61662064 	cmnvs	r6, r4, rrx
-    10b0:	64656c69 	strbtvs	r6, [r5], #-3177	; 0xc69
-    10b4:	0000000a 	andeq	r0, r0, sl
-    10b8:	636d6d5b 	cmnvs	sp, #5824	; 0x16c0
-    10bc:	72203a5d 	eorvc	r3, r0, #380928	; 0x5d000
-    10c0:	79727465 	ldmdbvc	r2!, {r0, r2, r5, r6, sl, ip, sp, lr}^
-    10c4:	636d6d20 	cmnvs	sp, #32, 26	; 0x800
-    10c8:	69777320 	ldmdbvs	r7!, {r5, r8, r9, ip, sp, lr}^
-    10cc:	28686374 	stmdacs	r8!, {r2, r4, r5, r6, r8, r9, sp, lr}^
-    10d0:	36646d63 	strbtcc	r6, [r4], -r3, ror #26
-    10d4:	00000a29 	andeq	r0, r0, r9, lsr #20
-    10d8:	636d6d5b 	cmnvs	sp, #5824	; 0x16c0
-    10dc:	6d203a5d 	vstmdbvs	r0!, {s6-s98}
-    10e0:	2520636d 	strcs	r6, [r0, #-877]!	; 0x36d
-    10e4:	68632064 	stmdavs	r3!, {r2, r5, r6, sp}^
-    10e8:	65676e61 	strbvs	r6, [r7, #-3681]!	; 0xe61
-    10ec:	206f7420 	rsbcs	r7, pc, r0, lsr #8
-    10f0:	66207368 	strtvs	r7, [r0], -r8, ror #6
-    10f4:	656c6961 	strbvs	r6, [ip, #-2401]!	; 0x961
-    10f8:	00000a64 	andeq	r0, r0, r4, ror #20
+    1094:	"[mmc]: mmc %d get ext csd failed\n",0,0,0
+    10b8:	"[mmc]: retry mmc switch(cmd6)\n",0,0
+    10d8:	"[mmc]: mmc %d change to hs failed\n",0,0
+
     10fc:	e1a0100d 	mov	r1, sp
     1100:	e1a00004 	mov	r0, r4
     1104:	ebffff5b 	bl	0xe78
@@ -1009,55 +853,13 @@ Disassembly of section .data:
     13bc:	05840048 	streq	r0, [r4, #72]	; 0x48
     13c0:	e3a00000 	mov	r0, #0
     13c4:	eaffffa0 	b	0x124c
-    13c8:	636d6d5b 	cmnvs	sp, #5824	; 0x16c0
-    13cc:	6d203a5d 	vstmdbvs	r0!, {s6-s98}
-    13d0:	2520636d 	strcs	r6, [r0, #-877]!	; 0x36d
-    13d4:	65732064 	ldrbvs	r2, [r3, #-100]!	; 0x64
-    13d8:	6520646e 	strvs	r6, [r0, #-1134]!	; 0x46e
-    13dc:	63207478 	teqvs	r0, #120, 8	; 0x78000000
-    13e0:	66206473 			; <UNDEFINED> instruction: 0x66206473
-    13e4:	646c6961 	strbtvs	r6, [ip], #-2401	; 0x961
-    13e8:	0000000a 	andeq	r0, r0, sl
-    13ec:	636d6d5b 	cmnvs	sp, #5824	; 0x16c0
-    13f0:	6d203a5d 	vstmdbvs	r0!, {s6-s98}
-    13f4:	2520636d 	strcs	r6, [r0, #-877]!	; 0x36d
-    13f8:	65532064 	ldrbvs	r2, [r3, #-100]	; 0x64
-    13fc:	6120646e 	teqvs	r0, lr, ror #8
-    1400:	63207070 	teqvs	r0, #112	; 0x70
-    1404:	6620646d 	strtvs	r6, [r0], -sp, ror #8
-    1408:	656c6961 	strbvs	r6, [ip, #-2401]!	; 0x961
-    140c:	00000a64 	andeq	r0, r0, r4, ror #20
-    1410:	636d6d5b 	cmnvs	sp, #5824	; 0x16c0
-    1414:	6d203a5d 	vstmdbvs	r0!, {s6-s98}
-    1418:	2520636d 	strcs	r6, [r0, #-877]!	; 0x36d
-    141c:	65532064 	ldrbvs	r2, [r3, #-100]	; 0x64
-    1420:	7320646e 	teqvc	r0, #1845493760	; 0x6e000000
-    1424:	66207263 	strtvs	r7, [r0], -r3, ror #4
-    1428:	656c6961 	strbvs	r6, [ip, #-2401]!	; 0x961
-    142c:	00000a64 	andeq	r0, r0, r4, ror #20
-    1430:	636d6d5b 	cmnvs	sp, #5824	; 0x16c0
-    1434:	6d203a5d 	vstmdbvs	r0!, {s6-s98}
-    1438:	2520636d 	strcs	r6, [r0, #-877]!	; 0x36d
-    143c:	68432064 	stmdavs	r3, {r2, r5, r6, sp}^
-    1440:	206b6365 	rsbcs	r6, fp, r5, ror #6
-    1444:	68676968 	stmdavs	r7!, {r3, r5, r6, r8, fp, sp, lr}^
-    1448:	65707320 	ldrbvs	r7, [r0, #-800]!	; 0x320
-    144c:	73206465 	teqvc	r0, #1694498816	; 0x65000000
-    1450:	75746174 	ldrbvc	r6, [r4, #-372]!	; 0x174
-    1454:	61662073 	smcvs	25091	; 0x6203
-    1458:	0a646c69 	beq	0x191c604
-    145c:	00000000 	andeq	r0, r0, r0
-    1460:	636d6d5b 	cmnvs	sp, #5824	; 0x16c0
-    1464:	6d203a5d 	vstmdbvs	r0!, {s6-s98}
-    1468:	2520636d 	strcs	r6, [r0, #-877]!	; 0x36d
-    146c:	77732064 	ldrbvc	r2, [r3, -r4, rrx]!
-    1470:	68637469 	stmdavs	r3!, {r0, r3, r5, r6, sl, ip, sp, lr}^
-    1474:	206f7420 	rsbcs	r7, pc, r0, lsr #8
-    1478:	68676968 	stmdavs	r7!, {r3, r5, r6, r8, fp, sp, lr}^
-    147c:	65707320 	ldrbvs	r7, [r0, #-800]!	; 0x320
-    1480:	66206465 	strtvs	r6, [r0], -r5, ror #8
-    1484:	656c6961 	strbvs	r6, [ip, #-2401]!	; 0x961
-    1488:	00000a64 	andeq	r0, r0, r4, ror #20
+
+    13c8:	"[mmc]: mmc %d send ext csd faild\n",0,0,0
+    13ec:	"[mmc]: mmc %d Send app cmd failed\n",0,0
+    1410:	"[mmc]: mmc %d Send scr failed\n",0,0
+    1430:	"[mmc]: mmc %d Check high speed status faild\n",0,0,0,0
+    1460:	"[mmc]: mmc %d switch to high speed failed\n",0,0
+
     148c:	e590109c 	ldr	r1, [r0, #156]	; 0x9c
     1490:	e12fff11 	bx	r1
     1494:	e5902038 	ldr	r2, [r0, #56]	; 0x38
@@ -1273,49 +1075,17 @@ Disassembly of section .data:
     17dc:	ea000035 	b	0x18b8
     17e0:	ea000036 	b	0x18c0
     17e4:	ea000037 	b	0x18c8
-    17e8:	636d6d5b 	cmnvs	sp, #5824	; 0x16c0
-    17ec:	6d203a5d 	vstmdbvs	r0!, {s6-s98}
-    17f0:	2520636d 	strcs	r6, [r0, #-877]!	; 0x36d
-    17f4:	75502064 	ldrbvc	r2, [r0, #-100]	; 0x64
-    17f8:	68742074 	ldmdavs	r4!, {r2, r4, r5, r6, sp}^
-    17fc:	61432065 	cmpvs	r3, r5, rrx
-    1800:	69206472 	stmdbvs	r0!, {r1, r4, r5, r6, sl, sp, lr}
-    1804:	6449206e 	strbvs	r2, [r9], #-110	; 0x6e
-    1808:	69746e65 	ldmdbvs	r4!, {r0, r2, r5, r6, r9, sl, fp, sp, lr}^
-    180c:	4d207966 	stcmi	9, cr7, [r0, #-408]!	; 0xfffffe68
-    1810:	2065646f 	rsbcs	r6, r5, pc, ror #8
-    1814:	6c696166 	stfvse	f6, [r9], #-408	; 0xfffffe68
-    1818:	000a6465 	andeq	r6, sl, r5, ror #8
-    181c:	636d6d5b 	cmnvs	sp, #5824	; 0x16c0
-    1820:	6d203a5d 	vstmdbvs	r0!, {s6-s98}
-    1824:	2520636d 	strcs	r6, [r0, #-877]!	; 0x36d
-    1828:	65732064 	ldrbvs	r2, [r3, #-100]!	; 0x64
-    182c:	7220646e 	eorvc	r6, r0, #1845493760	; 0x6e000000
-    1830:	66206163 	strtvs	r6, [r0], -r3, ror #2
-    1834:	656c6961 	strbvs	r6, [ip, #-2401]!	; 0x961
-    1838:	00000a64 	andeq	r0, r0, r4, ror #20
-    183c:	636d6d5b 	cmnvs	sp, #5824	; 0x16c0
-    1840:	6d203a5d 	vstmdbvs	r0!, {s6-s98}
-    1844:	2520636d 	strcs	r6, [r0, #-877]!	; 0x36d
-    1848:	65672064 	strbvs	r2, [r7, #-100]!	; 0x64
-    184c:	73632074 	cmnvc	r3, #116	; 0x74
-    1850:	61662064 	cmnvs	r6, r4, rrx
-    1854:	64656c69 	strbtvs	r6, [r5], #-3177	; 0xc69
-    1858:	0000000a 	andeq	r0, r0, sl
-    185c:	00010022 	andeq	r0, r1, r2, lsr #32
-    1860:	00010014 	andeq	r0, r1, r4, lsl r0
-    1864:	00010030 	andeq	r0, r1, r0, lsr r0
-    1868:	00016b50 	andeq	r6, r1, r0, asr fp
-    186c:	00016b60 	andeq	r6, r1, r0, ror #22
-    1870:	636d6d5b 	cmnvs	sp, #5824	; 0x16c0
-    1874:	53203a5d 	teqpl	r0, #380928	; 0x5d000
-    1878:	63656c65 	cmnvs	r5, #25856	; 0x6500
-    187c:	68742074 	ldmdavs	r4!, {r2, r4, r5, r6, sp}^
-    1880:	61632065 	cmnvs	r3, r5, rrx
-    1884:	66206472 			; <UNDEFINED> instruction: 0x66206472
-    1888:	656c6961 	strbvs	r6, [ip, #-2401]!	; 0x961
-    188c:	00000a64 	andeq	r0, r0, r4, ror #20
-    1890:	00010041 	andeq	r0, r1, r1, asr #32
+
+    17e8:	"[mmc]: mmc %d Put the Card in Identify Mode failed\n",0
+    181c:	"[mmc]: mmc %d send rca failed\n",0,0
+    183c:	"[mmc]: mmc %d get csd failed\n",0,0,0
+    185c:	00010022
+    1860:	00010014
+    1864:	00010030
+    1868:	00016b50
+    186c:	00016b60
+    1870:	"[mmc]: Select the card failed\n",0,0
+    1890:	00010041
     1894:	e584a028 	str	sl, [r4, #40]	; 0x28
     1898:	ea00000e 	b	0x18d8
     189c:	e5847028 	str	r7, [r4, #40]	; 0x28
