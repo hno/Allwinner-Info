@@ -1986,11 +1986,11 @@ ffff5c8c:	e58100a0 	str	r0, [r1, #0xa0]
 ffff5c90:	e8bd87f0 	pop	{r4, r5, r6, r7, r8, r9, sl, pc}
 
 load_from_spinor:
-ffff5cb0:	e92d41f0 	push	{r4, r5, r6, r7, r8, lr}
-ffff5cb4:	eb00003c 	bl	f_5dac
-ffff5cb8:	e3a04000 	mov	r4, #0x0
-ffff5cbc:	ea000027 	b	0xffff5d60
-ffff5cc0:	e1a00004 	mov	r0, r4
+ffff5cb0:	e92d41f0 	push	{r4, r5, r6, r7, r8, lr}; Push vars to stack
+ffff5cb4:	eb00003c 	bl	spinor_setup_clk	; spinor_setup_clk();
+ffff5cb8:	e3a04000 	mov	r4, #0x0		; r4 = 0;
+ffff5cbc:	ea000027 	b	0xffff5d60		; goto err;
+ffff5cc0:	e1a00004 	mov	r0, r4			; r0 = r4;
 ffff5cc4:	eb00014f 	bl	f_6208
 ffff5cc8:	e1a05000 	mov	r5, r0
 ffff5ccc:	e3a02001 	mov	r2, #0x1
@@ -2030,6 +2030,7 @@ ffff5d50:	e3a00000 	mov	r0, #0x0
 ffff5d54:	e8bd81f0 	pop	{r4, r5, r6, r7, r8, pc}
 ffff5d58:	e320f000 	nop	{0}
 ffff5d5c:	e2844001 	add	r4, r4, #0x1
+err:
 ffff5d60:	e3540002 	cmp	r4, #0x2
 ffff5d64:	3affffd5 	bcc	0xffff5cc0
 ffff5d68:	eb00002e 	bl	f_5e28
@@ -2039,44 +2040,89 @@ ffff5d74:	4e4f4765 	cdpmi	7, 4, cr4, cr15, cr5, {3}
 ffff5d78:	3054422e 	subscc	r4, r4, lr, lsr #0x4
 ffff5d7c:	00000000 	andeq	r0, r0, r0
 
-f_5d80:
-ffff5d80:	e3001333 	movw	r1, #0x333		; SPI0_MOSI, SPI0_MISO, SPI0_CLK
-ffff5d84:	e59f2498 	ldr	r2, =0x01c20000
-ffff5d88:	e5821848 	str	r1, [r2, #0x848]	; PC_CFG0
-ffff5d8c:	e3a01203 	mov	r1, #0x30000000		; SPI0_CS0
-ffff5d90:	e5821850 	str	r1, [r2, #0x850]	; PC_CFG2
-ffff5d94:	e1c21001 	bic	r1, r2, r1
-ffff5d98:	e5910868 	ldr	r0, [r1, #0x868]	; PC_PULL1
-ffff5d9c:	e3c00903 	bic	r0, r0, #0xc000]
-ffff5da0:	e3800901 	orr	r0, r0, #0x4000]	; SPI0_CS0=PULLDOWN
-ffff5da4:	e5810868 	str	r0, [r1, #0x868]	; PC_PULL1
-ffff5da8:	e12fff1e 	bx	lr
+spinor_setup_pinmux:
+ffff5d80:	e3001333 	movw	r1, #0x333		; Configure Port C to SPI0_MOSI, SPI0_MISO, SPI0_CLK in r1
+ffff5d84:	e59f2498 	ldr	r2, =0x01c20000		; load Port IO register (0x01c20800) to r2
+ffff5d88:	e5821848 	str	r1, [r2, #0x848]	; store r1 PC_CFG0 (2 * 0x24 + 0x00)
+ffff5d8c:	e3a01203 	mov	r1, #0x30000000		; Configure Port C to SPI0_CS0 in r1
+ffff5d90:	e5821850 	str	r1, [r2, #0x850]	; store r1 PC_CFG2 (2 * 0x24 + 0x08)
+ffff5d94:	e1c21001 	bic	r1, r2, r1		; load Port IO register (0x01c20800) to r1
+ffff5d98:	e5910868 	ldr	r0, [r1, #0x868]	; load PC_PULL1 into r0
+ffff5d9c:	e3c00903 	bic	r0, r0, #0xc000]	; clear SPI0_CS0 in PC_PULL1
+ffff5da0:	e3800901 	orr	r0, r0, #0x4000]	; set SPI0_CS0 as PULLDOWN
+ffff5da4:	e5810868 	str	r0, [r1, #0x868]	; store PC_PULL1
+ffff5da8:	e12fff1e 	bx	lr			; return
 
-f_5dac:
-ffff5dac:	e92d4010 	push	{r4, lr}
-ffff5db0:	e59f046c 	ldr	r0, =0x01c20000
-ffff5db4:	e5900060 	ldr	r0, [r0, #0x60]
-ffff5db8:	e3800601 	orr	r0, r0, #0x100000
-ffff5dbc:	e59f1460 	ldr	r1, =0x01c20000
-ffff5dc0:	e5810060 	str	r0, [r1, #0x60]
-ffff5dc4:	e1a00001 	mov	r0, r1
-ffff5dc8:	e59000a0 	ldr	r0, [r0, #0xa0]
-ffff5dcc:	e3800102 	orr	r0, r0, #-0x80000000	; 0x80000000
-ffff5dd0:	e58100a0 	str	r0, [r1, #0xa0]
-ffff5dd4:	ebffffe9 	bl	f_5d80
-ffff5dd8:	e59f0444 	ldr	r0, =0x01c20000
-ffff5ddc:	e5900060 	ldr	r0, [r0, #0x60]
-ffff5de0:	e3800040 	orr	r0, r0, #0x40
-ffff5de4:	e59f1438 	ldr	r1, =0x01c20000
-ffff5de8:	e5810060 	str	r0, [r1, #0x60]
-ffff5dec:	e3010002 	movw	r0, #0x1002
-ffff5df0:	e2411a1b 	sub	r1, r1, #0x1b000
-ffff5df4:	e581001c 	str	r0, [r1, #0x1c]
-ffff5df8:	e3000202 	movw	r0, #0x202
-ffff5dfc:	e5810014 	str	r0, [r1, #0x14]
-ffff5e00:	e59f0420 	ldr	r0, =0x0004831f
-ffff5e04:	e5810008 	str	r0, [r1, #0x8]
-ffff5e08:	e8bd8010 	pop	{r4, pc}
+void spinor_setup_pinmux(void)
+{
+	int reg_val;
+
+	reg_val = readl(PIO_PC_CFG0);
+	reg_val |= SPI0_MOSI, SPI0_MISO, SPI0_CLK;
+	writel(reg_val, PIO_PC_CFG0);
+	reg_val = readl(PIO_PC_CFG1);
+	reg_val |= SPI0_CS0;
+	writel(reg_val, PIO_PC_CFG1);
+
+	reg_val = readl(PIO_PC_PULL1);
+	reg_val |= PULL_UP < SPI0_CS0;
+	writel(reg_val, PIO_PC_PULL1);
+}
+
+spinor_setup_clk:
+ffff5dac:	e92d4010 	push	{r4, lr}		; store load_from_spinor return point in r4
+ffff5db0:	e59f046c 	ldr	r0, =0x01c20000		; load CCM (Clock Control Module) main register into r0
+ffff5db4:	e5900060 	ldr	r0, [r0, #0x60]		; load CCM_AHB_GATING0 into r0
+ffff5db8:	e3800601 	orr	r0, r0, #0x100000	; enable AHB SPI 0 clock gate in r0
+ffff5dbc:	e59f1460 	ldr	r1, =0x01c20000		; load CCM main reg in r1
+ffff5dc0:	e5810060 	str	r0, [r1, #0x60]		; store CCM_AHB_GATING
+ffff5dc4:	e1a00001 	mov	r0, r1			; load CCM_AHB_GATING0 into r0
+ffff5dc8:	e59000a0 	ldr	r0, [r0, #0xa0]		; load CCM_SPI0_CLK into r0
+ffff5dcc:	e3800102 	orr	r0, r0, #-0x80000000	; enable CCM_SPI0_GATE (with default factors, M=1; N=1; OSC24M)
+ffff5dd0:	e58100a0 	str	r0, [r1, #0xa0]		; store CCM_SPIO_CLK
+ffff5dd4:	ebffffe9 	bl	spinor_setup_pinmux	; configure SPI0 pinmuxing	
+ffff5dd8:	e59f0444 	ldr	r0, =0x01c20000		; load CCM into r0
+ffff5ddc:	e5900060 	ldr	r0, [r0, #0x60]		; load CCM_AHB_GATING into r0
+ffff5de0:	e3800040 	orr	r0, r0, #0x40		; enable CCM_AHB_GATE_DMA in r0
+ffff5de4:	e59f1438 	ldr	r1, =0x01c20000		; load CCM_AHB_GATING0 into r1
+ffff5de8:	e5810060 	str	r0, [r1, #0x60]		; store CCM_AHB_GATE_DMA in CCM_AHB_GATE_DMA
+ffff5dec:	e3010002 	movw	r0, #0x1002		; set SPI0_CLK = AHB_CLK / (2 * (2 + 1)) and set SPI0_DIV_RATE to clock divide rate 2 into r0
+ffff5df0:	e2411a1b 	sub	r1, r1, #0x1b000	; subtract 0x1b000 from r1 = 0x1c05000, SPI0 Register
+ffff5df4:	e581001c 	str	r0, [r1, #0x1c]		; store r0 into SPI0_CCTL
+ffff5df8:	e3000202 	movw	r0, #0x202		; enable SPI0_DMA_RX_FULL and SPI0_DMA_TX_HALF
+ffff5dfc:	e5810014 	str	r0, [r1, #0x14]		; store r0 in SPI0_DMACTL
+ffff5e00:	e59f0420 	ldr	r0, =0x0004831f		; set SPI0_EN, SPI0_MODE_MASTER, SPI0_PHASE_CTL_SETUP, SPI0_CLK_POL_LOW, SPI0_CS_POL_LOW, SPI0_TXFIFO_RST, SPI0_RXFIFO_RST, SPI0_DISCARD_HASH_BURST, SPI0_TX_PAUSE_EN in r0
+ffff5e04:	e5810008 	str	r0, [r1, #0x8]		; store r0 in SPI0_CTL
+ffff5e08:	e8bd8010 	pop	{r4, pc}		; return to load_from_spinor
+
+void spinor_setup_clk(void)
+{
+	int reg_val;
+
+	reg_val = readl(CCM_AHB_GATING0);
+	reg_val |= CCM_AHB_GATE_SPI0;
+	writel(reg_val, CCM_AHB_GATING0);
+
+	reg_val = readl(CCM_SPI0_CLK);
+	reg_val |= CCM_SPI0_GATE;
+	writel(reg_val, CCM_SPI0_CLK);
+
+	spinor_setup_pinmux();
+
+	reg_val = readl(SPI0_CCTL);
+	reg_val |= SPIO_AHB_CLK(6) | SPI0_DIV_RATE(2);
+	writel(reg_val, SPIO_CCTL);
+
+	reg_val = readl(SPI0_DMACTL);
+	reg_val |= SPI0_DMA_RX_FULL | SPI0_DMA_TX_HALF;
+	writel(reg_val, SPI0_DMACTL);
+
+	reg_val = readl(SPI0_CTL);
+	reg_val |= SPI0_EN | SPI0_MODE_MASTER | SPI0_PHASE_CTL_SETUP |
+		   SPI0_CLK_POL_LOW | SPI0_CS_POL_LOW | SPI0_TXFIFO_RST |
+		   SPI0_RXFIFO_RST | SPI0_DISCARD_HASH_BURST | SPI0_TX_PAUSE_EN;
+	writel(reg_val, SPI0_CTL);
+}
 
 f_5e0c:
 ffff5e0c:	e3a00000 	mov	r0, #0x0
@@ -2112,197 +2158,252 @@ ffff5e78:	e3c00601 	bic	r0, r0, #0x100000
 ffff5e7c:	e5810060 	str	r0, [r1, #0x60]
 ffff5e80:	e8bd8010 	pop	{r4, pc}
 
-f_5e84:
-ffff5e84:	e1a01000 	mov	r1, r0
-ffff5e88:	e320f000 	nop	{0}
-ffff5e8c:	e59f039c 	ldr	r0, =0x01c02000
-ffff5e90:	e5900120 	ldr	r0, [r0, #0x120]
-ffff5e94:	e3100102 	tst	r0, #-0x80000000	; 0x80000000
-ffff5e98:	1a000001 	bne	0xffff5ea4
-ffff5e9c:	e3a00000 	mov	r0, #0x0
-ffff5ea0:	e12fff1e 	bx	lr
-ffff5ea4:	e2410001 	sub	r0, r1, #0x1
-ffff5ea8:	e1b01000 	movs	r1, r0
-ffff5eac:	1afffff6 	bne	0xffff5e8c
-ffff5eb0:	e3a00002 	mov	r0, #0x2
-ffff5eb4:	eafffff9 	b	0xffff5ea0
+int check_dma_1(retry):
+ffff5e84:	e1a01000 	mov	r1, r0			; r1 = r0
+ffff5e88:	e320f000 	nop	{0}			; nop
+ffff5e8c:	e59f039c 	ldr	r0, =0x01c02000		; load DMA base reg into r0
+ffff5e90:	e5900120 	ldr	r0, [r0, #0x120]	; load DMA_NORM_CTRL(1)
+ffff5e94:	e3100102 	tst	r0, #-0x80000000	; test if DMA_LOAD is still running
+ffff5e98:	1a000001 	bne	0xffff5ea4		; DMA is still running, continue loop
+ffff5e9c:	e3a00000 	mov	r0, #0x0		; r0 = 0
+ffff5ea0:	e12fff1e 	bx	lr			; return
+ffff5ea4:	e2410001 	sub	r0, r1, #0x1		; r0 = r1 - 1
+ffff5ea8:	e1b01000 	movs	r1, r0			; r1 = r0
+ffff5eac:	1afffff6 	bne	0xffff5e8c		; if r1 != 0, loop
+ffff5eb0:	e3a00002 	mov	r0, #0x2		; r0 = 2
+ffff5eb4:	eafffff9 	b	0xffff5ea0		; return
 
-f_5eb8:
-ffff5eb8:	e1a01000 	mov	r1, r0
-ffff5ebc:	e320f000 	nop	{0}
-ffff5ec0:	e59f0368 	ldr	r0, =0x01c02000
-ffff5ec4:	e5900140 	ldr	r0, [r0, #0x140]
-ffff5ec8:	e3100102 	tst	r0, #-0x80000000	; 0x80000000
-ffff5ecc:	1a000001 	bne	0xffff5ed8
-ffff5ed0:	e3a00000 	mov	r0, #0x0
-ffff5ed4:	e12fff1e 	bx	lr
-ffff5ed8:	e2410001 	sub	r0, r1, #0x1
-ffff5edc:	e1b01000 	movs	r1, r0
-ffff5ee0:	1afffff6 	bne	0xffff5ec0
-ffff5ee4:	e3a00002 	mov	r0, #0x2
-ffff5ee8:	eafffff9 	b	0xffff5ed4
+int check_dma_1(int retry)
+{
+	int regval;
 
-f_5eec:
-ffff5eec:	e30f1fff 	movw	r1, #0xffff
-ffff5ef0:	e320f000 	nop	{0}
-ffff5ef4:	e1b00001 	movs	r0, r1
-ffff5ef8:	e2411001 	sub	r1, r1, #0x1
-ffff5efc:	0a000003 	beq	0xffff5f10
-ffff5f00:	e59f0324 	ldr	r0, =0x01c05000
-ffff5f04:	e5900010 	ldr	r0, [r0, #0x10]
-ffff5f08:	e3100102 	tst	r0, #-0x80000000	; 0x80000000
-ffff5f0c:	1afffff8 	bne	0xffff5ef4
-ffff5f10:	e3510000 	cmp	r1, #0x0
-ffff5f14:	da000001 	ble	0xffff5f20
-ffff5f18:	e3a00000 	mov	r0, #0x0
-ffff5f1c:	e12fff1e 	bx	lr
-ffff5f20:	e3a00002 	mov	r0, #0x2
-ffff5f24:	eafffffc 	b	0xffff5f1c
+	for (;retry > 0; retry--) {
+		regval = readl(DMA_NORM_CTRL(1))
+		if (regval & !DMA_LOAD)
+			return 0;
+	}
 
-f_5f28:
-ffff5f28:	e1a01000 	mov	r1, r0
-ffff5f2c:	e320f000 	nop	{0}
-ffff5f30:	e59f02f4 	ldr	r0, =0x01c05000
-ffff5f34:	e5900010 	ldr	r0, [r0, #0x10]
-ffff5f38:	e3100801 	tst	r0, #0x10000
-ffff5f3c:	0a000001 	beq	0xffff5f48
-ffff5f40:	e3a00000 	mov	r0, #0x0
-ffff5f44:	e12fff1e 	bx	lr
-ffff5f48:	e2410001 	sub	r0, r1, #0x1
-ffff5f4c:	e1b01000 	movs	r1, r0
-ffff5f50:	1afffff6 	bne	0xffff5f30
-ffff5f54:	e3a00002 	mov	r0, #0x2
-ffff5f58:	eafffff9 	b	0xffff5f44
+	return 2;
+}
+
+int check_dma_2(retry):
+ffff5eb8:	e1a01000 	mov	r1, r0			; r1 = r0
+ffff5ebc:	e320f000 	nop	{0}			; nop
+ffff5ec0:	e59f0368 	ldr	r0, =0x01c02000		; load DMA register offset into r0
+ffff5ec4:	e5900140 	ldr	r0, [r0, #0x140]	; load DMA_NORM_CTRL(2)
+ffff5ec8:	e3100102 	tst	r0, #-0x80000000	; test if DMA_LOAD is still running
+ffff5ecc:	1a000001 	bne	0xffff5ed8		; DMA is still running, continue loop
+ffff5ed0:	e3a00000 	mov	r0, #0x0		; r0 = 0
+ffff5ed4:	e12fff1e 	bx	lr			; return
+ffff5ed8:	e2410001 	sub	r0, r1, #0x1		; r0 = r1 - 1
+ffff5edc:	e1b01000 	movs	r1, r0			; r1 = r0
+ffff5ee0:	1afffff6 	bne	0xffff5ec0		; if r1 != 0, loop
+ffff5ee4:	e3a00002 	mov	r0, #0x2		; r0 = 2
+ffff5ee8:	eafffff9 	b	0xffff5ed4		; return
+
+int check_dma_2(int retry)
+{
+	int regval;
+
+	for (;retry > 0; retry--) {
+		regval = readl(DMA_NORM_CTRL(2))
+		if (regval & !DMA_LOAD)
+			return 0;
+	}
+
+	return 2;
+}
+
+int wait_spi0_irq_busy(void):
+ffff5eec:	e30f1fff 	movw	r1, #0xffff		; r1 = 0xffff
+ffff5ef0:	e320f000 	nop	{0}			; nop
+ffff5ef4:	e1b00001 	movs	r0, r1			; r0 = r1
+ffff5ef8:	e2411001 	sub	r1, r1, #0x1		; r1 = r1 - 1
+ffff5efc:	0a000003 	beq	0xffff5f10		; if r1 != 0
+ffff5f00:	e59f0324 	ldr	r0, =0x01c05000		; load SPI0 base register into r0
+ffff5f04:	e5900010 	ldr	r0, [r0, #0x10]		; load SPI0_IRQ_STATUS register into r0
+ffff5f08:	e3100102 	tst	r0, #-0x80000000	; test if SPI0_IRQ_STATUS | SPI_IRQ_CLEAR_BUSY
+ffff5f0c:	1afffff8 	bne	0xffff5ef4		; if SPI_IRQ_CLEAR_BUSY is not done, loop
+ffff5f10:	e3510000 	cmp	r1, #0x0		; if r1 = 0
+ffff5f14:	da000001 	ble	0xffff5f20		; if r1 < 0 return
+ffff5f18:	e3a00000 	mov	r0, #0x0		; r0 = 0
+ffff5f1c:	e12fff1e 	bx	lr			; return
+ffff5f20:	e3a00002 	mov	r0, #0x2		; r0 = 2
+ffff5f24:	eafffffc 	b	0xffff5f1c		; return
+
+int wait_spi0_irq_busy(void)
+{
+	int retry;
+	int regval;
+
+	for (retry = 0xffff; retry < 0; retry--) {
+		regval = readl(SPI0_IRQ_STATUS);
+		if (regval & !SPI_IRQ_CLEAR_BUSY)
+			return 0;
+	}
+
+	return 2;
+}
+
+int wait_spi0_txfifo(int delay):
+ffff5f28:	e1a01000 	mov	r1, r0			; r1 = r0
+ffff5f2c:	e320f000 	nop	{0}			; nop
+ffff5f30:	e59f02f4 	ldr	r0, =0x01c05000		; load SPI0 base register into r0
+ffff5f34:	e5900010 	ldr	r0, [r0, #0x10]		; load SPI0_IRQ_STATUS register into r0
+ffff5f38:	e3100801 	tst	r0, #0x10000		; test if SPI_TX_FIFO_75EMPTY is more then 75% empty
+ffff5f3c:	0a000001 	beq	0xffff5f48		; if empty continue
+ffff5f40:	e3a00000 	mov	r0, #0x0		; r0 = 0
+ffff5f44:	e12fff1e 	bx	lr			; return
+ffff5f48:	e2410001 	sub	r0, r1, #0x1		; r0 = r1 - 1
+ffff5f4c:	e1b01000 	movs	r1, r0			; r1 = r0
+ffff5f50:	1afffff6 	bne	0xffff5f30		; loop again
+ffff5f54:	e3a00002 	mov	r0, #0x2		; r0 = 2
+ffff5f58:	eafffff9 	b	0xffff5f44		; return
+
+int wait_spi0_txfifo(int delay)
+{
+	int regval;
+
+	for (;delay > 0; delay--) {
+		regval = readl(SPI0_IRQ_STATUS);
+		if (regval | SPI_TX_FIFO_75EMPTY);
+			return 0;
+	}
+
+	return 2;
+}
 
 f_5f5c:
+int spi_setup_dma(burst_cnt1, burst_cnt2, dma_src_addr, dma_dest_addr):
 ffff5f5c:	e92d41f0 	push	{r4, r5, r6, r7, r8, lr}
-ffff5f60:	e1a04000 	mov	r4, r0
-ffff5f64:	e1a05001 	mov	r5, r1
-ffff5f68:	e1a06002 	mov	r6, r2
-ffff5f6c:	e1a07003 	mov	r7, r3
-ffff5f70:	e0840005 	add	r0, r4, r5
-ffff5f74:	e2808e96 	add	r8, r0, #0x960
-ffff5f78:	e0840005 	add	r0, r4, r5
-ffff5f7c:	e59f12a8 	ldr	r1, =0x01c05000
-ffff5f80:	e5810020 	str	r0, [r1, #0x20]
-ffff5f84:	e1a00001 	mov	r0, r1
-ffff5f88:	e5804024 	str	r4, [r0, #0x24]
-ffff5f8c:	e2400a03 	sub	r0, r0, #0x3000
-ffff5f90:	e5806144 	str	r6, [r0, #0x144]
-ffff5f94:	e2810004 	add	r0, r1, #0x4
-ffff5f98:	e2411a03 	sub	r1, r1, #0x3000
-ffff5f9c:	e5810148 	str	r0, [r1, #0x148]
-ffff5fa0:	e1c101c0 	bic	r0, r1, r0, asr #0x3
-ffff5fa4:	e580414c 	str	r4, [r0, #0x14c]
-ffff5fa8:	e59f0284 	ldr	r0, =0x9c380415
-ffff5fac:	e5810140 	str	r0, [r1, #0x140]
-ffff5fb0:	e2810a03 	add	r0, r1, #0x3000
-ffff5fb4:	e5810124 	str	r0, [r1, #0x124]
-ffff5fb8:	e2400a03 	sub	r0, r0, #0x3000
-ffff5fbc:	e5807128 	str	r7, [r0, #0x128]
-ffff5fc0:	e580512c 	str	r5, [r0, #0x12c]
-ffff5fc4:	e59f026c 	ldr	r0, =0x9c150438
-ffff5fc8:	e5810120 	str	r0, [r1, #0x120]
-ffff5fcc:	e2810a03 	add	r0, r1, #0x3000
-ffff5fd0:	e5900008 	ldr	r0, [r0, #0x8]
-ffff5fd4:	e3800b01 	orr	r0, r0, #0x400
-ffff5fd8:	e2811a03 	add	r1, r1, #0x3000
-ffff5fdc:	e5810008 	str	r0, [r1, #0x8]
-ffff5fe0:	e1a00008 	mov	r0, r8
-ffff5fe4:	ebffffb3 	bl	f_5eb8
-ffff5fe8:	e3500002 	cmp	r0, #0x2
-ffff5fec:	1a00000a 	bne	0xffff601c
-ffff5ff0:	e59f0238 	ldr	r0, =0x01c02000
-ffff5ff4:	e5900140 	ldr	r0, [r0, #0x140]
-ffff5ff8:	e3c00102 	bic	r0, r0, #-0x80000000	; 0x80000000
-ffff5ffc:	e59f122c 	ldr	r1, =0x01c02000
-ffff6000:	e5810140 	str	r0, [r1, #0x140]
-ffff6004:	e1a00001 	mov	r0, r1
-ffff6008:	e5900120 	ldr	r0, [r0, #0x120]
-ffff600c:	e3c00102 	bic	r0, r0, #-0x80000000	; 0x80000000
-ffff6010:	e5810120 	str	r0, [r1, #0x120]
-ffff6014:	e3a00002 	mov	r0, #0x2
-ffff6018:	e8bd81f0 	pop	{r4, r5, r6, r7, r8, pc}
-ffff601c:	e1a00008 	mov	r0, r8
-ffff6020:	ebffff97 	bl	f_5e84
-ffff6024:	e3500002 	cmp	r0, #0x2
-ffff6028:	1a00000a 	bne	0xffff6058
-ffff602c:	e59f01fc 	ldr	r0, =0x01c02000
-ffff6030:	e5900140 	ldr	r0, [r0, #0x140]
-ffff6034:	e3c00102 	bic	r0, r0, #-0x80000000	; 0x80000000
-ffff6038:	e59f11f0 	ldr	r1, =0x01c02000
-ffff603c:	e5810140 	str	r0, [r1, #0x140]
-ffff6040:	e1a00001 	mov	r0, r1
-ffff6044:	e5900120 	ldr	r0, [r0, #0x120]
-ffff6048:	e3c00102 	bic	r0, r0, #-0x80000000	; 0x80000000
-ffff604c:	e5810120 	str	r0, [r1, #0x120]
-ffff6050:	e3a00002 	mov	r0, #0x2
-ffff6054:	eaffffef 	b	0xffff6018
-ffff6058:	e1a00008 	mov	r0, r8
-ffff605c:	ebffffb1 	bl	f_5f28
-ffff6060:	e3500002 	cmp	r0, #0x2
-ffff6064:	1a00000a 	bne	0xffff6094
-ffff6068:	e59f01c0 	ldr	r0, =0x01c02000
-ffff606c:	e5900140 	ldr	r0, [r0, #0x140]
-ffff6070:	e3c00102 	bic	r0, r0, #-0x80000000	; 0x80000000
-ffff6074:	e59f11b4 	ldr	r1, =0x01c02000
-ffff6078:	e5810140 	str	r0, [r1, #0x140]
-ffff607c:	e1a00001 	mov	r0, r1
-ffff6080:	e5900120 	ldr	r0, [r0, #0x120]
-ffff6084:	e3c00102 	bic	r0, r0, #-0x80000000	; 0x80000000
-ffff6088:	e5810120 	str	r0, [r1, #0x120]
-ffff608c:	e3a00002 	mov	r0, #0x2
-ffff6090:	eaffffe0 	b	0xffff6018
-ffff6094:	e59f0194 	ldr	r0, =0x01c02000
-ffff6098:	e5900140 	ldr	r0, [r0, #0x140]
-ffff609c:	e3c00102 	bic	r0, r0, #-0x80000000	; 0x80000000
-ffff60a0:	e59f1188 	ldr	r1, =0x01c02000
-ffff60a4:	e5810140 	str	r0, [r1, #0x140]
-ffff60a8:	e1a00001 	mov	r0, r1
-ffff60ac:	e5900120 	ldr	r0, [r0, #0x120]
-ffff60b0:	e3c00102 	bic	r0, r0, #-0x80000000	; 0x80000000
-ffff60b4:	e5810120 	str	r0, [r1, #0x120]
-ffff60b8:	e2810a03 	add	r0, r1, #0x3000
-ffff60bc:	e5900010 	ldr	r0, [r0, #0x10]
-ffff60c0:	e3800801 	orr	r0, r0, #0x10000
-ffff60c4:	e2811a03 	add	r1, r1, #0x3000
-ffff60c8:	e5810010 	str	r0, [r1, #0x10]
-ffff60cc:	ebffff86 	bl	f_5eec
-ffff60d0:	e3500002 	cmp	r0, #0x2
-ffff60d4:	1a000001 	bne	0xffff60e0
-ffff60d8:	e3a00002 	mov	r0, #0x2
-ffff60dc:	eaffffcd 	b	0xffff6018
-ffff60e0:	e3a00000 	mov	r0, #0x0
-ffff60e4:	eaffffcb 	b	0xffff6018
+ffff5f60:	e1a04000 	mov	r4, r0			; r4 = r0
+ffff5f64:	e1a05001 	mov	r5, r1			; r5 = r1
+ffff5f68:	e1a06002 	mov	r6, r2			; r6 = r2
+ffff5f6c:	e1a07003 	mov	r7, r3			; r7 = r3
+ffff5f70:	e0840005 	add	r0, r4, r5		; r0 = r4 + r5
+ffff5f74:	e2808e96 	add	r8, r0, #0x960		; r8 = r0 + 2400
+ffff5f78:	e0840005 	add	r0, r4, r5		; r0 = r4 + r5
+ffff5f7c:	e59f12a8 	ldr	r1, =0x01c05000		; load SPI0 base register address into r1
+ffff5f80:	e5810020 	str	r0, [r1, #0x20]		; store r0 into SPI0_BURST_CNT
+ffff5f84:	e1a00001 	mov	r0, r1			; r0 = r1
+ffff5f88:	e5804024 	str	r4, [r0, #0x24]		; store r4 in SPI0_TX_CNT
+ffff5f8c:	e2400a03 	sub	r0, r0, #0x3000		; r0 -= 0x3000; r0, =0x01c02000
+ffff5f90:	e5806144 	str	r6, [r0, #0x144]	; store r6 in DMA_NORM_SRC_ADDR(2)
+ffff5f94:	e2810004 	add	r0, r1, #0x4		; r0 = r1 + 4; r0, =0x01c05004
+ffff5f98:	e2411a03 	sub	r1, r1, #0x3000		; r1 -= 0x3000; r1, =0x01c02000
+ffff5f9c:	e5810148 	str	r0, [r1, #0x148]	; store r0 (SPI0_TXDATA) in DMA_NORM_DEST_ADDR(2)
+ffff5fa0:	e1c101c0 	bic	r0, r1, r0, asr #0x3	; r0 = r1 &!(r0 >> 3); r0 = 0x400;
+ffff5fa4:	e580414c 	str	r4, [r0, #0x14c]	; store r4 in DMA_NORM_CNT(2)
+ffff5fa8:	e59f0284 	ldr	r0, =0x9c380415		; set DMA_NORM_SRC_DRQ_TYPE(SRAM), DMA_NORM_SRC_WIDTH(32), DMA_NORM_DEST_DRQ_TYPE(SPI0_TX), DMA_NORM_DEST_ADDR_NON_INCR, DMA_NORM_DEST_DATA_WIDTH(32), DMA_WAIT_STATE(3), DMA_LOAD
+ffff5fac:	e5810140 	str	r0, [r1, #0x140]	; store r0 in DMA_NORM_CTRL(2)
+ffff5fb0:	e2810a03 	add	r0, r1, #0x3000		; r0 = r1 + 0x3000; r0 = 0x01c05000
+ffff5fb4:	e5810124 	str	r0, [r1, #0x124]	; store r0 in DMA_NORM_SRC_ADDR(1)
+ffff5fb8:	e2400a03 	sub	r0, r0, #0x3000		; r0 = r0 - 0x3000; r0 = 0x01c02000
+ffff5fbc:	e5807128 	str	r7, [r0, #0x128]	; store r7 in DMA_NORM_DEST_ADDR(1)
+ffff5fc0:	e580512c 	str	r5, [r0, #0x12c]	; store r5 in DMA_NORM_CNT(1)
+ffff5fc4:	e59f026c 	ldr	r0, =0x9c150438		; set DMA_SRC_DRQ_TYPE(SPI0_RX), DMA_NORM_SRC_ADDR_NON_INCR, DMA_NORM_SRC_WIDTH(32), DMA_NORM_DEST_DRQ_TYPE(SRAM), DMA_NORM_DEST_DATA_WIDTH(32), DmA_WAIT_STATE(3), DMA_LOAD
+ffff5fc8:	e5810120 	str	r0, [r1, #0x120]	; store r0 in DMA_NORM_CTRL(1)
+ffff5fcc:	e2810a03 	add	r0, r1, #0x3000		; r0 = r1 + 0x3000; r0 = 0x01c05000
+ffff5fd0:	e5900008 	ldr	r0, [r0, #0x8]		; r0 = SPI0_CTL
+ffff5fd4:	e3800b01 	orr	r0, r0, #0x400		; r0 = r0 | SPI0_XCHANGE_BURST
+ffff5fd8:	e2811a03 	add	r1, r1, #0x3000		; r1 += 0x03000; r1 = 0x01c05000
+ffff5fdc:	e5810008 	str	r0, [r1, #0x8]		; store r0 in SPI0_CTL
+ffff5fe0:	e1a00008 	mov	r0, r8			; r0 = r8
+ffff5fe4:	ebffffb3 	bl	check_dma_2()		; r0 = check_dma_2(r0) /* check_dma_2(burst_cnt1 + burst_cnt2 + 2400) */
+ffff5fe8:	e3500002 	cmp	r0, #0x2		; test if r0 == 2
+ffff5fec:	1a00000a 	bne	0xffff601c		; else do dma_check_2(r0) +4 (without popping stack)
+ffff5ff0:	e59f0238 	ldr	r0, =0x01c02000		; load DMA base reg into r0
+ffff5ff4:	e5900140 	ldr	r0, [r0, #0x140]	; load DMA_NORM_CTRL(2) into r0
+ffff5ff8:	e3c00102 	bic	r0, r0, #-0x80000000	; r0 = DMA_NORM_CTRL(2) & !DMA_LOAD /* reset DMA channel 2 */
+ffff5ffc:	e59f122c 	ldr	r1, =0x01c02000		; load DMA base reg into r1
+ffff6000:	e5810140 	str	r0, [r1, #0x140]	; store r0 into DMA_NORM_CTRL(2)
+ffff6004:	e1a00001 	mov	r0, r1			; r0 = r1
+ffff6008:	e5900120 	ldr	r0, [r0, #0x120]	; load DMA_NORM_CTRL(1) into r0
+ffff600c:	e3c00102 	bic	r0, r0, #-0x80000000	; r0 = DMA_NORM_CTRL(1) & !DMA_LOAD /* reset DMA channel 1 */
+ffff6010:	e5810120 	str	r0, [r1, #0x120]	; store r0 into DMA_NORM_CTRL(1)
+ffff6014:	e3a00002 	mov	r0, #0x2		; r0 = 2 /* dma_check_2(2)
+ffff6018:	e8bd81f0 	pop	{r4, r5, r6, r7, r8, pc}; pop stack
+dma_check_2:
+ffff601c:	e1a00008 	mov	r0, r8			; r0 = r8
+ffff6020:	ebffff97 	bl	check_dma_1()		; r0 = check_dma_1(r0); /* check_dma_1(burst_cnt1 +burst_cnt2 + 2400) */
+ffff6024:	e3500002 	cmp	r0, #0x2		; if r0 == 2 skip to dma_check_1
+ffff6028:	1a00000a 	bne	0xffff6058		; else continue
+ffff602c:	e59f01fc 	ldr	r0, =0x01c02000		; load DMA base reg into r0
+ffff6030:	e5900140 	ldr	r0, [r0, #0x140]	; load DMA_NORM_CTRL(2) into r0
+ffff6034:	e3c00102 	bic	r0, r0, #-0x80000000	; r0 = DMA_NORM_CTRL(2) & !DMA_LOAD /* reset DMA channel 2 */
+ffff6038:	e59f11f0 	ldr	r1, =0x01c02000		; load DMA base reg into r1
+ffff603c:	e5810140 	str	r0, [r1, #0x140]	; store r0 into DMA_NORM_CTRL(2)
+ffff6040:	e1a00001 	mov	r0, r1			; r0 = r1
+ffff6044:	e5900120 	ldr	r0, [r0, #0x120]	; load DMA_NORM_CTRL(1) into r0
+ffff6048:	e3c00102 	bic	r0, r0, #-0x80000000	; r0 = DMA_NORM_CTLR(1) & !DMA_LOAD /* reset DMA channel 1 */
+ffff604c:	e5810120 	str	r0, [r1, #0x120]	; store r0 in DMA_NORM_CTRL(1)
+ffff6050:	e3a00002 	mov	r0, #0x2		; r0 = 2
+ffff6054:	eaffffef 	b	0xffff6018		; else go to dma_check_2(2)
+efff6058:	e1a00008 	mov	r0, r8			; r0 = r8;
+ffff605c:	ebffffb1 	bl	wait_spi0_txfifo()	; r0 = wait_spi0_txfifo(r0)
+ffff6060:	e3500002 	cmp	r0, #0x2		; if r0 = 2
+ffff6064:	1a00000a 	bne	0xffff6094		; skip if not 2
+ffff6068:	e59f01c0 	ldr	r0, =0x01c02000		; load DMA base reg into r0
+ffff606c:	e5900140 	ldr	r0, [r0, #0x140]	; load DMA_NORM_CTRL(2) into r0
+ffff6070:	e3c00102 	bic	r0, r0, #-0x80000000	; r0 = DMA_NORM_CTRL(2) & !DMA_LOAD /* reset DMA channel 2 */
+ffff6074:	e59f11b4 	ldr	r1, =0x01c02000		; load DMA base reg into r1
+ffff6078:	e5810140 	str	r0, [r1, #0x140]	; store r0 into DMA_NORM_CTRL(2)
+ffff607c:	e1a00001 	mov	r0, r1			; r0 = r1
+ffff6080:	e5900120 	ldr	r0, [r0, #0x120]	; load DMA_NORM_CTRL(1) into r0
+ffff6084:	e3c00102 	bic	r0, r0, #-0x80000000	; r0 = DMA_NORM_CTLR(1) & !DMA_LOAD /* reset DMA channel 1 */
+ffff6088:	e5810120 	str	r0, [r1, #0x120]	; store r0 into DMA_NORM_CTRL(1)
+ffff608c:	e3a00002 	mov	r0, #0x2		; r0 = 2
+ffff6090:	eaffffe0 	b	0xffff6018		; restart at dma_check_2(2)
+ffff6094:	e59f0194 	ldr	r0, =0x01c02000		; load DMA base reg into r0
+ffff6098:	e5900140 	ldr	r0, [r0, #0x140]	; load DMA_NORM_CTRL(2) into r0
+ffff609c:	e3c00102 	bic	r0, r0, #-0x80000000	; r0 = DMA_NORM_CTRL(2) & !DMA_LOAD /* reset DMA channel 2 */
+ffff60a0:	e59f1188 	ldr	r1, =0x01c02000		; load DMA base reg into r1
+ffff60a4:	e5810140 	str	r0, [r1, #0x140]	; store r0 in DMA_NORM_CTRL(2)
+ffff60a8:	e1a00001 	mov	r0, r1			; r0 = r1
+ffff60ac:	e5900120 	ldr	r0, [r0, #0x120]	; load DMA_NORM_CTRL(1) into r0
+ffff60b0:	e3c00102 	bic	r0, r0, #-0x80000000	; r0 = DMA_NORM_CTLR(1) & !DMA_LOAD /* reset DMA channel 1 */
+ffff60b4:	e5810120 	str	r0, [r1, #0x120]	; store r0 in DMA_NORM_CTRL(1)
+ffff60b8:	e2810a03 	add	r0, r1, #0x3000		; r0 = r1 + 0x3000; r0 = 0x01c05000
+ffff60bc:	e5900010 	ldr	r0, [r0, #0x10]		; load SPI0_IRQ_STATUS register into r0
+ffff60c0:	e3800801 	orr	r0, r0, #0x10000	; r0 = SPI0_IRQ_STATUS | SPI_TX_DONE
+ffff60c4:	e2811a03 	add	r1, r1, #0x3000		; r1 = r1 + 0x3000; r1 = 0x01c05000
+ffff60c8:	e5810010 	str	r0, [r1, #0x10]		; store r1 in SPI0_IRQ_STATUS
+ffff60cc:	ebffff86 	bl	wait_spi0_irq_busy()	; r0 = wait_spi0_irq_busy();
+ffff60d0:	e3500002 	cmp	r0, #0x2		; if r0 = 2
+ffff60d4:	1a000001 	bne	0xffff60e0		; restart at dma_check_2(0)
+ffff60d8:	e3a00002 	mov	r0, #0x2		; r0 = 2
+ffff60dc:	eaffffcd 	b	0xffff6018		; restart at dma_check_2(2)
+ffff60e0:	e3a00000 	mov	r0, #0x0		; r0 = 0
+ffff60e4:	eaffffcb 	b	0xffff6018		; restart at dma_check_2(0)
 
 f_60e8:
 ffff60e8:	e92d4ff8 	push	{r3, r4, r5, r6, r7, r8, r9, sl, fp, lr}
-ffff60ec:	e1a04000 	mov	r4, r0
-ffff60f0:	e1a05001 	mov	r5, r1
-ffff60f4:	e1a06002 	mov	r6, r2
-ffff60f8:	e1a0b005 	mov	fp, r5
-ffff60fc:	e3a08000 	mov	r8, #0x0
-ffff6100:	e1a07404 	lsl	r7, r4, #0x8
-ffff6104:	e1a0a406 	lsl	sl, r6, #0x8
-ffff6108:	ea000018 	b	0xffff6170
-ffff610c:	e3a00003 	mov	r0, #0x3
-ffff6110:	e5cd0000 	strb	r0, [sp]
-ffff6114:	e1a00827 	lsr	r0, r7, #0x10
-ffff6118:	e5cd0001 	strb	r0, [sp, #0x1]
-ffff611c:	e1a00427 	lsr	r0, r7, #0x8
-ffff6120:	e5cd0002 	strb	r0, [sp, #0x2]
-ffff6124:	e5cd7003 	strb	r7, [sp, #0x3]
-ffff6128:	e04a0008 	sub	r0, sl, r8
-ffff612c:	e3500b02 	cmp	r0, #0x800
-ffff6130:	9a000001 	bls	0xffff613c
-ffff6134:	e3a00b02 	mov	r0, #0x800
-ffff6138:	ea000000 	b	0xffff6140
-ffff613c:	e04a0008 	sub	r0, sl, r8
-ffff6140:	e1a09000 	mov	r9, r0
-ffff6144:	e08b3008 	add	r3, fp, r8
-ffff6148:	e1a0200d 	mov	r2, sp
-ffff614c:	e1a01009 	mov	r1, r9
-ffff6150:	e3a00004 	mov	r0, #0x4
+ffff60ec:	e1a04000 	mov	r4, r0			; r4 = r0
+ffff60f0:	e1a05001 	mov	r5, r1			; r5 = r1
+ffff60f4:	e1a06002 	mov	r6, r2			; r6 = r2
+ffff60f8:	e1a0b005 	mov	fp, r5			; fp = r5
+ffff60fc:	e3a08000 	mov	r8, #0x0		; r8 = 0;
+ffff6100:	e1a07404 	lsl	r7, r4, #0x8		; r7 = r4 << 8
+ffff6104:	e1a0a406 	lsl	sl, r6, #0x8		; sl = r6 << 8
+ffff6108:	ea000018 	b	0xffff6170		; goto err
+ffff610c:	e3a00003 	mov	r0, #0x3		; r0 = 3
+ffff6110:	e5cd0000 	strb	r0, [sp]		; store r0 in sp
+ffff6114:	e1a00827 	lsr	r0, r7, #0x10		; r0 = r7 >> 10
+ffff6118:	e5cd0001 	strb	r0, [sp, #0x1]		; store r0 in sp +1
+ffff611c:	e1a00427 	lsr	r0, r7, #0x8		; r0 = r7 >> 8
+ffff6120:	e5cd0002 	strb	r0, [sp, #0x2]		; store r0 in sp + 2
+ffff6124:	e5cd7003 	strb	r7, [sp, #0x3]		; store r7 in sp + 3
+ffff6128:	e04a0008 	sub	r0, sl, r8		; r0 = sl - r8
+ffff612c:	e3500b02 	cmp	r0, #0x800		; if (r0 = 0x800)
+ffff6130:	9a000001 	bls	0xffff613c		; 
+ffff6134:	e3a00b02 	mov	r0, #0x800		; r0 = 0x800
+ffff6138:	ea000000 	b	0xffff6140		; else
+ffff613c:	e04a0008 	sub	r0, sl, r8		; r0 = sl - r8
+ffff6140:	e1a09000 	mov	r9, r0			; r9 = r0
+ffff6144:	e08b3008 	add	r3, fp, r8		; r3 = fp + r8
+ffff6148:	e1a0200d 	mov	r2, sp			; r2 = sp
+ffff614c:	e1a01009 	mov	r1, r9			; r1 = r9
+ffff6150:	e3a00004 	mov	r0, #0x4		; r0 = 4
 ffff6154:	ebffff80 	bl	f_5f5c
 ffff6158:	e3500002 	cmp	r0, #0x2
 ffff615c:	1a000001 	bne	0xffff6168
@@ -2310,6 +2411,7 @@ ffff6160:	e3a00002 	mov	r0, #0x2
 ffff6164:	e8bd8ff8 	pop	{r3, r4, r5, r6, r7, r8, r9, sl, fp, pc}
 ffff6168:	e0877009 	add	r7, r7, r9
 ffff616c:	e0888009 	add	r8, r8, r9
+err:
 ffff6170:	e158000a 	cmp	r8, sl
 ffff6174:	3affffe4 	bcc	0xffff610c
 ffff6178:	e3a00000 	mov	r0, #0x0
@@ -2352,9 +2454,9 @@ ffff6200:	e3a00000 	mov	r0, #0x0
 ffff6204:	eafffff7 	b	0xffff61e8
 
 f_6208:
-ffff6208:	e92d400c 	push	{r2, r3, lr}
-ffff620c:	e1a01000 	mov	r1, r0
-ffff6210:	e59f2024 	ldr	r2, =d_6608
+ffff6208:	e92d400c 	push	{r2, r3, lr}		; psuh r2, r3 and lr onto the stack
+ffff620c:	e1a01000 	mov	r1, r0			; r1 = r0
+ffff6210:	e59f2024 	ldr	r2, =d_6608		;
 ffff6214:	e8920005 	ldm	r2, {r0, r2}
 ffff6218:	e88d0005 	stm	sp, {r0, r2}
 ffff621c:	e79d0101 	ldr	r0, [sp, r1, lsl #0x2]
